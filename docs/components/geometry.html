@@ -411,14 +411,12 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 </tr>
 </tbody>
 </table>
-<h3 id="Cylinder_Primitive"><a href="#Cylinder_Primitive" class="headerlink" title="Cylinder Primitive"></a>Cylinder Primitive</h3><p>The cylinder primitive can define cylinders in the traditional sense like a Coca-Cola™ can, but it can also define shapes such as cones, tubes, and curved surfaces. We’ll go over some of these cylinder recipes below.</p>
+<h3 id="Cylinder_Primitive"><a href="#Cylinder_Primitive" class="headerlink" title="Cylinder Primitive"></a>Cylinder Primitive</h3><p>The cylinder primitive can define cylinders in the traditional sense like a Coca-Cola™ can, but it can also define shapes such as tubes and curved surfaces. We’ll go over some of these cylinder recipes below.</p>
 <h4 id="Basic_Cylinder"><a href="#Basic_Cylinder" class="headerlink" title="Basic Cylinder"></a>Basic Cylinder</h4><p>Traditional cylinders can be defined by using only a height and a radius:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cylinder; height: 3; radius: 2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="Cone"><a href="#Cone" class="headerlink" title="Cone"></a>Cone</h4><p>Cones can be defined by differing the bottom radius from the top radius:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cylinder; radiusBottom: 1; radiusTop: 0.1"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="Tube"><a href="#Tube" class="headerlink" title="Tube"></a>Tube</h4><p>Tubes can be defined by making the cylinder open-ended, which removes the top and bottom surfaces of the cylinder such that the inside is visible. A double-sided material will be needed to render properly:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Tube --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cylinder; openEnded: true"</span> <span class="attribute">material</span>=<span class="value">"side: double"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="Curved_Surface"><a href="#Curved_Surface" class="headerlink" title="Curved Surface"></a>Curved Surface</h4><p>Curved surfaces can be defined by specifying the angle via <code>thetaLength</code><br>such that the cylinder doesn’t curve all the way around, making the cylinder<br>open-ended, and then making the material double-sided.</p>
+<h4 id="Curved_Surface"><a href="#Curved_Surface" class="headerlink" title="Curved Surface"></a>Curved Surface</h4><p>Curved surfaces can be defined by specifying the angle via <code>thetaLength</code> such that the cylinder doesn’t curve all the way around, making the cylinder open-ended, and then making the material double-sided.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Curved surface --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cylinder; openEnded: true; thetaLength: 180"</span></span><br><span class="line">          <span class="attribute">material</span>=<span class="value">"side: double"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -430,13 +428,8 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 </thead>
 <tbody>
 <tr>
-<td>radiusTop</td>
-<td>Radius of the cylinder at the top.</td>
-<td>1</td>
-</tr>
-<tr>
-<td>radiusBottom</td>
-<td>Radius of the cylinder at the bottom.</td>
+<td>radius</td>
+<td>Radius of the cylinder.</td>
 <td>1</td>
 </tr>
 <tr>
@@ -457,6 +450,59 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 <tr>
 <td>openEnded</td>
 <td>Whether the ends of the cylinder are open (true) or capped (false).</td>
+<td>false</td>
+</tr>
+<tr>
+<td>thetaStart</td>
+<td>Starting angle in degrees.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>thetaLength</td>
+<td>Central angle in degrees.</td>
+<td>360</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Cone"><a href="#Cone" class="headerlink" title="Cone"></a>Cone</h3><p>Cones are essentially cylinders that have a different bottom radius than the top radius:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cone; radiusBottom: 1; radiusTop: 0.1"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radiusTop</td>
+<td>Radius of the cone</td>
+<td>1</td>
+</tr>
+<tr>
+<td>radiusBottom</td>
+<td>Radius of the cone at the bottom.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Height of the cone .</td>
+<td>2</td>
+</tr>
+<tr>
+<td>segmentsRadial</td>
+<td>Number of segmented faces around the circumference of the cone.</td>
+<td>36</td>
+</tr>
+<tr>
+<td>segmentsHeight</td>
+<td>Number of rows of faces along the height of the cone.</td>
+<td>18</td>
+</tr>
+<tr>
+<td>openEnded</td>
+<td>Whether the ends of the cone are open (true) or capped (false).</td>
 <td>false</td>
 </tr>
 <tr>
