@@ -327,8 +327,8 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     <p class="page__section"><a href="/docs/components/" class="borderless-link">Components</a></p>
     <h1 class="page__title">Camera</h1>
 
-    <p>The <code>camera</code> component defines from which perspective the user views the scene. It is often paired with control-related components, such as user input which moves and rotates the camera.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">camera</span> <span class="attribute">look-controls</span> <span class="attribute">wasd-controls</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <p>The <code>camera</code> component defines from which perspective the user views the scene. It is often paired with control-related components, such as user input which moves and rotates the camera. Note<br>that is recommended to wrap entities with the <code>camera</code> component within another entity. This allows a clean abstraction where we are free to modify the position or rotation of the parent entity.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">position</span>=<span class="value">"0 1.8 5"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">camera</span> <span class="attribute">look-controls</span> <span class="attribute">wasd-controls</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -365,7 +365,7 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     </footer>
 
     <footer class="footer footnote">
-  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe-site-dev/blob/master/src/docs/components/index.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe-site/blob/master/src/docs/components/index.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
 </footer>
 
   </div>
