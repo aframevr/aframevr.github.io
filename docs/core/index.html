@@ -37,6 +37,8 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
     <link rel="icon" href="/images/aframe-logo.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="/feed.xml">
+
     <script src="/js/mobile.js" type="text/javascript"></script>
     
       <link rel="stylesheet" href="/css/secondary.css" type="text/css">
@@ -347,11 +349,11 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 <li>Component properties are defined by using a CSS-like syntax.</li>
 </ul>
 <p>For example, to create a pink cube, which requires the <code>geometry</code> and <code>material</code> components:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cube; depth: 1; height: 1; width: 1"</span></span><br><span class="line">          <span class="attribute">material</span>=<span class="value">"color: pink"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: box; depth: 1; height: 1; width: 1"</span></span><br><span class="line">          <span class="attribute">material</span>=<span class="value">"color: pink"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>For web developers, the syntax might seem new, or even odd, but the composability makes it powerful to be able to customize entities in the system. Perhaps we want our cube to give off light; we can simply add the <code>light</code> component:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cube; depth: 1; height: 1; width: 1"</span></span><br><span class="line">          <span class="attribute">material</span>=<span class="value">"color: pink"</span></span><br><span class="line">          <span class="attribute">light</span>=<span class="value">"intensity: 2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: box; depth: 1; height: 1; width: 1"</span></span><br><span class="line">          <span class="attribute">material</span>=<span class="value">"color: pink"</span></span><br><span class="line">          <span class="attribute">light</span>=<span class="value">"intensity: 2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Perhaps we want our cube to also emit a sound. We can add the <a href="sound.html"><code>sound</code> component</a>. And we want to move the cube a little, we can use the <a href="../components/position.html"><code>position</code> component</a>.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cube; depth: 1; height: 1; width: 1"</span></span><br><span class="line">          <span class="attribute">material</span>=<span class="value">"color: pink"</span></span><br><span class="line">          <span class="attribute">light</span>=<span class="value">"intensity: 2"</span></span><br><span class="line">          <span class="attribute">position</span>=<span class="value">"-1 5 0"</span></span><br><span class="line">          <span class="attribute">sound</span>=<span class="value">"src: dangerzone.mp3; volume: 2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">geometry</span>=<span class="value">"primitive: box; depth: 1; height: 1; width: 1"</span></span><br><span class="line">          <span class="attribute">material</span>=<span class="value">"color: pink"</span></span><br><span class="line">          <span class="attribute">light</span>=<span class="value">"intensity: 2"</span></span><br><span class="line">          <span class="attribute">position</span>=<span class="value">"-1 5 0"</span></span><br><span class="line">          <span class="attribute">sound</span>=<span class="value">"src: dangerzone.mp3; volume: 2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>We see that components make it very easy to compose entities with mixtures of behavior and functionality and everyone can write their own components to modify entities however they desire. For example, someone might write a <code>vibrate</code> component that makes the entity vibrate regardless of which kind of entity it is. Although it might seem verbose, it provides a core foundation for abstraction.</p>
 
 
@@ -363,7 +365,7 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     </footer>
 
     <footer class="footer footnote">
-  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe-site/blob/master/src/docs/core/index.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/docs/core/index.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
 </footer>
 
   </div>

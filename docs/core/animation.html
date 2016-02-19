@@ -37,6 +37,8 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
     <link rel="icon" href="/images/aframe-logo.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="/feed.xml">
+
     <script src="/js/mobile.js" type="text/javascript"></script>
     
       <link rel="stylesheet" href="/css/secondary.css" type="text/css">
@@ -408,7 +410,7 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 <p>This can either be a number of milliseconds to delay or triggered by an event. In this example, we define an animation that waits 2 seconds, from when the animation is attached, before scaling an entity.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">a-animation</span> <span class="attribute">attribute</span>=<span class="value">"scale"</span> <span class="attribute">begin</span>=<span class="value">"2000"</span> <span class="attribute">to</span>=<span class="value">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>In this example, we define an animation that waits for the parent element to trigger an event named <code>fade</code> before fading an entity.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">id</span>=<span class="value">"fading-cube"</span> <span class="attribute">geometry</span>=<span class="value">"primitive: cube"</span> <span class="attribute">material</span>=<span class="value">"opacity: 1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">a-animation</span> <span class="attribute">attribute</span>=<span class="value">"material.opacity"</span> <span class="attribute">begin</span>=<span class="value">"fade"</span> <span class="attribute">to</span>=<span class="value">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-entity</span> <span class="attribute">id</span>=<span class="value">"fading-cube"</span> <span class="attribute">geometry</span>=<span class="value">"primitive: box"</span> <span class="attribute">material</span>=<span class="value">"opacity: 1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">a-animation</span> <span class="attribute">attribute</span>=<span class="value">"material.opacity"</span> <span class="attribute">begin</span>=<span class="value">"fade"</span> <span class="attribute">to</span>=<span class="value">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Trigger an event to begin fading.</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#fading-cube'</span>).emit(<span class="string">'fade'</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="Direction"><a href="#Direction" class="headerlink" title="Direction"></a>Direction</h2><p>The <code>direction</code> attribute defines which way to animate between the starting value and the final value.</p>
 <p>When an alternating direction is defined the animation will go back and forth between the values like a yo-yo. Alternating directions only take affect when the animation is set to repeat.</p>
@@ -501,7 +503,7 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     </footer>
 
     <footer class="footer footnote">
-  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe-site/blob/master/src/docs/core/animation.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/docs/core/animation.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
 </footer>
 
   </div>
