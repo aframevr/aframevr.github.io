@@ -1,8 +1,9 @@
 
 
 
+
 <!DOCTYPE html>
-<html lang="en" data-is-home="false" data-is-mobile="false">
+<html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-root-url="/" data-title="{title} | A-Frame" data-is-spa="" data-ga-id="UA-24056643-4">
   <head>
     <title><a-curvedimage> — A-Frame</title>
     
@@ -18,7 +19,7 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     <meta charset="utf-8">
     <meta name="robots" content="all">
     <meta name="description" content="A-Frame – Building Blocks for the VR Web">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta property="fb:app_id" content="1535794316743373">
     <meta property="og:title" content="A-Frame">
@@ -36,13 +37,22 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     <meta name="twitter:description" content="Building Blocks for the VR Web">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
-    <link rel="icon" href="/images/aframe-logo.png" type="image/x-icon">
+    <meta name="web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="/images/aframe-logo-192.png">
+
+    <link rel="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/images/aframe-logo-152.png">
+
     <link rel="alternate" type="application/rss+xml" title="Feed" href="/feed.xml">
 
-    <script src="/js/mobile.js" type="text/javascript"></script>
+    <script src="/js/compat.js" type="text/javascript"></script>
+
     
       <link rel="stylesheet" href="/css/secondary.css" type="text/css">
     
+
     
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -92,7 +102,7 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     
       <li class="nav-item"><a href="/faq/" class="nav-link nav-link-docs"><span>FAQ</span></a></li>
     
-      <li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs"><span>Changelog</span></a></li>
+      <li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs"><span>Blog</span></a></li>
     
       <li class="nav-item"><a href="/community/" class="nav-link nav-link-docs"><span>Community</span></a></li>
     
@@ -130,22 +140,6 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
         
           <li class="subnav-item ">
             <a href="/docs/guide/cameras-and-lights.html" class="subnav-link">Adding cameras and lights</a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/guide/interactivity.html" class="subnav-link">Adding interactivity</a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/guide/video-and-audio.html" class="subnav-link">Adding video and audio</a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/guide/materials.html" class="subnav-link">Adding materials</a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/guide/animations.html" class="subnav-link">Adding animations</a>
           </li>
         
       </ol>
@@ -346,9 +340,9 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 <td>geometry.height</td>
 </tr>
 <tr>
-<td>opacty</td>
+<td>opacity</td>
 <td>1</td>
-<td>geometry.radius</td>
+<td>material.opacity</td>
 </tr>
 <tr>
 <td>radius</td>
@@ -383,7 +377,7 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 </tbody>
 </table>
 <p><a href="https://github.com/aframevr/aframe/blob/master/elements/templates/a-curvedimage.html" target="_blank" rel="external">View source on GitHub</a></p>
-<p>Note that the current <code>&lt;a-curvedimage&gt;</code> primitive implementation is a bit difficult to work with. Ensuring that the image is not distorted by stretching requires the developer to carefully set the radius, theta-length and height in relation to the source image aspect ration. Our intent is to dramatically simplify curved images in future versions of A-Frame, so that developers can simply provide an image, a length and a radius, and get back an undistorted image, perfectly fit to the cylinder surface.</p>
+<p>Note that the current <code>&lt;a-curvedimage&gt;</code> primitive implementation is a bit difficult to work with. Ensuring that the image is not distorted by stretching requires the developer to carefully set the radius, theta-length and height in relation to the source image aspect ratio. Our intent is to dramatically simplify curved images in future versions of A-Frame, so that developers can simply provide an image, a length and a radius, and get back an undistorted image, perfectly fit to the cylinder surface.</p>
 <p>Once <code>radius</code>, <code>theta-length</code> and <code>height</code> have been set to avoid distortion, <code>scale</code> can then be used to safely adjust the distance of the curved image relative to the user, assuming both camera and curved image share the same position.</p>
 <h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>A 1247 × 461 bitmap applied undistorted to a curved image:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a-curvedimage</span> <span class="attribute">src</span>=<span class="value">"../_images/ui/2.png"</span> <span class="attribute">radius</span>=<span class="value">"5.7"</span> <span class="attribute">theta-length</span>=<span class="value">"72"</span> <span class="attribute">height</span>=<span class="value">"3.02"</span> <span class="attribute">rotation</span>=<span class="value">"0 100 0"</span> <span class="attribute">scale</span>=<span class="value">"0.8 0.8 0.8"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-curvedimage</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -407,15 +401,11 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 
     </main>
     <script src="/js/common.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-      (function () {
-        if ('FastClick' in window) {
-          document.addEventListener('DOMContentLoaded', function () {
-            FastClick.attach(document.body);
-          });
-        }
-      })();
-    </script>
+    <script src="/js/ga.js" type="text/javascript"></script>
+    <script src="/js/single-page.js" type="text/javascript"></script>
+    
+    
+      <script src="/js/docs.js" type="text/javascript"></script>
+    
   </body>
 </html>
