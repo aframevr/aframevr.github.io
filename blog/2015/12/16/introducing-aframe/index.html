@@ -2,10 +2,15 @@
 
 
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-root-url="/" data-title="{title} | A-Frame" data-is-spa="" data-ga-id="UA-24056643-4">
   <head>
-    <title>Introducing A-Frame 0.1.0 — A-Frame</title>
+    <title>Introducing A-Frame v0.1.0 — A-Frame</title>
     
 
 <script>
@@ -37,20 +42,20 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     <meta name="twitter:description" content="Building Blocks for the VR Web">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
-    <meta name="web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
     <link rel="icon" sizes="192x192" href="/images/aframe-logo-192.png">
 
-    <link rel="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="/images/aframe-logo-152.png">
 
     <link rel="alternate" type="application/rss+xml" title="Feed" href="/feed.xml">
 
-    <script src="/js/compat.js" type="text/javascript"></script>
+    <script src="/js/compat.js"></script>
 
     
-      <link rel="stylesheet" href="/css/secondary.css" type="text/css">
+      <link rel="stylesheet" href="/css/secondary.css">
     
 
     
@@ -91,9 +96,9 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 
   <ul id="nav" class="nav">
     
-      <li class="nav-item"><a href="/docs/guide/" class="nav-link nav-link-docs"><span>Getting Started</span></a></li>
+      <li class="nav-item"><a href="/docs/guide/" class="nav-link nav-link-docs"><span>Guide</span></a></li>
     
-      <li class="nav-item"><a href="/docs/guide/installation.html" class="nav-link nav-link-docs"><span>Install</span></a></li>
+      <li class="nav-item"><a href="/docs/guide/getting-started.html" class="nav-link nav-link-docs"><span>Install</span></a></li>
     
       <li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li>
     
@@ -119,21 +124,22 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 
       <article class="post">
         <h1 class="hidden-visually">Blog</h1>
-        <h2 class="post__heading">Introducing A-Frame 0.1.0</h2>
+        <h2 class="post__heading">Introducing A-Frame v0.1.0</h2>
         <h4 class="post__timestamp">Dec 16, 2015</h4>
-        <h3 id="Today_the_MozVR_team_releases_the_first_version_of_A-Frame_3A_an_open_source_framework_for_creating_WebVR_experiences_with_markup"><a href="#Today_the_MozVR_team_releases_the_first_version_of_A-Frame_3A_an_open_source_framework_for_creating_WebVR_experiences_with_markup" class="headerlink" title="Today the MozVR team releases the first version of A-Frame: an open source framework for creating WebVR experiences with markup."></a>Today the MozVR team releases the first version of A-Frame: an open source framework for creating WebVR experiences with markup.</h3><p>A-Frame makes it easy for web developers to create virtual reality experiences that work across desktop, iPhone, Android, and the Oculus Rift.</p>
+        <h3 id="Today-the-MozVR-team-releases-the-first-version-of-A-Frame-an-open-source-framework-for-creating-WebVR-experiences-with-markup"><a href="#Today-the-MozVR-team-releases-the-first-version-of-A-Frame-an-open-source-framework-for-creating-WebVR-experiences-with-markup" class="headerlink" title="Today the MozVR team releases the first version of A-Frame: an open source framework for creating WebVR experiences with markup."></a>Today the MozVR team releases the first version of A-Frame: an open source framework for creating WebVR experiences with markup.</h3><p><img src="https://cloud.githubusercontent.com/assets/674727/14184791/d20eecdc-f72b-11e5-89f2-15497ed55f0c.png" alt="A-Frame Logo"></p>
+<p>A-Frame makes it easy for web developers to create virtual reality experiences that work across desktop, iPhone, Android, and the Oculus Rift.</p>
 <p>We created A-Frame to make it easier to create VR web experiences. WebVR has shipped in builds of Firefox and Chromium since the summer of 2014, but creating content for it has required knowing WebGL. The WebGL scene is unbelievably talented and has created many mind-blowing VR experiences in the last year, but they are a small subset of the full web dev community. There are millions of talented developers who do not know WebGL. What if each of them could create and share VR experiences on the open web?</p>
 <a id="more"></a>
 <p>A-Frame is designed to be familiar to those web developers. It wraps the power of WebGL in HTML custom elements, so creating a high performance VR experience is as simple as:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="doctype">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://aframe.io/releases/latest/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">a-scene</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">a-sky</span> <span class="attribute">src</span>=<span class="value">"https://aframe.io/aframe/examples/_skies/lake.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-sky</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">a-model</span> <span class="attribute">src</span>=<span class="value">"https://aframe.io/aframe/examples/showcase-composite/sculpture.dae"</span> <span class="attribute">position</span>=<span class="value">"0 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-model</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">a-image</span> <span class="attribute">src</span>=<span class="value">"https://aframe.io/aframe/examples/showcase-composite/portland.png"</span> <span class="attribute">width</span>=<span class="value">"1"</span> <span class="attribute">height</span>=<span class="value">"0.35"</span> <span class="attribute">position</span>=<span class="value">"-2 1.2 1"</span>&gt;</span><span class="tag">&lt;/<span class="title">a-image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>A-Frame ships with powerful and concise “primitives” for common use cases such as 360-degree videos, images, models, skies, and more. Primitives make it easy to block out a scene in minutes. Primitives can also be combined with lighting, animation, sound and interactivity. For the full list of primitives included in A-Frame 0.1.0, see the <a href="../../../../../docs/primitives/">A-Frame documentation</a>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.1.2/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/aframe/examples/_skies/lake.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-model</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/aframe/examples/showcase-composite/sculpture.dae"</span> <span class="attr">position</span>=<span class="string">"0 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-model</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-image</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/aframe/examples/showcase-composite/portland.png"</span> <span class="attr">width</span>=<span class="string">"1"</span> <span class="attr">height</span>=<span class="string">"0.35"</span> <span class="attr">position</span>=<span class="string">"-2 1.2 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>A-Frame ships with powerful and concise “primitives” for common use cases such as 360-degree videos, images, models, skies, and more. Primitives make it easy to block out a scene in minutes. Primitives can also be combined with lighting, animation, sound and interactivity. For the full list of primitives included in A-Frame v0.1.0, see the <a href="../../../../../docs/primitives/">A-Frame documentation</a>.</p>
 <p>For users who want deeper control and flexibility, A-Frame is built on an entity-component system which provides accessible components for lighting, materials, re-usable assets, and more. This pattern is common in the game development world, and is the backbone of A-Frame. Visit the <a href="../../../../../docs/core/">A-Frame documentation</a> to learn more about the entity-component system.</p>
 <p>A-Frame is ultimately just the DOM, so developers can also manipulate it with standard JavaScript methods, such as:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> scene = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</span><br><span class="line"><span class="keyword">var</span> cube = <span class="built_in">document</span>.createElement(<span class="string">'a-cube'</span>);</span><br><span class="line">cube.setAttribute(<span class="string">'color'</span>, <span class="string">'red'</span>);</span><br><span class="line">scene.appendChild(cube);</span><br></pre></td></tr></table></figure>
 <p>A-Frame is new. The 0.1 version has several known issues (Android rendering textures as black, for example), and the API will change over the next few months as we get feedback and open source contributions. Our hope is that early adopters find it as fun as we do, and join us in improving A-Frame over time.</p>
 <p>To get started with A-Frame, visit <a href="https://aframe.io/">aframe.io</a>, <a href="../../../../../examples/">view the examples</a> and <a href="../../../../../docs/guide/">grab the code</a>. The <a href="../../../../../faq/">FAQ</a> provides additional details.</p>
 <p>To discuss A-Frame with our team and fellow developers, hop into the <a href="https://aframevr-slack.herokuapp.com/" target="_blank" rel="external">A-Frame Slack channel</a>. Feedback is welcomed at <a href="https://twitter.com/aframevr/" target="_blank" rel="external">@aframevr</a>. As are <a href="https://github.com/aframevr/aframe/issues/" target="_blank" rel="external">bug reports</a> and <a href="https://github.com/aframevr/aframe/" target="_blank" rel="external">pull requests</a>. For the latest overall WebVR setup instructions, visit <a href="http://mozvr.com/" target="_blank" rel="external">MozVR.com</a>.</p>
-<p>Special thanks to the A-Frame team for several months of hard work getting 0.1.0 out the door:</p>
+<p>Special thanks to the A-Frame team for several months of hard work getting v0.1.0 out the door:</p>
 <ul>
 <li><a href="https://twitter.com/whoyee" target="_blank" rel="external">Casey Yee</a></li>
 <li><a href="https://twitter.com/cvanw" target="_blank" rel="external">Chris Van Wiemeersch</a></li>
@@ -169,10 +175,12 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 </div>
 
     </main>
-    <script src="/js/common.js" type="text/javascript"></script>
-    <script src="/js/ga.js" type="text/javascript"></script>
-    <script src="/js/single-page.js" type="text/javascript"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
     
+    
+      <script src="/js/docs.js"></script>
     
   </body>
 </html>

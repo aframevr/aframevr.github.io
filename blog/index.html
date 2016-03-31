@@ -2,6 +2,11 @@
 
 
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-root-url="/" data-title="{title} | A-Frame" data-is-spa="" data-ga-id="UA-24056643-4">
   <head>
@@ -37,20 +42,20 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
     <meta name="twitter:description" content="Building Blocks for the VR Web">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
-    <meta name="web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
     <link rel="icon" sizes="192x192" href="/images/aframe-logo-192.png">
 
-    <link rel="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="/images/aframe-logo-152.png">
 
     <link rel="alternate" type="application/rss+xml" title="Feed" href="/feed.xml">
 
-    <script src="/js/compat.js" type="text/javascript"></script>
+    <script src="/js/compat.js"></script>
 
     
-      <link rel="stylesheet" href="/css/secondary.css" type="text/css">
+      <link rel="stylesheet" href="/css/secondary.css">
     
 
     
@@ -91,9 +96,9 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 
   <ul id="nav" class="nav">
     
-      <li class="nav-item"><a href="/docs/guide/" class="nav-link nav-link-docs"><span>Getting Started</span></a></li>
+      <li class="nav-item"><a href="/docs/guide/" class="nav-link nav-link-docs"><span>Guide</span></a></li>
     
-      <li class="nav-item"><a href="/docs/guide/installation.html" class="nav-link nav-link-docs"><span>Install</span></a></li>
+      <li class="nav-item"><a href="/docs/guide/getting-started.html" class="nav-link nav-link-docs"><span>Install</span></a></li>
     
       <li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li>
     
@@ -123,9 +128,18 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 
       
         <article class="post">
-          <h2 class="post__heading">Introducing A-Frame 0.1.0</h2>
+          <h2 class="post__heading">A-Frame v0.2.0 - The Extensible VR Web</h2>
+          <h4 class="post__timestamp">Mar 31, 2016</h4>
+          <div class="post__excerpt"><p><img src="https://cloud.githubusercontent.com/assets/674727/14156618/3258460c-f67c-11e5-8176-5b66c3169a1c.gif" alt="A-Frame Community Examples"></p>
+<p>After three fun and busy months of development, we are proud to announce the release of A-Frame version 0.2.0. This version’s overarching theme is <em>extensibility</em>. For WebVR to evolve quickly, in a period in which VR is dominated by closed native ecosystems, A-Frame needs to enable open experimentation and rapid iteration. A-Frame’s inherent extensibility grants developers permissionless innovation, making it the VR-flavored embodiment of the <a href="https://www.w3.org/community/nextweb/2013/06/11/the-extensible-web-manifesto/">Extensible Web Manifesto</a>.</p></div>
+          <a href="/blog/2016/03/31/aframe-v0.2.0/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post">
+          <h2 class="post__heading">Introducing A-Frame v0.1.0</h2>
           <h4 class="post__timestamp">Dec 16, 2015</h4>
-          <div class="post__excerpt"><h3 id="Today_the_MozVR_team_releases_the_first_version_of_A-Frame_3A_an_open_source_framework_for_creating_WebVR_experiences_with_markup"><a href="#Today_the_MozVR_team_releases_the_first_version_of_A-Frame_3A_an_open_source_framework_for_creating_WebVR_experiences_with_markup" class="headerlink" title="Today the MozVR team releases the first version of A-Frame: an open source framework for creating WebVR experiences with markup."></a>Today the MozVR team releases the first version of A-Frame: an open source framework for creating WebVR experiences with markup.</h3><p>A-Frame makes it easy for web developers to create virtual reality experiences that work across desktop, iPhone, Android, and the Oculus Rift.</p>
+          <div class="post__excerpt"><h3 id="Today-the-MozVR-team-releases-the-first-version-of-A-Frame-an-open-source-framework-for-creating-WebVR-experiences-with-markup"><a href="#Today-the-MozVR-team-releases-the-first-version-of-A-Frame-an-open-source-framework-for-creating-WebVR-experiences-with-markup" class="headerlink" title="Today the MozVR team releases the first version of A-Frame: an open source framework for creating WebVR experiences with markup."></a>Today the MozVR team releases the first version of A-Frame: an open source framework for creating WebVR experiences with markup.</h3><p><img src="https://cloud.githubusercontent.com/assets/674727/14184791/d20eecdc-f72b-11e5-89f2-15497ed55f0c.png" alt="A-Frame Logo"></p>
+<p>A-Frame makes it easy for web developers to create virtual reality experiences that work across desktop, iPhone, Android, and the Oculus Rift.</p>
 <p>We created A-Frame to make it easier to create VR web experiences. WebVR has shipped in builds of Firefox and Chromium since the summer of 2014, but creating content for it has required knowing WebGL. The WebGL scene is unbelievably talented and has created many mind-blowing VR experiences in the last year, but they are a small subset of the full web dev community. There are millions of talented developers who do not know WebGL. What if each of them could create and share VR experiences on the open web?</p></div>
           <a href="/blog/2015/12/16/introducing-aframe/" class="post__more">Read more &hellip;</a>
         </article>
@@ -141,10 +155,12 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 </div>
 
     </main>
-    <script src="/js/common.js" type="text/javascript"></script>
-    <script src="/js/ga.js" type="text/javascript"></script>
-    <script src="/js/single-page.js" type="text/javascript"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
     
+    
+      <script src="/js/docs.js"></script>
     
   </body>
 </html>
