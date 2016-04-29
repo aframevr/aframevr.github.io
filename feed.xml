@@ -8,8 +8,29 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>Building Blocks for the VR Web</description>
-    <pubDate>Fri, 22 Apr 2016 20:39:50 GMT</pubDate>
+    <pubDate>Fri, 29 Apr 2016 17:57:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>A Week of A-Frame 11</title>
+      <link>https://aframe.io/blog/awoa-11/</link>
+      <guid>https://aframe.io/blog/awoa-11/</guid>
+      <pubDate>Fri, 29 Apr 2016 07:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;h3 id=&quot;Guides&quot;&gt;&lt;a href=&quot;#Guides&quot; class=&quot;headerlink&quot; title=&quot;Guides&quot;&gt;&lt;/a&gt;Guides&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/andgokevin&quot; target=
+      
+      </description>
+      
+      <content:encoded>&lt;h3 id=&quot;Guides&quot;&gt;&lt;a href=&quot;#Guides&quot; class=&quot;headerlink&quot; title=&quot;Guides&quot;&gt;&lt;/a&gt;Guides&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/andgokevin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@andgokevin&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=f2pu-oMspLs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;introduced&lt;/a&gt; A-Frame at &lt;em&gt;ForwardJS&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twittter.com/captDayLight&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@captDayLight&lt;/a&gt; &lt;a href=&quot;https://blog.neondaylight.com/build-a-simple-web-vr-ui-with-a-frame-a17a2d5b484&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wrote&lt;/a&gt; about building a simple UI with A-Frame.&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+      
+      <comments>https://aframe.io/blog/awoa-11/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 10</title>
@@ -304,47 +325,6 @@
 </content:encoded>
       
       <comments>https://aframe.io/blog/awoa-01/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>360&amp;deg; Photosphere Viewer</title>
-      <link>https://aframe.io/blog/photosphere-viewer/</link>
-      <guid>https://aframe.io/blog/photosphere-viewer/</guid>
-      <pubDate>Fri, 22 Jan 2016 08:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Chris from &lt;a href=&quot;https://www.ideaspacevr.org/&quot;&gt;IdeaSpaceVR&lt;/a&gt; has built an interactive 360-degree photosphere viewer. Space bar toggles a menu system, and a gaze-based cursor selects photos.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Recently I installed the Cardboard Camera app on my phone. It is a 360-degree photosphere VR app for Google Cardboard including a nice menu in VR which allows one to easily select photos from a list. The photosphere is showing photos with a so-called equirectangular projection (did not hear about that term before, as I am not a photo nerd ;-) ).&lt;/p&gt;
-&lt;p&gt;Since I knew that A-Frame had been released I thought of implementing this app in A-Frame, as I thought it might be quite easy to do, AND I would learn coding in A-Frame.&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded>&lt;blockquote&gt;
-&lt;p&gt;Chris from &lt;a href=&quot;https://www.ideaspacevr.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;IdeaSpaceVR&lt;/a&gt; has built an interactive 360-degree photosphere viewer. Space bar toggles a menu system, and a gaze-based cursor selects photos.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Recently I installed the Cardboard Camera app on my phone. It is a 360-degree photosphere VR app for Google Cardboard including a nice menu in VR which allows one to easily select photos from a list. The photosphere is showing photos with a so-called equirectangular projection (did not hear about that term before, as I am not a photo nerd ;-) ).&lt;/p&gt;
-&lt;p&gt;Since I knew that A-Frame had been released I thought of implementing this app in A-Frame, as I thought it might be quite easy to do, AND I would learn coding in A-Frame.&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;After a few hours of playing around I realised that&lt;/p&gt;
-&lt;p&gt;(a) yes it is easy to implement a photosphere BUT&lt;br&gt;(b) implementing a decent VR menu could not be done by just using A-Frame tags.&lt;/p&gt;
-&lt;p&gt;Which lead me to implement my first component for A-Frame. As it turned out, I needed actually two components:&lt;/p&gt;
-&lt;p&gt;The first component handles the VR photo menu (showing the menu, hiding the menu, position it in space). This component acts as a container for the photo thumbnails. You can check out the &lt;a href=&quot;https://github.com/IdeaSpaceVR/aframe-360-degree-photosphere/blob/master/js/components/isvr_photosphere_menu.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;source code here&lt;/a&gt;. I have to admit that I was not able to write the code for positioning the menu in space. So I turned to &lt;a href=&quot;http://stackoverflow.com/questions/34447119/positioning-a-three-js-object-in-front-of-the-camera-but-not-tied-to-the-camera&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stack Overflow&lt;/a&gt; which helped me out on that one (again).&lt;/p&gt;
-&lt;p&gt;The second component is associated to each photo thumbnail within the menu container. I handles the selection of the photo via the mouse click event. I disabled the fuse cursors which would normally emit this click event. After many tests I decided that I did not like the fuse cursor for selecting photos. I guess people nowadays either have a Cardboard 2.0 (which supports a button) or an Oculus Rift and a mouse and keyboard. Additionally, I decided to only show the cursor when the menu is visible.&lt;/p&gt;
-&lt;p&gt;The main index.html file is straightforward. It contains the code for the photo thumbnail menu animation, the sky tag, the camera, the cursor, and their settings. Here’s the &lt;a href=&quot;https://github.com/IdeaSpaceVR/aframe-360-degree-photosphere/blob/master/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;source code&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Anyway, this is a very first version of the 360-photosphere viewer, but I am quite pleased with it.&lt;/p&gt;
-&lt;p&gt;All photos are licensed under &lt;a href=&quot;https://creativecommons.org/licenses/by/2.0/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Creative Commons 2.0 Generic Attribution&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.flickr.com/search/?text=equirectangular&amp;amp;license=4%2C5%2C9%2C10&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flickr is a good source of equirectangular photos&lt;/a&gt;, or you can create your own by using Android Camera app (using the photosphere option).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Instructions for the example:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Space bar for showing and hiding the menu&lt;/li&gt;
-&lt;li&gt;Gaze and mouse click to select a photo&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;
-</content:encoded>
-      
-      <comments>https://aframe.io/blog/photosphere-viewer/#disqus_thread</comments>
     </item>
     
   </channel>

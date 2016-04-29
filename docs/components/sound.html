@@ -428,7 +428,20 @@ if (host === 'http://aframe.io' || host === 'http://aframevr.github.io') {
 </tr>
 </tbody>
 </table>
-<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><p>| Event Name  | Description                           |<br>|————-+—————————————|<br>| sound-ended | triggered when sound finishes playing |</p>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sound-ended</td>
+<td>triggered when sound finishes playing</td>
+</tr>
+</tbody>
+</table>
 <h2 id="Playing-on-an-Event"><a href="#Playing-on-an-Event" class="headerlink" title="Playing on an Event"></a>Playing on an Event</h2><p>The <code>sound</code> component can also listen to an event before playing as well. For example, we might have a laughing sound play every time a monster is clicked:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span> <span class="attr">position</span>=<span class="string">"0 0 -5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"elmo"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"src: elmo.png"</span></span><br><span class="line">          <span class="attr">sound</span>=<span class="string">"src: ticklelaugh.mp3; on: click"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="Preloading-a-Sound-Asset"><a href="#Preloading-a-Sound-Asset" class="headerlink" title="Preloading a Sound Asset"></a>Preloading a Sound Asset</h2><p>For performance, it is recommended to block the scene on the sound asset to preload and cache. We can do so through the asset management system:</p>
