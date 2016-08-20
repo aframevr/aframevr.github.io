@@ -1,0 +1,2246 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.3.0"
+      data-docs-version="blog">
+  <head>
+    <title>Blog – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="canonical" href="https://aframe.io">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:image" content="http://aframe.io/images/card.png">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="A-Frame">
+    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:image" content="https://aframe.io/images/card.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+
+    <script src="/js/compat.js"></script>
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+  <body data-page-layout="blog"
+        data-page-type="blog">
+    
+      <aside class="sidebar sidebar-mobile borderless-links c">
+  <header id="header" class="header">
+    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
+    <a id="logo" class="logo" href="/">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+</aside>
+
+    
+    <main id="main" class="main">
+      <aside class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.3.0/introduction/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/faq/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>FAQ</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs current"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+  </div>
+</aside>
+
+<div class="content content--blog copy post">
+  <div class="copy__wrap">
+    
+      <h1 class="page__title">Blog</h1>
+
+      
+
+      
+        <article class="post post-listing">
+          <a href="/blog/aframe-v0.3.0/">
+            <h2 class="post__heading">A-Frame v0.3.0 - Walk in a Web Page</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Aug 16, 2016</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/andgokevin">Kevin Ngo</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <img src="/images/blog/v0.3.0-roomscale.gif" alt="A-Frame v0.3.0 - Walk in a Web Page">
+  
+
+
+            <div class="post__excerpt"><p>A-Frame <strong>v0.3.0</strong> has dropped! With support for the <strong><a href="https://w3c.github.io/webvr/">new WebVR 1.0
+API</a></strong>, we aim higher towards state-of-the-art VR. With room-scale
+tracking, we can walk in a web page, and with tracked controller support, we
+can reach out into the world.</p></div>
+          
+
+          <a href="/blog/aframe-v0.3.0/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-25/">
+            <h2 class="post__heading">A Week of A-Frame 25</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Aug 12, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Aug 5, 2016 to Aug 12, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://github.com/bryik/aframe-dominoes" title="Dominoes"
+         style="background-image: url(/images/awoa/dominoes.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/bryik/aframe-ball-throw" title="Ball Throw"
+         style="background-image: url(/images/awoa/ball-throw.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/bryik/aframe-terrain-model-component" title="Terrain Model Component"
+         style="background-image: url(/images/awoa/terrain-model.jpg)"></a>
+    
+  
+    
+      <a href="https://gurumukhi.github.io/vr-ram/demos/lyricsVR/index.html" title="Lyrics VR"
+         style="background-image: url(/images/awoa/lyrics-vr.gif)"></a>
+    
+  
+    
+      <a href="http://tushararora.github.io/rubiks-cube/" title="Rubik's Cube"
+         style="background-image: url(/images/awoa/rubiks-cube.gif)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-25/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-24/">
+            <h2 class="post__heading">A Week of A-Frame 24</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Aug 5, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jul 29, 2016 to Aug 5, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://github.com/autonome/aframe-ar" title="A-Frame AR"
+         style="background-image: url(/images/awoa/aframe-ar.gif)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-magicavoxel-projects/outsidelands/" title="Outside Lands VR"
+         style="background-image: url(/images/awoa/outsidelands.jpg)"></a>
+    
+  
+    
+      <a href="https://homehope.corriere.it" title="Home / Hope"
+         style="background-image: url(/images/awoa/home-hope.jpg)"></a>
+    
+  
+    
+      <a href="http://webvr-demos-nikolaiwarner.c9users.io:8081/" title="RunJumpDev Slides"
+         style="background-image: url(/images/awoa/runjumpdev-slides.jpg)"></a>
+    
+  
+    
+      <a href="http://jsbin.com/janevom/edit?html,output" title="Multiplayer Tic Tac Toe"
+         style="background-image: url(/images/awoa/multiplayer-tic-tac-toe.jpg)"></a>
+    
+  
+    
+      <a href="http://codepen.io/collection/AKkywv/" title="30 Days of WebVR"
+         style="background-image: url(/images/awoa/thirty-days-of-webvr.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/blairmacintyre/aframe-look-at-component/" title="Look At and Billboard Component"
+         style="background-image: url(/images/awoa/billboard-component.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-24/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-23/">
+            <h2 class="post__heading">A Week of A-Frame 23</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jul 29, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jul 22, 2016 to Jul 29, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://shopifyvr.myshopify.com/" title="Shopify &mdash; City Shoes"
+         style="background-image: url(/images/awoa/shopify.jpg)"></a>
+    
+  
+    
+      <a href="https://twitter.com/andgokevin/status/759183942612160512" title="Physics & Controllers Demo"
+         style="background-image: url(/images/awoa/physics-controllers-demo.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/bryik/aframe-vive-cursor-component" title="Vive Cursor Component"
+         style="background-image: url(/images/awoa/vive-cursor-component.gif)"></a>
+    
+  
+    
+      <a href="https://carbonfive.github.io/vrogger/" title="Vrogger"
+         style="background-image: url(/images/awoa/vrogger.gif)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-statistics-dashboard/" title="A-Frame Statistics Dashboard"
+         style="background-image: url(/images/awoa/aframe-statistics-dashboard.jpg)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-magicavoxel-projects/pokemon/" title="Pokemon Stadium (Update)"
+         style="background-image: url(/images/awoa/pokemon-stadium-update.jpg)"></a>
+    
+  
+    
+      <a href="http://eddiebarkman.github.io/VR-Design-Portfolio/" title="Design Portfolio"
+         style="background-image: url(/images/awoa/design-portfolio.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-23/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-22/">
+            <h2 class="post__heading">A Week of A-Frame 22</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jul 22, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jul 15, 2016 to Jul 22, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://apps.npr.org/rockymountain-vr/" title="Stand at the Edge of Geologic Time"
+         style="background-image: url(/images/awoa/stand-at-the-edge-of-geologic-time.jpg)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-magicavoxel-projects/aframe/" title="MagicaVoxel: A-Frame"
+         style="background-image: url(/images/awoa/magicavoxel-aframe.jpg)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-magicavoxel-projects/pokemon/" title="MagicaVoxel: Pokemon"
+         style="background-image: url(/images/awoa/magicavoxel-pokemon.gif)"></a>
+    
+  
+    
+      <a href="https://www.hackster.io/RONDAGDAG/control-your-earth-rover-in-virtual-reality-15a9fe" title="Earth Rover"
+         style="background-image: url(/images/awoa/earth-rover.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/aframe-animation-component" title="Animation Component"
+         style="background-image: url(/images/awoa/animation-component.gif)"></a>
+    
+  
+    
+      <a href="https://bryik.github.io/aframe-metaverse-contest/examples/imagined-reality.html" title="Imagined Reality"
+         style="background-image: url(/images/awoa/imagined-reality.jpg)"></a>
+    
+  
+    
+      <a href="http://vrweb.io/p/starCrossed/" title="Star Crossed"
+         style="background-image: url(/images/awoa/star-crossed.jpg)"></a>
+    
+  
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-22/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-21/">
+            <h2 class="post__heading">A Week of A-Frame 21</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jul 15, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jul 8, 2016 to Jul 15, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://nylki.github.io/aframe-lsystem-component/forrest/" title="Procedural Forest"
+         style="background-image: url(/images/awoa/procedural-forest.jpg)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-magicavoxel-projects/city/" title="MagicaVoxel: City"
+         style="background-image: url(/images/awoa/magicavoxel-city.jpg)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/SadIsland.html" title="Sad Island"
+         style="background-image: url(/images/awoa/sad-island.jpg)"></a>
+    
+  
+    
+      <a href="https://gurivr.com/" title="Guri VR"
+         style="background-image: url(/images/awoa/gurivr.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/impronunciable/aframe-chartbuilder-component" title="ChartBuilder Component"
+         style="background-image: url(/images/awoa/chartbuilder-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/brakmic/Angular_VRDemo" title="Angular 2 Boilerplate"
+         style="background-image: url(/images/awoa/angular2.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-21/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-20/">
+            <h2 class="post__heading">A Week of A-Frame 20</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jul 8, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jul 1, 2016 to Jul 8, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://aeon.horoman.com/" title="Aeon"
+         style="background-image: url(/images/awoa/aeon.gif)"></a>
+    
+  
+    
+      <a href="http://vrviewer.istaging.co/#!/684173" title="iStaging LiveTour"
+         style="background-image: url(/images/awoa/istaging-livetour.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/auxdesigner/Sketch-to-VR" title="Sketch to VR"
+         style="background-image: url(/images/awoa/sketch-to-vr.gif)"></a>
+    
+  
+    
+      <a href="https://chrome.google.com/webstore/detail/webvr-api-emulation/gbdnpaebafagioggnhkacnaaahpiefil" title="WebVR API Emulation Extension"
+         style="background-image: url(/images/awoa/webvr-api-emulation-extension.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/aframe-mss" title="Mixin Style Sheets (MSS)"
+         style="background-image: url(/images/awoa/mss.jpg)"></a>
+    
+  
+    
+      <a href="http://www.bubbletanks.biz/" title="Tanks"
+         style="background-image: url(/images/awoa/tanks.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/wallabyway/aframe-stereocube" title="Stereo Cube Component"
+         style="background-image: url(/images/awoa/stereo-cube-component.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/dannielle/tinier-house" title="Choose Your Own VR"
+         style="background-image: url(/images/awoa/choose-your-own-vr.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/Utopiah/aframe-triggerbox-component" title="Trigger Box Component"
+         style="background-image: url(/images/awoa/trigger-box-component.jpg)"></a>
+    
+  
+    
+      <a href="http://dirosa.me/cat-garden/" title="Cat Garden"
+         style="background-image: url(/images/awoa/cat-garden.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-20/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-19/">
+            <h2 class="post__heading">A Week of A-Frame 19</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jul 1, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jun 24, 2016 to Jul 1, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://flexingdream.github.io/aframe_demo/" title="Virtual Symphony I"
+         style="background-image: url(/images/awoa/virtual-symphony-1.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/bryik/aframe-bmfont-text-component" title="Bitmap Font Text Component"
+         style="background-image: url(/images/awoa/bmfont-text-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/oscarmarinmiro/aframe-video-controls" title="Video Controls Component"
+         style="background-image: url(/images/awoa/video-controls-component.jpg)"></a>
+    
+  
+    
+      <a href="https://popathon.github.io/Gexit/hq.html" title="Brexit in Berlin"
+         style="background-image: url(/images/awoa/brexit.gif)"></a>
+    
+  
+    
+      <a href="https://musicpua.firebaseapp.com/" title="Virtual Symphony II"
+         style="background-image: url(/images/awoa/virtual-symphony-2.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/nylki/aframe-lsystem-component" title="L-System Component"
+         style="background-image: url(/images/awoa/l-system-component.jpg)"></a>
+    
+  
+    
+      <a href="http://georational.github.io/VRVisitors/VRVisitors.html" title="VRVisitors"
+         style="background-image: url(/images/awoa/vrvisitors.jpg)"></a>
+    
+  
+    
+      <a href="http://vr.greenbushlabs.com/" title="VR Space Builder for Kids"
+         style="background-image: url(/images/awoa/vr-space-builder-for-kids.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-19/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-18/">
+            <h2 class="post__heading">A Week of A-Frame 18</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jun 17, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jun 10, 2016 to Jun 17, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://almossawi.com/aframe-d3-visualization/demo/" title="Where is Piers Morgan Disliked the Most?"
+         style="background-image: url(/images/awoa/where-is-piers-morgan-disliked-the-most.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/AvikaN/WebVR" title="Blanket Component"
+         style="background-image: url(/images/awoa/blanket.gif)"></a>
+    
+  
+    
+      <a href="http://armthethinker.github.io/webVR-experiments/6--head-tracked-transformations.html" title="Head-Tracked Transformations"
+         style="background-image: url(/images/awoa/head-tracked-transformations.jpg)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/firstcitadel.html" title="First Citadel"
+         style="background-image: url(/images/awoa/firstcitadel.jpg)"></a>
+    
+  
+    
+      <a href="http://armthethinker.github.io/webVR-experiments/5--missed-connections.html" title="Missed Connections"
+         style="background-image: url(/images/awoa/missed-connections.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/richardanaya/aframe-keyboard" title="Keyboard Material Component"
+         style="background-image: url(/images/awoa/aframe-keyboard.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/richardanaya/aframe-keyboard" title="VRWeb.IO"
+         style="background-image: url(/images/awoa/vrwebio.jpg)"></a>
+    
+  
+    
+      <a href="https://brt-webvr-fjrtyyjbhf.now.sh/vn-geary.html" title="SFMTA Van Ness BRT Model"
+         style="background-image: url(/images/awoa/brt.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/richardanaya/aframe-html" title="HTML Material Component"
+         style="background-image: url(/images/awoa/aframe-html.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/richardanaya/aframe-canvas" title="Canvas Material Component"
+         style="background-image: url(/images/awoa/aframe-canvas.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-18/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-17/">
+            <h2 class="post__heading">A Week of A-Frame 17</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jun 10, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jun 3, 2016 to Jun 10, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://github.com/IdeaSpaceVR/aframe-particle-system-component" title="Particle System Component"
+         style="background-image: url(/images/awoa/particle-system-component.gif)"></a>
+    
+  
+    
+      <a href="http://vrwikimuseum.com/" title="VR Wiki Museum"
+         style="background-image: url(/images/awoa/vr-wiki-museum.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/richardanaya/aframe-webvr-controller" title="WebVR Controller Component"
+         style="background-image: url(/images/awoa/webvr-controller-component.jpg)"></a>
+    
+  
+    
+      <a href="http://uniform-futures.github.io/sketch-vr/" title="Sketch VR"
+         style="background-image: url(/images/awoa/sketch-vr.jpg)"></a>
+    
+  
+    
+      <a href="https://young-refuge-92841.herokuapp.com" title="Virtual Reality Music Player"
+         style="background-image: url(/images/awoa/virtual-reality-music-player.jpg)"></a>
+    
+  
+    
+      <a href="http://weatherroom.herokuapp.com/" title="Weather Room"
+         style="background-image: url(/images/awoa/weather-room.jpg)"></a>
+    
+  
+    
+      <a href="https://twitter.com/fernandojsg/status/740685191581175810" title="Bullets (Teaser)"
+         style="background-image: url(/images/awoa/bullets.gif)"></a>
+    
+  
+    
+      <a href="https://twitter.com/fernandojsg/status/739967255098851328/photo/1" title="A-Frame Painter (Update)"
+         style="background-image: url(/images/awoa/painter-update.jpg)"></a>
+    
+  
+    
+      <a href="https://www.drupal.org/project/aframe" title="A-Frame + Drupal"
+         style="background-image: url(/images/awoa/drupal.jpg)"></a>
+    
+  
+    
+      <a href="http://valentin.design/vr" title="CinemVR Design Prototype"
+         style="background-image: url(/images/awoa/cinemvr-design-prototype.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-17/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-16/">
+            <h2 class="post__heading">A Week of A-Frame 16</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jun 3, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of May 27, 2016 to Jun 3, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://tumbvr.herokuapp.com/theonlymagicleftisart" title="TumbVR"
+         style="background-image: url(/images/awoa/tumbvr.jpg)"></a>
+    
+  
+    
+      <a href="https://twitter.com/dmarcos/status/736452081540829184" title="Sneak Peek: Link Traversal"
+         style="background-image: url(/images/awoa/arturitu-link-traversal.gif)"></a>
+    
+  
+    
+      <a href="https://twitter.com/fernandojsg/status/738040091952701440" title="Sneak Peek: Teleportation"
+         style="background-image: url(/images/awoa/fernandojsg-teleportation.gif)"></a>
+    
+  
+    
+      <a href="http://farbs.org/lownauseavrfps/" title="Low Nausea FPS Locomotion"
+         style="background-image: url(/images/awoa/low-nausea-fps-locomotion.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/donmccurdy/aframe-leap-hands" title="Leap Hands Component"
+         style="background-image: url(/images/awoa/leap-hands-component.jpg)"></a>
+    
+  
+    
+      <a href="https://twitter.com/fernandojsg/status/737356455737712642" title="Sneak Peek: Color Selector"
+         style="background-image: url(/images/awoa/fernandojsg-color-selector.gif)"></a>
+    
+  
+    
+      <a href="http://domain-vr.herokuapp.com/" title="Domain VR"
+         style="background-image: url(/images/awoa/domain-vr.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/k-frame" title="k-frame"
+         style="background-image: url(/images/awoa/k-frame.jpg)"></a>
+    
+  
+    
+      <a href="http://fercastillo.com/rcs/volcan/" title="RCS Gallery"
+         style="background-image: url(/images/awoa/rcs-gallery.jpg)"></a>
+    
+  
+    
+      <a href="https://s3.amazonaws.com/cassell-webvr/webvr-soccer-stadium-multiplex/index.html" title="WebVR Soccer Stadium Complex"
+         style="background-image: url(/images/awoa/webvr-soccer-stadium-complex.jpg)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-audio-visualizer-components/spectrum/" title="Audio Visualizer Components Update"
+         style="background-image: url(/images/awoa/audio-visualizer-components-update.gif)"></a>
+    
+  
+    
+      <a href="https://s3.amazonaws.com/cassell-webvr/webvr-soccer-stadium-multiplex/index.html" title="Store"
+         style="background-image: url(/images/awoa/store.jpg)"></a>
+    
+  
+    
+      <a href="http://codepen.io/bryik/pen/XKWgvK" title="d3.js Trident"
+         style="background-image: url(/images/awoa/d3-trident.jpg)"></a>
+    
+  
+    
+      <a href="https://output.jsbin.com/pisaje/" title="VR Inception School"
+         style="background-image: url(/images/awoa/vr-inception-school.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-16/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-15/">
+            <h2 class="post__heading">A Week of A-Frame 15</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">May 27, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of May 20, 2016 to May 27, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://www.elliotplant.com/" title="Celestial Dancers"
+         style="background-image: url(/images/awoa/celestial-dancers.gif)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/darklotus.html" title="Dark Lotus"
+         style="background-image: url(/images/awoa/darklotus.gif)"></a>
+    
+  
+    
+      <a href="http://www.aquilavr.com" title="Aquila VR"
+         style="background-image: url(/images/awoa/aquilavr.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/aframe-audio-visualizer-components/tree/nodancer" title="Audio Analyser Node Components"
+         style="background-image: url(/images/awoa/audio-analyser.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/bryik/aframe-cubemap-component" title="Cubemap Component"
+         style="background-image: url(/images/awoa/cubemap.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/plinko/" title="Plinko"
+         style="background-image: url(/images/awoa/plinko.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/foosball/" title="Foosball"
+         style="background-image: url(/images/awoa/foosball.jpg)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-firebase-component/presentation/" title="Firebase Presentation"
+         style="background-image: url(/images/awoa/firebase-presentation.gif)"></a>
+    
+  
+    
+      <a href="http://www.poopvr.biz/" title="Poop VR"
+         style="background-image: url(/images/awoa/poop-vr.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-15/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-14/">
+            <h2 class="post__heading">A Week of A-Frame 14</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">May 20, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of May 13, 2016 to May 20, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://github.com/ngokevin/aframe-firebase-component" title="Firebase Component"
+         style="background-image: url(/images/awoa/firebase-component.gif)"></a>
+    
+  
+    
+      <a href="http://www.jmvisualcreativity.es/vr_eva/" title="EVA"
+         style="background-image: url(/images/awoa/eva.gif)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-audio-visualizer-components/spectrum/" title="Audio Visualizer Component &mdash; Spectrum"
+         style="background-image: url(/images/awoa/audio-visualizer-spectrum.gif)"></a>
+    
+  
+    
+      <a href="http://liooil.neocities.org/VR_webStuff/room+07/room07.html" title="Space Shark Room"
+         style="background-image: url(/images/awoa/space-shark-room.gif)"></a>
+    
+  
+    
+      <a href="http://www.jmvisualcreativity.es/vr_metal/" title="Metal Gear REX"
+         style="background-image: url(/images/awoa/metal-gear-rex.jpg)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/meditationorbs.html" title="Meditation Orbs"
+         style="background-image: url(/images/awoa/meditation-orbs.gif)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/welcome/" title="Welcome"
+         style="background-image: url(/images/awoa/welcome.jpg)"></a>
+    
+  
+    
+      <a href="http://liooil.neocities.org/VR_webStuff/vaporWave.html" title="Vapor Wave"
+         style="background-image: url(/images/awoa/vapor-wave.gif)"></a>
+    
+  
+    
+      <a href="http://www.jmvisualcreativity.es/vr_jump/" title="Jump Island"
+         style="background-image: url(/images/awoa/jump.gif)"></a>
+    
+  
+    
+      <a href="http://www.jmvisualcreativity.es/vr_roof/" title="Roof Escape"
+         style="background-image: url(/images/awoa/roof-escape.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/xirvr/aframe-gltf/" title="glTF Component"
+         style="background-image: url(/images/awoa/gltf-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/donmccurdy/aframe-extras/blob/master/src/controls/checkpoint-controls.js" title="Checkpoint Controls"
+         style="background-image: url(/images/awoa/checkpoint-controls.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/andreasplesch/aframe-heightgrid-component" title="Height Grid / Terrain Component"
+         style="background-image: url(/images/awoa/height-grid-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/aframe-broadcast-component" title="Broadcast Component"
+         style="background-image: url(/images/awoa/broadcast-component.gif)"></a>
+    
+  
+    
+      <a href="http://www.anj.fyi/matrix/" title="Matrix"
+         style="background-image: url(/images/awoa/matrix.gif)"></a>
+    
+  
+    
+      <a href="https://www.ideaspacevr.org/themes/web-vr-photo-sphere-diver-panorama" title="Photo Sphere Diver"
+         style="background-image: url(/images/awoa/photo-sphere-diver.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/Anjlo/AFrame-Additions" title="Draggable &amp; Spawner Components"
+         style="background-image: url(/images/awoa/draggable-spawner-components.gif)"></a>
+    
+  
+    
+      <a href="https://sandbox.donmccurdy.com/vr/force-push/" title="Force Push"
+         style="background-image: url(/images/awoa/force-push.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/IdeaSpaceVR/aframe-ui-modal-component" title="UI Modal Component"
+         style="background-image: url(/images/awoa/ui-modal-component.jpg)"></a>
+    
+  
+    
+      <a href="http://spacepants.azurewebsites.net/homevr.html" title="SpaceTrek"
+         style="background-image: url(/images/awoa/space-trek.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-14/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-13/">
+            <h2 class="post__heading">A Week of A-Frame 13</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">May 13, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of May 6, 2016 to May 13, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/redwooddusk.html" title="Redwood Dusk"
+         style="background-image: url(/images/awoa/redwood-dusk.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/pirate/" title="Pirate"
+         style="background-image: url(/images/awoa/pirate.gif)"></a>
+    
+  
+    
+      <a href="http://deenakhattab.com/thesis/womynography.html" title="Womynography"
+         style="background-image: url(/images/awoa/womynography.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/castle/" title="Castle"
+         style="background-image: url(/images/awoa/castle.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/andreasplesch/aframe-faceset-component" title="Faceset Component"
+         style="background-image: url(/images/awoa/faceset.gif)"></a>
+    
+  
+    
+  
+    
+  
+    
+      <a href="http://drawvr.com/minigolf/" title="Minigolf"
+         style="background-image: url(/images/awoa/minigolf.jpg)"></a>
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-13/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-12/">
+            <h2 class="post__heading">A Week of A-Frame 12</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">May 6, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Apr 29, 2016 to May 6, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://www.anj.fyi/moonbowling/" title="Moon Bowling"
+         style="background-image: url(/images/awoa/moon-bowling.jpg)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/mossmarch.html" title="Moss March"
+         style="background-image: url(/images/awoa/moss-march.jpg)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/spaceblobtowers.html" title="Space Blob Towers"
+         style="background-image: url(/images/awoa/space-blob-towers.jpg)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/carnivalglobetrees.html" title="Carnival Globe Trees"
+         style="background-image: url(/images/awoa/carnival-globe-trees.jpg)"></a>
+    
+  
+    
+      <a href="http://www.anj.fyi/sculpt/" title="A-Brush"
+         style="background-image: url(/images/awoa/a-brush.jpg)"></a>
+    
+  
+    
+      <a href="http://georational.github.io/helloWorldVR.html" title="HelloWorldVR"
+         style="background-image: url(/images/awoa/helloworldvr.jpg)"></a>
+    
+  
+    
+      <a href="http://rudyjahchan.com/may4th/" title="May the 4th Be With You"
+         style="background-image: url(/images/awoa/may-the-fourth.jpg)"></a>
+    
+  
+    
+      <a href="http://andreasplesch.github.io/aframe-pages/components/mesh/" title="Faceset Component"
+         style="background-image: url(/images/awoa/faceset-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/gasolin/aframe-href-component" title="href Component"
+         style="background-image: url(/images/awoa/href-component.jpg)"></a>
+    
+  
+    
+      <a href="http://www.anj.fyi/world/" title="World"
+         style="background-image: url(/images/awoa/world.jpg)"></a>
+    
+  
+    
+      <a href="http://wizgrav.github.io/aframe/examples/360-video-post/" title="Post-Processing Prototype"
+         style="background-image: url(/images/awoa/post-processing.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-12/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-11/">
+            <h2 class="post__heading">A Week of A-Frame 11</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Apr 29, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Apr 22, 2016 to Apr 29, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://sandbox.donmccurdy.com/vr/island/" title="Island"
+         style="background-image: url(/images/awoa/island.gif)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/purple-rain/" title="Purple Rain"
+         style="background-image: url(/images/awoa/prince.gif)"></a>
+    
+  
+    
+      <a href="http://vr.greenlaserpointerstore.com/" title="Green Laser Pointer Store"
+         style="background-image: url(/images/awoa/green-laser-pointer-store.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/lava-cave/" title="Lava Cave"
+         style="background-image: url(/images/awoa/lava-cave.jpg)"></a>
+    
+  
+    
+      <a href="http://tinyhandsfortrump.net/" title="Tiny Hands for Trump"
+         style="background-image: url(/images/awoa/tiny-hands-for-trump.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/aframe-audio-visualizer-components" title="Audio Visualizer Components"
+         style="background-image: url(/images/awoa/audio-visualizer-components.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/donmccurdy/aframe-extras/blob/master/src/primitives/a-ocean.js" title="Ocean Component"
+         style="background-image: url(/images/awoa/ocean-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/dbradleyfl/aframe-gridhelper" title="Grid Helper Component"
+         style="background-image: url(/images/awoa/gridhelper-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/aframe-entity-generator-component" title="Entity Generator Component"
+         style="background-image: url(/images/awoa/entity-generator-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/nylki/aframe-fit-texture-component" title="Fit Texture Component"
+         style="background-image: url(/images/awoa/fit-texture-component.jpg)"></a>
+    
+  
+    
+      <a href="https://www.ideaspacevr.org/" title="IdeaSpace"
+         style="background-image: url(/images/awoa/ideaspacevr.jpg)"></a>
+    
+  
+    
+      <a href="http://ufosnap.com/starfox/" title="Starfox"
+         style="background-image: url(/images/awoa/starfox.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-11/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-10/">
+            <h2 class="post__heading">A Week of A-Frame 10</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Apr 22, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Apr 15, 2016 to Apr 22, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://github.com/AltspaceVR/aframe-altspace-component" title="AltSpaceVR Component"
+         style="background-image: url(/images/awoa/altspacevr.jpg)"></a>
+    
+  
+    
+      <a href="http://topanga-band.com/electrocat/index.html" title="Electrocat"
+         style="background-image: url(/images/awoa/electrocat.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/mayognaise/aframe-draw-shader" title="Draw Shader"
+         style="background-image: url(/images/awoa/draw-shader.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/mayognaise/aframe-html-shader" title="HTML Shader"
+         style="background-image: url(/images/awoa/html-shader.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/mayognaise/aframe-video-shader" title="Video Shader"
+         style="background-image: url(/images/awoa/video-shader.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/mayognaise/aframe-gif-shader" title="GIF Shader"
+         style="background-image: url(/images/awoa/gif-shader.gif)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/overwater.html" title="Sky Islands VR"
+         style="background-image: url(/images/awoa/skyislandsvr.gif)"></a>
+    
+  
+    
+      <a href="https://www.scenevr.com/scenes/398/view" title="Voxel Castle"
+         style="background-image: url(/images/awoa/voxel-castle.jpg)"></a>
+    
+  
+    
+      <a href="https://www.scenevr.com/scenes/397/view" title="Monument Valley Castle"
+         style="background-image: url(/images/awoa/monument-valley-castle.jpg)"></a>
+    
+  
+    
+      <a href="https://atomicguy.github.io/aframe-fence-component/basic/index.html" title="Fence Component"
+         style="background-image: url(/images/awoa/fence-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/andreasplesch/aframe-meshline-component" title="Mesh Line Component"
+         style="background-image: url(/images/awoa/meshline.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/aframe-randomizer-components" title="Randomizer Components"
+         style="background-image: url(/images/awoa/randomizer-components.jpg)"></a>
+    
+  
+    
+      <a href="https://askatom.net/spvr" title="Victorian Exhibit"
+         style="background-image: url(/images/awoa/victorian.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-10/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-09/">
+            <h2 class="post__heading">A Week of A-Frame 9</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Apr 15, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Apr 8, 2016 to Apr 15, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://drawvr.com/escape/" title="Escape Game"
+         style="background-image: url(/images/awoa/escape.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/escape2/" title="Escape 2: The Game"
+         style="background-image: url(/images/awoa/escape2.jpg)"></a>
+    
+  
+    
+      <a href="https://mayognaise.github.io/aframe-gif-component/basic/index.html" title="GIF Component"
+         style="background-image: url(/images/awoa/gif-component.gif)"></a>
+    
+  
+    
+      <a href="https://mayognaise.github.io/aframe-mouse-cursor-component/basic/index.html" title="Mouse Cursor Component"
+         style="background-image: url(/images/awoa/mouse-cursor-component.gif)"></a>
+    
+  
+    
+      <a href="https://mayognaise.github.io/aframe-drag-look-controls-component/basic/index.html" title="Drag Look Controls Component"
+         style="background-image: url(/images/awoa/drag-look-controls-component.gif)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-09/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/syria/">
+            <h2 class="post__heading">Amnesty International UK Presents "Fear of the Sky"</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Apr 13, 2016</p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="http://360syria.com">
+      <img src="/images/blog/syria.jpg" alt="Amnesty International UK Presents "Fear of the Sky"">
+    </a>
+  
+
+
+            <div class="post__excerpt"><p><a href="https://www.amnesty.org.uk/">Amnesty International UK</a> in coordination with development agency <a href="http://www.junior.io/">Junior</a> and the core A-Frame team recently published <a href="http://360syria.com">Fear of the Sky</a>. Fear of the Sky transports viewers to the besieged city of Aleppo, Syria to witness the devastation of Assad’s barrel bombs. The A-Frame site features 360 photos and narration taken by activists in the field. It will be updated with new media as they are collected.</p>
+<p>VR is often referred to as an “empathy machine”. And it is human rights organizations like Amnesty International that are in most need of empathy. With WebVR, they can reach and transport a very large audience to the aftermath.</p>
+<ul>
+<li><a href="https://www.amnesty.org.uk/blogs/ether/360-syria-media-activists-war-crimes-barrel-bombs">Read the feature.</a></li>
+<li><a href="http://www.amnestyusa.org/news/press-releases/360syria-virtual-tour-website-reveals-devastation-of-aleppo-barrel-bombing">Read the press release.</a></li>
+</ul></div>
+          
+
+          <a href="/blog/syria/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/aframe-v0.2.0/">
+            <h2 class="post__heading">A-Frame v0.2.0 - The Extensible VR Web</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Mar 31, 2016</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/andgokevin">Kevin Ngo</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+
+            <div class="post__excerpt"><p><img src="https://cloud.githubusercontent.com/assets/674727/14156618/3258460c-f67c-11e5-8176-5b66c3169a1c.gif" alt="A-Frame Community Examples"></p>
+<p>After three fun and busy months of development, we are proud to announce the release of A-Frame version 0.2.0. This version’s overarching theme is <em>extensibility</em>. For WebVR to evolve quickly, in a period in which VR is dominated by closed native ecosystems, A-Frame needs to enable open experimentation and rapid iteration. A-Frame’s inherent extensibility grants developers permissionless innovation, making it the VR-flavored embodiment of the <a href="https://www.w3.org/community/nextweb/2013/06/11/the-extensible-web-manifesto/">Extensible Web Manifesto</a>.</p></div>
+          
+
+          <a href="/blog/aframe-v0.2.0/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/mars/">
+            <h2 class="post__heading">The Washington Post Presents "Mars: An Interactive Journey"</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Mar 12, 2016</p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="https://www.washingtonpost.com/video/mars/public/">
+      <img src="/images/blog/mars.jpg" alt="The Washington Post Presents "Mars: An Interactive Journey"">
+    </a>
+  
+
+
+            <div class="post__excerpt"><p>In collaboration with a group of students and researchers at the University of Texas at Austin, <em>The Washington Post</em>‘s published an A-Frame feature about Mars and space exploration programs. This is a great example of how WebVR can be used to enhance existing 2D content and reach many people.</p>
+<ul>
+<li><a href="https://www.washingtonpost.com/graphics/business/mars-journey/">Read the feature.</a></li>
+<li><a href="https://www.washingtonpost.com/pr/wp/2016/03/11/experience-mars-with-the-washington-posts-virtual-reality/">Read the press release.</a></li>
+<li><a href="https://developer.washingtonpost.com/pb/blog/post/2016/03/11/vr-for-all/">Read the tech case study.</a></li>
+</ul></div>
+          
+
+          <a href="/blog/mars/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-08/">
+            <h2 class="post__heading">A Week of A-Frame 8</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Mar 11, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Mar 4, 2016 to Mar 11, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://stampswebdesign.com/withersc/kinectscans/" title="Kinect Scans @ Makeathon"
+         style="background-image: url(/images/awoa/kinect-scans.jpg)"></a>
+    
+  
+    
+      <a href="https://www.youtube.com/watch?v=eYyuEjhD-k8" title="CadaVR"
+         style="background-image: url(/images/awoa/cadavr.jpg)"></a>
+    
+  
+    
+      <a href="http://scenevr.com/r/aww" title="Subreddit Gallery"
+         style="background-image: url(/images/awoa/subreddit-gallery.jpg)"></a>
+    
+  
+    
+      <a href="https://danstrong.com/webvr/first-person-shitter/" title="First-Person Sh*tter"
+         style="background-image: url(/images/awoa/first-person-sh*tter.jpg)"></a>
+    
+  
+    
+      <a href="https://s3-us-west-2.amazonaws.com/zenpath/pz/main.html" title="Zenspot"
+         style="background-image: url(/images/awoa/zenspot.jpg)"></a>
+    
+  
+    
+      <a href="http://32studios.magichandsrepair.com/browsertour/lounge/" title="32Studios Lounge"
+         style="background-image: url(/images/awoa/32studios-lounge.jpg)"></a>
+    
+  
+    
+      <a href="https://www.washingtonpost.com/video/mars/public/" title="Mars: An Interactive Journey"
+         style="background-image: url(/images/awoa/mars.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-08/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-07/">
+            <h2 class="post__heading">A Week of A-Frame 7</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Mar 4, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Feb 26, 2016 to Mar 4, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://danstrong.com/webvr/" title="WebVR Forest"
+         style="background-image: url(/images/awoa/webvr-forest.jpg)"></a>
+    
+  
+    
+      <a href="http://vr.ispystore.ca" title="iSpyStore"
+         style="background-image: url(/images/awoa/ispystore.jpg)"></a>
+    
+  
+    
+      <a href="http://www.jon-ibe.be/aframe/" title="Breathing Scape"
+         style="background-image: url(/images/awoa/breathing-scape.jpg)"></a>
+    
+  
+    
+      <a href="http://pixelz.de/vr/hellovr/" title="Hello Virtual World"
+         style="background-image: url(/images/awoa/hello-virtual-world.jpg)"></a>
+    
+  
+    
+      <a href="https://alexoviedo999.github.io/vr-carpet-ride/tron-world/" title="Tron World"
+         style="background-image: url(/images/awoa/tron-world.jpg)"></a>
+    
+  
+    
+      <a href="https://joshgalvin.github.io/arunner/" title="A-Runner"
+         style="background-image: url(/images/awoa/a-runner.jpg)"></a>
+    
+  
+    
+      <a href="https://joshgalvin.github.io/aframemulti/" title="FireFrame"
+         style="background-image: url(/images/awoa/fireframe.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-07/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-06/">
+            <h2 class="post__heading">A Week of A-Frame 6</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Feb 26, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Feb 19, 2016 to Feb 26, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://drawvr.com/living-room/" title="Living Room"
+         style="background-image: url(/images/awoa/living-room.jpg)"></a>
+    
+  
+    
+      <a href="http://vr.jmvisualcreativity.es/" title="JM Visual Creativity"
+         style="background-image: url(/images/awoa/jm-visual-creativity.jpg)"></a>
+    
+  
+    
+      <a href="https://joshgalvin.github.io/SpineFrame/examples/basic" title="SpineFrame"
+         style="background-image: url(/images/awoa/spineframe.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-06/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-05/">
+            <h2 class="post__heading">A Week of A-Frame 5</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Feb 19, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Feb 12, 2016 to Feb 19, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://drawvr.com/drop/" title="Drop"
+         style="background-image: url(/images/awoa/drop.jpg)"></a>
+    
+  
+    
+      <a href="http://vr.gadgetplus.ca/" title="GadgetPlus"
+         style="background-image: url(/images/awoa/gadgetplus.jpg)"></a>
+    
+  
+    
+      <a href="http://vr.lullabot.com/" title="Lullabot"
+         style="background-image: url(/images/awoa/lullabot.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-05/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-04/">
+            <h2 class="post__heading">A Week of A-Frame 4</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Feb 12, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Feb 5, 2016 to Feb 12, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="https://sandbox.donmccurdy.com/vr/monument/" title="Monument Valley"
+         style="background-image: url(/images/awoa/monument-valley.gif)"></a>
+    
+  
+    
+      <a href="http://meta-meta.github.io/aztec-pong/" title="Aztec Pong"
+         style="background-image: url(/images/awoa/aztec-pong.gif)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-minecraft-viewer-boilerplate/" title="Minecraft Viewer Boilerplate"
+         style="background-image: url(/images/awoa/minecraft-viewer-boilerplate.gif)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-04/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-03/">
+            <h2 class="post__heading">A Week of A-Frame 3</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Feb 5, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jan 29, 2016 to Feb 5, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://infiverse.com/" title="Infiverse"
+         style="background-image: url(/images/awoa/infiverse.jpg)"></a>
+    
+  
+    
+      <a href="https://proxy-controls.donmccurdy.com/" title="ProxyControls.js"
+         style="background-image: url(/images/awoa/proxy-controls.jpg)"></a>
+    
+  
+    
+      <a href="http://carpedmt.github.io/" title="Hello, Pizza!"
+         style="background-image: url(/images/awoa/hello-pizza.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-03/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-02/">
+            <h2 class="post__heading">A Week of A-Frame 2</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jan 29, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jan 22, 2016 to Jan 29, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://vr.lasershop.ca/" title="Laser Shop"
+         style="background-image: url(/images/awoa/laser-shop.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/equalizer/" title="Equalizer Ride"
+         style="background-image: url(/images/awoa/equalizer-ride.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/tunnel/" title="Tunnel Ride"
+         style="background-image: url(/images/awoa/tunnel-ride.jpg)"></a>
+    
+  
+    
+      <a href="https://hellocreep.github.io/webvr/" title="Insurance World"
+         style="background-image: url(/images/awoa/insurance-world.jpg)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/wheel/" title="Wheel Ride"
+         style="background-image: url(/images/awoa/wheel-ride.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-02/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/tron/">
+            <h2 class="post__heading">Step Inside the Computer World, TRON!</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jan 28, 2016</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://github.com/dkraeker">Donovan Kraeker</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="http://drawvr.com/tron/">
+      <img src="/images/blog/tron.gif" alt="Step Inside the Computer World, TRON!">
+    </a>
+  
+
+
+            <div class="post__excerpt"><blockquote>
+<p>Designer-developer <a href="http://drawvr.com/">Donovan Kraeker</a> has created a world inside the computer where humankind has never been. Never before now.</p>
+</blockquote></div>
+          
+
+          <a href="/blog/tron/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/awoa-01/">
+            <h2 class="post__heading">A Week of A-Frame 1</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jan 22, 2016</p>
+  
+</div>
+
+
+          
+            <p>What's up with A-Frame for the week of Jan 15, 2016 to Jan 22, 2016.</p>
+            <div class="post__projects">
+  
+    
+      <a href="http://stampswebdesign.com/withersc/hud/" title="Virtual Art School Tour"
+         style="background-image: url(/images/awoa/virtual-art-school-tour.jpg)"></a>
+    
+  
+    
+      <a href="https://chrismwaite.github.io/cardboard-dungeon/" title="Cardboard Dungeon"
+         style="background-image: url(/images/awoa/cardboard-dungeon.jpg)"></a>
+    
+  
+    
+      <a href="https://ybinstock.github.io/concert_hall_360/" title="Concert Hall 360"
+         style="background-image: url(/images/awoa/concert-hall-360.jpg)"></a>
+    
+  
+    
+      <a href="https://ybinstock.github.io/carmensandiego_360/" title="Where in the World is Carmen Sandiego?"
+         style="background-image: url(/images/awoa/where-in-the-world-is-carmen-sandiego.jpg)"></a>
+    
+  
+    
+      <a href="https://i3games.github.io/aframe-cardboard-demo/" title="Cardboard Treasure Hunt Example"
+         style="background-image: url(/images/awoa/cardboard-treasure-hunt-example.jpg)"></a>
+    
+  
+</div>
+
+          
+
+          
+
+          <a href="/blog/awoa-01/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/photosphere-viewer/">
+            <h2 class="post__heading">360&deg; Photosphere Viewer</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jan 22, 2016</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/ideaspacevr">Chris Car</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="https://www.ideaspacevr.org/themes/webvr-photosphere-viewer-equirectangular-images">
+      <img src="/images/blog/photosphere-viewer.png" alt="360&deg; Photosphere Viewer">
+    </a>
+  
+
+
+            <div class="post__excerpt"><blockquote>
+<p>Chris from <a href="https://www.ideaspacevr.org/">IdeaSpaceVR</a> has built an interactive 360-degree photosphere viewer. Space bar toggles a menu system, and a gaze-based cursor selects photos.</p>
+</blockquote>
+<p>Recently I installed the Cardboard Camera app on my phone. It is a 360-degree photosphere VR app for Google Cardboard including a nice menu in VR which allows one to easily select photos from a list. The photosphere is showing photos with a so-called equirectangular projection (did not hear about that term before, as I am not a photo nerd ;-) ).</p>
+<p>Since I knew that A-Frame had been released I thought of implementing this app in A-Frame, as I thought it might be quite easy to do, AND I would learn coding in A-Frame.</p></div>
+          
+
+          <a href="/blog/photosphere-viewer/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/solar-system/">
+            <h2 class="post__heading">WebVR Solar System</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jan 21, 2016</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/chetemele">Jos&eacute; Manuel</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="http://vrspace.jmvisualcreativity.es/">
+      <img src="/images/blog/solar-system.png" alt="WebVR Solar System">
+    </a>
+  
+
+
+            <div class="post__excerpt"><blockquote>
+<p>Designer <a href="http://www.jmvisualcreativity.es/">Jos&eacute; Manuel</a> is working on an animated interactive representation of our solar system.</p>
+</blockquote>
+<p>This <a href="http://vrspace.jmvisualcreativity.es/">solar system</a> is a little project that will grow step by step to make a big project. A solar system, following the A-Frame instructions of <a href="https://aframe.io/docs/core/animations.html">animation</a>. I hope you like it. :D</p></div>
+          
+
+          <a href="/blog/solar-system/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/testscape/">
+            <h2 class="post__heading">TestScape</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jan 13, 2016</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/michaelverdi">Michael Verdi</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="http://x627.com/testscape/">
+      <img src="/images/blog/testscape.gif" alt="TestScape">
+    </a>
+  
+
+
+            <div class="post__excerpt"><blockquote>
+<p>Firefox UX designer <a href="http://x627.com/directory/">Michael Verdi</a> had been playing around with his Oculus Rift DK2 creating VR content, but his excitement ran into a brick wall called JavaScript (three.js). Between Christmas shopping, Michael took a little time to play around with A-Frame, and he created a few scenes. Below is a <a href="http://x627.com/a-test-vr-scape/">writeup of Michael’s process</a> of creating <a href="http://x627.com/testscape/">his latest scene</a>.</p>
+</blockquote>
+<p>I spent a little more time experimenting with A-Frame. I sketched out this idea yesterday and put it together last night and this morning.</p></div>
+          
+
+          <a href="/blog/testscape/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/popmotion/">
+            <h2 class="post__heading">Popmotion Physics & Animation with A-Frame</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jan 12, 2016</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/SirHound">Matt Perry</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="http://codepen.io/popmotion/pen/GoZpjo?editors=101">
+      <img src="/images/blog/popmotion.gif" alt="Popmotion Physics & Animation with A-Frame">
+    </a>
+  
+
+
+            <div class="post__excerpt"><p>I’m convinced A-Frame is the start of the future for VR on the web. It simplifies creating VR websites to the point that no JavaScript knowledge is required, and abstracts best practises into a common framework. Spinning up a page takes seconds, a true fulfillment of the long-forgotten <a href="https://wikipedia.org/wiki/VRML">VRML</a> dream.</p>
+<p>Best of all, I was very quickly able to write scenes that leveraged <a href="https://popmotion.io/">Popmotion</a> to give the 3D objects <a href="http://codepen.io/popmotion/pen/pgyoYx?editors=101">physics</a> and <a href="http://codepen.io/popmotion/pen/GoZpjo?editors=101">animation</a>.</p></div>
+          
+
+          <a href="/blog/popmotion/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/charleston/">
+            <h2 class="post__heading">WebVR Tour of Public Projects in Charleston, SC</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Dec 21, 2015</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/jaspar">Jason Emory Parker</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="http://data.postandcourier.com/vr/chs/">
+      <img src="/images/blog/charleston.jpg" alt="WebVR Tour of Public Projects in Charleston, SC">
+    </a>
+  
+
+
+            <div class="post__excerpt"><blockquote>
+<p>Jason Emory Parker is an interactive editor at <a href="http://www.postandcourier.com/">The Post &amp; Courier</a>. Jason used A-Frame to create a <strong><a href="http://data.postandcourier.com/vr/chs/">VR tour</a></strong> of some of the major Charleston, SC public projects completed under Mayor Joseph Riley’s 40-year term. Below is his experience.</p>
+</blockquote>
+<p>I created this project mainly as an experiment to get some idea of what A-Frame was capable of. I had recently completed another project for The Post and Courier which used a 3D model of the city of Charleston to show a few major public projects that had been completed during the 40-year tenure of the city’s outgoing mayor, Joe Riley.</p></div>
+          
+
+          <a href="/blog/charleston/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/flickr-textures/">
+            <h2 class="post__heading">CC-Licensed Textures from Flickr</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Dec 19, 2015</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/bmann">Boris Mann</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="https://www.flickr.com/search/?text=textures&amp;license=4%2C5%2C6%2C9%2C10">
+      <img src="/images/blog/flickr-textures.jpg" alt="CC-Licensed Textures from Flickr">
+    </a>
+  
+
+
+            <div class="post__excerpt"><blockquote>
+<p>Cross-posted from <a href="http://tumblr.bmannconsulting.com/post/135664145908/im-messing-around-with-aframevr-and-learning">Boris Mann’s Tumblr</a>.</p>
+</blockquote>
+<p>I’m messing around with A-Frame and learning about textures.</p>
+<p>I went over to Flickr and did a <a href="https://www.flickr.com/search/?text=textures&amp;license=4%2C5%2C6%2C9%2C10">search on <code>texture</code> with CC-licensed images</a> and came up with <a href="https://www.flickr.com/photos/stewart/69979728/in/photolist-7bEx3-7bEbP-7bDUm-7bE3b-k6v2uB-cEpAg7-7bDoa-7bDcs-7bDCE-7bDPm-kH1upF-yZEh3-7bEkJ-7bE7z-9DmLoY-cEpyZC-7bEt4-7bDKF-7bD86-pXNV8d">images that Stewart had uploaded a decade ago</a>.</p></div>
+          
+
+          <a href="/blog/flickr-textures/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/spheres-and-fog/">
+            <h2 class="post__heading">Sense of Scale with Spheres and Fog</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Dec 18, 2015</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/joshcarpenter">Josh Carpenter</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="https://aframe.io/examples/showcase/spheres-and-fog/">
+      <img src="/images/blog/spheres-and-fog.jpg" alt="Sense of Scale with Spheres and Fog">
+    </a>
+  
+
+
+            <div class="post__excerpt"><p>I like the <a href="https://aframe.io/examples/showcase/spheres-and-fog/">Spheres and Fog example</a> because it explores the sense of scale within virtual reality more than our other early examples. A series of spheres in the scene vary from 0.15 to 30 meters in radius, and a fog on <code>&lt;a-scene&gt;</code> amplifies the sense of size and distance:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">fog</span>=<span class="string">"type: linear; color: #AAB; far: 30; near: 0"</span>&gt;</span></div></pre></td></tr></table></figure></div>
+          
+
+          <a href="/blog/spheres-and-fog/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/drawvr-minecraft/">
+            <h2 class="post__heading">Creating a Minecraft Scene in WebVR</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Dec 18, 2015</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://github.com/dkraeker">Donovan Kraeker</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="http://drawvr.com/minecraft/">
+      <img src="/images/blog/drawvr-minecraft.jpg" alt="Creating a Minecraft Scene in WebVR">
+    </a>
+  
+
+
+            <div class="post__excerpt"><blockquote>
+<p>Within a week of its release, someone had used A-Frame to create a <a href="http://drawvr.com/minecraft/">Minecraft scene</a>. We tracked down the creator, <a href="http://drawvr.com/">Donovan Kraeker</a>, and he shared his process and tips he learned along the way:</p>
+</blockquote>
+<p>Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR for over a year and found the thought of committing the time needed to make good, finished content with WebGL, Unity, and Unreal too intimidating. I figured, eventually an organization or company would come out with a way for the masses to create VR websites and decided to wait. That wait was over on December 16, 2015 when the MozVR team released the first version of A-Frame &mdash; the Metaverse has begun!</p>
+<p>After playing around with A-Frame for a few days I had a simple Minecraft-esque virtual reality website that I could actually enter into and look around in <a href="http://drawvr.com/minecraft/">drawvr.com/minecraft/</a>. I tested it on an iPhone using a plastic Google Cardboard like HMD and an Oculus Rift DK2 and they both worked! To say the least, I was ecstatic. I created this VR experience that I could host online and share with my friends, family, and the interwebs.</p></div>
+          
+
+          <a href="/blog/drawvr-minecraft/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/shopping/">
+            <h2 class="post__heading">Prototyping a Shopping Example</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Dec 17, 2015</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/joshcarpenter">Josh Carpenter</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <a class="post__image borderless-link" href="https://aframe.io/examples/showcase/shopping/">
+      <img src="/images/blog/shopping.jpg" alt="Prototyping a Shopping Example">
+    </a>
+  
+
+
+            <div class="post__excerpt"><p>The <a href="https://aframe.io/examples/showcase/shopping/">shopping example</a> was a lot of fun to create. Late one night I found a 3D model in <a href="http://www.maxon.net/products/cinema-4d-studio/who-should-use-it.html">Cinema 4D</a>‘s bundled asset library and decided to wrap it in a clothing-shopping layout inspired by a few of my favorite blog designs. Patching this together with curved images and tongue in cheek copy while listening to podcasts was a very fun bit of visual riffing that helped me to tinker with ideas of what VR web design might look like. I’d love to take this one much further, time allowing!</p></div>
+          
+
+          <a href="/blog/shopping/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post-listing">
+          <a href="/blog/introducing-aframe/">
+            <h2 class="post__heading">Introducing A-Frame v0.1.0</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Dec 16, 2015</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/joshcarpenter">Josh Carpenter</a></p>
+  
+</div>
+
+
+          
+
+          
+            
+  
+    <img src="/images/blog/introducing-aframe.png" alt="Introducing A-Frame v0.1.0">
+  
+
+
+            <div class="post__excerpt"><blockquote>
+<p>Today, the MozVR team has released the first version of A-Frame: an open source framework for creating WebVR experiences with markup.</p>
+</blockquote>
+<p>A-Frame makes it easy for web developers to create virtual reality experiences that work across desktop, iPhone, Android, and the Oculus Rift.</p>
+<p>We created A-Frame to make it easier to create VR web experiences. WebVR has shipped in builds of Firefox and Chromium since the summer of 2014, but creating content for it has required knowing WebGL. The WebGL scene is unbelievably talented and has created many mind-blowing VR experiences in the last year, but they are a small subset of the full web dev community. There are millions of talented developers who do not know WebGL. What if each of them could create and share VR experiences on the open web?</p></div>
+          
+
+          <a href="/blog/introducing-aframe/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+
+    
+
+    <footer class="footer footnote">
+      <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+      
+    </footer>
+  </div>
+</div>
+
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
+    
+    
+      <script src="/js/docs.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,676 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.3.0"
+      data-docs-version="0.1.0">
+  <head>
+    <title>Entity-Component System –  Docs  – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="canonical" href="https://aframe.io">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:image" content="http://aframe.io/images/card.png">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="A-Frame">
+    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:image" content="https://aframe.io/images/card.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+
+    <script src="/js/compat.js"></script>
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+  <body data-page-layout="docs"
+        data-page-type="core">
+    
+      <aside class="sidebar sidebar-mobile borderless-links c">
+  <header id="header" class="header">
+    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
+    <a id="logo" class="logo" href="/">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+</aside>
+
+    
+    <main id="main" class="main">
+      
+
+
+<!-- Navigation. -->
+<aside class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.3.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/faq/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>FAQ</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+
+      <!-- Version dropdown. -->
+      <label class="subnav-label" for="docs-version"><b>Version</b></label>
+      <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+        
+          <option false
+                  data-href="/docs/master/introduction/">
+            master
+          </option>
+        
+          <option false
+                  data-href="/docs/0.3.0/introduction/">
+            0.3.0
+          </option>
+        
+          <option false
+                  data-href="/docs/0.2.0/guide/">
+            0.2.0
+          </option>
+        
+          <option selected
+                  data-href="/docs/0.1.0/guide/">
+            0.1.0
+          </option>
+        
+      </select>
+      
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.1.0/guide/"
+           class="section-title-link section-title-link-inactive">
+          Guide
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav numbered-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/"
+               class="subnav-link">
+              Getting Started
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/objects.html"
+               class="subnav-link">
+              Adding objects
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/positioning.html"
+               class="subnav-link">
+              Positioning
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/entering-vr.html"
+               class="subnav-link">
+              Entering VR
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/cameras-and-lights.html"
+               class="subnav-link">
+              Adding cameras and lights
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/interactivity.html"
+               class="subnav-link">
+              Adding interactivity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/video-and-audio.html"
+               class="subnav-link">
+              Adding video and audio
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/materials.html"
+               class="subnav-link">
+              Adding materials
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/guide/animations.html"
+               class="subnav-link">
+              Adding animations
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.1.0/primitives/"
+           class="section-title-link section-title-link-inactive">
+          Primitives
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-cube.html"
+               class="subnav-link">
+              &lt;a-cube&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-model.html"
+               class="subnav-link">
+              &lt;a-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <a href="/docs/0.1.0/core/"
+           class="section-title-link section-title-link-active">
+          Core
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.1.0/core/"
+               class="subnav-link current">
+              Entity-Component System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/core/templates.html"
+               class="subnav-link">
+              Templates
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/core/animation.html"
+               class="subnav-link">
+              Animation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/core/mixin.html"
+               class="subnav-link">
+              Mixin
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/core/assets.html"
+               class="subnav-link">
+              Assets
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.1.0/components/"
+           class="section-title-link section-title-link-inactive">
+          Components
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/"
+               class="subnav-link">
+              Camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/cursor.html"
+               class="subnav-link">
+              Cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/fog.html"
+               class="subnav-link">
+              Fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/geometry.html"
+               class="subnav-link">
+              Geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/light.html"
+               class="subnav-link">
+              Light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/loader.html"
+               class="subnav-link">
+              Loader
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/look-at.html"
+               class="subnav-link">
+              Look-At
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/look-controls.html"
+               class="subnav-link">
+              Look Controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/material.html"
+               class="subnav-link">
+              Material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/position.html"
+               class="subnav-link">
+              Position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/raycaster.html"
+               class="subnav-link">
+              Raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/rotation.html"
+               class="subnav-link">
+              Rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/scale.html"
+               class="subnav-link">
+              Scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/sound.html"
+               class="subnav-link">
+              Sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/visible.html"
+               class="subnav-link">
+              Visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.1.0/components/wasd-controls.html"
+               class="subnav-link">
+              WASD Controls
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+<!-- Documentation. -->
+<div class="content content--structured content--core copy">
+  <div class="copy__wrap">
+    <p class="page__section">
+      <a href="/docs/0.1.0/core/" class="borderless-link">
+        0.1.0 &rsaquo; Core
+      </a>
+    </p>
+    
+    <h1 class="page__title">Entity-Component System</h1>
+
+    
+    
+      <p>A-Frame is based on an <strong><a href="https://en.wikipedia.org/wiki/Entity_component_system" target="_blank" rel="external">entity-component system</a></strong>, a pattern common in game development that emphasizes composability:</p>
+<ul>
+<li>An <strong>entity</strong> is a general-purpose object in the scene (e.g., player, enemy, tree, sky).</li>
+<li>A <strong>component</strong> consists of properties that modifies the behavior or functionality of an entity.</li>
+</ul>
+<p>An entity can have multiple components, and an entity’s behavior can be changed at runtime by adding, removing, or modifying components. As we will see below, this will provide great flexibility over traditional inheritance patterns.</p>
+<h2 id="analogy"><a href="#analogy" class="headerlink" title="Analogy"></a>Analogy</h2><p>As an abstract example, imagine a car is an entity:</p>
+<ul>
+<li>We can add a <code>color</code> component which affects the color of the car.</li>
+<li>We can add an <code>engine</code> component which has properties such as “horsepower” or “weight” which affect the speed of the car.</li>
+<li>We might add a <code>tire</code> component which has properties such as “grip” which affects the traction of the car.</li>
+</ul>
+<p>These components would be able to be mixed and matched and even be used with other vehicles such as airplanes, motorcycles, or boats (where we wouldn’t specify a <code>tire</code> component).</p>
+<h2 id="usage"><a href="#usage" class="headerlink" title="Usage"></a>Usage</h2><p>In A-Frame:</p>
+<ul>
+<li>Entities are HTML elements (i.e., <code>&lt;a-entity&gt;</code>).</li>
+<li>Components are HTML attributes that are set on the entity.</li>
+<li>Component properties are defined by using a CSS-like syntax.</li>
+</ul>
+<p>For example, to create a pink cube, which requires the <code>geometry</code> and <code>material</code> components:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; depth: 1; height: 1; width: 1"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: pink"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>For web developers, the syntax might seem new, or even odd, but the composability makes it powerful to be able to customize entities in the system. Perhaps we want our cube to give off light; we can simply add the <code>light</code> component:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; depth: 1; height: 1; width: 1"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: pink"</span></div><div class="line">          <span class="attr">light</span>=<span class="string">"intensity: 2"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Perhaps we want our cube to also emit a sound. We can add the <a href="sound.html"><code>sound</code> component</a>. And we want to move the cube a little, we can use the <a href="../components/position.html"><code>position</code> component</a>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; depth: 1; height: 1; width: 1"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: pink"</span></div><div class="line">          <span class="attr">light</span>=<span class="string">"intensity: 2"</span></div><div class="line">          <span class="attr">position</span>=<span class="string">"-1 5 0"</span></div><div class="line">          <span class="attr">sound</span>=<span class="string">"src: dangerzone.mp3; volume: 2"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>We see that components make it very easy to compose entities with mixtures of behavior and functionality and everyone can write their own components to modify entities however they desire. For example, someone might write a <code>vibrate</code> component that makes the entity vibrate regardless of which kind of entity it is. Although it might seem verbose, it provides a core foundation for abstraction.</p>
+
+    
+
+    <!-- Previous / Next navigation. -->
+    <footer class="footer guide-links c">
+      
+      
+        <span class="float-right">
+          <a href="/docs/0.1.0/core/entity.html" class="guide-link guide-link-right">Entity →</a></span>
+      
+    </footer>
+
+    <footer class="footer footnote">
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/index.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+</footer>
+
+  </div>
+</div>
+
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
+    
+    
+      <script src="/js/docs.js"></script>
+    
+  </body>
+</html>

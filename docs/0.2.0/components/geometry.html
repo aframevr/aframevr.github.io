@@ -1,0 +1,1119 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.3.0"
+      data-docs-version="0.2.0">
+  <head>
+    <title>geometry –  Docs  – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="canonical" href="https://aframe.io">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:image" content="http://aframe.io/images/card.png">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="A-Frame">
+    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:image" content="https://aframe.io/images/card.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+
+    <script src="/js/compat.js"></script>
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+  <body data-page-layout="docs"
+        data-page-type="components">
+    
+      <aside class="sidebar sidebar-mobile borderless-links c">
+  <header id="header" class="header">
+    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
+    <a id="logo" class="logo" href="/">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+</aside>
+
+    
+    <main id="main" class="main">
+      
+
+
+<!-- Navigation. -->
+<aside class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.3.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/faq/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>FAQ</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+
+      <!-- Version dropdown. -->
+      <label class="subnav-label" for="docs-version"><b>Version</b></label>
+      <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+        
+          <option false
+                  data-href="/docs/master/introduction/">
+            master
+          </option>
+        
+          <option false
+                  data-href="/docs/0.3.0/introduction/">
+            0.3.0
+          </option>
+        
+          <option selected
+                  data-href="/docs/0.2.0/guide/">
+            0.2.0
+          </option>
+        
+          <option false
+                  data-href="/docs/0.1.0/guide/">
+            0.1.0
+          </option>
+        
+      </select>
+      
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/guide/"
+           class="section-title-link section-title-link-inactive">
+          Guide
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav numbered-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/"
+               class="subnav-link">
+              Overview
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/getting-started.html"
+               class="subnav-link">
+              Getting Started
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/building-an-advanced-scene.html"
+               class="subnav-link">
+              Building an Advanced Scene
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/core/"
+           class="section-title-link section-title-link-inactive">
+          Core
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/shaders.html"
+               class="subnav-link">
+              Shaders
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/AFRAME.html"
+               class="subnav-link">
+              AFRAME
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <a href="/docs/0.2.0/components/"
+           class="section-title-link section-title-link-active">
+          Components
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/canvas.html"
+               class="subnav-link">
+              canvas
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.2.0/components/geometry.html"
+               class="subnav-link current">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/look-at.html"
+               class="subnav-link">
+              look-at
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/primitives/"
+           class="section-title-link section-title-link-inactive">
+          Primitives
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/mesh-attributes.html"
+               class="subnav-link">
+              Mesh Attributes
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+<!-- Documentation. -->
+<div class="content content--structured content--components copy">
+  <div class="copy__wrap">
+    <p class="page__section">
+      <a href="/docs/0.2.0/components/" class="borderless-link">
+        0.2.0 &rsaquo; Components
+      </a>
+    </p>
+    
+    <h1 class="page__title">geometry</h1>
+
+    
+    
+      <p>The geometry component provides a basic shape for an entity. The general geometry is defined by the <code>primitive</code> property. Geometric primitives, in computer graphics, means an extremely basic shape. With the primitive defined, additional properties are used to further define the geometry. A material component is usually defined alongside to provide a appearance alongside the shape to create a complete mesh.</p>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><p>We will go through the basic primitives and their respective properties one by one.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>primitive</td>
+<td>One of <code>box</code>, <code>circle</code>, <code>cone</code>, <code>cylinder</code>, <code>plane</code>, <code>ring</code>, <code>sphere</code>, <code>torus</code>, <code>torusKnot</code>.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>translate</td>
+<td>Translates the geometry relative to its pivot point.</td>
+<td>0 0 0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="box"><a href="#box" class="headerlink" title="Box"></a>Box</h3><p>The box primitive defines boxes (i.e., any quadilateral, not just cubes).</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; width: 1; height: 1; depth: 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>Width (in meters) of the sides on the X axis.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Height (in meters) of the sides on the Y axis.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>depth</td>
+<td>Depth (in meters) of the sides on the Z axis.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="circle"><a href="#circle" class="headerlink" title="Circle"></a>Circle</h3><p>The circle primitive defines two-dimensional circles, which can be complete circles or partial circles (like Pac-Man). Note that because it is flat, only a single side of the circle will be rendered if “side: double” is not specified on the <code>material</code> component.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: circle; radius: 1"</span> <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>Radius (in meters) of the circle.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>segments</td>
+<td>Number of triangles to construct the circle, like pizza slices. A higher number of segments means the circle will be more round.</td>
+<td>32</td>
+</tr>
+<tr>
+<td>thetaStart</td>
+<td>Start angle for first segment. Can be used to define a partial circle.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>thetaLength</td>
+<td>The central angle (in degrees). Defaults to <code>360</code>, which makes for a complete circle.</td>
+<td>360</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cone"><a href="#cone" class="headerlink" title="Cone"></a>Cone</h3><p>The cone primitive under the hood is a cylinder primitive with varying top and bottom radiuses.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cone; radiusBottom: 1; radiusTop: 0.1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>height</td>
+<td>Height of the cone.</td>
+<td>2</td>
+</tr>
+<tr>
+<td>openEnded</td>
+<td>Whether the ends of the cone are open (true) or capped (false).</td>
+<td>false</td>
+</tr>
+<tr>
+<td>radiusBottom</td>
+<td>Radius of the bottom end of the cone.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>radiusTop</td>
+<td>Radius of the top end of the cone.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>segmentsRadial</td>
+<td>Number of segmented faces around the circumference of the cone.</td>
+<td>36</td>
+</tr>
+<tr>
+<td>segmentsHeight</td>
+<td>Number of rows of faces along the height of the cone.</td>
+<td>18</td>
+</tr>
+<tr>
+<td>thetaStart</td>
+<td>Starting angle in degrees.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>thetaLength</td>
+<td>Central angle in degrees.</td>
+<td>360</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cylinder-primitive"><a href="#cylinder-primitive" class="headerlink" title="Cylinder Primitive"></a>Cylinder Primitive</h3><p>The cylinder primitive can define cylinders in the traditional sense like a Coca-Cola™ can, but it can also define shapes such as tubes and curved surfaces. We’ll go over some of these cylinder recipes below.</p>
+<h4 id="basic-cylinder"><a href="#basic-cylinder" class="headerlink" title="Basic Cylinder"></a>Basic Cylinder</h4><p>Traditional cylinders can be defined by using only a height and a radius:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder; height: 3; radius: 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="tube"><a href="#tube" class="headerlink" title="Tube"></a>Tube</h4><p>Tubes can be defined by making the cylinder open-ended, which removes the top and bottom surfaces of the cylinder such that the inside is visible. A double-sided material will be needed to render properly:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Tube --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder; openEnded: true"</span> <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="curved-surface"><a href="#curved-surface" class="headerlink" title="Curved Surface"></a>Curved Surface</h4><p>Curved surfaces can be defined by specifying the angle via <code>thetaLength</code> such that the cylinder doesn’t curve all the way around, making the cylinder open-ended, and then making the material double-sided.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Curved surface --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder; openEnded: true; thetaLength: 180"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>Radius of the cylinder.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Height of the cylinder.</td>
+<td>2</td>
+</tr>
+<tr>
+<td>segmentsRadial</td>
+<td>Number of segmented faces around the circumference of the cylinder.</td>
+<td>36</td>
+</tr>
+<tr>
+<td>segmentsHeight</td>
+<td>Number of rows of faces along the height of the cylinder.</td>
+<td>18</td>
+</tr>
+<tr>
+<td>openEnded</td>
+<td>Whether the ends of the cylinder are open (true) or capped (false).</td>
+<td>false</td>
+</tr>
+<tr>
+<td>thetaStart</td>
+<td>Starting angle in degrees.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>thetaLength</td>
+<td>Central angle in degrees.</td>
+<td>360</td>
+</tr>
+</tbody>
+</table>
+<h4 id="prisms"><a href="#prisms" class="headerlink" title="Prisms"></a>Prisms</h4><p>Other types <a href="https://en.wikipedia.org/wiki/Prism_%28geometry%29" target="_blank" rel="external">of prisms</a> can
+be defined by varying the number of radial segments (i.e., sides). For example, to make
+a hexagonal prism:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Hexagonal prism --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder; segmentsRadial: 6"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>To play with an example of prism geometry, check out the <a href="http://codepen.io/team/mozvr/pen/jWzVXJ" target="_blank" rel="external">Hexagon example on Codepen</a>.</p>
+<h3 id="plane"><a href="#plane" class="headerlink" title="Plane"></a>Plane</h3><p>The plane primitive defines a flat surface. Note that because it is flat, only a single side of the plane will be rendered if <code>side: double</code> is not specified on the <code>material</code> component.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane; height: 10; width: 10"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>Width along the X axis.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Height along the Y axis.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ring"><a href="#ring" class="headerlink" title="Ring"></a>Ring</h3><p>The ring geometry defines a flat ring, like a <a href="https://en.wikipedia.org/wiki/Compact_disc" target="_blank" rel="external">CD</a>. Note that because it is flat, only a single side of the ring will be rendered if <code>side: double</code> is not specified on the <code>material</code> component.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: ring; radiusInner: 0.5; radiusOuter: 1"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radiusInner</td>
+<td>Radius of the inner hole of the ring.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>radiusOuter</td>
+<td>Radius of the outer edge of the ring.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>segmentsTheta</td>
+<td>Number of segments. A higher number means the ring will be more round.</td>
+<td>32</td>
+</tr>
+<tr>
+<td>segmentsPhi</td>
+<td>Number of triangles within each face defined by segmentsTheta.</td>
+<td>8</td>
+</tr>
+<tr>
+<td>thetaStart</td>
+<td>Starting angle in degrees.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>thetaLength</td>
+<td>Central angle in degrees.</td>
+<td>360</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sphere"><a href="#sphere" class="headerlink" title="Sphere"></a>Sphere</h3><p>The sphere primitive can define spheres in the traditional sense like a basketball. But it can also define various polyhedrons and abstract shapes given that it can specify the number of horizontal and vertical angles and faces.</p>
+<p>Sticking with a basic sphere, the default number of segments is high enough to make the sphere appear round.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere; radius: 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>Radius of the sphere.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>segmentsWidth</td>
+<td>Number of horizontal segments.</td>
+<td>18</td>
+</tr>
+<tr>
+<td>segmentsHeight</td>
+<td>Number of vertical segments.</td>
+<td>36</td>
+</tr>
+<tr>
+<td>phiStart</td>
+<td>Horizontal starting angle.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>phiLength</td>
+<td>Horizontal sweep angle size.</td>
+<td>360</td>
+</tr>
+<tr>
+<td>thetaStart</td>
+<td>Vertical starting angle.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>thetaLength</td>
+<td>Vertical sweep angle size.</td>
+<td>360</td>
+</tr>
+</tbody>
+</table>
+<h3 id="torus"><a href="#torus" class="headerlink" title="Torus"></a>Torus</h3><p>The torus primitive defines a donut shape.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Half donut --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: torus; radius: 2; radiusTubular: 0.5; arc: 180"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>Radius of the outer edge of the torus.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>radiusTubular</td>
+<td>Radius of the tube.</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>segmentsRadial</td>
+<td>Number of segments along the circumference of the tube ends. A higher number means the tube will be more round.</td>
+<td>36</td>
+</tr>
+<tr>
+<td>segmentsTubular</td>
+<td>Number of segments along the circumference of the tube face. A higher number means the tube will be more round.</td>
+<td>32</td>
+</tr>
+<tr>
+<td>arc</td>
+<td>Central angle.</td>
+<td>360</td>
+</tr>
+</tbody>
+</table>
+<h3 id="torus-knot"><a href="#torus-knot" class="headerlink" title="Torus Knot"></a>Torus Knot</h3><p>The torus knot primitive defines a pretzel shape, the particular shape of which is defined by a pair of coprime integers, <code>p</code> and <code>q</code>. If <code>p</code> and <code>q</code> are not coprime the result will be a torus link.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: torusKnot; p: 3; q:7"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>Radius that contains the torus knot.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>radiusTubular</td>
+<td>Radius of the tubes of the torus knot.</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>segmentsRadial</td>
+<td>Number of segments along the circumference of the tube ends. A higher number means the tube will be more round.</td>
+<td>36</td>
+</tr>
+<tr>
+<td>segmentsTubular</td>
+<td>Number of segments along the circumference of the tube face. A higher number means the tube will be more round.</td>
+<td>32</td>
+</tr>
+<tr>
+<td>p</td>
+<td>Number that helps define the pretzel shape.</td>
+<td>2</td>
+</tr>
+<tr>
+<td>q</td>
+<td>Number that helps define the pretzel shape.</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="thetalength-and-thetastart"><a href="#thetalength-and-thetastart" class="headerlink" title="thetaLength and thetaStart"></a>thetaLength and thetaStart</h2><p>In degrees, <code>thetaStart</code> defines where to start a circle and <code>thetaLength</code> defines where a circle ends. If we wanted to make a <code>(</code> shape, we would start the circle halfway through and define the length as half of a circle. We can do this with <code>thetaStart: 180; thetaLength: 180</code>. Or if we wanted to make a <code>)</code> shape. We can do do <code>thetaStart: 0; thetaLength: 180</code>.</p>
+<p>Useful cases might be to animating <code>thetaStart</code> to create a spinner effect or animating <code>thetaLength</code> on a fuse-based cursor for visual feedback.</p>
+<h2 id="translate"><a href="#translate" class="headerlink" title="translate"></a>translate</h2><p>The <code>translate</code> property translates the geometry. It is provided as a vec3.  This is a useful short-hand for translating the geometry to effectively move its pivot point when running animations.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Translates the sphere such that its effective pivot point is at its bottom --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere; radius: 1; translate: 0 1 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="defining-your-own-geometry"><a href="#defining-your-own-geometry" class="headerlink" title="Defining Your Own Geometry"></a>Defining Your Own Geometry</h2><p>If there is a geometry that you need that is not provided by the standard geometry component, you can register your own geometry component. Later, we may introduce an API to register geometries:</p>
+<p>```js
+AFRAME.registerComponent(‘my-geometry’, {
+  /<em> Called on component attach and data update. </em>/
+  update: function () {
+    // Grab the mesh.
+    var mesh = this.el.getOrCreateObject3D(‘mesh’, THREE.Mesh);</p>
+<pre><code>// Provide your own geometry.
+var geometry = mesh.geometry = new THREE.Geometry();
+geometry.vertices.push(
+  new THREE.Vector3(-10,  10, 0),
+  new THREE.Vector3(-10, -10, 0),
+  new THREE.Vector3( 10, -10, 0)
+);
+geometry.faces.push(new THREE.Face3(0, 1, 2));
+geometry.computeBoundingSphere();
+</code></pre><p>  },</p>
+<p>  /<em> Called on component detach. </em>/
+  remove: function () {
+    this.el.getObject3D(‘mesh’).geometry = new THREE.Geometry();
+  }
+});</p>
+
+    
+
+    <!-- Previous / Next navigation. -->
+    <footer class="footer guide-links c">
+      
+        <span class="float-left">
+          <a href="/docs/0.2.0/components/fog.html" class="guide-link guide-link-left">← fog </a></span>
+      
+      
+        <span class="float-right">
+          <a href="/docs/0.2.0/components/keyboard-shortcuts.html" class="guide-link guide-link-right">keyboard-shortcuts →</a></span>
+      
+    </footer>
+
+    <footer class="footer footnote">
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/geometry.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+</footer>
+
+  </div>
+</div>
+
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
+    
+    
+      <script src="/js/docs.js"></script>
+    
+  </body>
+</html>

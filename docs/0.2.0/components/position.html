@@ -1,0 +1,736 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.3.0"
+      data-docs-version="0.2.0">
+  <head>
+    <title>position –  Docs  – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="canonical" href="https://aframe.io">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:image" content="http://aframe.io/images/card.png">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="A-Frame">
+    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:image" content="https://aframe.io/images/card.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+
+    <script src="/js/compat.js"></script>
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+  <body data-page-layout="docs"
+        data-page-type="components">
+    
+      <aside class="sidebar sidebar-mobile borderless-links c">
+  <header id="header" class="header">
+    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
+    <a id="logo" class="logo" href="/">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+</aside>
+
+    
+    <main id="main" class="main">
+      
+
+
+<!-- Navigation. -->
+<aside class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.3.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/faq/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>FAQ</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+
+      <!-- Version dropdown. -->
+      <label class="subnav-label" for="docs-version"><b>Version</b></label>
+      <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+        
+          <option false
+                  data-href="/docs/master/introduction/">
+            master
+          </option>
+        
+          <option false
+                  data-href="/docs/0.3.0/introduction/">
+            0.3.0
+          </option>
+        
+          <option selected
+                  data-href="/docs/0.2.0/guide/">
+            0.2.0
+          </option>
+        
+          <option false
+                  data-href="/docs/0.1.0/guide/">
+            0.1.0
+          </option>
+        
+      </select>
+      
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/guide/"
+           class="section-title-link section-title-link-inactive">
+          Guide
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav numbered-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/"
+               class="subnav-link">
+              Overview
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/getting-started.html"
+               class="subnav-link">
+              Getting Started
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/building-an-advanced-scene.html"
+               class="subnav-link">
+              Building an Advanced Scene
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/core/"
+           class="section-title-link section-title-link-inactive">
+          Core
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/shaders.html"
+               class="subnav-link">
+              Shaders
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/AFRAME.html"
+               class="subnav-link">
+              AFRAME
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <a href="/docs/0.2.0/components/"
+           class="section-title-link section-title-link-active">
+          Components
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/canvas.html"
+               class="subnav-link">
+              canvas
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/look-at.html"
+               class="subnav-link">
+              look-at
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.2.0/components/position.html"
+               class="subnav-link current">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/primitives/"
+           class="section-title-link section-title-link-inactive">
+          Primitives
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/mesh-attributes.html"
+               class="subnav-link">
+              Mesh Attributes
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+<!-- Documentation. -->
+<div class="content content--structured content--components copy">
+  <div class="copy__wrap">
+    <p class="page__section">
+      <a href="/docs/0.2.0/components/" class="borderless-link">
+        0.2.0 &rsaquo; Components
+      </a>
+    </p>
+    
+    <h1 class="page__title">position</h1>
+
+    
+    
+      <p>The position component defines where an entity is placed in the scene’s world space. It takes a coordinate value as three space-delimited numbers.</p>
+<p>All entities inherently have the position component.</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"0 1 -1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="value"><a href="#value" class="headerlink" title="Value"></a>Value</h2><p>A-Frame uses a right-handed coordinate system where the negative Z axis extends into the screen. The table below assumes looking down the negative Z axis from the origin.</p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>Negative X axis extends left. Positive X Axis extends right.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>y</td>
+<td>Negative Y axis extends up. Positive Y Axis extends down.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>z</td>
+<td>Negative Z axis extends in. Positive Z Axis extends out.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relative-positioning"><a href="#relative-positioning" class="headerlink" title="Relative Positioning"></a>Relative Positioning</h2><p>World-space positions of child entities are inherited from parent entities. Consider this scene:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"parent"</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"child-1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"child-2"</span> <span class="attr">position</span>=<span class="string">"2 3 4"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The world-space position of <code>#child1</code> would be <code>1 2 3</code> as inherited by the entity. In the local parent’s space, <code>#child1</code>‘s position would be seen as <code>0 0 0</code>.</p>
+<p>The world-space position of <code>#child2</code> would be <code>3 5 7</code>, by combining the position with the parent entity. In the parent’s local space, <code>#child2</code>‘s position would be seen as <code>2 3 4</code>.</p>
+
+    
+
+    <!-- Previous / Next navigation. -->
+    <footer class="footer guide-links c">
+      
+        <span class="float-left">
+          <a href="/docs/0.2.0/components/obj-model.html" class="guide-link guide-link-left">← obj-model </a></span>
+      
+      
+        <span class="float-right">
+          <a href="/docs/0.2.0/components/raycaster.html" class="guide-link guide-link-right">raycaster →</a></span>
+      
+    </footer>
+
+    <footer class="footer footnote">
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/position.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+</footer>
+
+  </div>
+</div>
+
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
+    
+    
+      <script src="/js/docs.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,558 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.3.0"
+      data-docs-version="blog">
+  <head>
+    <title>A Week of A-Frame 14 – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="canonical" href="https://aframe.io">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:image" content="http://aframe.io/images/card.png">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="A-Frame">
+    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:image" content="https://aframe.io/images/card.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+
+    <script src="/js/compat.js"></script>
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+  <body data-page-layout="blog"
+        data-page-type="">
+    
+      <aside class="sidebar sidebar-mobile borderless-links c">
+  <header id="header" class="header">
+    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
+    <a id="logo" class="logo" href="/">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+</aside>
+
+    
+    <main id="main" class="main">
+      <aside class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.3.0/introduction/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/faq/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>FAQ</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs current"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+  </div>
+</aside>
+
+<div class="content content--blog copy post">
+  <div class="copy__wrap">
+    
+      <article class="post post-full">
+        <h1 class="hidden-visually">Blog</h1>
+        <h2 class="post__heading">A Week of A-Frame 14</h2>
+        <div class="post__metadata">
+  <p class="post__timestamp">May 20, 2016</p>
+  
+</div>
+
+
+        
+          <p>What's up with A-Frame for the week of May 13, 2016 to May 20, 2016.</p>
+          <p>A-Frame is a web framework for creating virtual reality experiences with HTML.</p>
+          <div class="post__projects">
+  
+    
+      <a href="https://github.com/ngokevin/aframe-firebase-component" title="Firebase Component"
+         style="background-image: url(/images/awoa/firebase-component.gif)"></a>
+    
+  
+    
+      <a href="http://www.jmvisualcreativity.es/vr_eva/" title="EVA"
+         style="background-image: url(/images/awoa/eva.gif)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/aframe-audio-visualizer-components/spectrum/" title="Audio Visualizer Component &mdash; Spectrum"
+         style="background-image: url(/images/awoa/audio-visualizer-spectrum.gif)"></a>
+    
+  
+    
+      <a href="http://liooil.neocities.org/VR_webStuff/room+07/room07.html" title="Space Shark Room"
+         style="background-image: url(/images/awoa/space-shark-room.gif)"></a>
+    
+  
+    
+      <a href="http://www.jmvisualcreativity.es/vr_metal/" title="Metal Gear REX"
+         style="background-image: url(/images/awoa/metal-gear-rex.jpg)"></a>
+    
+  
+    
+      <a href="http://www.skyislandsvr.com/pages/meditationorbs.html" title="Meditation Orbs"
+         style="background-image: url(/images/awoa/meditation-orbs.gif)"></a>
+    
+  
+    
+      <a href="http://drawvr.com/welcome/" title="Welcome"
+         style="background-image: url(/images/awoa/welcome.jpg)"></a>
+    
+  
+    
+      <a href="http://liooil.neocities.org/VR_webStuff/vaporWave.html" title="Vapor Wave"
+         style="background-image: url(/images/awoa/vapor-wave.gif)"></a>
+    
+  
+    
+      <a href="http://www.jmvisualcreativity.es/vr_jump/" title="Jump Island"
+         style="background-image: url(/images/awoa/jump.gif)"></a>
+    
+  
+    
+      <a href="http://www.jmvisualcreativity.es/vr_roof/" title="Roof Escape"
+         style="background-image: url(/images/awoa/roof-escape.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/xirvr/aframe-gltf/" title="glTF Component"
+         style="background-image: url(/images/awoa/gltf-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/donmccurdy/aframe-extras/blob/master/src/controls/checkpoint-controls.js" title="Checkpoint Controls"
+         style="background-image: url(/images/awoa/checkpoint-controls.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/andreasplesch/aframe-heightgrid-component" title="Height Grid / Terrain Component"
+         style="background-image: url(/images/awoa/height-grid-component.jpg)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/aframe-broadcast-component" title="Broadcast Component"
+         style="background-image: url(/images/awoa/broadcast-component.gif)"></a>
+    
+  
+    
+      <a href="http://www.anj.fyi/matrix/" title="Matrix"
+         style="background-image: url(/images/awoa/matrix.gif)"></a>
+    
+  
+    
+      <a href="https://www.ideaspacevr.org/themes/web-vr-photo-sphere-diver-panorama" title="Photo Sphere Diver"
+         style="background-image: url(/images/awoa/photo-sphere-diver.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/Anjlo/AFrame-Additions" title="Draggable &amp; Spawner Components"
+         style="background-image: url(/images/awoa/draggable-spawner-components.gif)"></a>
+    
+  
+    
+      <a href="https://sandbox.donmccurdy.com/vr/force-push/" title="Force Push"
+         style="background-image: url(/images/awoa/force-push.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/IdeaSpaceVR/aframe-ui-modal-component" title="UI Modal Component"
+         style="background-image: url(/images/awoa/ui-modal-component.jpg)"></a>
+    
+  
+    
+      <a href="http://spacepants.azurewebsites.net/homevr.html" title="SpaceTrek"
+         style="background-image: url(/images/awoa/space-trek.jpg)"></a>
+    
+  
+</div>
+
+        
+
+        
+
+
+        <p>I have A-Dream that one day A-Frame experiences become multi-user.</p>
+
+
+        
+          
+  <h3>Projects</h3>
+  <ul class="post__projects-text">
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a> built <a href="https://github.com/ngokevin/aframe-firebase-component">Firebase Component</a> &mdash; <p>Component using <a href="https://firebase.google.com">Firebase’s</a> realtime database for multiuser experiences.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/chetemele">chetemele</a> built <a href="http://www.jmvisualcreativity.es/vr_eva/">EVA</a> &mdash; <p>A prototype mecha rises from the lava.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a> built <a href="https://ngokevin.github.io/aframe-audio-visualizer-components/spectrum/">Audio Visualizer Component &mdash; Spectrum</a> &mdash; <p>Visualizer for audio spectrum (<em>World Order &mdash; Machine Civilization</em>).</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/SAM_liooil">SAM_liooil</a> built <a href="http://liooil.neocities.org/VR_webStuff/room+07/room07.html">Space Shark Room</a> &mdash; <p>Hinduist shark cage in space.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/chetemele">chetemele</a> built <a href="http://www.jmvisualcreativity.es/vr_metal/">Metal Gear REX</a> &mdash; <p>Return to Shadow Moses. SNAKE!</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/EricaLayton">EricaLayton</a> built <a href="http://www.skyislandsvr.com/pages/meditationorbs.html">Meditation Orbs</a> &mdash; <p>A place to meditate.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/drawvr">drawvr</a> built <a href="http://drawvr.com/welcome/">Welcome</a> &mdash; <p>Welcome to an A-Frame cabin in the forest.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/SAM_liooil">SAM_liooil</a> built <a href="http://liooil.neocities.org/VR_webStuff/vaporWave.html">Vapor Wave</a> &mdash; <p>Trippy web purgatory room.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/chetemele">chetemele</a> built <a href="http://www.jmvisualcreativity.es/vr_jump/">Jump Island</a> &mdash; <p>Jump quest. Can you make it to the top?</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/chetemele">chetemele</a> built <a href="http://www.jmvisualcreativity.es/vr_roof/">Roof Escape</a> &mdash; <p>Rooftops. Parkour!</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/Xirvr">Xirvr</a> built <a href="https://github.com/xirvr/aframe-gltf/">glTF Component</a> &mdash; <p>A component for loading efficient <a href="https://github.com/KhronosGroup/glTF">glTF</a> assets.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/donrmccurdy">donrmccurdy</a> built <a href="https://github.com/donmccurdy/aframe-extras/blob/master/src/controls/checkpoint-controls.js">Checkpoint Controls</a> &mdash; <p>A component to enable <em>Land’s End</em>-style locomotion.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://github.com/andreasplesch">andreasplesch</a> built <a href="https://github.com/andreasplesch/aframe-heightgrid-component">Height Grid / Terrain Component</a> &mdash; <p>A component that uses gridded height fields to define a surface.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a> built <a href="https://github.com/ngokevin/aframe-broadcast-component">Broadcast Component</a> &mdash; <p>A broadcast component for basic multiuser experiences over WebSockets.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/anjfyi">anjfyi</a> built <a href="http://www.anj.fyi/matrix/">Matrix</a> &mdash; <p>Jump and push around raining blocks in the Matrix</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/ideaspacevr">ideaspacevr</a> built <a href="https://www.ideaspacevr.org/themes/web-vr-photo-sphere-diver-panorama">Photo Sphere Diver</a> &mdash; <p>Navigate and dive into photo spheres.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/anjfyi">anjfyi</a> built <a href="https://github.com/Anjlo/AFrame-Additions">Draggable &amp; Spawner Components</a> &mdash; <p>Components to pick up entities and to spawn entities.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/donrmccurdy">donrmccurdy</a> built <a href="https://sandbox.donmccurdy.com/vr/force-push/">Force Push</a> &mdash; <p>Become a block bender.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/ideaspacevr">ideaspacevr</a> built <a href="https://github.com/IdeaSpaceVR/aframe-ui-modal-component">UI Modal Component</a> &mdash; <p>A component for toggling UI where the camera is looking.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/TheSpacePants">TheSpacePants</a> built <a href="http://spacepants.azurewebsites.net/homevr.html">SpaceTrek</a> &mdash; <p>Explore 360&deg; videos of space and atmosphere.</p>
+
+      </li>
+    
+  </ul>
+
+
+          
+  <h3>Media</h3>
+  <ul class="post__projects-text">
+    
+      <li>
+        <a class="blog-attribution" href="https://mozvr.com">@andgokevin and @dmarcos</a>
+        <p>will present at</p>
+
+        <a href="http://www.meetup.com/sfhtml5/events/230072340/"><p>SFHTML5’s “WebVR Ecosystem and API Update” on May 25th, 2016</p>
+</a>
+      </li>
+    
+  </ul>
+
+
+          
+  <h3>Contributions</h3>
+  <ul class="post__projects-text">
+    
+      <li>
+        <a class="blog-attribution" href="https://github.com/ngokevin">ngokevin</a>
+        <a href="https://github.com/aframevr/aframe/pull/1415">fixed</a>
+        <p>dynamically attached entities not playing</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://github.com/dmarcos">dmarcos</a>
+        <a href="https://github.com/aframevr/aframe/pull/1465">fixed</a>
+        <p>mobile head tracking when not in VR mode</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://github.com/ngokevin">ngokevin</a>
+        <a href="https://github.com/aframevr/aframe/pull/1476">moved</a>
+        <p>the 360&deg; image browser boilerplate to <a href="https://github.com/aframevr/360-image-browser-example">aframevr/360-image-browser-example</a></p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://github.com/ngokevin">ngokevin</a>
+        <a href="https://github.com/aframevr/aframe/pull/1448">fixed</a>
+        <p>primitives overwriting defines attributes in some cases</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://github.com/dmarcos">dmarcos</a>
+        <a href="https://github.com/aframevr/aframe/pull/1486">fixed</a>
+        <p>look-controls when using mixins</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://github.com/cvan">cvan</a>
+        <a href="https://github.com/aframevr/aframe/pull/1415">removed</a>
+        <p>the injected A-Frame favicon</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://github.com/ngokevin">ngokevin</a>
+        <a href="https://github.com/ngokevin/aframe-template-component/pull/13">added support</a>
+        <p>for using components to feed data to template contexts</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+          (for <a href="https://github.com/ngokevin/aframe-template-component">ngokevin/aframe-template-component</a>)
+        
+      </li>
+    
+  </ul>
+
+
+        
+      </article>
+
+      <footer class="footer guide-links c">
+        
+        
+        
+        
+          <span class="float-left"><a href="/blog/awoa-13/" class="guide-link guide-link-left">← A Week of A-Frame 13</a></span>
+        
+        
+          <span class="float-right"><a href="/blog/awoa-15/" class="guide-link guide-link-right">A Week of A-Frame 15 →</a></span>
+        
+      </footer>
+    
+
+    <footer class="footer footnote">
+      <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+      
+        <p>Caught a mistake? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/awoa-14.md" class="github-file-link" rel="external">Suggest an edit to this post on GitHub</a></p>
+      
+    </footer>
+  </div>
+</div>
+
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
+    
+    
+      <script src="/js/docs.js"></script>
+    
+  </body>
+</html>

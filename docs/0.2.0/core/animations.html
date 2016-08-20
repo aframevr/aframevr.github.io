@@ -1,0 +1,859 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.3.0"
+      data-docs-version="0.2.0">
+  <head>
+    <title>Animations –  Docs  – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="canonical" href="https://aframe.io">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:image" content="http://aframe.io/images/card.png">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="A-Frame">
+    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:image" content="https://aframe.io/images/card.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+
+    <script src="/js/compat.js"></script>
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+  <body data-page-layout="docs"
+        data-page-type="core">
+    
+      <aside class="sidebar sidebar-mobile borderless-links c">
+  <header id="header" class="header">
+    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
+    <a id="logo" class="logo" href="/">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+</aside>
+
+    
+    <main id="main" class="main">
+      
+
+
+<!-- Navigation. -->
+<aside class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.3.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/faq/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>FAQ</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+
+      <!-- Version dropdown. -->
+      <label class="subnav-label" for="docs-version"><b>Version</b></label>
+      <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+        
+          <option false
+                  data-href="/docs/master/introduction/">
+            master
+          </option>
+        
+          <option false
+                  data-href="/docs/0.3.0/introduction/">
+            0.3.0
+          </option>
+        
+          <option selected
+                  data-href="/docs/0.2.0/guide/">
+            0.2.0
+          </option>
+        
+          <option false
+                  data-href="/docs/0.1.0/guide/">
+            0.1.0
+          </option>
+        
+      </select>
+      
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/guide/"
+           class="section-title-link section-title-link-inactive">
+          Guide
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav numbered-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/"
+               class="subnav-link">
+              Overview
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/getting-started.html"
+               class="subnav-link">
+              Getting Started
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/guide/building-an-advanced-scene.html"
+               class="subnav-link">
+              Building an Advanced Scene
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <a href="/docs/0.2.0/core/"
+           class="section-title-link section-title-link-active">
+          Core
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.2.0/core/animations.html"
+               class="subnav-link current">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/shaders.html"
+               class="subnav-link">
+              Shaders
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/core/AFRAME.html"
+               class="subnav-link">
+              AFRAME
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/components/"
+           class="section-title-link section-title-link-inactive">
+          Components
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/canvas.html"
+               class="subnav-link">
+              canvas
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/look-at.html"
+               class="subnav-link">
+              look-at
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.2.0/primitives/"
+           class="section-title-link section-title-link-inactive">
+          Primitives
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/mesh-attributes.html"
+               class="subnav-link">
+              Mesh Attributes
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.2.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+<!-- Documentation. -->
+<div class="content content--structured content--core copy">
+  <div class="copy__wrap">
+    <p class="page__section">
+      <a href="/docs/0.2.0/core/" class="borderless-link">
+        0.2.0 &rsaquo; Core
+      </a>
+    </p>
+    
+    <h1 class="page__title">Animations</h1>
+
+    
+    
+      <p>Animations in A-Frame are defined by attaching an <code>&lt;a-animation&gt;</code> element as a child of the entity to animate. The API is roughly based after the <a href="http://www.w3.org/TR/web-animations/" target="_blank" rel="external">Web Animations</a> specification.</p>
+<p>As an introductory example, to define a 5-meter orbit on an entity about the Y-axis that takes 10 seconds, we can offset its position and animate the rotation of a parent entity. This animation starts with the initial rotation about the Y-axis of 0 degrees and goes around to 360 degrees. It’s defined with a duration of 10000 milliseconds, maintains the final value on each cycle of the animation, and loops indefinitely.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"5 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"rotation"</span></span></div><div class="line">               <span class="attr">dur</span>=<span class="string">"10000"</span></div><div class="line">               <span class="attr">fill</span>=<span class="string">"forwards"</span></div><div class="line">               <span class="attr">to</span>=<span class="string">"0 360 0"</span></div><div class="line">               <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;<span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Many attributes and values are used to define animations. We’ll delve into more detail below:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attribute</td>
+<td>Attribute to animate. To specify a component attribute, use <code>componentName.property</code> syntax (e.g., <code>light.intensity</code>).</td>
+<td>rotation</td>
+</tr>
+<tr>
+<td>begin</td>
+<td>Delay (in milliseconds) or event name to wait on before beginning animation.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>Direction of the animation (between <code>from</code> and <code>to</code>). One of <code>alternate</code>, <code>alternateReverse</code>, <code>normal</code>, <code>reverse</code>.</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>dur</td>
+<td>Duration in (milliseconds) of the animation.</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>easing</td>
+<td>Easing function of the animation. There are very many to choose from.</td>
+<td>ease</td>
+</tr>
+<tr>
+<td>fill</td>
+<td>Determines effect of animation when not actively in play. One of <code>backwards</code>, <code>both</code>, <code>forwards</code>, <code>none</code>.</td>
+<td>forwards</td>
+</tr>
+<tr>
+<td>from</td>
+<td>Starting value.</td>
+<td>Current value.</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>Repeat count or <code>indefinite</code>.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>to</td>
+<td>Ending value. Must be specified.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h2 id="animating-different-types-of-attributes"><a href="#animating-different-types-of-attributes" class="headerlink" title="Animating Different Types of Attributes"></a>Animating Different Types of Attributes</h2><p>A-Frame’s animation system can animate several possible categories of attributes.</p>
+<h3 id="vec3-attributes"><a href="#vec3-attributes" class="headerlink" title="vec3 Attributes"></a>vec3 Attributes</h3><p>A-Frame has several standard <code>vec3</code> components (i.e., <code>position</code>, <code>rotation</code>, and <code>scale</code>). These components consist of three factors: X, Y, and Z. We can pass three space-delimited numbers to the <code>from</code> and <code>to</code> attributes just as we would define them on an entity. In this case, the animation system will assume we are animating a <code>vec3</code> value.</p>
+<p>For example, if we want to animate an entity going from one spot to another, we can animate the <code>position</code> component.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"position"</span> <span class="attr">from</span>=<span class="string">"1 1 1"</span> <span class="attr">to</span>=<span class="string">"2 4 -8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="boolean-attributes"><a href="#boolean-attributes" class="headerlink" title="Boolean Attributes"></a>Boolean Attributes</h3><p>A-Frame has several standard components that accept a single boolean value. Boolean values can be “animated” as well by flipping the boolean at the end of each animation cycle.</p>
+<p>For example, we can define an animation that toggles off the visibility of an entity after 5 seconds.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"visible"</span> <span class="attr">dur</span>=<span class="string">"5000"</span> <span class="attr">to</span>=<span class="string">"false"</span> <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="numeric-attributes"><a href="#numeric-attributes" class="headerlink" title="Numeric Attributes"></a>Numeric Attributes</h3><p>We can animate numeric attributes as well. For example, we can animate the intensity of the light primitive.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">intensity</span>=<span class="string">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"intensity"</span> <span class="attr">to</span>=<span class="string">"3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="component-properties"><a href="#component-properties" class="headerlink" title="Component Properties"></a>Component Properties</h3><p>We can animate a certain property of a multi-property component. To do so, we select the component property using the dot syntax: <code>componentName.propertyName</code>.</p>
+<p>For example, to animate a cone’s top radius, we can select the <code>radiusTop</code> value with <code>geometry.radiusTop</code>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cone; radiusTop: 1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"geometry.radiusTop"</span> <span class="attr">to</span>=<span class="string">"0.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="begin"><a href="#begin" class="headerlink" title="Begin"></a>Begin</h2><p>The <code>begin</code> attribute defines when the animation should start playing.</p>
+<p>This can either be a <em>number</em>, representing milliseconds to wait, or an <em>event name</em> to wait for. For example, we can define an animation that waits 2 seconds from when the animation is attached before scaling an entity.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"scale"</span> <span class="attr">begin</span>=<span class="string">"2000"</span> <span class="attr">to</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Or we can define an animation that waits for the parent element to trigger an event named <code>fade</code> before fading an entity.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"fading-cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"opacity: 1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"material.opacity"</span> <span class="attr">begin</span>=<span class="string">"fade"</span> <span class="attr">to</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Trigger an event to begin fading.</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#fading-cube'</span>).emit(<span class="string">'fade'</span>);</div></pre></td></tr></table></figure>
+<h2 id="direction"><a href="#direction" class="headerlink" title="Direction"></a>Direction</h2><p>The <code>direction</code> attribute defines which way to animate between the starting value and the final value.</p>
+<p>When an alternating direction is defined, the animation will go back and forth between the <code>from</code> and <code>to</code> values like a yo-yo. Alternating directions only take affect when the animation is set to repeat.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alternate</td>
+<td>On even-numbered cycles, animate from <code>from</code> to <code>to</code>. On odd-numbered cycles, animation from <code>to</code> to <code>from</code></td>
+</tr>
+<tr>
+<td>alternate-reverse</td>
+<td>On odd-numbered cycles, animate from <code>from</code> to <code>to</code>. On even-numbered cycles, animation from <code>to</code> to <code>from</code></td>
+</tr>
+<tr>
+<td>normal</td>
+<td>Animate from <code>from</code> to <code>to</code>.</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>Animate from <code>to</code> to <code>from</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="easing"><a href="#easing" class="headerlink" title="Easing"></a>Easing</h2><p>The <code>easing</code> attribute defines the easing function of the animation, which defaults to <code>ease</code>. There are too many easing functions to list, but we can implicitly explain what all of them are.</p>
+<p>One possible value is <code>linear</code>. And the basic easing functions are <code>ease</code>, <code>ease-in</code>, <code>ease-out</code>, and <code>ease-in-out</code>.</p>
+<p>Then there are additional groups of easing functions. Each group of easing functions are prefixed by the above basic easing functions. The groups of easing functions are <code>cubic</code>, <code>quad</code>, <code>quart</code>, <code>quint</code>, <code>sine</code>, <code>expo</code>, <code>circ</code>, <code>elastic</code>, <code>back</code>, and <code>bounce</code>.</p>
+<p>For example, the <code>cubic</code> group of easing functions would consist of <code>ease-cubic</code>, <code>ease-in-cubic</code>, <code>ease-out-cubic</code>, <code>ease-in-out-cubic</code>.</p>
+<h2 id="fill"><a href="#fill" class="headerlink" title="Fill"></a>Fill</h2><p>The <code>fill</code> attribute defines the effect of animation when not actively in play. Think of <code>fill</code> as what values the animation sets on the entity <em>before</em> and/or <em>after</em> each animation cycle. Below are the possible values for <code>fill</code> and their effects.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backwards</td>
+<td>Before the animation starts, set the starting value to the <code>from</code> value.</td>
+</tr>
+<tr>
+<td>both</td>
+<td>Combine the effects of both backwards fill and forwards fill.</td>
+</tr>
+<tr>
+<td>forwards</td>
+<td>After the animation finishes, the final value will stay at the <code>to</code> value. The default fill.</td>
+</tr>
+<tr>
+<td>none</td>
+<td>Before the animation starts, set the starting value to the initial value. After the animation finishes, reset the value to the initial value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="repeat"><a href="#repeat" class="headerlink" title="Repeat"></a>Repeat</h2><p>The <code>repeat</code> attribute defines how often the animation repeats. We call each repeat of the animation a cycle. Repeat can either be a number that counts down on each animation cycle until it reaches <code>0</code> at which point the animation will end, or it can be set to <code>indefinite</code> and the animation will loop continuously until the animation is manually removed or stopped.</p>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><p>The <code>&lt;a-animation&gt;</code> element emits a couple of events.</p>
+<table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>animationend</td>
+<td>Emitted when the animation finishes. In case of repeats, emitted when the repeat count reaches <code>0</code>. Not emitted for indefinite repeats.</td>
+</tr>
+<tr>
+<td>animationstart</td>
+<td>Emitted immediately when the animation begins playing.</td>
+</tr>
+</tbody>
+</table>
+
+    
+
+    <!-- Previous / Next navigation. -->
+    <footer class="footer guide-links c">
+      
+        <span class="float-left">
+          <a href="/docs/0.2.0/core/scene.html" class="guide-link guide-link-left">← Scene </a></span>
+      
+      
+        <span class="float-right">
+          <a href="/docs/0.2.0/core/mixins.html" class="guide-link guide-link-right">Mixins →</a></span>
+      
+    </footer>
+
+    <footer class="footer footnote">
+  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/animations.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+</footer>
+
+  </div>
+</div>
+
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
+    
+    
+      <script src="/js/docs.js"></script>
+    
+  </body>
+</html>
