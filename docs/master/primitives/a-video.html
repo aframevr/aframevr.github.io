@@ -39,7 +39,7 @@
 
     <meta charset="utf-8">
     <meta name="robots" content="all">
-    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="description" content="A web framework for building VR experiences.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="canonical" href="https://aframe.io">
@@ -48,7 +48,7 @@
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:description" content="A web framework for building VR experiences.">
     <meta property="og:image" content="http://aframe.io/images/card.png">
     <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
 
@@ -56,7 +56,7 @@
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
     <meta name="twitter:title" content="A-Frame">
-    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:description" content="A web framework for building VR experiences.">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
     <meta name="mobile-web-app-capable" content="yes">
@@ -212,7 +212,7 @@
           </option>
         
       </select>
-      
+
     
       
 
@@ -539,6 +539,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/visible.html"
                class="subnav-link">
               visible
@@ -853,8 +860,13 @@
 <h2 id="caveats"><a href="#caveats" class="headerlink" title="Caveats"></a>Caveats</h2><p>iOS has a lot of restrictions on playing videos in the browser. To play an inline video texture, we must:</p>
 <ul>
 <li>Set the <code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</code> meta tag (will be injected if missing).</li>
-<li>Set the <code>webkit-playsinline</code> attribute to the video element.</li>
+<li>Set the <code>webkit-playsinline</code> attribute to the video element (is automatically added to all videos).</li>
 <li>Pin the webpage to the iOS homescreen.</li>
+</ul>
+<p>Inline video support on iOS 10 may change this. On certain Android devices or
+browsers, we must:</p>
+<ul>
+<li>Require user interaction to trigger the video (such as a click or tap event). See <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=178297" target="_blank" rel="external">Chromium Bug 178297</a>.</li>
 </ul>
 
     

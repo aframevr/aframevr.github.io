@@ -39,7 +39,7 @@
 
     <meta charset="utf-8">
     <meta name="robots" content="all">
-    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="description" content="A web framework for building VR experiences.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="canonical" href="https://aframe.io">
@@ -48,7 +48,7 @@
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:description" content="A web framework for building VR experiences.">
     <meta property="og:image" content="http://aframe.io/images/card.png">
     <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
 
@@ -56,7 +56,7 @@
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
     <meta name="twitter:title" content="A-Frame">
-    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:description" content="A web framework for building VR experiences.">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
     <meta name="mobile-web-app-capable" content="yes">
@@ -212,7 +212,7 @@
           </option>
         
       </select>
-      
+
     
       
 
@@ -535,6 +535,13 @@
             <a href="/docs/master/components/stats.html"
                class="subnav-link">
               stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
             </a>
           </li>
         
@@ -994,9 +1001,54 @@ available depending on the material applied.</p>
 </thead>
 <tbody>
 <tr>
+<td>ambientOcclusionMap</td>
+<td>Ambient occlusion map. Used to add shadows to the mesh. Can either be a selector to an <code>&lt;img&gt;</code> an inline URL.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ambientOcclusionMapIntensity</td>
+<td>The intensity of the ambient occlusion map, a number between 0 and 1.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ambientOcclusionTextureRepeat</td>
+<td>How many times the ambient occlusion texture repeats in the X and Y direction.</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>ambientOcclusionTextureOffset</td>
+<td>How the ambient occlusion texture is offset in the x y direction.</td>
+<td>0 0</td>
+</tr>
+<tr>
 <td>color</td>
 <td>Base diffuse color.</td>
 <td>#fff</td>
+</tr>
+<tr>
+<td>displacementMap</td>
+<td>Displacement map. Used to distort a mesh. Can either be a selector to an <code>&lt;img&gt;</code> an inline URL.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>displacementMapScale</td>
+<td>The intensity of the displacement map effect</td>
+<td>1</td>
+</tr>
+<tr>
+<td>displacementMapBias</td>
+<td>The zero point of the displacement map.</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>displacementTextureRepeat</td>
+<td>How many times the displacement texture repeats in the X and Y direction.</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>displacementTextureOffset</td>
+<td>How the displacement texture is offset in the x y direction.</td>
+<td>0 0</td>
 </tr>
 <tr>
 <td>height</td>
@@ -1019,6 +1071,26 @@ available depending on the material applied.</p>
 <td>0.5</td>
 </tr>
 <tr>
+<td>normalMap</td>
+<td>Normal map. Used to add the illusion of complex detail. Can either be a selector to an <code>&lt;img&gt;</code> an inline URL.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>normalMapScale</td>
+<td>Scale of the effect of the normal map in the X and Y directions.</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>normalTextureRepeat</td>
+<td>How many times the normal texture repeats in the X and Y direction.</td>
+<td>1 1</td>
+</tr>
+<tr>
+<td>normalTextureOffset</td>
+<td>How the normal texture is offset in the x y direction.</td>
+<td>0 0</td>
+</tr>
+<tr>
 <td>repeat</td>
 <td>How many times a texture (defined by <code>src</code>) repeats in the X and Y direction.</td>
 <td>1 1</td>
@@ -1027,6 +1099,11 @@ available depending on the material applied.</p>
 <td>roughness</td>
 <td>How rough the material is from <code>0</code> to <code>1</code>. A rougher material will scatter reflected light in more directions than a smooth material.</td>
 <td>0.5</td>
+</tr>
+<tr>
+<td>sphericalEnvMap</td>
+<td>Environment spherical texture for reflections. Can either be a selector to an <code>&lt;img&gt;</code>, or an inline URL.</td>
+<td>None</td>
 </tr>
 <tr>
 <td>width</td>
@@ -1050,11 +1127,19 @@ people have compiled charts of realistic values for different kinds of
 materials that can be used as a starting point.</p>
 <p>For example, for a tree bark material, as an estimation, we might set:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"src: treebark.png; color: #696969; roughness: 1; metalness: 0"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="environment-maps"><a href="#environment-maps" class="headerlink" title="Environment Maps"></a>Environment Maps</h4><p>The <code>envMap</code> property defines what environment the material reflects.  Unlike
-textures, the <code>envMap</code> property takes a cubemap, six images put together to
-form a cube. The cubemap is wrapped around the mesh and applied as a texture.
-The clarity of the environment depends on the <code>metalness</code>, and <code>roughness</code>
-properties.</p>
+<h4 id="distortion-maps"><a href="#distortion-maps" class="headerlink" title="Distortion Maps"></a>Distortion Maps</h4><p>There are three properties which give the illusion of complex geometry:</p>
+<ul>
+<li>Ambient Occlusion Maps - Applies a texture to the image which add shadows.</li>
+<li>Displacement Maps - These maps distorts a simpler model at a high resolution allowing additional service detail. This will affect the mesh’s silhouette but can be expensive.</li>
+<li>Normal Maps - This image defines the angle of the surface at that point. Giving the appearance of complex geometry without distorting the model. This does not change the geometry but it is cheap.</li>
+</ul>
+<h4 id="environment-maps"><a href="#environment-maps" class="headerlink" title="Environment Maps"></a>Environment Maps</h4><p>The <code>envMap</code> and <code>sphericalEnvMap</code> properties define what environment
+the material reflects. The clarity of the environment reflection depends
+on the <code>metalness</code>, and <code>roughness</code> properties.</p>
+<p>The <code>sphericalEnvMap</code> property takes a single spherical mapped
+texture. Of the kind you would assign to a <code>&lt;a-sky&gt;</code>.</p>
+<p>Unlike textures, the <code>envMap</code> property takes a cubemap, six images put together to
+form a cube. The cubemap is wrapped around the mesh and applied as a texture.</p>
 <p>For example:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-cubemap</span> <span class="attr">id</span>=<span class="string">"sky"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"right.png"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"left.png"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"top.png"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bottom.png"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"front.png"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"back.png"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-cubemap</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"envMap: #sky; roughness: 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="flat"><a href="#flat" class="headerlink" title="flat"></a><code>flat</code></h3><p>The <code>flat</code> material uses the <a href="http://threejs.org/docs/#Reference/Materials/MeshBasicMaterial" target="_blank" rel="external">THREE.MeshBasicMaterial</a>. Flat materials
@@ -1172,7 +1257,7 @@ The data will act as the data we use to create our material:</p>
 <h3 id="example-1"><a href="#example-1" class="headerlink" title="Example"></a>Example</h3><p>To create a custom material, we have the <code>init</code> and <code>update</code> handlers set and
 update <code>this.material</code> to the desired material. Here is an example of
 registering a <a href="http://threejs.org/docs/index.html#Reference/Materials/LineDashedMaterial" target="_blank" rel="external"><code>THREE.LinedDashedMaterial</code></a>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerShader(<span class="string">'line-dashed'</span>, &#123;</div><div class="line">  schema: &#123;</div><div class="line">    dashSize: &#123;<span class="keyword">default</span>: <span class="number">3</span>&#125;,</div><div class="line">    lineWidth: &#123;<span class="keyword">default</span>: <span class="number">1</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * `init` used to initialize material. Called once.</div><div class="line">   */</div><div class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.material = <span class="keyword">new</span> THREE.LineDashedMaterial(data);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * `update` used to update the material. Called on initialization and when data updates.</div><div class="line">   */</div><div class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.material.dashsize = data.dashsize;</div><div class="line">    <span class="keyword">this</span>.material.linewidth = data.linewidth;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerShader(<span class="string">'line-dashed'</span>, &#123;</div><div class="line">  schema: &#123;</div><div class="line">    dashSize: &#123;<span class="keyword">default</span>: <span class="number">3</span>&#125;,</div><div class="line">    lineWidth: &#123;<span class="keyword">default</span>: <span class="number">1</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * `init` used to initialize material. Called once.</div><div class="line">   */</div><div class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.material = <span class="keyword">new</span> THREE.LineDashedMaterial(data);</div><div class="line">    <span class="keyword">this</span>.update(data);  <span class="comment">// `update()` currently not called after `init`. (#1834)</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * `update` used to update the material. Called on initialization and when data updates.</div><div class="line">   */</div><div class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.material.dashsize = data.dashsize;</div><div class="line">    <span class="keyword">this</span>.material.linewidth = data.linewidth;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h2 id="register-a-custom-glsl-shader"><a href="#register-a-custom-glsl-shader" class="headerlink" title="Register a Custom GLSL Shader"></a>Register a Custom GLSL Shader</h2><p>We also use <code>registerShader</code> for registering
 <a href="http://threejs.org/docs/#Reference/Materials/ShaderMaterial" target="_blank" rel="external">THREE.ShaderMaterial</a>s to create custom shaders.</p>
 <p>We can provide our own <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank" rel="external">GLSL</a> vertex and fragment shaders (small programs

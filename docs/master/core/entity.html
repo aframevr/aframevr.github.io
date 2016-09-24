@@ -39,7 +39,7 @@
 
     <meta charset="utf-8">
     <meta name="robots" content="all">
-    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="description" content="A web framework for building VR experiences.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="canonical" href="https://aframe.io">
@@ -48,7 +48,7 @@
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:description" content="A web framework for building VR experiences.">
     <meta property="og:image" content="http://aframe.io/images/card.png">
     <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
 
@@ -56,7 +56,7 @@
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
     <meta name="twitter:title" content="A-Frame">
-    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:description" content="A web framework for building VR experiences.">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
     <meta name="mobile-web-app-capable" content="yes">
@@ -212,7 +212,7 @@
           </option>
         
       </select>
-      
+
     
       
 
@@ -535,6 +535,13 @@
             <a href="/docs/master/components/stats.html"
                class="subnav-link">
               stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
             </a>
           </li>
         
@@ -953,7 +960,7 @@ Read more about <a href="../components/debug.html#component-to-dom-serialization
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entity.removeAttribute(<span class="string">'sound'</span>);  <span class="comment">// The entity will no longer play sound.</span></div></pre></td></tr></table></figure>
 <h3 id="removeobject3d-type"><a href="#removeobject3d-type" class="headerlink" title="removeObject3D (type)"></a><code>removeObject3D (type)</code></h3><p><code>removeObject3D</code> removes the object specified by <code>type</code> from the entity’s <code>THREE.Group</code> and thus from the scene. This will update the entity’s <code>object3DMap</code>, setting the value of the <code>type</code> key to <code>null</code>. This is generally called from a component, often within the remove handler:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'example-light'</span>, &#123;</div><div class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.setObject3D(<span class="string">'light'</span>, <span class="keyword">new</span> THREE.Light());</div><div class="line">    <span class="comment">// Light is now part of the scene.</span></div><div class="line">    <span class="comment">// object3DMap.light is now a THREE.Light() object.</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.removeObject3D(<span class="string">'light'</span>);</div><div class="line">    <span class="comment">// Light is now removed from the scene.</span></div><div class="line">    <span class="comment">// object3DMap.light is now null.</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="removestate-statename"><a href="#removestate-statename" class="headerlink" title="removeState (stateName)"></a><code>removeState (stateName)</code></h3><p><code>removeState</code> will pop a state from the entity. This will emit the <code>stateremove</code> event, and the state can then be checked for its removal using <code>.is</code>:</p>
+<h3 id="removestate-statename"><a href="#removestate-statename" class="headerlink" title="removeState (stateName)"></a><code>removeState (stateName)</code></h3><p><code>removeState</code> will pop a state from the entity. This will emit the <code>stateremoved</code> event, and the state can then be checked for its removal using <code>.is</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entity.addEventListener(<span class="string">'stateremoved'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (evt.state === <span class="string">'selected'</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Entity no longer selected.'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">entity.addState(<span class="string">'selected'</span>);</div><div class="line">entity.is(<span class="string">'selected'</span>);  <span class="comment">// &gt;&gt; true</span></div><div class="line"></div><div class="line">entity.removeState(<span class="string">'selected'</span>);</div><div class="line">entity.is(<span class="string">'selected'</span>);  <span class="comment">// &gt;&gt; false</span></div></pre></td></tr></table></figure>
 <h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
 <thead>

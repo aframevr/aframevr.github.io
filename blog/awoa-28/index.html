@@ -1,0 +1,492 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.3.0"
+      data-docs-version="blog">
+  <head>
+    <title>A Week of A-Frame 28 – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="description" content="A web framework for building VR experiences.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="canonical" href="https://aframe.io">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="A web framework for building VR experiences.">
+    <meta property="og:image" content="http://aframe.io/images/card.png">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="A-Frame">
+    <meta name="twitter:description" content="A web framework for building VR experiences.">
+    <meta name="twitter:image" content="https://aframe.io/images/card.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+
+    <script src="/js/compat.js"></script>
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+  <body data-page-layout="blog"
+        data-page-type="">
+    
+      <aside class="sidebar sidebar-mobile borderless-links c">
+  <header id="header" class="header">
+    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
+    <a id="logo" class="logo" href="/">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+</aside>
+
+    
+    <main id="main" class="main">
+      <aside class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.3.0/introduction/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/faq/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>FAQ</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs current"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+  </div>
+</aside>
+
+<div class="content content--blog copy post">
+  <div class="copy__wrap">
+    
+      <article class="post post-full">
+        <h1 class="hidden-visually">Blog</h1>
+        <h2 class="post__heading">A Week of A-Frame 28</h2>
+        <div class="post__metadata">
+  <p class="post__timestamp">Sep 23, 2016</p>
+  
+</div>
+
+
+        
+          <p>What's up with A-Frame for the week of Sep 16, 2016 to Sep 23, 2016.</p>
+          <p>A-Frame is a web framework for building VR experiences.</p>
+          <div class="post__projects">
+  
+    
+      <a href="https://aframe.io/a-painter/" title="A-Painter"
+         style="background-image: url(/images/awoa/a-painter.jpg)"></a>
+    
+  
+    
+      <a href="https://www.youtube.com/watch?v=jUPIQecyhOo" title="Foot-tracked Football"
+         style="background-image: url(/images/awoa/football-vr.gif)"></a>
+    
+  
+    
+      <a href="https://jesstelford.github.io/aframe-click-drag-component/" title="Click-Drag Component"
+         style="background-image: url(/images/awoa/click-drag-component.gif)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/kframe/components/mountain/" title="Mountain Component"
+         style="background-image: url(/images/awoa/mountain-component.jpg)"></a>
+    
+  
+    
+      <a href="https://ngokevin.github.io/kframe/components/sun-sky/examples/sun-position/" title="Sun Sky"
+         style="background-image: url(/images/awoa/sun-sky.gif)"></a>
+    
+  
+    
+      <a href="https://github.com/ngokevin/kframe/tree/master/scenes/punch" title="Punch Prototype"
+         style="background-image: url(/images/awoa/punch.gif)"></a>
+    
+  
+</div>
+
+        
+
+        
+
+
+        <p><a href="https://blog.mozvr.com/a-painter/" target="_blank" rel="external"><strong>A-Painter</strong></a> has been released! It’s like
+Tilt Brush, but open source so you can help us create more brushes. You can
+share your paintings online for anyone to view in 3D. Or you can take other
+people’s paintings and make them your own! Want to share a painting?  Post it
+to this makeshift <a href="https://github.com/aframevr/a-painter/issues/99" target="_blank" rel="external">A-Painter gallery</a>! Check
+out some paintings so far:</p>
+<ul>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/69c16e90-ee65-410c-82f6-23bf1ecc6d2f/">The World’s First VR Guestbook</a>, created in collaboration from multiple people.</li>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/69c16e90-ee65-410c-82f6-23bf1ecc6d2f/"><em>The Gentle Robot</em></a>, by <a href="https://twitter.com/feiss" target="_blank" rel="external">@feiss</a></li>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/bacf6186-96b1-404c-9751-e955ece04919/"><em>The Leap</em></a>, by <a href="https://twitter.com/feiss" target="_blank" rel="external">@feiss</a></li>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/c9c89a30-7259-46aa-9b02-64b72adb3fb2/"><em>It Follows</em></a>, by <a href="https://twitter.com/feiss" target="_blank" rel="external">@feiss</a></li>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/d939bcb0-bc69-4600-a5d2-3e0b47e0639c/"><em>Demon</em></a>, by <a href="https://twitter.com/feiss" target="_blank" rel="external">@feiss</a></li>
+<li><a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/3f92dffd-1c66-400d-898a-9a9decd5f07a/"><em>Rose Bush</em></a>, by <a href="https://twitter.com/feiss" target="_blank" rel="external">@feiss</a></li>
+</ul>
+<p><a href="https://twitter.com/msfeldstein" target="_blank" rel="external">@msfeldstein</a> has even already contributed a
+Rainbow Brush. After having released A-Painter, we are currently working on
+more cool demos.</p>
+<p>Initial work on the <a href="https://github.com/aframevr/aframe-registry" target="_blank" rel="external"><strong>A-Frame Registry</strong></a> has
+started. The registry is a curated collection of A-Frame components. In the future,
+this could contain things like assets, controls, effects, or shaders. The
+registry currently fetches metadata from npm and builds JSON files respective
+to each version of A-Frame. This data can then be used to populate perhaps a
+Unity Store-like UI in the <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">A-Frame
+Inspector</a>. Submit your components!</p>
+<p>Check out some of the more <em>physical</em> demonstrations of VR this week. See
+<a href="https://www.youtube.com/watch?v=jUPIQecyhOo" target="_blank" rel="external">full-body tracking</a> and
+<a href="https://twitter.com/andgokevin/status/779428404563095553" target="_blank" rel="external">punching</a> with
+A-Frame.</p>
+
+
+        
+          
+  <h3>Projects</h3>
+  <ul class="post__projects-text">
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/mozillavr">mozillavr</a> built <a href="https://aframe.io/a-painter/">A-Painter</a> &mdash; <p>Paint in VR with your hands, create your own brushes, and share your paintings over the Web! (<a href="https://github.com/aframevr/a-painter">code</a>)</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/utopiah">utopiah</a> built <a href="https://www.youtube.com/watch?v=jUPIQecyhOo">Foot-tracked Football</a> &mdash; <p>Playing football in VR using both your hands and feet, full-body tracking.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/jesstelford">jesstelford</a> built <a href="https://jesstelford.github.io/aframe-click-drag-component/">Click-Drag Component</a> &mdash; <p>A component that makes objects draggable with the mouse cursor.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a> built <a href="https://ngokevin.github.io/kframe/components/mountain/">Mountain Component</a> &mdash; <p>Generate terrains with <code>&lt;a-mountain&gt;</code>.</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a> built <a href="https://ngokevin.github.io/kframe/components/sun-sky/examples/sun-position/">Sun Sky</a> &mdash; <p>Sky with adjustable sun with <code>&lt;a-sun-sky&gt;</code>, taken from the A-Frame shader example. (<a href="https://github.com/ngokevin/kframe/tree/master/components/sun-sky/">code</a>)</p>
+
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a> built <a href="https://github.com/ngokevin/kframe/tree/master/scenes/punch">Punch Prototype</a> &mdash; <p>Getting started with punching in VR.</p>
+
+      </li>
+    
+  </ul>
+
+
+          
+  <h3>Media</h3>
+  <ul class="post__projects-text">
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/fernandojsg">fernandojsg</a>
+        <p>wrote about</p>
+
+        <a href="https://blog.mozvr.com/a-painter/"><p><em>A-Painter: Paint in VR in Your Browser</em></p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/feiss">feiss</a>
+        
+        <a href="https://www.youtube.com/watch?v=DpWOKikos7Q"><p>recorded himself painting a fox in A-Painter</p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/whiteboxamir">whiteboxamir</a>
+        <p>wrote in Venture Beat about</p>
+
+        <a href="http://venturebeat.com/2016/09/17/how-webvr-will-make-virtual-reality-massively-available/"><p><em>how WebVR will make virtual reality massively available</em></p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/diekus">diekus</a>
+        <p>wrote an article about</p>
+
+        <a href="https://medium.com/samsung-internet-dev/webvr-feasting-in-the-round-table-f51a16bf5f40"><p><em>WebVR, feasting in the round table</em></p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/utopiah">utopiah</a>
+        <p>recorded</p>
+
+        <a href="https://www.youtube.com/watch?v=5q-iMS2ILks"><p>himself using A-Painter</p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/lady_ada_king">lady_ada_king</a>
+        <p>wrote an article about</p>
+
+        <a href="https://medium.com/samsung-internet-dev/optimising-a-frame-assets-for-faster-starts-4ec3bd35c6fc"><p><em>Optimising A-Frame Assets for Faster Starts</em></p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/misslivirose">misslivirose</a>
+        <p>gave a talk at Coldfront16:</p>
+
+        <a href="https://www.youtube.com/watch?v=SV3UO_2Pftw"><p><em>Immersion in the Browser - Building the VR Web</em></p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/misslivirose">misslivirose</a>
+        <p>gave a talk at Full Stack Fest:</p>
+
+        <a href="https://www.youtube.com/watch?v=Ciqucr_Ww9s"><p><em>Virtual Reality is Here, in your Browser</em></p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/ram_gurumukhi">ram_gurumukhi</a>
+        <p>wrote about his</p>
+
+        <a href="https://gurumukhi.wordpress.com/2016/09/21/a-frame-experience/"><p><em>A-Frame experience in a nutshell</em></p>
+</a>
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/michaltakac">michaltakac</a>
+        <p>wrote about an article about creating a</p>
+
+        <a href="https://medium.com/dimensionlab/loading-cursor-effect-in-a-frame-909be259800e"><p><em>loading cursor effect in A-Frame</em></p>
+</a>
+      </li>
+    
+  </ul>
+
+
+          
+  <h3>Contributions</h3>
+  <ul class="post__projects-text">
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/dmarcos">dmarcos</a>
+        <a href="https://github.com/aframevr/aframe/pull/1913">bumped</a>
+        <p>three.js <code>VREffect</code> to work with Firefox Nightly.</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/msfeldstein">msfeldstein</a>
+        <a href="https://github.com/aframevr/a-painter/pull/1913">added</a>
+        <p>a rainbow brush.</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+          (for <a href="https://github.com/aframevr/a-painter">aframevr/a-painter</a>)
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/donrmccurdy">donrmccurdy</a>
+        <a href="https://github.com/aframevr/aframe/pull/1920">added</a>
+        <p>intersection data to <code>cursor</code> component events.</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a>
+        <a href="https://github.com/aframevr/aframe/pull/1914">removed</a>
+        <p>deprecated Declarative Events.</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+      <li>
+        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a>
+        <a href="https://github.com/aframevr/aframe/pull/1913">removed</a>
+        <p>deprecated <code>look-at</code> component.</p>
+
+
+        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
+        
+        
+      </li>
+    
+  </ul>
+
+
+        
+      </article>
+
+      <footer class="footer guide-links c">
+        
+        
+        
+        
+          <span class="float-left"><a href="/blog/a-painter/" class="guide-link guide-link-left">← A-Painter: Paint in VR in Your Browser</a></span>
+        
+        
+      </footer>
+    
+
+    <footer class="footer footnote">
+      <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+      
+        <p>Caught a mistake? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/awoa-28.md" class="github-file-link" rel="external">Suggest an edit to this post on GitHub</a></p>
+      
+    </footer>
+  </div>
+</div>
+
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/ga.js"></script>
+    <script src="/js/single-page.js"></script>
+    
+    
+      <script src="/js/docs.js"></script>
+    
+  </body>
+</html>

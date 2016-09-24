@@ -39,7 +39,7 @@
 
     <meta charset="utf-8">
     <meta name="robots" content="all">
-    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="description" content="A web framework for building VR experiences.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="canonical" href="https://aframe.io">
@@ -48,7 +48,7 @@
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:description" content="A web framework for building VR experiences.">
     <meta property="og:image" content="http://aframe.io/images/card.png">
     <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
 
@@ -56,7 +56,7 @@
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
     <meta name="twitter:title" content="A-Frame">
-    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:description" content="A web framework for building VR experiences.">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
     <meta name="mobile-web-app-capable" content="yes">
@@ -212,7 +212,7 @@
           </option>
         
       </select>
-      
+
     
       
 
@@ -539,6 +539,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/visible.html"
                class="subnav-link">
               visible
@@ -775,7 +782,9 @@
       <p>The camera primitive places the user somewhere within the scene. It is an
 entity that prescribes the <a href="../components/">camera component</a> with mappings to
 controls-related components.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"0 1.8 5"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Note that by default, the camera origin will be at <code>0 1.6 0</code> in desktop mode
+and <code>0 0 0</code> in VR mode. Read about the <a href="../components/camera.html#vr-behavior"><code>camera.userHeight</code> property</a>.</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><table>
 <thead>
 <tr>
@@ -808,7 +817,7 @@ controls-related components.</p>
 <tr>
 <td>user-height</td>
 <td>camera.userHeight</td>
-<td>0</td>
+<td>1.6</td>
 </tr>
 <tr>
 <td>wasd-controls-enabled</td>
@@ -821,15 +830,6 @@ controls-related components.</p>
 the position directly on the camera primitive because controls will quickly
 override the set position:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"0 0 5"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="differences-with-the-default-camera"><a href="#differences-with-the-default-camera" class="headerlink" title="Differences with the Default Camera"></a>Differences with the Default Camera</h2><p>When we use the camera primitive, A-Frame will not prescribe a default camera.</p>
-<p>Note the default camera is positioned at <code>0 1.6 0</code> whereas the camera primitive
-will be positioned at <code>0 0 0</code>. In the example below, we would see a box:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-box</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>But if we prescribe our own camera and do not adjust its position:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-box</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Then both the cube and camera wll be positioned at <code>0 0 0</code>, the camera will be
-<em>inside</em> the cube, and thus the box won’t be visible without moving the camera.
-So make sure the have the camera well-positioned.</p>
 
     
 

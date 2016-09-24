@@ -39,7 +39,7 @@
 
     <meta charset="utf-8">
     <meta name="robots" content="all">
-    <meta name="description" content="A-Frame – Building Blocks for the VR Web">
+    <meta name="description" content="A web framework for building VR experiences.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="canonical" href="https://aframe.io">
@@ -48,7 +48,7 @@
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="Building Blocks for the VR Web">
+    <meta property="og:description" content="A web framework for building VR experiences.">
     <meta property="og:image" content="http://aframe.io/images/card.png">
     <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
 
@@ -56,7 +56,7 @@
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
     <meta name="twitter:title" content="A-Frame">
-    <meta name="twitter:description" content="Building Blocks for the VR Web">
+    <meta name="twitter:description" content="A web framework for building VR experiences.">
     <meta name="twitter:image" content="https://aframe.io/images/card.png">
 
     <meta name="mobile-web-app-capable" content="yes">
@@ -212,7 +212,7 @@
           </option>
         
       </select>
-      
+
     
       
 
@@ -539,6 +539,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/visible.html"
                class="subnav-link">
               visible
@@ -782,7 +789,7 @@
 <p>When the mouse is clicked, the closest visible entity intersecting the cursor, if any, will emit a <code>click</code> event. Note the cursor component only applies the raycasting behavior. To provide a shape or appearance to the cursor, you could apply the <a href="./geometry.html">geometry</a> and <a href="./material.html">material</a> components.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we can create a ring-shaped cursor that is fixed to the center of the screen. To fix it to the screen such that it is always present no matter where we look, we place it as a child of the active <a href="./camera.html">camera</a> entity. We pull it in front of the camera by placing it on the negative Z axis. When the cursor clicks on the box, we can listen to the click event.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span>=<span class="string">"fuse: true; fuseTimeout: 500"</span></span></div><div class="line">            <span class="attr">position</span>=<span class="string">"0 0 -1"</span></div><div class="line">            <span class="attr">geometry</span>=<span class="string">"primitive: ring"</span></div><div class="line">            <span class="attr">material</span>=<span class="string">"color: black; shader: flat"</span>&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">cursor-listener</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Component to change to random color on click.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'click-color-change'</span>, &#123;</div><div class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> COLORS = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> randomIndex = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * COLORS.length);</div><div class="line">      <span class="keyword">this</span>.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, COLORS[randomIndex]);</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'I was clicked!'</span>);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Component to change to random color on click.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'cursor-listener'</span>, &#123;</div><div class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> COLORS = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> randomIndex = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * COLORS.length);</div><div class="line">      <span class="keyword">this</span>.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, COLORS[randomIndex]);</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'I was clicked!'</span>);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><p>Note, to further customize the cursor component, we can set the properties of the raycaster component.</p>
 <table>
 <thead>
