@@ -1,0 +1,83 @@
+.algolia-autocomplete {
+  font-family: Fira Sans, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  width: 100%;
+}
+.search-field {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #dadada;
+  border-radius: 2px;
+  box-shadow: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 15px;
+  height: 30px;
+  outline-color: #ef2d5e;
+  padding: 0 5px 0 10px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .search-field {
+    width: 240px;
+  }
+}
+@media (min-width: 768px) {
+  .docs-search-wrapper {
+    margin-right: 16px;
+  }
+}
+[data-is-ios="true"] .search-field {
+  padding-bottom: 7px;
+}
+@media (min-width: 768px) {
+  .docs-search-sidebar {
+    display: none;
+  }
+}
+/* Main category headers */
+.algolia-docsearch-suggestion--category-header {
+  background-color: #ef2d5e;
+  border: 0;
+  color: #fafafa !important;
+  font-weight: 300;
+  padding: 3px 5px !important;
+}
+/* Highlighted search terms */
+.algolia-docsearch-suggestion--highlight {
+  color: #24caff;
+}
+/* Highligted search terms in the main category headers */
+.algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight {
+  background-color: #4d47d5;
+}
+/* Currently selected suggestion */
+.aa-cursor .algolia-docsearch-suggestion--content {
+  color: #2c3e50;
+}
+.aa-cursor .algolia-docsearch-suggestion {
+  background: #ebebfb;
+}
+@media (max-width: 768px) {
+  .algolia-autocomplete .algolia-docsearch-suggestion--content,
+  .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+    float: none;
+    width: 100%;
+  }
+  .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+    text-align: left;
+  }
+  .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column:before {
+    right: auto;
+    left: -1px;
+  }
+  .algolia-autocomplete .ds-dropdown-menu {
+    margin-left: -32px;
+    margin-right: -32px;
+    min-width: 100%;
+  }
+  .docs-search-docs {
+    display: none;
+  }
+}

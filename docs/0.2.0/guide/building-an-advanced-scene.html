@@ -8,6 +8,12 @@
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -22,10 +28,10 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-24056643-4"
-      data-aframe-version="0.3.0"
+      data-aframe-version="0.5.0"
       data-docs-version="0.2.0">
   <head>
-    <title>Building an Advanced Scene –  Docs  – A-Frame</title>
+    <title>Building an Advanced Scene – A-Frame</title>
     
 
 <script>
@@ -38,43 +44,34 @@
 
 
     <meta charset="utf-8">
-    <meta name="robots" content="all">
-    <meta name="description" content="A web framework for building VR experiences.">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="A-Frame">
+    <meta property="og:title" content="Building an Advanced Scene – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="A web framework for building VR experiences.">
-    <meta property="og:image" content="http://aframe.io/images/card.png">
-    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
-
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpgv2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpgv2">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="A-Frame">
-    <meta name="twitter:description" content="A web framework for building VR experiences.">
-    <meta name="twitter:image" content="https://aframe.io/images/card.png">
-
+    <meta name="twitter:title" content="Building an Advanced Scene – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpgv2">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
     <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
-
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
-
     <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
-
-    <script src="/js/compat.js"></script>
-
-    
-      <link rel="stylesheet" href="/css/secondary.css">
-    
-
     
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -87,26 +84,28 @@
 </script>
 
 
-  </head>
-  <body data-page-layout="docs"
-        data-page-type="guide">
-    
-      <aside class="sidebar sidebar-mobile borderless-links c">
-  <header id="header" class="header">
-    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
-    <a id="logo" class="logo" href="/">
-      <span class="logo__wordmark">A-Frame</span>
-    </a>
-  </header>
-</aside>
 
     
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="guide">
     <main id="main" class="main">
-      
 
 
 <!-- Navigation. -->
-<aside class="sidebar borderless-links">
+<aside id="sidebar" class="sidebar borderless-links">
   
 
 <div id="secondary-nav" class="secondary-nav">
@@ -116,10 +115,18 @@
     </a>
   </header>
 
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.2.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/0.3.0/introduction/"
+        <a href="/docs/0.5.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -133,15 +140,6 @@
            
            >
           <span>Examples</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/faq/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>FAQ</span>
         </a>
       </li>
     
@@ -186,32 +184,41 @@
 
 
   <div class="list">
-
-      <!-- Version dropdown. -->
-      <label class="subnav-label" for="docs-version"><b>Version</b></label>
-      <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-        
-          <option false
-                  data-href="/docs/master/introduction/">
-            master
-          </option>
-        
-          <option false
-                  data-href="/docs/0.3.0/introduction/">
-            0.3.0
-          </option>
-        
-          <option selected
-                  data-href="/docs/0.2.0/guide/">
-            0.2.0
-          </option>
-        
-          <option false
-                  data-href="/docs/0.1.0/guide/">
-            0.1.0
-          </option>
-        
-      </select>
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
 
     
       
@@ -657,19 +664,77 @@
 
 <!-- Documentation. -->
 <div class="content content--structured content--guide copy">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
   <div class="copy__wrap">
-    <p class="page__section">
-      <a href="/docs/0.2.0/guide/" class="borderless-link">
-        0.2.0 &rsaquo; Guide
-      </a>
-    </p>
+    <div class="page__section docs-header">
+      <p>
+        <a href="/docs/0.2.0/guide/" class="borderless-link">
+          0.2.0 &rsaquo; Guide
+        </a>
+      </p>
+      
+
+
+<div class="docs-search-wrapper docs-search-docs">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.2.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+    </div>
+    <h1 class="page__title">Building an Advanced Scene</h1>
+
+    
     
       <blockquote>
-<p><strong>Note:</strong> This documentation is for the old 0.2.0 version of A-Frame. Check out the <a href="/docs/0.3.0/introduction/">current 0.3.0 version</a> of the documentation.</p>
+<p><strong>Note:</strong> This documentation is for the old 0.2.0 version of A-Frame. Check out the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p>
 </blockquote>
 
     
-    <h1 class="page__title">Building an Advanced Scene</h1>
 
     
     
@@ -693,14 +758,14 @@
 <h2 id="writing-components"><a href="#writing-components" class="headerlink" title="Writing Components"></a>Writing Components</h2><p>Developers that are comfortable with JavaScript and three.js can write components to add appearance, behavior, and functionality to the experience. As we’ve seen these components can then be reused and shared with the community. Though not all components have to be shared; they can be ad-hoc or one-off. Since A-Frame is based on an <a href="../core/">entity-component-system pattern</a>, most logic should be implemented within components. The development workflow within A-Frame should try to revolve around components. The <a href="../core/component.html">component documentation</a> goes into much more detail on what a component looks like and how to write one.</p>
 <p>We want to be able to fire lasers at the enemies and have them disappear. We will need a component to create lasers on click, a component to generate clicks, a component to propel those lasers, a component to check when a laser comes in contact with an enemy.</p>
 <h3 id="spawner-component"><a href="#spawner-component" class="headerlink" title="spawner Component"></a>spawner Component</h3><p>Let’s start by being able to create lasers. We want to be able to spawn a laser entity that starts at the player’s current position. We’ll create a spawner component that listens to an event on the entity, and when that event is emitted, we’ll spawn an entity with a predefined <a href="../core/mixins.html">mixin</a> of components:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'spawner'</span>, &#123;</div><div class="line">  schema: &#123;</div><div class="line">    on: &#123; <span class="keyword">default</span>: <span class="string">'click'</span> &#125;,</div><div class="line">    mixin: &#123; <span class="keyword">default</span>: <span class="string">''</span> &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Add event listener.</div><div class="line">   */</div><div class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="keyword">this</span>.data.on, <span class="keyword">this</span>.spawn.bind(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Spawn new entity at entity's current position.</div><div class="line">   */</div><div class="line">  spawn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line">    <span class="keyword">var</span> entity = <span class="built_in">document</span>.createElement(<span class="string">'a-entity'</span>);</div><div class="line">    <span class="keyword">var</span> matrixWorld = el.object3D.matrixWorld;</div><div class="line">    <span class="keyword">var</span> position = <span class="keyword">new</span> THREE.Vector3();</div><div class="line">    <span class="keyword">var</span> rotation = el.getAttribute(<span class="string">'rotation'</span>);</div><div class="line">    <span class="keyword">var</span> entityRotation;</div><div class="line"></div><div class="line">    position.setFromMatrixPosition(matrixWorld);</div><div class="line">    entity.setAttribute(<span class="string">'position'</span>, position);</div><div class="line"></div><div class="line">    <span class="comment">// Have the spawned entity face the same direction as the entity.</span></div><div class="line">    <span class="comment">// Allow the entity to further modify the inherited rotation.</span></div><div class="line">    position.setFromMatrixPosition(matrixWorld);</div><div class="line">    entity.setAttribute(<span class="string">'position'</span>, position);</div><div class="line">    entity.setAttribute(<span class="string">'mixin'</span>, <span class="keyword">this</span>.data.mixin);</div><div class="line">    entity.addEventListener(<span class="string">'loaded'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      entityRotation = entity.getComputedAttribute(<span class="string">'rotation'</span>);</div><div class="line">      entity.setAttribute(<span class="string">'rotation'</span>, &#123;</div><div class="line">        x: entityRotation.x + rotation.x,</div><div class="line">        y: entityRotation.y + rotation.y,</div><div class="line">        z: entityRotation.z + rotation.z</div><div class="line">      &#125;);</div><div class="line">    &#125;);</div><div class="line">    el.sceneEl.appendChild(entity);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'spawner'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">on</span>: &#123; <span class="attr">default</span>: <span class="string">'click'</span> &#125;,</div><div class="line">    <span class="attr">mixin</span>: &#123; <span class="attr">default</span>: <span class="string">''</span> &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Add event listener.</div><div class="line">   */</div><div class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="keyword">this</span>.data.on, <span class="keyword">this</span>.spawn.bind(<span class="keyword">this</span>));</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Spawn new entity at entity's current position.</div><div class="line">   */</div><div class="line">  spawn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line">    <span class="keyword">var</span> entity = <span class="built_in">document</span>.createElement(<span class="string">'a-entity'</span>);</div><div class="line">    <span class="keyword">var</span> matrixWorld = el.object3D.matrixWorld;</div><div class="line">    <span class="keyword">var</span> position = <span class="keyword">new</span> THREE.Vector3();</div><div class="line">    <span class="keyword">var</span> rotation = el.getAttribute(<span class="string">'rotation'</span>);</div><div class="line">    <span class="keyword">var</span> entityRotation;</div><div class="line"></div><div class="line">    position.setFromMatrixPosition(matrixWorld);</div><div class="line">    entity.setAttribute(<span class="string">'position'</span>, position);</div><div class="line"></div><div class="line">    <span class="comment">// Have the spawned entity face the same direction as the entity.</span></div><div class="line">    <span class="comment">// Allow the entity to further modify the inherited rotation.</span></div><div class="line">    position.setFromMatrixPosition(matrixWorld);</div><div class="line">    entity.setAttribute(<span class="string">'position'</span>, position);</div><div class="line">    entity.setAttribute(<span class="string">'mixin'</span>, <span class="keyword">this</span>.data.mixin);</div><div class="line">    entity.addEventListener(<span class="string">'loaded'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      entityRotation = entity.getComputedAttribute(<span class="string">'rotation'</span>);</div><div class="line">      entity.setAttribute(<span class="string">'rotation'</span>, &#123;</div><div class="line">        <span class="attr">x</span>: entityRotation.x + rotation.x,</div><div class="line">        <span class="attr">y</span>: entityRotation.y + rotation.y,</div><div class="line">        <span class="attr">z</span>: entityRotation.z + rotation.z</div><div class="line">      &#125;);</div><div class="line">    &#125;);</div><div class="line">    el.sceneEl.appendChild(entity);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="click-listener-component"><a href="#click-listener-component" class="headerlink" title="click-listener Component"></a>click-listener Component</h3><p>Now we need to a way to generate a click event on the player entity in order to spawn the laser. We could just write a vanilla JavaScript event handler in a content script, but it is more reusable to write a component that can allow any entity to listen for clicks:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'click-listener'</span>, &#123;</div><div class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      el.emit(<span class="string">'click'</span>, <span class="literal">null</span>, <span class="literal">false</span>);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'click-listener'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      el.emit(<span class="string">'click'</span>, <span class="literal">null</span>, <span class="literal">false</span>);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>From HTML, we define the laser mixin and attach the spawner and click-listener components to the player. When we click, the spawner component will generate a laser starting in front of the camera:</p>
 <p data-height="500" data-theme-id="0" data-slug-hash="jqEjvB" data-default-tab="html" data-user="mozvr" class="codepen">See the Pen <a href="http://codepen.io/team/mozvr/pen/jqEjvB/" target="_blank" rel="external">Laser Shooter - Step 4</a> by MozVR (<a href="http://codepen.io/mozvr" target="_blank" rel="external">@mozvr</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
 
 <h3 id="projectile-component"><a href="#projectile-component" class="headerlink" title="projectile Component"></a>projectile Component</h3><p>Now lasers will spawn in front of us when we click, but we need them to fire and travel. In the spawner component, we had the laser point in the rotation of the camera, and we rotated it 90-degrees around the X-axis to align it correctly. We can add a projectile component to have the laser travel straight in the direction it’s already facing (its local Y-axis in this case):</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'projectile'</span>, &#123;</div><div class="line">  schema: &#123;</div><div class="line">    speed: &#123; <span class="keyword">default</span>: <span class="number">-0.4</span> &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.object3D.translateY(<span class="keyword">this</span>.data.speed);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'projectile'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">speed</span>: &#123; <span class="attr">default</span>: <span class="number">-0.4</span> &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">tick</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.object3D.translateY(<span class="keyword">this</span>.data.speed);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Then attach the projectile component to the laser mixin:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- Attach projectile behavior. --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"laser"</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder; radius: 0.05; translate: 0 -2 0"</span></span></div><div class="line">                      <span class="attr">material</span>=<span class="string">"color: green; metalness: 0.2; opacity: 0.4; roughness: 0.3"</span></div><div class="line">                      <span class="attr">projectile</span>=<span class="string">"speed: -0.5"</span>&gt;<span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>The laser will now fire like a projectile on click:</p>
@@ -727,19 +792,41 @@
     </footer>
 
     <footer class="footer footnote">
-  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/guide/building-an-advanced-scene.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+  <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/guide/building-an-advanced-scene.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 </footer>
 
   </div>
 </div>
+</main>
 
-    </main>
-    <script src="/js/common.js"></script>
-    <script src="/js/ga.js"></script>
-    <script src="/js/single-page.js"></script>
     
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
     
-      <script src="/js/docs.js"></script>
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.2.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+</script>
+
     
   </body>
 </html>

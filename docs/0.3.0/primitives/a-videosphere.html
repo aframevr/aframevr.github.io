@@ -8,6 +8,12 @@
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -22,10 +28,10 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-24056643-4"
-      data-aframe-version="0.3.0"
+      data-aframe-version="0.5.0"
       data-docs-version="0.3.0">
   <head>
-    <title><a-videosphere> –  Docs  – A-Frame</title>
+    <title><a-videosphere> – A-Frame</title>
     
 
 <script>
@@ -38,43 +44,34 @@
 
 
     <meta charset="utf-8">
-    <meta name="robots" content="all">
-    <meta name="description" content="A web framework for building VR experiences.">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="A-Frame">
+    <meta property="og:title" content="&lt;a-videosphere&gt; – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="A web framework for building VR experiences.">
-    <meta property="og:image" content="http://aframe.io/images/card.png">
-    <meta property="og:image:secure_url" content="https://aframe.io/images/card.png">
-
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpgv2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpgv2">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="A-Frame">
-    <meta name="twitter:description" content="A web framework for building VR experiences.">
-    <meta name="twitter:image" content="https://aframe.io/images/card.png">
-
+    <meta name="twitter:title" content="&lt;a-videosphere&gt; – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpgv2">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
     <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
-
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
-
     <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
-
-    <script src="/js/compat.js"></script>
-
-    
-      <link rel="stylesheet" href="/css/secondary.css">
-    
-
     
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -87,26 +84,28 @@
 </script>
 
 
-  </head>
-  <body data-page-layout="docs"
-        data-page-type="primitives">
-    
-      <aside class="sidebar sidebar-mobile borderless-links c">
-  <header id="header" class="header">
-    <a href="#secondary-nav" class="mobile-nav-btn">Menu</a>
-    <a id="logo" class="logo" href="/">
-      <span class="logo__wordmark">A-Frame</span>
-    </a>
-  </header>
-</aside>
 
     
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="primitives">
     <main id="main" class="main">
-      
 
 
 <!-- Navigation. -->
-<aside class="sidebar borderless-links">
+<aside id="sidebar" class="sidebar borderless-links">
   
 
 <div id="secondary-nav" class="secondary-nav">
@@ -116,10 +115,18 @@
     </a>
   </header>
 
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/0.3.0/introduction/"
+        <a href="/docs/0.5.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -133,15 +140,6 @@
            
            >
           <span>Examples</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/faq/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>FAQ</span>
         </a>
       </li>
     
@@ -186,32 +184,41 @@
 
 
   <div class="list">
-
-      <!-- Version dropdown. -->
-      <label class="subnav-label" for="docs-version"><b>Version</b></label>
-      <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-        
-          <option false
-                  data-href="/docs/master/introduction/">
-            master
-          </option>
-        
-          <option selected
-                  data-href="/docs/0.3.0/introduction/">
-            0.3.0
-          </option>
-        
-          <option false
-                  data-href="/docs/0.2.0/guide/">
-            0.2.0
-          </option>
-        
-          <option false
-                  data-href="/docs/0.1.0/guide/">
-            0.1.0
-          </option>
-        
-      </select>
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
 
     
       
@@ -370,16 +377,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.3.0/core/utils.html"
+            <a href="/docs/0.3.0/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.3.0/core/AFRAME.html"
+            <a href="/docs/0.3.0/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
@@ -756,14 +763,77 @@
 
 <!-- Documentation. -->
 <div class="content content--structured content--primitives copy">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
   <div class="copy__wrap">
-    <p class="page__section">
-      <a href="/docs/0.3.0/primitives/" class="borderless-link">
-        0.3.0 &rsaquo; Primitives
-      </a>
-    </p>
-    
+    <div class="page__section docs-header">
+      <p>
+        <a href="/docs/0.3.0/primitives/" class="borderless-link">
+          0.3.0 &rsaquo; Primitives
+        </a>
+      </p>
+      
+
+
+<div class="docs-search-wrapper docs-search-docs">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+    </div>
     <h1 class="page__title">&lt;a-videosphere&gt;</h1>
+
+    
+    
+      <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 0.3.0 version of A-Frame. Check out the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p>
+</blockquote>
+
+    
 
     
     
@@ -828,19 +898,41 @@
     </footer>
 
     <footer class="footer footnote">
-  <p>Caught a mistake or want to contribute to the documentation? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-videosphere.md" class="github-file-link" target="_blank" rel="external">Suggest an edit to this page on GitHub</a></p>
+  <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-videosphere.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 </footer>
 
   </div>
 </div>
+</main>
 
-    </main>
-    <script src="/js/common.js"></script>
-    <script src="/js/ga.js"></script>
-    <script src="/js/single-page.js"></script>
     
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
     
-      <script src="/js/docs.js"></script>
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.3.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+</script>
+
     
   </body>
 </html>

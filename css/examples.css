@@ -9,8 +9,13 @@
     top: 20px;
   }
   .main {
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .example__iframe {
     height: 100%;
@@ -32,7 +37,9 @@
     overflow-x: hidden;
   }
   .sidebar {
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     padding: 0;
     position: relative;
     max-width: 100%;
