@@ -1,14 +1,791 @@
-<!DOCTYPE html><html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-site-base-url="https://aframe.io" data-site-root-path="/" data-site-home-url="https://aframe.io/" data-lib-home-url="https://aframe.io/" data-lib-examples-url="https://aframe.io/aframe/examples" data-title="{title} | A-Frame" data-is-spa="false" data-ga-id="UA-24056643-4" data-aframe-version="0.5.0" data-docs-version="0.3.0"><head><title>Component – A-Frame</title><script>var host = window.location.protocol + '//' + window.location.hostname;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.5.0"
+      data-docs-version="0.3.0">
+  <head>
+    <title>Component – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
   if (window.location.protocol === 'http:' &&
       window.location.hostname === 'https://aframe.io') {
     window.location.href = 'https:' + window.location.href.substring(6);
-  }</script><meta charset="utf-8"><meta name="robots" content="NOINDEX"><meta name="description" content=""><meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="canonical" href="https://aframe.io"><link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet"><meta property="fb:app_id" content="1535794316743373"><meta property="og:title" content="Component – A-Frame"><meta property="og:site_name" content="A-Frame"><meta property="og:type" content="website"><meta property="og:url" content="https://aframe.io"><meta property="og:description" content=""><meta property="og:image" content="http://aframe.io/images/card.jpg?v2"><meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@aframevr"><meta name="twitter:creator" content="@aframevr"><meta name="twitter:title" content="Component – A-Frame"><meta name="twitter:description" content=""><meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="black"><link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png"><link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Component – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Component – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-24056643-4', 'auto');
-  ga('send', 'pageview');</script><script src="/js/compat.js"></script><link rel="stylesheet" href="/css/secondary.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"><link rel="stylesheet" href="/css/search.css"></head><body data-page-layout="docs" data-page-type="core"><main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links"><div id="secondary-nav" class="secondary-nav"><header id="header" class="header"><a id="logo" class="logo" href="/" title="A-Frame"><span class="logo__wordmark">A-Frame</span></a></header><div class="docs-search-wrapper docs-search-sidebar"><input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div><ul id="nav" class="nav"><li class="nav-item"><a href="/docs/0.5.0/introduction/" class="nav-link nav-link-docs current nav-link-disabled"><span>Docs</span></a></li><li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li><li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs"><span>Blog</span></a></li><li class="nav-item"><a href="/community/" class="nav-link nav-link-docs"><span>Community</span></a></li><li data-slug="github" class="nav-item"><a href="https://github.com/aframevr/aframe/" class="nav-link nav-link-docs" rel="external" title="A-Frame project repository on GitHub"><span>GitHub</span></a></li><li data-slug="slug" class="nav-item"><a href="https://aframevr-slack.herokuapp.com" class="nav-link nav-link-docs" rel="external" title="A-Frame Slack (sign up)"><span>Slack</span></a></li></ul></div><div class="list"><label class="subnav-label" for="docs-version"><b>Version</b></label><select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')"><option false data-href="/docs/master/introduction/">master</option><option false data-href="/docs/0.5.0/introduction/">0.5.0</option><option false data-href="/docs/0.4.0/introduction/">0.4.0</option><option selected data-href="/docs/0.3.0/introduction/">0.3.0</option><option false data-href="/docs/0.2.0/guide/">0.2.0</option><option false data-href="/docs/0.1.0/guide/">0.1.0</option></select><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/0.3.0/introduction/" class="section-title-link section-title-link-inactive">Introduction</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.3.0/introduction/" class="subnav-link">Introduction</a></li><li class="subnav-item"><a href="/docs/0.3.0/introduction/getting-started.html" class="subnav-link">Getting Started</a></li><li class="subnav-item"><a href="/docs/0.3.0/introduction/device-and-platform-support.html" class="subnav-link">Device &amp; Platform Support</a></li><li class="subnav-item"><a href="/docs/0.3.0/introduction/best-practices.html" class="subnav-link">Best Practices</a></li><li class="subnav-item"><a href="/docs/0.3.0/introduction/faq.html" class="subnav-link">FAQ</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/0.3.0/guides/" class="section-title-link section-title-link-inactive">Guides</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.3.0/guides/" class="subnav-link">Building with Basic HTML</a></li><li class="subnav-item"><a href="/docs/0.3.0/guides/building-with-components.html" class="subnav-link">Building with Components</a></li><li class="subnav-item"><a href="/docs/0.3.0/guides/building-with-magicavoxel.html" class="subnav-link">Building with MagicaVoxel</a></li><li class="subnav-item"><a href="/docs/0.3.0/guides/using-the-aframe-inspector.html" class="subnav-link">Using the A-Frame Inspector</a></li></ol><h3 class="section-title docs-section-title section-title-active"><a href="/docs/0.3.0/core/" class="section-title-link section-title-link-active">Concepts and API</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.3.0/core/" class="subnav-link">Entity-Component-System</a></li><li class="subnav-item"><a href="/docs/0.3.0/core/entity.html" class="subnav-link">Entity</a></li><li class="subnav-item subnav-item-current"><a href="/docs/0.3.0/core/component.html" class="subnav-link current">Component</a></li><li class="subnav-item"><a href="/docs/0.3.0/core/systems.html" class="subnav-link">System</a></li><li class="subnav-item"><a href="/docs/0.3.0/core/scene.html" class="subnav-link">Scene</a></li><li class="subnav-item"><a href="/docs/0.3.0/core/animations.html" class="subnav-link">Animations</a></li><li class="subnav-item"><a href="/docs/0.3.0/core/mixins.html" class="subnav-link">Mixins</a></li><li class="subnav-item"><a href="/docs/0.3.0/core/asset-management-system.html" class="subnav-link">Asset Management System</a></li><li class="subnav-item"><a href="/docs/0.3.0/core/AFRAME.html" class="subnav-link">AFRAME Globals</a></li><li class="subnav-item"><a href="/docs/0.3.0/core/utils.html" class="subnav-link">Utils</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/0.3.0/components/" class="section-title-link section-title-link-inactive">Components</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.3.0/components/blend-model.html" class="subnav-link">blend-model</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/camera.html" class="subnav-link">camera</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/collada-model.html" class="subnav-link">collada-model</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/cursor.html" class="subnav-link">cursor</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/debug.html" class="subnav-link">debug</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/embedded.html" class="subnav-link">embedded</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/fog.html" class="subnav-link">fog</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/geometry.html" class="subnav-link">geometry</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/hand-controls.html" class="subnav-link">hand-controls</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/keyboard-shortcuts.html" class="subnav-link">keyboard-shortcuts</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/light.html" class="subnav-link">light</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/look-controls.html" class="subnav-link">look-controls</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/material.html" class="subnav-link">material</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/obj-model.html" class="subnav-link">obj-model</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/position.html" class="subnav-link">position</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/raycaster.html" class="subnav-link">raycaster</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/rotation.html" class="subnav-link">rotation</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/scale.html" class="subnav-link">scale</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/sound.html" class="subnav-link">sound</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/stats.html" class="subnav-link">stats</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/tracked-controls.html" class="subnav-link">tracked-controls</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/visible.html" class="subnav-link">visible</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/vive-controls.html" class="subnav-link">vive-controls</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/vr-mode-ui.html" class="subnav-link">vr-mode-ui</a></li><li class="subnav-item"><a href="/docs/0.3.0/components/wasd-controls.html" class="subnav-link">wasd-controls</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/0.3.0/primitives/" class="section-title-link section-title-link-inactive">Primitives</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.3.0/primitives/" class="subnav-link">Introduction</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-box.html" class="subnav-link">&lt;a-box&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-camera.html" class="subnav-link">&lt;a-camera&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-circle.html" class="subnav-link">&lt;a-circle&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-collada-model.html" class="subnav-link">&lt;a-collada-model&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-cone.html" class="subnav-link">&lt;a-cone&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-cursor.html" class="subnav-link">&lt;a-cursor&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-curvedimage.html" class="subnav-link">&lt;a-curvedimage&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-cylinder.html" class="subnav-link">&lt;a-cylinder&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-dodecahedron.html" class="subnav-link">&lt;a-dodecahedron&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-image.html" class="subnav-link">&lt;a-image&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-light.html" class="subnav-link">&lt;a-light&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-obj-model.html" class="subnav-link">&lt;a-obj-model&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-octahedron.html" class="subnav-link">&lt;a-octahedron&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-plane.html" class="subnav-link">&lt;a-plane&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-ring.html" class="subnav-link">&lt;a-ring&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-sky.html" class="subnav-link">&lt;a-sky&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-sound.html" class="subnav-link">&lt;a-sound&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-sphere.html" class="subnav-link">&lt;a-sphere&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-tetrahedron.html" class="subnav-link">&lt;a-tetrahedron&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-torus-knot.html" class="subnav-link">&lt;a-torus-knot&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-torus.html" class="subnav-link">&lt;a-torus&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-video.html" class="subnav-link">&lt;a-video&gt;</a></li><li class="subnav-item"><a href="/docs/0.3.0/primitives/a-videosphere.html" class="subnav-link">&lt;a-videosphere&gt;</a></li></ol></div></aside><div class="content content--structured content--core copy"><div class="mobile-header"><a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a><h1><a href="/">A-Frame</a></h1><span></span></div><script>(function() {
+  ga('send', 'pageview');
+</script>
+
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="core">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.5.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.3.0/introduction/"
+           class="section-title-link section-title-link-inactive">
+          Introduction
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/introduction/getting-started.html"
+               class="subnav-link">
+              Getting Started
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/introduction/device-and-platform-support.html"
+               class="subnav-link">
+              Device &amp; Platform Support
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.3.0/guides/"
+           class="section-title-link section-title-link-inactive">
+          Guides
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/guides/"
+               class="subnav-link">
+              Building with Basic HTML
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/guides/building-with-components.html"
+               class="subnav-link">
+              Building with Components
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/guides/building-with-magicavoxel.html"
+               class="subnav-link">
+              Building with MagicaVoxel
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/guides/using-the-aframe-inspector.html"
+               class="subnav-link">
+              Using the A-Frame Inspector
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <a href="/docs/0.3.0/core/"
+           class="section-title-link section-title-link-active">
+          Concepts and API
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.3.0/core/component.html"
+               class="subnav-link current">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/AFRAME.html"
+               class="subnav-link">
+              AFRAME Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.3.0/components/"
+           class="section-title-link section-title-link-inactive">
+          Components
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/blend-model.html"
+               class="subnav-link">
+              blend-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.3.0/primitives/"
+           class="section-title-link section-title-link-inactive">
+          Primitives
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.3.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+<!-- Documentation. -->
+<div class="content content--structured content--core copy">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
     var sidebarEl = document.querySelector('#sidebar');
     var toggleEl = document.querySelector('#sidebar-toggle');
 
@@ -44,7 +821,651 @@
       }
       return null;
     }
-  })();</script><div class="copy__wrap"><div class="page__section docs-header"><p><a href="/docs/0.3.0/core/" class="borderless-link">0.3.0 &rsaquo; Concepts and API</a></p><div class="docs-search-wrapper docs-search-docs"><input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div></div><h1 class="page__title">Component</h1><blockquote><p><strong>Note:</strong> This documentation is for the old 0.3.0 version of A-Frame. Check out the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p></blockquote><p>In the <a href="./">entity-component-system pattern</a>, a component is a reusable and modular chunk of data that is plugged into an entity to add appearance, behavior, and/or functionality.</p><p>In A-Frame, components modify entities which are 3D objects in the scene. We mix and compose components together to build complex objects. They let us encapsulate <a href="http://threejs.org/" target="_blank" rel="external">three.js</a> and JavaScript code into modules that can be used declaratively from HTML.</p><p>As an abstract analogy, if a smartphone were defined as an entity, we might use components to give it appearance (color, shape), to define its behavior (vibrate when called, shut down on low battery), or to add functionality (camera, screen).</p><p>Components are roughly analogous to CSS. Like how CSS rules modify the appearance of elements, component properties modify the appearance, behavior, and functionality of entities.</p><h2 id="toc">Table of Contents</h2><ul><li><a href="#what-a-component-looks-like">What a Component Looks Like</a><ul><li><a href="#from-html">From HTML</a></li></ul></li><li><a href="#under-the-hood">Under the Hood</a><ul><li><a href="#properties">Properties</a></li><li><a href="#methods">Methods</a></li></ul></li><li><a href="#dependencies">Dependencies</a><ul></ul></li><li><a href="#multiple-instancing">Multiple Instancing</a><ul></ul></li><li><a href="#schema">Schema</a><ul><li><a href="#property-types">Property Types</a></li><li><a href="#schema-inference">Schema Inference</a></li><li><a href="#single-property-schemas">Single-Property Schemas</a></li><li><a href="#multi-property-schemas">Multi-Property Schemas</a></li></ul></li><li><a href="#interface-lifecycle-methods">Interface / Lifecycle Methods</a><ul><li><a href="#init">.init()</a></li><li><a href="#update-olddata">.update(oldData)</a></li><li><a href="#remove">.remove()</a></li><li><a href="#tick-time-timedelta">.tick(time, timeDelta)</a></li><li><a href="#pause-and-play">.pause() and .play()</a></li><li><a href="#updateschema-data">.updateSchema(data)</a></li></ul></li><li><a href="#methods-1">Methods</a><ul><li><a href="#extendschema-schema">.extendSchema(schema)</a></li><li><a href="#flushtodom">.flushToDOM()</a></li></ul></li><li><a href="#write-a-component">Write a Component</a><ul><li><a href="#line-component">Line Component</a></li></ul></li></ul><h2 id="what-a-component-looks-like"><a href="#what-a-component-looks-like" class="headerlink" title="What a Component Looks Like"></a>What a Component Looks Like</h2><p>A component holds a bucket of data in the form of one or more component properties. This data is used to modify the entity. Consider an <em>engine</em> component, we might define properties such as <em>horsepower</em> or <em>cylinders</em>.</p><p><img src="http://thevrjump.com/assets/img/articles/aframe-system/aframe-system.jpg" alt=""></p><div class="page-caption"><span>Abstract representation of a component by @rubenmueller of <a href="http://thevrjump.com" target="_blank" rel="external">The VR Jump</a>.</span></div><h3 id="from-html"><a href="#from-html" class="headerlink" title="From HTML"></a>From HTML</h3><p>HTML attributes represent component names and the value of those attributes represent component data.</p><h4 id="single-property-component"><a href="#single-property-component" class="headerlink" title="Single-Property Component"></a>Single-Property Component</h4><p>If a component is a <em>single-property</em> component, meaning its data is represented by a single value, then in HTML, the component value looks like a normal HTML attribute:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- `position` is the name of the position component. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- `1 2 3` is the data of the position component. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><h4 id="multi-property-component"><a href="#multi-property-component" class="headerlink" title="Multi-Property Component"></a>Multi-Property Component</h4><p>If a component is a <em>multi-property</em> component, meaning its data is represented by several properties and values, then in HTML, the component value looks like inline CSS styles:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- `light` is the name of the light component. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- The `type` property of the light is set to `point`. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- The `color` property of the light is set to `crimson`. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: point; color: crimson"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><h2 id="under-the-hood"><a href="#under-the-hood" class="headerlink" title="Under the Hood"></a>Under the Hood</h2><p>A component is registered using <code>AFRAME.registerComponent</code>, which we pass a component name to register a component under and a component definition. Below is the outer skeleton for the <a href="../components/position.html">position component</a>:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>A component defines a <strong>schema</strong> that defines its properties, giving <em>anatomy</em> to the component. The position component takes a flat <code>vec3</code>, or an <code>{x, y, z}</code> object.</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123; <span class="attr">type</span>: <span class="string">'vec3'</span> &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>Then a component defines lifecycle methods that handles what it does with its data, giving <em>physiology</em> to the component. During initialization and on attribute updates, the position component takes its <code>vec3</code> value and applies it to its <a href="http://threejs.org/docs/#Reference/Core/Object3D" target="_blank" rel="external">three.js Object3D</a>:</p><p>Components will often be talking to the three.js API.</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123; <span class="attr">type</span>: <span class="string">'vec3'</span> &#125;,</div><div class="line"></div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> object3D = <span class="keyword">this</span>.el.object3D;</div><div class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</div><div class="line">    object3D.position.set(data.x, data.y, data.z);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>The position component uses only a small subset of the component API. We’ll go over everything the component API has to offer.</p><h3 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h3><table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody><tr><td>attrName</td><td>Full HTML attribute name used to define the component. Used if component can have <a href="#multiple-instancing">multiple instances</a>.</td></tr><tr><td>data</td><td>Parsed data object of the component derived from the schema default values, mixins, and the entity’s attributes.</td></tr><tr><td>dependencies</td><td>Components to initialize first and wait for.</td></tr><tr><td>el</td><td>Reference to the <a href="./entity.html">entity</a> element.</td></tr><tr><td>id</td><td>ID or name of the individual instance of the component. Used if component can have <a href="#multiple-instancing">multiple instances</a>.</td></tr><tr><td>multiple</td><td>Whether component can have <a href="#multiple-instancing">multiple instances</a> by suffixing <code>__&lt;id&gt;</code> to the HTML attribute name of the component.</td></tr><tr><td>name</td><td>Base name used to register the component.</td></tr><tr><td>schema</td><td>Component property names, types, default values, parsers, and stringifiers.</td></tr></tbody></table><h3 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h3><table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>init</td><td>Called once when the component is initialized. Used to set up initial state and instantiate variables.</td></tr><tr><td>update</td><td>Called both when the component is initialized and whenever the component’s data changes (e.g, via <em>setAttribute</em>). Used to modify the entity.</td></tr><tr><td>remove</td><td>Called when the component detaches from the element (e.g., via <em>removeAttribute</em>). Used to undo all previous modifications to the entity.</td></tr><tr><td>tick</td><td>Called on each render loop or tick of the scene. Used for continuous changes.</td></tr><tr><td>play</td><td>Called whenever the scene or entity plays to add any background or dynamic behavior. Used to start or resume behavior.</td></tr><tr><td>pause</td><td>Called whenever the scene or entity pauses to remove any background or dynamic behavior. Used to pause behavior.</td></tr><tr><td>updateSchema</td><td>Called on every update. Can be used to dynamically modify the schema.</td></tr></tbody></table><h2 id="dependencies"><a href="#dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><p>Specifying <code>dependencies</code> will guarantee that another component or other components are initialized <em>before</em> initializing the current component:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Initializes last.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'a'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'b'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Initializes second.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'b'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'c'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Initializes first.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'c'</span>, &#123;&#125;);</div></pre></td></tr></table></figure><h2 id="multiple-instancing"><a href="#multiple-instancing" class="headerlink" title="Multiple Instancing"></a>Multiple Instancing</h2><p>By default, a component can only have one instance. For example, an entity can only have one geometry component attached. But some components like <a href="../components/sound.html">the sound component</a> can have multiple instances on a single entity. We use double underscores (i.e., <code>__</code>) to separate the component name and the ID of individual instances of the component</p><p>For example, to attach multiple instances of the sound component:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">sound</span>=<span class="string">"src: url(sound.mp3)"</span></span></div><div class="line">          <span class="attr">sound__1</span>=<span class="string">"src: url(sound1.mp3)"</span></div><div class="line">          <span class="attr">sound__2</span>=<span class="string">"src: url(sound2.mp3)"</span></div><div class="line">          <span class="attr">sound__beep</span>=<span class="string">"src: url(beep.mp3)"</span></div><div class="line">          <span class="attr">sound__boop</span>=<span class="string">"src: url(beep.mp3)"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>To enable multiple instancing on your component, set <code>multiple: true</code> in the component definition:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'my-multiple-component'</span>, &#123;</div><div class="line">  <span class="attr">multiple</span>: <span class="literal">true</span>,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>The base component name is available through <code>this.name</code>. The HTML attribute name used to attach the component is available through <code>this.attrName</code>. And just the ID or name of the instance that follows the double underscore is available through <code>this.id</code>.</p><h2 id="schema"><a href="#schema" class="headerlink" title="Schema"></a>Schema</h2><p>A component’s schema defines and describes the property or properties it takes. A component can either be a single-property component (one flat value) or a multi-property component (multiple named values).</p><p>A single-property schema might look like:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'int'</span>, <span class="attr">default</span>: <span class="number">5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><p>A multi-property schema might look like:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  <span class="attr">color</span>: &#123; <span class="attr">default</span>: <span class="string">'#FFF'</span> &#125;,</div><div class="line">  <span class="attr">target</span>: &#123; <span class="attr">type</span>: <span class="string">'selector'</span> &#125;,</div><div class="line">  <span class="attr">uv</span>: &#123;</div><div class="line">    <span class="attr">default</span>: <span class="string">'1 1'</span>,</div><div class="line">    <span class="attr">parse</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> value.split(<span class="string">' '</span>).map(<span class="built_in">parseFloat</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="property-types"><a href="#property-types" class="headerlink" title="Property Types"></a>Property Types</h3><p>All properties have <strong>property types</strong>. Property types define how the component parses incoming data from the DOM, and they prescribe a default value if one is not defined in the property definition. Below is the list of built-in property types:</p><table><thead><tr><th>Property Type</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>array</td><td>Comma-separated values to array (e.g., `”1, 2, 3” to [‘1’, ‘2’, ‘3’].</td><td>[]</td></tr><tr><td>boolean</td><td>Convert to boolean (i.e., <code>&quot;false&quot;</code> to false, everything else truthy).</td><td>false</td></tr><tr><td>color</td><td>Currently does no parsing. Used by the A-Frame Inspector for widgets.</td><td>#FFF</td></tr><tr><td>int</td><td>Calls <code>parseInt</code> (e.g., <code>&quot;124.5&quot;</code> to <code>124</code>).</td><td>0</td></tr><tr><td>number</td><td>Calls <code>parseFloat</code> (e.g., <code>&quot;124.5&quot; to</code>124.5’).</td><td>0</td></tr><tr><td>selector</td><td>Calls <code>querySelector</code> (e.g., <code>&quot;#box&quot; to</code><a-entity id="box">`).</a-entity></td><td>null</td></tr><tr><td>selectorAll</td><td>Calls <code>querySelectorAll</code> and converts <code>NodeList</code> to <code>Array</code> (e.g., <code>&quot;.boxes&quot;</code> to [&lt;a-entity class=”boxes”, …]),</td><td>null</td></tr><tr><td>src</td><td>Parses URL out of <code>url(&lt;url&gt;)</code> or if it is a selector, calls <code>querySelector</code> and <code>getAttribute(&#39;src&#39;)</code>.</td><td>‘’</td></tr><tr><td>string</td><td>Does no parsing.</td><td>‘’</td></tr><tr><td>vec2</td><td>Parses two numbers into an <code>{x, y}</code> object (e.g., <code>1 -2</code> to <code>{x: 1, y: -2}</code>.</td><td>{x: 0, y: 0}</td></tr><tr><td>vec3</td><td>Parses three numbers into an <code>{x, y, z}</code> object (e.g., <code>1 -2 3</code> to <code>{x: 1, y: -2, z: 3}</code>.</td><td>{x: 0, y: 0, z: 0}</td></tr><tr><td>vec4</td><td>Parses four numbers into an <code>{x, y, z, w}</code> object (e.g., <code>1 -2 3 -4.5</code> to <code>{x: 1, y: -2, z: 3, w: -4.5}</code>.</td><td>{x: 0, y: 0, z: 0, w: 0}</td></tr></tbody></table><p>The property types will parse incoming string values from the DOM and store it in the component’s <code>data</code> property. Alternatively, we can define our own property types by providing our own <code>parse</code> functions:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  <span class="comment">// Takes "a/b" and turns to ["a", "b'".</span></div><div class="line">  myProperty: &#123;</div><div class="line">    <span class="attr">default</span>: [<span class="string">'a'</span>, <span class="string">'b'</span>],</div><div class="line">    <span class="attr">parse</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> value.split(<span class="string">'/'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="schema-inference"><a href="#schema-inference" class="headerlink" title="Schema Inference"></a>Schema Inference</h3><p>Property types can either be assigned explicitly, or the schema will infer one given the default value.</p><p>Given a default value, the schema will infer a property type and inject a parser and stringifer into the property definition:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  <span class="attr">default</span>: <span class="number">32</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Will process to:</span></div><div class="line"></div><div class="line">schema: &#123;</div><div class="line">  <span class="attr">default</span>: <span class="number">32</span>,</div><div class="line">  <span class="attr">type</span>: <span class="string">'number'</span>,</div><div class="line">  <span class="attr">parse</span>: <span class="function"><span class="keyword">function</span> <span class="title">numberParse</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">parseFloat</span>(value);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">stringify</span>: <span class="function"><span class="keyword">function</span> <span class="title">defaultStringify</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value.toString();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>And given only a type, the schema will infer a default value:</p><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  type: &apos;vec3&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Will process to:</div><div class="line"></div><div class="line">schema: &#123;</div><div class="line">  type: &apos;vec3&apos;,</div><div class="line">  default: &#123; x: 0, y: 0, z: 0 &#125;,</div><div class="line">  parse: AFRAME.utils.coordinates.parse,</div><div class="line">  stringify: AFRAME.utils.coordinates.stringify</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="single-property-schemas"><a href="#single-property-schemas" class="headerlink" title="Single-Property Schemas"></a>Single-Property Schemas</h3><p>Single-property schemas define only a single anonymous flat property. They must define either a <code>type</code> or a <code>default</code> value to be able to infer an appropriate parser and stringifier.</p><p>For example, the <a href="../components/rotation.html">rotation component</a> takes a <code>vec3</code>:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'rotation'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// Default value will be 0, 0, 0 as defined by the vec3 property type.</span></div><div class="line">    type: <span class="string">'vec3'</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>And for example, the <a href="../components/visible.html">visible component</a> takes a boolean:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'visible'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// Type will be inferred to be boolean.</span></div><div class="line">    <span class="keyword">default</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure><h3 id="multi-property-schemas"><a href="#multi-property-schemas" class="headerlink" title="Multi-Property Schemas"></a>Multi-Property Schemas</h3><p>Multi-property schemas it consists of one or more named property definitions. Unlike single-property schemas, each property has a name. When a component has properties then the HTML usage syntax will look like <code>physics=&quot;mass: 2; velocity: 1 1 1&quot;</code>.</p><p>For example, a physics component might look like:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'physics-body'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">boundingBox</span>: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="string">'vec3'</span>,</div><div class="line">      <span class="attr">default</span>: &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">1</span>, <span class="attr">z</span>: <span class="number">1</span> &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">mass</span>: &#123;</div><div class="line">      <span class="attr">default</span>: <span class="number">0</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">velocity</span>: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="string">'vec3'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="interface-lifecycle-methods"><a href="#interface-lifecycle-methods" class="headerlink" title="Interface / Lifecycle Methods"></a>Interface / Lifecycle Methods</h2><p>When writing a component, we implement one or several methods of the component interface. Most of these methods are lifecycle handlers. With the schema being the anatomy, the lifecycle methods are the physiology; the schema defines the data, the lifecycle methods <em>use</em> the data. A component has access to <code>this.data</code> which in a single-property schema is a value and in a multi-property schema is an object.</p><p>The handlers will almost always interact with the entity. Read about the <a href="./entity.html">entity API</a> if you have not already.</p><h3 id="init"><a href="#init" class="headerlink" title=".init()"></a><code>.init()</code></h3><p><code>.init</code> is called once in a component’s lifecycle when it is attached to the entity. The init handler is generally used to set up state and instantiate variables that may used throughout a component. Not every component will need to define <code>.init</code>. It is similar to <code>createdCallback</code> or <code>React.ComponentDidMount</code>.</p><p>For example, the <a href="../components/camera.html">camera component</a>‘s <code>init</code> creates and sets the camera.</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> camera = <span class="keyword">this</span>.camera = <span class="keyword">new</span> THREE.PerspectiveCamera();</div><div class="line">  <span class="keyword">this</span>.el.setObject3D(<span class="string">'camera'</span>, camera);</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure><p>Example uses of <code>init</code> by some A-Frame components:</p><table><thead><tr><th>Component</th><th>Usage</th></tr></thead><tbody><tr><td>camera</td><td>Create and set a THREE.PerspectiveCamera on the entity.</td></tr><tr><td>cursor</td><td>Attach event listeners.</td></tr><tr><td>light</td><td>Register light to the lighting system.</td></tr><tr><td>material</td><td>Set up variables, mainly to visualize the state of a component.</td></tr></tbody></table><h3 id="update-olddata"><a href="#update-olddata" class="headerlink" title=".update(oldData)"></a><code>.update(oldData)</code></h3><p><code>.update</code> is called both at the beginning of a component’s lifecycle and every time a component’s data changes (e.g., as a result of <code>setAttribute</code>). The update handler often uses <code>this.data</code> to modify the entity. The update handler has access to the previous state of a component’s data via its first argument. The previous state of a component can be used to tell exactly which properties changed in order to do granular updates.</p><p>For example, the <a href="../components/visible.html">visible</a> component’s update handler toggles the visibility of the <a href="./entity.html">entity</a>.</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.object3D.visible = <span class="keyword">this</span>.data;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>Example uses of <code>update</code> by some A-Frame components:</p><table><thead><tr><th>Component</th><th>Usage</th></tr></thead><tbody><tr><td>camera</td><td>Set THREE.PerspectiveCamera object properties such as aspect ratio, fov, or near/far clipping planes.</td></tr><tr><td>geometry</td><td>Create new geometry given new data.</td></tr><tr><td>material</td><td>If component is just attaching, create a material. If shader has not changed, update material. If shader has changed, replace the material.</td></tr></tbody></table><h3 id="remove"><a href="#remove" class="headerlink" title=".remove()"></a><code>.remove()</code></h3><p><code>.remove</code> is called when a component detaches from the entity (e.g., as a result of <code>removeAttribute</code>). This is used to remove all modifications, listeners, and behaviors to the entity that a component has added in its lifetime.</p><p>For example, when the <a href="../components/light.html">light component</a> detaches, it removes the light it previously attached to the entity:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'light'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>Example uses of <code>remove</code> by some A-Frame components:</p><table><thead><tr><th>Component</th><th>Usage</th></tr></thead><tbody><tr><td>camera</td><td>Remove the THREE.PerspectiveCamera from the entity.</td></tr><tr><td>geometry</td><td>Set a plain THREE.Geometry on the mesh.</td></tr><tr><td>material</td><td>Set a default THREE.MeshBasicMaterial on the mesh and unregister material from the system.</td></tr></tbody></table><h3 id="tick-time-timedelta"><a href="#tick-time-timedelta" class="headerlink" title=".tick(time, timeDelta)"></a><code>.tick(time, timeDelta)</code></h3><p><code>.tick</code> is called on every single tick or render loop of the scene. Expect it to run on the order of 60 to 120 times per second. The global uptime of the scene in milliseconds and the time difference from the last frame is passed into the tick handler.</p><p>This is useful for things that need to update constantly such as controls or physics.</p><h3 id="pause-and-play"><a href="#pause-and-play" class="headerlink" title=".pause() and .play()"></a><code>.pause()</code> and <code>.play()</code></h3><p>The <code>.pause</code> and <code>.play</code> methods are invoked when the entity calls its own <code>.pause</code> or <code>.play</code> methods. Components should use this to stop or resume any dynamic behavior such as event listeners.</p><p>Example uses of <code>.pause</code> and <code>.play</code> by some A-Frame components:</p><table><thead><tr><th>Component</th><th>Usage</th></tr></thead><tbody><tr><td>sound</td><td>Pause/play sound.</td></tr></tbody></table><h3 id="updateschema-data"><a href="#updateschema-data" class="headerlink" title=".updateSchema(data)"></a><code>.updateSchema(data)</code></h3><p><code>.updateSchema</code> is an optional method used to dynamically modify the schema, usually depending on the value of other properties. The example below checks if the type changed to determine whether or not to update the schema using <code>extendSchema</code>:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'example'</span>, &#123;</div><div class="line">  <span class="attr">updateSchema</span>: (data) &#123;</div><div class="line">    <span class="keyword">var</span> newSchema;</div><div class="line">    <span class="keyword">if</span> (data.type !== <span class="keyword">this</span>.data.type) &#123;</div><div class="line">      newSchema = getNewSchema(data.type);</div><div class="line">      <span class="keyword">this</span>.extendSchema(newSchema);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>Example uses of <code>.updateSchema</code> by some A-Frame components:</p><table><thead><tr><th>Component</th><th>Usage</th></tr></thead><tbody><tr><td>geometry</td><td>Check if <code>primitive</code> has changed in order to change the schema to be respective to the geometry type.</td></tr><tr><td>material</td><td>Check if <code>shader</code> has changed in order to change the schema to be respective to the material type.</td></tr></tbody></table><h2 id="methods-1"><a href="#methods-1" class="headerlink" title="Methods"></a>Methods</h2><h3 id="extendschema-schema"><a href="#extendschema-schema" class="headerlink" title=".extendSchema(schema)"></a><code>.extendSchema(schema)</code></h3><p>Attach the new <code>schema</code> to the base schema of the component. Useful if we want to change the schema based on certain properties. For example, the geometry component changes its schema based on the <code>primitive</code> property.</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'example'</span>, &#123;</div><div class="line">  <span class="attr">updateSchema</span>: (data) &#123;</div><div class="line">    <span class="keyword">var</span> newSchema;</div><div class="line">    <span class="keyword">if</span> (data.type !== <span class="keyword">this</span>.data.type) &#123;</div><div class="line">      newSchema = getNewSchema(data.type);</div><div class="line">      <span class="keyword">this</span>.extendSchema(newSchema);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><h3 id="flushtodom"><a href="#flushtodom" class="headerlink" title=".flushToDOM()"></a><code>.flushToDOM()</code></h3><p><code>flushToDOM</code> will manually serialize the component’s data and update the DOM. Read more about <a href="../components/debug.html#component-to-dom-serialization">component-to-DOM serialization</a>.</p><h2 id="write-a-component"><a href="#write-a-component" class="headerlink" title="Write a Component"></a>Write a Component</h2><h3 id="line-component"><a href="#line-component" class="headerlink" title="Line Component"></a>Line Component</h3><p>Let’s build an example line component that renders a line. We want to make the property API flexible enough to be able to specify the color and vertices:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">line</span>=<span class="string">"color: red; path: -1 1 0, -1 0.5 0, -1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><h4 id="skeleton"><a href="#skeleton" class="headerlink" title="Skeleton"></a>Skeleton</h4><p>Here is a skeleton of the component. We’ll just need a schema, a update handler, and a remove handler:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> coordinates = AFRAME.utils.coordinates;</div><div class="line"></div><div class="line">AFRAME.registerComponent(<span class="string">'line'</span>, &#123;</div><div class="line">  <span class="comment">// Allow line component to accept vertices and color.</span></div><div class="line">  schema: &#123;&#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Create or update the line geometry.</span></div><div class="line">  update: &#123;&#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Remove the line geometry.</span></div><div class="line">  remove: &#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><h4 id="schema-1"><a href="#schema-1" class="headerlink" title="Schema"></a>Schema</h4><p>We have two properties we want to accept: <code>color</code> and <code>path</code>. Thus we will need a multi-property schema. The <code>color</code> property will be a simple string that will be fed to <code>THREE.Color</code>. The <code>path</code> property will need a custom parser and stringifier to handle an array of <code>vec3</code>s for the vertices.</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Allow line component to accept vertices and color.</span></div><div class="line">schema: &#123;</div><div class="line">  <span class="attr">color</span>: &#123; <span class="attr">default</span>: <span class="string">'#333'</span> &#125;,</div><div class="line"></div><div class="line">  <span class="attr">path</span>: &#123;</div><div class="line">    <span class="attr">default</span>: [</div><div class="line">      &#123; <span class="attr">x</span>: <span class="number">-0.5</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">z</span>: <span class="number">0</span> &#125;,</div><div class="line">      &#123; <span class="attr">x</span>: <span class="number">0.5</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">z</span>: <span class="number">0</span> &#125;</div><div class="line">    ],</div><div class="line"></div><div class="line">    <span class="comment">// Deserialize path in the form of comma-separated vec3s: `0 0 0, 1 1 1, 2 0 3`.</span></div><div class="line">    parse: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> value.split(<span class="string">','</span>).map(coordinates.parse);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">// Serialize array of vec3s in case someone does</span></div><div class="line">    <span class="comment">// setAttribute('line', 'path', [...]).</span></div><div class="line">    stringify: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> data.map(coordinates.stringify).join(<span class="string">','</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">//...</span></div></pre></td></tr></table></figure><p>The component API is entirely up to us. If we wanted the path to take a different syntax or abstract it further such that it maybe only accepts a starting point and a length and handle the math for the developer, we could do so.</p><h4 id="update"><a href="#update" class="headerlink" title="Update"></a>Update</h4><p>The schema will hand the data to the update handler all parsed and ready to go. Here, we want to create a line geometry if it doesn’t exist yet and update it if it does. We can create a line in three.js by combining a <code>THREE.LineBasicMaterial</code> and <code>THREE.Geometry</code> and then manually pushing vertices.</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">update: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">  <span class="comment">// Set color with material.</span></div><div class="line">  <span class="keyword">var</span> material = <span class="keyword">new</span> THREE.LineBasicMaterial(&#123;</div><div class="line">    <span class="attr">color</span>: <span class="keyword">this</span>.data.color</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Add vertices to geometry.</span></div><div class="line">  <span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.Geometry();</div><div class="line">  <span class="keyword">this</span>.data.path.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">vec3</span>) </span>&#123;</div><div class="line">    geometry.vertices.push(</div><div class="line">      <span class="keyword">new</span> THREE.Vector3(vec3.x, vec3.y, vec3.z)</div><div class="line">    );</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Apply mesh.</span></div><div class="line">  <span class="keyword">this</span>.el.setObject3D(<span class="string">'mesh'</span>, <span class="keyword">new</span> THREE.Line(geometry, material));</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure><p>Here, we update the line by completely replacing it. Though sometimes, we might want to more granularly update objects for better performance.</p><h4 id="remove-1"><a href="#remove-1" class="headerlink" title="Remove"></a>Remove</h4><p>For removal of the line mesh from the entity, we use <a href="./entity.html#removeobject3d-type"><code>Entity.removeObject3D</code></a>:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'mesh'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>This will remove the object from the entity’s scene graph.</p><h4 id="usage"><a href="#usage" class="headerlink" title="Usage"></a>Usage</h4><p>Then with the line component written and registered, we can use it in HTML:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"red"</span> <span class="attr">line</span>=<span class="string">"color: #E20049"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"happy-face"</span> <span class="attr">position</span>=<span class="string">"0 2 -10"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red"</span> <span class="attr">line</span>=<span class="string">"path: -1 1 0, -1 0.5 0, -1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red"</span> <span class="attr">line</span>=<span class="string">"path: 1 1 0, 1 0.5 0, 1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red"</span> <span class="attr">line</span>=<span class="string">"path: -2 -1 0, 0 -2 0, 2 -1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#FFEED0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure><p>And voila!</p><p><img src="https://i.imgur.com/icggby2.jpg" alt=""></p><div class="page-caption"><span>Happy face with the line component! Play with it on <a href="http://codepen.io/team/mozvr/pen/yeEQNG" target="_blank" rel="external">CodePen</a>.</span></div><footer class="footer guide-links c"><span class="float-left"><a href="/docs/0.3.0/core/entity.html" class="guide-link guide-link-left">← Entity </a></span><span class="float-right"><a href="/docs/0.3.0/core/systems.html" class="guide-link guide-link-right">System →</a></span></footer><footer class="footer footnote"><p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p><p>Found a typo or suggestion for the docs?<br><br><a href="https://github.com/aframevr/aframe/edit/master/docs/core/component.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p></footer></div></div></main><script src="/js/common.js"></script><script src="/js/ga.js"></script><script src="/js/docs.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script><script type="text/javascript">var searchConfig = {
+  })();
+</script>
+
+
+  <div class="copy__wrap">
+    <div class="page__section docs-header">
+      <p>
+        <a href="/docs/0.3.0/core/" class="borderless-link">
+          0.3.0 &rsaquo; Concepts and API
+        </a>
+      </p>
+      
+
+
+<div class="docs-search-wrapper docs-search-docs">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+    </div>
+    <h1 class="page__title">Component</h1>
+
+    
+    
+      <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 0.3.0 version of A-Frame. Check out the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p>
+</blockquote>
+
+    
+
+    
+    
+      <p>In the <a href="./">entity-component-system pattern</a>, a component is a reusable and
+modular chunk of data that is plugged into an entity to add appearance, behavior,
+and/or functionality.</p>
+<p>In A-Frame, components modify entities which are 3D objects in the scene. We
+mix and compose components together to build complex objects. They let us
+encapsulate <a href="http://threejs.org/" target="_blank" rel="external">three.js</a> and JavaScript code into modules that can be used
+declaratively from HTML.</p>
+<p>As an abstract analogy, if a smartphone were defined as an entity, we might use
+components to give it appearance (color, shape), to define its behavior
+(vibrate when called, shut down on low battery), or to add functionality
+(camera, screen).</p>
+<p>Components are roughly analogous to CSS. Like how CSS rules modify the
+appearance of elements, component properties modify the appearance, behavior,
+and functionality of entities.</p>
+
+      
+
+
+  <h2 id="toc">Table of Contents</h2>
+
+  <ul>
+    
+      <li>
+        <a href="#what-a-component-looks-like">What a Component Looks Like</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#from-html">From HTML</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#under-the-hood">Under the Hood</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#properties">Properties</a></li>
+            
+              <li><a href="#methods">Methods</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#dependencies">Dependencies</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#multiple-instancing">Multiple Instancing</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#schema">Schema</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#property-types">Property Types</a></li>
+            
+              <li><a href="#schema-inference">Schema Inference</a></li>
+            
+              <li><a href="#single-property-schemas">Single-Property Schemas</a></li>
+            
+              <li><a href="#multi-property-schemas">Multi-Property Schemas</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#interface-lifecycle-methods">Interface / Lifecycle Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#init">.init()</a></li>
+            
+              <li><a href="#update-olddata">.update(oldData)</a></li>
+            
+              <li><a href="#remove">.remove()</a></li>
+            
+              <li><a href="#tick-time-timedelta">.tick(time, timeDelta)</a></li>
+            
+              <li><a href="#pause-and-play">.pause() and .play()</a></li>
+            
+              <li><a href="#updateschema-data">.updateSchema(data)</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#methods-1">Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#extendschema-schema">.extendSchema(schema)</a></li>
+            
+              <li><a href="#flushtodom">.flushToDOM()</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#write-a-component">Write a Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#line-component">Line Component</a></li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+
+      
+<h2 id="what-a-component-looks-like"><a href="#what-a-component-looks-like" class="headerlink" title="What a Component Looks Like"></a>What a Component Looks Like</h2><p>A component holds a bucket of data in the form of one or more component
+properties. This data is used to modify the entity. Consider an <em>engine</em>
+component, we might define properties such as <em>horsepower</em> or <em>cylinders</em>.</p>
+<p><img src="http://thevrjump.com/assets/img/articles/aframe-system/aframe-system.jpg" alt=""></p>
+<div class="page-caption"><span>
+Abstract representation of a component by @rubenmueller of <a href="http://thevrjump.com" target="_blank" rel="external">The VR Jump</a>.
+</span></div>
+
+<h3 id="from-html"><a href="#from-html" class="headerlink" title="From HTML"></a>From HTML</h3><p>HTML attributes represent component names and the value of those attributes
+represent component data.</p>
+<h4 id="single-property-component"><a href="#single-property-component" class="headerlink" title="Single-Property Component"></a>Single-Property Component</h4><p>If a component is a <em>single-property</em> component, meaning its data is
+represented by a single value, then in HTML, the component value looks like a normal
+HTML attribute:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- `position` is the name of the position component. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- `1 2 3` is the data of the position component. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="multi-property-component"><a href="#multi-property-component" class="headerlink" title="Multi-Property Component"></a>Multi-Property Component</h4><p>If a component is a <em>multi-property</em> component, meaning its data is represented
+by several properties and values, then in HTML, the component value looks like
+inline CSS styles:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- `light` is the name of the light component. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- The `type` property of the light is set to `point`. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- The `color` property of the light is set to `crimson`. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: point; color: crimson"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="under-the-hood"><a href="#under-the-hood" class="headerlink" title="Under the Hood"></a>Under the Hood</h2><p>A component is registered using <code>AFRAME.registerComponent</code>, which we pass a
+component name to register a component under and a component definition. Below
+is the outer skeleton for the <a href="../components/position.html">position component</a>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>A component defines a <strong>schema</strong> that defines its properties, giving <em>anatomy</em>
+to the component. The position component takes a flat <code>vec3</code>, or an <code>{x, y, z}</code>
+object.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123; <span class="attr">type</span>: <span class="string">'vec3'</span> &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Then a component defines lifecycle methods that handles what it does with its
+data, giving <em>physiology</em> to the component. During initialization and on
+attribute updates, the position component takes its <code>vec3</code> value and applies it
+to its <a href="http://threejs.org/docs/#Reference/Core/Object3D" target="_blank" rel="external">three.js Object3D</a>:</p>
+<p>Components will often be talking to the three.js API.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123; <span class="attr">type</span>: <span class="string">'vec3'</span> &#125;,</div><div class="line"></div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> object3D = <span class="keyword">this</span>.el.object3D;</div><div class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</div><div class="line">    object3D.position.set(data.x, data.y, data.z);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>The position component uses only a small subset of the component API. We’ll go
+over everything the component API has to offer.</p>
+<h3 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attrName</td>
+<td>Full HTML attribute name used to define the component. Used if component can have <a href="#multiple-instancing">multiple instances</a>.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Parsed data object of the component derived from the schema default values, mixins, and the entity’s attributes.</td>
+</tr>
+<tr>
+<td>dependencies</td>
+<td>Components to initialize first and wait for.</td>
+</tr>
+<tr>
+<td>el</td>
+<td>Reference to the <a href="./entity.html">entity</a> element.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>ID or name of the individual instance of the component. Used if component can have <a href="#multiple-instancing">multiple instances</a>.</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>Whether component can have <a href="#multiple-instancing">multiple instances</a> by suffixing <code>__&lt;id&gt;</code> to the HTML attribute name of the component.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Base name used to register the component.</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>Component property names, types, default values, parsers, and stringifiers.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h3><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>init</td>
+<td>Called once when the component is initialized. Used to set up initial state and instantiate variables.</td>
+</tr>
+<tr>
+<td>update</td>
+<td>Called both when the component is initialized and whenever the component’s data changes (e.g, via <em>setAttribute</em>). Used to modify the entity.</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>Called when the component detaches from the element (e.g., via <em>removeAttribute</em>). Used to undo all previous modifications to the entity.</td>
+</tr>
+<tr>
+<td>tick</td>
+<td>Called on each render loop or tick of the scene. Used for continuous changes.</td>
+</tr>
+<tr>
+<td>play</td>
+<td>Called whenever the scene or entity plays to add any background or dynamic behavior. Used to start or resume behavior.</td>
+</tr>
+<tr>
+<td>pause</td>
+<td>Called whenever the scene or entity pauses to remove any background or dynamic behavior. Used to pause behavior.</td>
+</tr>
+<tr>
+<td>updateSchema</td>
+<td>Called on every update. Can be used to dynamically modify the schema.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dependencies"><a href="#dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><p>Specifying <code>dependencies</code> will guarantee that another component or other
+components are initialized <em>before</em> initializing the current component:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Initializes last.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'a'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'b'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Initializes second.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'b'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'c'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Initializes first.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'c'</span>, &#123;&#125;);</div></pre></td></tr></table></figure>
+<h2 id="multiple-instancing"><a href="#multiple-instancing" class="headerlink" title="Multiple Instancing"></a>Multiple Instancing</h2><p>By default, a component can only have one instance. For example, an entity can
+only have one geometry component attached. But some components like <a href="../components/sound.html">the sound
+component</a> can have multiple instances on a single entity. We use double
+underscores (i.e., <code>__</code>) to separate the component name and the ID of
+individual instances of the component</p>
+<p>For example, to attach multiple instances of the sound component:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">sound</span>=<span class="string">"src: url(sound.mp3)"</span></span></div><div class="line">          <span class="attr">sound__1</span>=<span class="string">"src: url(sound1.mp3)"</span></div><div class="line">          <span class="attr">sound__2</span>=<span class="string">"src: url(sound2.mp3)"</span></div><div class="line">          <span class="attr">sound__beep</span>=<span class="string">"src: url(beep.mp3)"</span></div><div class="line">          <span class="attr">sound__boop</span>=<span class="string">"src: url(beep.mp3)"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>To enable multiple instancing on your component, set <code>multiple: true</code> in the
+component definition:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'my-multiple-component'</span>, &#123;</div><div class="line">  <span class="attr">multiple</span>: <span class="literal">true</span>,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>The base component name is available through <code>this.name</code>. The HTML attribute
+name used to attach the component is available through <code>this.attrName</code>. And
+just the ID or name of the instance that follows the double underscore is
+available through <code>this.id</code>.</p>
+<h2 id="schema"><a href="#schema" class="headerlink" title="Schema"></a>Schema</h2><p>A component’s schema defines and describes the property or properties it takes.
+A component can either be a single-property component (one flat value) or a
+multi-property component (multiple named values).</p>
+<p>A single-property schema might look like:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'int'</span>, <span class="attr">default</span>: <span class="number">5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>A multi-property schema might look like:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  <span class="attr">color</span>: &#123; <span class="attr">default</span>: <span class="string">'#FFF'</span> &#125;,</div><div class="line">  <span class="attr">target</span>: &#123; <span class="attr">type</span>: <span class="string">'selector'</span> &#125;,</div><div class="line">  <span class="attr">uv</span>: &#123;</div><div class="line">    <span class="attr">default</span>: <span class="string">'1 1'</span>,</div><div class="line">    <span class="attr">parse</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> value.split(<span class="string">' '</span>).map(<span class="built_in">parseFloat</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="property-types"><a href="#property-types" class="headerlink" title="Property Types"></a>Property Types</h3><p>All properties have <strong>property types</strong>. Property types define how the component
+parses incoming data from the DOM, and they prescribe a default value if one is
+not defined in the property definition. Below is the list of built-in property
+types:</p>
+<table>
+<thead>
+<tr>
+<th>Property Type</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>array</td>
+<td>Comma-separated values to array (e.g., `”1, 2, 3” to [‘1’, ‘2’, ‘3’].</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Convert to boolean (i.e., <code>&quot;false&quot;</code> to false, everything else truthy).</td>
+<td>false</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Currently does no parsing. Used by the A-Frame Inspector for widgets.</td>
+<td>#FFF</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Calls <code>parseInt</code> (e.g., <code>&quot;124.5&quot;</code> to <code>124</code>).</td>
+<td>0</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Calls <code>parseFloat</code> (e.g., <code>&quot;124.5&quot; to</code>124.5’).</td>
+<td>0</td>
+</tr>
+<tr>
+<td>selector</td>
+<td>Calls <code>querySelector</code> (e.g., <code>&quot;#box&quot; to</code><a-entity id="box">`).</a-entity></td>
+<td>null</td>
+</tr>
+<tr>
+<td>selectorAll</td>
+<td>Calls <code>querySelectorAll</code> and converts <code>NodeList</code> to <code>Array</code> (e.g., <code>&quot;.boxes&quot;</code> to [&lt;a-entity class=”boxes”, …]),</td>
+<td>null</td>
+</tr>
+<tr>
+<td>src</td>
+<td>Parses URL out of <code>url(&lt;url&gt;)</code> or if it is a selector, calls <code>querySelector</code> and <code>getAttribute(&#39;src&#39;)</code>.</td>
+<td>‘’</td>
+</tr>
+<tr>
+<td>string</td>
+<td>Does no parsing.</td>
+<td>‘’</td>
+</tr>
+<tr>
+<td>vec2</td>
+<td>Parses two numbers into an <code>{x, y}</code> object (e.g., <code>1 -2</code> to <code>{x: 1, y: -2}</code>.</td>
+<td>{x: 0, y: 0}</td>
+</tr>
+<tr>
+<td>vec3</td>
+<td>Parses three numbers into an <code>{x, y, z}</code> object (e.g., <code>1 -2 3</code> to <code>{x: 1, y: -2, z: 3}</code>.</td>
+<td>{x: 0, y: 0, z: 0}</td>
+</tr>
+<tr>
+<td>vec4</td>
+<td>Parses four numbers into an <code>{x, y, z, w}</code> object (e.g., <code>1 -2 3 -4.5</code> to <code>{x: 1, y: -2, z: 3, w: -4.5}</code>.</td>
+<td>{x: 0, y: 0, z: 0, w: 0}</td>
+</tr>
+</tbody>
+</table>
+<p>The property types will parse incoming string values from the DOM and store it
+in the component’s <code>data</code> property. Alternatively, we can define our own
+property types by providing our own <code>parse</code> functions:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  <span class="comment">// Takes "a/b" and turns to ["a", "b'".</span></div><div class="line">  myProperty: &#123;</div><div class="line">    <span class="attr">default</span>: [<span class="string">'a'</span>, <span class="string">'b'</span>],</div><div class="line">    <span class="attr">parse</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> value.split(<span class="string">'/'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="schema-inference"><a href="#schema-inference" class="headerlink" title="Schema Inference"></a>Schema Inference</h3><p>Property types can either be assigned explicitly, or the schema will infer one
+given the default value.</p>
+<p>Given a default value, the schema will infer a property type and inject a
+parser and stringifer into the property definition:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  <span class="attr">default</span>: <span class="number">32</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Will process to:</span></div><div class="line"></div><div class="line">schema: &#123;</div><div class="line">  <span class="attr">default</span>: <span class="number">32</span>,</div><div class="line">  <span class="attr">type</span>: <span class="string">'number'</span>,</div><div class="line">  <span class="attr">parse</span>: <span class="function"><span class="keyword">function</span> <span class="title">numberParse</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">parseFloat</span>(value);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">stringify</span>: <span class="function"><span class="keyword">function</span> <span class="title">defaultStringify</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value.toString();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>And given only a type, the schema will infer a default value:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  type: &apos;vec3&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Will process to:</div><div class="line"></div><div class="line">schema: &#123;</div><div class="line">  type: &apos;vec3&apos;,</div><div class="line">  default: &#123; x: 0, y: 0, z: 0 &#125;,</div><div class="line">  parse: AFRAME.utils.coordinates.parse,</div><div class="line">  stringify: AFRAME.utils.coordinates.stringify</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="single-property-schemas"><a href="#single-property-schemas" class="headerlink" title="Single-Property Schemas"></a>Single-Property Schemas</h3><p>Single-property schemas define only a single anonymous flat property. They must
+define either a <code>type</code> or a <code>default</code> value to be able to infer an appropriate
+parser and stringifier.</p>
+<p>For example, the <a href="../components/rotation.html">rotation component</a> takes a <code>vec3</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'rotation'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// Default value will be 0, 0, 0 as defined by the vec3 property type.</span></div><div class="line">    type: <span class="string">'vec3'</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>And for example, the <a href="../components/visible.html">visible component</a> takes a boolean:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'visible'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// Type will be inferred to be boolean.</span></div><div class="line">    <span class="keyword">default</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="multi-property-schemas"><a href="#multi-property-schemas" class="headerlink" title="Multi-Property Schemas"></a>Multi-Property Schemas</h3><p>Multi-property schemas it consists of one or more named property definitions.
+Unlike single-property schemas, each property has a name. When a component has
+properties then the HTML usage syntax will look like <code>physics=&quot;mass: 2;
+velocity: 1 1 1&quot;</code>.</p>
+<p>For example, a physics component might look like:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'physics-body'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">boundingBox</span>: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="string">'vec3'</span>,</div><div class="line">      <span class="attr">default</span>: &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">1</span>, <span class="attr">z</span>: <span class="number">1</span> &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">mass</span>: &#123;</div><div class="line">      <span class="attr">default</span>: <span class="number">0</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">velocity</span>: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="string">'vec3'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="interface-lifecycle-methods"><a href="#interface-lifecycle-methods" class="headerlink" title="Interface / Lifecycle Methods"></a>Interface / Lifecycle Methods</h2><p>When writing a component, we implement one or several methods of the component
+interface. Most of these methods are lifecycle handlers. With the schema being
+the anatomy, the lifecycle methods are the physiology; the schema defines the
+data, the lifecycle methods <em>use</em> the data. A component has access to
+<code>this.data</code> which in a single-property schema is a value and in a
+multi-property schema is an object.</p>
+<p>The handlers will almost always interact with the entity. Read about the
+<a href="./entity.html">entity API</a> if you have not already.</p>
+<h3 id="init"><a href="#init" class="headerlink" title=".init()"></a><code>.init()</code></h3><p><code>.init</code> is called once in a component’s lifecycle when it is attached to the
+entity. The init handler is generally used to set up state and instantiate
+variables that may used throughout a component. Not every component will need
+to define <code>.init</code>. It is similar to <code>createdCallback</code> or
+<code>React.ComponentDidMount</code>.</p>
+<p>For example, the <a href="../components/camera.html">camera component</a>‘s <code>init</code> creates
+and sets the camera.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> camera = <span class="keyword">this</span>.camera = <span class="keyword">new</span> THREE.PerspectiveCamera();</div><div class="line">  <span class="keyword">this</span>.el.setObject3D(<span class="string">'camera'</span>, camera);</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure>
+<p>Example uses of <code>init</code> by some A-Frame components:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>camera</td>
+<td>Create and set a THREE.PerspectiveCamera on the entity.</td>
+</tr>
+<tr>
+<td>cursor</td>
+<td>Attach event listeners.</td>
+</tr>
+<tr>
+<td>light</td>
+<td>Register light to the lighting system.</td>
+</tr>
+<tr>
+<td>material</td>
+<td>Set up variables, mainly to visualize the state of a component.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="update-olddata"><a href="#update-olddata" class="headerlink" title=".update(oldData)"></a><code>.update(oldData)</code></h3><p><code>.update</code> is called both at the beginning of a component’s lifecycle and every
+time a component’s data changes (e.g., as a result of <code>setAttribute</code>). The
+update handler often uses <code>this.data</code> to modify the entity. The update handler
+has access to the previous state of a component’s data via its first argument.
+The previous state of a component can be used to tell exactly which properties
+changed in order to do granular updates.</p>
+<p>For example, the <a href="../components/visible.html">visible</a> component’s update handler toggles the
+visibility of the <a href="./entity.html">entity</a>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.object3D.visible = <span class="keyword">this</span>.data;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Example uses of <code>update</code> by some A-Frame components:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>camera</td>
+<td>Set THREE.PerspectiveCamera object properties such as aspect ratio, fov, or near/far clipping planes.</td>
+</tr>
+<tr>
+<td>geometry</td>
+<td>Create new geometry given new data.</td>
+</tr>
+<tr>
+<td>material</td>
+<td>If component is just attaching, create a material. If shader has not changed, update material. If shader has changed, replace the material.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remove"><a href="#remove" class="headerlink" title=".remove()"></a><code>.remove()</code></h3><p><code>.remove</code> is called when a component detaches from the entity (e.g., as a result
+of <code>removeAttribute</code>). This is used to remove all modifications, listeners, and
+behaviors to the entity that a component has added in its lifetime.</p>
+<p>For example, when the <a href="../components/light.html">light component</a> detaches, it removes the light
+it previously attached to the entity:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'light'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Example uses of <code>remove</code> by some A-Frame components:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>camera</td>
+<td>Remove the THREE.PerspectiveCamera from the entity.</td>
+</tr>
+<tr>
+<td>geometry</td>
+<td>Set a plain THREE.Geometry on the mesh.</td>
+</tr>
+<tr>
+<td>material</td>
+<td>Set a default THREE.MeshBasicMaterial on the mesh and unregister material from the system.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tick-time-timedelta"><a href="#tick-time-timedelta" class="headerlink" title=".tick(time, timeDelta)"></a><code>.tick(time, timeDelta)</code></h3><p><code>.tick</code> is called on every single tick or render loop of the scene. Expect it
+to run on the order of 60 to 120 times per second. The global uptime of the
+scene in milliseconds and the time difference from the last frame is passed
+into the tick handler.</p>
+<p>This is useful for things that need to update constantly such as controls or
+physics.</p>
+<h3 id="pause-and-play"><a href="#pause-and-play" class="headerlink" title=".pause() and .play()"></a><code>.pause()</code> and <code>.play()</code></h3><p>The <code>.pause</code> and <code>.play</code> methods are invoked when the entity calls its own
+<code>.pause</code> or <code>.play</code> methods. Components should use this to stop or resume any
+dynamic behavior such as event listeners.</p>
+<p>Example uses of <code>.pause</code> and <code>.play</code> by some A-Frame components:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sound</td>
+<td>Pause/play sound.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="updateschema-data"><a href="#updateschema-data" class="headerlink" title=".updateSchema(data)"></a><code>.updateSchema(data)</code></h3><p><code>.updateSchema</code> is an optional method used to dynamically modify the schema,
+usually depending on the value of other properties. The example below checks if
+the type changed to determine whether or not to update the schema using
+<code>extendSchema</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'example'</span>, &#123;</div><div class="line">  <span class="attr">updateSchema</span>: (data) &#123;</div><div class="line">    <span class="keyword">var</span> newSchema;</div><div class="line">    <span class="keyword">if</span> (data.type !== <span class="keyword">this</span>.data.type) &#123;</div><div class="line">      newSchema = getNewSchema(data.type);</div><div class="line">      <span class="keyword">this</span>.extendSchema(newSchema);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Example uses of <code>.updateSchema</code> by some A-Frame components:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>geometry</td>
+<td>Check if <code>primitive</code> has changed in order to change the schema to be respective to the geometry type.</td>
+</tr>
+<tr>
+<td>material</td>
+<td>Check if <code>shader</code> has changed in order to change the schema to be respective to the material type.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods-1"><a href="#methods-1" class="headerlink" title="Methods"></a>Methods</h2><h3 id="extendschema-schema"><a href="#extendschema-schema" class="headerlink" title=".extendSchema(schema)"></a><code>.extendSchema(schema)</code></h3><p>Attach the new <code>schema</code> to the base schema of the component. Useful if we want
+to change the schema based on certain properties. For example, the geometry
+component changes its schema based on the <code>primitive</code> property.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'example'</span>, &#123;</div><div class="line">  <span class="attr">updateSchema</span>: (data) &#123;</div><div class="line">    <span class="keyword">var</span> newSchema;</div><div class="line">    <span class="keyword">if</span> (data.type !== <span class="keyword">this</span>.data.type) &#123;</div><div class="line">      newSchema = getNewSchema(data.type);</div><div class="line">      <span class="keyword">this</span>.extendSchema(newSchema);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="flushtodom"><a href="#flushtodom" class="headerlink" title=".flushToDOM()"></a><code>.flushToDOM()</code></h3><p><code>flushToDOM</code> will manually serialize the component’s data and update the DOM.
+Read more about <a href="../components/debug.html#component-to-dom-serialization">component-to-DOM serialization</a>.</p>
+<h2 id="write-a-component"><a href="#write-a-component" class="headerlink" title="Write a Component"></a>Write a Component</h2><h3 id="line-component"><a href="#line-component" class="headerlink" title="Line Component"></a>Line Component</h3><p>Let’s build an example line component that renders a line. We want to make the
+property API flexible enough to be able to specify the color and vertices:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">line</span>=<span class="string">"color: red; path: -1 1 0, -1 0.5 0, -1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="skeleton"><a href="#skeleton" class="headerlink" title="Skeleton"></a>Skeleton</h4><p>Here is a skeleton of the component. We’ll just need a schema, a update
+handler, and a remove handler:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> coordinates = AFRAME.utils.coordinates;</div><div class="line"></div><div class="line">AFRAME.registerComponent(<span class="string">'line'</span>, &#123;</div><div class="line">  <span class="comment">// Allow line component to accept vertices and color.</span></div><div class="line">  schema: &#123;&#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Create or update the line geometry.</span></div><div class="line">  update: &#123;&#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Remove the line geometry.</span></div><div class="line">  remove: &#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="schema-1"><a href="#schema-1" class="headerlink" title="Schema"></a>Schema</h4><p>We have two properties we want to accept: <code>color</code> and <code>path</code>. Thus we will need
+a multi-property schema. The <code>color</code> property will be a simple string that will
+be fed to <code>THREE.Color</code>. The <code>path</code> property will need a custom parser and
+stringifier to handle an array of <code>vec3</code>s for the vertices.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Allow line component to accept vertices and color.</span></div><div class="line">schema: &#123;</div><div class="line">  <span class="attr">color</span>: &#123; <span class="attr">default</span>: <span class="string">'#333'</span> &#125;,</div><div class="line"></div><div class="line">  <span class="attr">path</span>: &#123;</div><div class="line">    <span class="attr">default</span>: [</div><div class="line">      &#123; <span class="attr">x</span>: <span class="number">-0.5</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">z</span>: <span class="number">0</span> &#125;,</div><div class="line">      &#123; <span class="attr">x</span>: <span class="number">0.5</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">z</span>: <span class="number">0</span> &#125;</div><div class="line">    ],</div><div class="line"></div><div class="line">    <span class="comment">// Deserialize path in the form of comma-separated vec3s: `0 0 0, 1 1 1, 2 0 3`.</span></div><div class="line">    parse: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> value.split(<span class="string">','</span>).map(coordinates.parse);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">// Serialize array of vec3s in case someone does</span></div><div class="line">    <span class="comment">// setAttribute('line', 'path', [...]).</span></div><div class="line">    stringify: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> data.map(coordinates.stringify).join(<span class="string">','</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">//...</span></div></pre></td></tr></table></figure>
+<p>The component API is entirely up to us. If we wanted the path to take a
+different syntax or abstract it further such that it maybe only accepts a
+starting point and a length and handle the math for the developer, we could do
+so.</p>
+<h4 id="update"><a href="#update" class="headerlink" title="Update"></a>Update</h4><p>The schema will hand the data to the update handler all parsed and ready to go.
+Here, we want to create a line geometry if it doesn’t exist yet and update it
+if it does. We can create a line in three.js by combining a
+<code>THREE.LineBasicMaterial</code> and <code>THREE.Geometry</code> and then manually pushing
+vertices.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">update: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">  <span class="comment">// Set color with material.</span></div><div class="line">  <span class="keyword">var</span> material = <span class="keyword">new</span> THREE.LineBasicMaterial(&#123;</div><div class="line">    <span class="attr">color</span>: <span class="keyword">this</span>.data.color</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Add vertices to geometry.</span></div><div class="line">  <span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.Geometry();</div><div class="line">  <span class="keyword">this</span>.data.path.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">vec3</span>) </span>&#123;</div><div class="line">    geometry.vertices.push(</div><div class="line">      <span class="keyword">new</span> THREE.Vector3(vec3.x, vec3.y, vec3.z)</div><div class="line">    );</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Apply mesh.</span></div><div class="line">  <span class="keyword">this</span>.el.setObject3D(<span class="string">'mesh'</span>, <span class="keyword">new</span> THREE.Line(geometry, material));</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure>
+<p>Here, we update the line by completely replacing it. Though sometimes, we might
+want to more granularly update objects for better performance.</p>
+<h4 id="remove-1"><a href="#remove-1" class="headerlink" title="Remove"></a>Remove</h4><p>For removal of the line mesh from the entity, we use
+<a href="./entity.html#removeobject3d-type"><code>Entity.removeObject3D</code></a>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'mesh'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>This will remove the object from the entity’s scene graph.</p>
+<h4 id="usage"><a href="#usage" class="headerlink" title="Usage"></a>Usage</h4><p>Then with the line component written and registered, we can use it in HTML:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"red"</span> <span class="attr">line</span>=<span class="string">"color: #E20049"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"happy-face"</span> <span class="attr">position</span>=<span class="string">"0 2 -10"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red"</span> <span class="attr">line</span>=<span class="string">"path: -1 1 0, -1 0.5 0, -1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red"</span> <span class="attr">line</span>=<span class="string">"path: 1 1 0, 1 0.5 0, 1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red"</span> <span class="attr">line</span>=<span class="string">"path: -2 -1 0, 0 -2 0, 2 -1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#FFEED0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>And voila!</p>
+<p><img src="https://i.imgur.com/icggby2.jpg" alt=""></p>
+<div class="page-caption"><span>
+  Happy face with the line component! Play with it on <a href="http://codepen.io/team/mozvr/pen/yeEQNG" target="_blank" rel="external">CodePen</a>.
+</span></div>
+
+
+    
+
+    <!-- Previous / Next navigation. -->
+    <footer class="footer guide-links c">
+      
+        <span class="float-left">
+          <a href="/docs/0.3.0/core/entity.html" class="guide-link guide-link-left">← Entity </a></span>
+      
+      
+        <span class="float-right">
+          <a href="/docs/0.3.0/core/systems.html" class="guide-link guide-link-right">System →</a></span>
+      
+    </footer>
+
+    <footer class="footer footnote">
+  <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/component.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+</footer>
+
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
     apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
     indexName: 'aframe',
     algoliaOptions: {
@@ -55,4 +1476,9 @@
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));</script></body></html>
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+</script>
+
+    
+  </body>
+</html>

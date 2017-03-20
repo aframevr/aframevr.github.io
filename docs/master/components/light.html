@@ -1,14 +1,882 @@
-<!DOCTYPE html><html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-site-base-url="https://aframe.io" data-site-root-path="/" data-site-home-url="https://aframe.io/" data-lib-home-url="https://aframe.io/" data-lib-examples-url="https://aframe.io/aframe/examples" data-title="{title} | A-Frame" data-is-spa="false" data-ga-id="UA-24056643-4" data-aframe-version="0.5.0" data-docs-version="master"><head><title>light – A-Frame</title><script>var host = window.location.protocol + '//' + window.location.hostname;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.5.0"
+      data-docs-version="master">
+  <head>
+    <title>light – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
   if (window.location.protocol === 'http:' &&
       window.location.hostname === 'https://aframe.io') {
     window.location.href = 'https:' + window.location.href.substring(6);
-  }</script><meta charset="utf-8"><meta name="robots" content="NOINDEX"><meta name="description" content=""><meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="canonical" href="https://aframe.io"><link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet"><meta property="fb:app_id" content="1535794316743373"><meta property="og:title" content="light – A-Frame"><meta property="og:site_name" content="A-Frame"><meta property="og:type" content="website"><meta property="og:url" content="https://aframe.io"><meta property="og:description" content=""><meta property="og:image" content="http://aframe.io/images/card.jpg?v2"><meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@aframevr"><meta name="twitter:creator" content="@aframevr"><meta name="twitter:title" content="light – A-Frame"><meta name="twitter:description" content=""><meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="black"><link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png"><link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="light – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="light – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-24056643-4', 'auto');
-  ga('send', 'pageview');</script><script src="/js/compat.js"></script><link rel="stylesheet" href="/css/secondary.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"><link rel="stylesheet" href="/css/search.css"></head><body data-page-layout="docs" data-page-type="components"><main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links"><div id="secondary-nav" class="secondary-nav"><header id="header" class="header"><a id="logo" class="logo" href="/" title="A-Frame"><span class="logo__wordmark">A-Frame</span></a></header><div class="docs-search-wrapper docs-search-sidebar"><input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div><ul id="nav" class="nav"><li class="nav-item"><a href="/docs/0.5.0/introduction/" class="nav-link nav-link-docs current nav-link-disabled"><span>Docs</span></a></li><li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li><li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs"><span>Blog</span></a></li><li class="nav-item"><a href="/community/" class="nav-link nav-link-docs"><span>Community</span></a></li><li data-slug="github" class="nav-item"><a href="https://github.com/aframevr/aframe/" class="nav-link nav-link-docs" rel="external" title="A-Frame project repository on GitHub"><span>GitHub</span></a></li><li data-slug="slug" class="nav-item"><a href="https://aframevr-slack.herokuapp.com" class="nav-link nav-link-docs" rel="external" title="A-Frame Slack (sign up)"><span>Slack</span></a></li></ul></div><div class="list"><label class="subnav-label" for="docs-version"><b>Version</b></label><select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')"><option selected data-href="/docs/master/introduction/">master</option><option false data-href="/docs/0.5.0/introduction/">0.5.0</option><option false data-href="/docs/0.4.0/introduction/">0.4.0</option><option false data-href="/docs/0.3.0/introduction/">0.3.0</option><option false data-href="/docs/0.2.0/guide/">0.2.0</option><option false data-href="/docs/0.1.0/guide/">0.1.0</option></select><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/master/introduction/" class="section-title-link section-title-link-inactive">Introduction</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/introduction/" class="subnav-link">Introduction</a></li><li class="subnav-item"><a href="/docs/master/introduction/getting-started.html" class="subnav-link">Getting Started</a></li><li class="subnav-item"><a href="/docs/master/introduction/device-and-platform-support.html" class="subnav-link">Device &amp; Platform Support</a></li><li class="subnav-item"><a href="/docs/master/introduction/best-practices.html" class="subnav-link">Best Practices</a></li><li class="subnav-item"><a href="/docs/master/introduction/faq.html" class="subnav-link">FAQ</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/master/guides/" class="section-title-link section-title-link-inactive">Guides</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/guides/" class="subnav-link">Building a Basic Scene</a></li><li class="subnav-item"><a href="/docs/master/guides/using-the-aframe-inspector.html" class="subnav-link">Using the A-Frame Inspector</a></li><li class="subnav-item"><a href="/docs/master/guides/building-with-components.html" class="subnav-link">Building with Components</a></li><li class="subnav-item"><a href="/docs/master/guides/using-javascript-and-dom-apis.html" class="subnav-link">Using JavaScript and DOM APIs</a></li><li class="subnav-item"><a href="/docs/master/guides/using-with-threejs.html" class="subnav-link">Using with three.js</a></li><li class="subnav-item"><a href="/docs/master/guides/writing-a-component.html" class="subnav-link">Writing a Component</a></li><li class="subnav-item"><a href="/docs/master/guides/building-with-magicavoxel.html" class="subnav-link">Building with MagicaVoxel</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/master/core/" class="section-title-link section-title-link-inactive">Concepts and API</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/core/" class="subnav-link">Entity-Component-System</a></li><li class="subnav-item"><a href="/docs/master/core/entity.html" class="subnav-link">Entity</a></li><li class="subnav-item"><a href="/docs/master/core/component.html" class="subnav-link">Component</a></li><li class="subnav-item"><a href="/docs/master/core/systems.html" class="subnav-link">System</a></li><li class="subnav-item"><a href="/docs/master/core/scene.html" class="subnav-link">Scene</a></li><li class="subnav-item"><a href="/docs/master/core/animations.html" class="subnav-link">Animations</a></li><li class="subnav-item"><a href="/docs/master/core/mixins.html" class="subnav-link">Mixins</a></li><li class="subnav-item"><a href="/docs/master/core/asset-management-system.html" class="subnav-link">Asset Management System</a></li><li class="subnav-item"><a href="/docs/master/core/AFRAME.html" class="subnav-link">AFRAME Globals</a></li><li class="subnav-item"><a href="/docs/master/core/utils.html" class="subnav-link">Utils</a></li></ol><h3 class="section-title docs-section-title section-title-active"><a href="/docs/master/components/" class="section-title-link section-title-link-active">Components</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/components/blend-model.html" class="subnav-link">blend-model</a></li><li class="subnav-item"><a href="/docs/master/components/camera.html" class="subnav-link">camera</a></li><li class="subnav-item"><a href="/docs/master/components/collada-model.html" class="subnav-link">collada-model</a></li><li class="subnav-item"><a href="/docs/master/components/cursor.html" class="subnav-link">cursor</a></li><li class="subnav-item"><a href="/docs/master/components/debug.html" class="subnav-link">debug</a></li><li class="subnav-item"><a href="/docs/master/components/embedded.html" class="subnav-link">embedded</a></li><li class="subnav-item"><a href="/docs/master/components/fog.html" class="subnav-link">fog</a></li><li class="subnav-item"><a href="/docs/master/components/geometry.html" class="subnav-link">geometry</a></li><li class="subnav-item"><a href="/docs/master/components/gltf-model.html" class="subnav-link">gltf-model</a></li><li class="subnav-item"><a href="/docs/master/components/hand-controls.html" class="subnav-link">hand-controls</a></li><li class="subnav-item"><a href="/docs/master/components/keyboard-shortcuts.html" class="subnav-link">keyboard-shortcuts</a></li><li class="subnav-item subnav-item-current"><a href="/docs/master/components/light.html" class="subnav-link current">light</a></li><li class="subnav-item"><a href="/docs/master/components/look-controls.html" class="subnav-link">look-controls</a></li><li class="subnav-item"><a href="/docs/master/components/material.html" class="subnav-link">material</a></li><li class="subnav-item"><a href="/docs/master/components/obj-model.html" class="subnav-link">obj-model</a></li><li class="subnav-item"><a href="/docs/master/components/oculus-touch-controls.html" class="subnav-link">oculus-touch-controls</a></li><li class="subnav-item"><a href="/docs/master/components/pool.html" class="subnav-link">pool</a></li><li class="subnav-item"><a href="/docs/master/components/position.html" class="subnav-link">position</a></li><li class="subnav-item"><a href="/docs/master/components/raycaster.html" class="subnav-link">raycaster</a></li><li class="subnav-item"><a href="/docs/master/components/rotation.html" class="subnav-link">rotation</a></li><li class="subnav-item"><a href="/docs/master/components/scale.html" class="subnav-link">scale</a></li><li class="subnav-item"><a href="/docs/master/components/screenshot.html" class="subnav-link">screenshot</a></li><li class="subnav-item"><a href="/docs/master/components/shadow.html" class="subnav-link">shadow</a></li><li class="subnav-item"><a href="/docs/master/components/sound.html" class="subnav-link">sound</a></li><li class="subnav-item"><a href="/docs/master/components/stats.html" class="subnav-link">stats</a></li><li class="subnav-item"><a href="/docs/master/components/text.html" class="subnav-link">text</a></li><li class="subnav-item"><a href="/docs/master/components/tracked-controls.html" class="subnav-link">tracked-controls</a></li><li class="subnav-item"><a href="/docs/master/components/visible.html" class="subnav-link">visible</a></li><li class="subnav-item"><a href="/docs/master/components/vive-controls.html" class="subnav-link">vive-controls</a></li><li class="subnav-item"><a href="/docs/master/components/vr-mode-ui.html" class="subnav-link">vr-mode-ui</a></li><li class="subnav-item"><a href="/docs/master/components/wasd-controls.html" class="subnav-link">wasd-controls</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/master/primitives/" class="section-title-link section-title-link-inactive">Primitives</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/primitives/" class="subnav-link">Introduction</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-box.html" class="subnav-link">&lt;a-box&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-camera.html" class="subnav-link">&lt;a-camera&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-circle.html" class="subnav-link">&lt;a-circle&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-collada-model.html" class="subnav-link">&lt;a-collada-model&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-cone.html" class="subnav-link">&lt;a-cone&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-cursor.html" class="subnav-link">&lt;a-cursor&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-curvedimage.html" class="subnav-link">&lt;a-curvedimage&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-cylinder.html" class="subnav-link">&lt;a-cylinder&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-dodecahedron.html" class="subnav-link">&lt;a-dodecahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-gltf-model.html" class="subnav-link">&lt;a-gltf-model&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-icosahedron.html" class="subnav-link">&lt;a-icosahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-image.html" class="subnav-link">&lt;a-image&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-isocahedron.html" class="subnav-link">&lt;a-isocahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-light.html" class="subnav-link">&lt;a-light&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-obj-model.html" class="subnav-link">&lt;a-obj-model&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-octahedron.html" class="subnav-link">&lt;a-octahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-plane.html" class="subnav-link">&lt;a-plane&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-ring.html" class="subnav-link">&lt;a-ring&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-sky.html" class="subnav-link">&lt;a-sky&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-sound.html" class="subnav-link">&lt;a-sound&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-sphere.html" class="subnav-link">&lt;a-sphere&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-tetrahedron.html" class="subnav-link">&lt;a-tetrahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-text.html" class="subnav-link">&lt;a-text&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-torus-knot.html" class="subnav-link">&lt;a-torus-knot&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-torus.html" class="subnav-link">&lt;a-torus&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-video.html" class="subnav-link">&lt;a-video&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-videosphere.html" class="subnav-link">&lt;a-videosphere&gt;</a></li></ol></div></aside><div class="content content--structured content--components copy"><div class="mobile-header"><a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a><h1><a href="/">A-Frame</a></h1><span></span></div><script>(function() {
+  ga('send', 'pageview');
+</script>
+
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="components">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.5.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option selected
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/master/introduction/"
+           class="section-title-link section-title-link-inactive">
+          Introduction
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/getting-started.html"
+               class="subnav-link">
+              Getting Started
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/device-and-platform-support.html"
+               class="subnav-link">
+              Device &amp; Platform Support
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/master/guides/"
+           class="section-title-link section-title-link-inactive">
+          Guides
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/using-the-aframe-inspector.html"
+               class="subnav-link">
+              Using the A-Frame Inspector
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/building-with-components.html"
+               class="subnav-link">
+              Building with Components
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/using-javascript-and-dom-apis.html"
+               class="subnav-link">
+              Using JavaScript and DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/using-with-threejs.html"
+               class="subnav-link">
+              Using with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/building-with-magicavoxel.html"
+               class="subnav-link">
+              Building with MagicaVoxel
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/master/core/"
+           class="section-title-link section-title-link-inactive">
+          Concepts and API
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/AFRAME.html"
+               class="subnav-link">
+              AFRAME Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <a href="/docs/master/components/"
+           class="section-title-link section-title-link-active">
+          Components
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/blend-model.html"
+               class="subnav-link">
+              blend-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/master/components/light.html"
+               class="subnav-link current">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/master/primitives/"
+           class="section-title-link section-title-link-inactive">
+          Primitives
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-isocahedron.html"
+               class="subnav-link">
+              &lt;a-isocahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+<!-- Documentation. -->
+<div class="content content--structured content--components copy">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
     var sidebarEl = document.querySelector('#sidebar');
     var toggleEl = document.querySelector('#sidebar-toggle');
 
@@ -44,7 +912,69 @@
       }
       return null;
     }
-  })();</script><div class="copy__wrap"><div class="page__section docs-header"><p><a href="/docs/master/components/geometry.html" class="borderless-link">master &rsaquo; Components</a></p><div class="docs-search-wrapper docs-search-docs"><input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div></div><h1 class="page__title">light</h1><blockquote><p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p></blockquote><p>The light component defines the entity as a source of light. Light affects all materials that have not specified a flat shading model with <code>shader: flat</code>. Note that lights are computationally expensive we should limit number of lights in a scene.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"color: #AFA; intensity: 1.5"</span> <span class="attr">position</span>=<span class="string">"-1 1 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>By default, A-Frame scenes inject default lighting, an ambient light and a directional light. These default lights are visible in the DOM with the <code>data-aframe-default-light</code> attribute. Whenever we add any lights, A-Frame removes the default lights from the scene.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Default lighting injected by A-Frame. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: ambient; color: #BBB"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: directional; color: #FFF; intensity: 0.6"</span> <span class="attr">position</span>=<span class="string">"-0.5 1 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>To manually disable the defaults, without adding other lights:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">light</span>=<span class="string">"defaultLightsEnabled: false"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure><h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><p>All light types support a few basic properties:</p><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>type</td><td>One of <code>ambient</code>, <code>directional</code>, <code>hemisphere</code>, <code>point</code>, <code>spot</code>.</td><td>directional</td></tr><tr><td>color</td><td>Light color.</td><td>#fff</td></tr><tr><td>intensity</td><td>Light strength.</td><td>1.0</td></tr></tbody></table><h2 id="light-types"><a href="#light-types" class="headerlink" title="Light Types"></a>Light Types</h2><p>Different types of lights include unique properties. We will go through each type, including its properties and when it may be the right choice.</p><h3 id="ambient"><a href="#ambient" class="headerlink" title="Ambient"></a>Ambient</h3><p>Ambient lights globally affect all entities in the scene. The <code>color</code> and <code>intensity</code> properties define ambient lights. Additionally, <code>position</code>, <code>rotation</code>, and <code>scale</code> have no effect on ambient lights.</p><p>We recommend to have some form of ambient light such that shadowed areas are not fully black and to mimic indirect lighting.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: ambient; color: #CCC"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><h3 id="directional"><a href="#directional" class="headerlink" title="Directional"></a>Directional</h3><p>Directional lights are like a light source that is infinitely far away, but shining from a specific direction, like the sun. Thus, absolute position do not have an effect on the intensity of the light on an entity. We can specify the direction using the <code>position</code> component.</p><p>The example below creates a light source shining from the upper-left at a 45-degree angle. Note that because only the vector matters, <code>position=&quot;-100 100 0&quot;</code> and <code>position=&quot;-1 1 0&quot;</code> are the same.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: directional; color: #EEE; intensity: 0.5"</span> <span class="attr">position</span>=<span class="string">"-1 1 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>We can specify the direction of the directional light with its orientation by creating a child entity it targets. For example, pointing down its -Z axis:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">type</span>=<span class="string">"directional"</span> <span class="attr">position</span>=<span class="string">"0 0 0"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">target</span>=<span class="string">"#directionaltarget"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"directionaltarget"</span> <span class="attr">position</span>=<span class="string">"0 0 -1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></div></pre></td></tr></table></figure><p>Directional lights are the most efficient type for adding realtime shadows to a scene.</p><h3 id="hemisphere"><a href="#hemisphere" class="headerlink" title="Hemisphere"></a>Hemisphere</h3><p>Hemisphere lights are like an ambient light, but with two different colors, one from above (<code>color</code>) and one from below (<code>groundColor</code>). This can be useful for scenes with two distinct lighting colors (e.g., a grassy field under a gray sky).</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>groundColor</td><td>Light color from below.</td><td>#fff</td></tr></tbody></table><h3 id="point"><a href="#point" class="headerlink" title="Point"></a>Point</h3><p>Point lights, unlike directional lights, are omni-directional and affect materials depending on their position and distance. Point likes are like light bulb. The closer the light bulb gets to an object, the greater the object is lit.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: point; intensity: 0.75; distance: 50; decay: 2"</span></span></div><div class="line">          <span class="attr">position</span>=<span class="string">"0 10 10"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>decay</td><td>Amount the light dims along the distance of the light.</td><td>1.0</td></tr><tr><td>distance</td><td>Distance where intensity becomes 0. If <code>distance</code> is <code>0</code>, then the point light does not decay with distance.</td><td>0.0</td></tr></tbody></table><h3 id="spot"><a href="#spot" class="headerlink" title="Spot"></a>Spot</h3><p>Spot lights are like point lights in the sense that they affect materials depending on its position and distance, but spot lights are not omni-directional. They mainly cast light in one direction, like the <a href="https://en.wikipedia.org/wiki/Bat-Signal" target="_blank" rel="external">Bat-Signal</a>.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: spot; angle: 45"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>angle</td><td>Maximum extent of spot light from its direction (in degrees).</td><td>60</td></tr><tr><td>decay</td><td>Amount the light dims along the distance of the light.</td><td>1.0</td></tr><tr><td>distance</td><td>Distance where intensity becomes 0. If <code>distance</code> is <code>0</code>, then the point light does not decay with distance.</td><td>0.0</td></tr><tr><td>penumbra</td><td>Percent of the spotlight cone that is attenuated due to penumbra.</td><td>0.0</td></tr><tr><td>target</td><td>element the spot should point to. set to null to transform spotlight by orientation, pointing to it’s -Z axis.</td><td>null</td></tr></tbody></table><h2 id="configuring-shadows"><a href="#configuring-shadows" class="headerlink" title="Configuring Shadows"></a>Configuring Shadows</h2><p>A-Frame includes support for realtime shadow rendering. With proper configuration, objects (both moving or stationary) will cast shadows adding depth and realism to a scene. Since shadows come with many properties, it is very helpful to <strong><a href="../guides/using-the-aframe-inspector.html">use the A-Frame Inspector to configure shadows</a></strong></p><p>Light types that support shadows (<code>point</code>, <code>spot</code>, and <code>directional</code>) include additional properties:</p><table><thead><tr><th>Property</th><th>Light type</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>castShadow</td><td></td><td>Whether this light casts shadows on the scene.</td><td>false</td></tr><tr><td>shadowBias</td><td></td><td>Offset depth when deciding whether a surface is in shadow. Tiny adjustments here (in the order of 0.0001) may reduce artifacts in shadows.</td><td>0</td></tr><tr><td>shadowCameraBottom</td><td><code>directional</code></td><td>Bottom plane of shadow camera frustum.</td><td>-5</td></tr><tr><td>shadowCameraFar</td><td></td><td>Far plane of shadow camera frustum.</td><td>500</td></tr><tr><td>shadowCameraFov</td><td><code>point</code>, <code>spot</code></td><td>Shadow camera’s FOV.</td><td>50</td></tr><tr><td>shadowCameraLeft</td><td><code>directional</code></td><td>Left plane of shadow camera frustum.</td><td>-5</td></tr><tr><td>shadowCameraNear</td><td></td><td>Near plane of shadow camera frustum.</td><td>0.5</td></tr><tr><td>shadowCameraRight</td><td><code>directional</code></td><td>Right plane of shadow camera frustum.</td><td>5</td></tr><tr><td>shadowCameraTop</td><td><code>directional</code></td><td>Top plane of shadow camera frustum.</td><td>5</td></tr><tr><td>shadowCameraVisible</td><td></td><td>Displays a visual aid showing the shadow camera’s position and frustum. This is the light’s view of the scene, used to project shadows.</td><td>false</td></tr><tr><td>shadowMapHeight</td><td></td><td>Shadow map’s vertical resolution. Larger shadow maps display more crisp shadows, at the cost of performance.</td><td>512</td></tr><tr><td>shadowMapWidth</td><td></td><td>Shadow map’s horizontal resolution.</td><td>512</td></tr></tbody></table><h3 id="adding-real-time-shadows"><a href="#adding-real-time-shadows" class="headerlink" title="Adding Real-Time Shadows"></a>Adding Real-Time Shadows</h3><blockquote><p>NOTE: Real-time shadows add performance overhead. When objects in a scene are stationary, or especially when optimizing for mobile devices, be aware of other techniques for realistic shadows, such as <a href="#todo">baking light and shadow information into a texture</a> before importing assets into A-Frame.</p></blockquote><ul><li><strong>1. Create at least one light</strong> with <code>castShadows: true</code>. Three light types support shadows (<code>point</code>, <code>spot</code>, and <code>directional</code>). Of the three, <code>directional</code> lights will have the best performance. Combining an ambient light (without shadows) and a directional light (with shadows) is a good place to start.</li></ul><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: ambient; intensity: 0.5;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: directional;</span></span></div><div class="line">                   castShadow: true;</div><div class="line">                   intensity: 0.4;</div><div class="line">                   shadowCameraVisible: true;"</div><div class="line">            <span class="attr">position</span>=<span class="string">"-5 3 1.5"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure><p>In the example above, the directional light has lower intensity than the ambient light, for slightly softer shadows. Adding <code>shadowCameraVisible: true</code> creates a visual aid for debugging: objects outside the camera’s view cannot cast or receive shadows.</p><ul><li><strong>2. Add the shadow component</strong> to objects in the scene that should cast or receive shadows.</li></ul><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-gltf-model</span> <span class="attr">src</span>=<span class="string">"tree.gltf"</span> <span class="attr">shadow</span>=<span class="string">"receive: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-gltf-model</span>&gt;</span></div></pre></td></tr></table></figure><ul><li><p><strong>3. Adjust the shadow camera</strong> position and frustum (<code>shadowCameraTop</code>, <code>shadowCameraRight</code>, …) of the directional light, until it envelops the scene tightly. If the frustum is too small, shadows will be missing or partially clipped. If the frustum is too large, shadows will appear coarse or pixelated. The size of the shadow map (<code>shadowMapHeight: 512</code>, <code>shadowMapWidth: 512</code>) determines the resolution at which shadows are computed, so tightly sizing the shadow camera around your scene will make the best use of this resolution and device performance.</p></li><li><p><strong>4. Refine</strong> shadow appearance. Scene-wide options, affecting all lights, may be configured on the scene’s shadow system.</p></li></ul><h2 id="shadow-system-properties"><a href="#shadow-system-properties" class="headerlink" title="Shadow System Properties"></a>Shadow System Properties</h2><p>These global options affect the entire scene, and are set using the <code>shadow</code> system on the <code>&lt;a-scene&gt;</code> root element.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">shadow</span>=<span class="string">"type: pcfsoft"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>type</td><td>Defines shadow map type (<code>basic</code>, <code>pcf</code>, <code>pcfsoft</code>) with varying appearance and perforance characteristics.</td><td><code>pcf</code></td></tr><tr><td>renderReverseSided</td><td>Whether to render the opposite side as specified by the material into the shadow map. When disabled, an appropriate shadow.bias must be set on the light source for surfaces that can both cast and receive shadows at the same time to render correctly.</td><td>true</td></tr><tr><td>renderSingleSided</td><td>Whether to treat materials specified as double-sided as if they were specified as front-sided when rendering the shadow map. When disabled, an appropriate shadow.bias must be set on the light source for surfaces that can both cast and receive shadows at the same time to render correctly.</td><td>true</td></tr></tbody></table><footer class="footer guide-links c"></footer><footer class="footer footnote"><p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p><p>Found a typo or suggestion for the docs?<br><br><a href="https://github.com/aframevr/aframe/edit/master/docs/components/light.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p></footer></div></div></main><script src="/js/common.js"></script><script src="/js/ga.js"></script><script src="/js/docs.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script><script type="text/javascript">var searchConfig = {
+  })();
+</script>
+
+
+  <div class="copy__wrap">
+    <div class="page__section docs-header">
+      <p>
+        <a href="/docs/master/components/geometry.html" class="borderless-link">
+          master &rsaquo; Components
+        </a>
+      </p>
+      
+
+
+<div class="docs-search-wrapper docs-search-docs">
+  <input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+    </div>
+    <h1 class="page__title">light</h1>
+
+    
+    
+      <blockquote>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p>
+</blockquote>
+
+    
+
+    
+    
+      <p>The light component defines the entity as a source of light. Light affects all materials that have not specified a flat shading model with <code>shader: flat</code>. Note that lights are computationally expensive we should limit number of lights in a scene.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"color: #AFA; intensity: 1.5"</span> <span class="attr">position</span>=<span class="string">"-1 1 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>By default, A-Frame scenes inject default lighting, an ambient light and a directional light. These default lights are visible in the DOM with the <code>data-aframe-default-light</code> attribute. Whenever we add any lights, A-Frame removes the default lights from the scene.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Default lighting injected by A-Frame. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: ambient; color: #BBB"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: directional; color: #FFF; intensity: 0.6"</span> <span class="attr">position</span>=<span class="string">"-0.5 1 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>To manually disable the defaults, without adding other lights:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">light</span>=<span class="string">"defaultLightsEnabled: false"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure><h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><p>All light types support a few basic properties:</p><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>type</td><td>One of <code>ambient</code>, <code>directional</code>, <code>hemisphere</code>, <code>point</code>, <code>spot</code>.</td><td>directional</td></tr><tr><td>color</td><td>Light color.</td><td>#fff</td></tr><tr><td>intensity</td><td>Light strength.</td><td>1.0</td></tr></tbody></table><h2 id="light-types"><a href="#light-types" class="headerlink" title="Light Types"></a>Light Types</h2><p>Different types of lights include unique properties. We will go through each type, including its properties and when it may be the right choice.</p><h3 id="ambient"><a href="#ambient" class="headerlink" title="Ambient"></a>Ambient</h3><p>Ambient lights globally affect all entities in the scene. The <code>color</code> and <code>intensity</code> properties define ambient lights. Additionally, <code>position</code>, <code>rotation</code>, and <code>scale</code> have no effect on ambient lights.</p><p>We recommend to have some form of ambient light such that shadowed areas are not fully black and to mimic indirect lighting.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: ambient; color: #CCC"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><h3 id="directional"><a href="#directional" class="headerlink" title="Directional"></a>Directional</h3><p>Directional lights are like a light source that is infinitely far away, but shining from a specific direction, like the sun. Thus, absolute position do not have an effect on the intensity of the light on an entity. We can specify the direction using the <code>position</code> component.</p><p>The example below creates a light source shining from the upper-left at a 45-degree angle. Note that because only the vector matters, <code>position=&quot;-100 100 0&quot;</code> and <code>position=&quot;-1 1 0&quot;</code> are the same.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: directional; color: #EEE; intensity: 0.5"</span> <span class="attr">position</span>=<span class="string">"-1 1 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>We can specify the direction of the directional light with its orientation by creating a child entity it targets. For example, pointing down its -Z axis:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">type</span>=<span class="string">"directional"</span> <span class="attr">position</span>=<span class="string">"0 0 0"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">target</span>=<span class="string">"#directionaltarget"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"directionaltarget"</span> <span class="attr">position</span>=<span class="string">"0 0 -1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></div></pre></td></tr></table></figure><p>Directional lights are the most efficient type for adding realtime shadows to a scene.</p><h3 id="hemisphere"><a href="#hemisphere" class="headerlink" title="Hemisphere"></a>Hemisphere</h3><p>Hemisphere lights are like an ambient light, but with two different colors, one from above (<code>color</code>) and one from below (<code>groundColor</code>). This can be useful for scenes with two distinct lighting colors (e.g., a grassy field under a gray sky).</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>groundColor</td><td>Light color from below.</td><td>#fff</td></tr></tbody></table><h3 id="point"><a href="#point" class="headerlink" title="Point"></a>Point</h3><p>Point lights, unlike directional lights, are omni-directional and affect materials depending on their position and distance. Point likes are like light bulb. The closer the light bulb gets to an object, the greater the object is lit.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: point; intensity: 0.75; distance: 50; decay: 2"</span></span></div><div class="line">          <span class="attr">position</span>=<span class="string">"0 10 10"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>decay</td><td>Amount the light dims along the distance of the light.</td><td>1.0</td></tr><tr><td>distance</td><td>Distance where intensity becomes 0. If <code>distance</code> is <code>0</code>, then the point light does not decay with distance.</td><td>0.0</td></tr></tbody></table><h3 id="spot"><a href="#spot" class="headerlink" title="Spot"></a>Spot</h3><p>Spot lights are like point lights in the sense that they affect materials depending on its position and distance, but spot lights are not omni-directional. They mainly cast light in one direction, like the <a href="https://en.wikipedia.org/wiki/Bat-Signal" target="_blank" rel="external">Bat-Signal</a>.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: spot; angle: 45"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>angle</td><td>Maximum extent of spot light from its direction (in degrees).</td><td>60</td></tr><tr><td>decay</td><td>Amount the light dims along the distance of the light.</td><td>1.0</td></tr><tr><td>distance</td><td>Distance where intensity becomes 0. If <code>distance</code> is <code>0</code>, then the point light does not decay with distance.</td><td>0.0</td></tr><tr><td>penumbra</td><td>Percent of the spotlight cone that is attenuated due to penumbra.</td><td>0.0</td></tr><tr><td>target</td><td>element the spot should point to. set to null to transform spotlight by orientation, pointing to it’s -Z axis.</td><td>null</td></tr></tbody></table><h2 id="configuring-shadows"><a href="#configuring-shadows" class="headerlink" title="Configuring Shadows"></a>Configuring Shadows</h2><p>A-Frame includes support for realtime shadow rendering. With proper configuration, objects (both moving or stationary) will cast shadows adding depth and realism to a scene. Since shadows come with many properties, it is very helpful to <strong><a href="../guides/using-the-aframe-inspector.html">use the A-Frame Inspector to configure shadows</a></strong></p><p>Light types that support shadows (<code>point</code>, <code>spot</code>, and <code>directional</code>) include additional properties:</p><table><thead><tr><th>Property</th><th>Light type</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>castShadow</td><td></td><td>Whether this light casts shadows on the scene.</td><td>false</td></tr><tr><td>shadowBias</td><td></td><td>Offset depth when deciding whether a surface is in shadow. Tiny adjustments here (in the order of 0.0001) may reduce artifacts in shadows.</td><td>0</td></tr><tr><td>shadowCameraBottom</td><td><code>directional</code></td><td>Bottom plane of shadow camera frustum.</td><td>-5</td></tr><tr><td>shadowCameraFar</td><td></td><td>Far plane of shadow camera frustum.</td><td>500</td></tr><tr><td>shadowCameraFov</td><td><code>point</code>, <code>spot</code></td><td>Shadow camera’s FOV.</td><td>50</td></tr><tr><td>shadowCameraLeft</td><td><code>directional</code></td><td>Left plane of shadow camera frustum.</td><td>-5</td></tr><tr><td>shadowCameraNear</td><td></td><td>Near plane of shadow camera frustum.</td><td>0.5</td></tr><tr><td>shadowCameraRight</td><td><code>directional</code></td><td>Right plane of shadow camera frustum.</td><td>5</td></tr><tr><td>shadowCameraTop</td><td><code>directional</code></td><td>Top plane of shadow camera frustum.</td><td>5</td></tr><tr><td>shadowCameraVisible</td><td></td><td>Displays a visual aid showing the shadow camera’s position and frustum. This is the light’s view of the scene, used to project shadows.</td><td>false</td></tr><tr><td>shadowMapHeight</td><td></td><td>Shadow map’s vertical resolution. Larger shadow maps display more crisp shadows, at the cost of performance.</td><td>512</td></tr><tr><td>shadowMapWidth</td><td></td><td>Shadow map’s horizontal resolution.</td><td>512</td></tr></tbody></table><h3 id="adding-real-time-shadows"><a href="#adding-real-time-shadows" class="headerlink" title="Adding Real-Time Shadows"></a>Adding Real-Time Shadows</h3><blockquote><p>NOTE: Real-time shadows add performance overhead. When objects in a scene are stationary, or especially when optimizing for mobile devices, be aware of other techniques for realistic shadows, such as <a href="#todo">baking light and shadow information into a texture</a> before importing assets into A-Frame.</p></blockquote><ul><li><strong>1. Create at least one light</strong> with <code>castShadows: true</code>. Three light types support shadows (<code>point</code>, <code>spot</code>, and <code>directional</code>). Of the three, <code>directional</code> lights will have the best performance. Combining an ambient light (without shadows) and a directional light (with shadows) is a good place to start.</li></ul><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: ambient; intensity: 0.5;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: directional;</span></span></div><div class="line">                   castShadow: true;</div><div class="line">                   intensity: 0.4;</div><div class="line">                   shadowCameraVisible: true;"</div><div class="line">            <span class="attr">position</span>=<span class="string">"-5 3 1.5"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure><p>In the example above, the directional light has lower intensity than the ambient light, for slightly softer shadows. Adding <code>shadowCameraVisible: true</code> creates a visual aid for debugging: objects outside the camera’s view cannot cast or receive shadows.</p><ul><li><strong>2. Add the shadow component</strong> to objects in the scene that should cast or receive shadows.</li></ul><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-gltf-model</span> <span class="attr">src</span>=<span class="string">"tree.gltf"</span> <span class="attr">shadow</span>=<span class="string">"receive: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-gltf-model</span>&gt;</span></div></pre></td></tr></table></figure><ul><li><p><strong>3. Adjust the shadow camera</strong> position and frustum (<code>shadowCameraTop</code>, <code>shadowCameraRight</code>, …) of the directional light, until it envelops the scene tightly. If the frustum is too small, shadows will be missing or partially clipped. If the frustum is too large, shadows will appear coarse or pixelated. The size of the shadow map (<code>shadowMapHeight: 512</code>, <code>shadowMapWidth: 512</code>) determines the resolution at which shadows are computed, so tightly sizing the shadow camera around your scene will make the best use of this resolution and device performance.</p></li><li><p><strong>4. Refine</strong> shadow appearance. Scene-wide options, affecting all lights, may be configured on the scene’s shadow system.</p></li></ul><h2 id="shadow-system-properties"><a href="#shadow-system-properties" class="headerlink" title="Shadow System Properties"></a>Shadow System Properties</h2><p>These global options affect the entire scene, and are set using the <code>shadow</code> system on the <code>&lt;a-scene&gt;</code> root element.</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">shadow</span>=<span class="string">"type: pcfsoft"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure><table><thead><tr><th>Property</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>type</td><td>Defines shadow map type (<code>basic</code>, <code>pcf</code>, <code>pcfsoft</code>) with varying appearance and perforance characteristics.</td><td><code>pcf</code></td></tr><tr><td>renderReverseSided</td><td>Whether to render the opposite side as specified by the material into the shadow map. When disabled, an appropriate shadow.bias must be set on the light source for surfaces that can both cast and receive shadows at the same time to render correctly.</td><td>true</td></tr><tr><td>renderSingleSided</td><td>Whether to treat materials specified as double-sided as if they were specified as front-sided when rendering the shadow map. When disabled, an appropriate shadow.bias must be set on the light source for surfaces that can both cast and receive shadows at the same time to render correctly.</td><td>true</td></tr></tbody></table>
+    
+
+    <!-- Previous / Next navigation. -->
+    <footer class="footer guide-links c">
+      
+      
+    </footer>
+
+    <footer class="footer footnote">
+  <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/light.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+</footer>
+
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
     apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
     indexName: 'aframe',
     algoliaOptions: {
@@ -55,4 +985,9 @@
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));</script></body></html>
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+</script>
+
+    
+  </body>
+</html>

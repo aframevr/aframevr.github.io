@@ -1,26 +1,686 @@
-<!DOCTYPE html><html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-site-base-url="https://aframe.io" data-site-root-path="/" data-site-home-url="https://aframe.io/" data-lib-home-url="https://aframe.io/" data-lib-examples-url="https://aframe.io/aframe/examples" data-title="{title} | A-Frame" data-is-spa="false" data-ga-id="UA-24056643-4" data-aframe-version="0.5.0" data-docs-version="0.5.0"><head><title>Why iStaging Chose A-Frame – A-Frame</title><script>var host = window.location.protocol + '//' + window.location.hostname;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.5.0"
+      data-docs-version="0.5.0">
+  <head>
+    <title>Why iStaging Chose A-Frame – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
   if (window.location.protocol === 'http:' &&
       window.location.hostname === 'https://aframe.io') {
     window.location.href = 'https:' + window.location.href.substring(6);
-  }</script><meta charset="utf-8"><meta name="robots" content="all"><meta name="description" content="When I joined iStaging a year ago, I was in the position
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="all">
+    <meta name="description" content="When I joined iStaging a year ago, I was in the position
 of picking a WebVR framework. A hard decision. Since WebVR was relatively
 young, like the new kid around the block.
 iStaging wanted to build a tool for real estate agents to showcase their
-buildings and properties. To uploa"><meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="canonical" href="https://aframe.io"><link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet"><meta property="fb:app_id" content="1535794316743373"><meta property="og:title" content="Why iStaging Chose A-Frame – A-Frame"><meta property="og:site_name" content="A-Frame"><meta property="og:type" content="website"><meta property="og:url" content="https://aframe.io"><meta property="og:description" content="When I joined iStaging a year ago, I was in the position
+buildings and properties. To uploa">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Why iStaging Chose A-Frame – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="When I joined iStaging a year ago, I was in the position
 of picking a WebVR framework. A hard decision. Since WebVR was relatively
 young, like the new kid around the block.
 iStaging wanted to build a tool for real estate agents to showcase their
-buildings and properties. To uploa"><meta property="og:image" content="istaging.png"><meta property="og:image:secure_url" content="istaging.png"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@aframevr"><meta name="twitter:creator" content="@aframevr"><meta name="twitter:title" content="Why iStaging Chose A-Frame – A-Frame"><meta name="twitter:description" content="When I joined iStaging a year ago, I was in the position
+buildings and properties. To uploa">
+    <meta property="og:image" content="istaging.png">
+    <meta property="og:image:secure_url" content="istaging.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Why iStaging Chose A-Frame – A-Frame">
+    <meta name="twitter:description" content="When I joined iStaging a year ago, I was in the position
 of picking a WebVR framework. A hard decision. Since WebVR was relatively
 young, like the new kid around the block.
 iStaging wanted to build a tool for real estate agents to showcase their
-buildings and properties. To uploa"><meta name="twitter:image" content="istaging.png"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="black"><link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png"><link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+buildings and properties. To uploa">
+    <meta name="twitter:image" content="istaging.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-24056643-4', 'auto');
-  ga('send', 'pageview');</script><script src="/js/compat.js"></script><link rel="stylesheet" href="/css/secondary.css"></head><body data-page-layout="blog" data-page-type=""><main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links"><div id="secondary-nav" class="secondary-nav"><header id="header" class="header"><a id="logo" class="logo" href="/" title="A-Frame"><span class="logo__wordmark">A-Frame</span></a></header><div class="docs-search-wrapper docs-search-sidebar"><input type="search" class="search-field" placeholder="&#128269; Search 0.5.0 docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div><ul id="nav" class="nav"><li class="nav-item"><a href="/docs/0.5.0/introduction/" class="nav-link nav-link-docs"><span>Docs</span></a></li><li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li><li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs current"><span>Blog</span></a></li><li class="nav-item"><a href="/community/" class="nav-link nav-link-docs"><span>Community</span></a></li><li data-slug="github" class="nav-item"><a href="https://github.com/aframevr/aframe/" class="nav-link nav-link-docs" rel="external" title="A-Frame project repository on GitHub"><span>GitHub</span></a></li><li data-slug="slug" class="nav-item"><a href="https://aframevr-slack.herokuapp.com" class="nav-link nav-link-docs" rel="external" title="A-Frame Slack (sign up)"><span>Slack</span></a></li></ul></div><div class="list"><h3 class="section-title">Blog Posts</h3><ul class="subnav section-subnav blog-subnav"><li class="subnav-item"><a href="/blog/awoa-52/" class="subnav-link">A Week of A-Frame 52</a></li><li class="subnav-item"><a href="/blog/awoa-51/" class="subnav-link">A Week of A-Frame 51</a></li><li class="subnav-item"><a href="/blog/awoa-50/" class="subnav-link">A Week of A-Frame 50</a></li><li class="subnav-item"><a href="/blog/awoa-49/" class="subnav-link">A Week of A-Frame 49</a></li><li class="subnav-item"><a href="/blog/awoa-48/" class="subnav-link">A Week of A-Frame 48</a></li><li class="subnav-item"><a href="/blog/awoa-47/" class="subnav-link">A Week of A-Frame 47</a></li><li class="subnav-item"><a href="/blog/aframe-v0.5.0/" class="subnav-link">A-Frame v0.5.0 - Features & Tools</a></li><li class="subnav-item"><a href="/blog/awoa-46/" class="subnav-link">A Week of A-Frame 46</a></li><li class="subnav-item"><a href="/blog/awoa-45/" class="subnav-link">A Week of A-Frame 45</a></li><li class="subnav-item"><a href="/blog/awoa-44/" class="subnav-link">A Week of A-Frame 44</a></li><li class="subnav-item"><a href="/blog/awoa-43/" class="subnav-link">A Week of A-Frame 43</a></li><li class="subnav-item"><a href="/blog/awoa-42/" class="subnav-link">A Week of A-Frame 42</a></li><li class="subnav-item"><a href="/blog/awoa-40-41/" class="subnav-link">A Week of A-Frame 40 - 41</a></li><li class="subnav-item"><a href="/blog/screenshot/" class="subnav-link">Taking Screenshots in A-Frame</a></li><li class="subnav-item"><a href="/blog/aframe-v0.4.0/" class="subnav-link">A-Frame v0.4.0 - The Registry</a></li><li class="subnav-item"><a href="/blog/awoa-35-39/" class="subnav-link">A Week of A-Frame 35 - 39</a></li><li class="subnav-item"><a href="/blog/awoa-34/" class="subnav-link">A Week of A-Frame 34</a></li><li class="subnav-item"><a href="/blog/awoa-33/" class="subnav-link">A Week of A-Frame 33</a></li><li class="subnav-item"><a href="/blog/teleport-component/" class="subnav-link">Developing an A-Frame Teleport Component</a></li><li class="subnav-item"><a href="/blog/awoa-31-32/" class="subnav-link">A Week of A-Frame 31 + 32</a></li><li class="subnav-item"><a href="/blog/ghost-train-builder/" class="subnav-link">Halloween Feature! Building Ghost Train Builder</a></li><li class="subnav-item subnav-item-current"><a href="/blog/istaging/" class="subnav-link current">Why iStaging Chose A-Frame</a></li><li class="subnav-item"><a href="/blog/awoa-30/" class="subnav-link">A Week of A-Frame 30</a></li><li class="subnav-item"><a href="/blog/awoa-29/" class="subnav-link">A Week of A-Frame 29</a></li><li class="subnav-item"><a href="/blog/awoa-28/" class="subnav-link">A Week of A-Frame 28</a></li><li class="subnav-item"><a href="/blog/a-painter/" class="subnav-link">A-Painter: Paint in VR in Your Browser</a></li><li class="subnav-item"><a href="/blog/awoa-27/" class="subnav-link">A Week of A-Frame 27</a></li><li class="subnav-item"><a href="/blog/awoa-26/" class="subnav-link">A Week of A-Frame 26</a></li><li class="subnav-item"><a href="/blog/aframe-v0.3.0/" class="subnav-link">A-Frame v0.3.0 - Walk in a Web Page</a></li><li class="subnav-item"><a href="/blog/awoa-25/" class="subnav-link">A Week of A-Frame 25</a></li><li class="subnav-item"><a href="/blog/awoa-24/" class="subnav-link">A Week of A-Frame 24</a></li><li class="subnav-item"><a href="/blog/awoa-23/" class="subnav-link">A Week of A-Frame 23</a></li><li class="subnav-item"><a href="/blog/awoa-22/" class="subnav-link">A Week of A-Frame 22</a></li><li class="subnav-item"><a href="/blog/awoa-21/" class="subnav-link">A Week of A-Frame 21</a></li><li class="subnav-item"><a href="/blog/awoa-20/" class="subnav-link">A Week of A-Frame 20</a></li><li class="subnav-item"><a href="/blog/awoa-19/" class="subnav-link">A Week of A-Frame 19</a></li><li class="subnav-item"><a href="/blog/awoa-18/" class="subnav-link">A Week of A-Frame 18</a></li><li class="subnav-item"><a href="/blog/awoa-17/" class="subnav-link">A Week of A-Frame 17</a></li><li class="subnav-item"><a href="/blog/awoa-16/" class="subnav-link">A Week of A-Frame 16</a></li><li class="subnav-item"><a href="/blog/awoa-15/" class="subnav-link">A Week of A-Frame 15</a></li><li class="subnav-item"><a href="/blog/awoa-14/" class="subnav-link">A Week of A-Frame 14</a></li><li class="subnav-item"><a href="/blog/awoa-13/" class="subnav-link">A Week of A-Frame 13</a></li><li class="subnav-item"><a href="/blog/awoa-12/" class="subnav-link">A Week of A-Frame 12</a></li><li class="subnav-item"><a href="/blog/awoa-11/" class="subnav-link">A Week of A-Frame 11</a></li><li class="subnav-item"><a href="/blog/awoa-10/" class="subnav-link">A Week of A-Frame 10</a></li><li class="subnav-item"><a href="/blog/awoa-09/" class="subnav-link">A Week of A-Frame 9</a></li><li class="subnav-item"><a href="/blog/syria/" class="subnav-link">Amnesty International UK Presents "Fear of the Sky"</a></li><li class="subnav-item"><a href="/blog/aframe-v0.2.0/" class="subnav-link">A-Frame v0.2.0 - The Extensible VR Web</a></li><li class="subnav-item"><a href="/blog/mars/" class="subnav-link">The Washington Post Presents "Mars: An Interactive Journey"</a></li><li class="subnav-item"><a href="/blog/awoa-08/" class="subnav-link">A Week of A-Frame 8</a></li><li class="subnav-item"><a href="/blog/awoa-07/" class="subnav-link">A Week of A-Frame 7</a></li><li class="subnav-item"><a href="/blog/awoa-06/" class="subnav-link">A Week of A-Frame 6</a></li><li class="subnav-item"><a href="/blog/awoa-05/" class="subnav-link">A Week of A-Frame 5</a></li><li class="subnav-item"><a href="/blog/awoa-04/" class="subnav-link">A Week of A-Frame 4</a></li><li class="subnav-item"><a href="/blog/awoa-03/" class="subnav-link">A Week of A-Frame 3</a></li><li class="subnav-item"><a href="/blog/awoa-02/" class="subnav-link">A Week of A-Frame 2</a></li><li class="subnav-item"><a href="/blog/tron/" class="subnav-link">Step Inside the Computer World, TRON!</a></li><li class="subnav-item"><a href="/blog/awoa-01/" class="subnav-link">A Week of A-Frame 1</a></li><li class="subnav-item"><a href="/blog/photosphere-viewer/" class="subnav-link">360&deg; Photosphere Viewer</a></li><li class="subnav-item"><a href="/blog/solar-system/" class="subnav-link">WebVR Solar System</a></li><li class="subnav-item"><a href="/blog/testscape/" class="subnav-link">TestScape</a></li><li class="subnav-item"><a href="/blog/popmotion/" class="subnav-link">Popmotion Physics & Animation with A-Frame</a></li><li class="subnav-item"><a href="/blog/charleston/" class="subnav-link">WebVR Tour of Public Projects in Charleston, SC</a></li><li class="subnav-item"><a href="/blog/flickr-textures/" class="subnav-link">CC-Licensed Textures from Flickr</a></li><li class="subnav-item"><a href="/blog/drawvr-minecraft/" class="subnav-link">Creating a Minecraft Scene in WebVR</a></li><li class="subnav-item"><a href="/blog/spheres-and-fog/" class="subnav-link">Sense of Scale with Spheres and Fog</a></li><li class="subnav-item"><a href="/blog/shopping/" class="subnav-link">Prototyping a Shopping Example</a></li><li class="subnav-item"><a href="/blog/introducing-aframe/" class="subnav-link">Introducing A-Frame v0.1.0</a></li></ul></div></aside><div class="content content--blog copy post"><div class="mobile-header"><a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a><h1><a href="/">A-Frame</a></h1><span></span></div><script>(function() {
+  ga('send', 'pageview');
+</script>
+
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+  </head>
+
+  <body data-page-layout="blog" data-page-type="">
+    <main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.5.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.5.0/introduction/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs current"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <h3 class="section-title">Blog Posts</h3>
+    <ul class="subnav section-subnav blog-subnav">
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-52/"
+             class="subnav-link">
+            A Week of A-Frame 52
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-51/"
+             class="subnav-link">
+            A Week of A-Frame 51
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-50/"
+             class="subnav-link">
+            A Week of A-Frame 50
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-49/"
+             class="subnav-link">
+            A Week of A-Frame 49
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-48/"
+             class="subnav-link">
+            A Week of A-Frame 48
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-47/"
+             class="subnav-link">
+            A Week of A-Frame 47
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.5.0/"
+             class="subnav-link">
+            A-Frame v0.5.0 - Features & Tools
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-46/"
+             class="subnav-link">
+            A Week of A-Frame 46
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-45/"
+             class="subnav-link">
+            A Week of A-Frame 45
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-44/"
+             class="subnav-link">
+            A Week of A-Frame 44
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-43/"
+             class="subnav-link">
+            A Week of A-Frame 43
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-42/"
+             class="subnav-link">
+            A Week of A-Frame 42
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-40-41/"
+             class="subnav-link">
+            A Week of A-Frame 40 - 41
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/screenshot/"
+             class="subnav-link">
+            Taking Screenshots in A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.4.0/"
+             class="subnav-link">
+            A-Frame v0.4.0 - The Registry
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-35-39/"
+             class="subnav-link">
+            A Week of A-Frame 35 - 39
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-34/"
+             class="subnav-link">
+            A Week of A-Frame 34
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-33/"
+             class="subnav-link">
+            A Week of A-Frame 33
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/teleport-component/"
+             class="subnav-link">
+            Developing an A-Frame Teleport Component
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-31-32/"
+             class="subnav-link">
+            A Week of A-Frame 31 + 32
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/ghost-train-builder/"
+             class="subnav-link">
+            Halloween Feature! Building Ghost Train Builder
+          </a>
+        </li>
+      
+        <li class="subnav-item  subnav-item-current">
+          <a href="/blog/istaging/"
+             class="subnav-link current">
+            Why iStaging Chose A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-30/"
+             class="subnav-link">
+            A Week of A-Frame 30
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-29/"
+             class="subnav-link">
+            A Week of A-Frame 29
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-28/"
+             class="subnav-link">
+            A Week of A-Frame 28
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/a-painter/"
+             class="subnav-link">
+            A-Painter: Paint in VR in Your Browser
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-27/"
+             class="subnav-link">
+            A Week of A-Frame 27
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-26/"
+             class="subnav-link">
+            A Week of A-Frame 26
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.3.0/"
+             class="subnav-link">
+            A-Frame v0.3.0 - Walk in a Web Page
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-25/"
+             class="subnav-link">
+            A Week of A-Frame 25
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-24/"
+             class="subnav-link">
+            A Week of A-Frame 24
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-23/"
+             class="subnav-link">
+            A Week of A-Frame 23
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-22/"
+             class="subnav-link">
+            A Week of A-Frame 22
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-21/"
+             class="subnav-link">
+            A Week of A-Frame 21
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-20/"
+             class="subnav-link">
+            A Week of A-Frame 20
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-19/"
+             class="subnav-link">
+            A Week of A-Frame 19
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-18/"
+             class="subnav-link">
+            A Week of A-Frame 18
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-17/"
+             class="subnav-link">
+            A Week of A-Frame 17
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-16/"
+             class="subnav-link">
+            A Week of A-Frame 16
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-15/"
+             class="subnav-link">
+            A Week of A-Frame 15
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-14/"
+             class="subnav-link">
+            A Week of A-Frame 14
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-13/"
+             class="subnav-link">
+            A Week of A-Frame 13
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-12/"
+             class="subnav-link">
+            A Week of A-Frame 12
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-11/"
+             class="subnav-link">
+            A Week of A-Frame 11
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-10/"
+             class="subnav-link">
+            A Week of A-Frame 10
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-09/"
+             class="subnav-link">
+            A Week of A-Frame 9
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/syria/"
+             class="subnav-link">
+            Amnesty International UK Presents "Fear of the Sky"
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.2.0/"
+             class="subnav-link">
+            A-Frame v0.2.0 - The Extensible VR Web
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/mars/"
+             class="subnav-link">
+            The Washington Post Presents "Mars: An Interactive Journey"
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-08/"
+             class="subnav-link">
+            A Week of A-Frame 8
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-07/"
+             class="subnav-link">
+            A Week of A-Frame 7
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-06/"
+             class="subnav-link">
+            A Week of A-Frame 6
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-05/"
+             class="subnav-link">
+            A Week of A-Frame 5
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-04/"
+             class="subnav-link">
+            A Week of A-Frame 4
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-03/"
+             class="subnav-link">
+            A Week of A-Frame 3
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-02/"
+             class="subnav-link">
+            A Week of A-Frame 2
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/tron/"
+             class="subnav-link">
+            Step Inside the Computer World, TRON!
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-01/"
+             class="subnav-link">
+            A Week of A-Frame 1
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/photosphere-viewer/"
+             class="subnav-link">
+            360&deg; Photosphere Viewer
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/solar-system/"
+             class="subnav-link">
+            WebVR Solar System
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/testscape/"
+             class="subnav-link">
+            TestScape
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/popmotion/"
+             class="subnav-link">
+            Popmotion Physics & Animation with A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/charleston/"
+             class="subnav-link">
+            WebVR Tour of Public Projects in Charleston, SC
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/flickr-textures/"
+             class="subnav-link">
+            CC-Licensed Textures from Flickr
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/drawvr-minecraft/"
+             class="subnav-link">
+            Creating a Minecraft Scene in WebVR
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/spheres-and-fog/"
+             class="subnav-link">
+            Sense of Scale with Spheres and Fog
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/shopping/"
+             class="subnav-link">
+            Prototyping a Shopping Example
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/introducing-aframe/"
+             class="subnav-link">
+            Introducing A-Frame v0.1.0
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</aside>
+
+<div class="content content--blog copy post ">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
     var sidebarEl = document.querySelector('#sidebar');
     var toggleEl = document.querySelector('#sidebar-toggle');
 
@@ -56,4 +716,165 @@ buildings and properties. To uploa"><meta name="twitter:image" content="istaging
       }
       return null;
     }
-  })();</script><div class="copy__wrap"><article class="post post-full"><p class="page__section"><a href="/blog/" class="borderless-link">Blog</a></p><h1 class="page__title post__heading">Why iStaging Chose A-Frame</h1><div class="post__metadata"><p class="post__timestamp">Oct 26, 2016</p><p class="post__author">By <a class="blog-attribution" href="https://github.com/alexcheninfo">Alexandro Chen</a></p></div><img src="/images/blog/istaging.png" alt="Why iStaging Chose A-Frame"><p>When I joined <a href="http://istaging.co/" target="_blank" rel="external">iStaging</a> a year ago, I was in the position of picking a WebVR framework. A hard decision. Since WebVR was relatively young, like the new kid around the block.</p><p>iStaging wanted to build a tool for real estate agents to showcase their buildings and properties. To upload panoramic pictures of rooms, create floor plans, leave comments, set standpoints. Clients were to be immersed into a real estate VR experience from the comfort of their homes.</p><p>We checked <a href="https://krpano.com/" target="_blank" rel="external">KRPano</a>. It was cool. Full of features. However, it lacked the flexibility that we needed. And the information available on the Internet was very meager. The other framework that we investigated was <a href="https://developers.google.com/vr/concepts/vrview" target="_blank" rel="external">Google VR View</a>. However, it turned out to be just an image / video inserted inside an <code>iframe</code>. Kind of disappointing. Then, one day, scrolling through Github’s trending list, we stumbled upon this WebVR framework created by some people at Mozilla. We tried it and we loved it.</p><p>Our virtual tour has since become one of our main products. Thanks to A-Frame (and the <a href="https://mozvr.com" target="_blank" rel="external">Mozilla VR team</a>), iStaging has reached thousands of customers while partnering with companies like <strong>Microsoft, HTC, Lenovo, and Alibaba</strong>.</p><a id="more"></a><video src="/videos/istaging.mp4" autoplay></video><p><a href="http://vrviewer.istaging.co/#!/684173" target="_blank" rel="external">VIEW DEMO</a></p><h2 id="html-based"><a href="#html-based" class="headerlink" title="HTML-Based"></a>HTML-Based</h2><p>Using <a href="https://threejs.org/" target="_blank" rel="external">Three.js</a> would have been like trying to build a table from scratch; cutting the wood and finding the nails ourselves. Working with KRPano would have been like getting a fully furnished house, but we would have had to tear down the walls and throw away the appliances that we didn’t need.</p><p>A-Frame hit a sweet spot. It was like buying an IKEA desk that came with a manual and parts that we could assemble together. In order words, it gave us ready-to-use 3D components, while letting us put them together. And best of all, they were simple HTML tags, so &mdash; as front-end developers &mdash; we learned the framework in just a couple of days (without the need of coffee).</p><p>It was extremely easy to get the properties of the 3D elements and apply them to our HTML. For example, we needed to get the rotation of the 3D camera and display its angle as a 2D “range of vision”. With A-Frame this was extremely simple. Since its custom elements behave like regular HTML elements, we could get the attribute like this: <code>const cameraRotation = camera.getAttribute(&#39;rotation&#39;)</code>. Using that information to set the range of vision was equally simple: <code>state.rangeOfVisionRotation = cameraRotation</code>. And here’s the HTML:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">:style</span>=<span class="string">"rangeOfVisionRotation"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"rangeOfVision.png"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div></pre></td></tr></table></figure><h2 id="pluggable-and-mixable"><a href="#pluggable-and-mixable" class="headerlink" title="Pluggable and Mixable"></a>Pluggable and Mixable</h2><p>The best thing about A-Frame is that it works with plain HTML. So, it can be plugged into any framework and mixed with other tools like Lodash, React, and Angular. Or, in our case, <a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a>. The process couldn’t have been simpler. All we had to do was to import A-Frame and write stuff like the following to swap the panorama while assigning a default position and rotation:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-sky</span></span></div><div class="line">  <span class="attr">:position</span>=<span class="string">"panoramaPosition"</span></div><div class="line">  <span class="attr">:rotation</span>=<span class="string">"panoramaRotation"</span></div><div class="line">  <span class="attr">:src</span>=<span class="string">"panoramaURL"</span></div><div class="line">  <span class="attr">:opacity</span>=<span class="string">"panoramaOpacity"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div></pre></td></tr></table></figure><p>Beautiful.</p><h2 id="complete"><a href="#complete" class="headerlink" title="Complete"></a>Complete</h2><p>A-Frame is one of the most complete frameworks out there. Its ecosystem includes physics and particle systems. You can even do cool things like walking in a 3D world and play with (<a href="https://blog.mozvr.com/a-painter/" target="_blank" rel="external">VR controllers</a>) like HTC Vive. Don’t think that’s enough? It also has an <a href="https://aframe.io/aframe-inspector/example/">visual interface</a> to inspect your 3D objects and a <a href="https://aframe.io/a-painter/">tool</a> to paint in a virtual space.</p><h2 id="great-resources"><a href="#great-resources" class="headerlink" title="Great Resources"></a>Great Resources</h2><p>You can find practically anything in <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external">the <code>Awesome A-Frame</code> repo</a>. In our case, we were looking for a component that displayed text (e.g. to display the price tags and the location the standpoints led to). We weren’t satisfied with the first one. Neither with the second. Luckily, the third, which turned HTML elements into textures, worked perfectly.</p><p>Another component that we’re using is one that makes 3D objects draggable and clickable:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-image</span></span></div><div class="line">  <span class="attr">src</span>=<span class="string">"#stand-point"</span></div><div class="line">  <span class="attr">v-for</span>=<span class="string">"standPoint in standPoints"</span></div><div class="line">  <span class="attr">:position</span>=<span class="string">"standPointPosition"</span></div><div class="line">  @<span class="attr">click</span>=<span class="string">"goToStandPoint"</span></div><div class="line">  <span class="attr">cursor-listener</span>&gt;</div></pre></td></tr></table></figure><p>The result:</p><p><img src="https://i.stack.imgur.com/csm4q.png" alt="https://i.stack.imgur.com/csm4q.png"></p><p>This lets real estate agents create standpoints to navigate between rooms. And not only that: they can also create price tags, more-information buttons, and more.</p><h2 id="great-community"><a href="#great-community" class="headerlink" title="Great Community"></a>Great Community</h2><p>A-Frame has an awesome community. With other VR frameworks you’ll feel like an boat drifting alone in the ocean. With A-Frame, you’ll feel like a ship in a navy.</p><p>On the <a href="https://aframe.io/slack">A-Frame Slack</a> (probably the biggest WebVR Slack channel), you can get help in a matter of seconds (okay, not that fast, but in less than a day). The community is so active, we don’t need to rely on Stack Overflow at all. Also, we’re always amazed by what we find in the <code>#projects</code> channel. We’ve seen stuff from AR experiments to VR games. You can easily lose yourself in those virtual worlds.</p><h2 id="free-and-open-source"><a href="#free-and-open-source" class="headerlink" title="Free and Open Source"></a>Free and Open Source</h2><p>And last but not least, A-Frame is <a href="https://github.com/aframevr/aframe" target="_blank" rel="external">free and open source on Github</a>, so its development is rapid and community-based. You can follow every change and see big improvements between each version. It also gives you freedom. Freedom to use it for wherever you want and for any purpose.</p><h2 id="final-words"><a href="#final-words" class="headerlink" title="Final Words"></a>Final Words</h2><p>To date, we have created more than 10K projects. And we believe the figures will increase, since <a href="http://toursler.com/360-ridelle-306" target="_blank" rel="external">more</a> and <a href="http://storage.net-fs.com/hosting/2727323/6/index.htm" target="_blank" rel="external">more</a> companies are using WebVR to showcase their real estate properties. How many of them will succeed? It’s hard to tell. The only certainty is that A-Frame will be the leading WebVR framework for a long time.</p></article><footer class="footer guide-links c"><span class="float-left"><a href="/blog/awoa-30/" class="guide-link guide-link-left">← A Week of A-Frame 30</a></span> <span class="float-right"><a href="/blog/ghost-train-builder/" class="guide-link guide-link-right">Halloween Feature! Building Ghost Train Builder →</a></span></footer><footer class="footer footnote"><p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p><p>Found a typo or suggestion for the docs?<br><br><a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/istaging.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p></footer></div></div></main><script src="/js/common.js"></script><script src="/js/ga.js"></script><script src="/js/docs.js"></script></body></html>
+  })();
+</script>
+
+
+  <div class="copy__wrap">
+    
+      <article class="post post-full">
+        <p class="page__section">
+          <a href="/blog/" class="borderless-link">Blog</a>
+        </p>
+
+        <h1 class="page__title post__heading">Why iStaging Chose A-Frame</h1>
+        <div class="post__metadata">
+  <p class="post__timestamp">Oct 26, 2016</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://github.com/alexcheninfo">Alexandro Chen</a></p>
+  
+</div>
+
+
+        
+
+        
+          
+  
+    <img src="/images/blog/istaging.png" alt="Why iStaging Chose A-Frame">
+  
+
+
+        
+
+        <p>When I joined <a href="http://istaging.co/" target="_blank" rel="external">iStaging</a> a year ago, I was in the position
+of picking a WebVR framework. A hard decision. Since WebVR was relatively
+young, like the new kid around the block.</p>
+<p>iStaging wanted to build a tool for real estate agents to showcase their
+buildings and properties. To upload panoramic pictures of rooms, create floor
+plans, leave comments, set standpoints. Clients were to be immersed into a real
+estate VR experience from the comfort of their homes.</p>
+<p>We checked <a href="https://krpano.com/" target="_blank" rel="external">KRPano</a>. It was cool. Full of features.
+However, it lacked the flexibility that we needed. And the information
+available on the Internet was very meager. The other framework that we
+investigated was <a href="https://developers.google.com/vr/concepts/vrview" target="_blank" rel="external">Google VR
+View</a>. However, it turned out
+to be just an image / video inserted inside an <code>iframe</code>. Kind of disappointing.
+Then, one day, scrolling through Github’s trending list, we stumbled upon this
+WebVR framework created by some people at Mozilla. We tried it and we loved it.</p>
+<p>Our virtual tour has since become one of our main products. Thanks to A-Frame
+(and the <a href="https://mozvr.com" target="_blank" rel="external">Mozilla VR team</a>), iStaging has reached thousands
+of customers while partnering with companies like <strong>Microsoft, HTC, Lenovo, and
+Alibaba</strong>.</p>
+<a id="more"></a>
+<video src="/videos/istaging.mp4" autoplay></video>
+
+<p><a href="http://vrviewer.istaging.co/#!/684173" target="_blank" rel="external">VIEW DEMO</a></p>
+<h2 id="html-based"><a href="#html-based" class="headerlink" title="HTML-Based"></a>HTML-Based</h2><p>Using <a href="https://threejs.org/" target="_blank" rel="external">Three.js</a> would have been like trying to build a
+table from scratch; cutting the wood and finding the nails ourselves. Working
+with KRPano would have been like getting a fully furnished house, but we would
+have had to tear down the walls and throw away the appliances that we didn’t
+need.</p>
+<p>A-Frame hit a sweet spot. It was like buying an IKEA desk that came with a
+manual and parts that we could assemble together. In order words, it gave us
+ready-to-use 3D components, while letting us put them together. And best of
+all, they were simple HTML tags, so &mdash; as front-end developers &mdash; we
+learned the framework in just a couple of days (without the need of coffee).</p>
+<p>It was extremely easy to get the properties of the 3D elements and apply them
+to our HTML. For example, we needed to get the rotation of the 3D camera and
+display its angle as a 2D “range of vision”. With A-Frame this was extremely
+simple. Since its custom elements behave like regular HTML elements, we could
+get the attribute like this: <code>const cameraRotation =
+camera.getAttribute(&#39;rotation&#39;)</code>. Using that information to set the range of
+vision was equally simple: <code>state.rangeOfVisionRotation = cameraRotation</code>. And
+here’s the HTML:</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">:style</span>=<span class="string">"rangeOfVisionRotation"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"rangeOfVision.png"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="pluggable-and-mixable"><a href="#pluggable-and-mixable" class="headerlink" title="Pluggable and Mixable"></a>Pluggable and Mixable</h2><p>The best thing about A-Frame is that it works with plain HTML. So, it can be
+plugged into any framework and mixed with other tools like Lodash, React, and
+Angular. Or, in our case, <a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a>. The process couldn’t
+have been simpler. All we had to do was to import A-Frame and write stuff like
+the following to swap the panorama while assigning a default position and
+rotation:</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-sky</span></span></div><div class="line">  <span class="attr">:position</span>=<span class="string">"panoramaPosition"</span></div><div class="line">  <span class="attr">:rotation</span>=<span class="string">"panoramaRotation"</span></div><div class="line">  <span class="attr">:src</span>=<span class="string">"panoramaURL"</span></div><div class="line">  <span class="attr">:opacity</span>=<span class="string">"panoramaOpacity"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Beautiful.</p>
+<h2 id="complete"><a href="#complete" class="headerlink" title="Complete"></a>Complete</h2><p>A-Frame is one of the most complete frameworks out there. Its ecosystem
+includes physics and particle systems. You can even do cool things like walking
+in a 3D world and play with (<a href="https://blog.mozvr.com/a-painter/" target="_blank" rel="external">VR
+controllers</a>) like HTC Vive. Don’t think
+that’s enough? It also has an <a href="https://aframe.io/aframe-inspector/example/">visual
+interface</a> to inspect your 3D
+objects and a <a href="https://aframe.io/a-painter/">tool</a> to paint in a virtual space.</p>
+<h2 id="great-resources"><a href="#great-resources" class="headerlink" title="Great Resources"></a>Great Resources</h2><p>You can find practically anything in <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external">the <code>Awesome A-Frame</code>
+repo</a>. In our case, we were looking
+for a component that displayed text (e.g. to display the price tags and the
+location the standpoints led to). We weren’t satisfied with the first one.
+Neither with the second. Luckily, the third, which turned HTML elements into
+textures, worked perfectly.</p>
+<p>Another component that we’re using is one that makes 3D objects draggable and
+clickable:</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-image</span></span></div><div class="line">  <span class="attr">src</span>=<span class="string">"#stand-point"</span></div><div class="line">  <span class="attr">v-for</span>=<span class="string">"standPoint in standPoints"</span></div><div class="line">  <span class="attr">:position</span>=<span class="string">"standPointPosition"</span></div><div class="line">  @<span class="attr">click</span>=<span class="string">"goToStandPoint"</span></div><div class="line">  <span class="attr">cursor-listener</span>&gt;</div></pre></td></tr></table></figure>
+<p>The result:</p>
+<p><img src="https://i.stack.imgur.com/csm4q.png" alt="https://i.stack.imgur.com/csm4q.png"></p>
+<p>This lets real estate agents create standpoints to navigate between rooms. And
+not only that: they can also create price tags, more-information buttons, and
+more.</p>
+<h2 id="great-community"><a href="#great-community" class="headerlink" title="Great Community"></a>Great Community</h2><p>A-Frame has an awesome community. With other VR frameworks you’ll feel like an
+boat drifting alone in the ocean. With A-Frame, you’ll feel like a ship in a
+navy.</p>
+<p>On the <a href="https://aframe.io/slack">A-Frame Slack</a> (probably the biggest WebVR
+Slack channel), you can get help in a matter of seconds (okay, not that fast,
+but in less than a day). The community is so active, we don’t need to rely on
+Stack Overflow at all. Also, we’re always amazed by what we find in the
+<code>#projects</code> channel. We’ve seen stuff from AR experiments to VR games. You can
+easily lose yourself in those virtual worlds.</p>
+<h2 id="free-and-open-source"><a href="#free-and-open-source" class="headerlink" title="Free and Open Source"></a>Free and Open Source</h2><p>And last but not least, A-Frame is <a href="https://github.com/aframevr/aframe" target="_blank" rel="external">free and open source on
+Github</a>, so its development is rapid and
+community-based. You can follow every change and see big improvements between
+each version. It also gives you freedom. Freedom to use it for wherever you
+want and for any purpose.</p>
+<h2 id="final-words"><a href="#final-words" class="headerlink" title="Final Words"></a>Final Words</h2><p>To date, we have created more than 10K projects. And we believe the figures
+will increase, since <a href="http://toursler.com/360-ridelle-306" target="_blank" rel="external">more</a> and
+<a href="http://storage.net-fs.com/hosting/2727323/6/index.htm" target="_blank" rel="external">more</a> companies are
+using WebVR to showcase their real estate properties. How many of them will
+succeed? It’s hard to tell. The only certainty is that A-Frame will be the
+leading WebVR framework for a long time.</p>
+
+
+        
+      </article>
+
+      <footer class="footer guide-links c">
+        
+        
+        
+        
+          <span class="float-left"><a href="/blog/awoa-30/" class="guide-link guide-link-left">← A Week of A-Frame 30</a></span>
+        
+        
+          <span class="float-right"><a href="/blog/ghost-train-builder/" class="guide-link guide-link-right">Halloween Feature! Building Ghost Train Builder →</a></span>
+        
+      </footer>
+    
+
+    <footer class="footer footnote">
+      <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+      
+        <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/istaging.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+      
+    </footer>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+  </body>
+</html>
