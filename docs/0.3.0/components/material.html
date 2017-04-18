@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -858,11 +853,141 @@
     
     
       <p>The material component gives appearance to an entity. We can define properties
-such as color, opacity, or texture. This is often paired with the <a href="./geometry.md">geometry
+such as color, opacity, or texture. This is often paired with the <a href="./geometry.html">geometry
 component</a> which provides shape.</p>
 <p>Custom materials and shaders can be registered to extend the material component
 in order to provide a wide range of visual effects.</p>
-<div id="toc"></div>
+
+      
+
+
+  <h2 id="toc">Table of Contents</h2>
+
+  <ul>
+    
+      <li>
+        <a href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#built-in-materials">Built-in Materials</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#standard">standard</a></li>
+            
+              <li><a href="#flat">flat</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#textures">Textures</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#video-textures">Video Textures</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#canvas-textures">Canvas Textures</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#repeating-textures">Repeating Textures</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#transparency-issues">Transparency Issues</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#register-a-custom-material">Register a Custom Material</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#registershader">registerShader</a></li>
+            
+              <li><a href="#schema">Schema</a></li>
+            
+              <li><a href="#example-1">Example</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#register-a-custom-glsl-shader">Register a Custom GLSL Shader</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#schema-1">Schema</a></li>
+            
+              <li><a href="#example-2">Example</a></li>
+            
+              <li><a href="#additional-resources">Additional Resources</a></li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+
+      
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Defining a red material using the default standard material:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -966,7 +1091,7 @@ available depending on the material applied.</p>
 </tr>
 <tr>
 <td>fog</td>
-<td>Whether or not material is affected by <a href="./fog.md">fog</a>.</td>
+<td>Whether or not material is affected by <a href="./fog.html">fog</a>.</td>
 <td>true</td>
 </tr>
 <tr>
@@ -1033,7 +1158,7 @@ such as images or videos. Set <code>shader</code> to <code>flat</code>:</p>
 </tr>
 <tr>
 <td>fog</td>
-<td>Whether or not material is affected by <a href="./fog.md">fog</a>.</td>
+<td>Whether or not material is affected by <a href="./fog.html">fog</a>.</td>
 <td>true</td>
 </tr>
 <tr>
@@ -1060,7 +1185,7 @@ such as images or videos. Set <code>shader</code> to <code>flat</code>:</p>
 </table>
 <h2 id="textures"><a href="#textures" class="headerlink" title="Textures"></a>Textures</h2><p>To set a texture using one of the built-in materials, specify the <code>src</code>
 property. <code>src</code> can be a selector to either an <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> element in the
-<a href="../core/asset-management-system.md">asset management system</a>:</p>
+<a href="../core/asset-management-system.html">asset management system</a>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"my-texture"</span> <span class="attr">src</span>=<span class="string">"texture.png"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"src: #my-texture"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><code>src</code> can also be an inline URL. Note that we do not get browser caching or
 preloading through this method.</p>
@@ -1133,7 +1258,7 @@ registering a <a href="http://threejs.org/docs/index.html#Reference/Materials/Li
 <a href="http://threejs.org/docs/#Reference/Materials/ShaderMaterial" target="_blank" rel="external">THREE.ShaderMaterial</a>s to create custom shaders.</p>
 <p>We can provide our own <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank" rel="external">GLSL</a> vertex and fragment shaders (small programs
 that run on the GPU), and we can define a schema for their uniforms and
-attributes just as we would with <a href="../core/component.md#schema">component schemas</a>. The
+attributes just as we would with <a href="../core/component.html#schema">component schemas</a>. The
 shader’s schema will extend the base material component’s schema, and as a
 result we can pass values from HTML directly to the shader.</p>
 <h3 id="schema-1"><a href="#schema-1" class="headerlink" title="Schema"></a>Schema</h3><p><code>THREE.ShaderMaterial</code>-based schemas pass uniforms to shaders. To specify a

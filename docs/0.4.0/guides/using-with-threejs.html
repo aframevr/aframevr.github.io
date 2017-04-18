@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -984,7 +979,7 @@ scene graph.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>).object3D;  <span class="comment">// THREE.Scene</span></div></pre></td></tr></table></figure>
 <p>And every A-Frame entity also has a reference to <code>&lt;a-scene&gt;</code> via <code>.sceneEl</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>).sceneEl.object3D;  <span class="comment">// THREE.Scene</span></div></pre></td></tr></table></figure>
-<p>From a <a href="../core/component.md">component</a>, we access the scene through its entity
+<p>From a <a href="../core/component.html">component</a>, we access the scene through its entity
 (i.e., <code>this.el</code>):</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> scene = <span class="keyword">this</span>.el.sceneEl.object3D;  <span class="comment">// THREE.Scene</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="accessing-an-entity’s-three-js-objects"><a href="#accessing-an-entity’s-three-js-objects" class="headerlink" title="Accessing an Entity’s three.js Objects"></a>Accessing an Entity’s three.js Objects</h3><p>Every A-Frame entity (e.g., <code>&lt;a-entity&gt;</code>) has its own

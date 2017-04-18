@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -942,8 +937,8 @@ scene. Components will check for an enabled <code>debug</code> component before 
 serialize to the DOM. Then we will be able to view component data in the DOM:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: red"</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span> <span class="attr">rotation</span>=<span class="string">"0 180 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Make sure that this component is not active in production.</p>
-<h3 id="manually-serializing-to-dom"><a href="#manually-serializing-to-dom" class="headerlink" title="Manually Serializing to DOM"></a>Manually Serializing to DOM</h3><p>To manually serialize to DOM, use <a href="../core/entity.md#flushtodom-recursive"><code>Entity.flushToDOM</code></a> or
-<a href="../core/component.md#flushtodom"><code>Component.flushToDOM</code></a>:</p>
+<h3 id="manually-serializing-to-dom"><a href="#manually-serializing-to-dom" class="headerlink" title="Manually Serializing to DOM"></a>Manually Serializing to DOM</h3><p>To manually serialize to DOM, use <a href="../core/entity.html#flushtodom-recursive"><code>Entity.flushToDOM</code></a> or
+<a href="../core/component.html#flushtodom"><code>Component.flushToDOM</code></a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>).components.position.flushToDOM();  <span class="comment">// Flush a component.</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>).flushToDOM();  <span class="comment">// Flush an entity.</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>).flushToDOM(<span class="literal">true</span>);  <span class="comment">// Flush an entity and its children.</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>).flushToDOM(<span class="literal">true</span>);  <span class="comment">// Flush every entity.</span></div></pre></td></tr></table></figure>
 
     

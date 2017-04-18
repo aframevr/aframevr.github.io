@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -955,7 +950,7 @@
 
     
     
-      <p>In the <a href="./index.md">entity-component-system pattern</a>, a component is a reusable and
+      <p>In the <a href="./">entity-component-system pattern</a>, a component is a reusable and
 modular chunk of data that we plug into an entity to add appearance, behavior,
 and/or functionality.</p>
 <p>In A-Frame, components modify entities which are 3D objects in the scene. We
@@ -969,7 +964,129 @@ components to give it appearance (color, shape), to define its behavior
 <p>Components are roughly analogous to CSS. Like how CSS rules modify the
 appearance of elements, component properties modify the appearance, behavior,
 and functionality of entities.</p>
-<div id="toc"></div>
+
+      
+
+
+  <h2 id="toc">Table of Contents</h2>
+
+  <ul>
+    
+      <li>
+        <a href="#component-html-form">Component HTML Form</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#single-property-component">Single-Property Component</a></li>
+            
+              <li><a href="#multi-property-component">Multi-Property Component</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#register-a-component">Register a Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#aframe-registercomponent-name-definition">AFRAME.registerComponent (name, definition)</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#schema">Schema</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#property-types">Property Types</a></li>
+            
+              <li><a href="#single-property-schema">Single-Property Schema</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#definition-lifecycle-handler-methods">Definition Lifecycle Handler Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#overview-of-methods">Overview of Methods</a></li>
+            
+              <li><a href="#component-prototype-properties">Component Prototype Properties</a></li>
+            
+              <li><a href="#init">.init ()</a></li>
+            
+              <li><a href="#update-olddata">.update (oldData)</a></li>
+            
+              <li><a href="#remove">.remove ()</a></li>
+            
+              <li><a href="#tick-time-timedelta">.tick (time, timeDelta)</a></li>
+            
+              <li><a href="#pause">.pause ()</a></li>
+            
+              <li><a href="#play">.play ()</a></li>
+            
+              <li><a href="#updateschema-data">.updateSchema (data)</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#definition-properties">Definition Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#dependencies">dependencies</a></li>
+            
+              <li><a href="#multiple">multiple</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#component-prototype-methods">Component Prototype Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#flushtodom">.flushToDOM ()</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#accessing-a-component’s-members-and-methods">Accessing a Component’s Members and Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+
+      
 
 <h2 id="component-html-form"><a href="#component-html-form" class="headerlink" title="Component HTML Form"></a>Component HTML Form</h2><p>A component holds a bucket of data in the form of one or more component
 properties. Components use this data to modify entities. Consider an <em>engine</em>
@@ -1109,7 +1226,7 @@ the schema’s values are plain values rather than objects:</p>
 <h2 id="definition-lifecycle-handler-methods"><a href="#definition-lifecycle-handler-methods" class="headerlink" title="Definition Lifecycle Handler Methods"></a>Definition Lifecycle Handler Methods</h2><p>With the schema being the anatomy, the lifecycle methods are the physiology;
 the schema defines the shape of the data, the lifecycle handler methods <em>use</em>
 the data to modify the entity. The handlers will usually interact with the
-<a href="./entity.md">Entity API</a>.</p>
+<a href="./entity.html">Entity API</a>.</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/21803913/2966ba7e-d6e1-11e6-9179-8acafc87540c.jpg" alt="methodsimage">
 <small class="image-caption"><i>Lifecycle method handlers. Image by Ruben Mueller from vrjump.de</i></small></p>
 <h3 id="overview-of-methods"><a href="#overview-of-methods" class="headerlink" title="Overview of Methods"></a>Overview of Methods</h3><table>
@@ -1165,11 +1282,11 @@ the data to modify the entity. The handlers will usually interact with the
 </tr>
 <tr>
 <td>this.el</td>
-<td>Reference to the <a href="./entity.md">entity</a> as an HTML element.</td>
+<td>Reference to the <a href="./entity.html">entity</a> as an HTML element.</td>
 </tr>
 <tr>
 <td>this.el.sceneEl</td>
-<td>Reference to the <a href="./scene.md">scene</a> as an HTML element.</td>
+<td>Reference to the <a href="./scene.html">scene</a> as an HTML element.</td>
 </tr>
 <tr>
 <td>this.id</td>
@@ -1206,7 +1323,7 @@ component’s <code>update</code> handler:</p>
 <li>Do most of the work in making modifications to the entity, using <code>this.data</code>.</li>
 <li>Modify the entity whenever one or more component properties change.</li>
 </ul>
-<p>Granular modifications to the entity can be done by <a href="./utils.md#aframe-utils-diff-a-b">diffing</a> the current
+<p>Granular modifications to the entity can be done by <a href="./utils.html#aframe-utils-diff-a-b">diffing</a> the current
 dataset (<code>this.data</code>) with the previous dataset before the update (<code>oldData</code>).</p>
 <p>A-Frame calls <code>.update()</code> both at the beginning of a component’s lifecycle and every
 time a component’s data changes (e.g., as a result of <code>setAttribute</code>). The
@@ -1214,7 +1331,7 @@ update handler often uses <code>this.data</code> to modify the entity. The updat
 has access to the previous state of a component’s data via its first argument.
 We can use the previous data of a component to tell exactly which
 properties changed to do granular updates.</p>
-<p>For example, the <a href="../components/visible.md">visible</a> component’s <code>update</code> sets the visibility of
+<p>For example, the <a href="../components/visible.html">visible</a> component’s <code>update</code> sets the visibility of
 the entity.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'visible'</span>, &#123;</div><div class="line">  <span class="comment">/**</span></div><div class="line">   * this.el is the entity element.</div><div class="line">   * this.el.object3D is the three.js object of the entity.</div><div class="line">   * this.data is the component's property or properties.</div><div class="line">   */</div><div class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.object3D.visible = <span class="keyword">this</span>.data;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="remove"><a href="#remove" class="headerlink" title=".remove ()"></a><code>.remove ()</code></h3><p><code>.remove ()</code> is called whenever the component is detached from the entity. An
@@ -1228,7 +1345,7 @@ entity can call a component’s <code>remove</code> handler:</p>
 <li>Remove, undo, or clean up all of the component’s modifications to the entity.</li>
 <li>Detach event listeners.</li>
 </ul>
-<p>For example, when the <a href="../components/light.md">light component</a> is removed, the light component
+<p>For example, when the <a href="../components/light.html">light component</a> is removed, the light component
 will remove the light object that it had previously set on the entity, thus
 removing it from the scene.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'light'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.removeObject3D(<span class="string">'light'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -1249,7 +1366,7 @@ will call a component’s <code>tick</code> handler:</p>
 (<code>time</code>) and the time difference in milliseconds since the last frame
 (<code>timeDelta</code>). These can be used for interpolation or to only run parts of the
 <code>tick</code> handler on a set interval.</p>
-<p>For example, the <a href="../components/tracked-controls.md">tracked controls component</a> will progress
+<p>For example, the <a href="../components/tracked-controls.html">tracked controls component</a> will progress
 the controller’s animations, update the controller’s position and rotation, and
 check for button presses.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'tracked-controls'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params">time, timeDelta</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.updateMeshAnimation();</div><div class="line">    <span class="keyword">this</span>.updatePose();</div><div class="line">    <span class="keyword">this</span>.updateButtons();</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -1265,7 +1382,7 @@ component’s <code>pause</code> handler:</p>
 <li>Remove event listeners.</li>
 <li>Remove any chances of dynamic behavior.</li>
 </ul>
-<p>For example, the <a href="../components/sound.md">sound component</a> will pause the sound and remove an
+<p>For example, the <a href="../components/sound.html">sound component</a> will pause the sound and remove an
 event listener that would have played a sound on an event:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'sound'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  pause: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.pauseSound();</div><div class="line">    <span class="keyword">this</span>.removeEventListener();</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="play"><a href="#play" class="headerlink" title=".play ()"></a><code>.play ()</code></h3><p><code>.play ()</code> is called when the entity or scene resumes. The entity can call
@@ -1279,7 +1396,7 @@ a component’s <code>play</code> handler:</p>
 <ul>
 <li>Add event listeners.</li>
 </ul>
-<p>For example, the <a href="../components/sound.md">sound component</a> will play the sound and update the
+<p>For example, the <a href="../components/sound.html">sound component</a> will play the sound and update the
 event listener that would play a sound on an event:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'sound'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  play: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.data.autoplay) &#123; <span class="keyword">this</span>.playSound(); &#125;</div><div class="line">    <span class="keyword">this</span>.updateEventListener();</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="updateschema-data"><a href="#updateschema-data" class="headerlink" title=".updateSchema (data)"></a><code>.updateSchema (data)</code></h3><p><code>.updateSchema ()</code>, if defined, is called on every update in order to check if
@@ -1288,7 +1405,7 @@ the schema needs to be dynamically modified.</p>
 <ul>
 <li>Dynamically update or extend the schema, usually depending on the value of a property.</li>
 </ul>
-<p>For example, the <a href="../components/geometry.md">geometry component</a> checks if the <code>primitive</code>
+<p>For example, the <a href="../components/geometry.html">geometry component</a> checks if the <code>primitive</code>
 property changed to determine whether to update the schema for a different
 type of geometry:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'geometry'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  updateSchema: (newData) &#123;</div><div class="line">    <span class="keyword">if</span> (newData.primitive !== <span class="keyword">this</span>.data.primitive) &#123;</div><div class="line">      <span class="keyword">this</span>.extendSchema(GEOMETRIES[newData.primitive].schema);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -1322,7 +1439,7 @@ the component’s serialized representation in the actual DOM. Calling
 <code>flushToDOM ()</code> will manually serialize the component’s data and update the
 DOM:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'[geometry]'</span>).components.geometry.flushToDOM();</div></pre></td></tr></table></figure>
-<p>Read more about <a href="../components/debug.md#component-to-dom-serialization">component-to-DOM serialization</a>.</p>
+<p>Read more about <a href="../components/debug.html#component-to-dom-serialization">component-to-DOM serialization</a>.</p>
 <h2 id="accessing-a-component’s-members-and-methods"><a href="#accessing-a-component’s-members-and-methods" class="headerlink" title="Accessing a Component’s Members and Methods"></a>Accessing a Component’s Members and Methods</h2><p>A component’s members and methods can be accessed through the entity from the
 <code>.components</code> object. Look up the component from the entity’s map of
 components, and we’ll have access to the component’s internals. Consider this

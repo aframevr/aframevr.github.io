@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -959,7 +954,77 @@
 property defines the general shape. Geometric primitives, in computer graphics,
 are irreducible basic shapes. A material component is commonly defined to
 provide a appearance alongside the shape to create a complete mesh.</p>
-<div id="toc"></div>
+
+      
+
+
+  <h2 id="toc">Table of Contents</h2>
+
+  <ul>
+    
+      <li>
+        <a href="#base-properties">Base Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#mergeto">mergeTo</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#built-in-geometries">Built-in Geometries</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#box">box</a></li>
+            
+              <li><a href="#circle">circle</a></li>
+            
+              <li><a href="#cone">cone</a></li>
+            
+              <li><a href="#cylinder">cylinder</a></li>
+            
+              <li><a href="#dodecahedron">dodecahedron</a></li>
+            
+              <li><a href="#octahedron">octahedron</a></li>
+            
+              <li><a href="#plane">plane</a></li>
+            
+              <li><a href="#ring">ring</a></li>
+            
+              <li><a href="#sphere">sphere</a></li>
+            
+              <li><a href="#tetrahedron">tetrahedron</a></li>
+            
+              <li><a href="#torus">torus</a></li>
+            
+              <li><a href="#torusknot">torusKnot</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#register-a-custom-geometry">Register a Custom Geometry</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+
+      
 
 <h2 id="base-properties"><a href="#base-properties" class="headerlink" title="Base Properties"></a>Base Properties</h2><p>Every geometry type will have these properties:</p>
 <table>
@@ -1451,7 +1516,7 @@ registers all built-in geometries using this API. Here is how A-Frame registers
 the <code>box</code> geometry:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerGeometry(<span class="string">'box'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">depth</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">0</span>&#125;,</div><div class="line">    <span class="attr">height</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">0</span>&#125;,</div><div class="line">    <span class="attr">width</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">0</span>&#125;,</div><div class="line">    <span class="attr">segmentsHeight</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">1</span>, <span class="attr">max</span>: <span class="number">20</span>, <span class="attr">type</span>: <span class="string">'int'</span>&#125;,</div><div class="line">    <span class="attr">segmentsWidth</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">1</span>, <span class="attr">max</span>: <span class="number">20</span>, <span class="attr">type</span>: <span class="string">'int'</span>&#125;,</div><div class="line">    <span class="attr">segmentsDepth</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>, <span class="attr">min</span>: <span class="number">1</span>, <span class="attr">max</span>: <span class="number">20</span>, <span class="attr">type</span>: <span class="string">'int'</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.geometry = <span class="keyword">new</span> THREE.BoxGeometry(data.width, data.height, data.depth);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Like with registering components, we provide a name, a
-<a href="../core/component.md#schema">schema</a> that will expose the properties of the geometry, and
+<a href="../core/component.html#schema">schema</a> that will expose the properties of the geometry, and
 lifecycle methods. Then we need to create the geometry and set on
 <code>this.geometry</code> through the <code>init</code> and <code>update</code> lifecycle methods.</p>
 <p>When a geometry component sets its <code>primitive</code> property to the custom geometry

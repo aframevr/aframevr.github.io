@@ -1,1 +1,76 @@
-!function(){function e(e){var n=t();n&&n!==e&&(n.classList.remove("current"),n.classList.remove("click"),e.classList.add("click"),e.click(),n=e,n.classList.add("current"),n.classList.remove("click"))}function t(){return document.querySelector('.examples-subnav li[data-current="true"]')}function n(e){var n=t(),r=e?n.previousElementSibling:n.nextElementSibling;return r||(r=document.querySelector(".examples-subnav > li:first-child")),r.querySelector("a").getAttribute("href")}function r(){return n(!0)}function c(){return n(!1)}if(settings.isMobile)for(var o=document.querySelectorAll('[data-supports-mobile="false"]'),i=0;i<o.length;i++)o[i].parentNode.removeChild(o[i]);document.body.addEventListener("keyup",function(n){var o,i=37===n.keyCode,l=39===n.keyCode;(i||l)&&(o=t(),o&&e(i?r():c()))});var l=document.querySelector("#examplePrev"),u=document.querySelector("#exampleNext");l.addEventListener("click",function(){window.location.href=n(!0)}),u.addEventListener("click",function(){window.location.href=n(!1)});var a=document.querySelector("#exampleInspector");if(a){var s=document.querySelector("#exampleIframe"),d=document.querySelector("#exampleViewSource");a.addEventListener("click",function(){s.contentWindow.postMessage("INJECT_AFRAME_INSPECTOR","*"),a.style.display="none",d.style.display="none"})}}();
+/* global $ */
+(function () {
+// Remove non-mobile examples on mobile.
+if (settings.isMobile) {
+  var nonMobileExamples = document.querySelectorAll('[data-supports-mobile="false"]');
+  for (var i = 0; i < nonMobileExamples.length; i++) {
+    nonMobileExamples[i].parentNode.removeChild(nonMobileExamples[i]);
+  }
+}
+
+// Hook up arrow keys.
+document.body.addEventListener('keyup', function (e) {
+  var currentLink;
+  var left = e.keyCode === 37;
+  var right = e.keyCode === 39;
+  if (!left && !right) { return; }
+  currentLink = getCurrentNavLink();
+  if (!currentLink) { return; }
+  clickNavLink(left ? getPrevNavLink() : getNextNavLink());
+});
+
+// Hook up navigation arrows.
+var examplePrev = document.querySelector('#examplePrev');
+var exampleNext = document.querySelector('#exampleNext');
+examplePrev.addEventListener('click', function () {
+  window.location.href = getDestNavLink(true);
+});
+exampleNext.addEventListener('click', function () {
+  window.location.href = getDestNavLink(false);
+});
+
+// Inspector.
+var exampleInspector = document.querySelector('#exampleInspector');
+if (exampleInspector) {
+  var exampleIframe = document.querySelector('#exampleIframe');
+  var exampleViewsource = document.querySelector('#exampleViewSource');
+  exampleInspector.addEventListener('click', function () {
+    // <ctrl> + <alt> + i.
+    exampleIframe.contentWindow.postMessage('INJECT_AFRAME_INSPECTOR', '*');
+    exampleInspector.style.display = 'none';
+    exampleViewsource.style.display = 'none';
+  });
+}
+
+function clickNavLink (link) {
+  var currentLink = getCurrentNavLink();
+  if (!currentLink || currentLink === link) { return; }
+  currentLink.classList.remove('current');
+  currentLink.classList.remove('click');
+  // Click link.
+  link.classList.add('click');
+  link.click();
+  currentLink = link;
+  currentLink.classList.add('current');
+  currentLink.classList.remove('click');
+}
+
+function getCurrentNavLink () {
+  return document.querySelector('.examples-subnav li[data-current="true"]');
+}
+
+function getDestNavLink (prev) {
+  var link = getCurrentNavLink()
+  var newLink = prev ? link.previousElementSibling : link.nextElementSibling;
+  if (!newLink) { newLink = document.querySelector('.examples-subnav > li:first-child'); }
+  return newLink.querySelector('a').getAttribute('href');
+}
+
+function getPrevNavLink () {
+  return getDestNavLink(true);
+}
+
+function getNextNavLink () {
+  return getDestNavLink(false);
+}
+})();

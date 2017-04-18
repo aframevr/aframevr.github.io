@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -744,7 +739,7 @@
 
     
     
-      <p>In the <a href="./index.md">entity-component-system pattern</a>, a component is a reusable and modular chunks of data that plugged into an entity to add appearance, behavior, and/or functionality. As an abstract analogy, if a smartphone were defined as an entity, we might use components to give it appearance (color, shape), to define its behavior (vibrate when called, shut down on low battery), or to add functionality (camera, screen). In A-Frame, a component modifies entities which are 3D objects in the scene.</p>
+      <p>In the <a href="./">entity-component-system pattern</a>, a component is a reusable and modular chunks of data that plugged into an entity to add appearance, behavior, and/or functionality. As an abstract analogy, if a smartphone were defined as an entity, we might use components to give it appearance (color, shape), to define its behavior (vibrate when called, shut down on low battery), or to add functionality (camera, screen). In A-Frame, a component modifies entities which are 3D objects in the scene.</p>
 <blockquote>
 <p>Try to contain most logic within components in A-Frame experiences, even if the logic is one-off or ad-hoc. This encourages reusability, modularity, and sharing of code.</p>
 </blockquote>
@@ -790,7 +785,7 @@ Abstract representation of a component by @rubenmueller of <a href="http://thevr
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: point; color: crimson; intensity: 2.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>For a component that takes a single flat property value, it looks like a normal HTML attribute:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"0 1 4"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="under-the-hood"><a href="#under-the-hood" class="headerlink" title="Under the Hood"></a>Under the Hood</h2><p>A component is registered using <code>AFRAME.registerComponent</code>, which we pass a component name to register a component under and a component definition. Below is the outer skeleton for the <a href="../components/position.md">position component</a>:</p>
+<h2 id="under-the-hood"><a href="#under-the-hood" class="headerlink" title="Under the Hood"></a>Under the Hood</h2><p>A component is registered using <code>AFRAME.registerComponent</code>, which we pass a component name to register a component under and a component definition. Below is the outer skeleton for the <a href="../components/position.html">position component</a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>A component defines a <strong>schema</strong> that defines its properties, giving <em>anatomy</em> to the component. The position component takes a flat <code>vec3</code>, or an <code>{x, y, z}</code> object.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123; <span class="attr">type</span>: <span class="string">'vec3'</span> &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -814,7 +809,7 @@ Abstract representation of a component by @rubenmueller of <a href="http://thevr
 </tr>
 <tr>
 <td>el</td>
-<td>Reference to the <a href="./entity.md">entity</a> element.</td>
+<td>Reference to the <a href="./entity.html">entity</a> element.</td>
 </tr>
 <tr>
 <td>schema</td>
@@ -869,17 +864,17 @@ Abstract representation of a component by @rubenmueller of <a href="http://thevr
 <p>And given only a type, the schema will infer a default value:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">schema: &#123;</div><div class="line">  type: &apos;vec3&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Will process to:</div><div class="line"></div><div class="line">schema: &#123;</div><div class="line">  type: &apos;vec3&apos;,</div><div class="line">  default: &#123; x: 0, y: 0, z: 0 &#125;,</div><div class="line">  parse: AFRAME.utils.coordinates.parse,</div><div class="line">  stringify: AFRAME.utils.coordinates.stringify</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="single-property-schemas"><a href="#single-property-schemas" class="headerlink" title="Single-Property Schemas"></a>Single-Property Schemas</h3><p>Single-property schemas define only a single anonymous flat property. They must define either a <code>type</code> or a <code>default</code> value to be able to infer an appropriate parser and stringifier.</p>
-<p>For example, the <a href="../components/rotation.md">rotation component</a> takes a <code>vec3</code>:</p>
+<p>For example, the <a href="../components/rotation.html">rotation component</a> takes a <code>vec3</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'rotation'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// Default value will be 0, 0, 0 as defined by the vec3 property type.</span></div><div class="line">    type: <span class="string">'vec3'</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>And for example, the <a href="../components/visible.md">visible component</a> takes a boolean:</p>
+<p>And for example, the <a href="../components/visible.html">visible component</a> takes a boolean:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'visible'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// Type will be inferred to be boolean.</span></div><div class="line">    <span class="keyword">default</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="multi-property-schemas"><a href="#multi-property-schemas" class="headerlink" title="Multi-Property Schemas"></a>Multi-Property Schemas</h3><p>Multi-property schemas it consists of one or more named property definitions. Unlike single-property schemas, each property has a name. When a component has properties then the HTML usage syntax will look like <code>physics=&quot;mass: 2; velocity: 1 1 1&quot;</code>.</p>
 <p>For example, a physics component might look like:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'physics-body'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">boundingBox</span>: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="string">'vec3'</span>,</div><div class="line">      <span class="attr">default</span>: &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">1</span>, <span class="attr">z</span>: <span class="number">1</span> &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">mass</span>: &#123;</div><div class="line">      <span class="attr">default</span>: <span class="number">0</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">velocity</span>: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="string">'vec3'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="lifecycle-methods"><a href="#lifecycle-methods" class="headerlink" title="Lifecycle Methods"></a>Lifecycle Methods</h2><p>With the schema being the anatomy, the lifecycle methods are the physiology; the schema defines the data, the lifecycle methods <em>use</em> the data. A component has access to <code>this.data</code> which in a single-property schema is a value and in a multi-property schema is an object.</p>
-<p>The handlers will almost always interact with the entity. We recommend checking out the <a href="./entity.md">Entity documentation</a>.</p>
+<p>The handlers will almost always interact with the entity. We recommend checking out the <a href="./entity.html">Entity documentation</a>.</p>
 <h3 id="component-init"><a href="#component-init" class="headerlink" title="Component.init()"></a>Component.init()</h3><p><code>init</code> is called once in a component’s lifecycle when it is attached to the entity. The init handler is generally used to set up state and instantiate variables that may used throughout a component. Not every component will need to define <code>init</code>. It is similar to <code>createdCallback</code> or <code>React.ComponentDidMount</code>.</p>
-<p>For example, the <a href="../components/look-at.md">look-at component</a>‘s init handler sets the state of the target to <code>null</code> and instantiates a Vector object:</p>
+<p>For example, the <a href="../components/look-at.html">look-at component</a>‘s init handler sets the state of the target to <code>null</code> and instantiates a Vector object:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.target3D = <span class="literal">null</span>;</div><div class="line">  <span class="keyword">this</span>.vector = <span class="keyword">new</span> THREE.Vector3();</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure>
 <p>Example uses of <code>init</code> by some A-Frame components:</p>
 <table>
@@ -917,7 +912,7 @@ Abstract representation of a component by @rubenmueller of <a href="http://thevr
 </tbody>
 </table>
 <h3 id="component-update-olddata"><a href="#component-update-olddata" class="headerlink" title="Component.update(oldData)"></a>Component.update(oldData)</h3><p><code>update</code> is called both at the beginning of a component’s lifecycle and every time a component’s data changes (e.g., as a result of <code>setAttribute</code>). The update handler often uses <code>this.data</code> to modify the entity. The update handler has access to the previous state of a component’s data via its first argument. The previous state of a component can be used to tell exactly which properties changed in order to do granular updates.</p>
-<p>For example, the <a href="../components/visible.md">visible</a> component’s update handler toggles the visibility of the <a href="./entity.md">entity</a>:</p>
+<p>For example, the <a href="../components/visible.html">visible</a> component’s update handler toggles the visibility of the <a href="./entity.html">entity</a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.object3D.visible = <span class="keyword">this</span>.data;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Example uses of <code>update</code> by some A-Frame components:</p>
 <table>
@@ -947,7 +942,7 @@ Abstract representation of a component by @rubenmueller of <a href="http://thevr
 </tbody>
 </table>
 <h3 id="component-remove"><a href="#component-remove" class="headerlink" title="Component.remove()"></a>Component.remove()</h3><p><code>remove</code> is called when a component detaches from the entity (e.g., as a result of <code>removeAttribute</code>). This is used to remove all modifications, listeners, and behaviors to the entity that a component has added in its lifetime.</p>
-<p>For example, when the <a href="../components/light.md">light component</a> detaches, it removes the light it previously attached to the entity:</p>
+<p>For example, when the <a href="../components/light.html">light component</a> detaches, it removes the light it previously attached to the entity:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'light'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Example uses of <code>remove</code> by some A-Frame components:</p>
 <table>
@@ -977,7 +972,7 @@ Abstract representation of a component by @rubenmueller of <a href="http://thevr
 </tbody>
 </table>
 <h3 id="component-tick-time"><a href="#component-tick-time" class="headerlink" title="Component.tick(time)"></a>Component.tick(time)</h3><p><code>tick</code> is called on every single tick or render loop of the scene. Expect it to run on the order of 60-90 times per second. The global uptime of the scene in seconds is passed into the tick handler, which is used to calculate time deltas.</p>
-<p>For example, the <a href="../components/look-at.md">look-at</a> component’s tick handler updates the entity’s rotation to face towards a potentially moving target entity:</p>
+<p>For example, the <a href="../components/look-at.html">look-at</a> component’s tick handler updates the entity’s rotation to face towards a potentially moving target entity:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">tick: <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</div><div class="line">  <span class="comment">// target3D and vector are set from the update handler.</span></div><div class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.target3D) &#123;</div><div class="line">    <span class="keyword">this</span>.el.object3D.lookAt(<span class="keyword">this</span>.vector.setFromMatrixPosition(target3D.matrixWorld));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Example uses of <code>tick</code> by some A-Frame components:</p>
 <table>
@@ -1034,7 +1029,7 @@ Abstract representation of a component by @rubenmueller of <a href="http://thevr
 <h4 id="update"><a href="#update" class="headerlink" title="Update"></a>Update</h4><p>The schema will hand the data to the update handler all parsed and ready to go. Here, we want to create a line geometry if it doesn’t exist yet and update it if it does. We can create a line in three.js by combining a <code>THREE.LineBasicMaterial</code> and <code>THREE.Geometry</code> and then manually pushing vertices.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">update: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">  <span class="comment">// Set color with material.</span></div><div class="line">  <span class="keyword">var</span> material = <span class="keyword">new</span> THREE.LineBasicMaterial(&#123;</div><div class="line">    <span class="attr">color</span>: <span class="keyword">this</span>.data.color</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Add vertices to geometry.</span></div><div class="line">  <span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.Geometry();</div><div class="line">  <span class="keyword">this</span>.data.path.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">vec3</span>) </span>&#123;</div><div class="line">    geometry.vertices.push(</div><div class="line">      <span class="keyword">new</span> THREE.Vector3(vec3.x, vec3.y, vec3.z)</div><div class="line">    );</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Apply mesh.</span></div><div class="line">  <span class="keyword">this</span>.el.setObject3D(<span class="string">'mesh'</span>, <span class="keyword">new</span> THREE.Line(geometry, material));</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure>
 <p>Here, we update the line by completely replacing it. Though sometimes, we might want to more granularly update objects for better performance.</p>
-<h4 id="remove"><a href="#remove" class="headerlink" title="Remove"></a>Remove</h4><p>For removal of the line mesh from the entity, we use <a href="./entity.md#remove-object3d"><code>Entity.removeObject3D</code></a>:</p>
+<h4 id="remove"><a href="#remove" class="headerlink" title="Remove"></a>Remove</h4><p>For removal of the line mesh from the entity, we use <a href="./entity.html#remove-object3d"><code>Entity.removeObject3D</code></a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'mesh'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>This will remove the object from the entity’s scene graph.</p>
 <h4 id="usage"><a href="#usage" class="headerlink" title="Usage"></a>Usage</h4><p>Then with the line component written and registered, we can use it in HTML:</p>

@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -906,16 +901,86 @@
 
     
     
-      <p>A system, of the <a href="./index.md">entity-component-system pattern</a>, provides global scope,
+      <p>A system, of the <a href="./">entity-component-system pattern</a>, provides global scope,
 services, and management to classes of components. It provides public APIs
 (methods and properties) for classes of components. A system can be accessed
 through the scene element, and can help components interface with the global
 scene.</p>
-<p>For example, the camera system manages all entities with the <a href="../components/camera.md">camera
+<p>For example, the camera system manages all entities with the <a href="../components/camera.html">camera
 component</a>, controlling which camera is the active camera.</p>
-<div id="toc"></div>
 
-<h2 id="registering-a-system"><a href="#registering-a-system" class="headerlink" title="Registering a System"></a>Registering a System</h2><p>A system is registered similarly to a <a href="./component.md">component</a>.</p>
+      
+
+
+  <h2 id="toc">Table of Contents</h2>
+
+  <ul>
+    
+      <li>
+        <a href="#registering-a-system">Registering a System</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#methods">Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#accessing-a-system">Accessing a System</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#patterns">Patterns</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#separation-of-logic-and-data">Separation of Logic and Data</a></li>
+            
+              <li><a href="#gathering-all-components-of-a-system">Gathering All Components of a System</a></li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+
+      
+
+<h2 id="registering-a-system"><a href="#registering-a-system" class="headerlink" title="Registering a System"></a>Registering a System</h2><p>A system is registered similarly to a <a href="./component.html">component</a>.</p>
 <p>If the system name matches a component name, then the component will have a
 reference to the system as <code>this.system</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerSystem(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;&#125;,  <span class="comment">// System schema. Parses into `this.data`.</span></div><div class="line"></div><div class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Called on scene initialization.</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Other handlers and methods.</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">AFRAME.registerComponent(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.system);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -929,7 +994,7 @@ reference to the system as <code>this.system</code>:</p>
 <tbody>
 <tr>
 <td>schema</td>
-<td>Behaves the same as <a href="./component.md#schema">component schemas</a>. Parses to <code>data</code>.</td>
+<td>Behaves the same as <a href="./component.html#schema">component schemas</a>. Parses to <code>data</code>.</td>
 </tr>
 <tr>
 <td>data</td>

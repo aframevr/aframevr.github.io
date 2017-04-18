@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -933,11 +928,11 @@
 pattern is a pattern common in game development that favors composability over
 traditional inheritance and hierarchy:</p>
 <ul>
-<li>An <a href="./entity.md">entity</a> is a general-purpose object that inherently does and renders nothing.</li>
-<li>A <a href="./component.md">component</a> is a reusable module that we plug into entities to
+<li>An <a href="./entity.html">entity</a> is a general-purpose object that inherently does and renders nothing.</li>
+<li>A <a href="./component.html">component</a> is a reusable module that we plug into entities to
 provide appearance, behavior, and/or functionality. They are plug-and-play
 for objects.</li>
-<li>A <a href="./systems.md">system</a> provides global scope, services, and management to classes of components.</li>
+<li>A <a href="./systems.html">system</a> provides global scope, services, and management to classes of components.</li>
 </ul>
 <p>ECS lets us build complex entities with rich behavior by plugging different
 reusable components into the sockets on the entity. Contrast this to
@@ -946,7 +941,40 @@ manually create a new class to do so.</p>
 <p>ECS grants developers the key to permissionless innovation. Developers can
 write, share, and plug in components that extend new features or iterate upon
 existing features.</p>
-<div id="toc"></div>
+
+      
+
+
+  <h2 id="toc">Table of Contents</h2>
+
+  <ul>
+    
+      <li>
+        <a href="#concept">Concept</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#composition">Composition</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+
+      
 
 <h2 id="concept"><a href="#concept" class="headerlink" title="Concept"></a>Concept</h2><p>As an abstract example, imagine a car is an entity:</p>
 <ul>
@@ -966,13 +994,13 @@ vehicles such as airplanes, motorcycles, or boats (where we wouldn’t specify a
 <li>component <strong>properties</strong> as values defined by an HTML attribute.</li>
 </ul>
 <p>For example, to <em>compose</em> a tomato-colored sphere starting with an entity, we
-can attach the <a href="../components/geometry.md">geometry</a> and <a href="../components/material.md">material</a> components. Since
+can attach the <a href="../components/geometry.html">geometry</a> and <a href="../components/material.html">material</a> components. Since
 the components take multiple properties, we define the property values using an
 inline-style syntax:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere; radius: 1.5"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: tomato; metalness: 0.7"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>From there, we can attach more and more components to add whatever appearance,
-behavior, or funtionality we want. Attach the <a href="../components/light.md">light component</a> to have
-it emit light. Attach the <a href="../components/sound.md">sound component</a> to have it play sound.
+behavior, or funtionality we want. Attach the <a href="../components/light.html">light component</a> to have
+it emit light. Attach the <a href="../components/sound.html">sound component</a> to have it play sound.
 Attach the <a href="https://github.com/ngokevin/aframe-physics-components" target="_blank" rel="external">physics component</a> to affect the entity with gravity and
 collision detection:</p>
 <p><img src="https://i.imgur.com/0UIZFgs.gif" alt="Composing an Entity"></p>

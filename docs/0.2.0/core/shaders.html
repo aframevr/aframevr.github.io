@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -744,8 +739,8 @@
 
     
     
-      <p>Shaders (in A-Frame) are responsible for creating the material for the base <a href="../components/material.md">material component</a>. A-Frame ships with a couple of built-in shading models: <code>standard</code> and <code>flat</code>.</p>
-<p>We can register custom shaders to implement different visual effects and materials. We have available the materials provided by three.js, including <a href="http://threejs.org/docs/#Reference/Materials/ShaderMaterial" target="_blank" rel="external">THREE.ShaderMaterial</a>. With THREE.ShaderMaterial, we can provide our own <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank" rel="external">GLSL</a> vertex and fragment shaders (small programs that run on the GPU), and we can define a schema for their uniforms and attributes just as we would with <a href="../core/component.md#schema">component schemas</a>. The shader’s schema will extend the base material component’s schema, and as a result we can pass values from markup directly to the shader.</p>
+      <p>Shaders (in A-Frame) are responsible for creating the material for the base <a href="../components/material.html">material component</a>. A-Frame ships with a couple of built-in shading models: <code>standard</code> and <code>flat</code>.</p>
+<p>We can register custom shaders to implement different visual effects and materials. We have available the materials provided by three.js, including <a href="http://threejs.org/docs/#Reference/Materials/ShaderMaterial" target="_blank" rel="external">THREE.ShaderMaterial</a>. With THREE.ShaderMaterial, we can provide our own <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank" rel="external">GLSL</a> vertex and fragment shaders (small programs that run on the GPU), and we can define a schema for their uniforms and attributes just as we would with <a href="../core/component.html#schema">component schemas</a>. The shader’s schema will extend the base material component’s schema, and as a result we can pass values from markup directly to the shader.</p>
 <h2 id="built-in-shading-models"><a href="#built-in-shading-models" class="headerlink" title="Built-in Shading Models"></a>Built-in Shading Models</h2><p>A-Frame ships with a couple of built-in shading models.</p>
 <h3 id="standard-shading-model"><a href="#standard-shading-model" class="headerlink" title="Standard Shading Model"></a>Standard Shading Model</h3><p>The standard shading model is the default shader for the material component. It is a physically-based shading model that uses <a href="http://threejs.org/docs/#Reference/Materials/MeshStandardMaterial" target="_blank" rel="external">THREE.MeshStandardMaterial</a> under the hood. The standard shading model can be explicitly specified by setting the <code>shader</code> to be <code>standard</code> in the material component (i.e., <code>material=&quot;shader: standard&quot;</code>).</p>
 <h4 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h4><table>
@@ -774,7 +769,7 @@
 </tr>
 <tr>
 <td>fog</td>
-<td>Whether or not material is affected by <a href="../components/fog.md">fog</a>.</td>
+<td>Whether or not material is affected by <a href="../components/fog.html">fog</a>.</td>
 <td>true</td>
 </tr>
 <tr>
@@ -830,7 +825,7 @@
 </tr>
 <tr>
 <td>fog</td>
-<td>Whether or not material is affected by <a href="../components/fog.md">fog</a>.</td>
+<td>Whether or not material is affected by <a href="../components/fog.html">fog</a>.</td>
 <td>true</td>
 </tr>
 <tr>
@@ -856,7 +851,7 @@
 </tbody>
 </table>
 <h2 id="registering-a-custom-shader"><a href="#registering-a-custom-shader" class="headerlink" title="Registering a Custom Shader"></a>Registering a Custom Shader</h2><p>We register a shader with <code>AFRAME.registerShader</code>, passing in a schema. We can then either pass vertex and fragment shaders for use with THREE.ShaderMaterial, or we can override the A-Frame shader initialization and pass in our own material.</p>
-<h3 id="schema"><a href="#schema" class="headerlink" title="Schema"></a>Schema</h3><p>Shader schemas are similar to <a href="../core/component.md#schema">component schemas</a>. The schema will extend the base material component schema. If we are creating a custom shader by passing in vertex and fragment shaders, we can specify uniforms and attributes:</p>
+<h3 id="schema"><a href="#schema" class="headerlink" title="Schema"></a>Schema</h3><p>Shader schemas are similar to <a href="../core/component.html#schema">component schemas</a>. The schema will extend the base material component schema. If we are creating a custom shader by passing in vertex and fragment shaders, we can specify uniforms and attributes:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerShader(<span class="string">'hello-world-shader'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">sunPosition</span>: &#123; <span class="attr">type</span>: <span class="string">'vec3'</span>, <span class="attr">is</span>: <span class="string">'uniform'</span> &#125;,</div><div class="line">    <span class="attr">time</span>: &#123; <span class="attr">type</span>: <span class="string">'time'</span>, <span class="attr">is</span>: <span class="string">'uniform'</span> &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h4 id="shader-uniform-and-attribute-types"><a href="#shader-uniform-and-attribute-types" class="headerlink" title="Shader Uniform and Attribute Types"></a>Shader Uniform and Attribute Types</h4><table>
 <thead>

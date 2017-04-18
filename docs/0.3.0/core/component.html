@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en"
       data-is-home="false"
@@ -857,7 +852,7 @@
 
     
     
-      <p>In the <a href="./index.md">entity-component-system pattern</a>, a component is a reusable and
+      <p>In the <a href="./">entity-component-system pattern</a>, a component is a reusable and
 modular chunk of data that is plugged into an entity to add appearance, behavior,
 and/or functionality.</p>
 <p>In A-Frame, components modify entities which are 3D objects in the scene. We
@@ -871,7 +866,138 @@ components to give it appearance (color, shape), to define its behavior
 <p>Components are roughly analogous to CSS. Like how CSS rules modify the
 appearance of elements, component properties modify the appearance, behavior,
 and functionality of entities.</p>
-<div id="toc"></div>
+
+      
+
+
+  <h2 id="toc">Table of Contents</h2>
+
+  <ul>
+    
+      <li>
+        <a href="#what-a-component-looks-like">What a Component Looks Like</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#from-html">From HTML</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#under-the-hood">Under the Hood</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#properties">Properties</a></li>
+            
+              <li><a href="#methods">Methods</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#dependencies">Dependencies</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#multiple-instancing">Multiple Instancing</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#schema">Schema</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#property-types">Property Types</a></li>
+            
+              <li><a href="#schema-inference">Schema Inference</a></li>
+            
+              <li><a href="#single-property-schemas">Single-Property Schemas</a></li>
+            
+              <li><a href="#multi-property-schemas">Multi-Property Schemas</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#interface-lifecycle-methods">Interface / Lifecycle Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#init">.init()</a></li>
+            
+              <li><a href="#update-olddata">.update(oldData)</a></li>
+            
+              <li><a href="#remove">.remove()</a></li>
+            
+              <li><a href="#tick-time-timedelta">.tick(time, timeDelta)</a></li>
+            
+              <li><a href="#pause-and-play">.pause() and .play()</a></li>
+            
+              <li><a href="#updateschema-data">.updateSchema(data)</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#methods-1">Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#extendschema-schema">.extendSchema(schema)</a></li>
+            
+              <li><a href="#flushtodom">.flushToDOM()</a></li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#write-a-component">Write a Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li><a href="#line-component">Line Component</a></li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+
+      
 
 <h2 id="what-a-component-looks-like"><a href="#what-a-component-looks-like" class="headerlink" title="What a Component Looks Like"></a>What a Component Looks Like</h2><p>A component holds a bucket of data in the form of one or more component
 properties. This data is used to modify the entity. Consider an <em>engine</em>
@@ -893,7 +1019,7 @@ inline CSS styles:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- `light` is the name of the light component. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- The `type` property of the light is set to `point`. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- The `color` property of the light is set to `crimson`. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: point; color: crimson"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="under-the-hood"><a href="#under-the-hood" class="headerlink" title="Under the Hood"></a>Under the Hood</h2><p>A component is registered using <code>AFRAME.registerComponent</code>, which we pass a
 component name to register a component under and a component definition. Below
-is the outer skeleton for the <a href="../components/position.md">position component</a>:</p>
+is the outer skeleton for the <a href="../components/position.html">position component</a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'position'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>A component defines a <strong>schema</strong> that defines its properties, giving <em>anatomy</em>
 to the component. The position component takes a flat <code>vec3</code>, or an <code>{x, y, z}</code>
@@ -929,7 +1055,7 @@ over everything the component API has to offer.</p>
 </tr>
 <tr>
 <td>el</td>
-<td>Reference to the <a href="./entity.md">entity</a> element.</td>
+<td>Reference to the <a href="./entity.html">entity</a> element.</td>
 </tr>
 <tr>
 <td>id</td>
@@ -991,7 +1117,7 @@ over everything the component API has to offer.</p>
 components are initialized <em>before</em> initializing the current component:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Initializes last.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'a'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'b'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Initializes second.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'b'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'c'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Initializes first.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'c'</span>, &#123;&#125;);</div></pre></td></tr></table></figure>
 <h2 id="multiple-instancing"><a href="#multiple-instancing" class="headerlink" title="Multiple Instancing"></a>Multiple Instancing</h2><p>By default, a component can only have one instance. For example, an entity can
-only have one geometry component attached. But some components like <a href="../components/sound.md">the sound
+only have one geometry component attached. But some components like <a href="../components/sound.html">the sound
 component</a> can have multiple instances on a single entity. We use double
 underscores (i.e., <code>__</code>) to separate the component name and the ID of
 individual instances of the component</p>
@@ -1100,9 +1226,9 @@ parser and stringifer into the property definition:</p>
 <h3 id="single-property-schemas"><a href="#single-property-schemas" class="headerlink" title="Single-Property Schemas"></a>Single-Property Schemas</h3><p>Single-property schemas define only a single anonymous flat property. They must
 define either a <code>type</code> or a <code>default</code> value to be able to infer an appropriate
 parser and stringifier.</p>
-<p>For example, the <a href="../components/rotation.md">rotation component</a> takes a <code>vec3</code>:</p>
+<p>For example, the <a href="../components/rotation.html">rotation component</a> takes a <code>vec3</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'rotation'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// Default value will be 0, 0, 0 as defined by the vec3 property type.</span></div><div class="line">    type: <span class="string">'vec3'</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>And for example, the <a href="../components/visible.md">visible component</a> takes a boolean:</p>
+<p>And for example, the <a href="../components/visible.html">visible component</a> takes a boolean:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'visible'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="comment">// Type will be inferred to be boolean.</span></div><div class="line">    <span class="keyword">default</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="multi-property-schemas"><a href="#multi-property-schemas" class="headerlink" title="Multi-Property Schemas"></a>Multi-Property Schemas</h3><p>Multi-property schemas it consists of one or more named property definitions.
 Unlike single-property schemas, each property has a name. When a component has
@@ -1117,13 +1243,13 @@ data, the lifecycle methods <em>use</em> the data. A component has access to
 <code>this.data</code> which in a single-property schema is a value and in a
 multi-property schema is an object.</p>
 <p>The handlers will almost always interact with the entity. Read about the
-<a href="./entity.md">entity API</a> if you have not already.</p>
+<a href="./entity.html">entity API</a> if you have not already.</p>
 <h3 id="init"><a href="#init" class="headerlink" title=".init()"></a><code>.init()</code></h3><p><code>.init</code> is called once in a component’s lifecycle when it is attached to the
 entity. The init handler is generally used to set up state and instantiate
 variables that may used throughout a component. Not every component will need
 to define <code>.init</code>. It is similar to <code>createdCallback</code> or
 <code>React.ComponentDidMount</code>.</p>
-<p>For example, the <a href="../components/camera.md">camera component</a>‘s <code>init</code> creates
+<p>For example, the <a href="../components/camera.html">camera component</a>‘s <code>init</code> creates
 and sets the camera.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> camera = <span class="keyword">this</span>.camera = <span class="keyword">new</span> THREE.PerspectiveCamera();</div><div class="line">  <span class="keyword">this</span>.el.setObject3D(<span class="string">'camera'</span>, camera);</div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure>
 <p>Example uses of <code>init</code> by some A-Frame components:</p>
@@ -1159,8 +1285,8 @@ update handler often uses <code>this.data</code> to modify the entity. The updat
 has access to the previous state of a component’s data via its first argument.
 The previous state of a component can be used to tell exactly which properties
 changed in order to do granular updates.</p>
-<p>For example, the <a href="../components/visible.md">visible</a> component’s update handler toggles the
-visibility of the <a href="./entity.md">entity</a>.</p>
+<p>For example, the <a href="../components/visible.html">visible</a> component’s update handler toggles the
+visibility of the <a href="./entity.html">entity</a>.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.object3D.visible = <span class="keyword">this</span>.data;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Example uses of <code>update</code> by some A-Frame components:</p>
 <table>
@@ -1188,7 +1314,7 @@ visibility of the <a href="./entity.md">entity</a>.</p>
 <h3 id="remove"><a href="#remove" class="headerlink" title=".remove()"></a><code>.remove()</code></h3><p><code>.remove</code> is called when a component detaches from the entity (e.g., as a result
 of <code>removeAttribute</code>). This is used to remove all modifications, listeners, and
 behaviors to the entity that a component has added in its lifetime.</p>
-<p>For example, when the <a href="../components/light.md">light component</a> detaches, it removes the light
+<p>For example, when the <a href="../components/light.html">light component</a> detaches, it removes the light
 it previously attached to the entity:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'light'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Example uses of <code>remove</code> by some A-Frame components:</p>
@@ -1267,7 +1393,7 @@ to change the schema based on certain properties. For example, the geometry
 component changes its schema based on the <code>primitive</code> property.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'example'</span>, &#123;</div><div class="line">  <span class="attr">updateSchema</span>: (data) &#123;</div><div class="line">    <span class="keyword">var</span> newSchema;</div><div class="line">    <span class="keyword">if</span> (data.type !== <span class="keyword">this</span>.data.type) &#123;</div><div class="line">      newSchema = getNewSchema(data.type);</div><div class="line">      <span class="keyword">this</span>.extendSchema(newSchema);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="flushtodom"><a href="#flushtodom" class="headerlink" title=".flushToDOM()"></a><code>.flushToDOM()</code></h3><p><code>flushToDOM</code> will manually serialize the component’s data and update the DOM.
-Read more about <a href="../components/debug.md#component-to-dom-serialization">component-to-DOM serialization</a>.</p>
+Read more about <a href="../components/debug.html#component-to-dom-serialization">component-to-DOM serialization</a>.</p>
 <h2 id="write-a-component"><a href="#write-a-component" class="headerlink" title="Write a Component"></a>Write a Component</h2><h3 id="line-component"><a href="#line-component" class="headerlink" title="Line Component"></a>Line Component</h3><p>Let’s build an example line component that renders a line. We want to make the
 property API flexible enough to be able to specify the color and vertices:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">line</span>=<span class="string">"color: red; path: -1 1 0, -1 0.5 0, -1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1292,7 +1418,7 @@ vertices.</p>
 <p>Here, we update the line by completely replacing it. Though sometimes, we might
 want to more granularly update objects for better performance.</p>
 <h4 id="remove-1"><a href="#remove-1" class="headerlink" title="Remove"></a>Remove</h4><p>For removal of the line mesh from the entity, we use
-<a href="./entity.md#removeobject3d-type"><code>Entity.removeObject3D</code></a>:</p>
+<a href="./entity.html#removeobject3d-type"><code>Entity.removeObject3D</code></a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.el.removeObject3D(<span class="string">'mesh'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>This will remove the object from the entity’s scene graph.</p>
 <h4 id="usage"><a href="#usage" class="headerlink" title="Usage"></a>Usage</h4><p>Then with the line component written and registered, we can use it in HTML:</p>
