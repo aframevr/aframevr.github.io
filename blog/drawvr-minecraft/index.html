@@ -1,23 +1,804 @@
-<!DOCTYPE html><html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-site-base-url="https://aframe.io" data-site-root-path="/" data-site-home-url="https://aframe.io/" data-lib-home-url="https://aframe.io/" data-lib-examples-url="https://aframe.io/aframe/examples" data-title="{title} | A-Frame" data-is-spa="false" data-ga-id="UA-24056643-4" data-aframe-version="0.5.0" data-docs-version="0.5.0"><head><title>Creating a Minecraft Scene in WebVR – A-Frame</title><script>var host = window.location.protocol + '//' + window.location.hostname;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.5.0"
+      data-docs-version="0.5.0">
+  <head>
+    <title>Creating a Minecraft Scene in WebVR – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
   if (window.location.protocol === 'http:' &&
       window.location.hostname === 'https://aframe.io') {
     window.location.href = 'https:' + window.location.href.substring(6);
-  }</script><meta charset="utf-8"><meta name="robots" content="all"><meta name="description" content="
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="all">
+    <meta name="description" content="
 Within a week of its release, someone had used A-Frame to create a Minecraft scene. We tracked down the creator, Donovan Kraeker, and he shared his process and tips he learned along the way:
 
-Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR"><meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="canonical" href="https://aframe.io"><link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet"><meta property="fb:app_id" content="1535794316743373"><meta property="og:title" content="Creating a Minecraft Scene in WebVR – A-Frame"><meta property="og:site_name" content="A-Frame"><meta property="og:type" content="website"><meta property="og:url" content="https://aframe.io"><meta property="og:description" content="
+Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Creating a Minecraft Scene in WebVR – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="
 Within a week of its release, someone had used A-Frame to create a Minecraft scene. We tracked down the creator, Donovan Kraeker, and he shared his process and tips he learned along the way:
 
-Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR"><meta property="og:image" content="https://aframe.io/images/blog/drawvr-minecraft.jpg"><meta property="og:image:secure_url" content="https://aframe.io/images/blog/drawvr-minecraft.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@aframevr"><meta name="twitter:creator" content="@aframevr"><meta name="twitter:title" content="Creating a Minecraft Scene in WebVR – A-Frame"><meta name="twitter:description" content="
+Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR">
+    <meta property="og:image" content="https://aframe.io/images/blog/drawvr-minecraft.jpg">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/blog/drawvr-minecraft.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Creating a Minecraft Scene in WebVR – A-Frame">
+    <meta name="twitter:description" content="
 Within a week of its release, someone had used A-Frame to create a Minecraft scene. We tracked down the creator, Donovan Kraeker, and he shared his process and tips he learned along the way:
 
-Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR"><meta name="twitter:image" content="https://aframe.io/images/blog/drawvr-minecraft.jpg"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="black"><link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png"><link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR">
+    <meta name="twitter:image" content="https://aframe.io/images/blog/drawvr-minecraft.jpg">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-24056643-4', 'auto');
-  ga('send', 'pageview');</script><script src="/js/compat.js"></script><link rel="stylesheet" href="/css/secondary.css"></head><body data-page-layout="blog" data-page-type=""><main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links"><div id="secondary-nav" class="secondary-nav"><header id="header" class="header"><a id="logo" class="logo" href="/" title="A-Frame"><span class="logo__wordmark">A-Frame</span></a></header><div class="docs-search-wrapper docs-search-sidebar"><input type="search" class="search-field" placeholder="&#128269; Search 0.5.0 docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div><ul id="nav" class="nav"><li class="nav-item"><a href="/docs/0.5.0/introduction/" class="nav-link nav-link-docs"><span>Docs</span></a></li><li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li><li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs current"><span>Blog</span></a></li><li class="nav-item"><a href="/community/" class="nav-link nav-link-docs"><span>Community</span></a></li><li data-slug="github" class="nav-item"><a href="https://github.com/aframevr/aframe/" class="nav-link nav-link-docs" rel="external" title="A-Frame project repository on GitHub"><span>GitHub</span></a></li><li data-slug="slug" class="nav-item"><a href="https://aframevr-slack.herokuapp.com" class="nav-link nav-link-docs" rel="external" title="A-Frame Slack (sign up)"><span>Slack</span></a></li></ul></div><div class="list"><h3 class="section-title">Blog Posts</h3><ul class="subnav section-subnav blog-subnav"><li class="subnav-item"><a href="/blog/gamestate/" class="subnav-link">Managing Application and Game State in A-Frame</a></li><li class="subnav-item"><a href="/blog/awoa-55/" class="subnav-link">A Week of A-Frame 55</a></li><li class="subnav-item"><a href="/blog/motion-capture/" class="subnav-link">Rapid Motion-Capture-Powered VR Development</a></li><li class="subnav-item"><a href="/blog/awoa-54/" class="subnav-link">A Week of A-Frame 54</a></li><li class="subnav-item"><a href="/blog/awoa-53/" class="subnav-link">A Week of A-Frame 53</a></li><li class="subnav-item"><a href="/blog/awoa-52/" class="subnav-link">A Week of A-Frame 52</a></li><li class="subnav-item"><a href="/blog/awoa-51/" class="subnav-link">A Week of A-Frame 51</a></li><li class="subnav-item"><a href="/blog/awoa-50/" class="subnav-link">A Week of A-Frame 50</a></li><li class="subnav-item"><a href="/blog/awoa-49/" class="subnav-link">A Week of A-Frame 49</a></li><li class="subnav-item"><a href="/blog/awoa-48/" class="subnav-link">A Week of A-Frame 48</a></li><li class="subnav-item"><a href="/blog/awoa-47/" class="subnav-link">A Week of A-Frame 47</a></li><li class="subnav-item"><a href="/blog/aframe-v0.5.0/" class="subnav-link">A-Frame v0.5.0 - Features & Tools</a></li><li class="subnav-item"><a href="/blog/awoa-46/" class="subnav-link">A Week of A-Frame 46</a></li><li class="subnav-item"><a href="/blog/awoa-45/" class="subnav-link">A Week of A-Frame 45</a></li><li class="subnav-item"><a href="/blog/awoa-44/" class="subnav-link">A Week of A-Frame 44</a></li><li class="subnav-item"><a href="/blog/awoa-43/" class="subnav-link">A Week of A-Frame 43</a></li><li class="subnav-item"><a href="/blog/awoa-42/" class="subnav-link">A Week of A-Frame 42</a></li><li class="subnav-item"><a href="/blog/awoa-40-41/" class="subnav-link">A Week of A-Frame 40 - 41</a></li><li class="subnav-item"><a href="/blog/screenshot/" class="subnav-link">Taking Screenshots in A-Frame</a></li><li class="subnav-item"><a href="/blog/aframe-v0.4.0/" class="subnav-link">A-Frame v0.4.0 - The Registry</a></li><li class="subnav-item"><a href="/blog/awoa-35-39/" class="subnav-link">A Week of A-Frame 35 - 39</a></li><li class="subnav-item"><a href="/blog/awoa-34/" class="subnav-link">A Week of A-Frame 34</a></li><li class="subnav-item"><a href="/blog/awoa-33/" class="subnav-link">A Week of A-Frame 33</a></li><li class="subnav-item"><a href="/blog/teleport-component/" class="subnav-link">Developing an A-Frame Teleport Component</a></li><li class="subnav-item"><a href="/blog/awoa-31-32/" class="subnav-link">A Week of A-Frame 31 + 32</a></li><li class="subnav-item"><a href="/blog/ghost-train-builder/" class="subnav-link">Halloween Feature! Building Ghost Train Builder</a></li><li class="subnav-item"><a href="/blog/istaging/" class="subnav-link">Why iStaging Chose A-Frame</a></li><li class="subnav-item"><a href="/blog/awoa-30/" class="subnav-link">A Week of A-Frame 30</a></li><li class="subnav-item"><a href="/blog/awoa-29/" class="subnav-link">A Week of A-Frame 29</a></li><li class="subnav-item"><a href="/blog/awoa-28/" class="subnav-link">A Week of A-Frame 28</a></li><li class="subnav-item"><a href="/blog/a-painter/" class="subnav-link">A-Painter: Paint in VR in Your Browser</a></li><li class="subnav-item"><a href="/blog/awoa-27/" class="subnav-link">A Week of A-Frame 27</a></li><li class="subnav-item"><a href="/blog/awoa-26/" class="subnav-link">A Week of A-Frame 26</a></li><li class="subnav-item"><a href="/blog/aframe-v0.3.0/" class="subnav-link">A-Frame v0.3.0 - Walk in a Web Page</a></li><li class="subnav-item"><a href="/blog/awoa-25/" class="subnav-link">A Week of A-Frame 25</a></li><li class="subnav-item"><a href="/blog/awoa-24/" class="subnav-link">A Week of A-Frame 24</a></li><li class="subnav-item"><a href="/blog/awoa-23/" class="subnav-link">A Week of A-Frame 23</a></li><li class="subnav-item"><a href="/blog/awoa-22/" class="subnav-link">A Week of A-Frame 22</a></li><li class="subnav-item"><a href="/blog/awoa-21/" class="subnav-link">A Week of A-Frame 21</a></li><li class="subnav-item"><a href="/blog/awoa-20/" class="subnav-link">A Week of A-Frame 20</a></li><li class="subnav-item"><a href="/blog/awoa-19/" class="subnav-link">A Week of A-Frame 19</a></li><li class="subnav-item"><a href="/blog/awoa-18/" class="subnav-link">A Week of A-Frame 18</a></li><li class="subnav-item"><a href="/blog/awoa-17/" class="subnav-link">A Week of A-Frame 17</a></li><li class="subnav-item"><a href="/blog/awoa-16/" class="subnav-link">A Week of A-Frame 16</a></li><li class="subnav-item"><a href="/blog/awoa-15/" class="subnav-link">A Week of A-Frame 15</a></li><li class="subnav-item"><a href="/blog/awoa-14/" class="subnav-link">A Week of A-Frame 14</a></li><li class="subnav-item"><a href="/blog/awoa-13/" class="subnav-link">A Week of A-Frame 13</a></li><li class="subnav-item"><a href="/blog/awoa-12/" class="subnav-link">A Week of A-Frame 12</a></li><li class="subnav-item"><a href="/blog/awoa-11/" class="subnav-link">A Week of A-Frame 11</a></li><li class="subnav-item"><a href="/blog/awoa-10/" class="subnav-link">A Week of A-Frame 10</a></li><li class="subnav-item"><a href="/blog/awoa-09/" class="subnav-link">A Week of A-Frame 9</a></li><li class="subnav-item"><a href="/blog/syria/" class="subnav-link">Amnesty International UK Presents "Fear of the Sky"</a></li><li class="subnav-item"><a href="/blog/aframe-v0.2.0/" class="subnav-link">A-Frame v0.2.0 - The Extensible VR Web</a></li><li class="subnav-item"><a href="/blog/mars/" class="subnav-link">The Washington Post Presents "Mars: An Interactive Journey"</a></li><li class="subnav-item"><a href="/blog/awoa-08/" class="subnav-link">A Week of A-Frame 8</a></li><li class="subnav-item"><a href="/blog/awoa-07/" class="subnav-link">A Week of A-Frame 7</a></li><li class="subnav-item"><a href="/blog/awoa-06/" class="subnav-link">A Week of A-Frame 6</a></li><li class="subnav-item"><a href="/blog/awoa-05/" class="subnav-link">A Week of A-Frame 5</a></li><li class="subnav-item"><a href="/blog/awoa-04/" class="subnav-link">A Week of A-Frame 4</a></li><li class="subnav-item"><a href="/blog/awoa-03/" class="subnav-link">A Week of A-Frame 3</a></li><li class="subnav-item"><a href="/blog/awoa-02/" class="subnav-link">A Week of A-Frame 2</a></li><li class="subnav-item"><a href="/blog/tron/" class="subnav-link">Step Inside the Computer World, TRON!</a></li><li class="subnav-item"><a href="/blog/awoa-01/" class="subnav-link">A Week of A-Frame 1</a></li><li class="subnav-item"><a href="/blog/photosphere-viewer/" class="subnav-link">360&deg; Photosphere Viewer</a></li><li class="subnav-item"><a href="/blog/solar-system/" class="subnav-link">WebVR Solar System</a></li><li class="subnav-item"><a href="/blog/testscape/" class="subnav-link">TestScape</a></li><li class="subnav-item"><a href="/blog/popmotion/" class="subnav-link">Popmotion Physics & Animation with A-Frame</a></li><li class="subnav-item"><a href="/blog/charleston/" class="subnav-link">WebVR Tour of Public Projects in Charleston, SC</a></li><li class="subnav-item"><a href="/blog/flickr-textures/" class="subnav-link">CC-Licensed Textures from Flickr</a></li><li class="subnav-item subnav-item-current"><a href="/blog/drawvr-minecraft/" class="subnav-link current">Creating a Minecraft Scene in WebVR</a></li><li class="subnav-item"><a href="/blog/spheres-and-fog/" class="subnav-link">Sense of Scale with Spheres and Fog</a></li><li class="subnav-item"><a href="/blog/shopping/" class="subnav-link">Prototyping a Shopping Example</a></li><li class="subnav-item"><a href="/blog/introducing-aframe/" class="subnav-link">Introducing A-Frame v0.1.0</a></li></ul></div></aside><div class="content content--blog copy post"><div class="mobile-header"><a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a><h1><a href="/">A-Frame</a></h1><span></span></div><script>(function() {
+  ga('send', 'pageview');
+</script>
+
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+  </head>
+
+  <body data-page-layout="blog" data-page-type="">
+    <main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.5.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.5.0/introduction/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs current"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <h3 class="section-title">Blog Posts</h3>
+    <ul class="subnav section-subnav blog-subnav">
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-56/"
+             class="subnav-link"
+             title="A Week of A-Frame 56">
+            A Week of A-Frame 56
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/gamestate/"
+             class="subnav-link"
+             title="Managing Application and Game State in A-Frame">
+            Managing Application and Game State in A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-55/"
+             class="subnav-link"
+             title="A Week of A-Frame 55">
+            A Week of A-Frame 55
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/motion-capture/"
+             class="subnav-link"
+             title="Rapid Motion-Capture-Powered VR Development">
+            Rapid Motion-Capture-Powered VR Development
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-54/"
+             class="subnav-link"
+             title="A Week of A-Frame 54">
+            A Week of A-Frame 54
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-53/"
+             class="subnav-link"
+             title="A Week of A-Frame 53">
+            A Week of A-Frame 53
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-52/"
+             class="subnav-link"
+             title="A Week of A-Frame 52">
+            A Week of A-Frame 52
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-51/"
+             class="subnav-link"
+             title="A Week of A-Frame 51">
+            A Week of A-Frame 51
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-50/"
+             class="subnav-link"
+             title="A Week of A-Frame 50">
+            A Week of A-Frame 50
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-49/"
+             class="subnav-link"
+             title="A Week of A-Frame 49">
+            A Week of A-Frame 49
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-48/"
+             class="subnav-link"
+             title="A Week of A-Frame 48">
+            A Week of A-Frame 48
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-47/"
+             class="subnav-link"
+             title="A Week of A-Frame 47">
+            A Week of A-Frame 47
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.5.0/"
+             class="subnav-link"
+             title="A-Frame v0.5.0 - Features & Tools">
+            A-Frame v0.5.0 - Features & Tools
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-46/"
+             class="subnav-link"
+             title="A Week of A-Frame 46">
+            A Week of A-Frame 46
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-45/"
+             class="subnav-link"
+             title="A Week of A-Frame 45">
+            A Week of A-Frame 45
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-44/"
+             class="subnav-link"
+             title="A Week of A-Frame 44">
+            A Week of A-Frame 44
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-43/"
+             class="subnav-link"
+             title="A Week of A-Frame 43">
+            A Week of A-Frame 43
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-42/"
+             class="subnav-link"
+             title="A Week of A-Frame 42">
+            A Week of A-Frame 42
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-40-41/"
+             class="subnav-link"
+             title="A Week of A-Frame 40 - 41">
+            A Week of A-Frame 40 - 41
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/screenshot/"
+             class="subnav-link"
+             title="Taking Screenshots in A-Frame">
+            Taking Screenshots in A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.4.0/"
+             class="subnav-link"
+             title="A-Frame v0.4.0 - The Registry">
+            A-Frame v0.4.0 - The Registry
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-35-39/"
+             class="subnav-link"
+             title="A Week of A-Frame 35 - 39">
+            A Week of A-Frame 35 - 39
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-34/"
+             class="subnav-link"
+             title="A Week of A-Frame 34">
+            A Week of A-Frame 34
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-33/"
+             class="subnav-link"
+             title="A Week of A-Frame 33">
+            A Week of A-Frame 33
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/teleport-component/"
+             class="subnav-link"
+             title="Developing an A-Frame Teleport Component">
+            Developing an A-Frame Teleport Component
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-31-32/"
+             class="subnav-link"
+             title="A Week of A-Frame 31 + 32">
+            A Week of A-Frame 31 + 32
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/ghost-train-builder/"
+             class="subnav-link"
+             title="Halloween Feature! Building Ghost Train Builder">
+            Halloween Feature! Building Ghost Train Builder
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/istaging/"
+             class="subnav-link"
+             title="Why iStaging Chose A-Frame">
+            Why iStaging Chose A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-30/"
+             class="subnav-link"
+             title="A Week of A-Frame 30">
+            A Week of A-Frame 30
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-29/"
+             class="subnav-link"
+             title="A Week of A-Frame 29">
+            A Week of A-Frame 29
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-28/"
+             class="subnav-link"
+             title="A Week of A-Frame 28">
+            A Week of A-Frame 28
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/a-painter/"
+             class="subnav-link"
+             title="A-Painter: Paint in VR in Your Browser">
+            A-Painter: Paint in VR in Your Browser
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-27/"
+             class="subnav-link"
+             title="A Week of A-Frame 27">
+            A Week of A-Frame 27
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-26/"
+             class="subnav-link"
+             title="A Week of A-Frame 26">
+            A Week of A-Frame 26
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.3.0/"
+             class="subnav-link"
+             title="A-Frame v0.3.0 - Walk in a Web Page">
+            A-Frame v0.3.0 - Walk in a Web Page
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-25/"
+             class="subnav-link"
+             title="A Week of A-Frame 25">
+            A Week of A-Frame 25
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-24/"
+             class="subnav-link"
+             title="A Week of A-Frame 24">
+            A Week of A-Frame 24
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-23/"
+             class="subnav-link"
+             title="A Week of A-Frame 23">
+            A Week of A-Frame 23
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-22/"
+             class="subnav-link"
+             title="A Week of A-Frame 22">
+            A Week of A-Frame 22
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-21/"
+             class="subnav-link"
+             title="A Week of A-Frame 21">
+            A Week of A-Frame 21
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-20/"
+             class="subnav-link"
+             title="A Week of A-Frame 20">
+            A Week of A-Frame 20
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-19/"
+             class="subnav-link"
+             title="A Week of A-Frame 19">
+            A Week of A-Frame 19
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-18/"
+             class="subnav-link"
+             title="A Week of A-Frame 18">
+            A Week of A-Frame 18
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-17/"
+             class="subnav-link"
+             title="A Week of A-Frame 17">
+            A Week of A-Frame 17
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-16/"
+             class="subnav-link"
+             title="A Week of A-Frame 16">
+            A Week of A-Frame 16
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-15/"
+             class="subnav-link"
+             title="A Week of A-Frame 15">
+            A Week of A-Frame 15
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-14/"
+             class="subnav-link"
+             title="A Week of A-Frame 14">
+            A Week of A-Frame 14
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-13/"
+             class="subnav-link"
+             title="A Week of A-Frame 13">
+            A Week of A-Frame 13
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-12/"
+             class="subnav-link"
+             title="A Week of A-Frame 12">
+            A Week of A-Frame 12
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-11/"
+             class="subnav-link"
+             title="A Week of A-Frame 11">
+            A Week of A-Frame 11
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-10/"
+             class="subnav-link"
+             title="A Week of A-Frame 10">
+            A Week of A-Frame 10
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-09/"
+             class="subnav-link"
+             title="A Week of A-Frame 9">
+            A Week of A-Frame 9
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/syria/"
+             class="subnav-link"
+             title="Amnesty International UK Presents "Fear of the Sky"">
+            Amnesty International UK Presents "Fear of the Sky"
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.2.0/"
+             class="subnav-link"
+             title="A-Frame v0.2.0 - The Extensible VR Web">
+            A-Frame v0.2.0 - The Extensible VR Web
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/mars/"
+             class="subnav-link"
+             title="The Washington Post Presents "Mars: An Interactive Journey"">
+            The Washington Post Presents "Mars: An Interactive Journey"
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-08/"
+             class="subnav-link"
+             title="A Week of A-Frame 8">
+            A Week of A-Frame 8
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-07/"
+             class="subnav-link"
+             title="A Week of A-Frame 7">
+            A Week of A-Frame 7
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-06/"
+             class="subnav-link"
+             title="A Week of A-Frame 6">
+            A Week of A-Frame 6
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-05/"
+             class="subnav-link"
+             title="A Week of A-Frame 5">
+            A Week of A-Frame 5
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-04/"
+             class="subnav-link"
+             title="A Week of A-Frame 4">
+            A Week of A-Frame 4
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-03/"
+             class="subnav-link"
+             title="A Week of A-Frame 3">
+            A Week of A-Frame 3
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-02/"
+             class="subnav-link"
+             title="A Week of A-Frame 2">
+            A Week of A-Frame 2
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/tron/"
+             class="subnav-link"
+             title="Step Inside the Computer World, TRON!">
+            Step Inside the Computer World, TRON!
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-01/"
+             class="subnav-link"
+             title="A Week of A-Frame 1">
+            A Week of A-Frame 1
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/photosphere-viewer/"
+             class="subnav-link"
+             title="360&deg; Photosphere Viewer">
+            360&deg; Photosphere Viewer
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/solar-system/"
+             class="subnav-link"
+             title="WebVR Solar System">
+            WebVR Solar System
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/testscape/"
+             class="subnav-link"
+             title="TestScape">
+            TestScape
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/popmotion/"
+             class="subnav-link"
+             title="Popmotion Physics & Animation with A-Frame">
+            Popmotion Physics & Animation with A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/charleston/"
+             class="subnav-link"
+             title="WebVR Tour of Public Projects in Charleston, SC">
+            WebVR Tour of Public Projects in Charleston, SC
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/flickr-textures/"
+             class="subnav-link"
+             title="CC-Licensed Textures from Flickr">
+            CC-Licensed Textures from Flickr
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/spheres-and-fog/"
+             class="subnav-link"
+             title="Sense of Scale with Spheres and Fog">
+            Sense of Scale with Spheres and Fog
+          </a>
+        </li>
+      
+        <li class="subnav-item  subnav-item-current">
+          <a href="/blog/drawvr-minecraft/"
+             class="subnav-link current"
+             title="Creating a Minecraft Scene in WebVR">
+            Creating a Minecraft Scene in WebVR
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/shopping/"
+             class="subnav-link"
+             title="Prototyping a Shopping Example">
+            Prototyping a Shopping Example
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/introducing-aframe/"
+             class="subnav-link"
+             title="Introducing A-Frame v0.1.0">
+            Introducing A-Frame v0.1.0
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</aside>
+
+<div class="content content--blog copy post ">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
     var sidebarEl = document.querySelector('#sidebar');
     var toggleEl = document.querySelector('#sidebar-toggle');
 
@@ -53,4 +834,103 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
       }
       return null;
     }
-  })();</script><div class="copy__wrap"><article class="post post-full"><p class="page__section"><a href="/blog/" class="borderless-link">Blog</a></p><h1 class="page__title post__heading">Creating a Minecraft Scene in WebVR</h1><div class="post__metadata"><p class="post__timestamp">Dec 18, 2015</p><p class="post__author">By <a class="blog-attribution" href="https://github.com/dkraeker">Donovan Kraeker</a></p></div><a class="post__image borderless-link" href="http://drawvr.com/minecraft/"><img src="/images/blog/drawvr-minecraft.jpg" alt="Creating a Minecraft Scene in WebVR"></a><blockquote><p>Within a week of its release, someone had used A-Frame to create a <a href="http://drawvr.com/minecraft/" target="_blank" rel="external">Minecraft scene</a>. We tracked down the creator, <a href="http://drawvr.com/" target="_blank" rel="external">Donovan Kraeker</a>, and he shared his process and tips he learned along the way:</p></blockquote><p>Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR for over a year and found the thought of committing the time needed to make good, finished content with WebGL, Unity, and Unreal too intimidating. I figured, eventually an organization or company would come out with a way for the masses to create VR websites and decided to wait. That wait was over on December 16, 2015 when the MozVR team released the first version of A-Frame &mdash; the Metaverse has begun!</p><p>After playing around with A-Frame for a few days I had a simple Minecraft-esque virtual reality website that I could actually enter into and look around in <a href="http://drawvr.com/minecraft/" target="_blank" rel="external">drawvr.com/minecraft/</a>. I tested it on an iPhone using a plastic Google Cardboard like HMD and an Oculus Rift DK2 and they both worked! To say the least, I was ecstatic. I created this VR experience that I could host online and share with my friends, family, and the interwebs.</p><a id="more"></a><p>I started my first project by creating a small plane (ground) to walk around in. I added a grass picture to the plane and the result was a stretched out, poor representation of grass. Then it hit me, just like with websites I can repeat a texture image and checker out a bunch of planes to make the grass look good (better fix below). That’s where I thought of Minecraft; it was the perfect choice. The textures are freely available for parents to make awesome party decor for kids. It’s widely known for being hacked and knocked off. People that have played Minecraft will see the possibility of A-Frame. The blocks even fit perfectly with a depth, width, and height of 1. It’s so close to using the Minecrift version of Minecraft you’d almost think you’re in the game. The way to properly texture an image:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane; height: 500; width: 500"</span></span></div><div class="line">          <span class="attr">position</span>=<span class="string">"0 -0.5 0"</span></div><div class="line">          <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span></div><div class="line">          <span class="attr">material</span>=<span class="string">"shader: flat; src: url(images/grass.png); repeat: 300 300"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>There are a few tips I learned that may help you on your journey creating your first project:</p><ul><li>First, don’t worry about the first project being good. It can be the fifth; who cares. After the Minecraft project I had two false starts before crafting the next decent experience: <a href="http://drawvr.com/theater/" target="_blank" rel="external">drawvr/theater</a>.</li><li>You need Firefox Nightly or experimental Chrome to use an Oculus Rift.</li><li>Positions are written as <code>0 0 0</code>, I think of it as <code>right</code>, <code>up</code>, <code>backwards</code>.</li><li>The starting position for the camera is <code>0 1.8 4</code>, which is approximately standing height. When you place your first plane, cylinder, image, video, etc., you can place it on <code>0 0 0</code> and see it in front of you rather than being inside it.</li><li>Ground or flooring seemed to look best at position <code>0 0.5 0</code>.</li><li>To create a 360&deg; image or sky you need an equirectangular image.</li><li>You can use PNG images to make use of its transparency property. You just need to add <code>material=&quot;transparent: true&quot;</code> until the bug (with OpenGL maybe) is fixed, position your PNGs from the farthest point to the closest to prevent the transparent area of PNGs from mirror background colors.</li><li>I kept my tips simple because starting with A-Frame can be as simple as you want it to be. It can also be as powerful as you could imagine. The ability to add interactions and use JavaScript really opens to limitless possibilities that would make Neo from The Matrix proud. With the Oculus Rift, HTC Vive and others about to come out with consumer VR Headsets shortly, A-Frame is about to explode!</li></ul></article><footer class="footer guide-links c"><span class="float-left"><a href="/blog/spheres-and-fog/" class="guide-link guide-link-left">← Sense of Scale with Spheres and Fog</a></span> <span class="float-right"><a href="/blog/flickr-textures/" class="guide-link guide-link-right">CC-Licensed Textures from Flickr →</a></span></footer><footer class="footer footnote"><p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p><p>Found a typo or suggestion for the docs?<br><br><a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/drawvr-minecraft.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p></footer></div></div></main><script src="/js/common.js"></script><script src="/js/ga.js"></script><script src="/js/docs.js"></script></body></html>
+  })();
+</script>
+
+
+  <div class="copy__wrap">
+    
+      <article class="post post-full">
+        <p class="page__section">
+          <a href="/blog/" class="borderless-link">Blog</a>
+        </p>
+
+        <h1 class="page__title post__heading">Creating a Minecraft Scene in WebVR</h1>
+        <div class="post__metadata">
+  <p class="post__timestamp">Dec 18, 2015</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://github.com/dkraeker">Donovan Kraeker</a></p>
+  
+</div>
+
+
+        
+
+        
+          
+  
+  
+    
+  
+
+  
+    <a class="post__image borderless-link" href="http://drawvr.com/minecraft/">
+      <img src="/images/blog/drawvr-minecraft.jpg" alt="Creating a Minecraft Scene in WebVR">
+    </a>
+  
+
+
+        
+
+        
+        
+          <blockquote>
+<p>Within a week of its release, someone had used A-Frame to create a <a href="http://drawvr.com/minecraft/" target="_blank" rel="external">Minecraft scene</a>. We tracked down the creator, <a href="http://drawvr.com/" target="_blank" rel="external">Donovan Kraeker</a>, and he shared his process and tips he learned along the way:</p>
+</blockquote>
+<p>Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR for over a year and found the thought of committing the time needed to make good, finished content with WebGL, Unity, and Unreal too intimidating. I figured, eventually an organization or company would come out with a way for the masses to create VR websites and decided to wait. That wait was over on December 16, 2015 when the MozVR team released the first version of A-Frame &mdash; the Metaverse has begun!</p>
+<p>After playing around with A-Frame for a few days I had a simple Minecraft-esque virtual reality website that I could actually enter into and look around in <a href="http://drawvr.com/minecraft/" target="_blank" rel="external">drawvr.com/minecraft/</a>. I tested it on an iPhone using a plastic Google Cardboard like HMD and an Oculus Rift DK2 and they both worked! To say the least, I was ecstatic. I created this VR experience that I could host online and share with my friends, family, and the interwebs.</p>
+<a id="more"></a>
+<p>I started my first project by creating a small plane (ground) to walk around in. I added a grass picture to the plane and the result was a stretched out, poor representation of grass. Then it hit me, just like with websites I can repeat a texture image and checker out a bunch of planes to make the grass look good (better fix below). That’s where I thought of Minecraft; it was the perfect choice. The textures are freely available for parents to make awesome party decor for kids. It’s widely known for being hacked and knocked off. People that have played Minecraft will see the possibility of A-Frame. The blocks even fit perfectly with a depth, width, and height of 1. It’s so close to using the Minecrift version of Minecraft you’d almost think you’re in the game. The way to properly texture an image:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane; height: 500; width: 500"</span></span></div><div class="line">          <span class="attr">position</span>=<span class="string">"0 -0.5 0"</span></div><div class="line">          <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span></div><div class="line">          <span class="attr">material</span>=<span class="string">"shader: flat; src: url(images/grass.png); repeat: 300 300"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>There are a few tips I learned that may help you on your journey creating your first project:</p>
+<ul>
+<li>First, don’t worry about the first project being good. It can be the fifth; who cares. After the Minecraft project I had two false starts before crafting the next decent experience: <a href="http://drawvr.com/theater/" target="_blank" rel="external">drawvr/theater</a>.</li>
+<li>You need Firefox Nightly or experimental Chrome to use an Oculus Rift.</li>
+<li>Positions are written as <code>0 0 0</code>, I think of it as <code>right</code>, <code>up</code>, <code>backwards</code>.</li>
+<li>The starting position for the camera is <code>0 1.8 4</code>, which is approximately standing height. When you place your first plane, cylinder, image, video, etc., you can place it on <code>0 0 0</code> and see it in front of you rather than being inside it.</li>
+<li>Ground or flooring seemed to look best at position <code>0 0.5 0</code>.</li>
+<li>To create a 360&deg; image or sky you need an equirectangular image.</li>
+<li>You can use PNG images to make use of its transparency property. You just need to add <code>material=&quot;transparent: true&quot;</code> until the bug (with OpenGL maybe) is fixed, position your PNGs from the farthest point to the closest to prevent the transparent area of PNGs from mirror background colors.</li>
+<li>I kept my tips simple because starting with A-Frame can be as simple as you want it to be. It can also be as powerful as you could imagine. The ability to add interactions and use JavaScript really opens to limitless possibilities that would make Neo from The Matrix proud. With the Oculus Rift, HTC Vive and others about to come out with consumer VR Headsets shortly, A-Frame is about to explode!</li>
+</ul>
+
+        
+
+        
+      </article>
+
+      <footer class="footer guide-links c">
+        
+        
+        
+        
+          <span class="float-left"><a href="/blog/spheres-and-fog/" class="guide-link guide-link-left">← Sense of Scale with Spheres and Fog</a></span>
+        
+        
+          <span class="float-right"><a href="/blog/shopping/" class="guide-link guide-link-right">Prototyping a Shopping Example →</a></span>
+        
+      </footer>
+    
+
+    <footer class="footer footnote">
+      <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+      
+        <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/drawvr-minecraft.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+      
+    </footer>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+  </body>
+</html>

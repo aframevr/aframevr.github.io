@@ -1,14 +1,843 @@
-<!DOCTYPE html><html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-site-base-url="https://aframe.io" data-site-root-path="/" data-site-home-url="https://aframe.io/" data-lib-home-url="https://aframe.io/" data-lib-examples-url="https://aframe.io/aframe/examples" data-title="{title} | A-Frame" data-is-spa="false" data-ga-id="UA-24056643-4" data-aframe-version="0.5.0" data-docs-version="0.4.0"><head><title>FAQ – A-Frame</title><script>var host = window.location.protocol + '//' + window.location.hostname;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.5.0"
+      data-docs-version="0.4.0">
+  <head>
+    <title>FAQ – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
   if (window.location.protocol === 'http:' &&
       window.location.hostname === 'https://aframe.io') {
     window.location.href = 'https:' + window.location.href.substring(6);
-  }</script><meta charset="utf-8"><meta name="robots" content="NOINDEX"><meta name="description" content=""><meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="canonical" href="https://aframe.io"><link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet"><meta property="fb:app_id" content="1535794316743373"><meta property="og:title" content="FAQ – A-Frame"><meta property="og:site_name" content="A-Frame"><meta property="og:type" content="website"><meta property="og:url" content="https://aframe.io"><meta property="og:description" content=""><meta property="og:image" content="http://aframe.io/images/card.jpg?v2"><meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@aframevr"><meta name="twitter:creator" content="@aframevr"><meta name="twitter:title" content="FAQ – A-Frame"><meta name="twitter:description" content=""><meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="black"><link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png"><link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="FAQ – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="FAQ – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-24056643-4', 'auto');
-  ga('send', 'pageview');</script><script src="/js/compat.js"></script><link rel="stylesheet" href="/css/secondary.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"><link rel="stylesheet" href="/css/search.css"></head><body data-page-layout="docs" data-page-type="introduction"><main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links"><div id="secondary-nav" class="secondary-nav"><header id="header" class="header"><a id="logo" class="logo" href="/" title="A-Frame"><span class="logo__wordmark">A-Frame</span></a></header><div class="docs-search-wrapper docs-search-sidebar"><input type="search" class="search-field" placeholder="&#128269; Search 0.4.0 docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div><ul id="nav" class="nav"><li class="nav-item"><a href="/docs/0.5.0/introduction/" class="nav-link nav-link-docs current nav-link-disabled"><span>Docs</span></a></li><li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li><li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs"><span>Blog</span></a></li><li class="nav-item"><a href="/community/" class="nav-link nav-link-docs"><span>Community</span></a></li><li data-slug="github" class="nav-item"><a href="https://github.com/aframevr/aframe/" class="nav-link nav-link-docs" rel="external" title="A-Frame project repository on GitHub"><span>GitHub</span></a></li><li data-slug="slug" class="nav-item"><a href="https://aframevr-slack.herokuapp.com" class="nav-link nav-link-docs" rel="external" title="A-Frame Slack (sign up)"><span>Slack</span></a></li></ul></div><div class="list"><label class="subnav-label" for="docs-version"><b>Version</b></label><select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')"><option false data-href="/docs/master/introduction/">master</option><option false data-href="/docs/0.5.0/introduction/">0.5.0</option><option selected data-href="/docs/0.4.0/introduction/">0.4.0</option><option false data-href="/docs/0.3.0/introduction/">0.3.0</option><option false data-href="/docs/0.2.0/guide/">0.2.0</option><option false data-href="/docs/0.1.0/guide/">0.1.0</option></select><h3 class="section-title docs-section-title section-title-active"><a href="/docs/0.4.0/introduction/" class="section-title-link section-title-link-active">Introduction</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.4.0/introduction/" class="subnav-link">Introduction</a></li><li class="subnav-item"><a href="/docs/0.4.0/introduction/getting-started.html" class="subnav-link">Getting Started</a></li><li class="subnav-item"><a href="/docs/0.4.0/introduction/device-and-platform-support.html" class="subnav-link">Device & Platform Support</a></li><li class="subnav-item"><a href="/docs/0.4.0/introduction/best-practices.html" class="subnav-link">Best Practices</a></li><li class="subnav-item subnav-item-current"><a href="/docs/0.4.0/introduction/faq.html" class="subnav-link current">FAQ</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/0.4.0/guides/" class="section-title-link section-title-link-inactive">Guides</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.4.0/guides/" class="subnav-link">Building a Basic Scene</a></li><li class="subnav-item"><a href="/docs/0.4.0/guides/using-the-aframe-inspector.html" class="subnav-link">Using the A-Frame Inspector</a></li><li class="subnav-item"><a href="/docs/0.4.0/guides/building-with-components.html" class="subnav-link">Building with Components</a></li><li class="subnav-item"><a href="/docs/0.4.0/guides/using-javascript-and-dom-apis.html" class="subnav-link">Using JavaScript and DOM APIs</a></li><li class="subnav-item"><a href="/docs/0.4.0/guides/using-with-threejs.html" class="subnav-link">Using with three.js</a></li><li class="subnav-item"><a href="/docs/0.4.0/guides/writing-a-component.html" class="subnav-link">Writing a Component</a></li><li class="subnav-item"><a href="/docs/0.4.0/guides/building-with-magicavoxel.html" class="subnav-link">Building with MagicaVoxel</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/0.4.0/core/" class="section-title-link section-title-link-inactive">Concepts and API</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.4.0/core/" class="subnav-link">Entity-Component-System</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/entity.html" class="subnav-link">Entity</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/component.html" class="subnav-link">Component</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/systems.html" class="subnav-link">System</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/scene.html" class="subnav-link">Scene</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/animations.html" class="subnav-link">Animations</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/mixins.html" class="subnav-link">Mixins</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/asset-management-system.html" class="subnav-link">Asset Management System</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/AFRAME.html" class="subnav-link">AFRAME Globals</a></li><li class="subnav-item"><a href="/docs/0.4.0/core/utils.html" class="subnav-link">Utils</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/0.4.0/components/" class="section-title-link section-title-link-inactive">Components</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.4.0/components/blend-model.html" class="subnav-link">blend-model</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/camera.html" class="subnav-link">camera</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/collada-model.html" class="subnav-link">collada-model</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/cursor.html" class="subnav-link">cursor</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/debug.html" class="subnav-link">debug</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/embedded.html" class="subnav-link">embedded</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/fog.html" class="subnav-link">fog</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/geometry.html" class="subnav-link">geometry</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/hand-controls.html" class="subnav-link">hand-controls</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/keyboard-shortcuts.html" class="subnav-link">keyboard-shortcuts</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/light.html" class="subnav-link">light</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/look-controls.html" class="subnav-link">look-controls</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/material.html" class="subnav-link">material</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/obj-model.html" class="subnav-link">obj-model</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/oculus-touch-controls.html" class="subnav-link">oculus-touch-controls</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/pool.html" class="subnav-link">pool</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/position.html" class="subnav-link">position</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/raycaster.html" class="subnav-link">raycaster</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/rotation.html" class="subnav-link">rotation</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/scale.html" class="subnav-link">scale</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/screenshot.html" class="subnav-link">screenshot</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/sound.html" class="subnav-link">sound</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/stats.html" class="subnav-link">stats</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/tracked-controls.html" class="subnav-link">tracked-controls</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/visible.html" class="subnav-link">visible</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/vive-controls.html" class="subnav-link">vive-controls</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/vr-mode-ui.html" class="subnav-link">vr-mode-ui</a></li><li class="subnav-item"><a href="/docs/0.4.0/components/wasd-controls.html" class="subnav-link">wasd-controls</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/0.4.0/primitives/" class="section-title-link section-title-link-inactive">Primitives</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/0.4.0/primitives/" class="subnav-link">Introduction</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-box.html" class="subnav-link">&lt;a-box&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-camera.html" class="subnav-link">&lt;a-camera&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-circle.html" class="subnav-link">&lt;a-circle&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-collada-model.html" class="subnav-link">&lt;a-collada-model&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-cone.html" class="subnav-link">&lt;a-cone&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-cursor.html" class="subnav-link">&lt;a-cursor&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-curvedimage.html" class="subnav-link">&lt;a-curvedimage&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-cylinder.html" class="subnav-link">&lt;a-cylinder&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-dodecahedron.html" class="subnav-link">&lt;a-dodecahedron&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-icosahedron.html" class="subnav-link">&lt;a-icosahedron&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-image.html" class="subnav-link">&lt;a-image&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-light.html" class="subnav-link">&lt;a-light&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-obj-model.html" class="subnav-link">&lt;a-obj-model&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-octahedron.html" class="subnav-link">&lt;a-octahedron&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-plane.html" class="subnav-link">&lt;a-plane&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-ring.html" class="subnav-link">&lt;a-ring&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-sky.html" class="subnav-link">&lt;a-sky&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-sound.html" class="subnav-link">&lt;a-sound&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-sphere.html" class="subnav-link">&lt;a-sphere&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-tetrahedron.html" class="subnav-link">&lt;a-tetrahedron&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-torus-knot.html" class="subnav-link">&lt;a-torus-knot&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-torus.html" class="subnav-link">&lt;a-torus&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-video.html" class="subnav-link">&lt;a-video&gt;</a></li><li class="subnav-item"><a href="/docs/0.4.0/primitives/a-videosphere.html" class="subnav-link">&lt;a-videosphere&gt;</a></li></ol></div></aside><div class="content content--structured content--introduction copy"><div class="mobile-header"><a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a><h1><a href="/">A-Frame</a></h1><span></span></div><script>(function() {
+  ga('send', 'pageview');
+</script>
+
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="introduction">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.4.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.5.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <a href="/docs/0.4.0/introduction/"
+           class="section-title-link section-title-link-active">
+          Introduction
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/introduction/getting-started.html"
+               class="subnav-link">
+              Getting Started
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/introduction/device-and-platform-support.html"
+               class="subnav-link">
+              Device & Platform Support
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.4.0/introduction/faq.html"
+               class="subnav-link current">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.4.0/guides/"
+           class="section-title-link section-title-link-inactive">
+          Guides
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/guides/"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/guides/using-the-aframe-inspector.html"
+               class="subnav-link">
+              Using the A-Frame Inspector
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/guides/building-with-components.html"
+               class="subnav-link">
+              Building with Components
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/guides/using-javascript-and-dom-apis.html"
+               class="subnav-link">
+              Using JavaScript and DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/guides/using-with-threejs.html"
+               class="subnav-link">
+              Using with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/guides/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/guides/building-with-magicavoxel.html"
+               class="subnav-link">
+              Building with MagicaVoxel
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.4.0/core/"
+           class="section-title-link section-title-link-inactive">
+          Concepts and API
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/AFRAME.html"
+               class="subnav-link">
+              AFRAME Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.4.0/components/"
+           class="section-title-link section-title-link-inactive">
+          Components
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/blend-model.html"
+               class="subnav-link">
+              blend-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/0.4.0/primitives/"
+           class="section-title-link section-title-link-inactive">
+          Primitives
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.4.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+<!-- Documentation. -->
+<div class="content content--structured content--introduction copy">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
     var sidebarEl = document.querySelector('#sidebar');
     var toggleEl = document.querySelector('#sidebar-toggle');
 
@@ -44,7 +873,223 @@
       }
       return null;
     }
-  })();</script><div class="copy__wrap"><div class="page__section docs-header"><p><a href="/docs/0.4.0/introduction/" class="borderless-link">0.4.0 &rsaquo; Introduction</a></p><div class="docs-search-wrapper docs-search-docs"><input type="search" class="search-field" placeholder="&#128269; Search 0.4.0 docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div></div><h1 class="page__title">FAQ</h1><blockquote><p><strong>Note:</strong> This documentation is for the old 0.4.0 version of A-Frame. Check out the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p></blockquote><h2 id="toc">Table of Contents</h2><ul><li><a href="#what-is-a-frame">What is A-Frame?</a><ul></ul></li><li><a href="#why-was-a-frame-built">Why was A-Frame built?</a><ul></ul></li><li><a href="#how-can-i-get-started">How can I get started?</a><ul></ul></li><li><a href="#how-is-a-frame’s-performance">How is A-Frame’s performance?</a><ul></ul></li><li><a href="#why-does-my-asset-e-g-image-video-model-not-load">Why does my asset (e.g., image, video, model) not load?</a><ul></ul></li><li><a href="#why-is-the-html-dom-not-updating-in-a-frame">Why is the HTML/DOM not updating in A-Frame?</a><ul></ul></li><li><a href="#why-does-my-video-not-play-on-mobile">Why does my video not play on mobile?</a><ul></ul></li><li><a href="#how-do-i-display-lt-iframe-gt-s-or-render-html-in-a-frame">How do I display &lt;iframe&gt;s or render HTML in A-Frame?</a><ul></ul></li><li><a href="#how-do-i-display-text-in-a-frame">How do I display text in A-Frame?</a><ul></ul></li><li><a href="#where-can-i-find-assets">Where can I find assets?</a><ul></ul></li><li><a href="#can-i-render-youtube-videos-as-a-texture">Can I render YouTube videos as a texture?</a><ul></ul></li><li><a href="#can-i-add-links-to-my-scene">Can I add links to my scene?</a><ul></ul></li><li><a href="#what-type-of-units-does-a-frame-use">What type of units does A-Frame use?</a><ul></ul></li><li><a href="#how-is-a-frame-different-from-vrml">How is A-Frame different from VRML?</a><ul></ul></li><li><a href="#does-a-frame-support-x-feature">Does A-Frame support X feature?</a><ul></ul></li><li><a href="#does-a-frame-support-x-library-or-framework">Does A-Frame support X library or framework?</a><ul></ul></li><li><a href="#does-a-frame-support-leap-motion">Does A-Frame support Leap Motion?</a><ul></ul></li><li><a href="#which-devices-headsets-platforms-does-a-frame-support">Which devices, headsets, platforms does A-Frame support?</a><ul></ul></li><li><a href="#how-do-i-improve-performance">How do I improve performance?</a><ul></ul></li><li><a href="#how-can-i-share-my-work">How can I share my work?</a><ul></ul></li><li><a href="#how-can-i-get-in-touch-with-the-a-frame-team">How can I get in touch with the A-Frame team?</a><ul></ul></li><li><a href="#where-is-the-roadmap">Where is the roadmap?</a><ul></ul></li><li><a href="#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”">Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?</a><ul></ul></li></ul><h2 id="what-is-a-frame"><a href="#what-is-a-frame" class="headerlink" title="What is A-Frame?"></a>What is A-Frame?</h2><p>A-Frame is an open-source web framework for building virtual reality experiences. We can build VR web pages that we can walk inside with just HTML. Under the hood, it is a <a href="http://threejs.org" target="_blank" rel="external">three.js</a> framework that brings the <a href="../core/">entity-component-system</a> pattern to the DOM.</p><h2 id="why-was-a-frame-built"><a href="#why-was-a-frame-built" class="headerlink" title="Why was A-Frame built?"></a>Why was A-Frame built?</h2><p>A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and fast to develop, allowing us to quickly prototype patterns and experiences. A-Frame is a vehicle in which to make WebVR successful.</p><h2 id="how-can-i-get-started"><a href="#how-can-i-get-started" class="headerlink" title="How can I get started?"></a>How can I get started?</h2><p>Read the <a href="../introduction/">Introduction</a> to get a deeper feel of what A-Frame is.</p><p>See the <a href="../introduction/getting-started.html">Getting Started</a> guide to get set up.</p><p>Check out the <a href="../guides/">guides</a> for basic tutorials.</p><p>Past that, you can browse the resources on the <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external"><code>awesome-aframe</code> repository</a>. If you need additional support, <a href="http://stackoverflow.com/questions/tagged/aframe" target="_blank" rel="external">ask on StackOverflow</a>.</p><h2 id="how-is-a-frame’s-performance"><a href="#how-is-a-frame’s-performance" class="headerlink" title="How is A-Frame’s performance?"></a>How is A-Frame’s performance?</h2><p>The layout system of the DOM have been one of the primary performance bottlenecks for web applications. A-Frame uses the DOM via Custom Elements as effectively data containers for objects in the scene graph. These elements are not touched by the browser’s rendering system and ultimately rendered with WebGL. This allows us to run 90+ FPS room-scale experiences in the HTC Vive. See <a href="https://blog.mozvr.com/a-painter" target="_blank" rel="external">A-Painter</a> for an example of a full A-Frame application running with smooth performance.</p><ul><li>The effects of <code>setAttribute</code> are synchronous. When modifying an entity’s position, there is almost zero overhead. Doing <code>setAttribute(&#39;position&#39;, {x: 1, y: 2, z: 3})</code> is practically directly modifying the underlying three.js objects themselves.</li><li>When changing an entity’s properties, data is not serialized back to the DOM. This reduces the DOM overhead and most modifications are done directly in memory, similar to Virtual DOM.</li><li>HTML attributes explicitly set from an HTML file are cached in memory.</li></ul><p>A-Frame provides reasonable defaults that yield good performance for the most common use cases. However, performance is ultimately determined by the complexity and characteristics of each individual scene. To get the best use of resources, we will need deeper understanding about 3D graphics. Read these <a href="../introduction/best-practices.html">best performance practices and guidelines</a> to help get you started.</p><h2 id="why-does-my-asset-e-g-image-video-model-not-load"><a href="#why-does-my-asset-e-g-image-video-model-not-load" class="headerlink" title="Why does my asset (e.g., image, video, model) not load?"></a>Why does my asset (e.g., image, video, model) not load?</h2><p>If you are loading the asset from a different domain, make sure that the asset is served with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="external">cross-origin resource sharing (CORS) headers</a>. You could either find a host to serve the asset with CORS headers, or place the asset on the same domain as your scene.</p><p>For some options, all resources hosted on <a href="https://github.com/blog/2228-simpler-github-pages-publishing" target="_blank" rel="external">GitHub Pages</a> are served with CORS headers. We recommend GitHub Pages as a simple deployment platform. Or you could also upload assets using the <a href="https://cdn.aframe.io/" target="_blank" rel="external">A-Frame + Uploadcare Uploader</a>, a service that serves files with CORS headers set.</p><h2 id="why-is-the-html-dom-not-updating-in-a-frame"><a href="#why-is-the-html-dom-not-updating-in-a-frame" class="headerlink" title="Why is the HTML/DOM not updating in A-Frame?"></a>Why is the HTML/DOM not updating in A-Frame?</h2><p>For performance reasons, A-Frame does not update the DOM with component data. Use the <a href="https://aframe.io/docs/0.3.0/components/debug.html">debug component</a> to enable component-to-DOM serialization.</p><h2 id="why-does-my-video-not-play-on-mobile"><a href="#why-does-my-video-not-play-on-mobile" class="headerlink" title="Why does my video not play on mobile?"></a>Why does my video not play on mobile?</h2><p>Mobile browsers have limitations with displaying inline video.</p><p>Because of an <a href="https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/iAdJSProgGuide/PlayingVideosinAds/PlayingVideosinAds.html" target="_blank" rel="external">iOS platform restriction</a> in order to get inline video (with or without autoplay), we must:</p><ul><li>Set the <code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</code> meta tag (will be injected if missing).</li><li>Set the <code>webkit-playsinline</code> attribute to the video element (is automatically added to all videos).</li><li>Pin the webpage to the iOS homescreen.</li></ul><p>Inline video support on iOS 10 may change this. On certain Android devices or browsers, we must:</p><ul><li>Require user interaction to trigger the video (such as a click or tap event). See <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=178297" target="_blank" rel="external">Chromium Bug 178297</a>.</li></ul><p>We will try to create a video boilerplate that has all the configurations to work on mobile devices.</p><h2 id="how-do-i-display-lt-iframe-gt-s-or-render-html-in-a-frame"><a href="#how-do-i-display-lt-iframe-gt-s-or-render-html-in-a-frame" class="headerlink" title="How do I display &lt;iframe&gt;s or render HTML in A-Frame?"></a>How do I display <code>&lt;iframe&gt;</code>s or render HTML in A-Frame?</h2><p>As a limitation of the browser, <code>&lt;iframe&gt;</code>s cannot be displayed in A-Frame, used as a texture, or be mixed with WebGL or WebVR. While it is possible to [overlay an iframe on top of the scene, it will not display properly in VR with proper distortion nor can it be shaded.</p><p>Solutions involve painting to a <code>&lt;canvas&gt;</code> and using the canvas as source for a texture. There are some components in the ecosystem that enable this:</p><ul><li><a href="https://github.com/mayognaise/aframe-html-shader" target="_blank" rel="external">HTML Shader</a></li></ul><h2 id="how-do-i-display-text-in-a-frame"><a href="#how-do-i-display-text-in-a-frame" class="headerlink" title="How do I display text in A-Frame?"></a>How do I display text in A-Frame?</h2><p>There are several possible solutions:</p><ul><li><a href="https://github.com/bryik/aframe-bmfont-text-component" target="_blank" rel="external">Bitmap Font Text Component (recommended)</a></li><li><a href="https://github.com/ngokevin/aframe-text-component" target="_blank" rel="external">Text Geometry Component</a></li><li><a href="https://github.com/mayognaise/aframe-html-shader" target="_blank" rel="external">HTML Shader</a></li><li><a href="https://github.com/maxkrieger/aframe-textwrap-component" target="_blank" rel="external">Text Wrap Component</a></li><li>Use images</li></ul><h2 id="where-can-i-find-assets"><a href="#where-can-i-find-assets" class="headerlink" title="Where can I find assets?"></a>Where can I find assets?</h2><p>In general, <a href="https://github.com/neutraltone/awesome-stock-resources" target="_blank" rel="external">awesome-stock-resources</a> is a great collection of free assets.</p><p>For 3D models, also check out:</p><ul><li><a href="http://clara.io" target="_blank" rel="external">Clara.io</a></li><li><a href="https://3dwarehouse.sketchup.com/" target="_blank" rel="external">Sketchup’s 3D Warehouse</a></li><li><a href="http://archive3d.net/" target="_blank" rel="external">Archive3D</a></li><li><a href="http://www.turbosquid.com/Search/3D-Models/free" target="_blank" rel="external">TurboSquid</a></li></ul><h2 id="can-i-render-youtube-videos-as-a-texture"><a href="#can-i-render-youtube-videos-as-a-texture" class="headerlink" title="Can I render YouTube videos as a texture?"></a>Can I render YouTube videos as a texture?</h2><p>With manual effort, you could either proxy YouTube videos as a texture or download them locally to serve, but that is against their terms of service.</p><p>For inspiration, Chris Van has <a href="https://github.com/cvan/webvr360" target="_blank" rel="external">a project that proxies YouTube videos for WebVR</a>.</p><h2 id="can-i-add-links-to-my-scene"><a href="#can-i-add-links-to-my-scene" class="headerlink" title="Can I add links to my scene?"></a>Can I add links to my scene?</h2><p>We (Mozilla) are currently improving the link traversal user experience within the browser as well as helping iterate the API. Once link traversal gets into a good state on the platform side, A-Frame should have a link component ready.</p><h2 id="what-type-of-units-does-a-frame-use"><a href="#what-type-of-units-does-a-frame-use" class="headerlink" title="What type of units does A-Frame use?"></a>What type of units does A-Frame use?</h2><p>A-Frame uses life-like meters. It maintains a 1:1 ratio. 5 units in A-Frame is equal to 5 meters in real life. Furthermore, when using programs like Blender, configured in imperial or metric mode, measurements will also translate 1:1. 10 feet in Blender will equal 10 feet in real life.</p><h2 id="how-is-a-frame-different-from-vrml"><a href="#how-is-a-frame-different-from-vrml" class="headerlink" title="How is A-Frame different from VRML?"></a>How is A-Frame different from VRML?</h2><p>A-Frame is a JavaScript framework, not a 3D or web standard. It embraces the <a href="https://extensiblewebmanifesto.org/" target="_blank" rel="external">Extensible Web Manifesto</a>. Only look at standardization as winning ideas emerge.</p><p>More technically, A-Frame is built on top of an <a href="../core/">entity-component-system pattern</a>, is fully extensible, and integrates well with all of the existing web development frameworks and tools.</p><h2 id="does-a-frame-support-x-feature"><a href="#does-a-frame-support-x-feature" class="headerlink" title="Does A-Frame support X feature?"></a>Does A-Frame support <code>X</code> feature?</h2><p>A-Frame ships with a handful of components and primitives. However being based on top of an <a href="../core/">entity-component-system pattern</a>, if a feature doesn’t exist, you can <a href="../core/component.html">write a component</a> to enable it. Or if one of the standard components is too limiting, you can <a href="https://github.com/aframevr/aframe/tree/master/src/components" target="_blank" rel="external">fork it</a>.</p><p>Check out what the features that the ecosystem has enabled at <a href="https://github.com/aframevr/awesome-aframe#components" target="_blank" rel="external">awesome-aframe’s collection of components</a>.</p><h2 id="does-a-frame-support-x-library-or-framework"><a href="#does-a-frame-support-x-library-or-framework" class="headerlink" title="Does A-Frame support X library or framework?"></a>Does A-Frame support <code>X</code> library or framework?</h2><p>A-Frame is built on top of the DOM so most libraries and frameworks work out of the box. We’ve found A-Frame works wonderfully with:</p><ul><li><a href="https://github.com/ngokevin/aframe-react" target="_blank" rel="external">React</a></li><li><a href="https://www.youtube.com/watch?v=Tb2b5nFmmsM" target="_blank" rel="external">D3.js</a></li><li><a href="https://github.com/ngokevin/aframe-template-component" target="_blank" rel="external">Handlebars/Mustache/Nunjucks/Jade</a></li><li><a href="https://github.com/vladbalan/meteor-aframe" target="_blank" rel="external">Meteor</a></li><li><a href="https://github.com/Popmotion/aframe-role" target="_blank" rel="external">Popmotion Role</a></li></ul><h2 id="does-a-frame-support-leap-motion"><a href="#does-a-frame-support-leap-motion" class="headerlink" title="Does A-Frame support Leap Motion?"></a>Does A-Frame support Leap Motion?</h2><p>Don McCurdy has published a <a href="https://github.com/openleap/aframe-leap-hands" target="_blank" rel="external">Leap Hands component</a> for Leap Motion controls.</p><p>Dr. Ryan James has built a <a href="https://github.com/drryanjames/CadaVR" target="_blank" rel="external">medical education project</a> that also features Leap Motion controls code.</p><h2 id="which-devices-headsets-platforms-does-a-frame-support"><a href="#which-devices-headsets-platforms-does-a-frame-support" class="headerlink" title="Which devices, headsets, platforms does A-Frame support?"></a>Which devices, headsets, platforms does A-Frame support?</h2><p>See <em><a href="./device-and-platform-support.html">Device and Platform Support</a></em>.</p><h2 id="how-do-i-improve-performance"><a href="#how-do-i-improve-performance" class="headerlink" title="How do I improve performance?"></a>How do I improve performance?</h2><p>See <em><a href="./best-practices.html#performance">Best Practices</a></em>.</p><h2 id="how-can-i-share-my-work"><a href="#how-can-i-share-my-work" class="headerlink" title="How can I share my work?"></a>How can I share my work?</h2><p>If you make something with A-Frame, please share it with us! Any of the channels below are great:</p><ul><li>Tweet at us <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>.</li><li>Share with the community on the community <a href="https://aframevr-slack.herokuapp.com/" target="_blank" rel="external">A-Frame Slack channel</a>.</li><li>Ask us to feature it on <a href="https://aframe.io/blog/">A Week of A-Frame</a>.</li><li>Add it to the collection on the <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external">awesome-aframe repository</a>.</li><li>Share with the greater community on the <a href="https://webvr-slack.herokuapp.com/" target="_blank" rel="external">WebVR Slack channel</a>.</li><li>Post it on the <a href="https://www.reddit.com/r/webvr" target="_blank" rel="external">WebVR subreddit</a>.</li><li>Write a case study and ask us to feature on the <a href="https://aframe.io/blog/">A-Frame Blog</a>.</li></ul><h2 id="how-can-i-get-in-touch-with-the-a-frame-team"><a href="#how-can-i-get-in-touch-with-the-a-frame-team" class="headerlink" title="How can I get in touch with the A-Frame team?"></a>How can I get in touch with the A-Frame team?</h2><p>We are an extremely responsive and helpful bunch:</p><ul><li>Got a question? Ask us using the <a href="http://stackoverflow.com/questions/tagged/aframe" target="_blank" rel="external">A-Frame StackOverflow tag</a>.</li><li>Want to chat? Hang out with us on the community <a href="https://aframevr-slack.herokuapp.com/" target="_blank" rel="external">A-Frame Slack channel</a>.</li><li>Want to share? Tweet at us at <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>.</li><li>Find an issue? File issues on the <a href="http://github.com/aframevr/aframe" target="_blank" rel="external">A-Frame GitHub repo</a>.</li></ul><p>We love questions, feedback, bug reports, and pull requests!</p><h2 id="where-is-the-roadmap"><a href="#where-is-the-roadmap" class="headerlink" title="Where is the roadmap?"></a>Where is the roadmap?</h2><p>Yes, check out the <a href="https://github.com/aframevr/aframe/blob/master/ROADMAP.md" target="_blank" rel="external">A-Frame Roadmap on GitHub</a></p><h2 id="do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”"><a href="#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”" class="headerlink" title="Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?"></a>Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?</h2><p>A-Frame!</p><footer class="footer guide-links c"><span class="float-left"><a href="/docs/0.4.0/introduction/best-practices.html" class="guide-link guide-link-left">← Best Practices</a></span></footer><footer class="footer footnote"><p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p><p>Found a typo or suggestion for the docs?<br><br><a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/faq.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p></footer></div></div></main><script src="/js/common.js"></script><script src="/js/ga.js"></script><script src="/js/docs.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script><script type="text/javascript">var searchConfig = {
+  })();
+</script>
+
+
+  <div class="copy__wrap">
+    <div class="page__section docs-header">
+      <p>
+        <a href="/docs/0.4.0/introduction/" class="borderless-link">
+          0.4.0 &rsaquo; Introduction
+        </a>
+      </p>
+      
+
+
+<div class="docs-search-wrapper docs-search-docs">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.4.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+    </div>
+    <h1 class="page__title">
+      FAQ
+    </h1>
+
+    
+    
+      <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 0.4.0 version of A-Frame. Check out the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p>
+</blockquote>
+
+    
+
+    
+    
+      <div id="toc"></div>
+
+<h2 id="what-is-a-frame"><a href="#what-is-a-frame" class="headerlink" title="What is A-Frame?"></a>What is A-Frame?</h2><p>A-Frame is an open-source web framework for building virtual reality
+experiences. We can build VR web pages that we can walk inside with just HTML.
+Under the hood, it is a <a href="http://threejs.org" target="_blank" rel="external">three.js</a> framework that brings the
+<a href="../core/index.md">entity-component-system</a> pattern to the DOM.</p>
+<h2 id="why-was-a-frame-built"><a href="#why-was-a-frame-built" class="headerlink" title="Why was A-Frame built?"></a>Why was A-Frame built?</h2><p>A-Frame was built to make virtual reality more accessible to the web community
+and to kick-start the WebVR content ecosystem. It is easy to learn and fast to
+develop, allowing us to quickly prototype patterns and experiences. A-Frame is
+a vehicle in which to make WebVR successful.</p>
+<h2 id="how-can-i-get-started"><a href="#how-can-i-get-started" class="headerlink" title="How can I get started?"></a>How can I get started?</h2><p>Read the <a href="../introduction/index.md">Introduction</a> to get a deeper feel of what A-Frame is.</p>
+<p>See the <a href="../introduction/getting-started.md">Getting Started</a> guide to get set up.</p>
+<p>Check out the <a href="../guides/index.md">guides</a> for basic tutorials.</p>
+<p>Past that, you can browse the resources on the <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external"><code>awesome-aframe</code>
+repository</a>. If you need additional support, <a href="http://stackoverflow.com/questions/tagged/aframe" target="_blank" rel="external">ask on
+StackOverflow</a>.</p>
+<h2 id="how-is-a-frame’s-performance"><a href="#how-is-a-frame’s-performance" class="headerlink" title="How is A-Frame’s performance?"></a>How is A-Frame’s performance?</h2><p>The layout system of the DOM have been one of the primary performance
+bottlenecks for web applications. A-Frame uses the DOM via Custom Elements as
+effectively data containers for objects in the scene graph. These elements are
+not touched by the browser’s rendering system and ultimately rendered with
+WebGL. This allows us to run 90+ FPS room-scale experiences in the HTC Vive.
+See <a href="https://blog.mozvr.com/a-painter" target="_blank" rel="external">A-Painter</a> for an example of a full A-Frame application running
+with smooth performance.</p>
+<ul>
+<li>The effects of <code>setAttribute</code> are synchronous. When modifying an entity’s
+position, there is almost zero overhead. Doing <code>setAttribute(&#39;position&#39;, {x:
+1, y: 2, z: 3})</code> is practically directly modifying the underlying three.js
+objects themselves.</li>
+<li>When changing an entity’s properties, data is not serialized back to the DOM. This
+reduces the DOM overhead and most modifications are done directly in memory,
+similar to Virtual DOM.</li>
+<li>HTML attributes explicitly set from an HTML file are cached in memory.</li>
+</ul>
+<p>A-Frame provides reasonable defaults that yield good performance for the most
+common use cases. However, performance is ultimately determined by the
+complexity and characteristics of each individual scene. To get the best use of
+resources, we will need deeper understanding about 3D graphics. Read these
+<a href="../introduction/best-practices.md">best performance practices and guidelines</a> to help get you
+started.</p>
+<h2 id="why-does-my-asset-e-g-image-video-model-not-load"><a href="#why-does-my-asset-e-g-image-video-model-not-load" class="headerlink" title="Why does my asset (e.g., image, video, model) not load?"></a>Why does my asset (e.g., image, video, model) not load?</h2><p>If you are loading the asset from a different domain, make sure that the asset
+is served with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="external">cross-origin resource sharing (CORS) headers</a>. You could
+either find a host to serve the asset with CORS headers, or place the asset on
+the same domain as your scene.</p>
+<p>For some options, all resources hosted on <a href="https://github.com/blog/2228-simpler-github-pages-publishing" target="_blank" rel="external">GitHub Pages</a> are served
+with CORS headers. We recommend GitHub Pages as a simple deployment platform.
+Or you could also upload assets using the <a href="https://cdn.aframe.io/" target="_blank" rel="external">A-Frame + Uploadcare
+Uploader</a>, a service that serves files with CORS headers set.</p>
+<h2 id="why-is-the-html-dom-not-updating-in-a-frame"><a href="#why-is-the-html-dom-not-updating-in-a-frame" class="headerlink" title="Why is the HTML/DOM not updating in A-Frame?"></a>Why is the HTML/DOM not updating in A-Frame?</h2><p>For performance reasons, A-Frame does not update the DOM with component data.
+Use the <a href="https://aframe.io/docs/0.3.0/components/debug.html">debug component</a> to enable component-to-DOM serialization.</p>
+<h2 id="why-does-my-video-not-play-on-mobile"><a href="#why-does-my-video-not-play-on-mobile" class="headerlink" title="Why does my video not play on mobile?"></a>Why does my video not play on mobile?</h2><p>Mobile browsers have limitations with displaying inline video.</p>
+<p>Because of an <a href="https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/iAdJSProgGuide/PlayingVideosinAds/PlayingVideosinAds.html" target="_blank" rel="external">iOS platform restriction</a> in order to get inline video
+(with or without autoplay), we must:</p>
+<ul>
+<li>Set the <code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</code> meta tag (will be injected if missing).</li>
+<li>Set the <code>webkit-playsinline</code> attribute to the video element (is automatically added to all videos).</li>
+<li>Pin the webpage to the iOS homescreen.</li>
+</ul>
+<p>Inline video support on iOS 10 may change this. On certain Android devices or
+browsers, we must:</p>
+<ul>
+<li>Require user interaction to trigger the video (such as a click or tap event). See <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=178297" target="_blank" rel="external">Chromium Bug 178297</a>.</li>
+</ul>
+<p>We will try to create a video boilerplate that has all the configurations to
+work on mobile devices.</p>
+<h2 id="how-do-i-display-lt-iframe-gt-s-or-render-html-in-a-frame"><a href="#how-do-i-display-lt-iframe-gt-s-or-render-html-in-a-frame" class="headerlink" title="How do I display &lt;iframe&gt;s or render HTML in A-Frame?"></a>How do I display <code>&lt;iframe&gt;</code>s or render HTML in A-Frame?</h2><p>As a limitation of the browser, <code>&lt;iframe&gt;</code>s cannot be displayed in A-Frame,
+used as a texture, or be mixed with WebGL or WebVR. While it is possible to
+[overlay an iframe on top of the scene, it will not display properly in VR with
+proper distortion nor can it be shaded.</p>
+<p>Solutions involve painting to a <code>&lt;canvas&gt;</code> and using the canvas as source for a
+texture. There are some components in the ecosystem that enable this:</p>
+<ul>
+<li><a href="https://github.com/mayognaise/aframe-html-shader" target="_blank" rel="external">HTML Shader</a></li>
+</ul>
+<h2 id="how-do-i-display-text-in-a-frame"><a href="#how-do-i-display-text-in-a-frame" class="headerlink" title="How do I display text in A-Frame?"></a>How do I display text in A-Frame?</h2><p>There are several possible solutions:</p>
+<ul>
+<li><a href="https://github.com/bryik/aframe-bmfont-text-component" target="_blank" rel="external">Bitmap Font Text Component (recommended)</a></li>
+<li><a href="https://github.com/ngokevin/aframe-text-component" target="_blank" rel="external">Text Geometry Component</a></li>
+<li><a href="https://github.com/mayognaise/aframe-html-shader" target="_blank" rel="external">HTML Shader</a></li>
+<li><a href="https://github.com/maxkrieger/aframe-textwrap-component" target="_blank" rel="external">Text Wrap Component</a></li>
+<li>Use images</li>
+</ul>
+<h2 id="where-can-i-find-assets"><a href="#where-can-i-find-assets" class="headerlink" title="Where can I find assets?"></a>Where can I find assets?</h2><p>In general, <a href="https://github.com/neutraltone/awesome-stock-resources" target="_blank" rel="external">awesome-stock-resources</a> is a great collection of
+free assets.</p>
+<p>For 3D models, also check out:</p>
+<ul>
+<li><a href="http://clara.io" target="_blank" rel="external">Clara.io</a></li>
+<li><a href="https://3dwarehouse.sketchup.com/" target="_blank" rel="external">Sketchup’s 3D Warehouse</a></li>
+<li><a href="http://archive3d.net/" target="_blank" rel="external">Archive3D</a></li>
+<li><a href="http://www.turbosquid.com/Search/3D-Models/free" target="_blank" rel="external">TurboSquid</a></li>
+</ul>
+<h2 id="can-i-render-youtube-videos-as-a-texture"><a href="#can-i-render-youtube-videos-as-a-texture" class="headerlink" title="Can I render YouTube videos as a texture?"></a>Can I render YouTube videos as a texture?</h2><p>With manual effort, you could either proxy YouTube videos as a texture or
+download them locally to serve, but that is against their terms of service.</p>
+<p>For inspiration, Chris Van has <a href="https://github.com/cvan/webvr360" target="_blank" rel="external">a project that proxies YouTube videos for
+WebVR</a>.</p>
+<h2 id="can-i-add-links-to-my-scene"><a href="#can-i-add-links-to-my-scene" class="headerlink" title="Can I add links to my scene?"></a>Can I add links to my scene?</h2><p>We (Mozilla) are currently improving the link traversal user experience within
+the browser as well as helping iterate the API. Once link traversal gets into a
+good state on the platform side, A-Frame should have a link component ready.</p>
+<h2 id="what-type-of-units-does-a-frame-use"><a href="#what-type-of-units-does-a-frame-use" class="headerlink" title="What type of units does A-Frame use?"></a>What type of units does A-Frame use?</h2><p>A-Frame uses life-like meters. It maintains a 1:1 ratio. 5 units in A-Frame is
+equal to 5 meters in real life. Furthermore, when using programs like Blender,
+configured in imperial or metric mode, measurements will also translate 1:1. 10
+feet in Blender will equal 10 feet in real life.</p>
+<h2 id="how-is-a-frame-different-from-vrml"><a href="#how-is-a-frame-different-from-vrml" class="headerlink" title="How is A-Frame different from VRML?"></a>How is A-Frame different from VRML?</h2><p>A-Frame is a JavaScript framework, not a 3D or web standard. It embraces the
+<a href="https://extensiblewebmanifesto.org/" target="_blank" rel="external">Extensible Web Manifesto</a>. Only look at standardization as winning
+ideas emerge.</p>
+<p>More technically, A-Frame is built on top of an <a href="../core/index.md">entity-component-system
+pattern</a>, is fully extensible, and integrates well with all of the
+existing web development frameworks and tools.</p>
+<h2 id="does-a-frame-support-x-feature"><a href="#does-a-frame-support-x-feature" class="headerlink" title="Does A-Frame support X feature?"></a>Does A-Frame support <code>X</code> feature?</h2><p>A-Frame ships with a handful of components and primitives. However being based
+on top of an <a href="../core/index.md">entity-component-system pattern</a>, if a feature doesn’t
+exist, you can <a href="../core/component.md">write a component</a> to enable it. Or if one of the
+standard components is too limiting, you can <a href="https://github.com/aframevr/aframe/tree/master/src/components" target="_blank" rel="external">fork it</a>.</p>
+<p>Check out what the features that the ecosystem has enabled at <a href="https://github.com/aframevr/awesome-aframe#components" target="_blank" rel="external">awesome-aframe’s
+collection of components</a>.</p>
+<h2 id="does-a-frame-support-x-library-or-framework"><a href="#does-a-frame-support-x-library-or-framework" class="headerlink" title="Does A-Frame support X library or framework?"></a>Does A-Frame support <code>X</code> library or framework?</h2><p>A-Frame is built on top of the DOM so most libraries and frameworks work out
+of the box. We’ve found A-Frame works wonderfully with:</p>
+<ul>
+<li><a href="https://github.com/ngokevin/aframe-react" target="_blank" rel="external">React</a></li>
+<li><a href="https://www.youtube.com/watch?v=Tb2b5nFmmsM" target="_blank" rel="external">D3.js</a></li>
+<li><a href="https://github.com/ngokevin/aframe-template-component" target="_blank" rel="external">Handlebars/Mustache/Nunjucks/Jade</a></li>
+<li><a href="https://github.com/vladbalan/meteor-aframe" target="_blank" rel="external">Meteor</a></li>
+<li><a href="https://github.com/Popmotion/aframe-role" target="_blank" rel="external">Popmotion Role</a></li>
+</ul>
+<h2 id="does-a-frame-support-leap-motion"><a href="#does-a-frame-support-leap-motion" class="headerlink" title="Does A-Frame support Leap Motion?"></a>Does A-Frame support Leap Motion?</h2><p>Don McCurdy has published a <a href="https://github.com/openleap/aframe-leap-hands" target="_blank" rel="external">Leap Hands component</a> for Leap Motion
+controls.</p>
+<p>Dr. Ryan James has built a <a href="https://github.com/drryanjames/CadaVR" target="_blank" rel="external">medical education project</a> that also
+features Leap Motion controls code.</p>
+<h2 id="which-devices-headsets-platforms-does-a-frame-support"><a href="#which-devices-headsets-platforms-does-a-frame-support" class="headerlink" title="Which devices, headsets, platforms does A-Frame support?"></a>Which devices, headsets, platforms does A-Frame support?</h2><p>See <em><a href="./device-and-platform-support.md">Device and Platform Support</a></em>.</p>
+<h2 id="how-do-i-improve-performance"><a href="#how-do-i-improve-performance" class="headerlink" title="How do I improve performance?"></a>How do I improve performance?</h2><p>See <em><a href="./best-practices.md#performance">Best Practices</a></em>.</p>
+<h2 id="how-can-i-share-my-work"><a href="#how-can-i-share-my-work" class="headerlink" title="How can I share my work?"></a>How can I share my work?</h2><p>If you make something with A-Frame, please share it with us! Any of the
+channels below are great:</p>
+<ul>
+<li>Tweet at us <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>.</li>
+<li>Share with the community on the community <a href="https://aframevr-slack.herokuapp.com/" target="_blank" rel="external">A-Frame Slack channel</a>.</li>
+<li>Ask us to feature it on <a href="https://aframe.io/blog/">A Week of A-Frame</a>.</li>
+<li>Add it to the collection on the <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external">awesome-aframe repository</a>.</li>
+<li>Share with the greater community on the <a href="https://webvr-slack.herokuapp.com/" target="_blank" rel="external">WebVR Slack channel</a>.</li>
+<li>Post it on the <a href="https://www.reddit.com/r/webvr" target="_blank" rel="external">WebVR subreddit</a>.</li>
+<li>Write a case study and ask us to feature on the <a href="https://aframe.io/blog/">A-Frame Blog</a>.</li>
+</ul>
+<h2 id="how-can-i-get-in-touch-with-the-a-frame-team"><a href="#how-can-i-get-in-touch-with-the-a-frame-team" class="headerlink" title="How can I get in touch with the A-Frame team?"></a>How can I get in touch with the A-Frame team?</h2><p>We are an extremely responsive and helpful bunch:</p>
+<ul>
+<li>Got a question? Ask us using the <a href="http://stackoverflow.com/questions/tagged/aframe" target="_blank" rel="external">A-Frame StackOverflow tag</a>.</li>
+<li>Want to chat? Hang out with us on the community <a href="https://aframevr-slack.herokuapp.com/" target="_blank" rel="external">A-Frame Slack channel</a>.</li>
+<li>Want to share? Tweet at us at <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>.</li>
+<li>Find an issue? File issues on the <a href="http://github.com/aframevr/aframe" target="_blank" rel="external">A-Frame GitHub repo</a>.</li>
+</ul>
+<p>We love questions, feedback, bug reports, and pull requests!</p>
+<h2 id="where-is-the-roadmap"><a href="#where-is-the-roadmap" class="headerlink" title="Where is the roadmap?"></a>Where is the roadmap?</h2><p>Yes, check out the <a href="https://github.com/aframevr/aframe/blob/master/ROADMAP.md" target="_blank" rel="external">A-Frame Roadmap on GitHub</a></p>
+<h2 id="do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”"><a href="#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”" class="headerlink" title="Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?"></a>Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?</h2><p>A-Frame!</p>
+
+    
+
+    <!-- Previous / Next navigation. -->
+    <footer class="footer guide-links c">
+      
+        <span class="float-left">
+          <a href="/docs/0.4.0/introduction/best-practices.html" class="guide-link guide-link-left">← Best Practices </a></span>
+      
+      
+    </footer>
+
+    <footer class="footer footnote">
+  <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/faq.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+</footer>
+
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
     apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
     indexName: 'aframe',
     algoliaOptions: {
@@ -55,4 +1100,9 @@
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));</script></body></html>
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+</script>
+
+    
+  </body>
+</html>

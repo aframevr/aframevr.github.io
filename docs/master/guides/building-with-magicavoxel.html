@@ -1,14 +1,892 @@
-<!DOCTYPE html><html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-site-base-url="https://aframe.io" data-site-root-path="/" data-site-home-url="https://aframe.io/" data-lib-home-url="https://aframe.io/" data-lib-examples-url="https://aframe.io/aframe/examples" data-title="{title} | A-Frame" data-is-spa="false" data-ga-id="UA-24056643-4" data-aframe-version="0.5.0" data-docs-version="master"><head><title>Building with MagicaVoxel – A-Frame</title><script>var host = window.location.protocol + '//' + window.location.hostname;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.5.0"
+      data-docs-version="master">
+  <head>
+    <title>Building with MagicaVoxel – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
   if (window.location.protocol === 'http:' &&
       window.location.hostname === 'https://aframe.io') {
     window.location.href = 'https:' + window.location.href.substring(6);
-  }</script><meta charset="utf-8"><meta name="robots" content="NOINDEX"><meta name="description" content=""><meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="canonical" href="https://aframe.io"><link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet"><meta property="fb:app_id" content="1535794316743373"><meta property="og:title" content="Building with MagicaVoxel – A-Frame"><meta property="og:site_name" content="A-Frame"><meta property="og:type" content="website"><meta property="og:url" content="https://aframe.io"><meta property="og:description" content=""><meta property="og:image" content="http://aframe.io/images/card.jpg?v2"><meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@aframevr"><meta name="twitter:creator" content="@aframevr"><meta name="twitter:title" content="Building with MagicaVoxel – A-Frame"><meta name="twitter:description" content=""><meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="black"><link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png"><link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Building with MagicaVoxel – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Building with MagicaVoxel – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-24056643-4', 'auto');
-  ga('send', 'pageview');</script><script src="/js/compat.js"></script><link rel="stylesheet" href="/css/secondary.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"><link rel="stylesheet" href="/css/search.css"></head><body data-page-layout="docs" data-page-type="guides"><main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links"><div id="secondary-nav" class="secondary-nav"><header id="header" class="header"><a id="logo" class="logo" href="/" title="A-Frame"><span class="logo__wordmark">A-Frame</span></a></header><div class="docs-search-wrapper docs-search-sidebar"><input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div><ul id="nav" class="nav"><li class="nav-item"><a href="/docs/0.5.0/introduction/" class="nav-link nav-link-docs current nav-link-disabled"><span>Docs</span></a></li><li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li><li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs"><span>Blog</span></a></li><li class="nav-item"><a href="/community/" class="nav-link nav-link-docs"><span>Community</span></a></li><li data-slug="github" class="nav-item"><a href="https://github.com/aframevr/aframe/" class="nav-link nav-link-docs" rel="external" title="A-Frame project repository on GitHub"><span>GitHub</span></a></li><li data-slug="slug" class="nav-item"><a href="https://aframevr-slack.herokuapp.com" class="nav-link nav-link-docs" rel="external" title="A-Frame Slack (sign up)"><span>Slack</span></a></li></ul></div><div class="list"><label class="subnav-label" for="docs-version"><b>Version</b></label><select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')"><option selected data-href="/docs/master/introduction/">master</option><option false data-href="/docs/0.5.0/introduction/">0.5.0</option><option false data-href="/docs/0.4.0/introduction/">0.4.0</option><option false data-href="/docs/0.3.0/introduction/">0.3.0</option><option false data-href="/docs/0.2.0/guide/">0.2.0</option><option false data-href="/docs/0.1.0/guide/">0.1.0</option></select><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/master/introduction/" class="section-title-link section-title-link-inactive">Introduction</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/introduction/" class="subnav-link">Introduction</a></li><li class="subnav-item"><a href="/docs/master/introduction/getting-started.html" class="subnav-link">Getting Started</a></li><li class="subnav-item"><a href="/docs/master/introduction/device-and-platform-support.html" class="subnav-link">Device & Platform Support</a></li><li class="subnav-item"><a href="/docs/master/introduction/best-practices.html" class="subnav-link">Best Practices</a></li><li class="subnav-item"><a href="/docs/master/introduction/faq.html" class="subnav-link">FAQ</a></li></ol><h3 class="section-title docs-section-title section-title-active"><a href="/docs/master/guides/" class="section-title-link section-title-link-active">Guides</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/guides/" class="subnav-link">Building a Basic Scene</a></li><li class="subnav-item"><a href="/docs/master/guides/using-the-aframe-inspector.html" class="subnav-link">Using the A-Frame Inspector</a></li><li class="subnav-item"><a href="/docs/master/guides/building-360-image-gallery.html" class="subnav-link">Building a 360&deg; Image Gallery</a></li><li class="subnav-item"><a href="/docs/master/guides/building-with-components.html" class="subnav-link">Building with Components</a></li><li class="subnav-item"><a href="/docs/master/guides/building-a-360-image-gallery.html" class="subnav-link">Building a 360&deg; Image Gallery</a></li><li class="subnav-item"><a href="/docs/master/guides/using-javascript-and-dom-apis.html" class="subnav-link">Using JavaScript and DOM APIs</a></li><li class="subnav-item"><a href="/docs/master/guides/using-with-threejs.html" class="subnav-link">Using with three.js</a></li><li class="subnav-item"><a href="/docs/master/guides/writing-a-component.html" class="subnav-link">Writing a Component</a></li><li class="subnav-item subnav-item-current"><a href="/docs/master/guides/building-with-magicavoxel.html" class="subnav-link current">Building with MagicaVoxel</a></li><li class="subnav-item"><a href="/docs/master/guides/publishing-an-aframe-site.html" class="subnav-link">Publishing an A-Frame Site</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/master/core/" class="section-title-link section-title-link-inactive">Concepts and API</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/core/" class="subnav-link">Entity-Component-System</a></li><li class="subnav-item"><a href="/docs/master/core/entity.html" class="subnav-link">Entity</a></li><li class="subnav-item"><a href="/docs/master/core/component.html" class="subnav-link">Component</a></li><li class="subnav-item"><a href="/docs/master/core/systems.html" class="subnav-link">System</a></li><li class="subnav-item"><a href="/docs/master/core/scene.html" class="subnav-link">Scene</a></li><li class="subnav-item"><a href="/docs/master/core/animations.html" class="subnav-link">Animations</a></li><li class="subnav-item"><a href="/docs/master/core/mixins.html" class="subnav-link">Mixins</a></li><li class="subnav-item"><a href="/docs/master/core/asset-management-system.html" class="subnav-link">Asset Management System</a></li><li class="subnav-item"><a href="/docs/master/core/AFRAME.html" class="subnav-link">AFRAME Globals</a></li><li class="subnav-item"><a href="/docs/master/core/utils.html" class="subnav-link">Utils</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/master/components/" class="section-title-link section-title-link-inactive">Components</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/components/blend-model.html" class="subnav-link">blend-model</a></li><li class="subnav-item"><a href="/docs/master/components/camera.html" class="subnav-link">camera</a></li><li class="subnav-item"><a href="/docs/master/components/collada-model.html" class="subnav-link">collada-model</a></li><li class="subnav-item"><a href="/docs/master/components/cursor.html" class="subnav-link">cursor</a></li><li class="subnav-item"><a href="/docs/master/components/daydream-controls.html" class="subnav-link">daydream-controls</a></li><li class="subnav-item"><a href="/docs/master/components/debug.html" class="subnav-link">debug</a></li><li class="subnav-item"><a href="/docs/master/components/embedded.html" class="subnav-link">embedded</a></li><li class="subnav-item"><a href="/docs/master/components/fog.html" class="subnav-link">fog</a></li><li class="subnav-item"><a href="/docs/master/components/gearvr-controls.html" class="subnav-link">gearvr-controls</a></li><li class="subnav-item"><a href="/docs/master/components/geometry.html" class="subnav-link">geometry</a></li><li class="subnav-item"><a href="/docs/master/components/gltf-model.html" class="subnav-link">gltf-model</a></li><li class="subnav-item"><a href="/docs/master/components/hand-controls.html" class="subnav-link">hand-controls</a></li><li class="subnav-item"><a href="/docs/master/components/keyboard-shortcuts.html" class="subnav-link">keyboard-shortcuts</a></li><li class="subnav-item"><a href="/docs/master/components/light.html" class="subnav-link">light</a></li><li class="subnav-item"><a href="/docs/master/components/look-controls.html" class="subnav-link">look-controls</a></li><li class="subnav-item"><a href="/docs/master/components/material.html" class="subnav-link">material</a></li><li class="subnav-item"><a href="/docs/master/components/obj-model.html" class="subnav-link">obj-model</a></li><li class="subnav-item"><a href="/docs/master/components/oculus-touch-controls.html" class="subnav-link">oculus-touch-controls</a></li><li class="subnav-item"><a href="/docs/master/components/pool.html" class="subnav-link">pool</a></li><li class="subnav-item"><a href="/docs/master/components/position.html" class="subnav-link">position</a></li><li class="subnav-item"><a href="/docs/master/components/raycaster.html" class="subnav-link">raycaster</a></li><li class="subnav-item"><a href="/docs/master/components/rotation.html" class="subnav-link">rotation</a></li><li class="subnav-item"><a href="/docs/master/components/scale.html" class="subnav-link">scale</a></li><li class="subnav-item"><a href="/docs/master/components/screenshot.html" class="subnav-link">screenshot</a></li><li class="subnav-item"><a href="/docs/master/components/shadow.html" class="subnav-link">shadow</a></li><li class="subnav-item"><a href="/docs/master/components/sound.html" class="subnav-link">sound</a></li><li class="subnav-item"><a href="/docs/master/components/stats.html" class="subnav-link">stats</a></li><li class="subnav-item"><a href="/docs/master/components/text.html" class="subnav-link">text</a></li><li class="subnav-item"><a href="/docs/master/components/tracked-controls.html" class="subnav-link">tracked-controls</a></li><li class="subnav-item"><a href="/docs/master/components/visible.html" class="subnav-link">visible</a></li><li class="subnav-item"><a href="/docs/master/components/vive-controls.html" class="subnav-link">vive-controls</a></li><li class="subnav-item"><a href="/docs/master/components/vr-mode-ui.html" class="subnav-link">vr-mode-ui</a></li><li class="subnav-item"><a href="/docs/master/components/wasd-controls.html" class="subnav-link">wasd-controls</a></li></ol><h3 class="section-title docs-section-title section-title-inactive"><a href="/docs/master/primitives/" class="section-title-link section-title-link-inactive">Primitives</a></h3><ol class="subnav section-subnav"><li class="subnav-item"><a href="/docs/master/primitives/" class="subnav-link">Introduction</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-box.html" class="subnav-link">&lt;a-box&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-camera.html" class="subnav-link">&lt;a-camera&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-circle.html" class="subnav-link">&lt;a-circle&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-collada-model.html" class="subnav-link">&lt;a-collada-model&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-cone.html" class="subnav-link">&lt;a-cone&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-cursor.html" class="subnav-link">&lt;a-cursor&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-curvedimage.html" class="subnav-link">&lt;a-curvedimage&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-cylinder.html" class="subnav-link">&lt;a-cylinder&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-dodecahedron.html" class="subnav-link">&lt;a-dodecahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-gltf-model.html" class="subnav-link">&lt;a-gltf-model&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-icosahedron.html" class="subnav-link">&lt;a-icosahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-image.html" class="subnav-link">&lt;a-image&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-light.html" class="subnav-link">&lt;a-light&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-obj-model.html" class="subnav-link">&lt;a-obj-model&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-octahedron.html" class="subnav-link">&lt;a-octahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-plane.html" class="subnav-link">&lt;a-plane&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-ring.html" class="subnav-link">&lt;a-ring&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-sky.html" class="subnav-link">&lt;a-sky&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-sound.html" class="subnav-link">&lt;a-sound&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-sphere.html" class="subnav-link">&lt;a-sphere&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-tetrahedron.html" class="subnav-link">&lt;a-tetrahedron&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-text.html" class="subnav-link">&lt;a-text&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-torus-knot.html" class="subnav-link">&lt;a-torus-knot&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-torus.html" class="subnav-link">&lt;a-torus&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-video.html" class="subnav-link">&lt;a-video&gt;</a></li><li class="subnav-item"><a href="/docs/master/primitives/a-videosphere.html" class="subnav-link">&lt;a-videosphere&gt;</a></li></ol></div></aside><div class="content content--structured content--guides copy"><div class="mobile-header"><a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a><h1><a href="/">A-Frame</a></h1><span></span></div><script>(function() {
+  ga('send', 'pageview');
+</script>
+
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="guides">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.5.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option selected
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/master/introduction/"
+           class="section-title-link section-title-link-inactive">
+          Introduction
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/getting-started.html"
+               class="subnav-link">
+              Getting Started
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/device-and-platform-support.html"
+               class="subnav-link">
+              Device & Platform Support
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <a href="/docs/master/guides/"
+           class="section-title-link section-title-link-active">
+          Guides
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/using-the-aframe-inspector.html"
+               class="subnav-link">
+              Using the A-Frame Inspector
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/using-javascript-and-dom-apis.html"
+               class="subnav-link">
+              Using JavaScript and DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/using-with-threejs.html"
+               class="subnav-link">
+              Using with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/master/guides/building-with-magicavoxel.html"
+               class="subnav-link current">
+              Building with MagicaVoxel
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/master/core/"
+           class="section-title-link section-title-link-inactive">
+          Concepts and API
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/AFRAME.html"
+               class="subnav-link">
+              AFRAME Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/master/components/"
+           class="section-title-link section-title-link-inactive">
+          Components
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/blend-model.html"
+               class="subnav-link">
+              blend-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <a href="/docs/master/primitives/"
+           class="section-title-link section-title-link-inactive">
+          Primitives
+        </a>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+<!-- Documentation. -->
+<div class="content content--structured content--guides copy">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
     var sidebarEl = document.querySelector('#sidebar');
     var toggleEl = document.querySelector('#sidebar-toggle');
 
@@ -44,7 +922,169 @@
       }
       return null;
     }
-  })();</script><div class="copy__wrap"><div class="page__section docs-header"><p><a href="/docs/master/guides/" class="borderless-link">master &rsaquo; Guides</a></p><div class="docs-search-wrapper docs-search-docs"><input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div></div><h1 class="page__title">Building with MagicaVoxel</h1><blockquote><p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p></blockquote><p><a href="https://ephtracy.github.io/" target="_blank" rel="external">MagicaVoxel</a> is a free and user-friendly tool for building 3D scenes and models using <em>voxels</em> (i.e., blocks). MagicaVoxel makes modeling super easy, similar to building in Minecraft.</p><p><img src="https://i.imgur.com/XYYXjIn.jpg" alt="magicavoxel"></p><h2 id="installation"><a href="#installation" class="headerlink" title="Installation"></a>Installation</h2><p>MagicaVoxel works on Windows and OS X. On the <a href="https://ephtracy.github.io/" target="_blank" rel="external">MagicaVoxel homepage</a>, click the <em>Download</em> button and install the application:</p><p><img src="https://i.imgur.com/GmgdyHs.jpg" alt="magicavoxel install"></p><p>On macOS, open the MagicVoxel app file by clicking on it in Finder. Initially, you will see a message noting that you cannot open applications from unidentified developers. After dismissing that message, open the <em>Security &amp; Privacy</em> settings pane and click “Open Anyway” on the MagicVoxel app:</p><p><img src="http://i.imgur.com/DAsjv4F.png" alt="osx security"></p><p>Alternatively, you can find the MagicVoxel app file in Finder, right click on it, and then choose “Open” from the shortcut menu. In the subsequent dialogue click “Open” again. For more information, visit <a href="https://support.apple.com/kb/PH25088?locale=en_US" target="_blank" rel="external">Apple’s documentation</a> on unidentified developers.</p><h2 id="tutorial"><a href="#tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><p>The official tutorial video serves as a good introduction to using MagicaVoxel. The author quickly runs through many basic features in 10 minutes:</p><iframe width="560" height="315" src="https://www.youtube.com/embed/PPu7SJ1_bwc" frameborder="0" allowfullscreen></iframe><p>The best way to learn the MagicaVoxel UI is to click around, play with application controls, and pay attention to the tooltips on hover. Many developers are able to create their first scene within a half hour! Given the absence of official tutorials, however, the following serves as a quick guide to navigating the UI.</p><h3 id="viewport"><a href="#viewport" class="headerlink" title="Viewport"></a>Viewport</h3><p>The center panel hosts the viewport where we build our model. We can change the viewport our mouse/trackpad or the <code>wasd</code> keys:</p><ul><li><strong>Pan</strong>: Hold <code>&lt;space&gt; + &lt;right-click&gt;</code> and move the mouse or trackpad, or hold <code>&lt;space&gt;</code> and press one of the <code>&lt;a&gt;</code> or <code>&lt;d&gt;</code> keys.</li><li><strong>Rotate</strong>: Hold <code>&lt;right-click&gt;</code> and move the mouse or trackpad, or press one of the <code>&lt;a&gt;</code> or <code>&lt;d&gt;</code> keys.</li><li><strong>Zoom</strong>: Scroll up and down with the mouse or trackpad, or press one of the <code>&lt;w&gt;</code> or <code>&lt;s&gt;</code> keys.</li></ul><p><img src="http://imgur.com/vq34Mkk.jpg" alt="magicavoxel viewport"></p><p>The top right corner of the viewport allows you to change the bounding dimensions of the model. Note that in MagicaVoxel, the XY plane is horizontal and the Z axis points up.</p><h3 id="color-palette"><a href="#color-palette" class="headerlink" title="Color Palette"></a>Color Palette</h3><p>The left panel is the color palette. You can use the default palettes, modify them, create your own, and save them. The palette is tied to the scene so if you change from the palette a color that a voxel is using, the voxel will update its color. At the bottom, there are tools to define your own color with sliders or via copying and pasting hex or rgb values:</p><p><img src="https://i.imgur.com/vq34Mkk.jpg" alt="magicavoxel color palette"></p><h3 id="brushes"><a href="#brushes" class="headerlink" title="Brushes"></a>Brushes</h3><p>The brushes panel is to the right of the color palette. Brushes add, erase, or paint voxels in various shapes, sizes, and patterns. With a brush selected, simply click in the viewport on your model to use it:</p><p><img src="https://i.imgur.com/pqrUAFT.gif" alt="magicavoxel brushes"></p><p>There are six brushes:</p><ul><li><strong>V (Voxel)</strong>: Works on individual or discrete groups of voxels.</li><li><strong>F (Face)</strong>: Works on groups of adjacent voxels that are the same shape or color.</li><li><strong>B (Box)</strong>: Works on a 2-dimensional box of voxels where we control the area of the box by dragging.</li><li><strong>L (Line)</strong>: Works on a 1-dimensional line of voxels where we control the length of the line by dragging.</li><li><strong>C (Center)</strong>: Works on a circle or square of voxels where we control the radius of the shape by dragging.</li><li><strong>P (Pattern)</strong>: The pattern brush lets us use other MagicaVoxel models and paste them into the current model. Useful for placing repeated shapes.</li></ul><h3 id="actions"><a href="#actions" class="headerlink" title="Actions"></a>Actions</h3><p>There are four actions that work in conjunction with the brush type:</p><ul><li><strong>Attach (t)</strong>: Add voxel(s).</li><li><strong>Erase (r)</strong>: Remove voxel(s).</li><li><strong>Paint (g)</strong>: Change color of existing voxel(s).</li><li><strong>Move</strong>: Moves entire model. Unfortunately, there is no way to select individual voxel(s) to move.</li></ul><p><img src="https://i.imgur.com/uLQcQrT.gif" alt="magicavoxel actions"></p><p>Below the actions are three color picking tools to pick, remove, and place color. It is useful to know the <code>&lt;alt&gt; + &lt;click&gt;</code> shortcut to select a color by clicking on a voxel.</p><h2 id="exporting-to-a-frame"><a href="#exporting-to-a-frame" class="headerlink" title="Exporting to A-Frame"></a>Exporting to A-Frame</h2><p>After creating your model, you can export it to an A-Frame scene for the world to see! We recommend exporting to either the <code>.PLY</code> or <code>.OBJ</code> formats.</p><h3 id="ply-with-baked-shadows"><a href="#ply-with-baked-shadows" class="headerlink" title=".PLY (with Baked Shadows)"></a><code>.PLY</code> (with Baked Shadows)</h3><p><img src="https://i.imgur.com/OIdqrSH.jpg" alt="magicavoxel ply"></p><p>The <a href="https://wikipedia.org/wiki/PLY_(file_format)" target="_blank" rel="external">PLY</a> format produces a large file size but includes <em>baked shadows</em>, meaning the rendered shadow colors are stored in the file. The A-Frame scenes shown above produce a ~5MB file size with baked shadows. It depends on your desired constraints whether or not file sizes on this order is tolerable, but exporting with baked shadows will look visually great in A-Frame.</p><p>To see the <code>.PLY</code> model in A-Frame, use the <code>ply-model</code> component found in Don McCurdy’s <a href="https://github.com/donmccurdy/aframe-extras/" target="_blank" rel="external">aframe-extras</a>. Currently the model must be rotated by <code>-90 0 0</code> to display properly:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.5.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myPlyModel"</span> <span class="attr">src</span>=<span class="string">"myModel.ply"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">ply-model</span>=<span class="string">"src: #myPlyModel"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure><h3 id="obj"><a href="#obj" class="headerlink" title=".OBJ"></a><code>.OBJ</code></h3><p>The <code>.OBJ</code> format produces a much smaller file size than <code>.PLY</code>, but MagicaVoxel does not support baked exports to <code>.OBJ</code>. Exporting to <code>.OBJ</code> will also produce a <code>.MTL</code> for the colors and textures. You will need to include both and put them in the same directory as each other.</p><p>To render a <code>.OBJ</code> in A-Frame with HTML:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.5.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myModelObj"</span> <span class="attr">src</span>=<span class="string">"myModel.obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myModelMtl"</span> <span class="attr">src</span>=<span class="string">"myModel.mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">obj-model</span>=<span class="string">"obj: #myModelObj; mtl: #myModelMtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure><p>We will later try to produce guides to baking lightmaps and shadowmaps into the <code>.OBJ</code> using <a href="https://www.blender.org/" target="_blank" rel="external">Blender</a>.</p><footer class="footer guide-links c"><span class="float-left"><a href="/docs/master/guides/writing-a-component.html" class="guide-link guide-link-left">← Writing a Component </a></span><span class="float-right"><a href="/docs/master/guides/publishing-an-aframe-site.html" class="guide-link guide-link-right">Publishing an A-Frame Site →</a></span></footer><footer class="footer footnote"><p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p><p>Found a typo or suggestion for the docs?<br><br><a href="https://github.com/aframevr/aframe/edit/master/docs/guides/building-with-magicavoxel.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p></footer></div></div></main><script src="/js/common.js"></script><script src="/js/ga.js"></script><script src="/js/docs.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script><script type="text/javascript">var searchConfig = {
+  })();
+</script>
+
+
+  <div class="copy__wrap">
+    <div class="page__section docs-header">
+      <p>
+        <a href="/docs/master/guides/" class="borderless-link">
+          master &rsaquo; Guides
+        </a>
+      </p>
+      
+
+
+<div class="docs-search-wrapper docs-search-docs">
+  <input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+    </div>
+    <h1 class="page__title">
+      Building with MagicaVoxel
+    </h1>
+
+    
+    
+      <blockquote>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/0.5.0/introduction/">documentation for the current 0.5.0 version</a></p>
+</blockquote>
+
+    
+
+    
+    
+      <p><a href="https://ephtracy.github.io/" target="_blank" rel="external">MagicaVoxel</a> is a free and user-friendly tool for building
+3D scenes and models using <em>voxels</em> (i.e., blocks). MagicaVoxel makes modeling super
+easy, similar to building in Minecraft.</p>
+<p><img src="https://i.imgur.com/XYYXjIn.jpg" alt="magicavoxel"></p>
+<div id="toc"></div>
+
+<h2 id="installation"><a href="#installation" class="headerlink" title="Installation"></a>Installation</h2><p>MagicaVoxel works on Windows and OS X. On the <a href="https://ephtracy.github.io/" target="_blank" rel="external">MagicaVoxel
+homepage</a>, click the <em>Download</em> button and install the application:</p>
+<p><img src="https://i.imgur.com/GmgdyHs.jpg" alt="magicavoxel install"></p>
+<p>On macOS, open the MagicVoxel app file by clicking on it in Finder. Initially,
+you will see a message noting that you cannot open applications from
+unidentified developers. After dismissing that message, open the
+<em>Security &amp; Privacy</em> settings pane and click “Open Anyway” on the MagicVoxel app:</p>
+<p><img src="http://i.imgur.com/DAsjv4F.png" alt="osx security"></p>
+<p>Alternatively, you can find the MagicVoxel app file in Finder, right click on it,
+and then choose “Open” from the shortcut menu. In the subsequent dialogue
+click “Open” again. For more information, visit <a href="https://support.apple.com/kb/PH25088?locale=en_US" target="_blank" rel="external">Apple’s documentation</a> on unidentified developers.</p>
+<h2 id="tutorial"><a href="#tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><p>The official tutorial video serves as a good introduction to using MagicaVoxel.
+The author quickly runs through many basic features in 10 minutes:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PPu7SJ1_bwc" frameborder="0" allowfullscreen></iframe>
+
+<p>The best way to learn the MagicaVoxel UI is to click around, play with application controls,
+and pay attention to the tooltips on hover. Many developers are able to create their first
+scene within a half hour!  Given the absence of official tutorials, however,
+the following serves as a quick guide to navigating the UI.</p>
+<h3 id="viewport"><a href="#viewport" class="headerlink" title="Viewport"></a>Viewport</h3><p>The center panel hosts the viewport where we build our model. We can change the
+viewport our mouse/trackpad or the <code>wasd</code> keys:</p>
+<ul>
+<li><strong>Pan</strong>: Hold <code>&lt;space&gt; + &lt;right-click&gt;</code> and move the mouse or trackpad, or
+hold <code>&lt;space&gt;</code> and press one of the <code>&lt;a&gt;</code> or <code>&lt;d&gt;</code> keys.</li>
+<li><strong>Rotate</strong>: Hold <code>&lt;right-click&gt;</code> and move the mouse or trackpad, or press one
+of the <code>&lt;a&gt;</code> or <code>&lt;d&gt;</code> keys.</li>
+<li><strong>Zoom</strong>: Scroll up and down with the mouse or trackpad, or press one of the
+<code>&lt;w&gt;</code> or <code>&lt;s&gt;</code> keys.</li>
+</ul>
+<p><img src="http://imgur.com/vq34Mkk.jpg" alt="magicavoxel viewport"></p>
+<p>The top right corner of the viewport allows you to change the bounding dimensions
+of the model. Note that in MagicaVoxel, the XY plane is horizontal and the Z
+axis points up.</p>
+<h3 id="color-palette"><a href="#color-palette" class="headerlink" title="Color Palette"></a>Color Palette</h3><p>The left panel is the color palette. You can use the default palettes,
+modify them, create your own, and save them. The palette is tied to the scene
+so if you change from the palette a color that a voxel is using, the voxel will
+update its color. At the bottom, there are tools to define your own color with
+sliders or via copying and pasting hex or rgb values:</p>
+<p><img src="https://i.imgur.com/vq34Mkk.jpg" alt="magicavoxel color palette"></p>
+<h3 id="brushes"><a href="#brushes" class="headerlink" title="Brushes"></a>Brushes</h3><p>The brushes panel is to the right of the color palette. Brushes add, erase, or
+paint voxels in various shapes, sizes, and patterns. With a brush selected,
+simply click in the viewport on your model to use it:</p>
+<p><img src="https://i.imgur.com/pqrUAFT.gif" alt="magicavoxel brushes"></p>
+<p>There are six brushes:</p>
+<ul>
+<li><strong>V (Voxel)</strong>: Works on individual or discrete groups of voxels.</li>
+<li><strong>F (Face)</strong>: Works on groups of adjacent voxels that are the same shape or color.</li>
+<li><strong>B (Box)</strong>: Works on a 2-dimensional box of voxels where we control the area
+of the box by dragging.</li>
+<li><strong>L (Line)</strong>: Works on a 1-dimensional line of voxels where we control the
+length of the line by dragging.</li>
+<li><strong>C (Center)</strong>: Works on a circle or square of voxels where we control the
+radius of the shape by dragging.</li>
+<li><strong>P (Pattern)</strong>: The pattern brush lets us use other MagicaVoxel models and paste them
+into the current model. Useful for placing repeated shapes.</li>
+</ul>
+<h3 id="actions"><a href="#actions" class="headerlink" title="Actions"></a>Actions</h3><p>There are four actions that work in conjunction with the brush type:</p>
+<ul>
+<li><strong>Attach (t)</strong>: Add voxel(s).</li>
+<li><strong>Erase (r)</strong>: Remove voxel(s).</li>
+<li><strong>Paint (g)</strong>: Change color of existing voxel(s).</li>
+<li><strong>Move</strong>: Moves entire model. Unfortunately, there is no way to select
+individual voxel(s) to move.</li>
+</ul>
+<p><img src="https://i.imgur.com/uLQcQrT.gif" alt="magicavoxel actions"></p>
+<p>Below the actions are three color picking tools to pick, remove, and place
+color. It is useful to know the <code>&lt;alt&gt; + &lt;click&gt;</code> shortcut to select a color by
+clicking on a voxel.</p>
+<h2 id="exporting-to-a-frame"><a href="#exporting-to-a-frame" class="headerlink" title="Exporting to A-Frame"></a>Exporting to A-Frame</h2><p>After creating your model, you can export it to an A-Frame scene for the world
+to see! We recommend exporting to either the <code>.PLY</code> or <code>.OBJ</code> formats.</p>
+<h3 id="ply-with-baked-shadows"><a href="#ply-with-baked-shadows" class="headerlink" title=".PLY (with Baked Shadows)"></a><code>.PLY</code> (with Baked Shadows)</h3><p><img src="https://i.imgur.com/OIdqrSH.jpg" alt="magicavoxel ply"></p>
+<p>The <a href="https://wikipedia.org/wiki/PLY_(file_format)" target="_blank" rel="external">PLY</a> format produces a large file size but includes <em>baked
+shadows</em>, meaning the rendered shadow colors are stored in the file. The
+A-Frame scenes shown above produce a ~5MB file size with baked shadows.
+It depends on your desired constraints whether or not file sizes on this order
+is tolerable, but exporting with baked shadows will look visually great in
+A-Frame.</p>
+<p>To see the <code>.PLY</code> model in A-Frame, use the <code>ply-model</code> component found
+in Don McCurdy’s <a href="https://github.com/donmccurdy/aframe-extras/" target="_blank" rel="external">aframe-extras</a>. Currently the model must be
+rotated by <code>-90 0 0</code> to display properly:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.5.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myPlyModel"</span> <span class="attr">src</span>=<span class="string">"myModel.ply"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">ply-model</span>=<span class="string">"src: #myPlyModel"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="obj"><a href="#obj" class="headerlink" title=".OBJ"></a><code>.OBJ</code></h3><p>The <code>.OBJ</code> format produces a much smaller file size than <code>.PLY</code>, but
+MagicaVoxel does not support baked exports to <code>.OBJ</code>. Exporting to <code>.OBJ</code> will
+also produce a <code>.MTL</code> for the colors and textures. You will need to include both
+and put them in the same directory as each other.</p>
+<p>To render a <code>.OBJ</code> in A-Frame with HTML:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.5.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myModelObj"</span> <span class="attr">src</span>=<span class="string">"myModel.obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"myModelMtl"</span> <span class="attr">src</span>=<span class="string">"myModel.mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">obj-model</span>=<span class="string">"obj: #myModelObj; mtl: #myModelMtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>We will later try to produce guides to baking lightmaps and shadowmaps into the
+<code>.OBJ</code> using <a href="https://www.blender.org/" target="_blank" rel="external">Blender</a>.</p>
+
+    
+
+    <!-- Previous / Next navigation. -->
+    <footer class="footer guide-links c">
+      
+        <span class="float-left">
+          <a href="/docs/master/guides/writing-a-component.html" class="guide-link guide-link-left">← Writing a Component </a></span>
+      
+      
+    </footer>
+
+    <footer class="footer footnote">
+  <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/guides/building-with-magicavoxel.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+</footer>
+
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
     apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
     indexName: 'aframe',
     algoliaOptions: {
@@ -55,4 +1095,9 @@
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));</script></body></html>
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+</script>
+
+    
+  </body>
+</html>

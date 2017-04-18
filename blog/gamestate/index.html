@@ -1,14 +1,808 @@
-<!DOCTYPE html><html lang="en" data-is-home="false" data-is-mobile="false" data-supports-vr="false" data-supports-touch="false" data-site-base-url="https://aframe.io" data-site-root-path="/" data-site-home-url="https://aframe.io/" data-lib-home-url="https://aframe.io/" data-lib-examples-url="https://aframe.io/aframe/examples" data-title="{title} | A-Frame" data-is-spa="false" data-ga-id="UA-24056643-4" data-aframe-version="0.5.0" data-docs-version="0.5.0"><head><title>Managing Application and Game State in A-Frame – A-Frame</title><script>var host = window.location.protocol + '//' + window.location.hostname;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.5.0"
+      data-docs-version="0.5.0">
+  <head>
+    <title>Managing Application and Game State in A-Frame – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
   if (window.location.protocol === 'http:' &&
       window.location.hostname === 'https://aframe.io') {
     window.location.href = 'https:' + window.location.href.substring(6);
-  }</script><meta charset="utf-8"><meta name="robots" content="all"><meta name="description" content="Larger VR applications need a way of cleanly managing application or game state. Managing lots of client-side state in a non-tangled manner has been a large topic in 2D web development over the past couple of years which has given rise to libraries such as Redux. Having built sev"><meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="canonical" href="https://aframe.io"><link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet"><meta property="fb:app_id" content="1535794316743373"><meta property="og:title" content="Managing Application and Game State in A-Frame – A-Frame"><meta property="og:site_name" content="A-Frame"><meta property="og:type" content="website"><meta property="og:url" content="https://aframe.io"><meta property="og:description" content="Larger VR applications need a way of cleanly managing application or game state. Managing lots of client-side state in a non-tangled manner has been a large topic in 2D web development over the past couple of years which has given rise to libraries such as Redux. Having built sev"><meta property="og:image" content="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png"><meta property="og:image:secure_url" content="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@aframevr"><meta name="twitter:creator" content="@aframevr"><meta name="twitter:title" content="Managing Application and Game State in A-Frame – A-Frame"><meta name="twitter:description" content="Larger VR applications need a way of cleanly managing application or game state. Managing lots of client-side state in a non-tangled manner has been a large topic in 2D web development over the past couple of years which has given rise to libraries such as Redux. Having built sev"><meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="black"><link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png"><link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="all">
+    <meta name="description" content="Larger VR applications need a way of cleanly managing application or game
+state. Managing lots of client-side state in a non-tangled manner has been a
+large topic in 2D web development over the past couple of years which has given
+rise to libraries such as
+Redux. Having
+built sev">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Managing Application and Game State in A-Frame – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="Larger VR applications need a way of cleanly managing application or game
+state. Managing lots of client-side state in a non-tangled manner has been a
+large topic in 2D web development over the past couple of years which has given
+rise to libraries such as
+Redux. Having
+built sev">
+    <meta property="og:image" content="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png">
+    <meta property="og:image:secure_url" content="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Managing Application and Game State in A-Frame – A-Frame">
+    <meta name="twitter:description" content="Larger VR applications need a way of cleanly managing application or game
+state. Managing lots of client-side state in a non-tangled manner has been a
+large topic in 2D web development over the past couple of years which has given
+rise to libraries such as
+Redux. Having
+built sev">
+    <meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-24056643-4', 'auto');
-  ga('send', 'pageview');</script><script src="/js/compat.js"></script><link rel="stylesheet" href="/css/secondary.css"></head><body data-page-layout="blog" data-page-type=""><main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links"><div id="secondary-nav" class="secondary-nav"><header id="header" class="header"><a id="logo" class="logo" href="/" title="A-Frame"><span class="logo__wordmark">A-Frame</span></a></header><div class="docs-search-wrapper docs-search-sidebar"><input type="search" class="search-field" placeholder="&#128269; Search 0.5.0 docs&hellip;"><p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p></div><ul id="nav" class="nav"><li class="nav-item"><a href="/docs/0.5.0/introduction/" class="nav-link nav-link-docs"><span>Docs</span></a></li><li class="nav-item"><a href="/examples/" class="nav-link nav-link-docs"><span>Examples</span></a></li><li class="nav-item"><a href="/blog/" class="nav-link nav-link-docs current"><span>Blog</span></a></li><li class="nav-item"><a href="/community/" class="nav-link nav-link-docs"><span>Community</span></a></li><li data-slug="github" class="nav-item"><a href="https://github.com/aframevr/aframe/" class="nav-link nav-link-docs" rel="external" title="A-Frame project repository on GitHub"><span>GitHub</span></a></li><li data-slug="slug" class="nav-item"><a href="https://aframevr-slack.herokuapp.com" class="nav-link nav-link-docs" rel="external" title="A-Frame Slack (sign up)"><span>Slack</span></a></li></ul></div><div class="list"><h3 class="section-title">Blog Posts</h3><ul class="subnav section-subnav blog-subnav"><li class="subnav-item subnav-item-current"><a href="/blog/gamestate/" class="subnav-link current">Managing Application and Game State in A-Frame</a></li><li class="subnav-item"><a href="/blog/awoa-55/" class="subnav-link">A Week of A-Frame 55</a></li><li class="subnav-item"><a href="/blog/motion-capture/" class="subnav-link">Rapid Motion-Capture-Powered VR Development</a></li><li class="subnav-item"><a href="/blog/awoa-54/" class="subnav-link">A Week of A-Frame 54</a></li><li class="subnav-item"><a href="/blog/awoa-53/" class="subnav-link">A Week of A-Frame 53</a></li><li class="subnav-item"><a href="/blog/awoa-52/" class="subnav-link">A Week of A-Frame 52</a></li><li class="subnav-item"><a href="/blog/awoa-51/" class="subnav-link">A Week of A-Frame 51</a></li><li class="subnav-item"><a href="/blog/awoa-50/" class="subnav-link">A Week of A-Frame 50</a></li><li class="subnav-item"><a href="/blog/awoa-49/" class="subnav-link">A Week of A-Frame 49</a></li><li class="subnav-item"><a href="/blog/awoa-48/" class="subnav-link">A Week of A-Frame 48</a></li><li class="subnav-item"><a href="/blog/awoa-47/" class="subnav-link">A Week of A-Frame 47</a></li><li class="subnav-item"><a href="/blog/aframe-v0.5.0/" class="subnav-link">A-Frame v0.5.0 - Features & Tools</a></li><li class="subnav-item"><a href="/blog/awoa-46/" class="subnav-link">A Week of A-Frame 46</a></li><li class="subnav-item"><a href="/blog/awoa-45/" class="subnav-link">A Week of A-Frame 45</a></li><li class="subnav-item"><a href="/blog/awoa-44/" class="subnav-link">A Week of A-Frame 44</a></li><li class="subnav-item"><a href="/blog/awoa-43/" class="subnav-link">A Week of A-Frame 43</a></li><li class="subnav-item"><a href="/blog/awoa-42/" class="subnav-link">A Week of A-Frame 42</a></li><li class="subnav-item"><a href="/blog/awoa-40-41/" class="subnav-link">A Week of A-Frame 40 - 41</a></li><li class="subnav-item"><a href="/blog/screenshot/" class="subnav-link">Taking Screenshots in A-Frame</a></li><li class="subnav-item"><a href="/blog/aframe-v0.4.0/" class="subnav-link">A-Frame v0.4.0 - The Registry</a></li><li class="subnav-item"><a href="/blog/awoa-35-39/" class="subnav-link">A Week of A-Frame 35 - 39</a></li><li class="subnav-item"><a href="/blog/awoa-34/" class="subnav-link">A Week of A-Frame 34</a></li><li class="subnav-item"><a href="/blog/awoa-33/" class="subnav-link">A Week of A-Frame 33</a></li><li class="subnav-item"><a href="/blog/teleport-component/" class="subnav-link">Developing an A-Frame Teleport Component</a></li><li class="subnav-item"><a href="/blog/awoa-31-32/" class="subnav-link">A Week of A-Frame 31 + 32</a></li><li class="subnav-item"><a href="/blog/ghost-train-builder/" class="subnav-link">Halloween Feature! Building Ghost Train Builder</a></li><li class="subnav-item"><a href="/blog/istaging/" class="subnav-link">Why iStaging Chose A-Frame</a></li><li class="subnav-item"><a href="/blog/awoa-30/" class="subnav-link">A Week of A-Frame 30</a></li><li class="subnav-item"><a href="/blog/awoa-29/" class="subnav-link">A Week of A-Frame 29</a></li><li class="subnav-item"><a href="/blog/awoa-28/" class="subnav-link">A Week of A-Frame 28</a></li><li class="subnav-item"><a href="/blog/a-painter/" class="subnav-link">A-Painter: Paint in VR in Your Browser</a></li><li class="subnav-item"><a href="/blog/awoa-27/" class="subnav-link">A Week of A-Frame 27</a></li><li class="subnav-item"><a href="/blog/awoa-26/" class="subnav-link">A Week of A-Frame 26</a></li><li class="subnav-item"><a href="/blog/aframe-v0.3.0/" class="subnav-link">A-Frame v0.3.0 - Walk in a Web Page</a></li><li class="subnav-item"><a href="/blog/awoa-25/" class="subnav-link">A Week of A-Frame 25</a></li><li class="subnav-item"><a href="/blog/awoa-24/" class="subnav-link">A Week of A-Frame 24</a></li><li class="subnav-item"><a href="/blog/awoa-23/" class="subnav-link">A Week of A-Frame 23</a></li><li class="subnav-item"><a href="/blog/awoa-22/" class="subnav-link">A Week of A-Frame 22</a></li><li class="subnav-item"><a href="/blog/awoa-21/" class="subnav-link">A Week of A-Frame 21</a></li><li class="subnav-item"><a href="/blog/awoa-20/" class="subnav-link">A Week of A-Frame 20</a></li><li class="subnav-item"><a href="/blog/awoa-19/" class="subnav-link">A Week of A-Frame 19</a></li><li class="subnav-item"><a href="/blog/awoa-18/" class="subnav-link">A Week of A-Frame 18</a></li><li class="subnav-item"><a href="/blog/awoa-17/" class="subnav-link">A Week of A-Frame 17</a></li><li class="subnav-item"><a href="/blog/awoa-16/" class="subnav-link">A Week of A-Frame 16</a></li><li class="subnav-item"><a href="/blog/awoa-15/" class="subnav-link">A Week of A-Frame 15</a></li><li class="subnav-item"><a href="/blog/awoa-14/" class="subnav-link">A Week of A-Frame 14</a></li><li class="subnav-item"><a href="/blog/awoa-13/" class="subnav-link">A Week of A-Frame 13</a></li><li class="subnav-item"><a href="/blog/awoa-12/" class="subnav-link">A Week of A-Frame 12</a></li><li class="subnav-item"><a href="/blog/awoa-11/" class="subnav-link">A Week of A-Frame 11</a></li><li class="subnav-item"><a href="/blog/awoa-10/" class="subnav-link">A Week of A-Frame 10</a></li><li class="subnav-item"><a href="/blog/awoa-09/" class="subnav-link">A Week of A-Frame 9</a></li><li class="subnav-item"><a href="/blog/syria/" class="subnav-link">Amnesty International UK Presents "Fear of the Sky"</a></li><li class="subnav-item"><a href="/blog/aframe-v0.2.0/" class="subnav-link">A-Frame v0.2.0 - The Extensible VR Web</a></li><li class="subnav-item"><a href="/blog/mars/" class="subnav-link">The Washington Post Presents "Mars: An Interactive Journey"</a></li><li class="subnav-item"><a href="/blog/awoa-08/" class="subnav-link">A Week of A-Frame 8</a></li><li class="subnav-item"><a href="/blog/awoa-07/" class="subnav-link">A Week of A-Frame 7</a></li><li class="subnav-item"><a href="/blog/awoa-06/" class="subnav-link">A Week of A-Frame 6</a></li><li class="subnav-item"><a href="/blog/awoa-05/" class="subnav-link">A Week of A-Frame 5</a></li><li class="subnav-item"><a href="/blog/awoa-04/" class="subnav-link">A Week of A-Frame 4</a></li><li class="subnav-item"><a href="/blog/awoa-03/" class="subnav-link">A Week of A-Frame 3</a></li><li class="subnav-item"><a href="/blog/awoa-02/" class="subnav-link">A Week of A-Frame 2</a></li><li class="subnav-item"><a href="/blog/tron/" class="subnav-link">Step Inside the Computer World, TRON!</a></li><li class="subnav-item"><a href="/blog/awoa-01/" class="subnav-link">A Week of A-Frame 1</a></li><li class="subnav-item"><a href="/blog/photosphere-viewer/" class="subnav-link">360&deg; Photosphere Viewer</a></li><li class="subnav-item"><a href="/blog/solar-system/" class="subnav-link">WebVR Solar System</a></li><li class="subnav-item"><a href="/blog/testscape/" class="subnav-link">TestScape</a></li><li class="subnav-item"><a href="/blog/popmotion/" class="subnav-link">Popmotion Physics & Animation with A-Frame</a></li><li class="subnav-item"><a href="/blog/charleston/" class="subnav-link">WebVR Tour of Public Projects in Charleston, SC</a></li><li class="subnav-item"><a href="/blog/flickr-textures/" class="subnav-link">CC-Licensed Textures from Flickr</a></li><li class="subnav-item"><a href="/blog/drawvr-minecraft/" class="subnav-link">Creating a Minecraft Scene in WebVR</a></li><li class="subnav-item"><a href="/blog/spheres-and-fog/" class="subnav-link">Sense of Scale with Spheres and Fog</a></li><li class="subnav-item"><a href="/blog/shopping/" class="subnav-link">Prototyping a Shopping Example</a></li><li class="subnav-item"><a href="/blog/introducing-aframe/" class="subnav-link">Introducing A-Frame v0.1.0</a></li></ul></div></aside><div class="content content--blog copy post"><div class="mobile-header"><a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a><h1><a href="/">A-Frame</a></h1><span></span></div><script>(function() {
+  ga('send', 'pageview');
+</script>
+
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+  </head>
+
+  <body data-page-layout="blog" data-page-type="">
+    <main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.5.0 docs&hellip;"></input>
+  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+</div>
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.5.0/introduction/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/examples/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Examples</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs current"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame project repository on GitHub">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframevr-slack.herokuapp.com"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Slack (sign up)">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <h3 class="section-title">Blog Posts</h3>
+    <ul class="subnav section-subnav blog-subnav">
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-56/"
+             class="subnav-link"
+             title="A Week of A-Frame 56">
+            A Week of A-Frame 56
+          </a>
+        </li>
+      
+        <li class="subnav-item  subnav-item-current">
+          <a href="/blog/gamestate/"
+             class="subnav-link current"
+             title="Managing Application and Game State in A-Frame">
+            Managing Application and Game State in A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-55/"
+             class="subnav-link"
+             title="A Week of A-Frame 55">
+            A Week of A-Frame 55
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/motion-capture/"
+             class="subnav-link"
+             title="Rapid Motion-Capture-Powered VR Development">
+            Rapid Motion-Capture-Powered VR Development
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-54/"
+             class="subnav-link"
+             title="A Week of A-Frame 54">
+            A Week of A-Frame 54
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-53/"
+             class="subnav-link"
+             title="A Week of A-Frame 53">
+            A Week of A-Frame 53
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-52/"
+             class="subnav-link"
+             title="A Week of A-Frame 52">
+            A Week of A-Frame 52
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-51/"
+             class="subnav-link"
+             title="A Week of A-Frame 51">
+            A Week of A-Frame 51
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-50/"
+             class="subnav-link"
+             title="A Week of A-Frame 50">
+            A Week of A-Frame 50
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-49/"
+             class="subnav-link"
+             title="A Week of A-Frame 49">
+            A Week of A-Frame 49
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-48/"
+             class="subnav-link"
+             title="A Week of A-Frame 48">
+            A Week of A-Frame 48
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-47/"
+             class="subnav-link"
+             title="A Week of A-Frame 47">
+            A Week of A-Frame 47
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.5.0/"
+             class="subnav-link"
+             title="A-Frame v0.5.0 - Features & Tools">
+            A-Frame v0.5.0 - Features & Tools
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-46/"
+             class="subnav-link"
+             title="A Week of A-Frame 46">
+            A Week of A-Frame 46
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-45/"
+             class="subnav-link"
+             title="A Week of A-Frame 45">
+            A Week of A-Frame 45
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-44/"
+             class="subnav-link"
+             title="A Week of A-Frame 44">
+            A Week of A-Frame 44
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-43/"
+             class="subnav-link"
+             title="A Week of A-Frame 43">
+            A Week of A-Frame 43
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-42/"
+             class="subnav-link"
+             title="A Week of A-Frame 42">
+            A Week of A-Frame 42
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-40-41/"
+             class="subnav-link"
+             title="A Week of A-Frame 40 - 41">
+            A Week of A-Frame 40 - 41
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/screenshot/"
+             class="subnav-link"
+             title="Taking Screenshots in A-Frame">
+            Taking Screenshots in A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.4.0/"
+             class="subnav-link"
+             title="A-Frame v0.4.0 - The Registry">
+            A-Frame v0.4.0 - The Registry
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-35-39/"
+             class="subnav-link"
+             title="A Week of A-Frame 35 - 39">
+            A Week of A-Frame 35 - 39
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-34/"
+             class="subnav-link"
+             title="A Week of A-Frame 34">
+            A Week of A-Frame 34
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-33/"
+             class="subnav-link"
+             title="A Week of A-Frame 33">
+            A Week of A-Frame 33
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/teleport-component/"
+             class="subnav-link"
+             title="Developing an A-Frame Teleport Component">
+            Developing an A-Frame Teleport Component
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-31-32/"
+             class="subnav-link"
+             title="A Week of A-Frame 31 + 32">
+            A Week of A-Frame 31 + 32
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/ghost-train-builder/"
+             class="subnav-link"
+             title="Halloween Feature! Building Ghost Train Builder">
+            Halloween Feature! Building Ghost Train Builder
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/istaging/"
+             class="subnav-link"
+             title="Why iStaging Chose A-Frame">
+            Why iStaging Chose A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-30/"
+             class="subnav-link"
+             title="A Week of A-Frame 30">
+            A Week of A-Frame 30
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-29/"
+             class="subnav-link"
+             title="A Week of A-Frame 29">
+            A Week of A-Frame 29
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-28/"
+             class="subnav-link"
+             title="A Week of A-Frame 28">
+            A Week of A-Frame 28
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/a-painter/"
+             class="subnav-link"
+             title="A-Painter: Paint in VR in Your Browser">
+            A-Painter: Paint in VR in Your Browser
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-27/"
+             class="subnav-link"
+             title="A Week of A-Frame 27">
+            A Week of A-Frame 27
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-26/"
+             class="subnav-link"
+             title="A Week of A-Frame 26">
+            A Week of A-Frame 26
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.3.0/"
+             class="subnav-link"
+             title="A-Frame v0.3.0 - Walk in a Web Page">
+            A-Frame v0.3.0 - Walk in a Web Page
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-25/"
+             class="subnav-link"
+             title="A Week of A-Frame 25">
+            A Week of A-Frame 25
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-24/"
+             class="subnav-link"
+             title="A Week of A-Frame 24">
+            A Week of A-Frame 24
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-23/"
+             class="subnav-link"
+             title="A Week of A-Frame 23">
+            A Week of A-Frame 23
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-22/"
+             class="subnav-link"
+             title="A Week of A-Frame 22">
+            A Week of A-Frame 22
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-21/"
+             class="subnav-link"
+             title="A Week of A-Frame 21">
+            A Week of A-Frame 21
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-20/"
+             class="subnav-link"
+             title="A Week of A-Frame 20">
+            A Week of A-Frame 20
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-19/"
+             class="subnav-link"
+             title="A Week of A-Frame 19">
+            A Week of A-Frame 19
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-18/"
+             class="subnav-link"
+             title="A Week of A-Frame 18">
+            A Week of A-Frame 18
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-17/"
+             class="subnav-link"
+             title="A Week of A-Frame 17">
+            A Week of A-Frame 17
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-16/"
+             class="subnav-link"
+             title="A Week of A-Frame 16">
+            A Week of A-Frame 16
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-15/"
+             class="subnav-link"
+             title="A Week of A-Frame 15">
+            A Week of A-Frame 15
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-14/"
+             class="subnav-link"
+             title="A Week of A-Frame 14">
+            A Week of A-Frame 14
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-13/"
+             class="subnav-link"
+             title="A Week of A-Frame 13">
+            A Week of A-Frame 13
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-12/"
+             class="subnav-link"
+             title="A Week of A-Frame 12">
+            A Week of A-Frame 12
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-11/"
+             class="subnav-link"
+             title="A Week of A-Frame 11">
+            A Week of A-Frame 11
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-10/"
+             class="subnav-link"
+             title="A Week of A-Frame 10">
+            A Week of A-Frame 10
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-09/"
+             class="subnav-link"
+             title="A Week of A-Frame 9">
+            A Week of A-Frame 9
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/syria/"
+             class="subnav-link"
+             title="Amnesty International UK Presents "Fear of the Sky"">
+            Amnesty International UK Presents "Fear of the Sky"
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.2.0/"
+             class="subnav-link"
+             title="A-Frame v0.2.0 - The Extensible VR Web">
+            A-Frame v0.2.0 - The Extensible VR Web
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/mars/"
+             class="subnav-link"
+             title="The Washington Post Presents "Mars: An Interactive Journey"">
+            The Washington Post Presents "Mars: An Interactive Journey"
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-08/"
+             class="subnav-link"
+             title="A Week of A-Frame 8">
+            A Week of A-Frame 8
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-07/"
+             class="subnav-link"
+             title="A Week of A-Frame 7">
+            A Week of A-Frame 7
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-06/"
+             class="subnav-link"
+             title="A Week of A-Frame 6">
+            A Week of A-Frame 6
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-05/"
+             class="subnav-link"
+             title="A Week of A-Frame 5">
+            A Week of A-Frame 5
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-04/"
+             class="subnav-link"
+             title="A Week of A-Frame 4">
+            A Week of A-Frame 4
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-03/"
+             class="subnav-link"
+             title="A Week of A-Frame 3">
+            A Week of A-Frame 3
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-02/"
+             class="subnav-link"
+             title="A Week of A-Frame 2">
+            A Week of A-Frame 2
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/tron/"
+             class="subnav-link"
+             title="Step Inside the Computer World, TRON!">
+            Step Inside the Computer World, TRON!
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-01/"
+             class="subnav-link"
+             title="A Week of A-Frame 1">
+            A Week of A-Frame 1
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/photosphere-viewer/"
+             class="subnav-link"
+             title="360&deg; Photosphere Viewer">
+            360&deg; Photosphere Viewer
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/solar-system/"
+             class="subnav-link"
+             title="WebVR Solar System">
+            WebVR Solar System
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/testscape/"
+             class="subnav-link"
+             title="TestScape">
+            TestScape
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/popmotion/"
+             class="subnav-link"
+             title="Popmotion Physics & Animation with A-Frame">
+            Popmotion Physics & Animation with A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/charleston/"
+             class="subnav-link"
+             title="WebVR Tour of Public Projects in Charleston, SC">
+            WebVR Tour of Public Projects in Charleston, SC
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/flickr-textures/"
+             class="subnav-link"
+             title="CC-Licensed Textures from Flickr">
+            CC-Licensed Textures from Flickr
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/spheres-and-fog/"
+             class="subnav-link"
+             title="Sense of Scale with Spheres and Fog">
+            Sense of Scale with Spheres and Fog
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/drawvr-minecraft/"
+             class="subnav-link"
+             title="Creating a Minecraft Scene in WebVR">
+            Creating a Minecraft Scene in WebVR
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/shopping/"
+             class="subnav-link"
+             title="Prototyping a Shopping Example">
+            Prototyping a Shopping Example
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/introducing-aframe/"
+             class="subnav-link"
+             title="Introducing A-Frame v0.1.0">
+            Introducing A-Frame v0.1.0
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</aside>
+
+<div class="content content--blog copy post ">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
     var sidebarEl = document.querySelector('#sidebar');
     var toggleEl = document.querySelector('#sidebar-toggle');
 
@@ -44,4 +838,267 @@
       }
       return null;
     }
-  })();</script><div class="copy__wrap"><article class="post post-full"><p class="page__section"><a href="/blog/" class="borderless-link">Blog</a></p><h1 class="page__title post__heading">Managing Application and Game State in A-Frame</h1><div class="post__metadata"><p class="post__timestamp">Apr 11, 2017</p><p class="post__author">By <a class="blog-attribution" href="https://twitter.com/andgokevin">Kevin Ngo</a></p></div><img src="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png" alt="Managing Application and Game State in A-Frame"><p>Larger VR applications need a way of cleanly managing application or game state. Managing lots of client-side state in a non-tangled manner has been a large topic in 2D web development over the past couple of years which has given rise to libraries such as <a href="http://redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">Redux</a>. Having built several non-trivial WebVR applications, we’ll go over how we started to bring these ideas of state management into A-Frame’s DOM-based entity-component architecture.</p><a id="more"></a><h2 id="initial-approach-with-redux"><a href="#initial-approach-with-redux" class="headerlink" title="Initial Approach with Redux"></a>Initial Approach with Redux</h2><p><img src="https://camo.githubusercontent.com/af8803571294fe373a54d039be8f9709f15a2ad4/687474703a2f2f6d616b6569746f70656e2e636f6d2f7374617469632f696d616765732f72656475785f666c6f7763686172742e706e67" alt="Redux"></p><p><em><a href="http://makeitopen.com/tutorials/building-the-f8-app/data/" target="_blank" rel="external">Image credit to makeitopen.com</a></em></p><p>My initial approach was to use Redux straight up with A-Frame. Redux is a library to predictably manage and modify state similar to a state management machine. Redux has become extremely popular over the last couple of years when used with React. I personally started using it the day it was released. Redux is an agnostic library that can be integrated into any framework.</p><p><a href="http://redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">Redux’s three principles</a>: single source of truth, read-only state, and changes are made with pure functions. The implementation of Redux involves a single global state, making it easy to debug and inspect. That single global state is modified through pure functions (reducers) that takes the previous state and action and returns next state, making it easy to unit test. Then we can only modify the state by dispatching actions (i.e., events), providing a single entry point into modifying the state.</p><p><img src="https://cloud.githubusercontent.com/assets/674727/24901028/ab55bb0a-1e5a-11e7-9aff-57ddb71e48cf.png" alt="Redux and A-Frame Diagram"></p><p>For a basic example, say we have a state <code>{value: 1}</code>. I could have a reducer that modifies the state; on the <code>INCREMENT</code> action, the reducer would do return a new state with <code>value++;</code>, and on the <code>DECREMENT</code> action, the reducer would return a new state with <code>value--;</code>. An action dispatcher would send the <code>INCREMENT</code> or <code>DECREMENT</code> actions, triggering a state change.</p><p>I created an <a href="https://github.com/ngokevin/kframe/tree/master/components/redux/" target="_blank" rel="external">A-Frame Redux component</a> to integrate Redux into A-Frame. The Redux component lets us declaratively set up a Redux store, and pass in reducers:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">redux</span>=<span class="string">"reducers: counter"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure><p>And to register a reducer:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerReducer(<span class="string">'counter'</span>, &#123;</div><div class="line">  <span class="attr">actions</span>: &#123;</div><div class="line">    <span class="attr">DECREASE</span>: <span class="string">'COUNTER__DECREASE'</span>,</div><div class="line">    <span class="attr">INCREASE</span>: <span class="string">'COUNTER__INCREASE'</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">initialState</span>: &#123;<span class="attr">value</span>: <span class="number">0</span>&#125;,</div><div class="line"></div><div class="line">  <span class="attr">reducer</span>: <span class="function"><span class="keyword">function</span> (<span class="params">state, action</span>) </span>&#123;</div><div class="line">    state = state || <span class="keyword">this</span>.initialState;</div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">      <span class="keyword">case</span> <span class="keyword">this</span>.actions.INCREASE: &#123;</div><div class="line">        <span class="keyword">var</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</div><div class="line">        newState.number++;</div><div class="line">        <span class="keyword">return</span> newState;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">case</span> <span class="keyword">this</span>.actions.DECREASE: &#123;</div><div class="line">        <span class="keyword">var</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</div><div class="line">        newState.number--;</div><div class="line">        <span class="keyword">return</span> newState;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>To dispatch actions, grab a handler to the Redux store and dispatch:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scene.systems.redux.store.dispatch(&#123;<span class="attr">type</span>: <span class="string">'COUNTER__INCREASE'</span>&#125;);</div></pre></td></tr></table></figure><p>The Redux component then provided a data-binding component to bind state to A-Frame entities:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">redux</span>=<span class="string">"counter.number: text.value"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>The Redux component seems very usable with A-Frame. If I were to build a larger application where I needed to compose multiple reducers and split up the application state into sub-states, I would personally start reaching for Redux.</p><p>But to people had that have not used Redux, all of Redux’s terms (e.g., reducers, stores, dispatchers, actions) are foreign. A lot of A-Frame developers are coming from graphics, games, or 3D industries, and they don’t care about Redux. For me, it took a couple of weeks to fully grasp. So I wanted to see if we could create something simpler and more tailored to A-Frame’s architecture and VR.</p><h2 id="game-state-implementation-in-a-blast"><a href="#game-state-implementation-in-a-blast" class="headerlink" title="Game State Implementation in A-Blast"></a>Game State Implementation in A-Blast</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/24531440/0336e66e-156e-11e7-95c2-f2e6ebc0393d.gif" alt="A-Blast"></p><p>The implementation below is the one I’m currently using on my personal projects, but it will evolve. Note we’ll be calling it <em>game state</em> as that’s a common term for 3D-related applications, but game state can apply for any application in general.</p><p><a href="https://github.com/aframevr/a-blast/" target="_blank" rel="external">A-Blast</a> is a cute VR shooter game. We wanted to build an application in one of the most common and popular genres to prove A-Frame as a 3D and VR framework. A-Blast let us see how common concepts such as game state would be implemented alongside A-Frame. For A-Blast, we needed to keep track of things such as the wave, player health, score, phase (e.g., Intro, Game Over), and time left.</p><p><img src="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png" alt="Redux-like Diagram"></p><p>The game state we implemented took ideas of Redux but tailored it for A-Frame:</p><ol><li>A single global game state A-Frame system which is registered on the <code>&lt;a-scene&gt;</code> element.</li><li>Initial state is specified in the system’s schema.</li><li>State can be accessed via the system’s data (e.g., <code>sceneEl.getAttribute(&#39;gamestate&#39;)</code>).</li><li>Actions are dispatched using events</li><li>Handlers in the game state are responsible for transitioning the state</li><li>The game state system publishes the game state and notifies via an event</li><li>Related to the game state system is a component to declaratively bind game state to A-Frame component properties in HTML</li></ol><p>Below is a basic skeleton for game state system implementation that mirrors A-Blast’s. Fewer than 50 lines of code that does the basics of Redux:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerSystem(<span class="string">'gamestate'</span>, &#123;</div><div class="line">  <span class="comment">// Initial state.</span></div><div class="line">  schema: &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> initialState = <span class="keyword">this</span>.initialState;</div><div class="line">    <span class="keyword">var</span> sceneEl = <span class="keyword">this</span>.el;</div><div class="line">    <span class="keyword">var</span> state = <span class="keyword">this</span>.data;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!initialState) &#123; initialState = state; &#125;</div><div class="line"></div><div class="line">    sceneEl.emit(<span class="string">'gamestateinitialized'</span>, &#123;<span class="attr">state</span>: initialState&#125;);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Application-specific code goes under here! Handlers to transition state.</div><div class="line">     */</div><div class="line">    registerHandler(<span class="string">'increment'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">newState, evt</span>) </span>&#123;</div><div class="line">      newState.value++;</div><div class="line">      <span class="keyword">return</span> newState;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="comment">// Part of the game state library.</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">registerHandler</span> (<span class="params">eventName, handler</span>) </span>&#123;</div><div class="line">      el.addEventListener(eventName, <span class="function"><span class="keyword">function</span> (<span class="params">param</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> newState = handler(AFRAME.utils.extend(&#123;&#125;, state), param);</div><div class="line">        publishState(eventName, newState);</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Part of the game state library.</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">publishState</span> (<span class="params">event, newState</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> oldState = AFRAME.utils.extend(&#123;&#125;, state);</div><div class="line">      el.setAttribute(<span class="string">'gamestate'</span>, newState);</div><div class="line">      state = newState;</div><div class="line">      el.emit(<span class="string">'gamestatechanged'</span>, &#123;</div><div class="line">        <span class="attr">event</span>: event,</div><div class="line">        <span class="attr">diff</span>: AFRAME.utils.diff(oldState, newState),</div><div class="line">        <span class="attr">state</span>: newState</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>Then to dispatch an action, any A-Frame entity can emit an event, and it’ll bubble up to the scene, where the game state can trigger its handlers. No need to grab a handle on the game state; entities don’t even have to know about the game state.</p><p>A-Blast also has a <code>gamestatebind</code> component that updates entities if necessary on every state change. If we wanted to bind game state’s <code>value</code> to A-Frame’s text component’s <code>value</code> property, we can use the component declaratively:</p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gamestatebind</span>=<span class="string">"value: text.value"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure><p>Similar to the concepts in React, A-Frame components in this model of game state could either be “smart components”, meaning aware of the game state, or “dumb components”, meaning they’re agnostic and purely responsible for pieces such as 3D appearance, behavior, logic.</p><p>We are also free to choose what state is able to be handled within a single component, local state, and when to hoist a piece of state up to the global level if multiple entities or components need to interface with it.</p><p>State specific to an entity can either be kept in a component, and if we need to make it global or more closely manage it, we can hoist that up to the global game state. Say we had a collection of data in the game state each representing an entity. To allow each entity having its own state while managing it at the global level, we could “select” or bind each piece of data to its respective entity; similar to how you might possibly fetch a list of data and bind it to list items in HTML.</p><h2 id="game-state-implementation-in-a-saturday-night"><a href="#game-state-implementation-in-a-saturday-night" class="headerlink" title="Game State Implementation in A Saturday Night"></a>Game State Implementation in A Saturday Night</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/24813570/54e183aa-1b83-11e7-840d-aaca5e9a0724.gif" alt="A Saturday Night"></p><p><a href="https://aframe.io/a-saturday-night/">A Saturday Night</a> is a demo for motion capture where people can get into their headset, record a dance, and share it with their friends. Like a “dancegram”. <a href="https://github.com/dmarcos/" target="_blank" rel="external">Diego Marcos</a> implemented the game state for A Saturday Night and took a different approach from scratch, without any bias from Redux. This implementation is less generalized but optimized for A Saturday Night.</p><ol><li>A single global game state component which is registered on the <code>&lt;a-scene&gt;</code> element</li><li>The application can be in a single game state at a time</li><li>All possible game states are statically defined up front in an array</li><li>A-Frame Components are registered, each one handling a different state. The state components define an <code>init</code> handler on what’s run when the application transitions to its state, and a <code>remove</code> handler on what’s run when the application transitions away from its state</li><li>States are changed using a <code>setState</code> method that swaps to a different state</li><li>The game state component publishes its state to the application by toggling the state components</li></ol><p><img src="https://cloud.githubusercontent.com/assets/674727/24899932/03e67ace-1e57-11e7-965a-47a78fc4d64b.png" alt="A Saturday Night State Machine"></p><p>Below is a basic skeleton for game state system implementation that mirrors A Saturday Night’s:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'game-state'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">barCondition</span>: &#123;<span class="attr">default</span>: <span class="literal">false</span>&#125;,</div><div class="line">    <span class="attr">state</span>: &#123;<span class="attr">default</span>: <span class="string">'foo'</span>, <span class="attr">oneOf</span>: [<span class="string">'bar'</span>, <span class="string">'qux'</span>, <span class="string">'qaz'</span>]&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</div><div class="line">    <span class="keyword">if</span> (oldData.state !== data.state) &#123;</div><div class="line">      <span class="keyword">this</span>.setState(data.state);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.updateState();</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">updateState</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line"></div><div class="line">    <span class="keyword">switch</span> (data.state) &#123;</div><div class="line">      <span class="comment">/**</span></div><div class="line">       * Application-specific code goes under here!</div><div class="line">       */</div><div class="line">      <span class="keyword">case</span> <span class="string">'foo'</span>: &#123;</div><div class="line">        <span class="comment">// Transition to next state depending on condition.</span></div><div class="line">        <span class="keyword">if</span> (data.barCondition) &#123;</div><div class="line">          el.setAttribute(<span class="string">'game-state'</span>, <span class="string">'state'</span>, <span class="string">'bar'</span>);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">default</span>: &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Unknown state'</span>, data.state);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">setState</span>: <span class="function"><span class="keyword">function</span>(<span class="params">state</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line">    <span class="keyword">var</span> states = <span class="keyword">this</span>.schema.state.oneOf;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.updatingState) &#123; <span class="keyword">return</span>; &#125;</div><div class="line">    <span class="keyword">if</span> (states.indexOf(state) === <span class="number">-1</span>) &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Unknown state'</span>, state);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// Remove all states.</span></div><div class="line">    states.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">state</span>) </span>&#123;</div><div class="line">      el.removeAttribute(state);</div><div class="line">    &#125;);</div><div class="line">    el.setAttribute(state, <span class="string">''</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>Components can update the game state, and the game state will decide whether conditions have been fulfilled to transition to the next state.</p><p>Then we have components that represent each distinct state:</p><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'bar'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Ran when the game state enters the `bar` state.</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">remove</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Ran when the game state leaves the `bar` state.</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><h2 id="comparing-implementations-between-redux-approach-a-blast-a-saturday-night"><a href="#comparing-implementations-between-redux-approach-a-blast-a-saturday-night" class="headerlink" title="Comparing Implementations Between Redux Approach, A-Blast, A Saturday Night"></a>Comparing Implementations Between Redux Approach, A-Blast, A Saturday Night</h2><p>A-Blast’s game state was something I came up with, basing it on Redux. The advantage is that components don’t have to know about the game state; they just emit events, and the game state listens to them. A-Blast’s game state is also more flexible since there’s no single state represented as a string; any change to pieces of the game state represents an entirely new game state. We send actions, and the game state controls what needs to change in the state. This model from this state management has form of state management has been battle-tested through the web community’s adoption of Redux.</p><p>A Saturday Night’s game state was implemented by Diego Marcos. This model of game state is well suited for simpler applications such as A Saturday Night where there are only very distinct states (avatar selection, dancing, sharing states). All the code that reacts to state changes are contained within components that each manage a single state; this could be good or bad since there is lots of code touching lots of parts of the application contained within a single component. The nice part is that changing states and reacting to changed states are synchronous rather than through events. However, it would be possible to change A-Blast’s game state to be synchronous.</p><p>However, as an application grows very large and contains lots of state, I would give Redux a serious look up. By composing reducers, Redux is able to split an application up into various sub-states or subtrees making each piece of the application more manageable and predictable. The only obstacle would be the learning curve, but the benefits would be proven state management with an excellent community of state debugging tools.</p><h2 id="in-vr-state-debugging-tools-and-time-travel"><a href="#in-vr-state-debugging-tools-and-time-travel" class="headerlink" title="In-VR State Debugging Tools and Time Travel"></a>In-VR State Debugging Tools and Time Travel</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/18897572/49ed95a4-84e0-11e6-9522-aa1c65cf0e14.png" alt="In-VR Debug Panel"></p><p>Since A-Frame is about VR, it’s useful to view the entire game state while in VR for debugging purposes. In A-Blast, we had a component that printed out the entire game state on a panel with text within VR. Every time the game state changed, we’d update the panel.</p><p>Eventually, it’d also be nice to have 2D state debugging tools just as Redux has developer tools to inspect every single state change, or even time travel. We’d be able to see every action that’s dispatched and what it causes. With A-Blast’s game state component, it’d be easy since the system emits an event on each game state change, providing the action that triggered the state change, the diff between the old and next states, and the current new state.</p><p><img src="https://cloud.githubusercontent.com/assets/674727/24814011/fd5fb4b0-1b84-11e7-8d00-04a59acacc13.png" alt="Debugger"></p><p>In the future, I can imagine creating a <code>time-travel</code> component that could rewind and pan through the different states. We could turn the Vive trackers into a dial that we could physically turn to reverse time, and see the world go backwards in VR!</p><h2 id="conclusion"><a href="#conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>These have been our initial attempts in implementing game state. I have no doubt that our ideas and implementations will change and evolve for the better as we build more and more complex WebVR applications. Coincidentally, <a href="https://github.com/aframevr/aframe/issues/2569" target="_blank" rel="external">Don McCurdy was brainstorming about state machines</a> at the exact time of writing of this post! Check out his ideas as well.</p><p>More recently, I have been building the beginnings of a fairly complex application where I am often interacting with game state. You can watch my <a href="https://twitch.tv/andgokevin/" target="_blank" rel="external">recorded developer logs or catch me working on game state live on Twitch</a> as I continue to develop it.</p><p>If you want to see various source code for implementations of game states:</p><ul><li><a href="https://github.com/aframevr/a-blast/blob/master/src/components/gamestate.js" target="_blank" rel="external">A-Blast <code>gamestate</code></a></li><li><a href="https://github.com/aframevr/a-saturday-night/blob/master/src/components/game-state.js" target="_blank" rel="external">A Saturday Night <code>game-state</code></a></li><li><a href="https://github.com/ngokevin/architect/blob/master/components/gamestate.js" target="_blank" rel="external">Architect <code>gamestate</code></a></li></ul><p>Whatever becomes the ultimate approach to game state will become the Oracle of the Metaverse!</p></article><footer class="footer guide-links c"><span class="float-left"><a href="/blog/awoa-55/" class="guide-link guide-link-left">← A Week of A-Frame 55</a></span></footer><footer class="footer footnote"><p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p><p>Found a typo or suggestion for the docs?<br><br><a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/gamestate.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p></footer></div></div></main><script src="/js/common.js"></script><script src="/js/ga.js"></script><script src="/js/docs.js"></script></body></html>
+  })();
+</script>
+
+
+  <div class="copy__wrap">
+    
+      <article class="post post-full">
+        <p class="page__section">
+          <a href="/blog/" class="borderless-link">Blog</a>
+        </p>
+
+        <h1 class="page__title post__heading">Managing Application and Game State in A-Frame</h1>
+        <div class="post__metadata">
+  <p class="post__timestamp">Apr 11, 2017</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/andgokevin">Kevin Ngo</a></p>
+  
+</div>
+
+
+        
+
+        
+          
+  
+  
+
+  
+    <img src="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png" alt="Managing Application and Game State in A-Frame">
+  
+
+
+        
+
+        
+        
+          <p>Larger VR applications need a way of cleanly managing application or game
+state. Managing lots of client-side state in a non-tangled manner has been a
+large topic in 2D web development over the past couple of years which has given
+rise to libraries such as
+<a href="http://redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">Redux</a>. Having
+built several non-trivial WebVR applications, we’ll go over how we started to
+bring these ideas of state management into A-Frame’s DOM-based entity-component
+architecture.</p>
+<div id="toc"></div>
+
+<a id="more"></a>
+<h2 id="initial-approach-with-redux"><a href="#initial-approach-with-redux" class="headerlink" title="Initial Approach with Redux"></a>Initial Approach with Redux</h2><p><img src="https://camo.githubusercontent.com/af8803571294fe373a54d039be8f9709f15a2ad4/687474703a2f2f6d616b6569746f70656e2e636f6d2f7374617469632f696d616765732f72656475785f666c6f7763686172742e706e67" alt="Redux"></p>
+<p><em><a href="http://makeitopen.com/tutorials/building-the-f8-app/data/" target="_blank" rel="external">Image credit to makeitopen.com</a></em></p>
+<p>My initial approach was to use Redux straight up with A-Frame. Redux is a
+library to predictably manage and modify state similar to a state management
+machine. Redux has become extremely popular over the last couple of years when
+used with React. I personally started using it the day it was released. Redux
+is an agnostic library that can be integrated into any framework.</p>
+<p><a href="http://redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">Redux’s three
+principles</a>: single
+source of truth, read-only state, and changes are made with pure functions.
+The implementation of Redux involves a single global state, making it easy to
+debug and inspect. That single global state is modified through pure functions
+(reducers) that takes the previous state and action and returns next state,
+making it easy to unit test. Then we can only modify the state by dispatching
+actions (i.e., events), providing a single entry point into modifying the
+state.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/24901028/ab55bb0a-1e5a-11e7-9aff-57ddb71e48cf.png" alt="Redux and A-Frame Diagram"></p>
+<p>For a basic example, say we have a state <code>{value: 1}</code>. I could have a reducer
+that modifies the state; on the <code>INCREMENT</code> action, the reducer would do return
+a new state with <code>value++;</code>, and on the <code>DECREMENT</code> action, the reducer would
+return a new state with <code>value--;</code>. An action dispatcher would send the
+<code>INCREMENT</code> or <code>DECREMENT</code> actions, triggering a state change.</p>
+<p>I created an <a href="https://github.com/ngokevin/kframe/tree/master/components/redux/" target="_blank" rel="external">A-Frame Redux component</a> to integrate Redux into
+A-Frame. The Redux component lets us declaratively set up a Redux store, and
+pass in reducers:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">redux</span>=<span class="string">"reducers: counter"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>And to register a reducer:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerReducer(<span class="string">'counter'</span>, &#123;</div><div class="line">  <span class="attr">actions</span>: &#123;</div><div class="line">    <span class="attr">DECREASE</span>: <span class="string">'COUNTER__DECREASE'</span>,</div><div class="line">    <span class="attr">INCREASE</span>: <span class="string">'COUNTER__INCREASE'</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">initialState</span>: &#123;<span class="attr">value</span>: <span class="number">0</span>&#125;,</div><div class="line"></div><div class="line">  <span class="attr">reducer</span>: <span class="function"><span class="keyword">function</span> (<span class="params">state, action</span>) </span>&#123;</div><div class="line">    state = state || <span class="keyword">this</span>.initialState;</div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">      <span class="keyword">case</span> <span class="keyword">this</span>.actions.INCREASE: &#123;</div><div class="line">        <span class="keyword">var</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</div><div class="line">        newState.number++;</div><div class="line">        <span class="keyword">return</span> newState;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">case</span> <span class="keyword">this</span>.actions.DECREASE: &#123;</div><div class="line">        <span class="keyword">var</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</div><div class="line">        newState.number--;</div><div class="line">        <span class="keyword">return</span> newState;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>To dispatch actions, grab a handler to the Redux store and dispatch:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scene.systems.redux.store.dispatch(&#123;<span class="attr">type</span>: <span class="string">'COUNTER__INCREASE'</span>&#125;);</div></pre></td></tr></table></figure>
+<p>The Redux component then provided a data-binding component to bind state to
+A-Frame entities:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">redux</span>=<span class="string">"counter.number: text.value"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The Redux component seems very usable with A-Frame. If I were to build a larger
+application where I needed to compose multiple reducers and split up the
+application state into sub-states, I would personally start reaching for Redux.</p>
+<p>But to people had that have not used Redux, all of Redux’s terms (e.g.,
+reducers, stores, dispatchers, actions) are foreign. A lot of A-Frame
+developers are coming from graphics, games, or 3D industries, and they don’t
+care about Redux. For me, it took a couple of weeks to fully grasp. So I wanted
+to see if we could create something simpler and more tailored to A-Frame’s
+architecture and VR.</p>
+<h2 id="game-state-implementation-in-a-blast"><a href="#game-state-implementation-in-a-blast" class="headerlink" title="Game State Implementation in A-Blast"></a>Game State Implementation in A-Blast</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/24531440/0336e66e-156e-11e7-95c2-f2e6ebc0393d.gif" alt="A-Blast"></p>
+<p>The implementation below is the one I’m currently using on my personal
+projects, but it will evolve. Note we’ll be calling it <em>game state</em> as that’s a
+common term for 3D-related applications, but game state can apply for any
+application in general.</p>
+<p><a href="https://github.com/aframevr/a-blast/" target="_blank" rel="external">A-Blast</a> is a cute VR shooter game. We
+wanted to build an application in one of the most common and popular genres to
+prove A-Frame as a 3D and VR framework.  A-Blast let us see how common concepts
+such as game state would be implemented alongside A-Frame. For A-Blast, we
+needed to keep track of things such as the wave, player health, score, phase
+(e.g., Intro, Game Over), and time left.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png" alt="Redux-like Diagram"></p>
+<p>The game state we implemented took ideas of Redux but tailored it for A-Frame:</p>
+<ol>
+<li>A single global game state A-Frame system which is registered on the
+<code>&lt;a-scene&gt;</code> element.</li>
+<li>Initial state is specified in the system’s schema.</li>
+<li>State can be accessed via the system’s data (e.g.,
+<code>sceneEl.getAttribute(&#39;gamestate&#39;)</code>).</li>
+<li>Actions are dispatched using events</li>
+<li>Handlers in the game state are responsible for transitioning the state</li>
+<li>The game state system publishes the game state and notifies via an event</li>
+<li>Related to the game state system is a component to declaratively bind game
+state to A-Frame component properties in HTML</li>
+</ol>
+<p>Below is a basic skeleton for game state system implementation that mirrors
+A-Blast’s. Fewer than 50 lines of code that does the basics of Redux:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerSystem(<span class="string">'gamestate'</span>, &#123;</div><div class="line">  <span class="comment">// Initial state.</span></div><div class="line">  schema: &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> initialState = <span class="keyword">this</span>.initialState;</div><div class="line">    <span class="keyword">var</span> sceneEl = <span class="keyword">this</span>.el;</div><div class="line">    <span class="keyword">var</span> state = <span class="keyword">this</span>.data;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!initialState) &#123; initialState = state; &#125;</div><div class="line"></div><div class="line">    sceneEl.emit(<span class="string">'gamestateinitialized'</span>, &#123;<span class="attr">state</span>: initialState&#125;);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Application-specific code goes under here! Handlers to transition state.</div><div class="line">     */</div><div class="line">    registerHandler(<span class="string">'increment'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">newState, evt</span>) </span>&#123;</div><div class="line">      newState.value++;</div><div class="line">      <span class="keyword">return</span> newState;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="comment">// Part of the game state library.</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">registerHandler</span> (<span class="params">eventName, handler</span>) </span>&#123;</div><div class="line">      el.addEventListener(eventName, <span class="function"><span class="keyword">function</span> (<span class="params">param</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> newState = handler(AFRAME.utils.extend(&#123;&#125;, state), param);</div><div class="line">        publishState(eventName, newState);</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Part of the game state library.</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">publishState</span> (<span class="params">event, newState</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> oldState = AFRAME.utils.extend(&#123;&#125;, state);</div><div class="line">      el.setAttribute(<span class="string">'gamestate'</span>, newState);</div><div class="line">      state = newState;</div><div class="line">      el.emit(<span class="string">'gamestatechanged'</span>, &#123;</div><div class="line">        <span class="attr">event</span>: event,</div><div class="line">        <span class="attr">diff</span>: AFRAME.utils.diff(oldState, newState),</div><div class="line">        <span class="attr">state</span>: newState</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Then to dispatch an action, any A-Frame entity can emit an event, and it’ll
+bubble up to the scene, where the game state can trigger its handlers. No need
+to grab a handle on the game state; entities don’t even have to know about the
+game state.</p>
+<p>A-Blast also has a <code>gamestatebind</code> component that updates entities if necessary
+on every state change. If we wanted to bind game state’s <code>value</code> to A-Frame’s
+text component’s <code>value</code> property, we can use the component declaratively:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gamestatebind</span>=<span class="string">"value: text.value"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Similar to the concepts in React, A-Frame components in this model of game
+state could either be “smart components”, meaning aware of the game state, or
+“dumb components”, meaning they’re agnostic and purely responsible for pieces
+such as 3D appearance, behavior, logic.</p>
+<p>We are also free to choose what state is able to be handled within a single
+component, local state, and when to hoist a piece of state up to the global
+level if multiple entities or components need to interface with it.</p>
+<p>State specific to an entity can either be kept in a component, and if we need
+to make it global or more closely manage it, we can hoist that up to the global
+game state. Say we had a collection of data in the game state each representing
+an entity. To allow each entity having its own state while managing it at the
+global level, we could “select” or bind each piece of data to its respective
+entity; similar to how you might possibly fetch a list of data and bind it to
+list items in HTML.</p>
+<h2 id="game-state-implementation-in-a-saturday-night"><a href="#game-state-implementation-in-a-saturday-night" class="headerlink" title="Game State Implementation in A Saturday Night"></a>Game State Implementation in A Saturday Night</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/24813570/54e183aa-1b83-11e7-840d-aaca5e9a0724.gif" alt="A Saturday Night"></p>
+<p><a href="https://aframe.io/a-saturday-night/">A Saturday Night</a> is a demo for motion
+capture where people can get into their headset, record a dance, and share it
+with their friends. Like a “dancegram”. <a href="https://github.com/dmarcos/" target="_blank" rel="external">Diego
+Marcos</a> implemented the game state for A Saturday
+Night and took a different approach from scratch, without any bias from Redux.
+This implementation is less generalized but optimized for A Saturday Night.</p>
+<ol>
+<li>A single global game state component which is registered on the <code>&lt;a-scene&gt;</code> element</li>
+<li>The application can be in a single game state at a time</li>
+<li>All possible game states are statically defined up front in an array</li>
+<li>A-Frame Components are registered, each one handling a different state. The
+state components define an <code>init</code> handler on what’s run when the application
+transitions to its state, and a <code>remove</code> handler on what’s run when the
+application transitions away from its state</li>
+<li>States are changed using a <code>setState</code> method that swaps to a different state</li>
+<li>The game state component publishes its state to the application by toggling
+the state components</li>
+</ol>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/24899932/03e67ace-1e57-11e7-965a-47a78fc4d64b.png" alt="A Saturday Night State Machine"></p>
+<p>Below is a basic skeleton for game state system implementation that mirrors
+A Saturday Night’s:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'game-state'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">barCondition</span>: &#123;<span class="attr">default</span>: <span class="literal">false</span>&#125;,</div><div class="line">    <span class="attr">state</span>: &#123;<span class="attr">default</span>: <span class="string">'foo'</span>, <span class="attr">oneOf</span>: [<span class="string">'bar'</span>, <span class="string">'qux'</span>, <span class="string">'qaz'</span>]&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</div><div class="line">    <span class="keyword">if</span> (oldData.state !== data.state) &#123;</div><div class="line">      <span class="keyword">this</span>.setState(data.state);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.updateState();</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">updateState</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line"></div><div class="line">    <span class="keyword">switch</span> (data.state) &#123;</div><div class="line">      <span class="comment">/**</span></div><div class="line">       * Application-specific code goes under here!</div><div class="line">       */</div><div class="line">      <span class="keyword">case</span> <span class="string">'foo'</span>: &#123;</div><div class="line">        <span class="comment">// Transition to next state depending on condition.</span></div><div class="line">        <span class="keyword">if</span> (data.barCondition) &#123;</div><div class="line">          el.setAttribute(<span class="string">'game-state'</span>, <span class="string">'state'</span>, <span class="string">'bar'</span>);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">default</span>: &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Unknown state'</span>, data.state);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">setState</span>: <span class="function"><span class="keyword">function</span>(<span class="params">state</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line">    <span class="keyword">var</span> states = <span class="keyword">this</span>.schema.state.oneOf;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.updatingState) &#123; <span class="keyword">return</span>; &#125;</div><div class="line">    <span class="keyword">if</span> (states.indexOf(state) === <span class="number">-1</span>) &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Unknown state'</span>, state);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// Remove all states.</span></div><div class="line">    states.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">state</span>) </span>&#123;</div><div class="line">      el.removeAttribute(state);</div><div class="line">    &#125;);</div><div class="line">    el.setAttribute(state, <span class="string">''</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Components can update the game state, and the game state will decide whether
+conditions have been fulfilled to transition to the next state.</p>
+<p>Then we have components that represent each distinct state:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'bar'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Ran when the game state enters the `bar` state.</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">remove</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Ran when the game state leaves the `bar` state.</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="comparing-implementations-between-redux-approach-a-blast-a-saturday-night"><a href="#comparing-implementations-between-redux-approach-a-blast-a-saturday-night" class="headerlink" title="Comparing Implementations Between Redux Approach, A-Blast, A Saturday Night"></a>Comparing Implementations Between Redux Approach, A-Blast, A Saturday Night</h2><p>A-Blast’s game state was something I came up with, basing it on Redux. The
+advantage is that components don’t have to know about the game state; they just
+emit events, and the game state listens to them. A-Blast’s game state is also
+more flexible since there’s no single state represented as a string; any change
+to pieces of the game state represents an entirely new game state. We send
+actions, and the game state controls what needs to change in the state. This
+model from this state management has form of state management has been
+battle-tested through the web community’s adoption of Redux.</p>
+<p>A Saturday Night’s game state was implemented by Diego Marcos. This model of
+game state is well suited for simpler applications such as A Saturday Night
+where there are only very distinct states (avatar selection, dancing, sharing
+states). All the code that reacts to state changes are contained within
+components that each manage a single state; this could be good or bad since
+there is lots of code touching lots of parts of the application contained
+within a single component. The nice part is that changing states and reacting
+to changed states are synchronous rather than through events. However, it would
+be possible to change A-Blast’s game state to be synchronous.</p>
+<p>However, as an application grows very large and contains lots of state, I would
+give Redux a serious look up. By composing reducers, Redux is able to split an
+application up into various sub-states or subtrees making each piece of the
+application more manageable and predictable. The only obstacle would be the
+learning curve, but the benefits would be proven state management with an
+excellent community of state debugging tools.</p>
+<h2 id="in-vr-state-debugging-tools-and-time-travel"><a href="#in-vr-state-debugging-tools-and-time-travel" class="headerlink" title="In-VR State Debugging Tools and Time Travel"></a>In-VR State Debugging Tools and Time Travel</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/18897572/49ed95a4-84e0-11e6-9522-aa1c65cf0e14.png" alt="In-VR Debug Panel"></p>
+<p>Since A-Frame is about VR, it’s useful to view the entire game state while in
+VR for debugging purposes. In A-Blast, we had a component that printed out the
+entire game state on a panel with text within VR. Every time the game state
+changed, we’d update the panel.</p>
+<p>Eventually, it’d also be nice to have 2D state debugging tools just as Redux
+has developer tools to inspect every single state change, or even time travel.
+We’d be able to see every action that’s dispatched and what it causes. With
+A-Blast’s game state component, it’d be easy since the system emits an event on
+each game state change, providing the action that triggered the state change,
+the diff between the old and next states, and the current new state.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/24814011/fd5fb4b0-1b84-11e7-8d00-04a59acacc13.png" alt="Debugger"></p>
+<p>In the future, I can imagine creating a <code>time-travel</code> component that could
+rewind and pan through the different states. We could turn the Vive trackers
+into a dial that we could physically turn to reverse time, and see the world go
+backwards in VR!</p>
+<h2 id="conclusion"><a href="#conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>These have been our initial attempts in implementing game state. I have no
+doubt that our ideas and implementations will change and evolve for the better
+as we build more and more complex WebVR applications. Coincidentally, <a href="https://github.com/aframevr/aframe/issues/2569" target="_blank" rel="external">Don
+McCurdy was brainstorming about state
+machines</a> at the exact time of
+writing of this post! Check out his ideas as well.</p>
+<p>More recently, I have been building the beginnings of a fairly complex
+application where I am often interacting with game state. You can watch my
+<a href="https://twitch.tv/andgokevin/" target="_blank" rel="external">recorded developer logs or catch me working on game state live on
+Twitch</a> as I continue to develop it.</p>
+<p>If you want to see various source code for implementations of game states:</p>
+<ul>
+<li><a href="https://github.com/aframevr/a-blast/blob/master/src/components/gamestate.js" target="_blank" rel="external">A-Blast <code>gamestate</code></a></li>
+<li><a href="https://github.com/aframevr/a-saturday-night/blob/master/src/components/game-state.js" target="_blank" rel="external">A Saturday Night <code>game-state</code></a></li>
+<li><a href="https://github.com/ngokevin/architect/blob/master/components/gamestate.js" target="_blank" rel="external">Architect <code>gamestate</code></a></li>
+</ul>
+<p>Whatever becomes the ultimate approach to game state will become the Oracle of
+the Metaverse!</p>
+
+        
+
+        
+      </article>
+
+      <footer class="footer guide-links c">
+        
+        
+        
+        
+          <span class="float-left"><a href="/blog/awoa-56/" class="guide-link guide-link-left">← A Week of A-Frame 56</a></span>
+        
+        
+          <span class="float-right"><a href="/blog/awoa-55/" class="guide-link guide-link-right">A Week of A-Frame 55 →</a></span>
+        
+      </footer>
+    
+
+    <footer class="footer footnote">
+      <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+      
+        <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/gamestate.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+      
+    </footer>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      <script src="/js/ga.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+  </body>
+</html>
