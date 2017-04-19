@@ -360,6 +360,36 @@ h4 {
     margin-bottom: 20px;
   }
 }
+.sponsor {
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 20px 20px;
+  height: 30px;
+}
+.sponsor .message {
+  margin-right: 7px;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: top;
+  font-weight: 300;
+}
+a.mozilla-logo {
+  display: inline-block;
+  opacity: 0.8;
+  background: url("../images/mozilla-logo.svg") no-repeat;
+  height: 24px;
+  width: 84px;
+  border: none;
+  margin-left: 0.25ch;
+  top: 1px;
+  transition: 0.15s opacity ease-in-out;
+}
+a.mozilla-logo:hover {
+  opacity: 1;
+}
 .mobile-header {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -476,9 +506,8 @@ a.click {
 }
 .nav {
   border-top: 1px dashed rgba(0,0,0,0.1);
-  border-bottom: 1px dashed rgba(0,0,0,0.1);
-  margin-bottom: 25px;
-  padding: 25px 0;
+  margin-bottom: 15px;
+  padding-top: 25px;
 }
 .nav-link {
   color: rgba(0,0,0,0.35);
@@ -537,6 +566,20 @@ a.click {
   .subnav-link {
     line-height: 1.6;
   }
+}
+.sponsor {
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 0 25px;
+  padding-bottom: 50px;
+  position: relative;
+}
+.sponsor a.mozilla-logo {
+  background-color: #ef2d5e;
+}
+.sponsor .message {
+  margin: 0;
+  padding-bottom: 25px;
 }
 .example__iframe {
   height: 100vh;
