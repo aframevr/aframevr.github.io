@@ -854,6 +854,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-video.html"
                class="subnav-link">
               &lt;a-video&gt;
@@ -1005,6 +1012,8 @@ provide a appearance alongside the shape to create a complete mesh.</p>
               <li><a href="#torus">torus</a></li>
             
               <li><a href="#torusknot">torusKnot</a></li>
+            
+              <li><a href="#triangle">triangle</a></li>
             
           </ul>
         
@@ -1507,6 +1516,37 @@ not coprime the result will be a torus link:</p>
 <td>q</td>
 <td>How many times the geometry winds around a circle in the interior of the torus.</td>
 <td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="triangle"><a href="#triangle" class="headerlink" title="triangle"></a><code>triangle</code></h3><p>The triangle geometry creates a flat two-dimensional triangle. Because triangles are flat,
+A-Frame will render only a single face, which is the one with <code>vertexA</code>, <code>vertexB</code>, and
+<code>vertexC</code> appear in counterclockwise order on the screen, unless we specify <code>side: double</code> on
+the <code>material</code> component.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: triangle"</span> <span class="attr">material</span>=<span class="string">"side: double"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vertexA</td>
+<td>Coordinates of one of the three vertices</td>
+<td>0  0.5 0</td>
+</tr>
+<tr>
+<td>vertexB</td>
+<td>Coordinates of one of the three vertices</td>
+<td>-0.5 -0.5 0</td>
+</tr>
+<tr>
+<td>vertexC</td>
+<td>Coordinates of one of the three vertices</td>
+<td>0.5 -0.5 0</td>
 </tr>
 </tbody>
 </table>
