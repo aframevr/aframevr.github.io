@@ -29,7 +29,7 @@
       data-aframe-version="0.5.0"
       data-docs-version="master">
   <head>
-    <title>Using JavaScript and DOM APIs – A-Frame</title>
+    <title>JavaScript, Events, DOM APIs – A-Frame</title>
     
 
 <script>
@@ -51,7 +51,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="Using JavaScript and DOM APIs – A-Frame">
+    <meta property="og:title" content="JavaScript, Events, DOM APIs – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -61,7 +61,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="Using JavaScript and DOM APIs – A-Frame">
+    <meta name="twitter:title" content="JavaScript, Events, DOM APIs – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -99,7 +99,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="guides">
+  <body data-page-layout="docs" data-page-type="introduction">
     <main id="main" class="main">
 
 
@@ -223,9 +223,9 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <a href="/docs/master/introduction/"
-           class="section-title-link section-title-link-inactive">
+           class="section-title-link section-title-link-active">
           Introduction
         </a>
       </h3>
@@ -241,16 +241,79 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/introduction/getting-started.html"
+            <a href="/docs/master/introduction/installation.html"
                class="subnav-link">
-              Getting Started
+              Installation
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/introduction/device-and-platform-support.html"
+            <a href="/docs/master/introduction/vr-headsets-and-webvr-browsers.html"
                class="subnav-link">
-              Device & Platform Support
+              VR Headsets & WebVR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/master/introduction/javascript-events-dom-apis.html"
+               class="subnav-link current">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting and Publishing
             </a>
           </li>
         
@@ -273,9 +336,9 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <a href="/docs/master/guides/"
-           class="section-title-link section-title-link-active">
+           class="section-title-link section-title-link-inactive">
           Guides
         </a>
       </h3>
@@ -284,16 +347,9 @@
       <ol class="subnav section-subnav">
         
           <li class="subnav-item ">
-            <a href="/docs/master/guides/"
+            <a href="/docs/master/guides/building-a-basic-scene.html"
                class="subnav-link">
               Building a Basic Scene
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/guides/using-the-aframe-inspector.html"
-               class="subnav-link">
-              Using the A-Frame Inspector
             </a>
           </li>
         
@@ -304,31 +360,17 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
-            <a href="/docs/master/guides/using-javascript-and-dom-apis.html"
-               class="subnav-link current">
-              Using JavaScript and DOM APIs
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/guides/using-with-threejs.html"
-               class="subnav-link">
-              Using with three.js
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/guides/writing-a-component.html"
-               class="subnav-link">
-              Writing a Component
-            </a>
-          </li>
-        
           <li class="subnav-item ">
             <a href="/docs/master/guides/building-with-magicavoxel.html"
                class="subnav-link">
               Building with MagicaVoxel
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
             </a>
           </li>
         
@@ -340,19 +382,12 @@
       <h3 class="section-title docs-section-title section-title-inactive">
         <a href="/docs/master/core/"
            class="section-title-link section-title-link-inactive">
-          Concepts and API
+          Core API
         </a>
       </h3>
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/core/"
-               class="subnav-link">
-              Entity-Component-System
-            </a>
-          </li>
         
           <li class="subnav-item ">
             <a href="/docs/master/core/entity.html"
@@ -404,9 +439,9 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/globals.html"
                class="subnav-link">
-              AFRAME Globals
+              Globals
             </a>
           </li>
         
@@ -679,13 +714,6 @@
       <ol class="subnav section-subnav">
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/"
-               class="subnav-link">
-              Introduction
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-box.html"
                class="subnav-link">
               &lt;a-box&gt;
@@ -880,7 +908,7 @@
 </aside>
 
 <!-- Documentation. -->
-<div class="content content--structured content--guides copy">
+<div class="content content--structured content--introduction copy">
   <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -931,8 +959,8 @@
   <div class="copy__wrap">
     <div class="page__section docs-header">
       <p>
-        <a href="/docs/master/guides/" class="borderless-link">
-          master &rsaquo; Guides
+        <a href="/docs/master/introduction/" class="borderless-link">
+          master &rsaquo; Introduction
         </a>
       </p>
       
@@ -944,7 +972,7 @@
 </div>
     </div>
     <h1 class="page__title">
-      Using JavaScript and DOM APIs
+      JavaScript, Events, DOM APIs
     </h1>
 
     
@@ -1196,17 +1224,17 @@ continuing from the previous example with the physics collision event:</p>
     <footer class="footer guide-links c">
       
         <span class="float-left">
-          <a href="/docs/master/guides/building-a-360-image-gallery.html" class="guide-link guide-link-left">← Building a 360&amp;deg; Image Gallery </a></span>
+          <a href="/docs/master/introduction/entity-component-system.html" class="guide-link guide-link-left">← Entity-Component-System </a></span>
       
       
         <span class="float-right">
-          <a href="/docs/master/guides/using-with-threejs.html" class="guide-link guide-link-right">Using with three.js →</a></span>
+          <a href="/docs/master/introduction/developing-with-threejs.html" class="guide-link guide-link-right">Developing with three.js →</a></span>
       
     </footer>
 
     <footer class="footer footnote">
   <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/guides/using-javascript-and-dom-apis.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/javascript-events-dom-apis.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 
   <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
     <div class="message">Supported by</div>

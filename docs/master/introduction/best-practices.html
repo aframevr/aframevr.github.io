@@ -241,16 +241,79 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/introduction/getting-started.html"
+            <a href="/docs/master/introduction/installation.html"
                class="subnav-link">
-              Getting Started
+              Installation
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/introduction/device-and-platform-support.html"
+            <a href="/docs/master/introduction/vr-headsets-and-webvr-browsers.html"
                class="subnav-link">
-              Device & Platform Support
+              VR Headsets & WebVR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/javascript-events-dom-apis.html"
+               class="subnav-link">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting and Publishing
             </a>
           </li>
         
@@ -284,16 +347,9 @@
       <ol class="subnav section-subnav">
         
           <li class="subnav-item ">
-            <a href="/docs/master/guides/"
+            <a href="/docs/master/guides/building-a-basic-scene.html"
                class="subnav-link">
               Building a Basic Scene
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/guides/using-the-aframe-inspector.html"
-               class="subnav-link">
-              Using the A-Frame Inspector
             </a>
           </li>
         
@@ -305,30 +361,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/guides/using-javascript-and-dom-apis.html"
-               class="subnav-link">
-              Using JavaScript and DOM APIs
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/guides/using-with-threejs.html"
-               class="subnav-link">
-              Using with three.js
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/guides/writing-a-component.html"
-               class="subnav-link">
-              Writing a Component
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/master/guides/building-with-magicavoxel.html"
                class="subnav-link">
               Building with MagicaVoxel
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
             </a>
           </li>
         
@@ -340,19 +382,12 @@
       <h3 class="section-title docs-section-title section-title-inactive">
         <a href="/docs/master/core/"
            class="section-title-link section-title-link-inactive">
-          Concepts and API
+          Core API
         </a>
       </h3>
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/core/"
-               class="subnav-link">
-              Entity-Component-System
-            </a>
-          </li>
         
           <li class="subnav-item ">
             <a href="/docs/master/core/entity.html"
@@ -404,9 +439,9 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/AFRAME.html"
+            <a href="/docs/master/core/globals.html"
                class="subnav-link">
-              AFRAME Globals
+              Globals
             </a>
           </li>
         
@@ -677,13 +712,6 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/primitives/"
-               class="subnav-link">
-              Introduction
-            </a>
-          </li>
         
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-box.html"
@@ -957,10 +985,48 @@
 
     
     
-      <h2 id="vr-design"><a href="#vr-design" class="headerlink" title="VR Design"></a>VR Design</h2><p>Designing for VR is different than designing for flat experiences. As a new
+      <h2 id="a-frame"><a href="#a-frame" class="headerlink" title="A-Frame"></a>A-Frame</h2><p>Some best practices for the framework:</p>
+<ul>
+<li>The core structure of A-Frame is <a href="./entity-component-system.html">entity-component (ECS)</a>. Place and
+structure application code within purely A-Frame components for reusability,
+modularity, composability, decoupling, encapsulation, declarativeness, and
+testability. It’s okay to start out at first using content scripts
+(<code>&lt;script&gt;</code>), but look to move towards components.</li>
+<li><a href="../core/mixins.html">Mixins</a> and <a href="https://github.com/ngokevin/kframe/tree/master/components/template/" target="_blank" rel="external">templating</a> are useful to reuse and reduce
+repeated HTML.</li>
+</ul>
+<h2 id="performance"><a href="#performance" class="headerlink" title="Performance"></a>Performance</h2><p>Performance is critical in VR. A high framerate must be maintained in order for
+people to feel comfortable and as if they were in another place. Here are some
+ways to help improve performance of an A-Frame scene:</p>
+<ul>
+<li>Use <a href="./vr-headsets-and-webvr-browsers.html">recommended hardware specifications</a>.</li>
+<li>Use the <strong><a href="../components/stats.html">stats component</a></strong> to keep an eye on various metrics (FPS,
+vertex and face count, geometry and material count, draw calls, number of entities). We
+want to maximize FPS and minimize everything else.</li>
+<li>Make use of the <strong><a href="../core/asset-management-system.html">asset management system</a></strong> to benefit from browser
+caching and preloading. Trying to fetch assets while rendering is slower than
+fetching all assets before rendering.</li>
+<li>If using models, look to bake your lights into textures rather than relying
+on real-time lighting and shadows.</li>
+<li>Generally, the fewer number of entities and lights in the scene, the better.</li>
+<li>Make sure your textures’ resolutions are sized to powers of two (e.g.,
+256x256, 512x1024) in order to avoid the renderer having to resize the
+texture during runtime.</li>
+<li>Limit the number of faces and vertices on models.</li>
+<li>Some further techniques (not yet documented) include geometry instancing,
+geometry merging, level of detail (LOD).</li>
+<li>When using raycasters or colliders, select which entities are to be raycasted
+against rather than raycasting against every object in the scene.</li>
+<li>When adding continuously running behaviors, use A-Frame component <code>tick</code>
+handlers to hook into the global render loop. Use utilities such as
+<code>AFRAME.utils.throttleTick</code> to limit the number of times the <code>tick</code> handler
+is run if appropriate.</li>
+</ul>
+<h2 id="vr-design"><a href="#vr-design" class="headerlink" title="VR Design"></a>VR Design</h2><p>Designing for VR is different than designing for flat experiences. As a new
 medium, there are new sets of best practices to follow, especially to maintain
 user comfort and presence. This has been thoroughly written about so we defer
-to these comprehensive guides:</p>
+to these guides. Note that VR interaction design is fairly new, and nothing is
+absolute:</p>
 <ul>
 <li><a href="https://developer.oculus.com/documentation/intro-vr/latest/concepts/bp_intro/" target="_blank" rel="external">Oculus Best Practices (for VR)</a></li>
 <li><a href="https://developer.leapmotion.com/assets/Leap%20Motion%20VR%20Best%20Practices%20Guidelines.pdf" target="_blank" rel="external">Leap Motion VR Best Practices Guidelines</a></li>
@@ -970,36 +1036,8 @@ to these comprehensive guides:</p>
 <li>The common golden rule is to never unexpectedly take control of the camera
 away from users.</li>
 <li>Units (such as for position) should be considered meters. This is because the
-WebVR API returns pose in meters which is fed into most camera controls. By considering
-units as meters, we achieve expected scale.</li>
-</ul>
-<h2 id="performance"><a href="#performance" class="headerlink" title="Performance"></a>Performance</h2><p>Performance is critical in VR. A high framerate must be maintained in order for
-users to be comfortable. Here are some ways to help improve performance of an
-A-Frame scene:</p>
-<ul>
-<li>Use <a href="./device-and-platform-support.html#hardware-specifications">recommended hardware specifications</a>.</li>
-<li>Use the <strong><a href="../components/stats.html">stats component</a></strong> to keep an eye on various metrics (FPS,
-vertex and face count, geometry and material count, draw calls, number of entities). We
-want to maximize FPS and minimize everything else.</li>
-<li>Make use of the <strong><a href="../core/asset-management-system.html">asset management system</a></strong> to benefit from browser
-caching and preloading. Trying to fetch assets while rendering is slower than
-fetching all assets before rendering.</li>
-<li>Look to make use of <strong><a href="../components/geometry.html#mergeto">geometry merging</a></strong> to limit draw calls when
-multiple geometries are sharing the same material.</li>
-<li>If using models, look to bake your lights into textures rather than relying
-on real-time lighting and shadows.</li>
-<li>Generally, the fewer number of entities and lights in the scene, the better.</li>
-<li>Make sure your textures’ resolutions are sized to powers of two (e.g.,
-256x256, 512x1024) in order to avoid the renderer having to resize the
-texture during runtime.</li>
-</ul>
-<h2 id="a-frame"><a href="#a-frame" class="headerlink" title="A-Frame"></a>A-Frame</h2><p>Some best practices for the framework:</p>
-<ul>
-<li>Don’t repeat yourself (<strong>DRY</strong>). Make use of <a href="../core/mixins.html">mixins</a> and <a href="https://github.com/ngokevin/aframe-template-component" target="_blank" rel="external">templating</a> to
-reduce the amount of copy-and-pasting and reduce the amount of HTML in your
-scene.</li>
-<li>Try to make use of the <a href="../core/">entity-component-system framework</a>. Develop
-within components to encourage declarativeness and reusability.</li>
+WebVR API returns pose in meters which is fed into most camera controls. By
+considering units as meters, we achieve expected scale.</li>
 </ul>
 
     
@@ -1008,7 +1046,7 @@ within components to encourage declarativeness and reusability.</li>
     <footer class="footer guide-links c">
       
         <span class="float-left">
-          <a href="/docs/master/introduction/device-and-platform-support.html" class="guide-link guide-link-left">← Device &amp; Platform Support </a></span>
+          <a href="/docs/master/introduction/hosting-and-publishing.html" class="guide-link guide-link-left">← Hosting and Publishing </a></span>
       
       
         <span class="float-right">
