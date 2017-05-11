@@ -970,8 +970,7 @@
 
     
     
-      <p><img src="https://cloud.githubusercontent.com/assets/674727/21375108/2c10b308-c6e0-11e6-945e-2394beb9a8ed.png" alt="A-Frame"></p>
-<p>A-Frame is a three.js framework with an <a href="https://wikipedia.org/wiki/Entity_component_system" target="_blank" rel="external">entity-component-system</a> (ECS)
+      <p>A-Frame is a three.js framework with an <a href="https://wikipedia.org/wiki/Entity_component_system" target="_blank" rel="external">entity-component-system</a> (ECS)
 architecture. ECS architecture is a common and desirable pattern in 3D and game
 development that follows the <strong>composition over inheritance and hierarchy</strong>
 principle.</p>
@@ -1148,7 +1147,7 @@ behaviors, interactivity with other objects.</p>
 attaching superpowers or augmentations for VR! Each of the components below
 have no knowledge of each other, but can be combined to define a complex
 entity:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;a-entity</div><div class="line">  tracked-controls  &lt;!-- Hook into the Gamepad API for pose. --&gt;</div><div class="line">  vive-controls  &lt;!-- Vive button mappings. --&gt;</div><div class="line">  oculus-touch-controls  &lt;!-- Oculus button mappings. --&gt;</div><div class="line">  hand-controls  &lt;!-- Appearance (model), gestures, and events. --&gt;</div><div class="line">  controller-cursor  &lt;!-- Laser to interact with menus and UI. --&gt;</div><div class="line">  sphere-collider  &lt;!-- Listen when hand is in contact with an object. --&gt;</div><div class="line">  grab  &lt;!-- Provide ability to grab objects. --&gt;</div><div class="line">  throw &lt;!-- Provide ability to throw objects. --&gt;</div><div class="line">  event-set=&quot;_event: grabstart; visible: false&quot;  &lt;!-- Hide hand when grabbing object. --&gt;</div><div class="line">  event-set=&quot;_event: grabend; visible: true&quot;  &lt;!-- Show hand when no longer grabbing object. --&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;a-entity</div><div class="line">  tracked-controls  &lt;!-- Hook into the Gamepad API for pose. --&gt;</div><div class="line">  vive-controls  &lt;!-- Vive button mappings. --&gt;</div><div class="line">  oculus-touch-controls  &lt;!-- Oculus button mappings. --&gt;</div><div class="line">  hand-controls  &lt;!-- Appearance (model), gestures, and events. --&gt;</div><div class="line">  controller-cursor  &lt;!-- Laser to interact with menus and UI. --&gt;</div><div class="line">  sphere-collider  &lt;!-- Listen when hand is in contact with an object. --&gt;</div><div class="line">  grab  &lt;!-- Provide ability to grab objects. --&gt;</div><div class="line">  throw &lt;!-- Provide ability to throw objects. --&gt;</div><div class="line">  event-set="_event: grabstart; visible: false"  &lt;!-- Hide hand when grabbing object. --&gt;</div><div class="line">  event-set="_event: grabend; visible: true"  &lt;!-- Show hand when no longer grabbing object. --&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 <h3 id="declarative-dom-based-ecs"><a href="#declarative-dom-based-ecs" class="headerlink" title="Declarative DOM-Based ECS"></a>Declarative DOM-Based ECS</h3><p>A-Frame takes ECS to another level by making it declarative and based on the
 DOM. Traditionally, ECS-based engines would create entities, attach components,
 update components, remove components all through code. But A-Frame has HTML and
