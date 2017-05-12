@@ -877,9 +877,7 @@
 
         
 
-        
-        
-          <p>I like the <a href="https://aframe.io/examples/showcase/spheres-and-fog/">Spheres and Fog example</a> because it explores the sense of scale within virtual reality more than our other early examples. A series of spheres in the scene vary from 0.15 to 30 meters in radius, and a fog on <code>&lt;a-scene&gt;</code> amplifies the sense of size and distance:</p>
+        <p>I like the <a href="https://aframe.io/examples/showcase/spheres-and-fog/">Spheres and Fog example</a> because it explores the sense of scale within virtual reality more than our other early examples. A series of spheres in the scene vary from 0.15 to 30 meters in radius, and a fog on <code>&lt;a-scene&gt;</code> amplifies the sense of size and distance:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">fog</span>=<span class="string">"type: linear; color: #AAB; far: 30; near: 0"</span>&gt;</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>The soft shadows under each sphere are faked with images. In Photoshop I created a circular gradient that fades from opaque to transparent. I applied this image as a child object of each sphere:</p>
@@ -889,7 +887,6 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"-15 0 5"</span> <span class="attr">translate</span>=<span class="string">"0 3 0"</span> <span class="attr">radius</span>=<span class="string">"3"</span> <span class="attr">color</span>=<span class="string">"#ECECEC"</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>The translate component in A-Frame shifts the geometry of a primitive (or geometry component on an entity, if you’re using entities and components) relative to the object position. The position remains the same, but the visible geometry moves relative to it. This enabled me to use the keep each sphere’s position at 0 on the y-axis, matching my mental model of the spheres being balls sitting on the ground. It would arguably have been more concise to achieve the same visual effect by using y-axis positions instead of translate, but I found this approach felt better.</p>
 
-        
 
         
       </article>
@@ -923,6 +920,19 @@
       </span>
     </footer>
   </div>
+
+  
+    
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+  </ul>
+</div>
+
+  
 </div>
 </main>
 

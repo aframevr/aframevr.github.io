@@ -968,9 +968,7 @@
 
     
 
-    
-    
-      <p>A scene is represented by the <code>&lt;a-scene&gt;</code> element. The scene is the global root
+    <p>A scene is represented by the <code>&lt;a-scene&gt;</code> element. The scene is the global root
 object, and all <a href="./entity.html">entities</a> are contained within the scene.</p>
 <p>The scene inherits from the <a href="./entity.html"><code>Entity</code></a> class so it inherits all of its
 properties, its methods, the ability to attach components, and the behavior to
@@ -983,84 +981,7 @@ before kicking off the render loop.</p>
 <li>Set up webvr-polyfill, VREffect</li>
 <li>Add UI to Enter VR that calls WebVR API</li>
 </ul>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#example">Example</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#properties">Properties</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#methods">Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#events">Events</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#scene-components">Scene Components</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#running-content-scripts-on-the-scene">Running Content Scripts on the Scene</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"texture"</span> <span class="attr">src</span>=<span class="string">"texture.png"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#texture"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
@@ -1178,7 +1099,6 @@ before kicking off the render loop.</p>
 <p>If for some particular reason you prefer not to write a dedicated component you need to wait for the scene to finish initializing and attaching:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> scene = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span> (scene.hasLoaded) &#123;</div><div class="line">  run();</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  scene.addEventListener(<span class="string">'loaded'</span>, run);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> entity = scene.querySelector(<span class="string">'a-entity'</span>);</div><div class="line">  entity.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, <span class="string">'red'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1207,6 +1127,83 @@ before kicking off the render loop.</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#methods">Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#scene-components">Scene Components</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#running-content-scripts-on-the-scene">Running Content Scripts on the Scene</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

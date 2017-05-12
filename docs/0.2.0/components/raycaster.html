@@ -725,9 +725,7 @@
 
     
 
-    
-    
-      <p>The raycaster component provides for an entity the ability to do intersection testing with a <a href="https://en.wikipedia.org/wiki/Ray_casting" target="_blank" rel="external">raycaster</a>. The raycaster component is a helper component. By itself, it does not do anything, but it can be and is used by components such as the <a href="./cursor.html">cursor component</a>. The raycaster component will poll for intersections with other entities and set <code>this.intersectedEl</code> to the closest intersected entity.</p>
+    <p>The raycaster component provides for an entity the ability to do intersection testing with a <a href="https://en.wikipedia.org/wiki/Ray_casting" target="_blank" rel="external">raycaster</a>. The raycaster component is a helper component. By itself, it does not do anything, but it can be and is used by components such as the <a href="./cursor.html">cursor component</a>. The raycaster component will poll for intersections with other entities and set <code>this.intersectedEl</code> to the closest intersected entity.</p>
 <h2 id="members"><a href="#members" class="headerlink" title="Members"></a>Members</h2><table>
 <thead>
 <tr>
@@ -767,7 +765,6 @@
 <h2 id="using-the-raycaster"><a href="#using-the-raycaster" class="headerlink" title="Using the Raycaster"></a>Using the Raycaster</h2><p>To use the raycaster, we can specify the raycaster component as a dependency of another component.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'raycaster'</span>],</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.raycaster = <span class="keyword">this</span>.el.components.raycaster;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -796,6 +793,50 @@
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#members">Members</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#using-the-raycaster">Using the Raycaster</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

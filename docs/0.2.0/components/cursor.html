@@ -725,9 +725,7 @@
 
     
 
-    
-    
-      <p>The cursor component defines interaction with other entities through clicking and gazing, by using the <a href="./raycaster.html">raycaster</a> component to determine which object has been clicked. When the mouse is clicked, the closest visible entity intersecting the cursor will have a DOM <code>click</code> event triggered. Note the cursor component only defines the behavior. To define the appearance, you might apply the geometry component.</p>
+    <p>The cursor component defines interaction with other entities through clicking and gazing, by using the <a href="./raycaster.html">raycaster</a> component to determine which object has been clicked. When the mouse is clicked, the closest visible entity intersecting the cursor will have a DOM <code>click</code> event triggered. Note the cursor component only defines the behavior. To define the appearance, you might apply the geometry component.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we define a cursor in the shape of a ring positioned on the center of the screen. To have the cursor fixed on the screen, we place it as a child of a camera entity. Whenever the cursor clicks on the cube, we can listen the the click event. This might feel familiar to web developers.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span>=<span class="string">"fuse: true; maxDistance: 30; timeout: 500"</span></span></div><div class="line">            <span class="attr">position</span>=<span class="string">"0 0 -5"</span></div><div class="line">            <span class="attr">geometry</span>=<span class="string">"primitive: ring"</span></div><div class="line">            <span class="attr">material</span>=<span class="string">"color: white; shader: flat"</span>&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#cube'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, <span class="string">'red'</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'I was clicked!'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -820,7 +818,6 @@
 <p>To play with an example of a cursor with visual feedback, check out the <a href="http://codepen.io/team/mozvr/pen/RrxgwE" target="_blank" rel="external">Cursor with Visual Feedback example on Codepen</a>.</p>
 <h2 id="caveats"><a href="#caveats" class="headerlink" title="Caveats"></a>Caveats</h2><p>The raycaster currently picks up non-visible entities. This issue will be addressed in a later release.</p>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -849,6 +846,94 @@
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#states">States</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#fuse-based-cursor">Fuse-Based Cursor</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-visual-feedback">Adding Visual Feedback</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#caveats">Caveats</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

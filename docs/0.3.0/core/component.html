@@ -835,9 +835,7 @@
 
     
 
-    
-    
-      <p>In the <a href="./">entity-component-system pattern</a>, a component is a reusable and
+    <p>In the <a href="./">entity-component-system pattern</a>, a component is a reusable and
 modular chunk of data that is plugged into an entity to add appearance, behavior,
 and/or functionality.</p>
 <p>In A-Frame, components modify entities which are 3D objects in the scene. We
@@ -851,138 +849,7 @@ components to give it appearance (color, shape), to define its behavior
 <p>Components are roughly analogous to CSS. Like how CSS rules modify the
 appearance of elements, component properties modify the appearance, behavior,
 and functionality of entities.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#what-a-component-looks-like">What a Component Looks Like</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#from-html">From HTML</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#under-the-hood">Under the Hood</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#properties">Properties</a></li>
-            
-              <li><a href="#methods">Methods</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#dependencies">Dependencies</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#multiple-instancing">Multiple Instancing</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#schema">Schema</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#property-types">Property Types</a></li>
-            
-              <li><a href="#schema-inference">Schema Inference</a></li>
-            
-              <li><a href="#single-property-schemas">Single-Property Schemas</a></li>
-            
-              <li><a href="#multi-property-schemas">Multi-Property Schemas</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#interface-lifecycle-methods">Interface / Lifecycle Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#init">.init()</a></li>
-            
-              <li><a href="#update-olddata">.update(oldData)</a></li>
-            
-              <li><a href="#remove">.remove()</a></li>
-            
-              <li><a href="#tick-time-timedelta">.tick(time, timeDelta)</a></li>
-            
-              <li><a href="#pause-and-play">.pause() and .play()</a></li>
-            
-              <li><a href="#updateschema-data">.updateSchema(data)</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#methods-1">Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#extendschema-schema">.extendSchema(schema)</a></li>
-            
-              <li><a href="#flushtodom">.flushToDOM()</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#write-a-component">Write a Component</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#line-component">Line Component</a></li>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="what-a-component-looks-like"><a href="#what-a-component-looks-like" class="headerlink" title="What a Component Looks Like"></a>What a Component Looks Like</h2><p>A component holds a bucket of data in the form of one or more component
 properties. This data is used to modify the entity. Consider an <em>engine</em>
@@ -1415,7 +1282,6 @@ want to more granularly update objects for better performance.</p>
 </span></div>
 
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1444,6 +1310,169 @@ want to more granularly update objects for better performance.</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#what-a-component-looks-like">What a Component Looks Like</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#from-html">From HTML</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#under-the-hood">Under the Hood</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#properties">Properties</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#methods">Methods</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#dependencies">Dependencies</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#multiple-instancing">Multiple Instancing</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#schema">Schema</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#property-types">Property Types</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#schema-inference">Schema Inference</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#single-property-schemas">Single-Property Schemas</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#multi-property-schemas">Multi-Property Schemas</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#interface-lifecycle-methods">Interface / Lifecycle Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#init">.init()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#update-olddata">.update(oldData)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#remove">.remove()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#tick-time-timedelta">.tick(time, timeDelta)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#pause-and-play">.pause() and .play()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#updateschema-data">.updateSchema(data)</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#methods-1">Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#extendschema-schema">.extendSchema(schema)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#flushtodom">.flushToDOM()</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#write-a-component">Write a Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#line-component">Line Component</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

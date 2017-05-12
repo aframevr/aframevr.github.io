@@ -676,9 +676,7 @@
 
     
 
-    
-    
-      <p>Animations and transitions in A-Frame are defined using the <code>&lt;a-animation&gt;</code> element as a child. The system is roughly based after the <a href="http://www.w3.org/TR/web-animations/" target="_blank" rel="external">Web Animations</a> specification. A-Frame uses <a href="https://github.com/tweenjs/tween.js/" target="_blank" rel="external">tween.js</a> internally.</p>
+    <p>Animations and transitions in A-Frame are defined using the <code>&lt;a-animation&gt;</code> element as a child. The system is roughly based after the <a href="http://www.w3.org/TR/web-animations/" target="_blank" rel="external">Web Animations</a> specification. A-Frame uses <a href="https://github.com/tweenjs/tween.js/" target="_blank" rel="external">tween.js</a> internally.</p>
 <p>As an introductory example, to define a 5-meter orbit on an entity about the Y-axis that takes 10 seconds, we can offset the position and animate the rotation. This animation starts with the initial rotation about the Y-axis of 0 degrees, and goes around 360 degrees. It’s defined with a duration of 10000 milliseconds, maintains the final value on each cycle of the animation, and loops infinitely.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"5 0 0"</span> <span class="attr">rotation</span>=<span class="string">"0 0 0"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"rotation"</span></span></div><div class="line">               <span class="attr">to</span>=<span class="string">"0 360 0"</span></div><div class="line">               <span class="attr">dur</span>=<span class="string">"10000"</span></div><div class="line">               <span class="attr">fill</span>=<span class="string">"forwards"</span></div><div class="line">               <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;<span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>There are many attributes and values used to define animations. Below is a table providing a quick overview of these attributes, and from there we’ll delve into more detail.</p>
@@ -842,7 +840,6 @@ let us animate the light intensity.</p>
 </tbody>
 </table>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -871,6 +868,110 @@ let us animate the light intensity.</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#attribute">Attribute</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#coordinate-attributes">Coordinate Attributes</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#boolean-attributes">Boolean Attributes</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#numeric-attributes">Numeric Attributes</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#selecting-a-component-property">Selecting a Component Property</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#begin">Begin</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#direction">Direction</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#easing">Easing</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#fill">Fill</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#repeat">Repeat</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

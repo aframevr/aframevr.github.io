@@ -968,108 +968,13 @@
 
     
 
-    
-    
-      <blockquote>
+    <blockquote>
 <p><a href="https://glitch.com/~aframe-aincraft/" target="_blank" rel="external">Remix this example on Glitch</a>. Or <a href="https://aframe-aincraft.glitch.me" target="_blank" rel="external">view the demo</a>.</p>
 </blockquote>
 <p>Let’s build a basic Minecraft (voxel builder) demo that targets room scale VR
 with controllers (e.g., Vive, Rift). The example will be minimally usable on
 mobile and desktop.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#example-skeleton">Example Skeleton</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#adding-a-ground">Adding a Ground</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#preloading-assets">Preloading Assets</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#adding-a-background">Adding a Background</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#adding-voxels">Adding Voxels</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#entity-component-pattern">Entity-Component Pattern</a></li>
-            
-              <li><a href="#random-color-component">Random Color Component</a></li>
-            
-              <li><a href="#snap-component">Snap Component</a></li>
-            
-              <li><a href="#mixins">Mixins</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#adding-hand-controllers">Adding Hand Controllers</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#adding-teleportation-to-the-left-hand">Adding Teleportation to the Left Hand</a></li>
-            
-              <li><a href="#adding-voxel-spawner-to-the-right-hand">Adding Voxel Spawner to the Right Hand</a></li>
-            
-              <li><a href="#adding-support-for-mobile-and-desktop">Adding Support for Mobile and Desktop</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#try-it-out">Try It Out!</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="example-skeleton"><a href="#example-skeleton" class="headerlink" title="Example Skeleton"></a>Example Skeleton</h2><p>We’ll start off with this skeleton HTML:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.5.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1272,7 +1177,6 @@ desktop or mobile device, <a href="https://ngokevin.github.io/kframe/scenes/ainc
 capture and gestures</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1295,6 +1199,115 @@ capture and gestures</a>.</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example-skeleton">Example Skeleton</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-a-ground">Adding a Ground</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#preloading-assets">Preloading Assets</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-a-background">Adding a Background</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-voxels">Adding Voxels</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#entity-component-pattern">Entity-Component Pattern</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#random-color-component">Random Color Component</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#snap-component">Snap Component</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#mixins">Mixins</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-hand-controllers">Adding Hand Controllers</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-teleportation-to-the-left-hand">Adding Teleportation to the Left Hand</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-voxel-spawner-to-the-right-hand">Adding Voxel Spawner to the Right Hand</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-support-for-mobile-and-desktop">Adding Support for Mobile and Desktop</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#try-it-out">Try It Out!</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

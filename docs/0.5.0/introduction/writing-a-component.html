@@ -935,9 +935,7 @@
     
     
 
-    
-    
-      <p>Components of A-Frame’s <a href="../introduction/entity-component-system.html">entity-component framework</a> are JavaScript
+    <p>Components of A-Frame’s <a href="../introduction/entity-component-system.html">entity-component framework</a> are JavaScript
 modules that can be mixed, matched, and composed onto entities to build
 appearance, behavior, and functionality. We can register component in
 JavaScript and use it declaratively from the DOM. Components are configurable,
@@ -954,112 +952,7 @@ before <code>&lt;a-scene&gt;</code> like:</p>
 trivial things, but will demonstrate data flow, API, and usage. To see examples
 of non-trivial components, see the <a href="#learning-through-components-in-ecosystem">Learning Through Components in Ecosystem
 section</a>.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#example-hello-world-component">Example: hello-world Component</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#registering-the-component-with-aframe-registercomponent">Registering the Component with AFRAME.registerComponent</a></li>
-            
-              <li><a href="#using-the-component-from-html">Using the Component from HTML</a></li>
-            
-              <li><a href="#using-the-component-from-js">Using the Component from JS</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#example-log-component">Example: log Component</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#defining-properties-with-the-schema">Defining Properties with the Schema</a></li>
-            
-              <li><a href="#using-property-data-from-a-lifecycle-handler">Using Property Data from a Lifecycle Handler</a></li>
-            
-              <li><a href="#handling-property-updates">Handling Property Updates</a></li>
-            
-              <li><a href="#handling-component-removal">Handling Component Removal</a></li>
-            
-              <li><a href="#allowing-multiple-instances-of-a-component">Allowing Multiple Instances of a Component</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#example-box-component">Example: box Component</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#schema-and-api">Schema and API</a></li>
-            
-              <li><a href="#creating-the-box-mesh">Creating the Box Mesh</a></li>
-            
-              <li><a href="#removing-the-box-mesh">Removing the Box Mesh</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#example-follow-component">Example: follow Component</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#schema-and-api-1">Schema and API</a></li>
-            
-              <li><a href="#creating-a-helper-vector">Creating a Helper Vector</a></li>
-            
-              <li><a href="#defining-a-behavior-with-the-tick-handler">Defining a Behavior With the .tick() Handler</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#learning-through-components-in-ecosystem">Learning Through Components in Ecosystem</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#publishing-a-component">Publishing a Component</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!-- toc -->
 <h2 id="example-hello-world-component"><a href="#example-hello-world-component" class="headerlink" title="Example: hello-world Component"></a>Example: <code>hello-world</code> Component</h2><p>Let’s start with the most basic component to get a general idea. This component
 will log a simple message once when the component’s entity is attached using
 the <a href="../core/component.html#init"><code>.init()</code> handler</a>.</p>
@@ -1270,7 +1163,6 @@ pull request</a> to the <a href="https://aframe.io/registry/">A-Frame Registry</
 community will be able to use your component, and hopefully send some helpful
 pull requests back if needed!</p>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1299,6 +1191,139 @@ pull requests back if needed!</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example-hello-world-component">Example: hello-world Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#registering-the-component-with-aframe-registercomponent">Registering the Component with AFRAME.registerComponent</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#using-the-component-from-html">Using the Component from HTML</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#using-the-component-from-js">Using the Component from JS</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example-log-component">Example: log Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#defining-properties-with-the-schema">Defining Properties with the Schema</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#using-property-data-from-a-lifecycle-handler">Using Property Data from a Lifecycle Handler</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#handling-property-updates">Handling Property Updates</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#handling-component-removal">Handling Component Removal</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#allowing-multiple-instances-of-a-component">Allowing Multiple Instances of a Component</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example-box-component">Example: box Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#schema-and-api">Schema and API</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#creating-the-box-mesh">Creating the Box Mesh</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#removing-the-box-mesh">Removing the Box Mesh</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example-follow-component">Example: follow Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#schema-and-api-1">Schema and API</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#creating-a-helper-vector">Creating a Helper Vector</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#defining-a-behavior-with-the-tick-handler">Defining a Behavior With the .tick() Handler</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#learning-through-components-in-ecosystem">Learning Through Components in Ecosystem</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#publishing-a-component">Publishing a Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

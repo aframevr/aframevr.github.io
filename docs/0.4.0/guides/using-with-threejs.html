@@ -884,66 +884,10 @@
 
     
 
-    
-    
-      <p>Being a framework based on <a href="http://threejs.org" target="_blank" rel="external">three.js</a>, A-Frame provides full access to the
+    <p>Being a framework based on <a href="http://threejs.org" target="_blank" rel="external">three.js</a>, A-Frame provides full access to the
 three.js API. We’ll go over how to access the underlying three.js scene,
 objects, and API that lay underneath A-Frame.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#relationship-between-a-frame-and-three-js-scene-graphs">Relationship Between A-Frame and three.js Scene Graphs</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#parent-child-relationships">Parent-Child Relationships</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#accessing-the-three-js-api">Accessing the three.js API</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#working-with-three-js-objects">Working With three.js Objects</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#accessing-the-three-js-scene">Accessing the three.js Scene</a></li>
-            
-              <li><a href="#accessing-an-entity’s-three-js-objects">Accessing an Entity’s three.js Objects</a></li>
-            
-              <li><a href="#setting-an-object3d-on-an-entity">Setting an Object3D on an Entity</a></li>
-            
-              <li><a href="#removing-an-object3d-from-an-entity">Removing an Object3D From an Entity</a></li>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!-- toc -->
 <h2 id="relationship-between-a-frame-and-three-js-scene-graphs"><a href="#relationship-between-a-frame-and-three-js-scene-graphs" class="headerlink" title="Relationship Between A-Frame and three.js Scene Graphs"></a>Relationship Between A-Frame and three.js Scene Graphs</h2><ul>
 <li>A-Frame’s <code>&lt;a-scene&gt;</code> maps one-to-one with a three.js scene.</li>
 <li>A-Frame’s <code>&lt;a-entity&gt;</code> maps to one or more three.js objects.</li>
@@ -1005,7 +949,6 @@ can use the entity’s <code>.removeObject3D(name)</code> method. Going back to 
 with the point light, we remove the light when the component is detached:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'pointlight'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.setObject3D(<span class="string">'light'</span>, <span class="keyword">new</span> THREE.PointLight());</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">remove</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Remove Object3D.</span></div><div class="line">    <span class="keyword">this</span>.el.removeObject3D(<span class="string">'light'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1034,6 +977,70 @@ with the point light, we remove the light when the component is detached:</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#relationship-between-a-frame-and-three-js-scene-graphs">Relationship Between A-Frame and three.js Scene Graphs</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#parent-child-relationships">Parent-Child Relationships</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#accessing-the-three-js-api">Accessing the three.js API</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#working-with-three-js-objects">Working With three.js Objects</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#accessing-the-three-js-scene">Accessing the three.js Scene</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#accessing-an-entity’s-three-js-objects">Accessing an Entity’s three.js Objects</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#setting-an-object3d-on-an-entity">Setting an Object3D on an Entity</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#removing-an-object3d-from-an-entity">Removing an Object3D From an Entity</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

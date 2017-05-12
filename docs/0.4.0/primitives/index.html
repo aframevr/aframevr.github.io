@@ -884,9 +884,7 @@
 
     
 
-    
-    
-      <p>Primitives are <a href="../core/entity.html">entities</a> that:</p>
+    <p>Primitives are <a href="../core/entity.html">entities</a> that:</p>
 <ul>
 <li>Have a semantic name (e.g., <code>&lt;a-box&gt;</code>)</li>
 <li>Have a preset assemblage of components</li>
@@ -901,62 +899,7 @@
 </ul>
 <p>They are sort of like <a href="http://docs.unity3d.com/Manual/Prefabs.html" target="_blank" rel="external">Prefabs in Unity</a>. Some literature on the
 entity-component-system pattern refer to these as <em>assemblages</em>.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#example">Example</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#primitives-are-entities">Primitives are Entities</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#how-they-work">How They Work</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#register-a-primitive">Register a Primitive</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Below is an assortment of primitives in use:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- Using the asset management system for caching. --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"fox-obj"</span> <span class="attr">src</span>=<span class="string">"fox.obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"fox-mtl"</span> <span class="attr">src</span>=<span class="string">"fox.mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"texture"</span> <span class="attr">src</span>=<span class="string">"texture.png"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"video"</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-camera</span> <span class="attr">fov</span>=<span class="string">"80"</span>&gt;</span><span class="tag">&lt;<span class="name">a-cursor</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cursor</span>&gt;</span><span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#texture"</span> <span class="attr">depth</span>=<span class="string">"2"</span> <span class="attr">height</span>=<span class="string">"5"</span> <span class="attr">width</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-image</span> <span class="attr">src</span>=<span class="string">"fireball.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-video</span> <span class="attr">src</span>=<span class="string">"#video"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-video</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#432FA0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -990,7 +933,6 @@ primitive using his ocean component:</p>
 <p>Then we’d be able to create oceans using basic HTML syntax with little configuration needed:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-ocean</span> <span class="attr">color</span>=<span class="string">"aqua"</span> <span class="attr">depth</span>=<span class="string">"100"</span> <span class="attr">width</span>=<span class="string">"100"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-ocean</span>&gt;</span></div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1013,6 +955,61 @@ primitive using his ocean component:</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#primitives-are-entities">Primitives are Entities</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#how-they-work">How They Work</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#register-a-primitive">Register a Primitive</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

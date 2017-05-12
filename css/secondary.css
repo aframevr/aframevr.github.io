@@ -149,8 +149,14 @@ pre {
 p code,
 li code,
 dd code {
+  background: #f8f8f8;
   font-weight: 600;
-  padding: 0 0.25ch;
+  padding: 0 2px;
+}
+h3 code {
+  background: #f8f8f8;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 [data-page-type="community"] li code {
   font-weight: 500;
@@ -602,11 +608,8 @@ a.click {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   padding-top: 60px;
+  position: relative;
 }
 @media (min-width: 768px) {
   .content {
@@ -736,18 +739,6 @@ a.click {
 }
 .post__metadata p {
   margin: 0;
-}
-.content--blog {
-  font-size: 17px;
-}
-.content--blog .page__section {
-  margin-top: 0;
-}
-.content--blog .copy__wrap p {
-  line-height: 1.7;
-}
-.content--blog h1 {
-  margin-bottom: 0;
 }
 .content--blog h1 + .post--listing {
   margin-top: 9px /* To align the borders nicely since there's no visible <h1>. */;
@@ -1123,4 +1114,41 @@ body:not([data-page-layout="docs"]) .docs-search-wrapper {
 }
 .content--awoa .copy__wrap p {
   max-width: 700px;
+}
+#table-of-contents {
+  display: none;
+  left: 980px;
+  padding-top: 40px;
+  position: fixed;
+  width: 320px;
+}
+@media (min-width: 768px) {
+  #table-of-contents {
+    display: block;
+  }
+}
+#table-of-contents .section-title {
+  margin: 0;
+  padding-top: 0;
+}
+#table-of-contents > ul {
+  margin-left: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+#table-of-contents ul {
+  list-style: none;
+}
+#table-of-contents ul + ul {
+  margin-left: 0;
+}
+#table-of-contents li {
+  padding: 0;
+}
+#table-of-contents a {
+  border-bottom: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

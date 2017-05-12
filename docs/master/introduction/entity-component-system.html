@@ -968,9 +968,7 @@
 
     
 
-    
-    
-      <p>A-Frame is a three.js framework with an <a href="https://wikipedia.org/wiki/Entity_component_system" target="_blank" rel="external">entity-component-system</a> (ECS)
+    <p>A-Frame is a three.js framework with an <a href="https://wikipedia.org/wiki/Entity_component_system" target="_blank" rel="external">entity-component-system</a> (ECS)
 architecture. ECS architecture is a common and desirable pattern in 3D and game
 development that follows the <strong>composition over inheritance and hierarchy</strong>
 principle.</p>
@@ -999,71 +997,7 @@ for VR development, and A-Frame is based entirely around this paradigm:</p>
 <p>A well-known game engine implementing ECS is Unity. Although there are pain
 points in cross-entity communication. But we’ll see how A-Frame, the DOM, and
 declarative HTML really make ECS shine.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#concept">Concept</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#examples">Examples</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#ecs-in-a-frame">ECS in A-Frame</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#syntax">Syntax</a></li>
-            
-              <li><a href="#composition">Composition</a></li>
-            
-              <li><a href="#declarative-dom-based-ecs">Declarative DOM-Based ECS</a></li>
-            
-              <li><a href="#extensibility">Extensibility</a></li>
-            
-              <li><a href="#component-based-development">Component-Based Development</a></li>
-            
-              <li><a href="#higher-order-components">Higher-Order Components</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#community-component-ecosystem">Community Component Ecosystem</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#where-to-find-components">Where to Find Components</a></li>
-            
-              <li><a href="#using-a-community-component">Using a Community Component</a></li>
-            
-              <li><a href="#example">Example</a></li>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="concept"><a href="#concept" class="headerlink" title="Concept"></a>Concept</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/20289898/71f7fea0-aa91-11e6-8307-d8dc68dff285.png" alt="ECS Minecraft"></p>
 <p>A basic definition of ECS involves:</p>
@@ -1286,7 +1220,6 @@ Registry and using the unpkg CDN. We can <a href="http://glitch.com/~aframe-regi
 Glitch</a>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.5.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"rain"</span> <span class="attr">particle-system</span>=<span class="string">"preset: rain; color: #24CAFF; particleCount: 5000"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"sphere"</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere"</span></span></div><div class="line">                <span class="attr">material</span>=<span class="string">"color: #EFEFEF; shader: flat"</span></div><div class="line">                <span class="attr">position</span>=<span class="string">"0 0.15 -5"</span></div><div class="line">                <span class="attr">light</span>=<span class="string">"type: point; intensity: 5"</span></div><div class="line">                <span class="attr">animation</span>=<span class="string">"property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 -0.10 -5; loop: true"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"ocean"</span> <span class="attr">ocean</span>=<span class="string">"density: 20; width: 50; depth: 50; speed: 4"</span></span></div><div class="line">                <span class="attr">material</span>=<span class="string">"color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1"</span></div><div class="line">                <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"sky"</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere; radius: 5000"</span></span></div><div class="line">                <span class="attr">material</span>=<span class="string">"shader: gradient; topColor: 235 235 245; bottomColor: 185 185 210"</span></div><div class="line">                <span class="attr">scale</span>=<span class="string">"-1 1 1"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"light"</span> <span class="attr">light</span>=<span class="string">"type: ambient; color: #888"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1315,6 +1248,90 @@ Glitch</a>.</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#concept">Concept</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#examples">Examples</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#ecs-in-a-frame">ECS in A-Frame</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#syntax">Syntax</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#composition">Composition</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#declarative-dom-based-ecs">Declarative DOM-Based ECS</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#extensibility">Extensibility</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#component-based-development">Component-Based Development</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#higher-order-components">Higher-Order Components</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#community-component-ecosystem">Community Component Ecosystem</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#where-to-find-components">Where to Find Components</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#using-a-community-component">Using a Community Component</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#example">Example</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

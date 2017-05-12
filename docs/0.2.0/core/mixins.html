@@ -725,9 +725,7 @@
 
     
 
-    
-    
-      <p>Mixins provide a way to compose and reuse commonly-used sets of component properties. They are defined using the <code>&lt;a-mixin&gt;</code> element and are placed in <a href="./assets.html"><code>&lt;a-assets&gt;</code></a>. Mixins should be set with an <code>id</code>, and when an entity sets that <code>id</code> as its <code>mixin</code> attribute, the entity will absorb all of the mixin’s attributes.</p>
+    <p>Mixins provide a way to compose and reuse commonly-used sets of component properties. They are defined using the <code>&lt;a-mixin&gt;</code> element and are placed in <a href="./assets.html"><code>&lt;a-assets&gt;</code></a>. Mixins should be set with an <code>id</code>, and when an entity sets that <code>id</code> as its <code>mixin</code> attribute, the entity will absorb all of the mixin’s attributes.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"red"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"blue"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red cube"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"blue cube"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>The entity with <code>red cube</code> will take the properties from the <code>red</code> mixin and the <code>cube</code> mixin in that order. Likewise with the <code>blue cube</code>. Conceptually, the entities above expand to:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">material</span>=<span class="string">"color: red"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">material</span>=<span class="string">"color: blue"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -743,7 +741,6 @@ included last, the final color of the cube will be blue.</p>
 <p>If an entity itself defines a property that is already defined by a mixin, the entity’s definition takes precedence. In the example below, the entity includes both <code>red</code> and <code>blue</code> mixins and also defines a green color. Since the entity directly defines its own color, the final color of the cube will be green.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"red"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"blue"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red blue cube"</span> <span class="attr">material</span>=<span class="string">"color: green"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -772,6 +769,39 @@ included last, the final color of the cube will be blue.</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#merging-component-properties">Merging Component Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#order-and-precedence">Order and Precedence</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

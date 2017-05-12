@@ -935,9 +935,7 @@
     
     
 
-    
-    
-      <p>In the <a href="../introduction/entity-component-system.html">entity-component-system pattern</a>, a component is a reusable and
+    <p>In the <a href="../introduction/entity-component-system.html">entity-component-system pattern</a>, a component is a reusable and
 modular chunk of data that we plug into an entity to add appearance, behavior,
 and/or functionality.</p>
 <p>In A-Frame, components modify entities which are 3D objects in the scene. We
@@ -951,129 +949,7 @@ components to give it appearance (color, shape), to define its behavior
 <p>Components are roughly analogous to CSS. Like how CSS rules modify the
 appearance of elements, component properties modify the appearance, behavior,
 and functionality of entities.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#component-html-form">Component HTML Form</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#single-property-component">Single-Property Component</a></li>
-            
-              <li><a href="#multi-property-component">Multi-Property Component</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#register-a-component">Register a Component</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#aframe-registercomponent-name-definition">AFRAME.registerComponent (name, definition)</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#schema">Schema</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#property-types">Property Types</a></li>
-            
-              <li><a href="#single-property-schema">Single-Property Schema</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#definition-lifecycle-handler-methods">Definition Lifecycle Handler Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#overview-of-methods">Overview of Methods</a></li>
-            
-              <li><a href="#component-prototype-properties">Component Prototype Properties</a></li>
-            
-              <li><a href="#init">.init ()</a></li>
-            
-              <li><a href="#update-olddata">.update (oldData)</a></li>
-            
-              <li><a href="#remove">.remove ()</a></li>
-            
-              <li><a href="#tick-time-timedelta">.tick (time, timeDelta)</a></li>
-            
-              <li><a href="#pause">.pause ()</a></li>
-            
-              <li><a href="#play">.play ()</a></li>
-            
-              <li><a href="#updateschema-data">.updateSchema (data)</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#definition-properties">Definition Properties</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#dependencies">dependencies</a></li>
-            
-              <li><a href="#multiple">multiple</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#component-prototype-methods">Component Prototype Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#flushtodom">.flushToDOM ()</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#accessing-a-component’s-members-and-methods">Accessing a Component’s Members and Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="component-html-form"><a href="#component-html-form" class="headerlink" title="Component HTML Form"></a>Component HTML Form</h2><p>A component holds a bucket of data in the form of one or more component
 properties. Components use this data to modify entities. Consider an <em>engine</em>
@@ -1435,7 +1311,6 @@ example component:</p>
 <p>Let’s access the <code>bar</code> member and <code>qux</code> method:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> fooComponent = <span class="built_in">document</span>.querySelector(<span class="string">'[foo]'</span>).components.foo;</div><div class="line"><span class="built_in">console</span>.log(fooComponent.bar);</div><div class="line">fooComponent.baz();</div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1461,6 +1336,162 @@ example component:</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#component-html-form">Component HTML Form</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#single-property-component">Single-Property Component</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#multi-property-component">Multi-Property Component</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#register-a-component">Register a Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#aframe-registercomponent-name-definition">AFRAME.registerComponent (name, definition)</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#schema">Schema</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#property-types">Property Types</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#single-property-schema">Single-Property Schema</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#definition-lifecycle-handler-methods">Definition Lifecycle Handler Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#overview-of-methods">Overview of Methods</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#component-prototype-properties">Component Prototype Properties</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#init">.init ()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#update-olddata">.update (oldData)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#remove">.remove ()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#tick-time-timedelta">.tick (time, timeDelta)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#pause">.pause ()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#play">.play ()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#updateschema-data">.updateSchema (data)</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#definition-properties">Definition Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#dependencies">dependencies</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#multiple">multiple</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#component-prototype-methods">Component Prototype Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#flushtodom">.flushToDOM ()</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#accessing-a-component’s-members-and-methods">Accessing a Component’s Members and Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

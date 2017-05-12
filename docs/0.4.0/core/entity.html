@@ -884,122 +884,14 @@
 
     
 
-    
-    
-      <pre><code>.
+    <pre><code>.
 </code></pre><p>A-Frame represents an entity via the <code>&lt;a-entity&gt;</code> element. As defined in the
 <a href="./">entity-component-system pattern</a>, entities are placeholder objects to
 which we plug in components to provide them appearance, behavior, and
 functionality.</p>
 <p>In A-Frame, entities are inherently attached with the <a href="../components/position.html">position</a>,
 <a href="../components/rotation.html">rotation</a>, and <a href="../components/scale.html">scale</a> components.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#example">Example</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#retrieving-an-entity">Retrieving an Entity</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#properties">Properties</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#components">components</a></li>
-            
-              <li><a href="#isplaying">isPlaying</a></li>
-            
-              <li><a href="#object3d">object3D</a></li>
-            
-              <li><a href="#object3dmap">object3DMap</a></li>
-            
-              <li><a href="#sceneel">sceneEl</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#methods">Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#addstate-statename">addState (stateName)</a></li>
-            
-              <li><a href="#emit-name-detail-bubbles">emit (name, detail, bubbles)</a></li>
-            
-              <li><a href="#flushtodom-recursive">flushToDOM (recursive)</a></li>
-            
-              <li><a href="#getattribute-componentname">getAttribute (componentName)</a></li>
-            
-              <li><a href="#getdomattribute-componentname">getDOMAttribute (componentName)</a></li>
-            
-              <li><a href="#getobject3d-type">getObject3D (type)</a></li>
-            
-              <li><a href="#getorcreateobject3d-type-constructor">getOrCreateObject3D (type, Constructor)</a></li>
-            
-              <li><a href="#pause">pause ()</a></li>
-            
-              <li><a href="#play">play ()</a></li>
-            
-              <li><a href="#setattribute-attr-value-componentattrvalue">setAttribute (attr, value, componentAttrValue)</a></li>
-            
-              <li><a href="#setobject3d-type-obj">setObject3D (type, obj)</a></li>
-            
-              <li><a href="#removeattribute-attr">removeAttribute (attr)</a></li>
-            
-              <li><a href="#removeobject3d-type">removeObject3D (type)</a></li>
-            
-              <li><a href="#removestate-statename">removeState (stateName)</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#events">Events</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#event-detail">Event Detail</a></li>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Consider the entity below. By itself, it has no appearance, behavior, or
 functionality. It does nothing:</p>
@@ -1256,7 +1148,6 @@ called from a component, often within the remove handler:</p>
 the scene attaches or detaches an entity:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entity.addEventListener(<span class="string">'child-attached'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (evt.detail.el.tagName.toLowerCase() === <span class="string">'a-box'</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a box element has been attached'</span>);</div><div class="line">  &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1285,6 +1176,152 @@ the scene attaches or detaches an entity:</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#retrieving-an-entity">Retrieving an Entity</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#components">components</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#isplaying">isPlaying</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#object3d">object3D</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#object3dmap">object3DMap</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#sceneel">sceneEl</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#methods">Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#addstate-statename">addState (stateName)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#emit-name-detail-bubbles">emit (name, detail, bubbles)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#flushtodom-recursive">flushToDOM (recursive)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#getattribute-componentname">getAttribute (componentName)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#getdomattribute-componentname">getDOMAttribute (componentName)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#getobject3d-type">getObject3D (type)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#getorcreateobject3d-type-constructor">getOrCreateObject3D (type, Constructor)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#pause">pause ()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#play">play ()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#setattribute-attr-value-componentattrvalue">setAttribute (attr, value, componentAttrValue)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#setobject3d-type-obj">setObject3D (type, obj)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#removeattribute-attr">removeAttribute (attr)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#removeobject3d-type">removeObject3D (type)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#removestate-statename">removeState (stateName)</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#event-detail">Event Detail</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

@@ -968,9 +968,7 @@
 
     
 
-    
-    
-      <p>A-Frame has an asset management system that allows us to place our assets in
+    <p>A-Frame has an asset management system that allows us to place our assets in
 one place and to preload and cache assets for better performance.</p>
 <p>Games and rich 3D experiences traditionally preload their assets, such as
 models or textures, before rendering their scenes. This makes sure that assets
@@ -986,125 +984,7 @@ scenes don’t try to fetch assets while rendering.</p>
 </ul>
 <p>The scene won’t render or initialize until the browser fetches (or errors out)
 all the assets or the asset system reaches the timeout.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#example">Example</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing (CORS)</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#preloading-audio-and-video">Preloading Audio and Video</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#setting-a-timeout">Setting a Timeout</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#events">Events</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#"></a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#load-progress-on-individual-assets">Load Progress on Individual Assets</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#lt-a-asset-item-gt">&lt;a-asset-item&gt;</a></li>
-            
-              <li><a href="#lt-img-gt">&lt;img&gt;</a></li>
-            
-              <li><a href="#htmlmediaelement">HTMLMediaElement</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#specifying-response-type">Specifying Response Type</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#how-it-works-internally">How It Works Internally</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#accessing-the-fileloader-and-cache">Accessing the FileLoader and Cache</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>We can define our assets in <code>&lt;a-assets&gt;</code> and point to those assets from our
 entities using selectors:</p>
@@ -1249,7 +1129,6 @@ load, all assets will have been already fetched. As long as we define
 <p>To access the cache that stores XHR responses:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(THREE.Cache);</div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1275,6 +1154,132 @@ load, all assets will have been already fetched. As long as we define
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing (CORS)</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#preloading-audio-and-video">Preloading Audio and Video</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#setting-a-timeout">Setting a Timeout</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#"></a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#load-progress-on-individual-assets">Load Progress on Individual Assets</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#lt-a-asset-item-gt">&lt;a-asset-item&gt;</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#lt-img-gt">&lt;img&gt;</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#htmlmediaelement">HTMLMediaElement</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#specifying-response-type">Specifying Response Type</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#how-it-works-internally">How It Works Internally</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#accessing-the-fileloader-and-cache">Accessing the FileLoader and Cache</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

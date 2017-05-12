@@ -968,9 +968,7 @@
 
     
 
-    
-    
-      <p>The debug component enables component-to-DOM serialization.</p>
+    <p>The debug component enables component-to-DOM serialization.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">debug</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="component-to-dom-serialization"><a href="#component-to-dom-serialization" class="headerlink" title="Component-to-DOM Serialization"></a>Component-to-DOM Serialization</h2><p>By default, for performance reasons, A-Frame does not update the DOM with
 component data. If we open the browser’s DOM inspector, we will see only the
@@ -987,7 +985,6 @@ serialize to the DOM. Then we will be able to view component data in the DOM:</p
 <a href="../core/component.html#flushtodom"><code>Component.flushToDOM</code></a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>).components.position.flushToDOM();  <span class="comment">// Flush a component.</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>).flushToDOM();  <span class="comment">// Flush an entity.</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>).flushToDOM(<span class="literal">true</span>);  <span class="comment">// Flush an entity and its children.</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>).flushToDOM(<span class="literal">true</span>);  <span class="comment">// Flush every entity.</span></div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1010,6 +1007,43 @@ serialize to the DOM. Then we will be able to view component data in the DOM:</p
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#component-to-dom-serialization">Component-to-DOM Serialization</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#manually-serializing-to-dom">Manually Serializing to DOM</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

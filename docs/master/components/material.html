@@ -968,129 +968,12 @@
 
     
 
-    
-    
-      <p>The material component gives appearance to an entity. We can define properties
+    <p>The material component gives appearance to an entity. We can define properties
 such as color, opacity, or texture. This is often paired with the <a href="./geometry.html">geometry
 component</a> which provides shape.</p>
 <p>We can register custom materials to extend the material component to provide a
 wide range of visual effects.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#example">Example</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#properties">Properties</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#events">Events</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#built-in-materials">Built-in Materials</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#standard">standard</a></li>
-            
-              <li><a href="#flat">flat</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#textures">Textures</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#video-textures">Video Textures</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#canvas-textures">Canvas Textures</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#repeating-textures">Repeating Textures</a></li>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#transparency-issues">Transparency Issues</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#register-a-custom-material">Register a Custom Material</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#registershader">registerShader</a></li>
-            
-              <li><a href="#schema">Schema</a></li>
-            
-              <li><a href="#example-—-basic-materials">Example — Basic Materials</a></li>
-            
-              <li><a href="#example-—-glsl-and-shaders">Example — GLSL and Shaders</a></li>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Defining a red material using the default standard material:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1502,7 +1385,6 @@ registering a <a href="http://threejs.org/docs/index.html#Reference/Materials/Li
 <p>For a more advanced example, <a href="https://glitch.com/edit/#!/aframe-displacement-shader" target="_blank" rel="external">try realtime vertex displacement</a>.</p>
 <p><img src="https://cloud.githubusercontent.com/assets/1848368/24825518/b52e5bf6-1bd4-11e7-8eb2-9a9c1ff82ce9.gif" alt="b19320eb-802a-462a-afcd-3d0dd9480aee-861-000004c2a8504498"></p>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1525,6 +1407,137 @@ registering a <a href="http://threejs.org/docs/index.html#Reference/Materials/Li
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#built-in-materials">Built-in Materials</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#standard">standard</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#flat">flat</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#textures">Textures</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#video-textures">Video Textures</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#canvas-textures">Canvas Textures</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#repeating-textures">Repeating Textures</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#transparency-issues">Transparency Issues</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#register-a-custom-material">Register a Custom Material</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#registershader">registerShader</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#schema">Schema</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#example-—-basic-materials">Example — Basic Materials</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#example-—-glsl-and-shaders">Example — GLSL and Shaders</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

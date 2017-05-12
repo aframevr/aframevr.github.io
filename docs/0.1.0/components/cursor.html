@@ -676,9 +676,7 @@
 
     
 
-    
-    
-      <p>The <code>cursor</code> component defines interaction with the scene through clicking and gazing, by using a <a href="raycaster.html">raycaster</a> to determine which object has been clicked. When the mouse is clicked, the closest visible entity intersecting the cursor will have a DOM <code>click</code> event triggered.</p>
+    <p>The <code>cursor</code> component defines interaction with the scene through clicking and gazing, by using a <a href="raycaster.html">raycaster</a> to determine which object has been clicked. When the mouse is clicked, the closest visible entity intersecting the cursor will have a DOM <code>click</code> event triggered.</p>
 <p>For example, we define a cursor in the shape of a ring positioned on the center of the screen. Whenever the cursor clicks on the cube, we can listen the the click event. This might feel familiar to web developers.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span>=<span class="string">"fuse: true; maxDistance: 30; timeout: 500"</span></span></div><div class="line">          <span class="attr">position</span>=<span class="string">"0 0 -5"</span></div><div class="line">          <span class="attr">geometry</span>=<span class="string">"primitive: ring"</span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: white; shader: flat"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#cube'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, <span class="string">'red'</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'I was clicked!'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -711,7 +709,6 @@
 <h2 id="fuse-based-cursor"><a href="#fuse-based-cursor" class="headerlink" title="Fuse-Based Cursor"></a>Fuse-Based Cursor</h2><p>If the cursor is set to be fuse-based, the cursor will trigger a click if the user gazes at one entity for a set amount of time. Imagine a laser strapped to the user’s head, and the laser extends out into the scene. After the timeout, whatever entity the laser intersects first will be clicked.</p>
 <p>Fuse-based interactions can feel natural for VR and do not require any additional input devices other than the headset.</p>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -740,6 +737,28 @@
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#fuse-based-cursor">Fuse-Based Cursor</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

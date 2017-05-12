@@ -676,9 +676,7 @@
 
     
 
-    
-    
-      <p>In the entity-component architecture, components are reusable and modular chunks of data that modify an aspect of an entity, changing its appearance, behavior, or functionality.</p>
+    <p>In the entity-component architecture, components are reusable and modular chunks of data that modify an aspect of an entity, changing its appearance, behavior, or functionality.</p>
 <p>As an analogy, if a smartphone were defined as an entity, it might use components to define its appearance (color, shape), to define its behavior (vibrate when called, shut down on low battery), or to define its functionality (camera, screen).</p>
 <p>In A-Frame, components modify 3D entities in the scene’s world.  We will go into detail on what components look like under the hood and how we can define our own custom components to do whatever we want. Below is a list of components that currently ship with A-Frame.</p>
 <table>
@@ -833,7 +831,6 @@
 <h2 id="updating-a-component-on-tick"><a href="#updating-a-component-on-tick" class="headerlink" title="Updating a Component on Tick"></a>Updating a Component on Tick</h2><p>To have a component update on each frame or tick, we can register the component to the scene with <code>&lt;a-scene&gt;.addBehavior</code>. <code>addBehavior</code> registers callback functions on every frame or tick. Just pass the component into <code>addBehavior</code>. In the component:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">this</span>.el.sceneEl.addBehavior(<span class="keyword">this</span>);</div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -862,6 +859,94 @@
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#defining-component-data">Defining Component Data</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#accessing-a-component">Accessing a Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#component-definition-and-lifecycle">Component Definition and Lifecycle</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#component-schema">Component Schema</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#component-registration">Component Registration</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#building-a-component">Building a Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#updating-a-component-on-tick">Updating a Component on Tick</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

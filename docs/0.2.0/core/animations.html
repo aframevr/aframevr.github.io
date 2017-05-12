@@ -725,9 +725,7 @@
 
     
 
-    
-    
-      <p>Animations in A-Frame are defined by attaching an <code>&lt;a-animation&gt;</code> element as a child of the entity to animate. The API is roughly based after the <a href="http://www.w3.org/TR/web-animations/" target="_blank" rel="external">Web Animations</a> specification.</p>
+    <p>Animations in A-Frame are defined by attaching an <code>&lt;a-animation&gt;</code> element as a child of the entity to animate. The API is roughly based after the <a href="http://www.w3.org/TR/web-animations/" target="_blank" rel="external">Web Animations</a> specification.</p>
 <p>As an introductory example, to define a 5-meter orbit on an entity about the Y-axis that takes 10 seconds, we can offset its position and animate the rotation of a parent entity. This animation starts with the initial rotation about the Y-axis of 0 degrees and goes around to 360 degrees. It’s defined with a duration of 10000 milliseconds, maintains the final value on each cycle of the animation, and loops indefinitely.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"5 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"rotation"</span></span></div><div class="line">               <span class="attr">dur</span>=<span class="string">"10000"</span></div><div class="line">               <span class="attr">fill</span>=<span class="string">"forwards"</span></div><div class="line">               <span class="attr">to</span>=<span class="string">"0 360 0"</span></div><div class="line">               <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;<span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Many attributes and values are used to define animations. We’ll delve into more detail below:</p>
@@ -885,7 +883,6 @@
 </tbody>
 </table>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -914,6 +911,110 @@
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#animating-different-types-of-attributes">Animating Different Types of Attributes</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#vec3-attributes">vec3 Attributes</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#boolean-attributes">Boolean Attributes</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#numeric-attributes">Numeric Attributes</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#component-properties">Component Properties</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#begin">Begin</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#direction">Direction</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#easing">Easing</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#fill">Fill</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#repeat">Repeat</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 

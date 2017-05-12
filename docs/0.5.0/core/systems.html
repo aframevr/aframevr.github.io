@@ -935,86 +935,14 @@
     
     
 
-    
-    
-      <p>A system, of the <a href="../introduction/entity-component-system.html">entity-component-system pattern</a>, provides global scope,
+    <p>A system, of the <a href="../introduction/entity-component-system.html">entity-component-system pattern</a>, provides global scope,
 services, and management to classes of components. It provides public APIs
 (methods and properties) for classes of components. A system can be accessed
 through the scene element, and can help components interface with the global
 scene.</p>
 <p>For example, the camera system manages all entities with the <a href="../components/camera.html">camera
 component</a>, controlling which camera is the active camera.</p>
-
-      
-
-
-  <h2 id="toc">Table of Contents</h2>
-
-  <ul>
-    
-      <li>
-        <a href="#registering-a-system">Registering a System</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#properties">Properties</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#methods">Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#accessing-a-system">Accessing a System</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li>
-        <a href="#patterns">Patterns</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li><a href="#separation-of-logic-and-data">Separation of Logic and Data</a></li>
-            
-              <li><a href="#gathering-all-components-of-a-system">Gathering All Components of a System</a></li>
-            
-          </ul>
-        
-      </li>
-    
-  </ul>
-
-
-      
+<!--toc-->
 
 <h2 id="registering-a-system"><a href="#registering-a-system" class="headerlink" title="Registering a System"></a>Registering a System</h2><p>A system is registered similarly to a <a href="./component.html">component</a>.</p>
 <p>If the system name matches a component name, then the component will have a
@@ -1078,7 +1006,6 @@ pattern is to have components subscribe themselves to the system. The system
 then has references to all of its components:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerSystem(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.entities = [];</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">registerMe</span>: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.entities.push(el);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">unregisterMe</span>: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> index = <span class="keyword">this</span>.entities.indexOf(el);</div><div class="line">    <span class="keyword">this</span>.entities.splice(index, <span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">AFRAME.registerComponent(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.system.registerMe(<span class="keyword">this</span>.el);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">remove</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.system.unregisterMe(<span class="keyword">this</span>.el);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
-    
 
     <!-- Previous / Next navigation. -->
     <footer class="footer guide-links c">
@@ -1107,6 +1034,80 @@ then has references to all of its components:</p>
 </footer>
 
   </div>
+
+  
+
+<div id="table-of-contents">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#registering-a-system">Registering a System</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#methods">Methods</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#accessing-a-system">Accessing a System</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#patterns">Patterns</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#separation-of-logic-and-data">Separation of Logic and Data</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#gathering-all-components-of-a-system">Gathering All Components of a System</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
 </div>
 </main>
 
