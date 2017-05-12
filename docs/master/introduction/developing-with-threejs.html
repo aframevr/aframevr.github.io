@@ -996,7 +996,7 @@ scene graph.</p>
 (i.e., <code>this.el</code>):</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> scene = <span class="keyword">this</span>.el.sceneEl.object3D;  <span class="comment">// THREE.Scene</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="accessing-an-entity’s-three-js-objects"><a href="#accessing-an-entity’s-three-js-objects" class="headerlink" title="Accessing an Entity’s three.js Objects"></a>Accessing an Entity’s three.js Objects</h3><p>Every A-Frame entity (e.g., <code>&lt;a-entity&gt;</code>) has its own
-<a href="https://threejs.org/docs/#Reference/Core/Object3D" target="_blank" rel="external"><code>THREE.Object3D</code></a>, more specifically a <a href="https://threejs.org/docs/#Reference/Objects/Group" target="_blank" rel="external"><code>THREE.Group</code></a> that
+<a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external"><code>THREE.Object3D</code></a>, more specifically a <a href="https://threejs.org/docs/#Reference/Objects/Group" target="_blank" rel="external"><code>THREE.Group</code></a> that
 contains different types of <code>Object3D</code>s. The root <code>THREE.Group</code> of an entity is
 accessed via <code>.object3D</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>).object3D;  <span class="comment">// THREE.Group</span></div></pre></td></tr></table></figure>
@@ -1032,6 +1032,37 @@ first creates the mesh, then the other component gets the mesh.</p>
 can use the entity’s <code>.removeObject3D(name)</code> method. Going back to our example
 with the point light, we remove the light when the component is detached:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'pointlight'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.setObject3D(<span class="string">'light'</span>, <span class="keyword">new</span> THREE.PointLight());</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">remove</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Remove Object3D.</span></div><div class="line">    <span class="keyword">this</span>.el.removeObject3D(<span class="string">'light'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="transforming-between-coordinate-spaces"><a href="#transforming-between-coordinate-spaces" class="headerlink" title="Transforming Between Coordinate Spaces"></a>Transforming Between Coordinate Spaces</h2><p>Every object and the scene (world) in general has their own coordinate space. A
+parent object’s position, rotation, and scale transformations are applied to
+its children’s position, rotation, and scale transformations. Consider this scene:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"foo"</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"bar"</span> <span class="attr">position</span>=<span class="string">"2 3 4"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>From the world’s reference point, foo has position (1,2,3) and bar has position
+(3, 5, 7) since foo’s transformations apply onto bar’s. From foo’s reference
+point, foo has position (0, 0, 0) and bar has position (2, 3, 4).</p>
+<p>Often we will want to transform between these reference points and coordinate
+spaces. Above was a simple example, but we might want to do operations such as
+finding the world-space coordinate of bar’s position, or translate an arbitrary
+coordinate into foo’s coordinate space. In 3D programming, these operations are
+accomplished with matrices, but three.js provides helpers to make them easier.</p>
+<h3 id="local-to-world-transforms"><a href="#local-to-world-transforms" class="headerlink" title="Local to World Transforms"></a>Local to World Transforms</h3><p>Normally, we’d need to call <code>.updateMatrixWorld ()</code> on parent <code>Object3D</code>s, but
+three.js defaults <code>Object3D.matrixAutoUpdate</code> to <code>true</code>. We can use three.js’s
+<code>.getWorldPosition ()</code> and <code>.getWorldRotation ()</code>.</p>
+<p>To get the world position of an <code>Object3D</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entityEl.object3D.getWorldPosition();</div></pre></td></tr></table></figure>
+<p>To get the world rotation of an <code>Object3D</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entityEl.object3D.getWorldRotation();</div></pre></td></tr></table></figure>
+<p>three.js <code>Object3D</code> has <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external">more functions available for local-to-world transforms</a>:</p>
+<ul>
+<li><code>.localToWorld (vector)</code></li>
+<li><code>.getWorldDirection ()</code></li>
+<li><code>.getWorldQuaternion ()</code></li>
+<li><code>.getWorldScale ()</code></li>
+</ul>
+<h3 id="world-to-local-transforms"><a href="#world-to-local-transforms" class="headerlink" title="World to Local Transforms"></a>World to Local Transforms</h3><p>To obtain a matrix that transforms from world to an object’s local space, get
+the inverse of the object’s world matrix.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> worldToLocal = <span class="keyword">new</span> THREE.Matrix4().getInverse(object3D.matrixWorld)</div></pre></td></tr></table></figure>
+<p>Then we can apply that <code>worldToLocal</code> matrix to anything we want to transform:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">anotherObject3D.applyMatrix(worldToLocal);</div></pre></td></tr></table></figure>
 
 
     <!-- Previous / Next navigation. -->
@@ -1116,6 +1147,25 @@ with the point light, we remove the light when the component is detached:</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#removing-an-object3d-from-an-entity">Removing an Object3D From an Entity</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#transforming-between-coordinate-spaces">Transforming Between Coordinate Spaces</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#local-to-world-transforms">Local to World Transforms</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#world-to-local-transforms">World to Local Transforms</a>
               </li>
             
           </ul>
