@@ -149,8 +149,14 @@ pre {
 p code,
 li code,
 dd code {
+  background: #f8f8f8;
   font-weight: 600;
-  padding: 0 0.25ch;
+  padding: 0 2px;
+}
+h3 code {
+  background: #f8f8f8;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 [data-page-type="community"] li code {
   font-weight: 500;
@@ -166,6 +172,9 @@ h3,
 h4 {
   color: #2c3e50;
   font-weight: 500;
+}
+h4 {
+  font-weight: 600;
 }
 .btn {
   cursor: pointer;
@@ -244,9 +253,10 @@ h4 {
   padding-left: 1.5em;
 }
 .copy blockquote {
+  background: #f8f8f8;
   margin: 2em 0;
-  padding-left: 20px;
-  border-left: 4px solid #4b8;
+  padding: 5px 5px 5px 20px;
+  border-left: 4px solid #ef2d5e;
 }
 .copy blockquote p {
   font-weight: 400;
@@ -351,7 +361,7 @@ h4 {
   content: "";
   display: table;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .sidebar__wrap,
   .copy__wrap {
     padding: 20px;
@@ -389,6 +399,9 @@ a.mozilla-logo {
 }
 a.mozilla-logo:hover {
   opacity: 1;
+}
+.github-emoji {
+  vertical-align: top;
 }
 code,
 pre,
@@ -681,7 +694,7 @@ a.mozilla-logo:hover {
     right: 20px;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   .example__controls {
     top: 30px;
     right: 30px;
