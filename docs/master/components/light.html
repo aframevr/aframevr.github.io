@@ -1230,7 +1230,7 @@ cast or receive shadows.</p>
 <li><strong>2. Add the shadow component</strong> to objects in the scene that should cast or
 receive shadows.</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-gltf-model</span> <span class="attr">src</span>=<span class="string">"tree.gltf"</span> <span class="attr">shadow</span>=<span class="string">"receive: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-gltf-model</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-gltf-model</span> <span class="attr">src</span>=<span class="string">"tree.gltf"</span> <span class="attr">shadow</span>=<span class="string">"cast: true"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-gltf-model</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-circle</span> <span class="attr">id</span>=<span class="string">"ground"</span> <span class="attr">radius</span>=<span class="string">"10"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">shadow-</span>"<span class="attr">receive:</span> <span class="attr">true</span>"&gt;</span><span class="tag">&lt;/<span class="name">a-circle</span>&gt;</span></div></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>3. Adjust the shadow camera</strong> position and frustum (<code>shadowCameraTop</code>,
 <code>shadowCameraRight</code>, …) of the directional light, until it envelops the
