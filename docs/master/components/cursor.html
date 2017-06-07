@@ -547,6 +547,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/light.html"
                class="subnav-link">
               light
@@ -968,19 +975,26 @@
 
     
 
-    <p>The cursor component lets us interact with entities through clicking and
-gazing. The cursor is a specific application of the <a href="./raycaster.html">raycaster</a>
-component in that it:</p>
-<ul>
-<li>Listens for mouse clicks and gaze-based fuses.</li>
-<li>Captures only the first intersected entity.</li>
-<li>Emits special mouse and hover events (e.g., relating to mouse down/up/enter/leave).</li>
-<li>Has more states for hovering.</li>
-</ul>
-<p>When the mouse clicks, the closest visible entity intersecting the cursor, if
-any, will emit a <code>click</code> event. Note the cursor component only applies the
-raycasting behavior. To provide a shape or appearance to the cursor, you could
-apply the <a href="./geometry.html">geometry</a> and <a href="./material.html">material</a> components.</p>
+    <p>The cursor component provides hover and click states for interaction on top of
+the <a href="./raycaster.html">raycaster component</a>. The cursor component can be used for
+both gaze-based and controller-based interactions, but the appearance needs
+to be configured depending on the use case. The [<code>&lt;a-cursor&gt;</code> primitive] provides
+a default reticle appearance for a gaze-based cursor, and the [laser-controls
+component] configures the cursor for all controllers.</p>
+<p>The cursor component listens to events and keeps state on what’s being hovered
+and pressed in order to provide <code>mousedown</code>, <code>mouseup</code>, <code>mouseenter</code>,
+<code>mouseleave</code>, and <code>click</code> events. We name use the <code>mouse</code> name to mimic
+traditional web development for now. Under the hood, the cursor component uses
+the <code>raycaster-intersected</code> and <code>raycaster-intersection-cleared</code> events,
+capturing the closest visible intersected entity.</p>
+<p>By default, the cursor is configured to be used in a gaze-based mode.
+Specifying the <code>downEvents</code> and <code>upEvents</code> properties allows the cursor to work
+with controllers.  The <a href="./laser-controls.html">laser-controls component</a> automatically
+configures those.</p>
+<p>To provide a shape or appearance to the cursor, we should apply either the
+<a href="./geometry.html">geometry</a> and <a href="./material.html">material</a> components or use the raycaster
+component’s <code>showLine</code> property to draw a line using the <a href="./line.html">line
+component</a>.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we can create a ring-shaped cursor fixed to the center of the
 screen. To fix the cursor to the screen so the cursor is always present no
 matter where we look, we place it as a child of the active <a href="./camera.html">camera</a>
@@ -988,9 +1002,7 @@ entity. We pull it in front of the camera by placing it on the negative Z axis.
 When the cursor clicks on the box, we can listen to the click event.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span>=<span class="string">"fuse: true; fuseTimeout: 500"</span></span></div><div class="line">            <span class="attr">position</span>=<span class="string">"0 0 -1"</span></div><div class="line">            <span class="attr">geometry</span>=<span class="string">"primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"</span></div><div class="line">            <span class="attr">material</span>=<span class="string">"color: black; shader: flat"</span>&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">cursor-listener</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Component to change to random color on click.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'cursor-listener'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> COLORS = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> randomIndex = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * COLORS.length);</div><div class="line">      <span class="keyword">this</span>.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, COLORS[randomIndex]);</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'I was clicked at: '</span>, evt.detail.intersection.point);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><p>Note, to further customize the cursor component, we can set the properties of
-the raycaster component.</p>
-<table>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -999,6 +1011,11 @@ the raycaster component.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>downEvents</td>
+<td>Array of additional events on the entity to listen to for triggering <code>mousedown</code> (e.g., <code>triggerdown</code> for vive-controls).</td>
+<td>[]</td>
+</tr>
 <tr>
 <td>fuse</td>
 <td>Whether cursor is fuse-based.</td>
@@ -1009,8 +1026,15 @@ the raycaster component.</p>
 <td>How long to wait (in milliseconds) before triggering a fuse-based click event.</td>
 <td>1500</td>
 </tr>
+<tr>
+<td>upEvents</td>
+<td>Array of additional events on the entity to listen to for triggering <code>mouseup</code> (e.g., <code>trackpadup</code> for daydream-controls).</td>
+<td>[]</td>
+</tr>
 </tbody>
 </table>
+<p>To further customize the cursor component, we configure the cursor’s dependency
+component, <a href="./raycaster.html">the raycaster component</a>.</p>
 <h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
 <thead>
 <tr>
@@ -1055,11 +1079,11 @@ the raycaster component.</p>
 </thead>
 <tbody>
 <tr>
-<td>cursor-fusing</td>
+<td>fusing</td>
 <td>Added when the cursor is fusing on another entity.</td>
 </tr>
 <tr>
-<td>cursor-hovering</td>
+<td>hovering</td>
 <td>Added when the cursor is hovering over another entity.</td>
 </tr>
 </tbody>
@@ -1074,7 +1098,7 @@ the raycaster component.</p>
 </thead>
 <tbody>
 <tr>
-<td>cursor-hovered</td>
+<td>hovered</td>
 <td>Added to the intersected entity when the cursor is hovering over it.</td>
 </tr>
 </tbody>
