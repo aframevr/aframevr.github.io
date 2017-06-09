@@ -1005,6 +1005,11 @@ so using idPrefix for Vive / OpenVR controllers is recommended.</p>
 </thead>
 <tbody>
 <tr>
+<td>armModel</td>
+<td>Whether the arm model is used for positional data if absent.</td>
+<td>true</td>
+</tr>
+<tr>
 <td>controller</td>
 <td>Index of the controller in array returned by the Gamepad API.</td>
 <td>0</td>
@@ -1033,21 +1038,6 @@ so using idPrefix for Vive / OpenVR controllers is recommended.</p>
 <td>hand</td>
 <td>Which hand to use, if arm model is needed.  (left negates X)</td>
 <td>right</td>
-</tr>
-<tr>
-<td>eyesToElbow</td>
-<td>Arm model vector from eyes to elbow as user height ratio.</td>
-<td>{x:0.175, y:-0.3, z:-0.03}</td>
-</tr>
-<tr>
-<td>forearm</td>
-<td>Arm model vector for forearm as user height ratio.</td>
-<td>{x:0, y:0, z:-0.175}</td>
-</tr>
-<tr>
-<td>defaultUserHeight</td>
-<td>Default user height (for cameras with zero).</td>
-<td>1.6</td>
 </tr>
 </tbody>
 </table>
