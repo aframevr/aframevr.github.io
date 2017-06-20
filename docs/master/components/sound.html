@@ -1001,14 +1001,39 @@ component is positional and is thus affected by the
 <td>false</td>
 </tr>
 <tr>
-<td>on</td>
-<td>An event for the entity to listen to before playing sound.</td>
-<td>null</td>
+<td>distanceModel</td>
+<td><code>linear</code>, <code>inverse</code>, or <code>exponential</code></td>
+<td>linear</td>
 </tr>
 <tr>
 <td>loop</td>
 <td>Whether to loop the sound once the sound finishes playing.</td>
 <td>false</td>
+</tr>
+<tr>
+<td>maxDistance</td>
+<td>Maximum distance between the audio source and the listener, after which the volume is not reduced any further.</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>on</td>
+<td>An event for the entity to listen to before playing sound.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>poolSize</td>
+<td>Numbers of simultaneous instances of this sound that can be playing at the same time</td>
+<td>1</td>
+</tr>
+<tr>
+<td>refDistance</td>
+<td>Reference distance for reducing volume as the audio source moves further from the listener.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>rolloffFactor</td>
+<td>Describes how quickly the volume is reduced as the source moves away from the listener.</td>
+<td>1</td>
 </tr>
 <tr>
 <td>src</td>
@@ -1018,11 +1043,6 @@ component is positional and is thus affected by the
 <tr>
 <td>volume</td>
 <td>How loud to play the sound.</td>
-<td>1</td>
-</tr>
-<tr>
-<td>poolSize</td>
-<td>Numbers of simultaneous instances of this sound that can be playing at the same time</td>
 <td>1</td>
 </tr>
 </tbody>
