@@ -8,8 +8,169 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.</description>
-    <pubDate>Fri, 23 Jun 2017 21:24:48 GMT</pubDate>
+    <pubDate>Fri, 30 Jun 2017 07:12:18 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>A-Frame v0.6.0 - Link Traversal</title>
+      <link>https://aframe.io/blog/aframe-v0.6.0/</link>
+      <guid>https://aframe.io/blog/aframe-v0.6.0/</guid>
+      <pubDate>Thu, 29 Jun 2017 10:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;A-Frame v0.6.0 at last fulfills the “Web” in WebVR. After three months of work,
+this release features support for WebVR 1.1 API features such as &lt;strong&gt;link
+traversal&lt;/strong&gt; that shipped on Firefox Nightly (and soon release Firefox 55),
+&lt;strong&gt;portals&lt;/strong&gt;, and fills out &lt;strong&gt;controller support for Daydream and GearVR&lt;/strong&gt;
+including a component for &lt;strong&gt;laser interactions&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Use it today with &lt;code&gt;&amp;lt;script src=&amp;quot;https://aframe.io/releases/0.6.0/aframe.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;what’s-new&quot;&gt;&lt;a href=&quot;#what’s-new&quot; class=&quot;headerlink&quot; title=&quot;What’s New?&quot;&gt;&lt;/a&gt;What’s New?&lt;/h2&gt;&lt;p&gt;After years of waiting, &lt;strong&gt;link traversal&lt;/strong&gt; has finally landed in a desktop
+browser with Firefox in the WebVR 1.1 API, and A-Frame is there to help you
+travel from world to world. Link traversal lets us stay in VR as we travel
+between VR web pages, at last fulfilling one of the key promises of WebVR.
+This is accomplished by listening to a browser event on page load and kicking
+into VR, but A-Frame also provides a link component and portals so we can zip
+through the Metaverse in style.&lt;/p&gt;
+&lt;p&gt;The portals are represented as windows into another scene, powered by 360&amp;deg;
+panoramic images, which can be taken in A-Frame using the &lt;a href=&quot;https://aframe.io/docs/0.6.0/components/screenshot.html&quot;&gt;screenshot
+shortcut&lt;/a&gt; &lt;code&gt;&amp;lt;ctrl&amp;gt; + &amp;lt;alt&amp;gt; + &amp;lt;shift&amp;gt; + s&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A-Frame completes the collection by providing components out of the box for
+&lt;strong&gt;controllers for every major headset&lt;/strong&gt;: &lt;code&gt;vive-controls&lt;/code&gt;,
+&lt;code&gt;oculus-touch-controls&lt;/code&gt;, &lt;code&gt;daydream-controls&lt;/code&gt;, and &lt;code&gt;gearvr-controls&lt;/code&gt;. Want to
+support them all at once in your application? Just toss in &lt;code&gt;&amp;lt;a-entity
+laser-controls&amp;gt;&amp;lt;/a-entity&amp;gt;&lt;/code&gt; and we have a ray-based control scheme that scales
+across every type of controller.&lt;/p&gt;
+&lt;p&gt;There have been major gains in &lt;strong&gt;performance&lt;/strong&gt;. We’ve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added some caching and reduced some type checking in critical paths of object updates.&lt;/li&gt;
+&lt;li&gt;Reduced memory usage by caching textures.&lt;/li&gt;
+&lt;li&gt;Reduced memory usage by reducing the number of instantiated JavaScript objects.&lt;/li&gt;
+&lt;li&gt;Eliminated duplicate asset network requests when using &lt;code&gt;&amp;lt;a-assets&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Throttled the &lt;code&gt;componentchanged&lt;/code&gt; event which gets emitted very often.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some nice cherries on top are the &lt;strong&gt;shadow component&lt;/strong&gt; for creating real-time
+shadows. Add some depth and presence to our scene alongside lights. Brought to
+you by our now core A-Frame developer,
+&lt;a href=&quot;https://twitter.com/donrmccurdy/&quot;&gt;@donrmccurdy&lt;/a&gt;. And add some post-processing
+with &lt;strong&gt;&lt;a href=&quot;https://wizgrav.github.io/aframe-effects/&quot;&gt;aframe-effects&lt;/a&gt;&lt;/strong&gt; by
+@wizgrav.&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/aframevr/aframe/releases/tag/v0.6.0&quot;&gt;release notes&lt;/a&gt; for the complete changelog which
+includes a list of all new features, optimizations, and bug fixes.&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>A-Frame v0.6.0 at last fulfills the “Web” in WebVR. After three months of work,
+this release features support for WebVR 1.1 API features such as <strong>link
+traversal</strong> that shipped on Firefox Nightly (and soon release Firefox 55),
+<strong>portals</strong>, and fills out <strong>controller support for Daydream and GearVR</strong>
+including a component for <strong>laser interactions</strong>.</p>
+<p>Use it today with <code>&lt;script src=&quot;https://aframe.io/releases/0.6.0/aframe.min.js&quot;&gt;&lt;/script&gt;</code>.</p>
+<h2 id="what’s-new"><a href="#what’s-new" class="headerlink" title="What’s New?"></a>What’s New?</h2><p>After years of waiting, <strong>link traversal</strong> has finally landed in a desktop
+browser with Firefox in the WebVR 1.1 API, and A-Frame is there to help you
+travel from world to world. Link traversal lets us stay in VR as we travel
+between VR web pages, at last fulfilling one of the key promises of WebVR.
+This is accomplished by listening to a browser event on page load and kicking
+into VR, but A-Frame also provides a link component and portals so we can zip
+through the Metaverse in style.</p>
+<p>The portals are represented as windows into another scene, powered by 360&deg;
+panoramic images, which can be taken in A-Frame using the <a href="https://aframe.io/docs/0.6.0/components/screenshot.html">screenshot
+shortcut</a> <code>&lt;ctrl&gt; + &lt;alt&gt; + &lt;shift&gt; + s</code>.</p>
+<p>A-Frame completes the collection by providing components out of the box for
+<strong>controllers for every major headset</strong>: <code>vive-controls</code>,
+<code>oculus-touch-controls</code>, <code>daydream-controls</code>, and <code>gearvr-controls</code>. Want to
+support them all at once in your application? Just toss in <code>&lt;a-entity
+laser-controls&gt;&lt;/a-entity&gt;</code> and we have a ray-based control scheme that scales
+across every type of controller.</p>
+<p>There have been major gains in <strong>performance</strong>. We’ve:</p>
+<ul>
+<li>Added some caching and reduced some type checking in critical paths of object updates.</li>
+<li>Reduced memory usage by caching textures.</li>
+<li>Reduced memory usage by reducing the number of instantiated JavaScript objects.</li>
+<li>Eliminated duplicate asset network requests when using <code>&lt;a-assets&gt;</code>.</li>
+<li>Throttled the <code>componentchanged</code> event which gets emitted very often.</li>
+</ul>
+<p>Some nice cherries on top are the <strong>shadow component</strong> for creating real-time
+shadows. Add some depth and presence to our scene alongside lights. Brought to
+you by our now core A-Frame developer,
+<a href="https://twitter.com/donrmccurdy/" target="_blank" rel="external">@donrmccurdy</a>. And add some post-processing
+with <strong><a href="https://wizgrav.github.io/aframe-effects/" target="_blank" rel="external">aframe-effects</a></strong> by
+@wizgrav.</p>
+<p>Check out the <a href="https://github.com/aframevr/aframe/releases/tag/v0.6.0" target="_blank" rel="external">release notes</a> for the complete changelog which
+includes a list of all new features, optimizations, and bug fixes.</p>
+<a id="more"></a>
+<h2 id="what-have-people-built"><a href="#what-have-people-built" class="headerlink" title="What Have People Built?"></a>What Have People Built?</h2><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>We’ve had over 20 entries of <a href="https://aframe.io/blog/">A Week of A-Frame</a> since
+v0.5.0 was released. Highlights include Google using A-Frame for one of their
+<a href="https://www.webvrexperiments.com/experiment/musical-forest" target="_blank" rel="external">WebVR Experiments</a>
+and <a href="https://edu.google.com/expeditions/#about" target="_blank" rel="external">Google Expeditions</a>, A-Frame
+experiences featured at the Tribeca / Cannes / Tokushima festivals, and
+increasing usage of A-Frame for augmented reality experiments.</p>
+<p>The component of the year goes to the <a href="https://github.com/feiss/aframe-environment-component" target="_blank" rel="external">Environment
+Component</a>, infinite
+seeded procedural and customizable environments:</p>
+<p><img src="/images/blog/environment.gif" alt="Enviroments"></p>
+<div class="tweets">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Mix tunes among trees with people around the world in The Musical Forest, a <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> Experiment → <a href="https://t.co/kVaMiooQs6" target="_blank" rel="external">https://t.co/kVaMiooQs6</a> <a href="https://t.co/vIW17ul5CN" target="_blank" rel="external">pic.twitter.com/vIW17ul5CN</a></p>&mdash; Google (@Google) <a href="https://twitter.com/Google/status/852613738720931840" target="_blank" rel="external">April 13, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">⛏️ &quot;Minecraft in WebVR with HTML Using A-Frame&quot; tutorial on <a href="https://twitter.com/Real_CSS_Tricks" target="_blank" rel="external">@Real_CSS_Tricks</a> by <a href="https://twitter.com/andgokevin" target="_blank" rel="external">@andgokevin</a>. 11 lines of HTML! <a href="https://t.co/wj4dXqzCQf" target="_blank" rel="external">https://t.co/wj4dXqzCQf</a> <a href="https://t.co/CouEW3HLHT" target="_blank" rel="external">pic.twitter.com/CouEW3HLHT</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/842032593512026112" target="_blank" rel="external">March 15, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Tweetscape is a <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> experience displaying <a href="https://twitter.com/hashtag/tweets?src=hash" target="_blank" rel="external">#tweets</a> in real-time along a <a href="https://twitter.com/hashtag/3D?src=hash" target="_blank" rel="external">#3D</a> timeline. Using <a href="https://twitter.com/vuejs" target="_blank" rel="external">@vuejs</a> and <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>. By <a href="https://twitter.com/Koroeskohr" target="_blank" rel="external">@Koroeskohr</a> and me 🚀 <a href="https://t.co/pDvAP9iLyS" target="_blank" rel="external">pic.twitter.com/pDvAP9iLyS</a></p>&mdash; Pierre Charles (@pierrechls) <a href="https://twitter.com/pierrechls/status/844267761270493184" target="_blank" rel="external">March 21, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Grand opening of the Metaverse&#39;s first dance club! Show off your best moves on our latest <a href="https://twitter.com/hashtag/aframevr?src=hash" target="_blank" rel="external">#aframevr</a> <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> demo <a href="https://t.co/l9Pm0Enoa8" target="_blank" rel="external">https://t.co/l9Pm0Enoa8</a> <a href="https://t.co/3ypA9Z7QOq" target="_blank" rel="external">pic.twitter.com/3ypA9Z7QOq</a></p>&mdash; Diego (@dmarcos) <a href="https://twitter.com/dmarcos/status/846983604374835200" target="_blank" rel="external">March 29, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">One end of the Metaverse. A huge multiuser <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> public space by 3D Artist <a href="https://twitter.com/J_Ostrem" target="_blank" rel="external">@J_Ostrem</a> <a href="https://t.co/kcnFeGJX7y" target="_blank" rel="external">https://t.co/kcnFeGJX7y</a> <a href="https://t.co/0u6p78hBnj" target="_blank" rel="external">pic.twitter.com/0u6p78hBnj</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/848850525953024000" target="_blank" rel="external">April 3, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">How to do <a href="https://twitter.com/hashtag/AR?src=hash" target="_blank" rel="external">#AR</a> on the Web in 10 lines of HTML with AR.js and <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> | Tutorial + example on <a href="https://twitter.com/CodePen" target="_blank" rel="external">@CodePen</a> 😉 <a href="https://t.co/7qq0Dcjgnf" target="_blank" rel="external">https://t.co/7qq0Dcjgnf</a> <a href="https://t.co/sMImR8k9jF" target="_blank" rel="external">pic.twitter.com/sMImR8k9jF</a></p>&mdash; Alexandra Etienne (@AndraConnect) <a href="https://twitter.com/AndraConnect/status/849995924495618048" target="_blank" rel="external">April 6, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">📺 Beginnings of WebScreenVR by <a href="https://twitter.com/cyberwarfighte1" target="_blank" rel="external">@cyberwarfighte1</a> (Samuel Cardillo) in <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a>. View desktop windows in VR.  <a href="https://t.co/UhhUjiI6gm" target="_blank" rel="external">https://t.co/UhhUjiI6gm</a> <a href="https://t.co/ZNEAFoydjb" target="_blank" rel="external">pic.twitter.com/ZNEAFoydjb</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/855330586587680769" target="_blank" rel="external">April 21, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Broken Night, interactive VR film premiering at <a href="https://twitter.com/Tribeca" target="_blank" rel="external">@Tribeca</a> Film Festival. Made with <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> by <a href="https://twitter.com/Opherv" target="_blank" rel="external">@Opherv</a> &amp; Gary Weiss. <a href="https://t.co/tX8hwAA7uU" target="_blank" rel="external">https://t.co/tX8hwAA7uU</a> <a href="https://t.co/Bcb3zOQ1Hy" target="_blank" rel="external">pic.twitter.com/Bcb3zOQ1Hy</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/858082819385442304" target="_blank" rel="external">April 28, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">First tweet to announce that ubiver.io is online ! Browse YouTube and Facebook in VR. This project was built with <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://t.co/ItZEL1gkGZ" target="_blank" rel="external">pic.twitter.com/ItZEL1gkGZ</a></p>&mdash; Ubiver (@UbiverIO) <a href="https://twitter.com/UbiverIO/status/866795345187090432" target="_blank" rel="external">May 22, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">GIFed up that A-Frame Effects for ya. <a href="https://t.co/5YiijxQBvN" target="_blank" rel="external">pic.twitter.com/5YiijxQBvN</a></p>&mdash; Kevin Ngo (@andgokevin) <a href="https://twitter.com/andgokevin/status/872158736806281217" target="_blank" rel="external">June 6, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🇯🇵 Tokushima VR Video Festival website by Tatsuya Shirai. Being not a programmer, <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> hit the spot. <a href="https://t.co/kKvJFOHWmC" target="_blank" rel="external">https://t.co/kKvJFOHWmC</a> <a href="https://t.co/9RalD97GBN" target="_blank" rel="external">pic.twitter.com/9RalD97GBN</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/859482481766125568" target="_blank" rel="external">May 2, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Forest Wave by <a href="https://twitter.com/alfredofrlp" target="_blank" rel="external">@alfredofrlp</a><a href="https://t.co/0PlItkeLGF" target="_blank" rel="external">https://t.co/0PlItkeLGF</a> <a href="https://t.co/2tsdYX5N5b" target="_blank" rel="external">pic.twitter.com/2tsdYX5N5b</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/875143253959430144" target="_blank" rel="external">June 15, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Throwing things at <a href="https://twitter.com/chrisschaer" target="_blank" rel="external">@chrisschaer</a>! A multi-user <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> scene with synched entities and physics! <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> <a href="https://twitter.com/hashtag/WebRTC?src=hash" target="_blank" rel="external">#WebRTC</a> <a href="https://t.co/OFwuqOXQme" target="_blank" rel="external">pic.twitter.com/OFwuqOXQme</a></p>&mdash; Jan Azzati (@protyze) <a href="https://twitter.com/protyze/status/875831877755645953" target="_blank" rel="external">June 16, 2017</a></blockquote>
+</div>
+
+<h2 id="numbers"><a href="#numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>Since v0.5.0 was released in February 2017:</p>
+<ul>
+<li>A-Frame has gained over 45 new contributors, totalling to 169.</li>
+<li>216 GitHub issues were opened, 251 were closed.</li>
+<li>240 GitHub pull requests were opened, 251 were closed.</li>
+<li>150,000 people have visited <a href="https://aframe.io">aframe.io</a>.</li>
+</ul>
+<p>In total:</p>
+<ul>
+<li>The A-Frame Slack has 3,984 members.</li>
+<li>On npm, A-Frame has been downloaded 26,000 times, and aframe-react 15,000 times.</li>
+<li>530,000 people have visited <a href="https://aframe.io">aframe.io</a>.</li>
+</ul>
+<h2 id="what’s-next"><a href="#what’s-next" class="headerlink" title="What’s Next?"></a>What’s Next?</h2><p><a href="https://twitter.com/machenmusik" target="_blank" rel="external">@machenmusik</a> is currently ushering in
+support for <a href="https://www.vive.com/us/vive-tracker/" target="_blank" rel="external">Vive trackers</a> to bring in
+real world objects into the VR world. Also expect support for SteamVR Knuckles
+controller once that is released.</p>
+<p>Much work is being done on <strong>multiuser experiences</strong> including
+<a href="https://twitter.com/HaydenLee37" target="_blank" rel="external">@HaydenLee37</a>‘s
+<a href="https://github.com/haydenjameslee/networked-aframe" target="_blank" rel="external">networked-aframe</a>,
+<a href="https://twitter.com/superhoge/" target="_blank" rel="external">@superhoge</a>‘s
+<a href="https://github.com/takahirox/ThreeNetwork" target="_blank" rel="external">THREENetwork</a> , as well as some
+thought on how to performantly achieve networked physics. These WebRTC
+experiments succeed previous WebSocket and Firebase-based experiments. We’ll be
+releasing blog posts on making A-Painter multiuser and link traversal across
+modifiable environments multiuser.</p>
+<p>And lastly, more work on in-VR content creation and tools. A-Frame is a great
+start on lowering the barrier of entry with web technologies, but we can knock
+down that wall harder by content creation more literally into our hands.</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/aframe-v0.6.0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 66</title>
@@ -1476,162 +1637,6 @@ on ambitious projects to lay the foundations of a Metaverse with A-Frame.</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-55/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Rapid Motion-Capture-Powered VR Development</title>
-      <link>https://aframe.io/blog/motion-capture/</link>
-      <guid>https://aframe.io/blog/motion-capture/</guid>
-      <pubDate>Wed, 05 Apr 2017 00:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Read about &lt;a href=&quot;https://blog.mozvr.com/a-saturday-night/&quot;&gt;the initial release of the A-Frame Motion Capture Components and
-A-Saturday-Night&lt;/a&gt;. Or head directly
-to the &lt;a href=&quot;https://github.com/dmarcos/aframe-motion-capture-components/&quot;&gt;A-Frame Motion Capture
-Components&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;On the A-Frame team, we focus our development on experimentation and innovation
-with the HTC Vive. But room scale VR can be cumbersome to develop. Every change
-to the code, we have to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Open a web page (often running on a separate computer)&lt;/li&gt;
-&lt;li&gt;Enter VR&lt;/li&gt;
-&lt;li&gt;Put on the headset&lt;/li&gt;
-&lt;li&gt;Grab the controllers (often having to turn them back on)&lt;/li&gt;
-&lt;li&gt;Do our test run with the headset and controllers&lt;/li&gt;
-&lt;li&gt;Take off the headset and controllers and pop open the browser development tools&lt;/li&gt;
-&lt;li&gt;Restart the browser if necessary since they’re currently experimental and buggy&lt;/li&gt;
-&lt;li&gt;Repeat&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Room scale VR development becomes molasses. But we’ve come up with a workflow
-to supercharge VR development so we can automate, develop rapidly, and on the
-go: &lt;strong&gt;&lt;a href=&quot;https://github.com/dmarcos/aframe-motion-capture-components/&quot;&gt;A-Frame Motion Capture Components&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;With the motion capture components, we can record VR actions (e.g., headset and
-controller movement, controller button presses), and repeatedly replay those VR
-actions, on any device from anywhere without a headset.&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<blockquote>
-<p>Read about <a href="https://blog.mozvr.com/a-saturday-night/" target="_blank" rel="external">the initial release of the A-Frame Motion Capture Components and
-A-Saturday-Night</a>. Or head directly
-to the <a href="https://github.com/dmarcos/aframe-motion-capture-components/" target="_blank" rel="external">A-Frame Motion Capture
-Components</a>.</p>
-</blockquote>
-<p>On the A-Frame team, we focus our development on experimentation and innovation
-with the HTC Vive. But room scale VR can be cumbersome to develop. Every change
-to the code, we have to:</p>
-<ul>
-<li>Open a web page (often running on a separate computer)</li>
-<li>Enter VR</li>
-<li>Put on the headset</li>
-<li>Grab the controllers (often having to turn them back on)</li>
-<li>Do our test run with the headset and controllers</li>
-<li>Take off the headset and controllers and pop open the browser development tools</li>
-<li>Restart the browser if necessary since they’re currently experimental and buggy</li>
-<li>Repeat</li>
-</ul>
-<p>Room scale VR development becomes molasses. But we’ve come up with a workflow
-to supercharge VR development so we can automate, develop rapidly, and on the
-go: <strong><a href="https://github.com/dmarcos/aframe-motion-capture-components/" target="_blank" rel="external">A-Frame Motion Capture Components</a>.</strong></p>
-<p>With the motion capture components, we can record VR actions (e.g., headset and
-controller movement, controller button presses), and repeatedly replay those VR
-actions, on any device from anywhere without a headset.</p>
-<a id="more"></a>
-<!--toc-->
-
-<h2 id="motion-capture-makes-vr-developer-lives-easier"><a href="#motion-capture-makes-vr-developer-lives-easier" class="headerlink" title="Motion Capture Makes VR Developer Lives Easier"></a>Motion Capture Makes VR Developer Lives Easier</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/24733615/9cb99dae-1a2d-11e7-85e3-a75d6c06bb91.gif" alt="Rapid Development"></p>
-<p>Below are several real-life use cases of motion capture vastly improving VR
-development ergonomics:</p>
-<ol>
-<li><p><strong>Faster test trials:</strong> No need to take the headset on and off, enter VR,
-grab the controllers, do manual actions, or restart browsers. Just record once
-and develop for hours on a single recording.</p>
-</li>
-<li><p><strong>Development on the go</strong>: Rather than having to re-enter the headset and VR
-every time we want to test something, we can take our recording, send it to,
-say, a Macbook, head out to a coffee shop, and continue developing our VR
-application using the recording on a stable browser. Add some <code>console.log</code>s,
-refactor your application, or freeze the replay with the A-Frame Inspector
-(<code>&lt;ctrl&gt; + &lt;alt&gt; + i</code>) to poke around.</p>
-</li>
-<li><p><strong>Automated testing</strong>: We can record a bunch of different recordings as
-regression test cases and QA. Store the recordings, do some development, and
-occasionally click through the recordings to make sure everything still works.
-We store multiple recordings in projects for later testing. For example, with
-the Teleport Controls component, I recorded a couple to later test:</p>
-</li>
-<li><p><strong>Multiple developers sharing one headset</strong>: One developer can take a recording
-with the Vive and go off somewhere else to develop with the recording, leaving
-the Vive free for the other developers to use or take recordings.</p>
-</li>
-<li><p><strong>Requests for recordings</strong>: Perhaps you don’t have a Vive or Rift handy but your
-colleague or friend does.  Give them a link to your web application maybe via
-<a href="https://ngrok.io" target="_blank" rel="external">ngrok</a> (isn’t the Web awesome?), have them take a recording,
-and send it to you! Now you’re unblocked from developing.</p>
-</li>
-<li><p><strong>Demonstrating bugs</strong>: Or let’s say you found a bug in a VR web application
-and want to show it to someone. Take a recording and send it to them to debug.
-No need to give bug reproduction steps, it’s all in the recording!</p>
-</li>
-</ol>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/24733850/03f8a96e-1a2f-11e7-8420-34f63c4415a5.png" alt="Stored"></p>
-<p>Another use case for motion capture is as an animation tool to create paths and
-splines, but we won’t go over that here.</p>
-<h2 id="how-to-record"><a href="#how-to-record" class="headerlink" title="How to Record"></a>How to Record</h2><p>Read the <a href="https://github.com/dmarcos/aframe-motion-capture-components/" target="_blank" rel="external">Motion Capture
-documentation</a>
-for more information. Here’s how to set up the recording:</p>
-<ol>
-<li>Drop the Motion Capture Components script tag into your HTML file (e.g., <code>&lt;script src=&quot;https://unpkg.com/aframe-motion-capture-components/dist/aframe-motion-capture-components.min.js&quot;&gt;</code>)</li>
-<li>Add the <code>avatar-recorder</code> component to the scene (i.e., <code>&lt;a-scene avatar-recorder&gt;</code>)</li>
-<li>Enter VR</li>
-<li>Press <code>&lt;space&gt;</code> to start recording</li>
-<li>Record movements and actions</li>
-<li>Press <code>&lt;space&gt;</code> to stop recording</li>
-<li>Save the recording JSON file or upload it by hitting <code>u</code> to get a short URL to share between computers</li>
-</ol>
-<p>Now we can replay the recording. You can try recording the camera with WASD and
-mouse drag controls right now on a desktop. Head to the <a href="http://dmarcos.github.io/aframe-motion-capture-components/" target="_blank" rel="external">Record
-Example</a>, open the
-browser Console to get feedback, and hit <code>&lt;space&gt;</code> to start and stop recording!</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/24766726/3d660b7e-1ab1-11e7-9f64-d97b5732ec43.gif" alt="Record"></p>
-<h2 id="how-to-replay"><a href="#how-to-replay" class="headerlink" title="How to Replay"></a>How to Replay</h2><p>By default, the recording will also be saved and replayed from localStorage. If
-we want to take our recording on the go, here’s how to replay a recording
-(assuming we already have the script tag above):</p>
-<ol>
-<li>Put the recording file somewhere accessible to the web page (i.e., in the project directory or online)</li>
-<li>Add <code>avatar-replayer</code> component to the scene (i.e., <code>&lt;a-scene avatar-replayer&gt;</code>)</li>
-<li>Append <code>?avatar-recording=path/to/recording.json</code> to the URL <em>or</em> set <code>&lt;a-scene avatar-replayer=&quot;src: path/to/recording.json&gt;</code></li>
-</ol>
-<p>Then replay the recording on any device from anywhere without a headset to your
-heart’s content. Get in the headset, record some clicks, and then from a
-laptop, we can build event handlers on top of the controller events we emitted
-in the recording.</p>
-<h2 id="spectator-mode"><a href="#spectator-mode" class="headerlink" title="Spectator Mode"></a>Spectator Mode</h2><p>The A-Frame Motion Capture Components have a Spectator Mode feature that can be
-enabled from the <code>avatar-replayer</code> component:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;a-scene avatar-replayer=&quot;spectatorMode: true&quot;&gt;</div></pre></td></tr></table></figure>
-<p>This lets you view the recording from a third-person view. I found this
-immensely useful because it was hard to see what was happening in first-person.
-The first-person view is naturally shaky, hands would occlude the camera,
-actions would be happening off-screen, and its hard to focus on one place if
-the camera is always moving away. The Spectator Mode lets you free move around
-the scene and view at whatever angle or focus on whatever area.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/24733331/f2bc6094-1a2b-11e7-9442-bcf30d18af79.gif" alt="Spectator Mode"></p>
-<h2 id="usage"><a href="#usage" class="headerlink" title="Usage"></a>Usage</h2><p>Below is a video of me on Twitch. I was developing room scale VR with A-Frame
-for almost <strong>3 hours off of one recording</strong>. That was some good mileage as I
-made a ton of progress. I even served my project using
-<a href="https://ngrok.io" target="_blank" rel="external">ngrok.io</a> so that people could visit the live state of my
-project with the recording! See motion capture powered development in action:</p>
-<p><iframe src="https://player.twitch.tv/?video=v133692824&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/andgokevin?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;" target="_blank" rel="external">Watch live video from andgokevin on www.twitch.tv</a></p>
-<h2 id="try-it-out"><a href="#try-it-out" class="headerlink" title="Try It Out!"></a>Try It Out!</h2><p>Head to <a href="https://aframe.io/a-saturday-night/">A Saturday Night</a> to see a
-recording in action. Again, <a href="https://github.com/dmarcos/aframe-motion-capture-components/" target="_blank" rel="external">check out the Motion Capture
-Components</a>. Go
-forth. Rapidly innovate and experiment with room scale VR interactions!</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/24481580/0ac87ace-14a0-11e7-8281-c032c90f0529.gif" alt="A Saturday Night"></p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/motion-capture/#disqus_thread</comments>
     </item>
     
   </channel>

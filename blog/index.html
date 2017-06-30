@@ -26,8 +26,8 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-24056643-4"
-      data-aframe-version="0.5.0"
-      data-docs-version="0.5.0">
+      data-aframe-version="0.6.0"
+      data-docs-version="0.6.0">
   <head>
     <title>A-Frame</title>
     
@@ -110,14 +110,14 @@
 
 
 <div class="docs-search-wrapper docs-search-sidebar">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.5.0 docs&hellip;"></input>
+  <input type="search" class="search-field" placeholder="&#128269; Search 0.6.0 docs&hellip;"></input>
   <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
 </div>
 
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/0.5.0/introduction/"
+        <a href="/docs/0.6.0/introduction/"
            class="nav-link nav-link-docs"
            
            >
@@ -177,6 +177,14 @@
   <div class="list">
     <h3 class="section-title">Blog Posts</h3>
     <ul class="subnav section-subnav blog-subnav">
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.6.0/"
+             class="subnav-link"
+             title="A-Frame v0.6.0 - Link Traversal">
+            A-Frame v0.6.0 - Link Traversal
+          </a>
+        </li>
       
         <li class="subnav-item ">
           <a href="/blog/awoa-66/"
@@ -918,6 +926,73 @@
 
       
         <article class="post post--listing">
+          <a href="/blog/aframe-v0.6.0/">
+            <h2 class="post__heading">A-Frame v0.6.0 - Link Traversal</h2>
+          </a>
+          <div class="post__metadata">
+  <p class="post__timestamp">Jun 29, 2017</p>
+  
+</div>
+
+
+          
+
+          
+            
+              
+  
+  
+
+  
+    <img src="https://user-images.githubusercontent.com/674727/27721720-19388346-5d17-11e7-912b-499886be0a8d.gif" alt="A-Frame v0.6.0 - Link Traversal">
+  
+
+
+            
+            <div class="post__excerpt"><p>A-Frame v0.6.0 at last fulfills the “Web” in WebVR. After three months of work,
+this release features support for WebVR 1.1 API features such as <strong>link
+traversal</strong> that shipped on Firefox Nightly (and soon release Firefox 55),
+<strong>portals</strong>, and fills out <strong>controller support for Daydream and GearVR</strong>
+including a component for <strong>laser interactions</strong>.</p>
+<p>Use it today with <code>&lt;script src=&quot;https://aframe.io/releases/0.6.0/aframe.min.js&quot;&gt;&lt;/script&gt;</code>.</p>
+<h2 id="what’s-new"><a href="#what’s-new" class="headerlink" title="What’s New?"></a>What’s New?</h2><p>After years of waiting, <strong>link traversal</strong> has finally landed in a desktop
+browser with Firefox in the WebVR 1.1 API, and A-Frame is there to help you
+travel from world to world. Link traversal lets us stay in VR as we travel
+between VR web pages, at last fulfilling one of the key promises of WebVR.
+This is accomplished by listening to a browser event on page load and kicking
+into VR, but A-Frame also provides a link component and portals so we can zip
+through the Metaverse in style.</p>
+<p>The portals are represented as windows into another scene, powered by 360&deg;
+panoramic images, which can be taken in A-Frame using the <a href="https://aframe.io/docs/0.6.0/components/screenshot.html">screenshot
+shortcut</a> <code>&lt;ctrl&gt; + &lt;alt&gt; + &lt;shift&gt; + s</code>.</p>
+<p>A-Frame completes the collection by providing components out of the box for
+<strong>controllers for every major headset</strong>: <code>vive-controls</code>,
+<code>oculus-touch-controls</code>, <code>daydream-controls</code>, and <code>gearvr-controls</code>. Want to
+support them all at once in your application? Just toss in <code>&lt;a-entity
+laser-controls&gt;&lt;/a-entity&gt;</code> and we have a ray-based control scheme that scales
+across every type of controller.</p>
+<p>There have been major gains in <strong>performance</strong>. We’ve:</p>
+<ul>
+<li>Added some caching and reduced some type checking in critical paths of object updates.</li>
+<li>Reduced memory usage by caching textures.</li>
+<li>Reduced memory usage by reducing the number of instantiated JavaScript objects.</li>
+<li>Eliminated duplicate asset network requests when using <code>&lt;a-assets&gt;</code>.</li>
+<li>Throttled the <code>componentchanged</code> event which gets emitted very often.</li>
+</ul>
+<p>Some nice cherries on top are the <strong>shadow component</strong> for creating real-time
+shadows. Add some depth and presence to our scene alongside lights. Brought to
+you by our now core A-Frame developer,
+<a href="https://twitter.com/donrmccurdy/">@donrmccurdy</a>. And add some post-processing
+with <strong><a href="https://wizgrav.github.io/aframe-effects/">aframe-effects</a></strong> by
+@wizgrav.</p>
+<p>Check out the <a href="https://github.com/aframevr/aframe/releases/tag/v0.6.0">release notes</a> for the complete changelog which
+includes a list of all new features, optimizations, and bug fixes.</p></div>
+          
+
+          <a href="/blog/aframe-v0.6.0/" class="post__more">Read more &hellip;</a>
+        </article>
+      
+        <article class="post post--listing">
           <a href="/blog/awoa-66/">
             <h2 class="post__heading">A Week of A-Frame 66</h2>
           </a>
@@ -1260,43 +1335,6 @@ already felt like a core member. We’re just making it official!</p></div>
           
 
           <a href="/blog/awoa-59/" class="post__more">Read more &hellip;</a>
-        </article>
-      
-        <article class="post post--listing">
-          <a href="/blog/awoa-58/">
-            <h2 class="post__heading">A Week of A-Frame 58</h2>
-          </a>
-          <div class="post__metadata">
-  <p class="post__timestamp">Apr 28, 2017</p>
-  
-</div>
-
-
-          
-            
-              <i>What's up with A-Frame, a WebVR framework for building virtual reality experiences, from Apr 21, 2017 to Apr 28, 2017.</i>
-            
-            
-
-          
-
-          
-            
-            <div class="post__excerpt"><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<div class="tweets tweets-feature">
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Broken Night, interactive VR film premiering at <a href="https://twitter.com/Tribeca">@Tribeca</a> Film Festival. Made with <a href="https://twitter.com/aframevr">@aframevr</a> by <a href="https://twitter.com/Opherv">@Opherv</a> &amp; Gary Weiss. <a href="https://t.co/tX8hwAA7uU">https://t.co/tX8hwAA7uU</a> <a href="https://t.co/Bcb3zOQ1Hy">pic.twitter.com/Bcb3zOQ1Hy</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/858082819385442304">April 28, 2017</a></blockquote>
-
-<blockquote class="twitter-tweet"><p lang="de" dir="ltr"><a href="https://twitter.com/aframevr">@aframevr</a> My portfolio 2017 in VR. <a href="https://t.co/MHBOgZ0s5P">https://t.co/MHBOgZ0s5P</a> <a href="https://t.co/620td22gyH">pic.twitter.com/620td22gyH</a></p>&mdash; Dave David Rodriguez (@davefreelance) <a href="https://twitter.com/davefreelance/status/857198520532643840">April 26, 2017</a></blockquote>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;m trying <a href="https://twitter.com/hashtag/webvr?src=hash">#webvr</a> <a href="https://twitter.com/hashtag/aframevr?src=hash">#aframevr</a> with <a href="https://twitter.com/hashtag/treejs?src=hash">#treejs</a> <br>I&#39;m in love with low poly models 🙂 <a href="https://twitter.com/hashtag/blender?src=hash">#blender</a> <a href="https://t.co/pP5Ug3tMiU">pic.twitter.com/pP5Ug3tMiU</a></p>&mdash; Thomas トーマス (@Tebrosp) <a href="https://twitter.com/Tebrosp/status/857357169057988609">April 26, 2017</a></blockquote>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">use alexa skill to control light in a aframe scene <a href="https://t.co/kBbKry8E2G">https://t.co/kBbKry8E2G</a><br><br>cc <a href="https://twitter.com/aframevr">@aframevr</a>  <a href="https://twitter.com/hashtag/amazon?src=hash">#amazon</a> <a href="https://twitter.com/hashtag/skill?src=hash">#skill</a> <a href="https://twitter.com/hashtag/webvr?src=hash">#webvr</a> <a href="https://twitter.com/hashtag/alexa?src=hash">#alexa</a> <a href="https://twitter.com/hashtag/vr?src=hash">#vr</a> <a href="https://twitter.com/hashtag/voiceui?src=hash">#voiceui</a></p>&mdash; Aurélien Fache (@mathemagie) <a href="https://twitter.com/mathemagie/status/857870894005460994">April 28, 2017</a></blockquote>
-
-</div></div>
-          
-
-          <a href="/blog/awoa-58/" class="post__more">Read more &hellip;</a>
         </article>
       
 
