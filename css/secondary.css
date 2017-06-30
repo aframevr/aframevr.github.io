@@ -181,7 +181,12 @@ h4 {
   font: inherit;
 }
 .copy__wrap {
-  max-width: 700px;
+  max-width: 100%;
+}
+@media (min-width: 900px) {
+  .copy__wrap {
+    max-width: 700px;
+  }
 }
 .sidebar__wrap,
 .copy__wrap {
@@ -345,7 +350,7 @@ h4 {
   margin-bottom: 30px;
   text-indent: -9999px;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .logo__wordmark {
     height: 33px;
   }
@@ -361,7 +366,7 @@ h4 {
   content: "";
   display: table;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .sidebar__wrap,
   .copy__wrap {
     padding: 20px;
@@ -422,7 +427,7 @@ a.mozilla-logo:hover {
   width: 100%;
   z-index: 7;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .mobile-header {
     display: none;
   }
@@ -470,7 +475,7 @@ a.mozilla-logo:hover {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .sidebar {
     background: none;
     box-shadow: none;
@@ -576,7 +581,7 @@ a.click {
   color: #333;
   font-weight: 500;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .subnav-link {
     line-height: 1.6;
   }
@@ -612,7 +617,7 @@ a.click {
   padding-top: 60px;
   position: relative;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .content {
     padding-left: 280px;
     padding-top: 0;
@@ -976,7 +981,7 @@ video {
   position: relative;
   width: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .docs-header {
     display: block;
   }
@@ -1003,7 +1008,7 @@ video {
   margin-top: 5px;
   text-transform: uppercase;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .docs-search-wrapper .stackoverflow-link {
     display: block;
   }
@@ -1033,7 +1038,7 @@ body:not([data-page-layout="docs"]) .docs-search-wrapper {
 [data-is-mobile="true"] #docs-version {
   border: 1px solid #ccc;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   [data-page-layout="docs"] .page__title {
     max-width: 62%;
   }
@@ -1123,7 +1128,7 @@ body:not([data-page-layout="docs"]) .docs-search-wrapper {
   position: fixed;
   width: 300px;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   #table-of-contents {
     display: block;
   }
