@@ -1041,15 +1041,21 @@ Games</a></li>
 </ul>
 <h2 id="hosting-models"><a href="#hosting-models" class="headerlink" title="Hosting Models"></a>Hosting Models</h2><p>Refer to <a href="./hosting-and-publishing.html#hosting-models">Hosting and Publishing &mdash; Hosting
 Models</a>.</p>
-<h2 id="troubleshooting"><a href="#troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><h3 id="i-don’t-see-my-model"><a href="#i-don’t-see-my-model" class="headerlink" title="I Don’t See My Model"></a>I Don’t See My Model</h3><p>Check your console for errors. If there are no errors, try scaling your model
-down. Often times there’s a mismatch in the scale when you export, and this
-will cause the camera to be inside the model, which means you won’t be able to
-see it.</p>
+<h2 id="troubleshooting"><a href="#troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><p>Before anything else, check your console for errors. Common issues related to
+CORS can be solved by properly <a href="./hosting-and-publishing.html#hosting-models">hosting your models</a>,
+and the console will also tell you if your model needs additional files that
+are missing.</p>
+<h3 id="i-don’t-see-my-model"><a href="#i-don’t-see-my-model" class="headerlink" title="I Don’t See My Model"></a>I Don’t See My Model</h3><p>If there are no errors in the console, try scaling your model down. Often times
+there’s a mismatch in the scale when you export, and this will cause the camera
+to be inside the model, which means you won’t be able to see it.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gltf-model</span>=<span class="string">"#tree"</span> <span class="attr">scale</span>=<span class="string">"0.01 0.01 0.01"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>If this doesn’t work, open the Inspector by pressing <code>ctrl + alt + i</code> and zoom
 out to verify the model is actually there.</p>
 <h3 id="i-don’t-see-textures"><a href="#i-don’t-see-textures" class="headerlink" title="I Don’t See Textures"></a>I Don’t See Textures</h3><p>Sometimes textures just won’t work right off the bat. This is usually because
-exporters use absolute paths for textures, which won’t work on the Web:</p>
+exporters use absolute paths like <code>C:\\Path\To\Model\texture.jpg</code> or
+<code>/Path/To/Model/texture.jpg</code> for textures, which won’t work on the Web. Instead,
+use relative paths like <code>texture.jpg</code> or <code>images/texture.jpg</code>, relative to your
+model or <code>.mtl</code> file.</p>
 <ol>
 <li>Open the model (or .mtl if you’re doing OBJ) in a plain text editor</li>
 <li>Search for the name of your texture (e.g., <code>texture.jpg</code>)</li>
