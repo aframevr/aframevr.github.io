@@ -8,8 +8,172 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.</description>
-    <pubDate>Fri, 07 Jul 2017 20:19:56 GMT</pubDate>
+    <pubDate>Tue, 11 Jul 2017 18:39:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Creating Augmented Reality with AR.js and A-Frame</title>
+      <link>https://aframe.io/blog/arjs/</link>
+      <guid>https://aframe.io/blog/arjs/</guid>
+      <pubDate>Tue, 11 Jul 2017 10:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;h3 id=&quot;don’t-worry-it’s-less-than-10-lines-of-html&quot;&gt;&lt;a href=&quot;#don’t-worry-it’s-less-than-10-lines-of-html&quot; class=&quot;headerlink&quot; title=&quot;Don’t Worry It’s Less Than 10 Lines of HTML&quot;&gt;&lt;/a&gt;Don’t Worry It’s Less Than 10 Lines of HTML&lt;/h3&gt;&lt;p&gt;AR.js is an efficient Augmented Reality solution on the Web.  It runs 100% in
+your web browser, this means no app to install!  There is no need for a
+specific device either e.g. Tango or iphone.  It runs on all mobile platforms:
+Android, iOS11 and Windows mobile.  You can use it with your own phone.&lt;/p&gt;
+&lt;p&gt;Depending on your device, it can run very fast, up to 60fps on 2year-old
+phones!  On top of that, the code is open source and all available on
+&lt;a href=&quot;https://github.com/jeromeetienne/ar.js&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=0MtvjFg7tik&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/6317076/27866704-452eaed6-618f-11e7-9cdd-2deaef865e3e.png&quot; alt=&quot;screen shot 2017-04-01 at 14 36 00&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A-Frame is very easy to use so I wanted to make sure that AR.js was working
+well with it. Thus, combining A-Frame and AR.js, it’s simple for everybody to
+create AR content on the web.&lt;/p&gt;
+&lt;p&gt;Sounds good? Let’s see how to use it.&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h3 id="don’t-worry-it’s-less-than-10-lines-of-html"><a href="#don’t-worry-it’s-less-than-10-lines-of-html" class="headerlink" title="Don’t Worry It’s Less Than 10 Lines of HTML"></a>Don’t Worry It’s Less Than 10 Lines of HTML</h3><p>AR.js is an efficient Augmented Reality solution on the Web.  It runs 100% in
+your web browser, this means no app to install!  There is no need for a
+specific device either e.g. Tango or iphone.  It runs on all mobile platforms:
+Android, iOS11 and Windows mobile.  You can use it with your own phone.</p>
+<p>Depending on your device, it can run very fast, up to 60fps on 2year-old
+phones!  On top of that, the code is open source and all available on
+<a href="https://github.com/jeromeetienne/ar.js" target="_blank" rel="external">github</a>.</p>
+<p><a href="https://www.youtube.com/watch?v=0MtvjFg7tik" target="_blank" rel="external"><img src="https://user-images.githubusercontent.com/6317076/27866704-452eaed6-618f-11e7-9cdd-2deaef865e3e.png" alt="screen shot 2017-04-01 at 14 36 00"></a></p>
+<p>A-Frame is very easy to use so I wanted to make sure that AR.js was working
+well with it. Thus, combining A-Frame and AR.js, it’s simple for everybody to
+create AR content on the web.</p>
+<p>Sounds good? Let’s see how to use it.</p>
+<a id="more"></a>
+<h2 id="show-don’t-tell"><a href="#show-don’t-tell" class="headerlink" title="Show Don’t Tell"></a>Show Don’t Tell</h2><p><a href="https://www.youtube.com/watch?v=v_Uj0C8sMi4&amp;feature=youtu.be&amp;utm_content=buffer22f18&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer" target="_blank" rel="external"><img src="https://user-images.githubusercontent.com/6317076/27867019-5c4699d4-6190-11e7-831b-e8251711acdf.png" alt="screen shot 2017-07-05 at 14 40 01"></a></p>
+<p>Today you can make <a href="https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf" target="_blank" rel="external">augmented reality in 10 Lines of
+HTML</a>,
+isn’t the web amazing? It is really that simple, you can try live on
+<a href="https://codepen.io/jeromeetienne/pen/mRqqzb" target="_blank" rel="external">codepen</a>. Just put a <a href="https://github.com/jeromeetienne/AR.js/blob/master/data/images/HIRO.jpg" target="_blank" rel="external">hiro
+marker</a>
+in front of the camera and we will add the augmented reality on it.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- include A-Frame obviously --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.6.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- include ar.js for A-Frame --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">'margin : 0px; overflow: hidden;'</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">embedded</span> <span class="attr">arjs</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- create your content here. just a box for now --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">'0 0.5 0'</span> <span class="attr">material</span>=<span class="string">'opacity: 0.5;'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- define a camera which will move according to the marker position --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-marker-camera</span> <span class="attr">preset</span>=<span class="string">'hiro'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker-camera</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>In this scene, the camera is being moved by AR.js, and
+the origin of your scene is at the center of the marker.
+All the rest is normal A-Frame.
+So if you want to add new objects in the augmented reality, just add it
+near the <code>&lt;a-box&gt;</code></p>
+<h2 id="add-augmented-reality-in-your-a-frame-project"><a href="#add-augmented-reality-in-your-a-frame-project" class="headerlink" title="Add Augmented Reality in your A-Frame Project"></a>Add Augmented Reality in your A-Frame Project</h2><p><img src="https://user-images.githubusercontent.com/6317076/27867071-8833eaf6-6190-11e7-9fb9-9deac93b88bd.png" alt="screen shot 2017-07-05 at 14 22 23"></p>
+<p>To include AR.js, you need to include <a href="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js" target="_blank" rel="external">aframe-ar.js</a>. Then you initialize ar.js in <code>&lt;a-scene&gt;</code>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">embedded</span> <span class="attr">arjs</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Then you tell A-Frame that you want arjs to control the camera. For that, you just add</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-marker-camera</span> <span class="attr">preset</span>=<span class="string">'hiro'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker-camera</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Don’t forget to add the body style and a-scene embedded attribute. And you are
+<strong>ALL DONE</strong> ð</p>
+<h2 id="personalize-your-ar-content"><a href="#personalize-your-ar-content" class="headerlink" title="Personalize Your AR Content"></a>Personalize Your AR Content</h2><p>Now we have a basic cube in AR…  It would be good to personalise the AR a
+bit. Let’s see how to add a text, an image or even your own model in augmented
+reality.</p>
+<p><img src="https://user-images.githubusercontent.com/6317076/27867143-bf05926e-6190-11e7-855f-a90ab71976fc.png" alt="screen shot 2017-07-05 at 14 45 35"></p>
+<p>One of the most asked questions has been “how to load my own model in AR?”.  As
+I said before, ar.js controls the displacement of the camera, all the rest is
+classic A-Frame. So you can load a model exactly as you would in A-Frame.</p>
+<p>Here is an example of loading a <a href="https://www.khronos.org/gltf" target="_blank" rel="external">gltf</a> model,
+just add that in your a-scene.  For more detail see <a href="https://aframe.io/docs/0.5.0/introduction/models.html##sidebar">A-Frame documentation
+about models</a>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- define your gltf asset --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"tree"</span> <span class="attr">src</span>=<span class="string">"/path/to/tree.gltf"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- use your gltf model --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gltf-model</span>=<span class="string">"##tree"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Another way to easily personalize your AR is to put a text or an image on top.
+To add a text, simply just use
+<a href="https://aframe.io/docs/0.5.0/primitives/a-text.html">a-text</a> as below.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-text</span> <span class="attr">value</span>=<span class="string">"Hello, World!"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-text</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>To add an image,
+<a href="https://aframe.io/docs/0.5.0/primitives/a-image.html">a-image</a> is easy. Just
+paste this in your A-Frame scene.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-image</span> <span class="attr">src</span>=<span class="string">"another-image.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-image</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="customize-your-marker"><a href="#customize-your-marker" class="headerlink" title="Customize Your Marker"></a>Customize Your Marker</h2><p><img src="https://user-images.githubusercontent.com/6317076/27867192-e55306b8-6190-11e7-9bd1-7a9dbf4fa76a.png" alt="arjs marker training"></p>
+<p>We understand that many people want to personalize the marker. It is possible
+to replace the Hiro pattern with your own image, as long as it is inside the
+black border.  We have provided an easy way to this. It is called the <a href="https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html" target="_blank" rel="external">marker
+generator</a>.
+We even wrote a whole step by step
+<a href="https://medium.com/arjs/how-to-create-your-own-marker-44becbec1105" target="_blank" rel="external">post</a> to
+help you get started.</p>
+<p>First, you upload your own image and generate a pattern file <code>pattern-marker.patt</code>.
+Second, you download the trained marker. And third, potentially print your marker.
+We provide a PDF file to make it easier for you.</p>
+<p>What to do with the generated pattern file?  This file contains the encoded
+marker that you should reuse in your code.  You specify you want a pattern
+marker and you provide the url to your own marker.  So in our case
+<code>&lt;a-marker-camera&gt;</code> should be replaced by the following.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-marker-camera</span> <span class="attr">type</span>=<span class="string">'pattern'</span> <span class="attr">patternUrl</span>=<span class="string">'path/to/pattern-marker.patt'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker-camera</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Simple enough.</p>
+<h2 id="different-type-of-markers-pattern-and-barcode"><a href="#different-type-of-markers-pattern-and-barcode" class="headerlink" title="Different Type of Markers: Pattern and Barcode"></a>Different Type of Markers: Pattern and Barcode</h2><p>Up to now, we use the ‘pattern’ marker. But AR.js supports another kind of
+marker, called barcode. Each of those markers contains a kind of binary code
+which encodes a number. For example below, you see one representing 5.</p>
+<p><img src="https://user-images.githubusercontent.com/252962/27870433-c18f6e10-619a-11e7-8479-4cb662798740.png" alt="5"></p>
+<p>Barcode markers may be very useful for various type of applications, especially
+when you have many locations with various markers.  For example, <a href="https://twitter.com/fr3ino" target="_blank" rel="external">Marcel
+Freinbichler</a> and <a href="https://twitter.com/lisi_linhart" target="_blank" rel="external">Lisi
+Linhart</a> wanted to do a augmented reality
+application for their school: <em>“When you go to a room, you point your phone and
+it shows you in augmented reality the availability of this room.”</em></p>
+<p>So they chosed to use barcode markers: one barcode per room. Thus when the AR
+application sees the marker, it converts that to into a number which matches
+the room. So you do a xmlhttprequest to get the current schedule of the room
+and display it on top of the marker.</p>
+<p>I love this idea! It is useful for other people in the school. It has nice
+panash with AR. But most of all, it provides relevant informations directly
+where and when needed. This is a key principle for AR applications.</p>
+<h2 id="add-barcode-marker-in-your-project"><a href="#add-barcode-marker-in-your-project" class="headerlink" title="Add Barcode Marker in Your Project"></a>Add Barcode Marker in Your Project</h2><p>To add them in your project is rather straight forward.
+First you need to tell AR.js to start detecting them and their type of
+binary code. So you modify a-scene as below.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">arjs</span>=<span class="string">'detectionMode: mono_and_matrix; matrixCodeType: 3x3;'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Now that ar.js knows you want to use barcode markers, on each of your marker
+you need to specify which number you will use, e.g. for barcode 5.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">type</span>=<span class="string">'barcode'</span> <span class="attr">value</span>=<span class="string">'5'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Here is <a href="http://www.artoolworks.com/support/applications/marker/" target="_blank" rel="external">barcode marker
+generator</a> to generate
+your own. Up to you to use the <a href="http://www.artoolworks.com/support/library/Using_2D-barcode_markers" target="_blank" rel="external">type of matrix
+code</a>
+matches you need.  Sometimes such configurations may be painful so to simplify
+common cases, we used preset.</p>
+<h2 id="markers-presets-for-easier-configuration"><a href="#markers-presets-for-easier-configuration" class="headerlink" title="Markers Presets for Easier Configuration"></a>Markers Presets for Easier Configuration</h2><p>To make it easier and to avoid repeating ourselves, it is possible to have
+preset to configure your markers.  Currently there are 2 presets “hiro” and
+“kanji”</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- here is a hiro preset --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">preset</span>=<span class="string">'hiro'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- it is the same as the marker below --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">type</span>=<span class="string">'pattern'</span> <span class="attr">url</span>=<span class="string">'http://examples.org/hiro.patt'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- here is a kanji preset --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">preset</span>=<span class="string">'kanji'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- it is the same as the marker below --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">type</span>=<span class="string">'pattern'</span> <span class="attr">url</span>=<span class="string">'http://examples.org/kanji.patt'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/6317076/27867388-64baee98-6191-11e7-9fbe-586fd79eba9d.png" alt="screen shot 2017-07-05 at 14 50 43"></p>
+<h2 id="move-the-camera-or-the-marker"><a href="#move-the-camera-or-the-marker" class="headerlink" title="Move the Camera or the Marker?"></a>Move the Camera or the Marker?</h2><p>When handling augmented reality, you need to decide if you want the
+3d world origin to be the camera or the marker. Most people will use
+the marker as origin because it is more intuitive. Let’s see the details
+of each mode.</p>
+<p>In one mode, you use <code>&lt;a-marker-camera&gt;</code>. In this mode, the camera is
+moving and the marker is static, fixed at 0,0,0.  This way to work is more
+common for 3d programmers, so it is the one I use in most examples.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-marker-camera</span> <span class="attr">preset</span>=<span class="string">'hiro'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-marker-camera</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>In the other mode, you use <code>&lt;a-marker&gt;</code>.  It behaves the other way around:
+the camera is static at all times while the objects or markers are moving.  The
+camera is fixed at 0,0,0 at all times and looks toward negative-z.
+Nevertheless this mode got a limitation, it can’t handle multiple independent
+markers at once.  So if you have multiple markers and want to handle them
+independently from each other e.g. like in <a href="https://www.youtube.com/watch?v=dIEZwmjuaUA&amp;list=PL2oSKUSmuoTECUCvHDvifRhztkOYduQsq&amp;index=10" target="_blank" rel="external">this
+video</a>.</p>
+<p>You will need to use <code>&lt;a-marker&gt;</code>, and a simple camera instead.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- define your markers --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">preset</span>=<span class="string">'hiro'</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- here define the content to display on top of the marker --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">'0 0.5 0'</span> <span class="attr">material</span>=<span class="string">'color: red;'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- define a simple camera --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="how-to-handle-multiple-distinct-markers"><a href="#how-to-handle-multiple-distinct-markers" class="headerlink" title="How to Handle Multiple Distinct Markers"></a>How to Handle Multiple Distinct Markers</h2><p>Now that we have seen various possibilities of
+<a href="https://github.com/jeromeetienne/ar.js" target="_blank" rel="external">AR.js</a>, let’s end with a last example
+of multiple distinct markers. Those can be useful in various applications e.g.
+a ‘measure it’ like below.  So we will have 3 markers, one with a preset, one
+with a custom pattern marker, and a barcode.</p>
+<p><a href="https://www.youtube.com/watch?v=dIEZwmjuaUA&amp;list=PL2oSKUSmuoTECUCvHDvifRhztkOYduQsq&amp;index=10" target="_blank" rel="external"><img src="https://user-images.githubusercontent.com/6317076/27867514-c85fefb6-6191-11e7-99c4-2091ab0a6fd1.png" alt="screen shot 2017-07-05 at 14 53 43"></a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.6.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">'margin : 0px; overflow: hidden;'</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">embedded</span> <span class="attr">arjs</span>=<span class="string">'sourceType: webcam;'</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- handle marker with your own pattern --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">type</span>=<span class="string">'pattern'</span> <span class="attr">patternUrl</span>=<span class="string">'path/to/pattern-marker.patt'</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">'0 0.5 0'</span> <span class="attr">material</span>=<span class="string">'color: red;'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- handle marker with hiro preset --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">preset</span>=<span class="string">'hiro'</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">'0 0.5 0'</span> <span class="attr">material</span>=<span class="string">'color: green;'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- handle barcode marker --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-marker</span> <span class="attr">type</span>=<span class="string">'barcode'</span> <span class="attr">value</span>=<span class="string">'5'</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">'0 0.5 0'</span> <span class="attr">material</span>=<span class="string">'color: blue;'</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-marker</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- add a simple camera --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="conclusion"><a href="#conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In this post we have seen how to do efficient Augmented Reality with AR.js, and
+how to add it to your A-Frame project.  We now know how to customize content in
+AR and make it more personal.  We’ve also learned that it’s possible to create
+your own marker with an easy-to-use marker generator.  Finally, we’ve learned
+how to handle the camera and use multiple distinct markers.  This is a lot!
+Congrats on getting to the end without quitting ;)</p>
+<p>I hope you all start creating amazing things with AR.js and A-Frame. Don’t
+forget it’s open source, so your imagination is the limit!</p>
+<p>Thanks for reading. Cheers!</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/arjs/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 67 - 68</title>
@@ -1451,217 +1615,6 @@ hardware out there!</p>
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-56/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Managing Application and Game State in A-Frame</title>
-      <link>https://aframe.io/blog/gamestate/</link>
-      <guid>https://aframe.io/blog/gamestate/</guid>
-      <pubDate>Tue, 11 Apr 2017 00:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Larger VR applications need a way of cleanly managing application or game
-state. Managing lots of client-side state in a non-tangled manner has been a
-large topic in 2D web development over the past couple of years which has given
-rise to libraries such as
-&lt;a href=&quot;http://redux.js.org/docs/introduction/ThreePrinciples.html&quot;&gt;Redux&lt;/a&gt;. Having
-built several non-trivial WebVR applications, we’ll go over how we started to
-bring these ideas of state management into A-Frame’s DOM-based entity-component
-architecture.&lt;/p&gt;
-&lt;!--toc--&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Larger VR applications need a way of cleanly managing application or game
-state. Managing lots of client-side state in a non-tangled manner has been a
-large topic in 2D web development over the past couple of years which has given
-rise to libraries such as
-<a href="http://redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">Redux</a>. Having
-built several non-trivial WebVR applications, we’ll go over how we started to
-bring these ideas of state management into A-Frame’s DOM-based entity-component
-architecture.</p>
-<!--toc-->
-
-<a id="more"></a>
-<h2 id="initial-approach-with-redux"><a href="#initial-approach-with-redux" class="headerlink" title="Initial Approach with Redux"></a>Initial Approach with Redux</h2><p><img src="https://camo.githubusercontent.com/af8803571294fe373a54d039be8f9709f15a2ad4/687474703a2f2f6d616b6569746f70656e2e636f6d2f7374617469632f696d616765732f72656475785f666c6f7763686172742e706e67" alt="Redux"></p>
-<p><em><a href="http://makeitopen.com/tutorials/building-the-f8-app/data/" target="_blank" rel="external">Image credit to makeitopen.com</a></em></p>
-<p>My initial approach was to use Redux straight up with A-Frame. Redux is a
-library to predictably manage and modify state similar to a state management
-machine. Redux has become extremely popular over the last couple of years when
-used with React. I personally started using it the day it was released. Redux
-is an agnostic library that can be integrated into any framework.</p>
-<p><a href="http://redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">Redux’s three
-principles</a>: single
-source of truth, read-only state, and changes are made with pure functions.
-The implementation of Redux involves a single global state, making it easy to
-debug and inspect. That single global state is modified through pure functions
-(reducers) that takes the previous state and action and returns next state,
-making it easy to unit test. Then we can only modify the state by dispatching
-actions (i.e., events), providing a single entry point into modifying the
-state.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/24901028/ab55bb0a-1e5a-11e7-9aff-57ddb71e48cf.png" alt="Redux and A-Frame Diagram"></p>
-<p>For a basic example, say we have a state <code>{value: 1}</code>. I could have a reducer
-that modifies the state; on the <code>INCREMENT</code> action, the reducer would do return
-a new state with <code>value++;</code>, and on the <code>DECREMENT</code> action, the reducer would
-return a new state with <code>value--;</code>. An action dispatcher would send the
-<code>INCREMENT</code> or <code>DECREMENT</code> actions, triggering a state change.</p>
-<p>I created an <a href="https://github.com/ngokevin/kframe/tree/master/components/redux/" target="_blank" rel="external">A-Frame Redux component</a> to integrate Redux into
-A-Frame. The Redux component lets us declaratively set up a Redux store, and
-pass in reducers:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">redux</span>=<span class="string">"reducers: counter"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>And to register a reducer:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerReducer(<span class="string">'counter'</span>, &#123;</div><div class="line">  <span class="attr">actions</span>: &#123;</div><div class="line">    <span class="attr">DECREASE</span>: <span class="string">'COUNTER__DECREASE'</span>,</div><div class="line">    <span class="attr">INCREASE</span>: <span class="string">'COUNTER__INCREASE'</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">initialState</span>: &#123;<span class="attr">value</span>: <span class="number">0</span>&#125;,</div><div class="line"></div><div class="line">  <span class="attr">reducer</span>: <span class="function"><span class="keyword">function</span> (<span class="params">state, action</span>) </span>&#123;</div><div class="line">    state = state || <span class="keyword">this</span>.initialState;</div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">      <span class="keyword">case</span> <span class="keyword">this</span>.actions.INCREASE: &#123;</div><div class="line">        <span class="keyword">var</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</div><div class="line">        newState.value++;</div><div class="line">        <span class="keyword">return</span> newState;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">case</span> <span class="keyword">this</span>.actions.DECREASE: &#123;</div><div class="line">        <span class="keyword">var</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</div><div class="line">        newState.value--;</div><div class="line">        <span class="keyword">return</span> newState;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>To dispatch actions, grab a handler to the Redux store and dispatch:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scene.systems.redux.store.dispatch(&#123;<span class="attr">type</span>: <span class="string">'COUNTER__INCREASE'</span>&#125;);</div></pre></td></tr></table></figure>
-<p>The Redux component then provided a data-binding component to bind state to
-A-Frame entities:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">redux</span>=<span class="string">"counter.value: text.value"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>The Redux component seems very usable with A-Frame. If I were to build a larger
-application where I needed to compose multiple reducers and split up the
-application state into sub-states, I would personally start reaching for Redux.</p>
-<p>But to people had that have not used Redux, all of Redux’s terms (e.g.,
-reducers, stores, dispatchers, actions) are foreign. A lot of A-Frame
-developers are coming from graphics, games, or 3D industries, and they don’t
-care about Redux. For me, it took a couple of weeks to fully grasp. So I wanted
-to see if we could create something simpler and more tailored to A-Frame’s
-architecture and VR.</p>
-<h2 id="game-state-implementation-in-a-blast"><a href="#game-state-implementation-in-a-blast" class="headerlink" title="Game State Implementation in A-Blast"></a>Game State Implementation in A-Blast</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/24531440/0336e66e-156e-11e7-95c2-f2e6ebc0393d.gif" alt="A-Blast"></p>
-<p>The implementation below is the one I’m currently using on my personal
-projects, but it will evolve. Note we’ll be calling it <em>game state</em> as that’s a
-common term for 3D-related applications, but game state can apply for any
-application in general.</p>
-<p><a href="https://github.com/aframevr/a-blast/" target="_blank" rel="external">A-Blast</a> is a cute VR shooter game. We
-wanted to build an application in one of the most common and popular genres to
-prove A-Frame as a 3D and VR framework.  A-Blast let us see how common concepts
-such as game state would be implemented alongside A-Frame. For A-Blast, we
-needed to keep track of things such as the wave, player health, score, phase
-(e.g., Intro, Game Over), and time left.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/24813155/d1afc7fe-1b81-11e7-99b7-b444babd2593.png" alt="Redux-like Diagram"></p>
-<p>The game state we implemented took ideas of Redux but tailored it for A-Frame:</p>
-<ol>
-<li>A single global game state A-Frame system which is registered on the
-<code>&lt;a-scene&gt;</code> element.</li>
-<li>Initial state is specified in the system’s schema.</li>
-<li>State can be accessed via the system’s data (e.g.,
-<code>sceneEl.getAttribute(&#39;gamestate&#39;)</code>).</li>
-<li>Actions are dispatched using events</li>
-<li>Handlers in the game state are responsible for transitioning the state</li>
-<li>The game state system publishes the game state and notifies via an event</li>
-<li>Related to the game state system is a component to declaratively bind game
-state to A-Frame component properties in HTML</li>
-</ol>
-<p>Below is a basic skeleton for game state system implementation that mirrors
-A-Blast’s. Fewer than 50 lines of code that does the basics of Redux:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerSystem(<span class="string">'gamestate'</span>, &#123;</div><div class="line">  <span class="comment">// Initial state.</span></div><div class="line">  schema: &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> initialState = <span class="keyword">this</span>.initialState;</div><div class="line">    <span class="keyword">var</span> sceneEl = <span class="keyword">this</span>.el;</div><div class="line">    <span class="keyword">var</span> state = <span class="keyword">this</span>.data;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!initialState) &#123; initialState = state; &#125;</div><div class="line"></div><div class="line">    sceneEl.emit(<span class="string">'gamestateinitialized'</span>, &#123;<span class="attr">state</span>: initialState&#125;);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Application-specific code goes under here! Handlers to transition state.</div><div class="line">     */</div><div class="line">    registerHandler(<span class="string">'increment'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">newState, evt</span>) </span>&#123;</div><div class="line">      newState.value++;</div><div class="line">      <span class="keyword">return</span> newState;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="comment">// Part of the game state library.</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">registerHandler</span> (<span class="params">eventName, handler</span>) </span>&#123;</div><div class="line">      el.addEventListener(eventName, <span class="function"><span class="keyword">function</span> (<span class="params">param</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> newState = handler(AFRAME.utils.extend(&#123;&#125;, state), param);</div><div class="line">        publishState(eventName, newState);</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Part of the game state library.</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">publishState</span> (<span class="params">event, newState</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> oldState = AFRAME.utils.extend(&#123;&#125;, state);</div><div class="line">      el.setAttribute(<span class="string">'gamestate'</span>, newState);</div><div class="line">      state = newState;</div><div class="line">      el.emit(<span class="string">'gamestatechanged'</span>, &#123;</div><div class="line">        <span class="attr">event</span>: event,</div><div class="line">        <span class="attr">diff</span>: AFRAME.utils.diff(oldState, newState),</div><div class="line">        <span class="attr">state</span>: newState</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Then to dispatch an action, any A-Frame entity can emit an event, and it’ll
-bubble up to the scene, where the game state can trigger its handlers. No need
-to grab a handle on the game state; entities don’t even have to know about the
-game state.</p>
-<p>A-Blast also has a <code>gamestatebind</code> component that updates entities if necessary
-on every state change. If we wanted to bind game state’s <code>value</code> to A-Frame’s
-text component’s <code>value</code> property, we can use the component declaratively:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gamestatebind</span>=<span class="string">"value: text.value"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Similar to the concepts in React, A-Frame components in this model of game
-state could either be “smart components”, meaning aware of the game state, or
-“dumb components”, meaning they’re agnostic and purely responsible for pieces
-such as 3D appearance, behavior, logic.</p>
-<p>We are also free to choose what state is able to be handled within a single
-component, local state, and when to hoist a piece of state up to the global
-level if multiple entities or components need to interface with it.</p>
-<p>State specific to an entity can either be kept in a component, and if we need
-to make it global or more closely manage it, we can hoist that up to the global
-game state. Say we had a collection of data in the game state each representing
-an entity. To allow each entity having its own state while managing it at the
-global level, we could “select” or bind each piece of data to its respective
-entity; similar to how you might possibly fetch a list of data and bind it to
-list items in HTML.</p>
-<h2 id="game-state-implementation-in-a-saturday-night"><a href="#game-state-implementation-in-a-saturday-night" class="headerlink" title="Game State Implementation in A Saturday Night"></a>Game State Implementation in A Saturday Night</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/24813570/54e183aa-1b83-11e7-840d-aaca5e9a0724.gif" alt="A Saturday Night"></p>
-<p><a href="https://aframe.io/a-saturday-night/">A Saturday Night</a> is a demo for motion
-capture where people can get into their headset, record a dance, and share it
-with their friends. Like a “dancegram”. <a href="https://github.com/dmarcos/" target="_blank" rel="external">Diego
-Marcos</a> implemented the game state for A Saturday
-Night and took a different approach from scratch, without any bias from Redux.
-This implementation is less generalized but optimized for A Saturday Night.</p>
-<ol>
-<li>A single global game state component which is registered on the <code>&lt;a-scene&gt;</code> element</li>
-<li>The application can be in a single game state at a time</li>
-<li>All possible game states are statically defined up front in an array</li>
-<li>A-Frame Components are registered, each one handling a different state. The
-state components define an <code>init</code> handler on what’s run when the application
-transitions to its state, and a <code>remove</code> handler on what’s run when the
-application transitions away from its state</li>
-<li>States are changed using a <code>setState</code> method that swaps to a different state</li>
-<li>The game state component publishes its state to the application by toggling
-the state components</li>
-</ol>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/24899932/03e67ace-1e57-11e7-965a-47a78fc4d64b.png" alt="A Saturday Night State Machine"></p>
-<p>Below is a basic skeleton for game state system implementation that mirrors
-A Saturday Night’s:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'game-state'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">barCondition</span>: &#123;<span class="attr">default</span>: <span class="literal">false</span>&#125;,</div><div class="line">    <span class="attr">state</span>: &#123;<span class="attr">default</span>: <span class="string">'foo'</span>, <span class="attr">oneOf</span>: [<span class="string">'bar'</span>, <span class="string">'qux'</span>, <span class="string">'qaz'</span>]&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</div><div class="line">    <span class="keyword">if</span> (oldData.state !== data.state) &#123;</div><div class="line">      <span class="keyword">this</span>.setState(data.state);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.updateState();</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">updateState</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line"></div><div class="line">    <span class="keyword">switch</span> (data.state) &#123;</div><div class="line">      <span class="comment">/**</span></div><div class="line">       * Application-specific code goes under here!</div><div class="line">       */</div><div class="line">      <span class="keyword">case</span> <span class="string">'foo'</span>: &#123;</div><div class="line">        <span class="comment">// Transition to next state depending on condition.</span></div><div class="line">        <span class="keyword">if</span> (data.barCondition) &#123;</div><div class="line">          el.setAttribute(<span class="string">'game-state'</span>, <span class="string">'state'</span>, <span class="string">'bar'</span>);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">default</span>: &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Unknown state'</span>, data.state);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">setState</span>: <span class="function"><span class="keyword">function</span>(<span class="params">state</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</div><div class="line">    <span class="keyword">var</span> states = <span class="keyword">this</span>.schema.state.oneOf;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.updatingState) &#123; <span class="keyword">return</span>; &#125;</div><div class="line">    <span class="keyword">if</span> (states.indexOf(state) === <span class="number">-1</span>) &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Unknown state'</span>, state);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// Remove all states.</span></div><div class="line">    states.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">state</span>) </span>&#123;</div><div class="line">      el.removeAttribute(state);</div><div class="line">    &#125;);</div><div class="line">    el.setAttribute(state, <span class="string">''</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Components can update the game state, and the game state will decide whether
-conditions have been fulfilled to transition to the next state.</p>
-<p>Then we have components that represent each distinct state:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'bar'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Ran when the game state enters the `bar` state.</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">remove</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Ran when the game state leaves the `bar` state.</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="comparing-implementations-between-redux-approach-a-blast-a-saturday-night"><a href="#comparing-implementations-between-redux-approach-a-blast-a-saturday-night" class="headerlink" title="Comparing Implementations Between Redux Approach, A-Blast, A Saturday Night"></a>Comparing Implementations Between Redux Approach, A-Blast, A Saturday Night</h2><p>A-Blast’s game state was something I came up with, basing it on Redux. The
-advantage is that components don’t have to know about the game state; they just
-emit events, and the game state listens to them. A-Blast’s game state is also
-more flexible since there’s no single state represented as a string; any change
-to pieces of the game state represents an entirely new game state. We send
-actions, and the game state controls what needs to change in the state. This
-model from this state management has form of state management has been
-battle-tested through the web community’s adoption of Redux.</p>
-<p>A Saturday Night’s game state was implemented by Diego Marcos. This model of
-game state is well suited for simpler applications such as A Saturday Night
-where there are only very distinct states (avatar selection, dancing, sharing
-states). All the code that reacts to state changes are contained within
-components that each manage a single state; this could be good or bad since
-there is lots of code touching lots of parts of the application contained
-within a single component. The nice part is that changing states and reacting
-to changed states are synchronous rather than through events. However, it would
-be possible to change A-Blast’s game state to be synchronous.</p>
-<p>However, as an application grows very large and contains lots of state, I would
-give Redux a serious look up. By composing reducers, Redux is able to split an
-application up into various sub-states or subtrees making each piece of the
-application more manageable and predictable. The only obstacle would be the
-learning curve, but the benefits would be proven state management with an
-excellent community of state debugging tools.</p>
-<h2 id="in-vr-state-debugging-tools-and-time-travel"><a href="#in-vr-state-debugging-tools-and-time-travel" class="headerlink" title="In-VR State Debugging Tools and Time Travel"></a>In-VR State Debugging Tools and Time Travel</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/18897572/49ed95a4-84e0-11e6-9522-aa1c65cf0e14.png" alt="In-VR Debug Panel"></p>
-<p>Since A-Frame is about VR, it’s useful to view the entire game state while in
-VR for debugging purposes. In A-Blast, we had a component that printed out the
-entire game state on a panel with text within VR. Every time the game state
-changed, we’d update the panel.</p>
-<p>Eventually, it’d also be nice to have 2D state debugging tools just as Redux
-has developer tools to inspect every single state change, or even time travel.
-We’d be able to see every action that’s dispatched and what it causes. With
-A-Blast’s game state component, it’d be easy since the system emits an event on
-each game state change, providing the action that triggered the state change,
-the diff between the old and next states, and the current new state.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/24814011/fd5fb4b0-1b84-11e7-8d00-04a59acacc13.png" alt="Debugger"></p>
-<p>In the future, I can imagine creating a <code>time-travel</code> component that could
-rewind and pan through the different states. We could turn the Vive trackers
-into a dial that we could physically turn to reverse time, and see the world go
-backwards in VR!</p>
-<h2 id="conclusion"><a href="#conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>These have been our initial attempts in implementing game state. I have no
-doubt that our ideas and implementations will change and evolve for the better
-as we build more and more complex WebVR applications. Coincidentally, <a href="https://github.com/aframevr/aframe/issues/2569" target="_blank" rel="external">Don
-McCurdy was brainstorming about state
-machines</a> at the exact time of
-writing of this post! Check out his ideas as well.</p>
-<p>More recently, I have been building the beginnings of a fairly complex
-application where I am often interacting with game state. You can watch my
-<a href="https://twitch.tv/andgokevin/" target="_blank" rel="external">recorded developer logs or catch me working on game state live on
-Twitch</a> as I continue to develop it.</p>
-<p>If you want to see various source code for implementations of game states:</p>
-<ul>
-<li><a href="https://github.com/aframevr/a-blast/blob/master/src/components/gamestate.js" target="_blank" rel="external">A-Blast <code>gamestate</code></a></li>
-<li><a href="https://github.com/aframevr/a-saturday-night/blob/master/src/components/game-state.js" target="_blank" rel="external">A Saturday Night <code>game-state</code></a></li>
-<li><a href="https://github.com/ngokevin/architect/blob/master/components/gamestate.js" target="_blank" rel="external">Architect <code>gamestate</code></a></li>
-</ul>
-<p>Whatever becomes the ultimate approach to game state will become the Oracle of
-the Metaverse!</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/gamestate/#disqus_thread</comments>
     </item>
     
   </channel>
