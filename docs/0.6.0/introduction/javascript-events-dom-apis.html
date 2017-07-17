@@ -461,13 +461,6 @@
       <ol class="subnav section-subnav">
         
           <li class="subnav-item ">
-            <a href="/docs/0.6.0/components/blend-model.html"
-               class="subnav-link">
-              blend-model
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/0.6.0/components/camera.html"
                class="subnav-link">
               camera
@@ -1071,7 +1064,7 @@ the entity (such as calling <code>.getAttribute()</code>). If we need to query a
 attribute on an entity that has just been appended, we can listen to the
 <code>loaded</code> event on the entity, or place logic in an A-Frame component so that
 it is executed once it is ready:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> sceneEl = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</div><div class="line"></div><div class="line">AFRAME.registerComponent(<span class="string">'do-something-once-loaded'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// This will be called after the entity has properly attached and loaded.</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'I am ready'</span>!);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> entityEl = <span class="built_in">document</span>.createElement(<span class="string">'a-entity'</span>);</div><div class="line">entityEl.setAttribute(<span class="string">'do-something-once-loaded'</span>, <span class="string">''</span>);</div><div class="line">sceneEl.appendChild(entityEl);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> sceneEl = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</div><div class="line"></div><div class="line">AFRAME.registerComponent(<span class="string">'do-something-once-loaded'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// This will be called after the entity has properly attached and loaded.</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'I am ready!'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> entityEl = <span class="built_in">document</span>.createElement(<span class="string">'a-entity'</span>);</div><div class="line">entityEl.setAttribute(<span class="string">'do-something-once-loaded'</span>, <span class="string">''</span>);</div><div class="line">sceneEl.appendChild(entityEl);</div></pre></td></tr></table></figure>
 <h3 id="removing-an-entity-with-removechild"><a href="#removing-an-entity-with-removechild" class="headerlink" title="Removing an Entity with .removeChild()"></a>Removing an Entity with <code>.removeChild()</code></h3><p>To remove an entity from the DOM and thus from the scene, we call
 <code>.removeChild(element)</code> from the parent element. If we have an entity, we have to
 ask its parent (<code>parentNode</code>) to remove the entity.</p>
@@ -1139,7 +1132,7 @@ which contains data and information passed through the event.</p>
 can use <code>.removeEventListener(eventName, function)</code>. We have to pass the same
 event name and function that the listener was registered with. For example,
 continuing from the previous example with the physics collision event:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// We have to define this function with a name if we later remove it.</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">collisionHandler</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Entity collided with'</span>, event.detail.collidingEntity);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">entityEl.addEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</div><div class="line">entityEl.removeEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// We have to define this function with a name if we later remove it.</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">collisionHandler</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Entity collided with'</span>, event.detail.collidingEntity);</div><div class="line">&#125;</div><div class="line"></div><div class="line">entityEl.addEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</div><div class="line">entityEl.removeEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</div></pre></td></tr></table></figure>
 
 
     <!-- Previous / Next navigation. -->
