@@ -994,12 +994,13 @@
     <p>The cursor component provides hover and click states for interaction on top of
 the <a href="./raycaster.html">raycaster component</a>. The cursor component can be used for
 both gaze-based and controller-based interactions, but the appearance needs
-to be configured depending on the use case. The [<code>&lt;a-cursor&gt;</code> primitive] provides
-a default reticle appearance for a gaze-based cursor, and the [laser-controls
-component] configures the cursor for all controllers.</p>
+to be configured depending on the use case. The <a href="../primitives/a-cursor.html"><code>&lt;a-cursor&gt;</code>
+primitive</a> provides a default reticle appearance for a gaze-based
+cursor, and the <a href="./laser-controls.html">laser-controls component</a> configures the
+cursor for all controllers.</p>
 <p>The cursor component listens to events and keeps state on what’s being hovered
 and pressed in order to provide <code>mousedown</code>, <code>mouseup</code>, <code>mouseenter</code>,
-<code>mouseleave</code>, and <code>click</code> events. We name use the <code>mouse</code> name to mimic
+<code>mouseleave</code>, and <code>click</code> events. We use the name <code>mouse</code> to mimic
 traditional web development for now. Under the hood, the cursor component uses
 the <code>raycaster-intersected</code> and <code>raycaster-intersection-cleared</code> events,
 capturing the closest visible intersected entity.</p>
@@ -1041,6 +1042,11 @@ When the cursor clicks on the box, we can listen to the click event.</p>
 <td>fuseTimeout</td>
 <td>How long to wait (in milliseconds) before triggering a fuse-based click event.</td>
 <td>1500</td>
+</tr>
+<tr>
+<td>rayOrigin</td>
+<td>Where the intersection ray is cast from (i.e.,entity or mouse)</td>
+<td>entity</td>
 </tr>
 <tr>
 <td>upEvents</td>
