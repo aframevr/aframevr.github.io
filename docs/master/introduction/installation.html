@@ -25,7 +25,7 @@
       data-lib-examples-url="https://aframe.io/aframe/examples"
       data-title="{title} | A-Frame"
       data-is-spa="false"
-      data-ga-id="UA-35433268-69"
+      data-ga-id="UA-24056643-4"
       data-aframe-version="0.6.0"
       data-docs-version="master">
   <head>
@@ -71,17 +71,33 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
     <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
-    
-<script>
+    <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-35433268-69', 'auto');
-  ga('send', 'pageview');
-</script>
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('create', 'UA-35433268-69', 'auto', 'managers');
 
+  ga('send', 'pageview');
+  ga('managers.send', 'pageview');
+
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('managers.send', 'event', 'pageload.querystring', window.location.search);
+
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+  ga('managers.send', 'event', 'pageload.hash', window.location.hash);
+
+  ga('send', 'event', 'supports.getVRDevices', 'getVRDevices' in navigator);
+  ga('managers.send', 'event', 'supports.getVRDevices', 'getVRDevices' in navigator);
+
+  ga('send', 'event', 'supports.getVRDisplays', 'getVRDisplays' in navigator);
+  ga('managers.send', 'event', 'supports.getVRDisplays', 'getVRDisplays' in navigator);
+
+  ga('send', 'event', 'supports.WEBVRPLUS', 'WEBVRPLUS' in window);
+  ga('managers.send', 'event', 'supports.WEBVRPLUS', 'WEBVRPLUS' in window);
+</script>
 
 
     
@@ -1163,7 +1179,6 @@ A-Frame.  <code>angle</code> can initialize a scene template with a single comma
 
     
       <script src="/js/common.js"></script>
-      <script src="/js/ga.js"></script>
       
       
         <script src="/js/docs.js"></script>
