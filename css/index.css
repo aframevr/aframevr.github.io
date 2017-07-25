@@ -133,7 +133,7 @@ strong {
 }
 code,
 pre {
-  font-family: Fira Mono, Andale Mono, Monaco, Courier, monospace;
+  font-family: Fira Mono, Consolas, Andale Mono, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 pre {
   font-size: 13px;
@@ -144,7 +144,7 @@ pre {
 }
 .font-loaded-mono code,
 .font-loaded-mono pre {
-  font-family: Fira Mono, Andale Mono, Monaco, Courier, monospace;
+  font-family: Fira Mono, Consolas, Andale Mono, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 p code,
 li code,
@@ -181,7 +181,12 @@ h4 {
   font: inherit;
 }
 .copy__wrap {
-  max-width: 700px;
+  max-width: 100%;
+}
+@media (min-width: 900px) {
+  .copy__wrap {
+    max-width: 700px;
+  }
 }
 .sidebar__wrap,
 .copy__wrap {
@@ -345,7 +350,7 @@ h4 {
   margin-bottom: 30px;
   text-indent: -9999px;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .logo__wordmark {
     height: 33px;
   }
@@ -408,7 +413,7 @@ pre,
 .example__viewsource,
 .sidebar .page-title,
 .menu-item a {
-  font-family: Fira Mono, Andale Mono, Monaco, Courier, monospace;
+  font-family: Fira Mono, Consolas, Andale Mono, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 .hidden {
   display: !important;
@@ -681,7 +686,7 @@ a.mozilla-logo:hover {
   opacity: 0.8;
 }
 .mobile-get-started {
-  display: none;
+  margin: 0 0 20px;
 }
 @media screen and (max-width: 399px) {
   #logo {
@@ -762,7 +767,7 @@ a.mozilla-logo:hover {
   display: none;
   padding-bottom: 10px;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .blog-list {
     display: block;
   }
