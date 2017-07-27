@@ -1052,14 +1052,24 @@ depending on the material type applied.</p>
 <td>false</td>
 </tr>
 <tr>
+<td>npot</td>
+<td>Use settings for non-power-of-two (NPOT) texture.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Texture offset to be used.</td>
+<td>{x: 0, y: 0}</td>
+</tr>
+<tr>
 <td>opacity</td>
 <td>Extent of transparency. If the <code>transparent</code> property is not <code>true</code>, then the material will remain opaque and <code>opacity</code> will only affect color.</td>
 <td>1.0</td>
 </tr>
 <tr>
-<td>transparent</td>
-<td>Whether material is transparent. Transparent entities are rendered after non-transparent entities.</td>
-<td>false</td>
+<td>repeat</td>
+<td>Texture repeat to be used.</td>
+<td>{x: 1, y: 1}</td>
 </tr>
 <tr>
 <td>shader</td>
@@ -1072,24 +1082,19 @@ depending on the material type applied.</p>
 <td>front</td>
 </tr>
 <tr>
+<td>transparent</td>
+<td>Whether material is transparent. Transparent entities are rendered after non-transparent entities.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vertexColors</td>
+<td>Whether to use vertex or face colors to shade the material. Can be one of <code>none</code>, <code>vertex</code>, or <code>face</code>.</td>
+<td>none</td>
+</tr>
+<tr>
 <td>visible</td>
 <td>Whether material is visible. Raycasters will ignore invisible materials.</td>
 <td>true</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Texture offset to be used.</td>
-<td>{x: 0, y: 0}</td>
-</tr>
-<tr>
-<td>repeat</td>
-<td>Texture repeat to be used.</td>
-<td>{x: 1, y: 1}</td>
-</tr>
-<tr>
-<td>npot</td>
-<td>Use settings for non-power-of-two (NPOT) texture.</td>
-<td>false</td>
 </tr>
 </tbody>
 </table>
