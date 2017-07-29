@@ -1135,7 +1135,7 @@ depending on the material type applied.</p>
 <tbody>
 <tr>
 <td>ambientOcclusionMap</td>
-<td>Ambient occlusion map. Used to add shadows to the mesh. Can either be a selector to an <code>&lt;img&gt;</code> an inline URL.</td>
+<td>Ambient occlusion map. Used to add shadows to the mesh. Can either be a selector to an <code>&lt;img&gt;</code>, or an inline URL. Requires 2nd set of UVs (see below).</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1160,7 +1160,7 @@ depending on the material type applied.</p>
 </tr>
 <tr>
 <td>displacementMap</td>
-<td>Displacement map. Used to distort a mesh. Can either be a selector to an <code>&lt;img&gt;</code> an inline URL.</td>
+<td>Displacement map. Used to distort a mesh. Can either be a selector to an <code>&lt;img&gt;</code>, or an inline URL.</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1215,7 +1215,7 @@ depending on the material type applied.</p>
 </tr>
 <tr>
 <td>normalMap</td>
-<td>Normal map. Used to add the illusion of complex detail. Can either be a selector to an <code>&lt;img&gt;</code> an inline URL.</td>
+<td>Normal map. Used to add the illusion of complex detail. Can either be a selector to an <code>&lt;img&gt;</code>, or an inline URL.</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1281,7 +1281,10 @@ kinds of materials that we can use as a starting point.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"src: treebark.png; color: #696969; roughness: 1; metalness: 0"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <h4 id="distortion-maps"><a href="#distortion-maps" class="headerlink" title="Distortion Maps"></a>Distortion Maps</h4><p>There are three properties which give the illusion of complex geometry:</p>
 <ul>
-<li><strong>Ambient occlusion maps</strong> - Applies a texture to the image which add shadows.</li>
+<li><strong>Ambient occlusion maps</strong> - Applies subtle shadows in areas that receive less
+ambient light. Direct (point, directional) lights do not affect ambient occlusion
+maps. Baked ambient occlusion requires a 2nd set of UVs, which may be added to
+the mesh in modeling software or using JavaScript.</li>
 <li><strong>Displacement maps</strong> - Distorts a simpler model at a high resolution
 allowing more detail. This will affect the mesh’s silhouette but can be
 expensive.</li>
