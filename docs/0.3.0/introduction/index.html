@@ -122,6 +122,22 @@
 
 
 <!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
+</div>
+
+</div>
+
 <aside id="sidebar" class="sidebar borderless-links">
   
 
@@ -135,10 +151,10 @@
   
 
 
-<div class="docs-search-wrapper docs-search-sidebar">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
 </div>
+
 
   <ul id="nav" class="nav">
     
@@ -148,15 +164,6 @@
            
            >
           <span>Docs</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/examples/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>Examples</span>
         </a>
       </li>
     
@@ -193,6 +200,15 @@
             rel="external"
             title="A-Frame Slack (sign up)">
           <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
         </a>
       </li>
     
@@ -782,9 +798,9 @@
   </div>
 </aside>
 
-<!-- Documentation. -->
-<div class="content content--structured content--introduction copy">
-  <div class="mobile-header">
+  <!-- Documentation. -->
+  <div class="content content--structured content--introduction copy">
+    <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
   <span></span>
@@ -831,36 +847,29 @@
 </script>
 
 
-  <div class="copy__wrap">
-    <div class="page__section docs-header">
-      <p>
-        <a href="/docs/0.3.0/introduction/" class="borderless-link">
-          0.3.0 &rsaquo; Introduction
-        </a>
-      </p>
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.3.0/introduction/" class="borderless-link">
+            0.3.0 &rsaquo; Introduction
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        Introduction
+      </h1>
+
       
 
-
-<div class="docs-search-wrapper docs-search-docs">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
-</div>
-    </div>
-    <h1 class="page__title">
-      Introduction
-    </h1>
-
-    
-
-    
-    
-      <blockquote>
+      
+      
+        <blockquote>
 <p><strong>Note:</strong> This documentation is for the old 0.3.0 version of A-Frame. Check out the <a href="/docs/0.6.0/introduction/">documentation for the current 0.6.0 version</a></p>
 </blockquote>
 
-    
+      
 
-    <h2 id="what-is-a-frame"><a href="#what-is-a-frame" class="headerlink" title="What is A-Frame?"></a>What is A-Frame?</h2><p>A-Frame is an open-source WebVR framework for creating virtual reality (VR)
+      <h2 id="what-is-a-frame"><a href="#what-is-a-frame" class="headerlink" title="What is A-Frame?"></a>What is A-Frame?</h2><p>A-Frame is an open-source WebVR framework for creating virtual reality (VR)
 experiences with HTML. We can build VR scenes that work across smartphones,
 desktop, the Oculus Rift, and the room-scale HTC Vive.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.3.2/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"#6173F4"</span> <span class="attr">opacity</span>=<span class="string">"0.8"</span> <span class="attr">depth</span>=<span class="string">"2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">radius</span>=<span class="string">"2"</span> <span class="attr">src</span>=<span class="string">"texture.png"</span> <span class="attr">position</span>=<span class="string">"1 1 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#ECECEC"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -911,16 +920,16 @@ sections of the documentation. If you have any questions, join the other
 hundreds of developers on <a href="https://aframevr-slack.herokuapp.com/" target="_blank" rel="external">Slack</a>!</p>
 
 
-    <!-- Previous / Next navigation. -->
-    <footer class="footer guide-links c">
-      
-      
-        <span class="float-right">
-          <a href="/docs/0.3.0/introduction/getting-started.html" class="guide-link guide-link-right">Getting Started →</a></span>
-      
-    </footer>
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+          <span class="float-right">
+            <a href="/docs/0.3.0/introduction/getting-started.html" class="guide-link guide-link-right">Getting Started →</a></span>
+        
+      </footer>
 
-    <footer class="footer footnote">
+      <footer class="footer footnote">
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
@@ -936,12 +945,12 @@ hundreds of developers on <a href="https://aframevr-slack.herokuapp.com/" target
   </span>
 </footer>
 
-  </div>
+    </div>
 
-  <div class="secondary-sidebar">
-    
+    <div class="secondary-sidebar">
+      
 
-<div id="table-of-contents">
+<div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
@@ -998,9 +1007,12 @@ hundreds of developers on <a href="https://aframevr-slack.herokuapp.com/" target
   </ul>
 </div>
 
-    <div class="doc-actions">
-      <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/index.md" target="_blank" rel="external">Edit Page</a>
       
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/index.md" target="_blank" rel="external">Edit Page</a>
+        
+      </div>
     </div>
   </div>
 </div>
@@ -1029,7 +1041,7 @@ hundreds of developers on <a href="https://aframevr-slack.herokuapp.com/" target
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
     

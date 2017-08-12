@@ -122,6 +122,22 @@
 
 
 <!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
+</div>
+
+</div>
+
 <aside id="sidebar" class="sidebar borderless-links">
   
 
@@ -135,10 +151,10 @@
   
 
 
-<div class="docs-search-wrapper docs-search-sidebar">
-  <input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
 </div>
+
 
   <ul id="nav" class="nav">
     
@@ -148,15 +164,6 @@
            
            >
           <span>Docs</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/examples/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>Examples</span>
         </a>
       </li>
     
@@ -193,6 +200,15 @@
             rel="external"
             title="A-Frame Slack (sign up)">
           <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
         </a>
       </li>
     
@@ -936,9 +952,9 @@
   </div>
 </aside>
 
-<!-- Documentation. -->
-<div class="content content--structured content--components copy">
-  <div class="mobile-header">
+  <!-- Documentation. -->
+  <div class="content content--structured content--components copy">
+    <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
   <span></span>
@@ -985,36 +1001,29 @@
 </script>
 
 
-  <div class="copy__wrap">
-    <div class="page__section docs-header">
-      <p>
-        <a href="/docs/master/components/geometry.html" class="borderless-link">
-          master &rsaquo; Components
-        </a>
-      </p>
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/master/components/geometry.html" class="borderless-link">
+            master &rsaquo; Components
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        stats
+      </h1>
+
       
 
-
-<div class="docs-search-wrapper docs-search-docs">
-  <input type="search" class="search-field" placeholder="&#128269; Search master docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
-</div>
-    </div>
-    <h1 class="page__title">
-      stats
-    </h1>
-
-    
-
-    
-    
-      <blockquote>
+      
+      
+        <blockquote>
 <p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/0.6.0/introduction/">documentation for the current 0.6.0 version</a></p>
 </blockquote>
 
-    
+      
 
-    <p>The stats component displays a UI with performance-related metrics. The stats
+      <p>The stats component displays a UI with performance-related metrics. The stats
 component applies only to the <a href="../core/scene.html"><code>&lt;a-scene&gt;</code> element</a>.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">stats</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="metrics"><a href="#metrics" class="headerlink" title="Metrics"></a>Metrics</h2><ul>
@@ -1035,13 +1044,13 @@ means the scene is using less memory.</li>
 “Framerate”, then <code>fps</code> and <code>raf</code> will collapse.</p>
 
 
-    <!-- Previous / Next navigation. -->
-    <footer class="footer guide-links c">
-      
-      
-    </footer>
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+      </footer>
 
-    <footer class="footer footnote">
+      <footer class="footer footnote">
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
@@ -1057,12 +1066,12 @@ means the scene is using less memory.</li>
   </span>
 </footer>
 
-  </div>
+    </div>
 
-  <div class="secondary-sidebar">
-    
+    <div class="secondary-sidebar">
+      
 
-<div id="table-of-contents">
+<div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
@@ -1103,11 +1112,14 @@ means the scene is using less memory.</li>
   </ul>
 </div>
 
-    <div class="doc-actions">
-      <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/stats.md" target="_blank" rel="external">Edit Page</a>
       
-        <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/stats.js" title="View Source" target="_blank" rel="external">View Source</a>
-      
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/stats.md" target="_blank" rel="external">Edit Page</a>
+        
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/stats.js" title="View Source" target="_blank" rel="external">View Source</a>
+        
+      </div>
     </div>
   </div>
 </div>
@@ -1136,7 +1148,7 @@ means the scene is using less memory.</li>
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
     

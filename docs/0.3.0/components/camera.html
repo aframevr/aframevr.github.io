@@ -122,6 +122,22 @@
 
 
 <!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
+</div>
+
+</div>
+
 <aside id="sidebar" class="sidebar borderless-links">
   
 
@@ -135,10 +151,10 @@
   
 
 
-<div class="docs-search-wrapper docs-search-sidebar">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
 </div>
+
 
   <ul id="nav" class="nav">
     
@@ -148,15 +164,6 @@
            
            >
           <span>Docs</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/examples/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>Examples</span>
         </a>
       </li>
     
@@ -193,6 +200,15 @@
             rel="external"
             title="A-Frame Slack (sign up)">
           <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
         </a>
       </li>
     
@@ -782,9 +798,9 @@
   </div>
 </aside>
 
-<!-- Documentation. -->
-<div class="content content--structured content--components copy">
-  <div class="mobile-header">
+  <!-- Documentation. -->
+  <div class="content content--structured content--components copy">
+    <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
   <span></span>
@@ -831,36 +847,29 @@
 </script>
 
 
-  <div class="copy__wrap">
-    <div class="page__section docs-header">
-      <p>
-        <a href="/docs/0.3.0/components/geometry.html" class="borderless-link">
-          0.3.0 &rsaquo; Components
-        </a>
-      </p>
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.3.0/components/geometry.html" class="borderless-link">
+            0.3.0 &rsaquo; Components
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        camera
+      </h1>
+
       
 
-
-<div class="docs-search-wrapper docs-search-docs">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
-</div>
-    </div>
-    <h1 class="page__title">
-      camera
-    </h1>
-
-    
-
-    
-    
-      <blockquote>
+      
+      
+        <blockquote>
 <p><strong>Note:</strong> This documentation is for the old 0.3.0 version of A-Frame. Check out the <a href="/docs/0.6.0/introduction/">documentation for the current 0.6.0 version</a></p>
 </blockquote>
 
-    
+      
 
-    <p>The camera component defines from which perspective the user views the scene.
+      <p>The camera component defines from which perspective the user views the scene.
 It is often paired with controls components that allow input devices to move
 and rotate the camera.</p>
 <p>It is recommended to wrap entities with the camera component within another
@@ -932,13 +941,13 @@ do create a HUD, make sure that it is more in the center of the field of view
 such that the user does not have to strain their eyes to read it.</p>
 
 
-    <!-- Previous / Next navigation. -->
-    <footer class="footer guide-links c">
-      
-      
-    </footer>
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+      </footer>
 
-    <footer class="footer footnote">
+      <footer class="footer footnote">
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
@@ -954,12 +963,12 @@ such that the user does not have to strain their eyes to read it.</p>
   </span>
 </footer>
 
-  </div>
+    </div>
 
-  <div class="secondary-sidebar">
-    
+    <div class="secondary-sidebar">
+      
 
-<div id="table-of-contents">
+<div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
@@ -1022,9 +1031,12 @@ such that the user does not have to strain their eyes to read it.</p>
   </ul>
 </div>
 
-    <div class="doc-actions">
-      <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/camera.md" target="_blank" rel="external">Edit Page</a>
       
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/camera.md" target="_blank" rel="external">Edit Page</a>
+        
+      </div>
     </div>
   </div>
 </div>
@@ -1053,7 +1065,7 @@ such that the user does not have to strain their eyes to read it.</p>
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
     

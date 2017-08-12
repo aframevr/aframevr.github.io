@@ -125,10 +125,30 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
     
 
     
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
   </head>
 
   <body data-page-layout="blog" data-page-type="">
-    <main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links">
+    <main id="main" class="main"><div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
   
 
 <div id="secondary-nav" class="secondary-nav">
@@ -141,10 +161,10 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
   
 
 
-<div class="docs-search-wrapper docs-search-sidebar">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.6.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
 </div>
+
 
   <ul id="nav" class="nav">
     
@@ -154,15 +174,6 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
            
            >
           <span>Docs</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/examples/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>Examples</span>
         </a>
       </li>
     
@@ -199,6 +210,15 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
             rel="external"
             title="A-Frame Slack (sign up)">
           <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
         </a>
       </li>
     
@@ -958,8 +978,8 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
   </div>
 </aside>
 
-<div class="content content--blog copy post ">
-  <div class="mobile-header">
+  <div class="content content--blog copy post ">
+    <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
   <span></span>
@@ -1006,15 +1026,15 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
 </script>
 
 
-  <div class="copy__wrap">
-    
-      <article class="post post-full">
-        <p class="page__section">
-          <a href="/blog/" class="borderless-link">Blog</a>
-        </p>
+    <div class="copy__wrap">
+      
+        <article class="post post-full">
+          <p class="page__section">
+            <a href="/blog/" class="borderless-link">Blog</a>
+          </p>
 
-        <h1 class="page__title post__heading">CC-Licensed Textures from Flickr</h1>
-        <div class="post__metadata">
+          <h1 class="page__title post__heading">CC-Licensed Textures from Flickr</h1>
+          <div class="post__metadata">
   <p class="post__timestamp">Dec 19, 2015</p>
   
     <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/bmann">Boris Mann</a></p>
@@ -1022,10 +1042,10 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
 </div>
 
 
-        
-
-        
           
+
+          
+            
   
   
     
@@ -1038,9 +1058,9 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
   
 
 
-        
+          
 
-        <blockquote>
+          <blockquote>
 <p>Cross-posted from <a href="http://tumblr.bmannconsulting.com/post/135664145908/im-messing-around-with-aframevr-and-learning" target="_blank" rel="external">Boris Mann’s Tumblr</a>.</p>
 </blockquote>
 <p>I’m messing around with A-Frame and learning about textures.</p>
@@ -1051,44 +1071,44 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
 <p>If you visit that link you can use W-A-S-D keys to navigate around, or better yet, open it on your phone and stick it in a VR headset. It’s Geocities 1.0 time in VR on the web, but it’s great to see Mozilla getting things to the state that we CAN hand-code this sort of thing. I’ve just been reading through the <a href="https://aframe.io/docs/primitives/">A-Frame Primitives documentation</a> and getting a feel for what’s possible.</p>
 
 
-        
-      </article>
+          
+        </article>
 
-      <footer class="footer guide-links c">
-        
-        
-        
-        
-          <span class="float-left"><a href="/blog/spheres-and-fog/" class="guide-link guide-link-left">← Sense of Scale with Spheres and Fog</a></span>
-        
-        
-          <span class="float-right"><a href="/blog/charleston/" class="guide-link guide-link-right">WebVR Tour of Public Projects in Charleston, SC →</a></span>
-        
-      </footer>
-    
-
-    <footer class="footer footnote">
-      <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
-      
-        <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/flickr-textures.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+        <footer class="footer guide-links c">
+          
+          
+          
+          
+            <span class="float-left"><a href="/blog/spheres-and-fog/" class="guide-link guide-link-left">← Sense of Scale with Spheres and Fog</a></span>
+          
+          
+            <span class="float-right"><a href="/blog/charleston/" class="guide-link guide-link-right">WebVR Tour of Public Projects in Charleston, SC →</a></span>
+          
+        </footer>
       
 
-      <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
-        <div class="message">Supported by</div>
-        <span itemprop="sponsor" itemscope itemtype="http://schema.org/Organization">
-          <a class="mozilla-logo" itemprop="url" href="https://www.mozilla.org/" rel="external">
-            <span itemprop="name"></span>
-          </a>
+      <footer class="footer footnote">
+        <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+        
+          <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/flickr-textures.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+        
+
+        <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
+          <div class="message">Supported by</div>
+          <span itemprop="sponsor" itemscope itemtype="http://schema.org/Organization">
+            <a class="mozilla-logo" itemprop="url" href="https://www.mozilla.org/" rel="external">
+              <span itemprop="name"></span>
+            </a>
+          </span>
         </span>
-      </span>
-    </footer>
-  </div>
+      </footer>
+    </div>
 
-  
-    <div class="secondary-sidebar">
-      
+    
+      <div class="secondary-sidebar">
+        
 
-<div id="table-of-contents">
+<div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
@@ -1096,8 +1116,9 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
   </ul>
 </div>
 
-    </div>
-  
+      </div>
+    
+  </div>
 </div>
 </main>
 
@@ -1108,6 +1129,24 @@ I went over to Flickr and did a search on texture with CC-licensed images and ca
         <script src="/js/docs.js"></script>
       
     
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.6.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
 
     
   </body>

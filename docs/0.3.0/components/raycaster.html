@@ -122,6 +122,22 @@
 
 
 <!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
+</div>
+
+</div>
+
 <aside id="sidebar" class="sidebar borderless-links">
   
 
@@ -135,10 +151,10 @@
   
 
 
-<div class="docs-search-wrapper docs-search-sidebar">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
 </div>
+
 
   <ul id="nav" class="nav">
     
@@ -148,15 +164,6 @@
            
            >
           <span>Docs</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/examples/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>Examples</span>
         </a>
       </li>
     
@@ -193,6 +200,15 @@
             rel="external"
             title="A-Frame Slack (sign up)">
           <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
         </a>
       </li>
     
@@ -782,9 +798,9 @@
   </div>
 </aside>
 
-<!-- Documentation. -->
-<div class="content content--structured content--components copy">
-  <div class="mobile-header">
+  <!-- Documentation. -->
+  <div class="content content--structured content--components copy">
+    <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
   <span></span>
@@ -831,36 +847,29 @@
 </script>
 
 
-  <div class="copy__wrap">
-    <div class="page__section docs-header">
-      <p>
-        <a href="/docs/0.3.0/components/geometry.html" class="borderless-link">
-          0.3.0 &rsaquo; Components
-        </a>
-      </p>
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.3.0/components/geometry.html" class="borderless-link">
+            0.3.0 &rsaquo; Components
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        raycaster
+      </h1>
+
       
 
-
-<div class="docs-search-wrapper docs-search-docs">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.3.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
-</div>
-    </div>
-    <h1 class="page__title">
-      raycaster
-    </h1>
-
-    
-
-    
-    
-      <blockquote>
+      
+      
+        <blockquote>
 <p><strong>Note:</strong> This documentation is for the old 0.3.0 version of A-Frame. Check out the <a href="/docs/0.6.0/introduction/">documentation for the current 0.6.0 version</a></p>
 </blockquote>
 
-    
+      
 
-    <p>The raycaster component does general intersection testing with a <a href="https://en.wikipedia.org/wiki/Ray_casting" target="_blank" rel="external">raycaster</a>. Raycasting is the method of extending a line from an origin towards a direction, and checking whether that line intersects with other entites. The raycaster component is a wrapper on top of the <a href="http://threejs.org/docs/#Reference/Core/Raycaster" target="_blank" rel="external">three.js raycaster</a>. It checks for intersections at a certain interval against a list of objects, and will emit events on the entity when it detects intersections or clearing of intersections (i.e., when the raycaster is no longer intersecting an entity).</p>
+      <p>The raycaster component does general intersection testing with a <a href="https://en.wikipedia.org/wiki/Ray_casting" target="_blank" rel="external">raycaster</a>. Raycasting is the method of extending a line from an origin towards a direction, and checking whether that line intersects with other entites. The raycaster component is a wrapper on top of the <a href="http://threejs.org/docs/#Reference/Core/Raycaster" target="_blank" rel="external">three.js raycaster</a>. It checks for intersections at a certain interval against a list of objects, and will emit events on the entity when it detects intersections or clearing of intersections (i.e., when the raycaster is no longer intersecting an entity).</p>
 <p>The raycaster component is what the <a href="./cursor.html">cursor component</a> is built upon.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"player"</span> <span class="attr">collider-check</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">raycaster</span>=<span class="string">"objects: .collidable"</span> <span class="attr">position</span>=<span class="string">"0 -0.9 0"</span> <span class="attr">rotation</span>=<span class="string">"90 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">"collidable"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">position</span>=<span class="string">"1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'collider-check'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'raycaster'</span>],</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'raycaster-intersected'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Player hit something!'</span>);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -980,13 +989,13 @@ scene will be tested for intersection. <code>objects</code> takes a query select
 raycaster component be defined before the cursor component.</p>
 
 
-    <!-- Previous / Next navigation. -->
-    <footer class="footer guide-links c">
-      
-      
-    </footer>
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+      </footer>
 
-    <footer class="footer footnote">
+      <footer class="footer footnote">
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
@@ -1002,12 +1011,12 @@ raycaster component be defined before the cursor component.</p>
   </span>
 </footer>
 
-  </div>
+    </div>
 
-  <div class="secondary-sidebar">
-    
+    <div class="secondary-sidebar">
+      
 
-<div id="table-of-contents">
+<div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
@@ -1092,9 +1101,12 @@ raycaster component be defined before the cursor component.</p>
   </ul>
 </div>
 
-    <div class="doc-actions">
-      <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/raycaster.md" target="_blank" rel="external">Edit Page</a>
       
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/raycaster.md" target="_blank" rel="external">Edit Page</a>
+        
+      </div>
     </div>
   </div>
 </div>
@@ -1123,7 +1135,7 @@ raycaster component be defined before the cursor component.</p>
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
     

@@ -122,6 +122,22 @@
 
 
 <!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
+</div>
+
+</div>
+
 <aside id="sidebar" class="sidebar borderless-links">
   
 
@@ -135,10 +151,10 @@
   
 
 
-<div class="docs-search-wrapper docs-search-sidebar">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.6.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
 </div>
+
 
   <ul id="nav" class="nav">
     
@@ -148,15 +164,6 @@
            
            >
           <span>Docs</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/examples/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>Examples</span>
         </a>
       </li>
     
@@ -193,6 +200,15 @@
             rel="external"
             title="A-Frame Slack (sign up)">
           <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
         </a>
       </li>
     
@@ -936,9 +952,9 @@
   </div>
 </aside>
 
-<!-- Documentation. -->
-<div class="content content--structured content--primitives copy">
-  <div class="mobile-header">
+  <!-- Documentation. -->
+  <div class="content content--structured content--primitives copy">
+    <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
   <span></span>
@@ -985,31 +1001,24 @@
 </script>
 
 
-  <div class="copy__wrap">
-    <div class="page__section docs-header">
-      <p>
-        <a href="/docs/0.6.0/primitives/a-box.html" class="borderless-link">
-          0.6.0 &rsaquo; Primitives
-        </a>
-      </p>
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.6.0/primitives/a-box.html" class="borderless-link">
+            0.6.0 &rsaquo; Primitives
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        &lt;a-torus-knot&gt;
+      </h1>
+
       
 
+      
+      
 
-<div class="docs-search-wrapper docs-search-docs">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.6.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
-</div>
-    </div>
-    <h1 class="page__title">
-      &lt;a-torus-knot&gt;
-    </h1>
-
-    
-
-    
-    
-
-    <p>The torus knot primitive creates pretzel shapes using the <a href="../components/geometry.html">geometry</a>
+      <p>The torus knot primitive creates pretzel shapes using the <a href="../components/geometry.html">geometry</a>
 component with the type set to <code>torusKnot</code>.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-torus-knot</span> <span class="attr">color</span>=<span class="string">"#B84A39"</span> <span class="attr">arc</span>=<span class="string">"180"</span> <span class="attr">p</span>=<span class="string">"2"</span> <span class="attr">q</span>=<span class="string">"7"</span> <span class="attr">radius</span>=<span class="string">"5"</span> <span class="attr">radius-tubular</span>=<span class="string">"0.1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-torus-knot</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><table>
@@ -1180,13 +1189,13 @@ component with the type set to <code>torusKnot</code>.</p>
 </table>
 
 
-    <!-- Previous / Next navigation. -->
-    <footer class="footer guide-links c">
-      
-      
-    </footer>
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+      </footer>
 
-    <footer class="footer footnote">
+      <footer class="footer footnote">
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
@@ -1202,12 +1211,12 @@ component with the type set to <code>torusKnot</code>.</p>
   </span>
 </footer>
 
-  </div>
+    </div>
 
-  <div class="secondary-sidebar">
-    
+    <div class="secondary-sidebar">
+      
 
-<div id="table-of-contents">
+<div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
@@ -1237,11 +1246,14 @@ component with the type set to <code>torusKnot</code>.</p>
   </ul>
 </div>
 
-    <div class="doc-actions">
-      <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-torus-knot.md" target="_blank" rel="external">Edit Page</a>
       
-        <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v0.6.0/src/extras/primitives/primitives/meshPrimitives.js" title="View Source" target="_blank" rel="external">View Source</a>
-      
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-torus-knot.md" target="_blank" rel="external">Edit Page</a>
+        
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v0.6.0/src/extras/primitives/primitives/meshPrimitives.js" title="View Source" target="_blank" rel="external">View Source</a>
+        
+      </div>
     </div>
   </div>
 </div>
@@ -1270,7 +1282,7 @@ component with the type set to <code>torusKnot</code>.</p>
   };
 
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-docs .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
     

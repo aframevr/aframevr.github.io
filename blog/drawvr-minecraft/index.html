@@ -122,10 +122,30 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
     
 
     
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
   </head>
 
   <body data-page-layout="blog" data-page-type="">
-    <main id="main" class="main"><aside id="sidebar" class="sidebar borderless-links">
+    <main id="main" class="main"><div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
   
 
 <div id="secondary-nav" class="secondary-nav">
@@ -138,10 +158,10 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
   
 
 
-<div class="docs-search-wrapper docs-search-sidebar">
-  <input type="search" class="search-field" placeholder="&#128269; Search 0.6.0 docs&hellip;"></input>
-  <p class="stackoverflow-link">Question? <a href="http://stackoverflow.com/questions/tagged/aframe">Ask on StackOverflow.</a></p>
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="&#128269; Search"></input>
 </div>
+
 
   <ul id="nav" class="nav">
     
@@ -151,15 +171,6 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
            
            >
           <span>Docs</span>
-        </a>
-      </li>
-    
-      <li  class="nav-item">
-        <a href="/examples/"
-           class="nav-link nav-link-docs"
-           
-           >
-          <span>Examples</span>
         </a>
       </li>
     
@@ -196,6 +207,15 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
             rel="external"
             title="A-Frame Slack (sign up)">
           <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
         </a>
       </li>
     
@@ -955,8 +975,8 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
   </div>
 </aside>
 
-<div class="content content--blog copy post ">
-  <div class="mobile-header">
+  <div class="content content--blog copy post ">
+    <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
   <span></span>
@@ -1003,15 +1023,15 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
 </script>
 
 
-  <div class="copy__wrap">
-    
-      <article class="post post-full">
-        <p class="page__section">
-          <a href="/blog/" class="borderless-link">Blog</a>
-        </p>
+    <div class="copy__wrap">
+      
+        <article class="post post-full">
+          <p class="page__section">
+            <a href="/blog/" class="borderless-link">Blog</a>
+          </p>
 
-        <h1 class="page__title post__heading">Creating a Minecraft Scene in WebVR</h1>
-        <div class="post__metadata">
+          <h1 class="page__title post__heading">Creating a Minecraft Scene in WebVR</h1>
+          <div class="post__metadata">
   <p class="post__timestamp">Dec 18, 2015</p>
   
     <p class="post__author">By <a class="blog-attribution" href="https://github.com/dkraeker">Donovan Kraeker</a></p>
@@ -1019,10 +1039,10 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
 </div>
 
 
-        
-
-        
           
+
+          
+            
   
   
     
@@ -1035,9 +1055,9 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
   
 
 
-        
+          
 
-        <blockquote>
+          <blockquote>
 <p>Within a week of its release, someone had used A-Frame to create a <a href="http://drawvr.com/minecraft/" target="_blank" rel="external">Minecraft scene</a>. We tracked down the creator, <a href="http://drawvr.com/" target="_blank" rel="external">Donovan Kraeker</a>, and he shared his process and tips he learned along the way:</p>
 </blockquote>
 <p>Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry point into VR for over a year and found the thought of committing the time needed to make good, finished content with WebGL, Unity, and Unreal too intimidating. I figured, eventually an organization or company would come out with a way for the masses to create VR websites and decided to wait. That wait was over on December 16, 2015 when the MozVR team released the first version of A-Frame &mdash; the Metaverse has begun!</p>
@@ -1058,44 +1078,44 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
 </ul>
 
 
-        
-      </article>
+          
+        </article>
 
-      <footer class="footer guide-links c">
-        
-        
-        
-        
-          <span class="float-left"><a href="/blog/shopping/" class="guide-link guide-link-left">← Prototyping a Shopping Example</a></span>
-        
-        
-          <span class="float-right"><a href="/blog/spheres-and-fog/" class="guide-link guide-link-right">Sense of Scale with Spheres and Fog →</a></span>
-        
-      </footer>
-    
-
-    <footer class="footer footnote">
-      <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
-      
-        <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/drawvr-minecraft.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+        <footer class="footer guide-links c">
+          
+          
+          
+          
+            <span class="float-left"><a href="/blog/shopping/" class="guide-link guide-link-left">← Prototyping a Shopping Example</a></span>
+          
+          
+            <span class="float-right"><a href="/blog/spheres-and-fog/" class="guide-link guide-link-right">Sense of Scale with Spheres and Fog →</a></span>
+          
+        </footer>
       
 
-      <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
-        <div class="message">Supported by</div>
-        <span itemprop="sponsor" itemscope itemtype="http://schema.org/Organization">
-          <a class="mozilla-logo" itemprop="url" href="https://www.mozilla.org/" rel="external">
-            <span itemprop="name"></span>
-          </a>
+      <footer class="footer footnote">
+        <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+        
+          <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/drawvr-minecraft.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+        
+
+        <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
+          <div class="message">Supported by</div>
+          <span itemprop="sponsor" itemscope itemtype="http://schema.org/Organization">
+            <a class="mozilla-logo" itemprop="url" href="https://www.mozilla.org/" rel="external">
+              <span itemprop="name"></span>
+            </a>
+          </span>
         </span>
-      </span>
-    </footer>
-  </div>
+      </footer>
+    </div>
 
-  
-    <div class="secondary-sidebar">
-      
+    
+      <div class="secondary-sidebar">
+        
 
-<div id="table-of-contents">
+<div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
@@ -1103,8 +1123,9 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
   </ul>
 </div>
 
-    </div>
-  
+      </div>
+    
+  </div>
 </div>
 </main>
 
@@ -1115,6 +1136,24 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
         <script src="/js/docs.js"></script>
       
     
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.6.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
 
     
   </body>

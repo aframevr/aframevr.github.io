@@ -2,6 +2,7 @@
   font-family: Fira Sans, Helvetica, Arial, sans-serif;
   font-size: 12px;
   width: 100%;
+  z-index: 20;
 }
 .search-field {
   -moz-appearance: none;
@@ -18,23 +19,18 @@
   padding: 0 5px 0 10px;
   width: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .search-field {
     width: 240px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .docs-search-wrapper {
     margin-right: 16px;
   }
 }
 [data-is-ios="true"] .search-field {
   padding-bottom: 7px;
-}
-@media (min-width: 768px) {
-  .docs-search-sidebar {
-    display: none;
-  }
 }
 /* Main category headers */
 .algolia-docsearch-suggestion--category-header {
