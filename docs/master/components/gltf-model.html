@@ -1031,6 +1031,10 @@ file.</p>
 <p>Note that glTF is a fairly new specification and adoption is still growing.
 Work on the <a href="https://threejs.org/docs/#Examples/Loaders/GLTFLoader" target="_blank" rel="external">three.js glTF loader</a> and converters are still
 active.</p>
+<blockquote>
+<p><strong>NOTE:</strong> A-Frame supports glTF 2.0. For models using older versions of the
+glTF format, use <code>gltf-model-legacy</code> from <a href="https://github.com/donmccurdy/aframe-extras/tree/master/src/loaders" target="_blank" rel="external">donmccurdy/aframe-extras</a>.</p>
+</blockquote>
 <!--toc-->
 
 <h2 id="why-use-gltf"><a href="#why-use-gltf" class="headerlink" title="Why use glTF?"></a>Why use glTF?</h2><p>In comparison to the older <a href="./obj-model.html">OBJ</a> format, which supports only
@@ -1091,13 +1095,13 @@ file.</p>
 <code>url()</code>. However, the scene won’t wait for the resource to load before
 rendering.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gltf-model</span>=<span class="string">"url(/path/to/tree.gltf)"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="more-resources"><a href="#more-resources" class="headerlink" title="More Resources"></a>More Resources</h2><p>The glTF format is fairly new, and few editors will export a <code>.gltf</code> file
-directly. Instead, various converters are available or in progress:</p>
+<h2 id="more-resources"><a href="#more-resources" class="headerlink" title="More Resources"></a>More Resources</h2><p>Over 100,000 glTF models are free for download on <a href="https://sketchfab.com/models?features=downloadable&amp;sort_by=-likeCount" target="_blank" rel="external">Sketchfab</a>, and
+various exporters and converters converters are available:</p>
 <ul>
-<li><a href="https://blog.mozvr.com/a-saturday-night-gltf-workflow/" target="_blank" rel="external">glTF Workflow for A Saturday Night</a></li>
-<li><a href="http://gltf.autodesk.io/" target="_blank" rel="external">FBX &rarr; glTF</a> - Coming soon.</li>
-<li><a href="http://cesiumjs.org/convertmodel.html" target="_blank" rel="external">COLLADA &rarr; glTF</a></li>
+<li><a href="blender-exporter">Blender Exporter</a></li>
 <li><a href="https://github.com/AnalyticalGraphicsInc/obj2gltf" target="_blank" rel="external">OBJ &rarr; glTF</a></li>
+<li><a href="http://cesiumjs.org/convertmodel.html" target="_blank" rel="external">COLLADA &rarr; glTF</a></li>
+<li><a href="https://blog.mozvr.com/a-saturday-night-gltf-workflow/" target="_blank" rel="external">glTF Workflow for A Saturday Night</a></li>
 </ul>
 <p>See the <a href="https://github.com/KhronosGroup/glTF" target="_blank" rel="external">official glTF specification</a> for available features, community
 resources, and ways to contribute.</p>
