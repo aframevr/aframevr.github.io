@@ -1366,9 +1366,10 @@ the <code>dependencies</code> array will be initialized left-to-right before ini
 the current component. If the dependency have other dependency components,
 those other dependency components will be ordered in the same manner:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Initializes last.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'a'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'b'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Initializes second.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'b'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'c'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Initializes first.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'c'</span>, &#123;&#125;);</div></pre></td></tr></table></figure>
-<h3 id="multiple"><a href="#multiple" class="headerlink" title="multiple"></a><code>multiple</code></h3><p><code>multiple</code> allows for a component to have multiple instances. By default, since
-<code>multiple</code> is set to <code>false</code>, a component could have one instance. For
-example, an entity could only have one geometry component.</p>
+<h3 id="multiple"><a href="#multiple" class="headerlink" title="multiple"></a><code>multiple</code></h3><p>The <code>multiple</code> flag allows for a component to have multiple instances of itself
+on an entity. Since <code>multiple</code> is set to <code>false</code> by default, an entity could
+only have a single instance of a component. For example, an entity could only
+have one geometry component.</p>
 <p>But if a component has <code>multiple</code> set to <code>true</code>, then the component can have
 multiple instances:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</div><div class="line">  <span class="attr">multiple</span>: <span class="literal">true</span>,</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
