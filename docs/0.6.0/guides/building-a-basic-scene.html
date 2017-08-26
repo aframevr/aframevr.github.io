@@ -1023,9 +1023,9 @@ understanding of HTML. We will learn how to:</p>
 <ul>
 <li>Add 3D entities (i.e., objects) with <a href="../primitives/">primitives</a></li>
 <li>Transform to transform entities in 3D space with position, rotation, scale</li>
+<li>Add an environment</li>
 <li>Add textures</li>
 <li>Add basic interactivity using animations and events</li>
-<li>Modify the environment by tweaking lighting and adding a background</li>
 <li>Add text</li>
 </ul>
 <p><a href="https://glitch.com/~aframe-basic-guide" target="_blank" rel="external">Remix the Basic Guide example on Glitch</a>.</p>
@@ -1119,11 +1119,17 @@ people to view scenes without a headset.</p>
 connected (e.g., Oculus Rift, HTC Vive), we can experience the scene in
 immersive VR. If room-scale is available, we can physically <em>walk</em> around the
 scene!</p>
-<h2 id="adding-a-background-to-the-scene"><a href="#adding-a-background-to-the-scene" class="headerlink" title="Adding a Background to the Scene"></a>Adding a Background to the Scene</h2><p>With a single line of HTML, we can add an immersive background with
-<a href="../primitives/a-sky.html"><code>&lt;a-sky&gt;</code></a> that completely surrounds the scene. <code>&lt;a-sky&gt;</code>, which is a
-material applied to the inside of a sphere, can be a flat color, a 360&deg;
-image, or a 360&deg; video. For example, a dark gray background would be:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#222"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="adding-an-environment"><a href="#adding-an-environment" class="headerlink" title="Adding an Environment"></a>Adding an Environment</h2><p>A-Frame allows developers to create and share reusable components for others to
+easily use. <a href="https://github.com/feiss/" target="_blank" rel="external">@feiss</a>‘s <a href="https://github.com/feiss/aframe-environment-component/" target="_blank" rel="external">environment component</a> procedurally
+generates a variety of entire environments for us with a single line of HTML.
+The environment component is a great and easy way to visually bootstrap our VR
+application, providing over a dozen environments with numerous parameters:</p>
+<p>First, include the environment component using a script tag after A-Frame:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.6.1/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Then within the scene, add an entity with the environment component attached.
+We can specify a preset (e.g., <code>forest</code>) with along many other parameters
+(e.g., 200 trees):</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="comment">&lt;!-- Out of the box environment! --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">environment</span>=<span class="string">"preset: forest; numDressing: 500"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="applying-an-image-texture"><a href="#applying-an-image-texture" class="headerlink" title="Applying an Image Texture"></a>Applying an Image Texture</h2><blockquote>
 <p>Make sure you’re <a href="../introduction/getting-started.html#using-a-local-server">serving your HTML using a local server</a>
 for textures to load properly.</p>
@@ -1153,10 +1159,17 @@ necessary.</p>
 <li>Reference the asset using the ID in DOM selector format (<code>src=&quot;#boxTexture&quot;</code>).</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"boxTexture"</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#222"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="adding-a-background-image"><a href="#adding-a-background-image" class="headerlink" title="Adding a Background Image"></a>Adding a Background Image</h3><p>Going back to our <code>&lt;a-sky&gt;</code>, we can use an image texture to get a 360&deg;
-background image by using <code>src</code> instead of <code>color</code>:</p>
+<h2 id="creating-an-environment-optional"><a href="#creating-an-environment-optional" class="headerlink" title="Creating an Environment (Optional)"></a>Creating an Environment (Optional)</h2><p>Previously we had the environment component generate the environment. Though
+it’s good to know a bit on creating a basic environment for learning purposes.</p>
+<h3 id="adding-a-background-to-the-scene"><a href="#adding-a-background-to-the-scene" class="headerlink" title="Adding a Background to the Scene"></a>Adding a Background to the Scene</h3><p>We can add a background with <a href="../primitives/a-sky.html"><code>&lt;a-sky&gt;</code></a> that surrounds the scene.
+<code>&lt;a-sky&gt;</code>, which is a material applied to the inside of a large sphere, can be
+a flat color, a 360&deg; image, or a 360&deg; video. For example, a dark gray
+background would be:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#222"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Or we can use an image texture to get a 360&deg; background image by using
+<code>src</code> instead of <code>color</code>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"boxTexture"</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"skyTexture"</span></span></div><div class="line">      <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"</span>&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">src</span>=<span class="string">"#skyTexture"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="adding-a-ground"><a href="#adding-a-ground" class="headerlink" title="Adding a Ground"></a>Adding a Ground</h2><p>To add a ground, we can use <a href="../primitives/a-plane.html"><code>&lt;a-plane&gt;</code></a>. By default, planes are
+<h3 id="adding-a-ground"><a href="#adding-a-ground" class="headerlink" title="Adding a Ground"></a>Adding a Ground</h3><p>To add a ground, we can use <a href="../primitives/a-plane.html"><code>&lt;a-plane&gt;</code></a>. By default, planes are
 oriented parallel to the XY axis. To make it parallel to the ground, we need to
 orient it along the XZ axis. We can do so by rotating the plane negative
 90&deg; on the X-axis.</p>
@@ -1170,7 +1183,7 @@ make it 30-meters in each direction:</p>
 numbers, how many times to repeat in the X direction and how many times to
 repeat in the Y direction (commonly referred to as U and V for textures).</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">src</span>=<span class="string">"#groundTexture"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">width</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"30"</span></span></div><div class="line">  <span class="attr">repeat</span>=<span class="string">"10 10"</span>&gt;<span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="tweaking-lighting"><a href="#tweaking-lighting" class="headerlink" title="Tweaking Lighting"></a>Tweaking Lighting</h2><p>We can change how the scene is lit by using <a href="../primitives/a-light.html"><code>&lt;a-light&gt;s</code></a>. By default
+<h3 id="tweaking-lighting"><a href="#tweaking-lighting" class="headerlink" title="Tweaking Lighting"></a>Tweaking Lighting</h3><p>We can change how the scene is lit by using <a href="../primitives/a-light.html"><code>&lt;a-light&gt;s</code></a>. By default
 if we don’t specify any lights, A-Frame adds an ambient light and a directional
 light. If A-Frame didn’t add lights for us, the scene would be black. Once we
 add lights of our own, however, the default lighting setup is removed and
@@ -1260,7 +1273,7 @@ HTML (preferably under <code>&lt;a-assets&gt;</code>) to play an audio file:</p>
 louder as we approach it and get softer as we distance from it. We could place
 the sound in our scene using <code>position</code>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-sound</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"</span> <span class="attr">autoplay</span>=<span class="string">"true"</span></span></div><div class="line">    <span class="attr">position</span>=<span class="string">"-3 1 -4"</span>&gt;<span class="tag">&lt;/<span class="name">a-sound</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="adding-text"><a href="#adding-text" class="headerlink" title="Adding Text"></a>Adding Text</h3><p>A-Frame comes with a <a href="../components/text.html">text component</a>. There are several ways to render
+<h2 id="adding-text"><a href="#adding-text" class="headerlink" title="Adding Text"></a>Adding Text</h2><p>A-Frame comes with a <a href="../components/text.html">text component</a>. There are several ways to render
 text, each with their advantages and disadvantages, A-Frame comes with an SDF
 text implementation using [<code>three-bmfont-text</code>] that is relatively sharp and
 performant.</p>
@@ -1355,7 +1368,7 @@ to style, but can be slow to compute.</li>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#adding-a-background-to-the-scene">Adding a Background to the Scene</a>
+        <a class="subnav-link" href="#adding-an-environment">Adding an Environment</a>
 
         <!-- Nested. -->
         
@@ -1376,31 +1389,28 @@ to style, but can be slow to compute.</li>
                 <a class="subnav-link" href="#using-the-asset-management-system">Using the Asset Management System</a>
               </li>
             
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#creating-an-environment-optional">Creating an Environment (Optional)</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
               <li class="subnav-item">
-                <a class="subnav-link" href="#adding-a-background-image">Adding a Background Image</a>
+                <a class="subnav-link" href="#adding-a-background-to-the-scene">Adding a Background to the Scene</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#adding-a-ground">Adding a Ground</a>
-
-        <!-- Nested. -->
-        
-          <ul>
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-a-ground">Adding a Ground</a>
+              </li>
             
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#tweaking-lighting">Tweaking Lighting</a>
-
-        <!-- Nested. -->
-        
-          <ul>
+              <li class="subnav-item">
+                <a class="subnav-link" href="#tweaking-lighting">Tweaking Lighting</a>
+              </li>
             
           </ul>
         
@@ -1447,9 +1457,16 @@ to style, but can be slow to compute.</li>
         
           <ul>
             
-              <li class="subnav-item">
-                <a class="subnav-link" href="#adding-text">Adding Text</a>
-              </li>
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-text">Adding Text</a>
+
+        <!-- Nested. -->
+        
+          <ul>
             
           </ul>
         
