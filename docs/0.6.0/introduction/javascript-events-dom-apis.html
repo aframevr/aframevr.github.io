@@ -1029,18 +1029,22 @@ A-Frame. See the <a href="../core/entity.html">Entity API documentation</a> for 
 the APIs discussed below.</p>
 <!--toc-->
 
-<h2 id="where-to-place-javascript-code-for-a-frame"><a href="#where-to-place-javascript-code-for-a-frame" class="headerlink" title="Where to Place JavaScript Code for A-Frame"></a>Where to Place JavaScript Code for A-Frame</h2><p>Before we go over the different ways to use JavaScript and DOM APIs, we
-recommend encapsulating your JavaScript code within <a href="../core/component.html">A-Frame components</a>.
-Components modularize code, make logic and behavior visible from HTML, and
-ensure that code is executed at the correct time (e.g., after the scene and entities have
-attached and initialized). As the most basic example, to register a
-<code>console.log</code> component:</p>
+<h2 id="where-to-place-javascript-code-for-a-frame"><a href="#where-to-place-javascript-code-for-a-frame" class="headerlink" title="Where to Place JavaScript Code for A-Frame"></a>Where to Place JavaScript Code for A-Frame</h2><p><strong>Important:</strong> Before we go over the different ways to use JavaScript and DOM
+APIs, we prescribe encapsulating your JavaScript code within <a href="../core/component.html">A-Frame
+components</a>.  Components modularize code, make logic and behavior visible from
+HTML, and ensure that code is executed at the correct time (e.g., after the
+scene and entities have attached and initialized). As the most basic example,
+to register a <code>console.log</code> component <em>before</em> <code>&lt;a-scene&gt;</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'log'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;<span class="attr">type</span>: <span class="string">'string'</span>&#125;,</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> stringToLog = <span class="keyword">this</span>.data;</div><div class="line">    <span class="built_in">console</span>.log(stringToLog);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Then to use the component from HTML:</p>
+<p>And <em>after</em> the registration, use the component from HTML:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">log</span>=<span class="string">"Hello, Scene!"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">log</span>=<span class="string">"Hello, Box!"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Components encapsulate all of our code to be reusable, declarative, and
 shareable. Though if we’re just poking around at runtime, we can use our
 browser’s Developer Tools Console to run JavaScript on our scene.</p>
+<p>Do <strong>not</strong> try to put A-Frame-related JavaScript in a raw <code>&lt;script&gt;</code> tag after
+<code>&lt;a-scene&gt;</code> as we would with traditional 2D scripting. If we do, we’d have to
+take special measures to make sure code runs at the right time (see <a href="./scene.html#running-content-scripts-on-the-scene">Running
+Content Scripts on the Scene</a>).</p>
 <h2 id="getting-entities-by-querying-and-traversing"><a href="#getting-entities-by-querying-and-traversing" class="headerlink" title="Getting Entities by Querying and Traversing"></a>Getting Entities by Querying and Traversing</h2><p>The wonderful thing about the DOM as a scene graph is that the standard DOM
 provides utilities for traversal, querying, finding, and selecting through
 <code>.querySelector()</code> and <code>.querySelectorAll()</code>. Originally inspired by <a href="https://api.jquery.com/category/selectors/" target="_blank" rel="external">jQuery
