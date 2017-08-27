@@ -58,14 +58,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
     <meta property="og:description" content="">
-    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
-    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/674727/29746371-b7906dcc-8a8c-11e7-8ef4-3f7e4d224ce7.jpg">
+    <meta property="og:image:secure_url" content="https://user-images.githubusercontent.com/674727/29746371-b7906dcc-8a8c-11e7-8ef4-3f7e4d224ce7.jpg">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
     <meta name="twitter:title" content="Building a Basic Scene – A-Frame">
     <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:image" content="https://user-images.githubusercontent.com/674727/29746371-b7906dcc-8a8c-11e7-8ef4-3f7e4d224ce7.jpg">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
     <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
@@ -1014,6 +1014,8 @@
       </h1>
 
       
+        <img src="https://user-images.githubusercontent.com/674727/29746371-b7906dcc-8a8c-11e7-8ef4-3f7e4d224ce7.jpg">
+      
 
       
       
@@ -1033,7 +1035,7 @@ understanding of HTML. We will learn how to:</p>
 <li>Add basic interactivity using animations and events</li>
 <li>Add text</li>
 </ul>
-<p><a href="https://glitch.com/~aframe-basic-guide" target="_blank" rel="external">Remix the Basic Guide example on Glitch</a>.</p>
+<p><a href="https://glitch.com/~aframe-basic-guide-with-environment" target="_blank" rel="external">Remix the Basic Guide example on Glitch</a>.</p>
 <!--toc-->
 
 <h2 id="starting-with-html"><a href="#starting-with-html" class="headerlink" title="Starting with HTML"></a>Starting with HTML</h2><p>We start out with a minimal HTML structure:</p>
@@ -1164,7 +1166,7 @@ necessary.</p>
 <li>Reference the asset using the ID in DOM selector format (<code>src=&quot;#boxTexture&quot;</code>).</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"boxTexture"</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#222"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="creating-an-environment-optional"><a href="#creating-an-environment-optional" class="headerlink" title="Creating an Environment (Optional)"></a>Creating an Environment (Optional)</h2><p>Previously we had the environment component generate the environment. Though
+<h2 id="creating-a-custom-environment-optional"><a href="#creating-a-custom-environment-optional" class="headerlink" title="Creating a Custom Environment (Optional)"></a>Creating a Custom Environment (Optional)</h2><p>Previously we had the environment component generate the environment. Though
 it’s good to know a bit on creating a basic environment for learning purposes.</p>
 <h3 id="adding-a-background-to-the-scene"><a href="#adding-a-background-to-the-scene" class="headerlink" title="Adding a Background to the Scene"></a>Adding a Background to the Scene</h3><p>We can add a background with <a href="../primitives/a-sky.html"><code>&lt;a-sky&gt;</code></a> that surrounds the scene.
 <code>&lt;a-sky&gt;</code>, which is a material applied to the inside of a large sphere, can be
@@ -1280,8 +1282,8 @@ the sound in our scene using <code>position</code>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-sound</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"</span> <span class="attr">autoplay</span>=<span class="string">"true"</span></span></div><div class="line">    <span class="attr">position</span>=<span class="string">"-3 1 -4"</span>&gt;<span class="tag">&lt;/<span class="name">a-sound</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="adding-text"><a href="#adding-text" class="headerlink" title="Adding Text"></a>Adding Text</h2><p>A-Frame comes with a <a href="../components/text.html">text component</a>. There are several ways to render
 text, each with their advantages and disadvantages, A-Frame comes with an SDF
-text implementation using [<code>three-bmfont-text</code>] that is relatively sharp and
-performant.</p>
+text implementation using <a href="https://github.com/Jam3/three-bmfont-text" target="_blank" rel="external"><code>three-bmfont-text</code></a> that is
+relatively sharp and performant.</p>
 <p>For this guide, let’s use the primitive form of the text component, <code>&lt;a-text&gt;</code>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-text</span> <span class="attr">value</span>=<span class="string">"Hello, A-Frame!"</span> <span class="attr">color</span>=<span class="string">"#BBB"</span></span></div><div class="line">        <span class="attr">position</span>=<span class="string">"-0.9 0.2 -3"</span> <span class="attr">scale</span>=<span class="string">"1.5 1.5 1.5"</span>&gt;<span class="tag">&lt;/<span class="name">a-text</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Other ways to do text include:</p>
@@ -1291,8 +1293,8 @@ performant.</p>
 to style, but can be slow to compute.</li>
 </ul>
 <h2 id="play-with-it"><a href="#play-with-it" class="headerlink" title="Play With It!"></a>Play With It!</h2><p>And that’s the basic example!</p>
-<p><a href="https://glitch.com/~aframe-basic-guide" target="_blank" rel="external">Remix the example on Glitch</a>.</p>
-<p><a href="https://aframe-basic-guide.glitch.me" target="_blank" rel="external">View the example on Glitch</a>.</p>
+<p><a href="https://glitch.com/~aframe-basic-guide-with-environment" target="_blank" rel="external">Remix the example on Glitch</a>.</p>
+<p><a href="https://aframe-basic-guide-with-environment.glitch.me" target="_blank" rel="external">View the example on Glitch</a>.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1399,7 +1401,7 @@ to style, but can be slow to compute.</li>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#creating-an-environment-optional">Creating an Environment (Optional)</a>
+        <a class="subnav-link" href="#creating-a-custom-environment-optional">Creating a Custom Environment (Optional)</a>
 
         <!-- Nested. -->
         
@@ -1499,8 +1501,14 @@ to style, but can be slow to compute.</li>
       <ul class="subnav">
         
           <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-basic-guide-with-environment?path=index.html">
+              Basic Guide with Environment
+            </a>
+          </li>
+        
+          <li class="subnav-item">
             <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-basic-guide?path=index.html">
-              Basic Guide
+              Basic Guide with Custom Environment
             </a>
           </li>
         
