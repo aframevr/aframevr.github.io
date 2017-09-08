@@ -739,6 +739,13 @@
             </a>
           </li>
         
+          <li class="subnav-item ">
+            <a href="/docs/master/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
       </ol>
     
       
@@ -1242,7 +1249,7 @@ overriding the model, animations, visual feedback, states, etc.,</li>
 controller components will inject the tracked-control components as well. For
 example, to support all controllers, set all of the controller components while
 providing the hand and overriding the model:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'custom-controls'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">hand</span>: &#123;<span class="attr">default</span>: <span class="string">''</span>&#125;,</div><div class="line">    <span class="attr">model</span>: &#123;<span class="attr">default</span>: <span class="string">'customControllerModel.gltf'</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> controlConfiguration = &#123;</div><div class="line">      <span class="attr">hand</span>: <span class="keyword">this</span>.data.hand,</div><div class="line">      <span class="attr">model</span>: <span class="literal">false</span>,</div><div class="line">      <span class="attr">rotationOffset</span>: hand === <span class="string">'left'</span> ? <span class="number">90</span> : <span class="number">-90</span></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">// Build on top of controller components.</span></div><div class="line">    el.setAttribute(<span class="string">'vive-controls'</span>, controlConfiguration);</div><div class="line">    el.setAttribute(<span class="string">'oculus-touch-controls'</span>, controlConfiguration);</div><div class="line">    el.setAttribute(<span class="string">'daydream-controls'</span>, controlConfiguration);</div><div class="line">    el.setAttribute(<span class="string">'gearvr-controls'</span>, controlConfiguration);</div><div class="line"></div><div class="line">    <span class="comment">// Set a model.</span></div><div class="line">    el.setAttribute(<span class="string">'gltf-model'</span>, <span class="keyword">this</span>.data.model);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'custom-controls'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">hand</span>: &#123;<span class="attr">default</span>: <span class="string">''</span>&#125;,</div><div class="line">    <span class="attr">model</span>: &#123;<span class="attr">default</span>: <span class="string">'customControllerModel.gltf'</span>&#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> controlConfiguration = &#123;</div><div class="line">      <span class="attr">hand</span>: <span class="keyword">this</span>.data.hand,</div><div class="line">      <span class="attr">model</span>: <span class="literal">false</span>,</div><div class="line">      <span class="attr">rotationOffset</span>: hand === <span class="string">'left'</span> ? <span class="number">90</span> : <span class="number">-90</span></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">// Build on top of controller components.</span></div><div class="line">    el.setAttribute(<span class="string">'vive-controls'</span>, controlConfiguration);</div><div class="line">    el.setAttribute(<span class="string">'oculus-touch-controls'</span>, controlConfiguration);</div><div class="line">    el.setAttribute(<span class="string">'daydream-controls'</span>, controlConfiguration);</div><div class="line">    el.setAttribute(<span class="string">'gearvr-controls'</span>, controlConfiguration);</div><div class="line">    el.setAttribute(<span class="string">'windows-motion-controls'</span>, controlConfiguration);</div><div class="line"></div><div class="line">    <span class="comment">// Set a model.</span></div><div class="line">    el.setAttribute(<span class="string">'gltf-model'</span>, <span class="keyword">this</span>.data.model);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>For advanced examples on real applications, see the <a href="https://github.com/aframevr/a-painter/blob/master/src/components/paint-controls.js" target="_blank" rel="external">paint-controls component
 for A-Painter</a> or the <a href="https://github.com/aframevr/a-blast/blob/master/src/components/shoot-controls.js" target="_blank" rel="external">shoot-controls component for
 A-Blast</a>.</p>
@@ -1258,6 +1265,7 @@ event handlers how we want:</p>
 <li><a href="../components/hand-controls.html#events">hand-controls events</a></li>
 <li><a href="../components/oculus-touch-controls.html#events">oculus-touch-controls events</a></li>
 <li><a href="../components/vive-controls.html#events">vive-controls events</a></li>
+<li><a href="../components/windows-motion-controls.html#events">windows-motion-controls events</a></li>
 </ul>
 <p>For example, we can listen to the Oculus Touch X button press, and toggle
 visibility of an entity. In component form:</p>

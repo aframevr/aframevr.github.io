@@ -29,7 +29,7 @@
       data-aframe-version="0.6.0"
       data-docs-version="master">
   <head>
-    <title>&lt;a-octahedron> – A-Frame</title>
+    <title>windows-motion-controls – A-Frame</title>
     
 
 <script>
@@ -53,7 +53,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="&lt;a-octahedron&gt; – A-Frame">
+    <meta property="og:title" content="windows-motion-controls – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -63,7 +63,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="&lt;a-octahedron&gt; – A-Frame">
+    <meta name="twitter:title" content="windows-motion-controls – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -117,7 +117,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="primitives">
+  <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
 
 
@@ -487,7 +487,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <p class="section-title-link">Components</p>
       </h3>
 
@@ -739,9 +739,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/components/windows-motion-controls.html"
-               class="subnav-link">
+               class="subnav-link current">
               windows-motion-controls
             </a>
           </li>
@@ -751,7 +751,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <p class="section-title-link">Primitives</p>
       </h3>
 
@@ -863,9 +863,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-octahedron.html"
-               class="subnav-link current">
+               class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
@@ -960,7 +960,7 @@
 </aside>
 
   <!-- Documentation. -->
-  <div class="content content--structured content--primitives copy">
+  <div class="content content--structured content--components copy">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1011,13 +1011,13 @@
     <div class="copy__wrap">
       <div class="page__section docs-header">
         <p>
-          <a href="/docs/master/primitives/a-box.html" class="borderless-link">
-            master &rsaquo; Primitives
+          <a href="/docs/master/components/geometry.html" class="borderless-link">
+            master &rsaquo; Components
           </a>
         </p>
       </div>
       <h1 class="page__title">
-        &lt;a-octahedron&gt;
+        windows-motion-controls
       </h1>
 
       
@@ -1030,153 +1030,126 @@
 
       
 
-      <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-octahedron</span> <span class="attr">color</span>=<span class="string">"#FF926B"</span> <span class="attr">radius</span>=<span class="string">"5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-octahedron</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><table>
+      <p>The windows-motion-controls component interfaces with any spatial controllers exposed through
+Windows Mixed Reality as Spatial Input Sources (such as Motion Controllers). 
+It wraps the <a href="./tracked-controls.html">tracked-controls component</a> while adding button
+mappings, events, and a controller model that highlights applies position/rotation transforms 
+to the pressed buttons (trigger, grip, menu, thumbstick, trackpad) and moved axes (thumbstick and trackpad.)</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">windows-motion-controls</span>=<span class="string">"hand: left"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">windows-motion-controls</span>=<span class="string">"hand: right"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="value"><a href="#value" class="headerlink" title="Value"></a>Value</h2><table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Component Mapping</th>
+<th>Property</th>
+<th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ambient-occlusion-map</td>
-<td>material.ambientOcclusionMap</td>
-<td>None</td>
+<td>hand</td>
+<td>The hand that will be tracked (i.e., right, left).</td>
+<td>right</td>
 </tr>
 <tr>
-<td>ambient-occlusion-map-intensity</td>
-<td>material.ambientOcclusionMapIntensity</td>
-<td>1</td>
-</tr>
-<tr>
-<td>ambient-occlusion-texture-offset</td>
-<td>material.ambientOcclusionTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>ambient-occlusion-texture-repeat</td>
-<td>material.ambientOcclusionTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>color</td>
-<td>material.color</td>
-<td>#FFF</td>
-</tr>
-<tr>
-<td>detail</td>
-<td>geometry.detail</td>
+<td>pair</td>
+<td>Which pair of controllers, if &gt; 2 are connected.</td>
 <td>0</td>
 </tr>
 <tr>
-<td>displacement-bias</td>
-<td>material.displacementBias</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>displacement-map</td>
-<td>material.displacementMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>displacement-scale</td>
-<td>material.displacementScale</td>
-<td>1</td>
-</tr>
-<tr>
-<td>displacement-texture-offset</td>
-<td>material.displacementTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>displacement-texture-repeat</td>
-<td>material.displacementTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>env-map</td>
-<td>material.envMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>fog</td>
-<td>material.fog</td>
+<td>model</td>
+<td>Whether the controller model is loaded.</td>
 <td>true</td>
 </tr>
 <tr>
-<td>height</td>
-<td>material.height</td>
-<td>256</td>
-</tr>
-<tr>
-<td>metalness</td>
-<td>material.metalness</td>
-<td>0</td>
-</tr>
-<tr>
-<td>normal-map</td>
-<td>material.normalMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>normal-scale</td>
-<td>material.normalScale</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>normal-texture-offset</td>
-<td>material.normalTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>normal-texture-repeat</td>
-<td>material.normalTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>radius</td>
-<td>geometry.radius</td>
-<td>1</td>
-</tr>
-<tr>
-<td>repeat</td>
-<td>material.repeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>roughness</td>
-<td>material.roughness</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>spherical-env-map</td>
-<td>material.sphericalEnvMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>src</td>
-<td>material.src</td>
-<td>None</td>
-</tr>
-<tr>
-<td>width</td>
-<td>material.width</td>
-<td>512</td>
-</tr>
-<tr>
-<td>wireframe</td>
-<td>material.wireframe</td>
-<td>false</td>
-</tr>
-<tr>
-<td>wireframe-linewidth</td>
-<td>material.wireframeLinewidth</td>
-<td>2</td>
+<td>hideDisconnected</td>
+<td>Disable rendering of controller model when no matching gamepad (based on ID &amp; hand) is connected.</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>thumbstickdown</td>
+<td>Thumbstick button pressed.</td>
+</tr>
+<tr>
+<td>thumbstickup</td>
+<td>Thumbstick button released.</td>
+</tr>
+<tr>
+<td>thumbstickchanged</td>
+<td>Thumbstick button changed.</td>
+</tr>
+<tr>
+<td>thumbstickmoved</td>
+<td>Thumbstick axis moved.</td>
+</tr>
+<tr>
+<td>triggerdown</td>
+<td>Trigger pressed.</td>
+</tr>
+<tr>
+<td>triggerup</td>
+<td>Trigger released.</td>
+</tr>
+<tr>
+<td>triggerchanged</td>
+<td>Trigger changed.</td>
+</tr>
+<tr>
+<td>gripdown</td>
+<td>Grip button pressed.</td>
+</tr>
+<tr>
+<td>gripup</td>
+<td>Grip button released.</td>
+</tr>
+<tr>
+<td>gripchanged</td>
+<td>Grip button changed.</td>
+</tr>
+<tr>
+<td>menudown</td>
+<td>Menu button pressed.</td>
+</tr>
+<tr>
+<td>menuup</td>
+<td>Menu button released.</td>
+</tr>
+<tr>
+<td>menuchanged</td>
+<td>Menu button changed.</td>
+</tr>
+<tr>
+<td>trackpaddown</td>
+<td>Trackpad pressed.</td>
+</tr>
+<tr>
+<td>trackpadup</td>
+<td>Trackpad released.</td>
+</tr>
+<tr>
+<td>trackpadchanged</td>
+<td>Trackpad button changed.</td>
+</tr>
+<tr>
+<td>trackpadmoved</td>
+<td>Trackpad axis moved.</td>
+</tr>
+<tr>
+<td>controllermodelready</td>
+<td>The model file is loaded and completed parsing.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assets"><a href="#assets" class="headerlink" title="Assets"></a>Assets</h2><p>TBC.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1189,7 +1162,7 @@
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-octahedron.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/windows-motion-controls.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 
   <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
     <div class="message">Supported by</div>
@@ -1223,7 +1196,29 @@
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#attributes">Attributes</a>
+        <a class="subnav-link" href="#value">Value</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#assets">Assets</a>
 
         <!-- Nested. -->
         
@@ -1237,11 +1232,25 @@
 </div>
 
       
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        <li class="subnav-item">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/windows-motion-controls.md" style="font-style: italic">
+            No examples for this page yet. Add one!
+          </a>
+        </li>
+      </ul>
+    
+  </div>
+
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-octahedron.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/windows-motion-controls.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/extras/primitives/primitives/meshPrimitives.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/windows-motion-controls.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
