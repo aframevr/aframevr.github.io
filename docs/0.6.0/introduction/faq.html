@@ -1066,8 +1066,9 @@ information.</p>
 attribute values are empty.</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/25720562/2b243bda-30c2-11e7-98d5-479157d20046.jpg" alt="HTML"></p>
 <p>To improve performance, A-Frame does not update the HTML to save on
-stringification operations. Use the <a href="../components/debug.html">debug component</a> or <a href="../core/entity.html#flushtodom-recursive"><code>.flushToDOM</code>
-methods</a> if you need to sync to the DOM.</p>
+stringification operations. This also means mutation observations will not
+fire. Use the <a href="../components/debug.html">debug component</a> or <a href="../core/entity.html#flushtodom-recursive"><code>.flushToDOM</code> methods</a>
+if you need to sync to the DOM.</p>
 <h2 id="why-does-my-video-not-play-on-mobile"><a href="#why-does-my-video-not-play-on-mobile" class="headerlink" title="Why does my video not play on mobile?"></a>Why does my video not play on mobile?</h2><p>Mobile browsers have had limitations playing inline video.</p>
 <p>Because of an <a href="https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/iAdJSProgGuide/PlayingVideosinAds/PlayingVideosinAds.html" target="_blank" rel="external">iOS platform restriction</a> in order to get inline video
 (with or without autoplay), we must:</p>

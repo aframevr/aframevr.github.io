@@ -1021,8 +1021,9 @@
       <p>The debug component enables component-to-DOM serialization.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">debug</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="component-to-dom-serialization"><a href="#component-to-dom-serialization" class="headerlink" title="Component-to-DOM Serialization"></a>Component-to-DOM Serialization</h2><p>By default, for performance reasons, A-Frame does not update the DOM with
-component data. If we open the browser’s DOM inspector, we will see only the
-component names (and not the values) are visible.</p>
+component data. This also means mutation observers will not fire. If we open
+the browser’s DOM inspector, we will see only the component names (and not the
+values) are visible.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span> <span class="attr">material</span> <span class="attr">position</span> <span class="attr">rotation</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>A-Frame stores the component data in memory. Updating the DOM takes CPU time
 for converting internal component data to strings. If we want to see the DOM
