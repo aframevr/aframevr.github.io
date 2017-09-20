@@ -225,18 +225,18 @@
         </li>
       
         <li class="subnav-item ">
-          <a href="/blog/awoa-77/"
-             class="subnav-link"
-             title="A Week of A-Frame 77">
-            A Week of A-Frame 77
-          </a>
-        </li>
-      
-        <li class="subnav-item ">
           <a href="/blog/awoa-76/"
              class="subnav-link"
              title="A Week of A-Frame 76">
             A Week of A-Frame 76
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-77/"
+             class="subnav-link"
+             title="A Week of A-Frame 77">
+            A Week of A-Frame 77
           </a>
         </li>
       
@@ -317,6 +317,14 @@
              class="subnav-link"
              title="A-Frame v0.6.0 - Link Traversal">
             A-Frame v0.6.0 - Link Traversal
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.7.0/"
+             class="subnav-link"
+             title="A-Frame v0.7.0 - Windows Mixed Reality Headsets and glTF 2.0">
+            A-Frame v0.7.0 - Windows Mixed Reality Headsets and glTF 2.0
           </a>
         </li>
       
@@ -1220,6 +1228,49 @@ includes a list of all new features, optimizations, and bug fixes.</p></div>
           </article>
         
           <article class="post post--listing">
+            <a href="/blog/aframe-v0.7.0/">
+              <h2 class="post__heading">A-Frame v0.7.0 - Windows Mixed Reality Headsets and glTF 2.0</h2>
+            </a>
+            <div class="post__metadata">
+  <p class="post__timestamp">Jun 29, 2017</p>
+  
+</div>
+
+
+            
+
+            
+              
+                
+  
+  
+
+  
+    <img src="https://user-images.githubusercontent.com/674727/27721720-19388346-5d17-11e7-912b-499886be0a8d.gif" alt="A-Frame v0.7.0 - Windows Mixed Reality Headsets and glTF 2.0">
+  
+
+
+              
+              <div class="post__excerpt"><p>We welcome Microsoft to the A-Frame family. A-Frame now works out of the box with Microsoft Mixed Reality headsets and controllers on Microsoft Edge thanks to the work of Olga and Lewes. A-Frame is now also compatible with glTF 2.0, unlocking a huge pool of models you can now import in your experiences.</p>
+<p>Use it today with <code>&lt;script src=&quot;https://aframe.io/releases/0.7.0/aframe.min.js&quot;&gt;&lt;/script&gt;</code>.</p>
+<h2 id="what’s-new"><a href="#what’s-new" class="headerlink" title="What’s New?"></a>What’s New?</h2><p>The glTF ecosystem has made huge progress and all the learnings have consolidated in the 2.0 version of the format. Thanks to the work of Don and Takahiro on A-Frame and THREE fronts you can now import glTF 2.0 models with a single line of markup.</p>
+<p>Microsoft is embracing VR with Windows Holographic and you can now have fun with your favorite framework on Microsoft Edge as well.</p>
+<p>Performance is top priority for us and A-Frame 0.7.0 brings a bunch of improvements to tame the garbage collector beast:</p>
+<ul>
+<li>Added some caching and reduced some type checking in critical paths of object updates.</li>
+<li>Reduced memory usage by caching textures.</li>
+<li>Reduced memory usage by reducing the number of instantiated JavaScript objects.</li>
+<li>Eliminated duplicate asset network requests when using <code>&lt;a-assets&gt;</code>.</li>
+<li>Throttled the <code>componentchanged</code> event which gets emitted very often.</li>
+</ul>
+<p>Check out the <a href="https://github.com/aframevr/aframe/releases/tag/v0.7.0">release notes</a> for the complete changelog which
+includes a list of all new features, optimizations, and bug fixes.</p></div>
+            
+
+            <a href="/blog/aframe-v0.7.0/" class="post__more">Read more &hellip;</a>
+          </article>
+        
+          <article class="post post--listing">
             <a href="/blog/awoa-66/">
               <h2 class="post__heading">A Week of A-Frame 66</h2>
             </a>
@@ -1443,50 +1494,6 @@ being made to the Link Traversal and Laser Control PRs.</p>
             
 
             <a href="/blog/awoa-61/" class="post__more">Read more &hellip;</a>
-          </article>
-        
-          <article class="post post--listing">
-            <a href="/blog/donmccurdy/">
-              <h2 class="post__heading">Don McCurdy as an A-Frame Core Developer</h2>
-            </a>
-            <div class="post__metadata">
-  <p class="post__timestamp">May 16, 2017</p>
-  
-</div>
-
-
-            
-
-            
-              
-                
-  
-  
-
-  
-    <img src="https://cloud.githubusercontent.com/assets/674727/26125347/b4824c00-3a36-11e7-8abf-edf73d531b04.jpg" alt="Don McCurdy as an A-Frame Core Developer">
-  
-
-
-              
-              <div class="post__excerpt"><p>We are excited to include <a href="https://twitter.com/donrmccurdy">Don McCurdy</a> as a
-core developer on the A-Frame open source project! Don is a developer at Google
-working on <a href="https://www.google.com/get/sunroof">Project Sunroof</a>. Since A-Frame
-was released in December 2015, Don has been active in the community.
-Volunteering in some of his free time, Don has:</p>
-<ul>
-<li>Built popular A-Frame components such as <a href="https://github.com/donmccurdy/aframe-extras/tree/master/src/controls">controls</a>, <a href="https://github.com/donmccurdy/aframe-physics-system">physics</a>, and <a href="https://github.com/donmccurdy/aframe-extras/tree/master/src/loaders">loaders</a>, and <a href="https://github.com/donmccurdy/aframe-extras/tree/master/src/primitives">primitives</a> within <a href="https://github.com/donmccurdy/aframe-extras/">A-Frame Extras</a>.</li>
-<li>Answered dozens of the community’s questions on Stack Overflow and hundreds on Slack.</li>
-<li>Contributed features to A-Frame such as <a href="https://aframe.io/docs/0.5.0/components/gltf-model.html">support for glTF</a> and <a href="https://aframe.io/docs/master/components/shadow.html">shadows</a>.</li>
-<li>Helped the implementation of the <a href="https://github.com/KhronosGroup/glTF">glTF</a>
-and <a href="https://threejs.org/docs/#examples/loaders/GLTF2Loader">glTF 2 loader on three.js</a> which benefits the greater WebVR community.</li>
-<li>Provided input on GitHub issues and pull requests which helps drive the direction of the project.</li>
-</ul>
-<p>What can we expect? In the short term, things will be similar as Don may have
-already felt like a core member. We’re just making it official!</p></div>
-            
-
-            <a href="/blog/donmccurdy/" class="post__more">Read more &hellip;</a>
           </article>
         
 
