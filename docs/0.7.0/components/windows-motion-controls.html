@@ -29,7 +29,7 @@
       data-aframe-version="0.7.0"
       data-docs-version="0.7.0">
   <head>
-    <title>cursor – A-Frame</title>
+    <title>windows-motion-controls – A-Frame</title>
     
 
 <script>
@@ -53,7 +53,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="cursor – A-Frame">
+    <meta property="og:title" content="windows-motion-controls – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -63,7 +63,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="cursor – A-Frame">
+    <meta name="twitter:title" content="windows-motion-controls – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -506,9 +506,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/0.7.0/components/cursor.html"
-               class="subnav-link current">
+               class="subnav-link">
               cursor
             </a>
           </li>
@@ -737,9 +737,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/0.7.0/components/windows-motion-controls.html"
-               class="subnav-link">
+               class="subnav-link current">
               windows-motion-controls
             </a>
           </li>
@@ -1015,7 +1015,7 @@
         </p>
       </div>
       <h1 class="page__title">
-        cursor
+        windows-motion-controls
       </h1>
 
       
@@ -1023,36 +1023,13 @@
       
       
 
-      <p>The cursor component provides hover and click states for interaction on top of
-the <a href="./raycaster.html">raycaster component</a>. The cursor component can be used for
-both gaze-based and controller-based interactions, but the appearance needs
-to be configured depending on the use case. The <a href="../primitives/a-cursor.html"><code>&lt;a-cursor&gt;</code>
-primitive</a> provides a default reticle appearance for a gaze-based
-cursor, and the <a href="./laser-controls.html">laser-controls component</a> configures the
-cursor for all controllers.</p>
-<p>The cursor component listens to events and keeps state on what’s being hovered
-and pressed in order to provide <code>mousedown</code>, <code>mouseup</code>, <code>mouseenter</code>,
-<code>mouseleave</code>, and <code>click</code> events. We use the name <code>mouse</code> to mimic
-traditional web development for now. Under the hood, the cursor component uses
-the <code>raycaster-intersected</code> and <code>raycaster-intersection-cleared</code> events,
-capturing the closest visible intersected entity.</p>
-<p>By default, the cursor is configured to be used in a gaze-based mode and will
-register user input via mouse or touch. Specifying the <code>downEvents</code> and
-<code>upEvents</code> properties allows the cursor to work with controllers. For example,
-the <a href="./laser-controls.html">laser-controls component</a> automatically configures these
-properties to work with most controllers..</p>
-<p>To provide a shape or appearance to the cursor, we should apply either the
-<a href="./geometry.html">geometry</a> and <a href="./material.html">material</a> components or use the raycaster
-component’s <code>showLine</code> property to draw a line using the <a href="./line.html">line
-component</a>.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we can create a ring-shaped cursor fixed to the center of the
-screen. To fix the cursor to the screen so the cursor is always present no
-matter where we look, we place it as a child of the active <a href="./camera.html">camera</a>
-entity. We pull it in front of the camera by placing it on the negative Z axis.
-When the cursor clicks on the box, we can listen to the click event.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span>=<span class="string">"fuse: true; fuseTimeout: 500"</span></span></div><div class="line">            <span class="attr">position</span>=<span class="string">"0 0 -1"</span></div><div class="line">            <span class="attr">geometry</span>=<span class="string">"primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"</span></div><div class="line">            <span class="attr">material</span>=<span class="string">"color: black; shader: flat"</span>&gt;</div><div class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">cursor-listener</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Component to change to a sequential color on click.</span></div><div class="line">AFRAME.registerComponent(<span class="string">'cursor-listener'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> lastIndex = <span class="number">-1</span>;</div><div class="line">    <span class="keyword">var</span> COLORS = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">      lastIndex = (lastIndex + <span class="number">1</span>) % COLORS.length;</div><div class="line">      <span class="keyword">this</span>.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, COLORS[lastIndex]);</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'I was clicked at: '</span>, evt.detail.intersection.point);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
+      <p>The windows-motion-controls component interfaces with any spatial controllers exposed through
+Windows Mixed Reality as Spatial Input Sources (such as Motion Controllers). 
+It wraps the <a href="./tracked-controls.html">tracked-controls component</a> while adding button
+mappings, events, and a controller model that highlights applies position/rotation transforms 
+to the pressed buttons (trigger, grip, menu, thumbstick, trackpad) and moved axes (thumbstick and trackpad.)</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">windows-motion-controls</span>=<span class="string">"hand: left"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">windows-motion-controls</span>=<span class="string">"hand: right"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="value"><a href="#value" class="headerlink" title="Value"></a>Value</h2><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -1062,124 +1039,110 @@ When the cursor clicks on the box, we can listen to the click event.</p>
 </thead>
 <tbody>
 <tr>
-<td>downEvents</td>
-<td>Array of additional events on the entity to <em>listen</em> to for triggering <code>mousedown</code> (e.g., <code>triggerdown</code> for vive-controls).</td>
-<td>[]</td>
+<td>hand</td>
+<td>The hand that will be tracked (i.e., right, left).</td>
+<td>right</td>
 </tr>
 <tr>
-<td>fuse</td>
-<td>Whether cursor is fuse-based.</td>
-<td>false on desktop, true on mobile</td>
+<td>pair</td>
+<td>Which pair of controllers, if &gt; 2 are connected.</td>
+<td>0</td>
 </tr>
 <tr>
-<td>fuseTimeout</td>
-<td>How long to wait (in milliseconds) before triggering a fuse-based click event.</td>
-<td>1500</td>
+<td>model</td>
+<td>Whether the controller model is loaded.</td>
+<td>true</td>
 </tr>
 <tr>
-<td>rayOrigin</td>
-<td>Where the intersection ray is cast from (i.e.,entity or mouse)</td>
-<td>entity</td>
-</tr>
-<tr>
-<td>upEvents</td>
-<td>Array of additional events on the entity to <em>listen</em> to for triggering <code>mouseup</code> (e.g., <code>trackpadup</code> for daydream-controls).</td>
-<td>[]</td>
+<td>hideDisconnected</td>
+<td>Disable rendering of controller model when no matching gamepad (based on ID &amp; hand) is connected.</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
-<p>To further customize the cursor component, we configure the cursor’s dependency
-component, <a href="./raycaster.html">the raycaster component</a>.</p>
 <h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
 <thead>
 <tr>
-<th>Event</th>
+<th>Event Name</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>click</td>
-<td>Emitted on both cursor and intersected entity if a currently intersected entity is clicked (whether by mouse or by fuse).</td>
+<td>thumbstickdown</td>
+<td>Thumbstick button pressed.</td>
 </tr>
 <tr>
-<td>fusing</td>
-<td>Emitted on both cursor and intersected entity when fuse-based cursor starts counting down.</td>
+<td>thumbstickup</td>
+<td>Thumbstick button released.</td>
 </tr>
 <tr>
-<td>mousedown</td>
-<td>Emitted on both cursor and intersected entity (if any) on mousedown on the canvas element.</td>
+<td>thumbstickchanged</td>
+<td>Thumbstick button changed.</td>
 </tr>
 <tr>
-<td>mouseenter</td>
-<td>Emitted on both cursor and intersected entity (if any) when cursor intersects with an entity.</td>
+<td>thumbstickmoved</td>
+<td>Thumbstick axis moved.</td>
 </tr>
 <tr>
-<td>mouseleave</td>
-<td>Emitted on both cursor and intersected entity (if any) when cursor no longer intersects with previously intersected entity.</td>
+<td>triggerdown</td>
+<td>Trigger pressed.</td>
 </tr>
 <tr>
-<td>mouseup</td>
-<td>Emitted on both cursor and intersected entity (if any) on mouseup on the canvas element.</td>
+<td>triggerup</td>
+<td>Trigger released.</td>
+</tr>
+<tr>
+<td>triggerchanged</td>
+<td>Trigger changed.</td>
+</tr>
+<tr>
+<td>gripdown</td>
+<td>Grip button pressed.</td>
+</tr>
+<tr>
+<td>gripup</td>
+<td>Grip button released.</td>
+</tr>
+<tr>
+<td>gripchanged</td>
+<td>Grip button changed.</td>
+</tr>
+<tr>
+<td>menudown</td>
+<td>Menu button pressed.</td>
+</tr>
+<tr>
+<td>menuup</td>
+<td>Menu button released.</td>
+</tr>
+<tr>
+<td>menuchanged</td>
+<td>Menu button changed.</td>
+</tr>
+<tr>
+<td>trackpaddown</td>
+<td>Trackpad pressed.</td>
+</tr>
+<tr>
+<td>trackpadup</td>
+<td>Trackpad released.</td>
+</tr>
+<tr>
+<td>trackpadchanged</td>
+<td>Trackpad button changed.</td>
+</tr>
+<tr>
+<td>trackpadmoved</td>
+<td>Trackpad axis moved.</td>
+</tr>
+<tr>
+<td>controllermodelready</td>
+<td>The model file is loaded and completed parsing.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="states"><a href="#states" class="headerlink" title="States"></a>States</h2><p>The cursor will add states to the cursor entity on certain events:</p>
-<table>
-<thead>
-<tr>
-<th>State</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cursor-fusing</td>
-<td>Added when the cursor is fusing on another entity.</td>
-</tr>
-<tr>
-<td>cursor-hovering</td>
-<td>Added when the cursor is hovering over another entity.</td>
-</tr>
-</tbody>
-</table>
-<p>The cursor will add states to intersected entities on certain events:</p>
-<table>
-<thead>
-<tr>
-<th>State</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cursor-hovered</td>
-<td>Added to the intersected entity when the cursor is hovering over it.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="configuring-the-cursor-through-the-raycaster-component"><a href="#configuring-the-cursor-through-the-raycaster-component" class="headerlink" title="Configuring the Cursor through the Raycaster Component"></a>Configuring the Cursor through the Raycaster Component</h2><p>The cursor builds on top of and depends on the raycaster component. If we
-want to customize the raycasting pieces of the cursor, we can do by changing
-the <a href="./raycaster.html#properties">raycaster component properties</a>. Say we want set a max
-distance, check for intersections less frequently, and set which objects are
-clickable:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span> <span class="attr">raycaster</span>=<span class="string">"far: 20; interval: 1000; objects: .clickable"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="fuse-based-cursor"><a href="#fuse-based-cursor" class="headerlink" title="Fuse-Based Cursor"></a>Fuse-Based Cursor</h2><p>Also known as gaze-based cursor. If we set the cursor to be fuse-based, the
-cursor will trigger a click if the user gazes at an entity for a set amount of
-time. Imagine a laser strapped to the user’s head, and the laser extends out
-into the scene. If the user stares at an entity long enough (i.e., the
-<code>fuseTimeout</code>), then the cursor will trigger a click.</p>
-<p>The advantage of fuse-based interactions for VR is that it does not require
-extra input devices other than the headset. The fuse-based cursor is primarily
-intended for Google Cardboard applications. The disadvantage of fuse-based
-interactions is that it requires the user to turn their head a lot.</p>
-<h2 id="adding-visual-feedback"><a href="#adding-visual-feedback" class="headerlink" title="Adding Visual Feedback"></a>Adding Visual Feedback</h2><p>To add visual feedback to the cursor to show when the cursor is clicking or
-fusing, we can use the <a href="../core/animations.html">animation system</a>.  When the cursor
-intersects the entity, it will emit an event, and the animation system will
-pick up event with the <code>begin</code> attribute:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span>=<span class="string">"fuse: true;"</span></span></div><div class="line">          <span class="attr">position</span>=<span class="string">"0 0 -3"</span></div><div class="line">          <span class="attr">geometry</span>=<span class="string">"primitive: ring"</span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: black; shader: flat"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">begin</span>=<span class="string">"click"</span> <span class="attr">easing</span>=<span class="string">"ease-in"</span> <span class="attr">attribute</span>=<span class="string">"scale"</span> <span class="attr">dur</span>=<span class="string">"150"</span></span></div><div class="line">               <span class="attr">fill</span>=<span class="string">"forwards"</span> <span class="attr">from</span>=<span class="string">"0.1 0.1 0.1"</span> <span class="attr">to</span>=<span class="string">"1 1 1"</span>&gt;<span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">begin</span>=<span class="string">"cursor-fusing"</span> <span class="attr">easing</span>=<span class="string">"ease-in"</span> <span class="attr">attribute</span>=<span class="string">"scale"</span> <span class="attr">dur</span>=<span class="string">"1500"</span></span></div><div class="line">               <span class="attr">fill</span>=<span class="string">"backwards"</span> <span class="attr">from</span>=<span class="string">"1 1 1"</span> <span class="attr">to</span>=<span class="string">"0.1 0.1 0.1"</span>&gt;<span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>To play with an example of a cursor with visual feedback, check out the <a href="https://codepen.io/Absulit/pen/WEKjqm" target="_blank" rel="external">Cursor
-with Visual Feedback example on CodePen</a>.</p>
+<h2 id="assets"><a href="#assets" class="headerlink" title="Assets"></a>Assets</h2><p>TBC.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1192,7 +1155,7 @@ with Visual Feedback example on CodePen</a>.</p>
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/cursor.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/windows-motion-controls.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 
   <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
     <div class="message">Supported by</div>
@@ -1226,7 +1189,7 @@ with Visual Feedback example on CodePen</a>.</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#properties">Properties</a>
+        <a class="subnav-link" href="#value">Value</a>
 
         <!-- Nested. -->
         
@@ -1248,40 +1211,7 @@ with Visual Feedback example on CodePen</a>.</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#states">States</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#configuring-the-cursor-through-the-raycaster-component">Configuring the Cursor through the Raycaster Component</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#fuse-based-cursor">Fuse-Based Cursor</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#adding-visual-feedback">Adding Visual Feedback</a>
+        <a class="subnav-link" href="#assets">Assets</a>
 
         <!-- Nested. -->
         
@@ -1301,7 +1231,7 @@ with Visual Feedback example on CodePen</a>.</p>
     
       <ul class="subnav">
         <li class="subnav-item">
-          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/cursor.md" style="font-style: italic">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/windows-motion-controls.md" style="font-style: italic">
             No examples for this page yet. Add one!
           </a>
         </li>
@@ -1311,9 +1241,9 @@ with Visual Feedback example on CodePen</a>.</p>
 
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/cursor.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/windows-motion-controls.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v0.7.0/src/components/cursor.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v0.7.0/src/components/windows-motion-controls.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>

@@ -737,6 +737,13 @@
             </a>
           </li>
         
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
       </ol>
     
       
@@ -1020,7 +1027,7 @@
 <a href="https://en.wikipedia.org/wiki/Ray_casting" target="_blank" rel="external">raycaster</a>. Raycasting is the method of extending a line from
 an origin towards a direction, and checking whether that line intersects with
 other entites.</p>
-<p>The raycaster component uses the <a href="http://threejs.org/docs/#Reference/Core/Raycaster" target="_blank" rel="external">three.js raycaster</a>. The raycaster
+<p>The raycaster component uses the <a href="https://threejs.org/docs/#api/core/Raycaster" target="_blank" rel="external">three.js raycaster</a>. The raycaster
 checks for intersections at a certain interval against a list of objects, and
 will emit events on the entity when it detects intersections or clearing of
 intersections (i.e., when the raycaster is no longer intersecting an entity).</p>
@@ -1080,10 +1087,10 @@ both build on top of the raycaster component.</p>
 <tr>
 <td>useWorldCoordinates</td>
 <td>Whether the raycaster origin and direction properties are specified in world coordinates.</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
-<p>.                                                                                         | false          |</p>
 <h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><p>The raycaster component is useful because of the events it emits on entities. It will emit events on both the raycasting entity and the intersected entities.</p>
 <table>
 <thead>
