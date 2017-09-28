@@ -1065,6 +1065,9 @@ material object, we could reach into its components:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> camera = <span class="built_in">document</span>.querySelector(<span class="string">'a-entity[camera]'</span>).components.camera.camera;</div><div class="line"><span class="keyword">var</span> material = <span class="built_in">document</span>.querySelector(<span class="string">'a-entity[material]'</span>).components.material.material;</div></pre></td></tr></table></figure>
 <p>Or if a component exposes an API, we can call its methods:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-entity[sound]'</span>).components.sound.pause();</div></pre></td></tr></table></figure>
+<h3 id="hasloaded"><a href="#hasloaded" class="headerlink" title="hasLoaded"></a><code>hasLoaded</code></h3><p>Whether the entity has attached and initialized all of its components. Though
+the best way to ensure code is run after the entity is ready is to place code
+within a component.</p>
 <h3 id="isplaying"><a href="#isplaying" class="headerlink" title="isPlaying"></a><code>isPlaying</code></h3><p>Whether the entity is active and playing. If we pause the entity , then
 <code>isPlaying</code> becomes <code>false</code>.</p>
 <h3 id="object3d"><a href="#object3d" class="headerlink" title="object3D"></a><code>object3D</code></h3><p><code>&lt;a-entity&gt;.object3D</code> is a reference to the entity’s <a href="http://threejs.org/docs/#Reference/Core/Object3D" target="_blank" rel="external">three.js
@@ -1380,6 +1383,10 @@ the scene attaches or detaches an entity:</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#components">components</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#hasloaded">hasLoaded</a>
               </li>
             
               <li class="subnav-item">
