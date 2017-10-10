@@ -1071,7 +1071,7 @@ to move and rotate the camera.</p>
 </tr>
 <tr>
 <td>userHeight</td>
-<td>How much height to add to the camera when <em>not</em> in VR mode. The default camera has this set to 1.6 (meters, to represent average eye level.).</td>
+<td>Height offset to add to the camera when <em>not</em> in VR mode so the camera is not on ground level. The default camera that A-Frame injects or the <code>&lt;a-camera&gt;</code> primitive sets this to 1.6 meters. But note the default camera component alone (<code>&lt;a-entity camera&gt;</code>) defaults this to 0.</td>
 <td>0</td>
 </tr>
 <tr>
@@ -1081,6 +1081,10 @@ to move and rotate the camera.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="default-camera"><a href="#default-camera" class="headerlink" title="Default Camera"></a>Default Camera</h2><p>If a camera is not specified, A-Frame will inject a default camera:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>=<span class="string">"active: true; userHeight: 1.6"</span> <span class="attr">look-controls</span> <span class="attr">wasd-controls</span> <span class="attr">position</span>=<span class="string">"0 0 0"</span> <span class="attr">data-aframe-default-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>If a camera is specified (e.g., our own <code>&lt;a-camera&gt;</code> or <code>&lt;a-entity camera&gt;</code>),
+then the default camera will not be added.</p>
 <h2 id="vr-behavior"><a href="#vr-behavior" class="headerlink" title="VR Behavior"></a>VR Behavior</h2><p>When not in VR mode, <code>userHeight</code> translates the camera up to approximate
 average height of human eye level. The injected camera has this set to 1.6
 (meters). When entering VR, this height offset is <em>removed</em> such that we used
@@ -1149,6 +1153,17 @@ view such that the user does not have to strain their eyes to read it.</p>
     
       <li class="subnav-item">
         <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#default-camera">Default Camera</a>
 
         <!-- Nested. -->
         
