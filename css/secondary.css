@@ -98,8 +98,7 @@ html,
 body {
   height: 100%;
 }
-html,
-code {
+html {
   font-size: 14px;
 }
 body {
@@ -136,11 +135,10 @@ pre {
   font-family: Fira Mono, Consolas, Andale Mono, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 pre {
-  font-size: 13px;
+  font-size: 1rem;
 }
-[data-is-mobile="true"] code,
 [data-is-mobile="true"] pre {
-  font-size: 8.5px;
+  font-size: 0.8rem;
 }
 .font-loaded-mono code,
 .font-loaded-mono pre {
@@ -152,6 +150,11 @@ dd code {
   background: #f8f8f8;
   font-weight: 600;
   padding: 0 2px;
+  margin: 0 1px;
+}
+h2 code {
+  font-weight: 600;
+  padding: 0 1px;
 }
 h3 code {
   background: #f8f8f8;
@@ -227,8 +230,7 @@ h4 {
   padding-bottom: 0.7em;
   border-bottom: 1px solid #ddd;
 }
-.copy h3,
-.copy h3 code {
+.copy h3 {
   font-size: 1.5rem;
 }
 .copy h3,
@@ -682,6 +684,11 @@ a.click {
 }
 .copy__wrap > table tr:not(:last-child) td {
   border-bottom: 1px solid #eee;
+}
+.copy__wrap > table td code {
+  font-weight: 600;
+  padding: 0 1px;
+  margin: 0 1px;
 }
 .page__section > p {
   font-size: 11px;
