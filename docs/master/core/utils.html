@@ -1083,6 +1083,9 @@ handle function binding for convenience.</p>
 <code>tick</code> handlers as it uses the <code>t</code> and <code>dt</code> timestamps passed by the global
 render loop.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Set up the tick throttling.</span></div><div class="line">    <span class="keyword">this</span>.tick = AFRAME.utils.throttleTick(<span class="keyword">this</span>.tick, <span class="number">500</span>, <span class="keyword">this</span>);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Tick function that will be wrapped to be throttled.</div><div class="line">   */</div><div class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params">t, dt</span>) </span>&#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="miscellaneous"><a href="#miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h2><h3 id="aframe-utils-geturlparameter-name"><a href="#aframe-utils-geturlparameter-name" class="headerlink" title="AFRAME.utils.getUrlParameter (name)"></a><code>AFRAME.utils.getUrlParameter (name)</code></h3><p>Returns the value of a URL parameter as a string, otherwise returns an empty
+string.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.utils.getUrlParameter(<span class="string">'testing'</span>);</div><div class="line"><span class="comment">// If visiting the current page with ?testing=aframe, this will log 'aframe'.</span></div></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->
@@ -1248,6 +1251,21 @@ render loop.</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#aframe-utils-throttletick-function-t-dt-minimuminterval-optionalcontext">AFRAME.utils.throttleTick (function (t, dt) {...}, minimumInterval [, optionalContext])</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#miscellaneous">Miscellaneous</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#aframe-utils-geturlparameter-name">AFRAME.utils.getUrlParameter (name)</a>
               </li>
             
           </ul>
