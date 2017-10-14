@@ -1262,16 +1262,6 @@ called from a component, often within the remove handler:</p>
 <td>ID of component that had its data modified.</td>
 </tr>
 <tr>
-<td></td>
-<td>newData</td>
-<td>Component’s new data, after it was modified.</td>
-</tr>
-<tr>
-<td></td>
-<td>oldData</td>
-<td>Component’s previous data, before it was modified.</td>
-</tr>
-<tr>
 <td>componentinitialized</td>
 <td>name</td>
 <td>Name of component that was initialized.</td>
@@ -1314,7 +1304,7 @@ called from a component, often within the remove handler:</p>
 </tbody>
 </table>
 <h4 id="listening-for-component-changes"><a href="#listening-for-component-changes" class="headerlink" title="Listening for Component Changes"></a>Listening for Component Changes</h4><p>We can use the <code>componentchanged</code> event to listen for changes to the entity:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entity.addEventListener(<span class="string">'componentchanged'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (evt.detail.name === <span class="string">'position'</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Entity has moved from'</span>, evt.detail.oldData, <span class="string">'to'</span>, evt.detail.newData, <span class="string">'!'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entity.addEventListener(<span class="string">'componentchanged'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (evt.detail.name === <span class="string">'position'</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Entity has moved to'</span>, evt.target.getAttribute(<span class="string">'position'</span>), <span class="string">'!'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h4 id="listening-for-child-elements-being-attached-and-detached"><a href="#listening-for-child-elements-being-attached-and-detached" class="headerlink" title="Listening for Child Elements Being Attached and Detached"></a>Listening for Child Elements Being Attached and Detached</h4><p>We can use the <code>child-attached</code> and <code>child-detached</code> events to listen for when
 the scene attaches or detaches an entity:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entity.addEventListener(<span class="string">'child-attached'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (evt.detail.el.tagName.toLowerCase() === <span class="string">'a-box'</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a box element has been attached'</span>);</div><div class="line">  &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
