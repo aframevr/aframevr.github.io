@@ -1077,10 +1077,9 @@ materials and textures up front. When materials and textures are drawn for the
 first time, the browser will hang and block while uploading to the GPU. Note
 that three.js’s renderer does not upload textures to the GPU if objects are
 non-visible. To prevent frame drops during the experience, create and draw all
-materials and textures when the scene starts. They do not need to be within
-view (e.g., we can put an entity at position <code>0 -1000 0</code>). Then hide them as
-needed. We will try to come with a convenient API in A-Frame to do this
-automatically.</p>
+materials and textures when the scene starts. Draw them somewhere within the camera
+frustum (viewport) then hide them as needed. We will try to come with a
+convenient API in A-Frame to do this automatically.</p>
 <p>For example, this is apparent in the <a href="https://aframe-360-gallery.glitch.me" target="_blank" rel="external">360&deg; image gallery</a>. If we look at
 the browser performance tools, there will be frame drops when switching to a
 new image for the first time, but smooth transitions when switching back to
@@ -1088,11 +1087,16 @@ images for the second time.</p>
 <p>Reuse materials and textures as much as possible, aiming for a small number
 of unique materials. Texture atlases provide one efficient way to reuse
 materials while giving the impression of more variety. Simpler three.js
-materials such as Lambert or Basic perform better and are often sufficient
-for low-poly scenes. In particular, pre-baked lighting on an unlit (Basic)
-material can significantly improve performance. A-Frame’s default PBR-based
-(Standard) material is more physically realistic, but also more expensive
-and often unnecessary in simple scenes.</p>
+materials such as MeshLambertMaterial or MeshBasicMaterial perform better and
+are often sufficient for low-poly scenes. In particular, pre-baked lighting on
+an unlit (Basic) material can significantly improve performance. A-Frame’s
+default PBR-based (Standard) material is more physically realistic, but also
+more expensive and often unnecessary in simple scenes.</p>
+<h4 id="tools"><a href="#tools" class="headerlink" title="Tools"></a>Tools</h4><p>There are browser add-ons available to look into what’s being sent to the GPU.</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/webgl-insight/djdcbmfacaaocoomokenoalbomllhnko?hl=en-US" target="_blank" rel="external">WebGL Insights extension for Chrome</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/webgl-inspector/" target="_blank" rel="external">WebGL Inspector add-on for Firefox</a></li>
+</ul>
 <h3 id="javascript"><a href="#javascript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>Avoid creating garbage and instantiating new JavaScript objects, arrays,
 strings, and functions as much as possible. In the 2D web, it is not as big of
 a deal to create a lot of JavaScript objects since there is a lot of idle time
