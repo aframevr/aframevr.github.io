@@ -1431,9 +1431,8 @@ The schema declares any parameters for the shader.</p>
 &#39;uniform&#39;</code> tells A-Frame this property should appear as uniform value in the
 shaders:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">AFRAME.registerShader(<span class="string">'my-custom'</span>, &#123;</div><div class="line">  <span class="attr">schema</span>: &#123;</div><div class="line">    <span class="attr">color</span>: &#123;<span class="attr">type</span>: <span class="string">'color'</span>, <span class="attr">is</span>: <span class="string">'uniform'</span>, <span class="attr">default</span>: <span class="string">'red'</span>&#125;,</div><div class="line">    <span class="attr">opacity</span>: &#123;<span class="attr">type</span>: <span class="string">'number'</span>, <span class="attr">is</span>: <span class="string">'uniform'</span>, <span class="attr">default</span>: <span class="number">1.0</span>&#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<p>[shadermaterial](<a href="https://threejs.org/docs/api/materials/ShaderMaterial.html" target="_blank" rel="external">https://threejs.org/docs/api/materials/ShaderMaterial.html</a></p>
 <p>Setting <code>raw</code> to <code>true</code> uses <a href="https://threejs.org/docs/api/materials/RawShaderMaterial.html" target="_blank" rel="external">THREE.RawShaderMaterial</a> instead of
-[ShaderMaterial][shadermaterial] so built-in uniforms and attributes are not
+<a href="https://threejs.org/docs/api/materials/ShaderMaterial.html" target="_blank" rel="external">ShaderMaterial</a> so built-in uniforms and attributes are not
 automatically added to your shader code. Here we want to include the usual
 prefixes with GLSL constants and such, so leave it <code>false</code>.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">raw: <span class="literal">false</span>,</div></pre></td></tr></table></figure>
