@@ -1057,11 +1057,6 @@ provide a appearance alongside the shape to create a complete mesh.</p>
 <td>true</td>
 </tr>
 <tr>
-<td>mergeTo</td>
-<td>A selector to an entity to merge the entity’s geometry to.</td>
-<td>None</td>
-</tr>
-<tr>
 <td>primitive</td>
 <td>Name of a geometry (e.g., one of the geometries listed below). Determines the geometry type and what other properties are available.</td>
 <td>box</td>
@@ -1073,14 +1068,6 @@ provide a appearance alongside the shape to create a complete mesh.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="mergeto"><a href="#mergeto" class="headerlink" title="mergeTo"></a><code>mergeTo</code></h3><p>Merging geometries reduces the number of draw calls, greatly improving
-performance under certain circumstances. Merged geometries will inherit the
-material of the target geometry. Thus, it’s useful when we have entities that
-share the same material.</p>
-<p>Once merged, we can no longer manipulate the individual geometry independently.</p>
-<p>For geometry merging to be able to work, we will have to turn off <code>buffer</code> and
-turn on <code>skipCache</code>.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"target"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; buffer: false; skipCache: true"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; buffer: false; skipCache: true; mergeTo: #target"</span></span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: red"</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="built-in-geometries"><a href="#built-in-geometries" class="headerlink" title="Built-in Geometries"></a>Built-in Geometries</h2><h3 id="box"><a href="#box" class="headerlink" title="box"></a><code>box</code></h3><p>The box geometry defines boxes (i.e., any quadilateral, not just cubes).</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; width: 1; height: 1; depth: 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <table>
@@ -1611,10 +1598,6 @@ component. Say we registered a custom geometry:</p>
         <!-- Nested. -->
         
           <ul>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#mergeto">mergeTo</a>
-              </li>
             
           </ul>
         
