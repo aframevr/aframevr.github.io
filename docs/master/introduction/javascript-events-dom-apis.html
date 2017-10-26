@@ -1179,6 +1179,11 @@ can use <code>.removeEventListener(eventName, function)</code>. We have to pass 
 event name and function that the listener was registered with. For example,
 continuing from the previous example with the physics collision event:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// We have to define this function with a name if we later remove it.</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">collisionHandler</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Entity collided with'</span>, event.detail.collidingEntity);</div><div class="line">&#125;</div><div class="line"></div><div class="line">entityEl.addEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</div><div class="line">entityEl.removeEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</div></pre></td></tr></table></figure>
+<h2 id="caveats"><a href="#caveats" class="headerlink" title="Caveats"></a>Caveats</h2><p>A-Frame entities and primitives are implemented in a way that
+<a href="./faq.html#why-is-the-html-not-updating-when-i-check-the-browser-inspector">favours performance</a> and so, some HTML APIs my not work as expected.
+For instance, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors" target="_blank" rel="external">attribute selectors involving values</a> won’t work
+and a <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver" target="_blank" rel="external">mutation observer</a> won’t trigger changes when a entity’s
+component is altered.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1317,6 +1322,17 @@ continuing from the previous example with the physics collision event:</p>
               <li class="subnav-item">
                 <a class="subnav-link" href="#removing-an-event-listener-with-removeeventlistener">Removing an Event Listener with .removeEventListener()</a>
               </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#caveats">Caveats</a>
+
+        <!-- Nested. -->
+        
+          <ul>
             
           </ul>
         
