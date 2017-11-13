@@ -1132,7 +1132,7 @@ components have multiple properties that are represented by a syntax similar to
 <a href="https://developer.mozilla.org/docs/Web/API/HTMLElement/style" target="_blank" rel="external"><code>HTMLElement.style</code> CSS</a>. This syntax takes the form with a colon
 (<code>:</code>) separating property names from property values, and a semicolon (<code>;</code>)
 separating different property declarations:</p>
-<p><code>&lt;a-entity ${componentName}=&quot;${propertyName1}: ${propertyValue1}; ${propertyName2:}: ${propertyValue2}&quot;&gt;</code></p>
+<p><code>&lt;a-entity ${componentName}=&quot;${propertyName1}: ${propertyValue1}; ${propertyName2}: ${propertyValue2}&quot;&gt;</code></p>
 <p>For example, we have <code>&lt;a-entity&gt;</code> and attach the <a href="../components/geometry.html">geometry</a>, <a href="../components/material.html">material</a>,
 <a href="../components/light.html">light</a>, and <a href="../components/position.html">position</a> components with various properties and property values:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere; radius: 1.5"</span></span></div><div class="line">          <span class="attr">light</span>=<span class="string">"type: point; color: white; intensity: 2"</span></div><div class="line">          <span class="attr">material</span>=<span class="string">"color: white; shader: flat; src: glow.jpg"</span></div><div class="line">          <span class="attr">position</span>=<span class="string">"0 0 -5"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
