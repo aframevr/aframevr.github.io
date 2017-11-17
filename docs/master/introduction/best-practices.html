@@ -1074,12 +1074,10 @@ is run if appropriate.</li>
 </ul>
 <h3 id="gpu-texture-preloading"><a href="#gpu-texture-preloading" class="headerlink" title="GPU Texture Preloading"></a>GPU Texture Preloading</h3><p>Until non-blocking texture uploads to the GPU are available, try to draw all
 materials and textures up front. When materials and textures are drawn for the
-first time, the browser will hang and block while uploading to the GPU. Note
-that three.js’s renderer does not upload textures to the GPU if objects are
-non-visible. To prevent frame drops during the experience, create and draw all
-materials and textures when the scene starts. Draw them somewhere within the camera
-frustum (viewport) then hide them as needed. We will try to come with a
-convenient API in A-Frame to do this automatically.</p>
+first time, the browser will hang and block while uploading to the GPU. We can
+manually preload textures by calling:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>).renderer.setTexture2D(ourTexture, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<p>We will try to come with a convenient API in A-Frame to do this automatically.</p>
 <p>For example, this is apparent in the <a href="https://aframe-360-gallery.glitch.me" target="_blank" rel="external">360&deg; image gallery</a>. If we look at
 the browser performance tools, there will be frame drops when switching to a
 new image for the first time, but smooth transitions when switching back to
