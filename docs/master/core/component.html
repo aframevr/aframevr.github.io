@@ -1217,6 +1217,10 @@ the data to modify the entity. The handlers will usually interact with the
 <td>Called on each render loop or tick of the scene. Used for continuous changes or checks.</td>
 </tr>
 <tr>
+<td>tock</td>
+<td>Called on each render loop or tick of the scene after the scene has rendererd. Used for post processing effects or other logic that needs to happen after the scene has been drawn.</td>
+</tr>
+<tr>
 <td>play</td>
 <td>Called whenever the scene or entity plays to add any background or dynamic behavior. Also called once when the component is initialized. Used to start or resume behavior.</td>
 </tr>
