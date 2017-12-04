@@ -1337,6 +1337,8 @@ will call a component’s <code>tick</code> handler:</p>
 the controller’s animations, update the controller’s position and rotation, and
 check for button presses.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'tracked-controls'</span>, &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params">time, timeDelta</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.updateMeshAnimation();</div><div class="line">    <span class="keyword">this</span>.updatePose();</div><div class="line">    <span class="keyword">this</span>.updateButtons();</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="tock-time-timedelta"><a href="#tock-time-timedelta" class="headerlink" title=".tock (time, timeDelta)"></a><code>.tock (time, timeDelta)</code></h3><p>Identical to the tick method but invoked after the scene has rendered. </p>
+<p>The <code>tock</code> handler is used to run logic that needs access to the drawn scene before it’s pushed into the headset like postprocessing effects.</p>
 <h3 id="pause"><a href="#pause" class="headerlink" title=".pause ()"></a><code>.pause ()</code></h3><p><code>.pause ()</code> is called when the entity or scene pauses. The entity can call a
 component’s <code>pause</code> handler:</p>
 <ul>
@@ -1534,6 +1536,10 @@ example component:</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#tick-time-timedelta">.tick (time, timeDelta)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#tock-time-timedelta">.tock (time, timeDelta)</a>
               </li>
             
               <li class="subnav-item">
