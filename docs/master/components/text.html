@@ -1284,6 +1284,10 @@ the SDF font, DejaVu:</p>
 </ul>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/22358452/04528216-e3f4-11e6-8467-f03ac7f0e953.png" alt="Sizing"></p>
 <p>Text can be wrapped by specifying width in A-Frame units.</p>
+<p>In case we need to do custom layout or need to know the bounds of the text, the
+output length of the text can be pre-calculated dynamically with something
+like:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">totalWidth = data.value.length * (data.width / data.wrapCount)</div></pre></td></tr></table></figure>
 <h3 id="auto-scaling"><a href="#auto-scaling" class="headerlink" title="Auto-Scaling"></a>Auto-Scaling</h3><p>The text component introduces special behavior when using alongside the
 geometry component (e.g., a background plane) to fit. Note this only works with
 2D-friendly geometries that define a width and height (i.e., <code>box</code>, <code>plane</code>).
