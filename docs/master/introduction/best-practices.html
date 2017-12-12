@@ -500,6 +500,13 @@
       <ol class="subnav section-subnav">
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/background.html"
+               class="subnav-link">
+              background
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/camera.html"
                class="subnav-link">
               camera
@@ -1071,6 +1078,7 @@ against rather than raycasting against every object in the scene.</li>
 handlers to hook into the global render loop. Use utilities such as
 <code>AFRAME.utils.throttleTick</code> to limit the number of times the <code>tick</code> handler
 is run if appropriate.</li>
+<li>Use the <strong><a href="../components/background.html">background component</a></strong> instead of <code>a-sky</code> to define a solid color as the scene background. This prevents the creation of unnecessary geometry.</li>
 </ul>
 <h3 id="gpu-texture-preloading"><a href="#gpu-texture-preloading" class="headerlink" title="GPU Texture Preloading"></a>GPU Texture Preloading</h3><p>Until non-blocking texture uploads to the GPU are available, try to draw all
 materials and textures up front. When materials and textures are drawn for the
