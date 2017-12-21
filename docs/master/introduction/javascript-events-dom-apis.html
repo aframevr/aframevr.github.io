@@ -1100,6 +1100,25 @@ every entity that has a light:</p>
 <h3 id="looping-over-entities-from-queryselectorall"><a href="#looping-over-entities-from-queryselectorall" class="headerlink" title="Looping Over Entities from .querySelectorAll()"></a>Looping Over Entities from <code>.querySelectorAll()</code></h3><p>If we grabbed a group of entities using <code>.querySelectorAll()</code>, we can loop over
 them with a <code>for</code> loop. Let’s loop over every element in the scene with <code>*</code>.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> els = sceneEl.querySelectorAll(<span class="string">'*'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; els.length; i++) &#123;</div><div class="line">  <span class="built_in">console</span>.log(els[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="retrieving-component-data-with-getattribute"><a href="#retrieving-component-data-with-getattribute" class="headerlink" title="Retrieving Component Data with .getAttribute()"></a>Retrieving Component Data with <code>.getAttribute()</code></h2><p>We can get the data of components of an entity via <code>.getAttribute</code>. A-Frame
+augments <code>.getAttribute</code> to return values rather than strings (e.g., returning
+objects in most cases since components usually consist of multiple properties,
+or returning an actual boolean for like <code>.getAttribute(&#39;visible&#39;)</code>.  Often,
+<code>.getAttribute</code> will return the internal data object of the component so do not
+modify the object directly:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// &lt;a-entity geometry="primitive: sphere; radius: 2"&gt;&lt;/a-entity&gt;</span></div><div class="line">el.getAttribute(<span class="string">'geometry'</span>);</div><div class="line"><span class="comment">// &gt;&gt; &#123;"primitive": "sphere", "radius: 2", ...&#125;</span></div></pre></td></tr></table></figure>
+<h3 id="retrieving-position-and-scale"><a href="#retrieving-position-and-scale" class="headerlink" title="Retrieving position and scale"></a>Retrieving <code>position</code> and <code>scale</code></h3><p>Doing <code>el.getAttribute(&#39;position&#39;)</code> or <code>el.getAttribute(&#39;scale&#39;)</code> will return
+the three.js <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external">Object3D</a> position and scale properties which are
+<a href="https://threejs.org/docs/#api/math/Vector3" target="_blank" rel="external">Vector3</a>s. Keep in mind that modifying these objects will modify the
+actual entity data.</p>
+<p>This is because A-Frame allows us to <a href="#updating-position-rotation-scale-visible">modify position, rotation, scale,
+visible</a> at the three.js level, and in order for <code>.getAttribute</code> to
+return the correct data, A-Frame returns the acutal three.js Object3D objects.</p>
+<p>This is not true for the <code>.getAttribute(&#39;rotation&#39;)</code> because A-Frame, for
+better or worse, uses degrees instead of radians. In such case, a normal
+JavaScript object with x/y/z properties is returned. The Object3D Euler can be
+retrieved via <code>el.object3D.rotation</code> if we need to work at a lower level with
+radians.</p>
 <h2 id="modifying-the-a-frame-scene-graph"><a href="#modifying-the-a-frame-scene-graph" class="headerlink" title="Modifying the A-Frame Scene Graph"></a>Modifying the A-Frame Scene Graph</h2><p>With JavaScript and DOM APIs, we can dynamically add and remove entities as we
 would with normal HTML elements.</p>
 <h3 id="creating-an-entity-with-createelement"><a href="#creating-an-entity-with-createelement" class="headerlink" title="Creating an Entity with .createElement()"></a>Creating an Entity with <code>.createElement()</code></h3><p>To create an entity, we can use <code>document.createElement</code>. This will give us a
@@ -1139,7 +1158,7 @@ takes several forms.</p>
 single-property component. We can pass either an object or a string. It is
 slightly preferred to pass an object so A-Frame doesn’t have to parse the
 string.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entityEl.setAttribute(<span class="string">'position'</span>, &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">-3</span>&#125;);</div><div class="line"><span class="comment">// Or entityEl.setAttribute('position', '1 2 -3');</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">entityEl.setAttribute(<span class="string">'position'</span>, &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">-3</span>&#125;);</div><div class="line"><span class="comment">// Read on to see why `entityEl.object3D.position.set(1, 2, -3)` is preferred though.</span></div></pre></td></tr></table></figure>
 <h4 id="updating-single-property-of-multi-property-component"><a href="#updating-single-property-of-multi-property-component" class="headerlink" title="Updating Single Property of Multi-Property Component"></a>Updating Single Property of Multi-Property Component</h4><p>Let’s update a single property of the <a href="../components/material.html">material component</a>, a
 multi-property component. We do this by providing the component name, property
 name, and then property value to <code>.setAttribute()</code>:</p>
@@ -1149,6 +1168,15 @@ multi-property component. We do this by providing the component name and an
 object of properties to <code>.setAttribute()</code>. We’ll change the light’s color and
 intensity but leave the type the same:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// &lt;a-entity light="type: directional; color: #CAC; intensity: 0.5"&gt;&lt;/a-entity&gt;</span></div><div class="line">entityEl.setAttribute(<span class="string">'light'</span>, &#123;<span class="attr">color</span>: <span class="string">'#ACC'</span>, <span class="attr">intensity</span>: <span class="number">0.75</span>&#125;);</div><div class="line"><span class="comment">// &lt;a-entity light="type: directional; color: #ACC; intensity: 0.75"&gt;&lt;/a-entity&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="updating-position-rotation-scale-and-visible"><a href="#updating-position-rotation-scale-and-visible" class="headerlink" title="Updating position, rotation, scale, and visible."></a>Updating <code>position</code>, <code>rotation</code>, <code>scale</code>, and <code>visible</code>.</h4><p>As a special case, for better performance, memory, and access to utilities, we
+recommend modifying <code>position</code>, <code>rotation</code>, <code>scale</code>, and <code>visible</code> directly at
+the three.js level via the entity’s <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external">Object3D</a> rather than via
+<code>.setAttribute</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Examples for position.</span></div><div class="line">entityEl.object3D.position.set(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</div><div class="line">entityEl.object3D.position.x += <span class="number">5</span>;</div><div class="line">entityEl.object3D.position.multiplyScalar(<span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="comment">// Examples for rotation.</span></div><div class="line">entityEl.object3D.rotation.y = THREE.Math.degToRad(<span class="number">45</span>);</div><div class="line">entityEl.object3D.rotation.divideScalar(<span class="number">2</span>);</div><div class="line"></div><div class="line"><span class="comment">// Examples for scale.</span></div><div class="line">entityEl.object3D.scale.set(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>);</div><div class="line">entityEl.object3D.scale.z += <span class="number">1.5</span>;</div><div class="line"></div><div class="line"><span class="comment">// Examples for visible.</span></div><div class="line">entityEl.object3D.visible = <span class="literal">false</span>;</div><div class="line">entityEl.object3D.visible = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
+<p>This lets us skip over the <code>.setAttribute</code> overhead and instead do simple
+setting of properties for components that are most commonly updated. Updates at
+the three.js level will still be reflected when doing for example
+<code>entityEl.getAttribute(&#39;position&#39;);</code>.</p>
 <h4 id="replacing-properties-of-a-multi-property-component"><a href="#replacing-properties-of-a-multi-property-component" class="headerlink" title="Replacing Properties of a Multi-Property Component"></a>Replacing Properties of a Multi-Property Component</h4><p>Let’s replace all the properties of the <a href="../components/geometry.html">geometry component</a>, a
 multi-property component. We do this by providing the component name, an object
 of properties to <code>.setAttribute()</code>, and a flag that specifies to clobber the
@@ -1259,6 +1287,21 @@ component is altered.</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#looping-over-entities-from-queryselectorall">Looping Over Entities from .querySelectorAll()</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#retrieving-component-data-with-getattribute">Retrieving Component Data with .getAttribute()</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#retrieving-position-and-scale">Retrieving position and scale</a>
               </li>
             
           </ul>

@@ -1064,6 +1064,11 @@
 </table>
 <h2 id="animating-visibility"><a href="#animating-visibility" class="headerlink" title="Animating Visibility"></a>Animating Visibility</h2><p>The visible value can be “animated” to delay the visibility of an entity:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Wait 1 second before showing the entity. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">visible</span>=<span class="string">"false"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"visible"</span> <span class="attr">begin</span>=<span class="string">"1000"</span> <span class="attr">to</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="updating-visible"><a href="#updating-visible" class="headerlink" title="Updating Visible"></a>Updating Visible</h2><p>It is slightly faster to update visibility at the three.js level versus <a href="../introduction/javascript-events-and-dom-apis.html#updating-a-component-with-setattribute">via
+<code>.setAttribute</code></a>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// With three.js</span></div><div class="line">el.object3D.visible = <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="comment">// With .setAttribute.</span></div><div class="line">el.setAttribute(<span class="string">'visible'</span>, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
+<p>Updates at the three.js level will still be reflected when doing
+<code>entityEl.getAttribute(&#39;visible&#39;);</code>.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1122,6 +1127,17 @@
     
       <li class="subnav-item">
         <a class="subnav-link" href="#animating-visibility">Animating Visibility</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#updating-visible">Updating Visible</a>
 
         <!-- Nested. -->
         

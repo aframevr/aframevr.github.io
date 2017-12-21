@@ -1080,6 +1080,19 @@ entity. In the local parent’s space, <code>#child1</code>‘s position would b
 <p>The world-space position of <code>#child2</code> would be <code>3 5 7</code>, by combining the
 position with the parent entity. In the parent’s local space, <code>#child2</code>‘s
 position would be <code>2 3 4</code>.</p>
+<h2 id="updating-position"><a href="#updating-position" class="headerlink" title="Updating Position"></a>Updating Position</h2><p>For performance and ergonomics, we recommend updating position directly via the
+three.js <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external">Object3D</a> <code>.position</code> <a href="https://threejs.org/docs/index.html#api/math/Vector3" target="_blank" rel="external">Vector3</a> versus <a href="../introduction/javascript-events-dom-apis.html#updating-a-component-with-setattribute">via
+<code>.setAttribute</code></a>.</p>
+<p>This method is easier because we have access to all the <a href="https://threejs.org/docs/index.html#api/math/Vector3" target="_blank" rel="external">Vector3
+utilities</a>, and faster by skipping <code>.setAttribute</code> overhead and not
+needing to create an object to set rotation:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// With three.js</span></div><div class="line">el.object3D.position.set(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="comment">// With .setAttribute (less recommended).</span></div><div class="line">el.setAttribute(<span class="string">'position'</span>, &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">3</span>&#125;);</div></pre></td></tr></table></figure>
+<p>We can also do incremental updates (which is just modifying a number) and use
+<a href="https://threejs.org/docs/index.html#api/math/Vector3" target="_blank" rel="external">Vector3</a> utilities:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">el.object3D.position.x += <span class="number">1</span>;</div><div class="line">el.object3D.position.multiplyScalar(<span class="number">2</span>);</div><div class="line">el.object3D.position.sub(someOtherVector);</div></pre></td></tr></table></figure>
+<h3 id="getting-position"><a href="#getting-position" class="headerlink" title="Getting Position"></a>Getting Position</h3><p>To reflect updates done at the three.js level, A-Frame returns the actual
+<code>Object3D.position</code> vector object when doing <code>.getAttribute(&#39;position&#39;)</code>.  Note
+modifying the return value will modify the entity itself.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1142,6 +1155,21 @@ position would be <code>2 3 4</code>.</p>
         <!-- Nested. -->
         
           <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#updating-position">Updating Position</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#getting-position">Getting Position</a>
+              </li>
             
           </ul>
         

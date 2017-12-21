@@ -1042,9 +1042,9 @@
 
       
 
-      <p>The rotation component defines the orientation of an entity. It takes the pitch
-(<code>x</code>), yaw (<code>y</code>), and roll (<code>z</code>) as three space-delimited numbers indicating
-degrees of rotation. </p>
+      <p>The rotation component defines the orientation of an entity in degrees. It
+takes the pitch (<code>x</code>), yaw (<code>y</code>), and roll (<code>z</code>) as three space-delimited
+numbers indicating degrees of rotation.</p>
 <p>All entities inherently have the rotation component.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">rotation</span>=<span class="string">"45 90 180"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="value"><a href="#value" class="headerlink" title="Value"></a>Value</h2><p>A-Frame uses a right-handed coordinate system. When aligning our right hand’s
@@ -1084,6 +1084,17 @@ entity. In the local parent’s space, <code>#child1</code>‘s rotation would b
 <p>The world-space rotation of <code>#child2</code> would be <code>15 90 30</code>, by combining the
 rotation with the parent entity. In the parent’s local space, <code>#child2</code>‘s
 rotation would be <code>15 45 30</code>.</p>
+<h2 id="updating-rotation"><a href="#updating-rotation" class="headerlink" title="Updating Rotation"></a>Updating Rotation</h2><p>For performance and ergonomics, we recommend updating rotation directly via the
+three.js <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external">Object3D</a> <code>.rotation</code> <a href="https://threejs.org/docs/index.html#api/math/Euler" target="_blank" rel="external">Euler</a> (in radians) versus
+<a href="../introduction/javascript-events-dom-apis.html#updating-a-component-with-setattribute">via <code>.setAttribute</code></a>.</p>
+<p>This method is easier because we have access to all the <a href="https://threejs.org/docs/index.html#api/math/Euler" target="_blank" rel="external">Euler
+utilities</a>, and faster by skipping <code>.setAttribute</code> overhead and not
+needing to create an object to set rotation:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// With three.js</span></div><div class="line">el.object3D.rotation.set(</div><div class="line">  THREE.Math.degToRad(<span class="number">15</span>),</div><div class="line">  THREE.Math.degToRad(<span class="number">30</span>),</div><div class="line">  THREE.Math.degToRad(<span class="number">90</span>)</div><div class="line">);</div><div class="line">el.object3D.rotation.x += <span class="built_in">Math</span>.PI;</div><div class="line"></div><div class="line"><span class="comment">// With .setAttribute (less recommended).</span></div><div class="line">el.setAttribute(<span class="string">'rotation'</span>, &#123;<span class="attr">x</span>: <span class="number">15</span>, <span class="attr">y</span>: <span class="number">30</span>, <span class="attr">z</span>: <span class="number">90</span>&#125;);</div></pre></td></tr></table></figure>
+<h3 id="getting-rotation"><a href="#getting-rotation" class="headerlink" title="Getting Rotation"></a>Getting Rotation</h3><p>Updates at the three.js level will still be reflected in A-Frame when doing
+<code>entityEl.getAttribute(&#39;rotation&#39;);</code>. When calling <code>.getAttribute(&#39;rotation&#39;)</code>,
+A-Frame will convert from radians and degrees and return a normal JavaScript
+object with x/y/z properties.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1146,6 +1157,21 @@ rotation would be <code>15 45 30</code>.</p>
         <!-- Nested. -->
         
           <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#updating-rotation">Updating Rotation</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#getting-rotation">Getting Rotation</a>
+              </li>
             
           </ul>
         
