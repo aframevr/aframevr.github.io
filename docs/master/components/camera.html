@@ -1046,7 +1046,7 @@
 The camera is commonly paired with controls components that allow input devices
 to move and rotate the camera.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>A camera situated at the average height of human eye level (1.6 meters).</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>=<span class="string">"userHeight: 1.6"</span> <span class="attr">look-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"0 1.6 0"</span> <span class="attr">camera</span> <span class="attr">look-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
@@ -1091,17 +1091,10 @@ to move and rotate the camera.</p>
 </tbody>
 </table>
 <h2 id="default-camera"><a href="#default-camera" class="headerlink" title="Default Camera"></a>Default Camera</h2><p>If a camera is not specified, A-Frame will inject a default camera:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>=<span class="string">"active: true; userHeight: 1.6"</span> <span class="attr">look-controls</span> <span class="attr">wasd-controls</span> <span class="attr">position</span>=<span class="string">"0 0 0"</span> <span class="attr">data-aframe-default-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>=<span class="string">"active: true"</span> <span class="attr">look-controls</span> <span class="attr">wasd-controls</span> <span class="attr">position</span>=<span class="string">"0 0 0"</span> <span class="attr">data-aframe-default-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>If a camera is specified (e.g., our own <code>&lt;a-camera&gt;</code> or <code>&lt;a-entity camera&gt;</code>),
 then the default camera will not be added.</p>
-<h2 id="vr-behavior"><a href="#vr-behavior" class="headerlink" title="VR Behavior"></a>VR Behavior</h2><p>When not in VR mode, <code>userHeight</code> translates the camera up to approximate
-average height of human eye level. The injected camera has this set to 1.6
-(meters). When entering VR, this height offset is <em>removed</em> such that we used
-absolute position returned from the VR headset. The offset is convenient for
-experiences that work both in and out of VR, as well as making experiences look
-decent from a desktop screen as opposed to clipping the ground if the headset
-was resting on the ground.</p>
-<p>When exiting VR, the camera will restore its rotation to its rotation <em>before</em>
+<h2 id="vr-behavior"><a href="#vr-behavior" class="headerlink" title="VR Behavior"></a>VR Behavior</h2><p>When exiting VR, the camera will restore its rotation to its rotation <em>before</em>
 it entered VR. This is so when we exit VR, the rotation of the camera is back
 to normal for a desktop screen.</p>
 <h2 id="changing-the-active-camera"><a href="#changing-the-active-camera" class="headerlink" title="Changing the Active Camera"></a>Changing the Active Camera</h2><p>When the <code>active</code> property gets toggled, the component will notify the camera system
