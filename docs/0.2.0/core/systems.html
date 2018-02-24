@@ -770,7 +770,7 @@
 <p>A system, of the <a href="./">entity-component-system pattern</a>, provides global scope, services, and management to classes of components. It provides public APIs (methods and properties) for classes of components. A system can be accessed through the scene element, and can help components interface with the global scene.</p>
 <p>For example, the camera system manages all entities with the <a href="../components/camera.html">camera component</a>, controlling which camera is the active camera.</p>
 <h2 id="registering-a-system"><a href="#registering-a-system" class="headerlink" title="Registering a System"></a>Registering a System</h2><p>A system is registered similarly to a <a href="./component.html">component</a>. If the system name matches a component name, then the component will have a reference to the system as <code>this.system</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerSystem(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="comment">// System handlers and methods.</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">AFRAME.registerComponent(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.system);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerSystem(<span class="string">'my-component'</span>, &#123;</span><br><span class="line">  <span class="comment">// System handlers and methods.</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">AFRAME.registerComponent(<span class="string">'my-component'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.system);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h2><p>A system, like a component, defines lifecycle handlers. It can also define methods intended to be public API.</p>
 <table>
 <thead>
@@ -799,7 +799,7 @@
 </tbody>
 </table>
 <h2 id="accessing-a-system"><a href="#accessing-a-system" class="headerlink" title="Accessing a System"></a>Accessing a System</h2><p>An instantiated system can be accessed through the scene:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>).systems);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>).systems);</span><br></pre></td></tr></table></figure>
 <p>Registered system prototypes can be accessed through <code>AFRAME.systems</code>.</p>
 
 

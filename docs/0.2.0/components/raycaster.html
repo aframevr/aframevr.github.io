@@ -802,7 +802,7 @@
 </tbody>
 </table>
 <h2 id="using-the-raycaster"><a href="#using-the-raycaster" class="headerlink" title="Using the Raycaster"></a>Using the Raycaster</h2><p>To use the raycaster, we can specify the raycaster component as a dependency of another component.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">AFRAME.registerComponent(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">dependencies</span>: [<span class="string">'raycaster'</span>],</div><div class="line"></div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.raycaster = <span class="keyword">this</span>.el.components.raycaster;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'my-component'</span>, &#123;</span><br><span class="line">  dependencies: [<span class="string">'raycaster'</span>],</span><br><span class="line"></span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.raycaster = <span class="keyword">this</span>.el.components.raycaster;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->

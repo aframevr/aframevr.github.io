@@ -222,6 +222,14 @@
     <ul class="subnav section-subnav blog-subnav">
       
         <li class="subnav-item ">
+          <a href="/blog/awoa-100/"
+             class="subnav-link"
+             title="A Week of A-Frame 100">
+            A Week of A-Frame 100
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
           <a href="/blog/awoa-98-99/"
              class="subnav-link"
              title="A Week of A-Frame 98 + 99">
@@ -1204,13 +1212,13 @@
           
 
           <p>I like the <a href="https://aframe.io/examples/showcase/spheres-and-fog/">Spheres and Fog example</a> because it explores the sense of scale within virtual reality more than our other early examples. A series of spheres in the scene vary from 0.15 to 30 meters in radius, and a fog on <code>&lt;a-scene&gt;</code> amplifies the sense of size and distance:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">fog</span>=<span class="string">"type: linear; color: #AAB; far: 30; near: 0"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">fog</span>=<span class="string">"type: linear; color: #AAB; far: 30; near: 0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>The soft shadows under each sphere are faked with images. In Photoshop I created a circular gradient that fades from opaque to transparent. I applied this image as a child object of each sphere:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"-3 0 0"</span> <span class="attr">translate</span>=<span class="string">"0 1.75 0"</span> <span class="attr">radius</span>=<span class="string">"1.75"</span> <span class="attr">color</span>=<span class="string">"#7BC8A4"</span> <span class="attr">roughness</span>=<span class="string">"0.2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a-image</span> <span class="attr">src</span>=<span class="string">"../_images/radial-shadow-3.png"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">scale</span>=<span class="string">"1.75 1.75 1.75"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-image</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"-3 0 0"</span> <span class="attr">translate</span>=<span class="string">"0 1.75 0"</span> <span class="attr">radius</span>=<span class="string">"1.75"</span> <span class="attr">color</span>=<span class="string">"#7BC8A4"</span> <span class="attr">roughness</span>=<span class="string">"0.2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-image</span> <span class="attr">src</span>=<span class="string">"../_images/radial-shadow-3.png"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">scale</span>=<span class="string">"1.75 1.75 1.75"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>I rotated the images -90 degrees on the x-axis so that they lie flat, and then used scale to adjust their sizes to fit the proportions of their parent sphere.</p>
 <p>To make each sphere appear to sit on ground &mdash; neither too high nor too low &mdash; I used a translate value on each sphere, where the Y value was equal to the sphere radius:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"-15 0 5"</span> <span class="attr">translate</span>=<span class="string">"0 3 0"</span> <span class="attr">radius</span>=<span class="string">"3"</span> <span class="attr">color</span>=<span class="string">"#ECECEC"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"-15 0 5"</span> <span class="attr">translate</span>=<span class="string">"0 3 0"</span> <span class="attr">radius</span>=<span class="string">"3"</span> <span class="attr">color</span>=<span class="string">"#ECECEC"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>The translate component in A-Frame shifts the geometry of a primitive (or geometry component on an entity, if you’re using entities and components) relative to the object position. The position remains the same, but the visible geometry moves relative to it. This enabled me to use the keep each sphere’s position at 0 on the y-axis, matching my mental model of the spheres being balls sitting on the ground. It would arguably have been more concise to achieve the same visual effect by using y-axis positions instead of translate, but I found this approach felt better.</p>
 
 

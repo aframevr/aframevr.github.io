@@ -310,13 +310,6 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.6.0/introduction/javascript-events-dom-apis.html"
-               class="subnav-link">
-              JavaScript, Events, DOM APIs
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/0.6.0/introduction/developing-with-threejs.html"
                class="subnav-link">
               Developing with three.js
@@ -1034,7 +1027,7 @@ shadows from surrounding objects and casting shadows onto other objects may
 <p>Without this component, an entity will not cast nor receive shadows.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>The example below configures a tree model to cast shadows onto the surrounding
 scene but not receive shadows itself.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type:directional; castShadow:true;"</span> <span class="attr">position</span>=<span class="string">"1 1 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a-gltf-model</span> <span class="attr">src</span>=<span class="string">"tree.gltf"</span> <span class="attr">shadow</span>=<span class="string">"receive: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-gltf-model</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type:directional; castShadow:true;"</span> <span class="attr">position</span>=<span class="string">"1 1 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-gltf-model</span> <span class="attr">src</span>=<span class="string">"tree.gltf"</span> <span class="attr">shadow</span>=<span class="string">"receive: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-gltf-model</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>IMPORTANT:</strong> Adding the <code>shadow</code> component alone is not enough to display
 shadows in your scene. We must have at least one light with <code>castShadow:
 true</code> enabled.  Additionally, the light’s shadow camera (used for depth

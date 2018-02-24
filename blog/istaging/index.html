@@ -231,6 +231,14 @@ buildings and properties. To uploa">
     <ul class="subnav section-subnav blog-subnav">
       
         <li class="subnav-item ">
+          <a href="/blog/awoa-100/"
+             class="subnav-link"
+             title="A Week of A-Frame 100">
+            A Week of A-Frame 100
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
           <a href="/blog/awoa-98-99/"
              class="subnav-link"
              title="A Week of A-Frame 98 + 99">
@@ -1251,14 +1259,14 @@ get the attribute like this: <code>const cameraRotation =
 camera.getAttribute(&#39;rotation&#39;)</code>. Using that information to set the range of
 vision was equally simple: <code>state.rangeOfVisionRotation = cameraRotation</code>. And
 here’s the HTML:</p>
-  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">:style</span>=<span class="string">"rangeOfVisionRotation"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"rangeOfVision.png"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div></pre></td></tr></table></figure>
+  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">:style</span>=<span class="string">"rangeOfVisionRotation"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"rangeOfVision.png"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="pluggable-and-mixable"><a href="#pluggable-and-mixable" class="headerlink" title="Pluggable and Mixable"></a>Pluggable and Mixable</h2><p>The best thing about A-Frame is that it works with plain HTML. So, it can be
 plugged into any framework and mixed with other tools like Lodash, React, and
 Angular. Or, in our case, <a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a>. The process couldn’t
 have been simpler. All we had to do was to import A-Frame and write stuff like
 the following to swap the panorama while assigning a default position and
 rotation:</p>
-  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-sky</span></span></div><div class="line">  <span class="attr">:position</span>=<span class="string">"panoramaPosition"</span></div><div class="line">  <span class="attr">:rotation</span>=<span class="string">"panoramaRotation"</span></div><div class="line">  <span class="attr">:src</span>=<span class="string">"panoramaURL"</span></div><div class="line">  <span class="attr">:opacity</span>=<span class="string">"panoramaOpacity"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></div></pre></td></tr></table></figure>
+  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sky</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:position</span>=<span class="string">"panoramaPosition"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:rotation</span>=<span class="string">"panoramaRotation"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:src</span>=<span class="string">"panoramaURL"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:opacity</span>=<span class="string">"panoramaOpacity"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Beautiful.</p>
 <h2 id="complete"><a href="#complete" class="headerlink" title="Complete"></a>Complete</h2><p>A-Frame is one of the most complete frameworks out there. Its ecosystem
 includes physics and particle systems. You can even do cool things like walking
@@ -1275,7 +1283,7 @@ Neither with the second. Luckily, the third, which turned HTML elements into
 textures, worked perfectly.</p>
 <p>Another component that we’re using is one that makes 3D objects draggable and
 clickable:</p>
-  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-image</span></span></div><div class="line">  <span class="attr">src</span>=<span class="string">"#stand-point"</span></div><div class="line">  <span class="attr">v-for</span>=<span class="string">"standPoint in standPoints"</span></div><div class="line">  <span class="attr">:position</span>=<span class="string">"standPointPosition"</span></div><div class="line">  @<span class="attr">click</span>=<span class="string">"goToStandPoint"</span></div><div class="line">  <span class="attr">cursor-listener</span>&gt;</div></pre></td></tr></table></figure>
+  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"#stand-point"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-for</span>=<span class="string">"standPoint in standPoints"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:position</span>=<span class="string">"standPointPosition"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">click</span>=<span class="string">"goToStandPoint"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor-listener</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>The result:</p>
 <p><img src="https://i.stack.imgur.com/csm4q.png" alt="https://i.stack.imgur.com/csm4q.png"></p>
 <p>This lets real estate agents create standpoints to navigate between rooms. And

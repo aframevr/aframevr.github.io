@@ -984,8 +984,8 @@ pooling</a>. This gives us a
 reusable pool of entities to avoid creating and destroying the same kind of
 entities in dynamic scenes. Object pooling helps reduce GC pauses.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we may have a game with enemy entities that we want to reuse.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">pool__enemy</span>=<span class="string">"mixin: enemy; size : 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> el = sceneEl.components.pool__enemy.requestEntity();</div><div class="line">sceneEl.components.pool__enemy.returnEntity(el);</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">pool__enemy</span>=<span class="string">"mixin: enemy; size : 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> el = sceneEl.components.pool__enemy.requestEntity();</span><br><span class="line">sceneEl.components.pool__enemy.returnEntity(el);</span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>

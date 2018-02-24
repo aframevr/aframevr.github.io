@@ -310,13 +310,6 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.6.0/introduction/javascript-events-dom-apis.html"
-               class="subnav-link">
-              JavaScript, Events, DOM APIs
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/0.6.0/introduction/developing-with-threejs.html"
                class="subnav-link">
               Developing with three.js
@@ -1136,7 +1129,7 @@ global. This same interface is also exposed if requiring with CommonJS
 </tbody>
 </table>
 <h2 id="requiring-aframe-in-a-node-js-environment"><a href="#requiring-aframe-in-a-node-js-environment" class="headerlink" title="Requiring AFRAME in a Node.js Environment"></a>Requiring <code>AFRAME</code> in a Node.js Environment</h2><p>It is possible to run A-Frame in <a href="https://nodejs.org/en/about" target="_blank" rel="external">Node.js</a> to get access to its globals. The only catch is we need to supply a browser <code>window</code> mock since Node.js lacks a <code>window</code> object. A-Frame is tested with <a href="https://github.com/tmpvar/jsdom" target="_blank" rel="external">jsdom</a>, although any JavaScript-based browser implementation should work.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">global.window = <span class="built_in">require</span>(<span class="string">'jsdom'</span>).jsdom().defaultView;</div><div class="line"><span class="keyword">var</span> aframe = <span class="built_in">require</span>(<span class="string">'aframe/src'</span>);</div><div class="line"><span class="built_in">console</span>.log(aframe.version);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">global.window = <span class="built_in">require</span>(<span class="string">'jsdom'</span>).jsdom().defaultView;</span><br><span class="line"><span class="keyword">var</span> aframe = <span class="built_in">require</span>(<span class="string">'aframe/src'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(aframe.version);</span><br></pre></td></tr></table></figure>
 <p>Although A-Frame can load in Node.js, A-Frame isn’t (yet) able to run any simulations at run time.</p>
 
 

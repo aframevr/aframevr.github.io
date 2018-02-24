@@ -949,16 +949,16 @@ CodePen</a>:</p>
 <p>In either case, it is important to <a href="#using-a-local-server">serve the project using a local
 server</a> so that assets load properly.</p>
 <h2 id="include-the-js-build"><a href="#include-the-js-build" class="headerlink" title="Include the JS Build"></a>Include the JS Build</h2><p>If we want to just include the JS build from the CDN, we can drop a <code>&lt;script&gt;</code> tag straight into our HTML:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Production Version, Minified --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.4.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Development Version, Uncompressed with Source Maps --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.4.0/aframe.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Production Version, Minified --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.4.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Development Version, Uncompressed with Source Maps --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.4.0/aframe.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>If we want to serve it locally, we can download the JS build:</p>
 <p><a id="builds-prod" class="btn btn-download" href="https://aframe.io/releases/0.4.0/aframe.min.js" download="">Production Version <span>0.4.0</span></a> <em class="install-note">Minified</em>
 <a id="builds-dev" class="btn btn-download" href="https://aframe.io/releases/0.4.0/aframe.js" download="">Development Version <span>0.4.0</span></a> <em class="install-note">Uncompressed with Source Maps</em></p>
 <p>Note it is important to <a href="#using-a-local-server">serve the project using a local
 server</a> so that assets load correctly.</p>
 <h2 id="install-from-npm"><a href="#install-from-npm" class="headerlink" title="Install from npm"></a>Install from npm</h2><p>For more advanced users who want to use their own build steps, we can install through npm:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># Latest stable version (https://www.npmjs.com/package/aframe)</span></div><div class="line">$ npm install aframe</div><div class="line"></div><div class="line"><span class="comment"># Bleeding-edge version (https://github.com/aframevr/aframe)</span></div><div class="line">$ npm install aframevr/aframe</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Latest stable version (https://www.npmjs.com/package/aframe)</span></span><br><span class="line">$ npm install aframe</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bleeding-edge version (https://github.com/aframevr/aframe)</span></span><br><span class="line">$ npm install aframevr/aframe</span><br></pre></td></tr></table></figure>
 <p>Then we can just require A-Frame from our app, perhaps built with Browserify or Webpack:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'aframe'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'aframe'</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="using-a-local-server"><a href="#using-a-local-server" class="headerlink" title="Using a Local Server"></a>Using a Local Server</h2><p>We should develop projects using a local server so that files are properly
 served. We can either:</p>
 <ul>
@@ -968,7 +968,7 @@ and open it from the same directory as your HTML file.</li>
 </ul>
 <p>If you have npm, you can get started with scene template right from the command
 line with <a href="https://www.npmjs.com/package/angle" target="_blank" rel="external"><code>angle</code></a>, a command line interface for A-Frame:</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">npm install -g angle &amp;&amp; angle initscene</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g angle &amp;&amp; angle initscene</span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->

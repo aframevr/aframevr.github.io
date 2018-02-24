@@ -1034,10 +1034,10 @@
 using <a href="https://threejs.org/docs/#api/objects/Line" target="_blank" rel="external"><code>THREE.Line</code></a>.</p>
 <p>The <a href="./raycaster.html">raycaster component</a> uses the line component for its <code>showLine</code>
 property, which is then used by the <a href="./laser-controls.html">laser-controls component</a>.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">line</span>=<span class="string">"start: 0, 1, 0; end: 2 0 -5; color: red"</span></span></div><div class="line">          <span class="attr">line__2</span>=<span class="string">"start: -2, 4, 5; end: 0 4 -3; color: green"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">line</span>=<span class="string">"start: 0, 1, 0; end: 2 0 -5; color: red"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">line__2</span>=<span class="string">"start: -2, 4, 5; end: 0 4 -3; color: green"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Note an entity can have multiple lines. The line mesh is set as <code>line</code> or
 <code>line__&lt;ID&gt;</code> in the entity’s <code>object3DMap</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(el.getObject3D(<span class="string">'line'</span>));</div><div class="line"><span class="built_in">console</span>.log(el.getObject3D(<span class="string">'line__2'</span>));</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(el.getObject3D(<span class="string">'line'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(el.getObject3D(<span class="string">'line__2'</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>

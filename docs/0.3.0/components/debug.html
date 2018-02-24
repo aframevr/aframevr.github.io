@@ -418,16 +418,16 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.3.0/core/AFRAME.html"
+            <a href="/docs/0.3.0/core/utils.html"
                class="subnav-link">
-              AFRAME Globals
+              Utils
             </a>
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/0.3.0/core/utils.html"
+            <a href="/docs/0.3.0/core/AFRAME.html"
                class="subnav-link">
-              Utils
+              AFRAME Globals
             </a>
           </li>
         
@@ -875,18 +875,18 @@
       
 
       <p>The debug component enables component-to-DOM serialization.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">debug</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">debug</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="component-to-dom-serialization"><a href="#component-to-dom-serialization" class="headerlink" title="Component-to-DOM Serialization"></a>Component-to-DOM Serialization</h2><p>By default, for performance reasons, A-Frame does not update the DOM with
 component data. If we open the browser’s DOM inspector, we will see that many
 entities will have only the component name visible:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span> <span class="attr">material</span> <span class="attr">position</span> <span class="attr">rotation</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span> <span class="attr">material</span> <span class="attr">position</span> <span class="attr">rotation</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>The component data is stored internally. Updating the DOM takes CPU time for
 converting component data, which is stored internally, to strings. However,
 when we want to see the DOM update for debugging purposes, we can attach the
 <code>debug</code> component to the scene. Components will check whether the <code>debug</code>
 component is enabled before trying to serialize to the DOM. Then we will be
 able to view component data in the DOM:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: red"</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span> <span class="attr">rotation</span>=<span class="string">"0 180 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: red"</span> <span class="attr">position</span>=<span class="string">"1 2 3"</span> <span class="attr">rotation</span>=<span class="string">"0 180 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Make sure that this component is not active in production.</p>
 <h3 id="manually-serializing-to-dom"><a href="#manually-serializing-to-dom" class="headerlink" title="Manually Serializing to DOM"></a>Manually Serializing to DOM</h3><p>To manually serialize to DOM, use <a href="../core/entity.html#flushtodom-recursive"><code>Entity.flushToDOM</code></a> or
 <a href="../core/component.html#flushtodom"><code>Component.flushToDOM</code></a>.</p>

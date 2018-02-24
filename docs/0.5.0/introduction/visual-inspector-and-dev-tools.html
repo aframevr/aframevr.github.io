@@ -1154,7 +1154,7 @@ laptop, we can build event handlers on top of the controller events we emitted
 in the recording.</p>
 <h3 id="spectator-mode"><a href="#spectator-mode" class="headerlink" title="Spectator Mode"></a>Spectator Mode</h3><p>The A-Frame Motion Capture Components have a Spectator Mode feature that can be
 enabled from the <code>avatar-replayer</code> component:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;a-scene avatar-replayer=&quot;spectatorMode: true&quot;&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a-scene avatar-replayer=&quot;spectatorMode: true&quot;&gt;</span><br></pre></td></tr></table></figure>
 <p>This lets us view the recording from a third-person view. This can be useful
 since it is hard to see what was happening in first person. The first-person
 view is naturally shaky, hands would occlude the camera, actions would be
@@ -1213,12 +1213,12 @@ ngrok pricing details</a>.</p>
 <p>With reserved domains, we can reserve a URL like <code>https://abc.ngrok.io</code>. Note
 <code>abc</code> is just an example, and it is currently taken. Then every time we start
 ngrok, we pass the domain:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">./ngrok http --subdomain=abc 8080</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">./ngrok http --subdomain=abc 8080</span><br></pre></td></tr></table></figure>
 <p>Every time we start ngrok, we can reliably use the same URL. To make it even
 simpler, we could add a Bash alias:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">alias ngrok=&quot;~/path/to/ngrok http --subdomain=abc&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alias ngrok=&quot;~/path/to/ngrok http --subdomain=abc&quot;</span><br></pre></td></tr></table></figure>
 <p>And use it simply from the command line from anywhere:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ngrok 8080</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ngrok 8080</span><br></pre></td></tr></table></figure>
 <p>Alternatively, we could have both computers connected on the same local
 network, and use <code>ipconfig</code> or <code>ifconfig</code> to point one computer to the other
 using the local IP address (e.g., <code>http://192.168.1.135:8000</code>). But that can

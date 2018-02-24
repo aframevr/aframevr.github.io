@@ -228,6 +228,14 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
     <ul class="subnav section-subnav blog-subnav">
       
         <li class="subnav-item ">
+          <a href="/blog/awoa-100/"
+             class="subnav-link"
+             title="A Week of A-Frame 100">
+            A Week of A-Frame 100
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
           <a href="/blog/awoa-98-99/"
              class="subnav-link"
              title="A Week of A-Frame 98 + 99">
@@ -1216,7 +1224,7 @@ Thank you MozVR Team for creating A-Frame! I’ve been waiting for an entry poin
 <p>After playing around with A-Frame for a few days I had a simple Minecraft-esque virtual reality website that I could actually enter into and look around in <a href="http://drawvr.com/minecraft/" target="_blank" rel="external">drawvr.com/minecraft/</a>. I tested it on an iPhone using a plastic Google Cardboard like HMD and an Oculus Rift DK2 and they both worked! To say the least, I was ecstatic. I created this VR experience that I could host online and share with my friends, family, and the interwebs.</p>
 <a id="more"></a>
 <p>I started my first project by creating a small plane (ground) to walk around in. I added a grass picture to the plane and the result was a stretched out, poor representation of grass. Then it hit me, just like with websites I can repeat a texture image and checker out a bunch of planes to make the grass look good (better fix below). That’s where I thought of Minecraft; it was the perfect choice. The textures are freely available for parents to make awesome party decor for kids. It’s widely known for being hacked and knocked off. People that have played Minecraft will see the possibility of A-Frame. The blocks even fit perfectly with a depth, width, and height of 1. It’s so close to using the Minecrift version of Minecraft you’d almost think you’re in the game. The way to properly texture an image:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane; height: 500; width: 500"</span></span></div><div class="line">          <span class="attr">position</span>=<span class="string">"0 -0.5 0"</span></div><div class="line">          <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span></div><div class="line">          <span class="attr">material</span>=<span class="string">"shader: flat; src: url(images/grass.png); repeat: 300 300"</span>&gt;<span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane; height: 500; width: 500"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">position</span>=<span class="string">"0 -0.5 0"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"shader: flat; src: url(images/grass.png); repeat: 300 300"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>There are a few tips I learned that may help you on your journey creating your first project:</p>
 <ul>
 <li>First, don’t worry about the first project being good. It can be the fifth; who cares. After the Minecraft project I had two false starts before crafting the next decent experience: <a href="http://drawvr.com/theater/" target="_blank" rel="external">drawvr/theater</a>.</li>
