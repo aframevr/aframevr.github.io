@@ -8,8 +8,120 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     
     <description>A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.</description>
-    <pubDate>Fri, 09 Mar 2018 08:05:51 GMT</pubDate>
+    <pubDate>Fri, 09 Mar 2018 10:16:10 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>A-Frame v0.8.0 - Performance and Production</title>
+      <link>https://aframe.io/blog/aframe-v0.8.0/</link>
+      <guid>https://aframe.io/blog/aframe-v0.8.0/</guid>
+      <pubDate>Fri, 09 Mar 2018 10:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;The A-Frame train continues! v0.8.0 has been released, bringing many, many
+performance improvements through being battle-tested in production
+applications. Notably, we ported many fixes and performance through building
+out &lt;a href=&quot;http://store.steampowered.com/app/803010/Supermedium/&quot;&gt;Supermedium&lt;/a&gt; using
+A-Frame!&lt;/p&gt;
+&lt;p&gt;We hit A Week of A-Frame 100, highlighting the long way we’ve come such that
+there are companies and startups taking the leap with A-Frame. Including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://ottifox.com/&quot;&gt;Ottifox&lt;/a&gt; - A nimble design app that helps you create VR and AR prototypes that run in the browser - without writing code.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.halolabs.io/&quot;&gt;Halo Labs&lt;/a&gt; - VR/AR design, prototyping, and collaboration solution for teams.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://spaces.archilogic.com/explore&quot;&gt;Archilogic&lt;/a&gt; - Turn floor plans into virtual tours.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfader.com/&quot;&gt;Vragments&lt;/a&gt; - Build and publishh your own 360 story.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://scapic.com/&quot;&gt;Scapic&lt;/a&gt; - Create immersive worlds.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://supermedium.com/&quot;&gt;Supermedium&lt;/a&gt; - The virtual reality browser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alongside many other companies!&lt;/p&gt;
+&lt;h2 id=&quot;what’s-new&quot;&gt;&lt;a href=&quot;#what’s-new&quot; class=&quot;headerlink&quot; title=&quot;What’s New?&quot;&gt;&lt;/a&gt;What’s New?&lt;/h2&gt;&lt;p&gt;The biggest change is allowing to modify three.js Object3D position, rotation,
+scale, and visible directly while still maintining in sync in the A-Frame
+layer. There is currently overhead with &lt;code&gt;.setAttribute&lt;/code&gt;, but all of that can be
+skipped for position, rotation, scale, visible by directly modifying three.js
+Object3D. That is a simple object property change. Since object transformations
+are one of the most often updated things, this saves on a lot of overhead. In
+general, we begin to try to find ways to skip &lt;code&gt;.setAttribute&lt;/code&gt; when able.&lt;/p&gt;
+&lt;p&gt;Lots of other performance improvements, both in the core of A-Frame and in top
+A-Frame community components (e.g., animation). We scoured a lot of the
+codebase removing unnecessary memory allocations and event emissions.&lt;/p&gt;
+&lt;p&gt;We’ve also upgraded to three.js’s WebVR API, which was a long and grueling
+process to integrate and catch all the bugs, but we did it! Still a lot to be
+done on the performance side.&lt;/p&gt;
+&lt;p&gt;The A-Frame Inspector also got a few nifty features such as tree collapsing on
+the entity panel, pressing &lt;code&gt;f&lt;/code&gt; to focus on an entity, and some bug fixes.&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/aframevr/aframe/releases/tag/v0.8.0&quot;&gt;release notes&lt;/a&gt; for the complete changelog which
+includes a list of all new features, optimizations, and bug fixes.&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>The A-Frame train continues! v0.8.0 has been released, bringing many, many
+performance improvements through being battle-tested in production
+applications. Notably, we ported many fixes and performance through building
+out <a href="http://store.steampowered.com/app/803010/Supermedium/" target="_blank" rel="external">Supermedium</a> using
+A-Frame!</p>
+<p>We hit A Week of A-Frame 100, highlighting the long way we’ve come such that
+there are companies and startups taking the leap with A-Frame. Including:</p>
+<ul>
+<li><a href="https://ottifox.com/" target="_blank" rel="external">Ottifox</a> - A nimble design app that helps you create VR and AR prototypes that run in the browser - without writing code.</li>
+<li><a href="https://www.halolabs.io/" target="_blank" rel="external">Halo Labs</a> - VR/AR design, prototyping, and collaboration solution for teams.</li>
+<li><a href="https://spaces.archilogic.com/explore" target="_blank" rel="external">Archilogic</a> - Turn floor plans into virtual tours.</li>
+<li><a href="https://getfader.com/" target="_blank" rel="external">Vragments</a> - Build and publishh your own 360 story.</li>
+<li><a href="https://scapic.com/" target="_blank" rel="external">Scapic</a> - Create immersive worlds.</li>
+<li><a href="https://supermedium.com/" target="_blank" rel="external">Supermedium</a> - The virtual reality browser.</li>
+</ul>
+<p>Alongside many other companies!</p>
+<h2 id="what’s-new"><a href="#what’s-new" class="headerlink" title="What’s New?"></a>What’s New?</h2><p>The biggest change is allowing to modify three.js Object3D position, rotation,
+scale, and visible directly while still maintining in sync in the A-Frame
+layer. There is currently overhead with <code>.setAttribute</code>, but all of that can be
+skipped for position, rotation, scale, visible by directly modifying three.js
+Object3D. That is a simple object property change. Since object transformations
+are one of the most often updated things, this saves on a lot of overhead. In
+general, we begin to try to find ways to skip <code>.setAttribute</code> when able.</p>
+<p>Lots of other performance improvements, both in the core of A-Frame and in top
+A-Frame community components (e.g., animation). We scoured a lot of the
+codebase removing unnecessary memory allocations and event emissions.</p>
+<p>We’ve also upgraded to three.js’s WebVR API, which was a long and grueling
+process to integrate and catch all the bugs, but we did it! Still a lot to be
+done on the performance side.</p>
+<p>The A-Frame Inspector also got a few nifty features such as tree collapsing on
+the entity panel, pressing <code>f</code> to focus on an entity, and some bug fixes.</p>
+<p>Check out the <a href="https://github.com/aframevr/aframe/releases/tag/v0.8.0" target="_blank" rel="external">release notes</a> for the complete changelog which
+includes a list of all new features, optimizations, and bug fixes.</p>
+<a id="more"></a>
+<h2 id="what-have-people-built"><a href="#what-have-people-built" class="headerlink" title="What Have People Built?"></a>What Have People Built?</h2><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div class="tweets">
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We have released a beta version of our new funny webvr game Cross the Street Fun <a href="https://t.co/BWfCqOxxiR" target="_blank" rel="external">https://t.co/BWfCqOxxiR</a> .<br>Do not get hit by the car.<a href="https://twitter.com/hashtag/threejs?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#threejs</a> <a href="https://twitter.com/hashtag/aframe?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#aframe</a> <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/webxr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webxr</a> <a href="https://t.co/nEPOCVhugl" target="_blank" rel="external">pic.twitter.com/nEPOCVhugl</a></p>&mdash; sromline (@sromline) <a href="https://twitter.com/sromline/status/958793852139331584?ref_src=twsrc%5Etfw" target="_blank" rel="external">January 31, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">ð Weâre excited to announce the launch of Supermedium, the virtual reality browser! Download it from <a href="https://t.co/Lnyvgt7HBY" target="_blank" rel="external">https://t.co/Lnyvgt7HBY</a>, put on a headset, and surf dozens of VR experiences on the Web. <a href="https://t.co/2rloFZl5ko" target="_blank" rel="external">https://t.co/2rloFZl5ko</a> <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/ycombinator?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#ycombinator</a> <a href="https://t.co/6aArQKvgpn" target="_blank" rel="external">pic.twitter.com/6aArQKvgpn</a></p>&mdash; Supermedium (@supermediumvr) <a href="https://twitter.com/supermediumvr/status/958799213877370880?ref_src=twsrc%5Etfw" target="_blank" rel="external">January 31, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Todayâs the day! Ottifox 2 is here - with Google Poly search built straight into the app, grouping features, streamlined UI and more! For a full run down of all the new features check out our blog post: <a href="https://t.co/pzcTTGZJz5" target="_blank" rel="external">https://t.co/pzcTTGZJz5</a> Examples to come! <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/aframe?ref_src=twsrc%5Etfw" target="_blank" rel="external">@aframe</a> <a href="https://twitter.com/hashtag/madewithblocks?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#madewithblocks</a> <a href="https://twitter.com/hashtag/VR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#VR</a> <a href="https://t.co/6FfpLZjpqJ" target="_blank" rel="external">pic.twitter.com/6FfpLZjpqJ</a></p>&mdash; Ottifox (@ottifox) <a href="https://twitter.com/ottifox/status/960994033169448966?ref_src=twsrc%5Etfw" target="_blank" rel="external">February 6, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;ve just released an <a href="https://twitter.com/aframevr?ref_src=twsrc%5Etfw" target="_blank" rel="external">@aframevr</a> component to pan, rotate and scale the user camera on <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a>, inspired by VR editors like <a href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#UnrealEngine</a> and <a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#unity3d</a>. <a href="https://twitter.com/hashtag/threejs?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#threejs</a> version coming soon :) <a href="https://t.co/bDyWnZVbcH" target="_blank" rel="external">https://t.co/bDyWnZVbcH</a> <a href="https://t.co/iNF97dhpZy" target="_blank" rel="external">pic.twitter.com/iNF97dhpZy</a></p>&mdash; Fernando Serrano (@fernandojsg) <a href="https://twitter.com/fernandojsg/status/968839714445975553?ref_src=twsrc%5Etfw" target="_blank" rel="external">February 28, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Starting to look familiar. <a href="https://twitter.com/hashtag/WebVR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#WebVR</a> browser game with <a href="https://twitter.com/aframevr?ref_src=twsrc%5Etfw" target="_blank" rel="external">@aframevr</a>. Added cities you must defend from incoming missiles. <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#gamedev</a> <a href="https://t.co/GtPcIJL7on" target="_blank" rel="external">pic.twitter.com/GtPcIJL7on</a></p>&mdash; Adam Alexander (@AdamAlexandr) <a href="https://twitter.com/AdamAlexandr/status/950126707033309184?ref_src=twsrc%5Etfw" target="_blank" rel="external">January 7, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Weâre proud to announce the launch of our first WebVR experience! Visit Pierre Koenigâs Case Study House 22 in full 3D on your HTC Vive, desktop, or mobile device. Check it out! <a href="https://t.co/SljvOHRnQ2" target="_blank" rel="external">https://t.co/SljvOHRnQ2</a><a href="https://twitter.com/hashtag/VR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#VR</a> <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/aframe?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#aframe</a> <a href="https://twitter.com/hashtag/threejs?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#threejs</a> <a href="https://twitter.com/hashtag/losangeles?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#losangeles</a> <a href="https://twitter.com/hashtag/midcentury?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#midcentury</a> <a href="https://twitter.com/hashtag/modern?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#modern</a> <a href="https://twitter.com/hashtag/architecture?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#architecture</a> <a href="https://t.co/iM8AJ8DYT3" target="_blank" rel="external">pic.twitter.com/iM8AJ8DYT3</a></p>&mdash; Paragram (@ParagramVR) <a href="https://twitter.com/ParagramVR/status/932070709983145985?ref_src=twsrc%5Etfw" target="_blank" rel="external">November 19, 2017</a></blockquote>
+
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Try âc o m p o s u r eâ - immersive experience for stress relief. Built with <a href="https://twitter.com/aframevr?ref_src=twsrc%5Etfw" target="_blank" rel="external">@aframevr</a>, its <a href="https://twitter.com/hashtag/WebVR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#WebVR</a> &amp; <a href="https://twitter.com/hashtag/3daudio?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#3daudio</a> for desktop, mobile and <a href="https://twitter.com/hashtag/VR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#VR</a>! Many thanks to <a href="https://twitter.com/ianpetrarca?ref_src=twsrc%5Etfw" target="_blank" rel="external">@ianpetrarca</a> &amp; <a href="https://twitter.com/datavized?ref_src=twsrc%5Etfw" target="_blank" rel="external">@datavized</a> for their skills, wisdom and guidance. Try it. PM me your feedback. Share! : <a href="https://t.co/bENdn6U5uk" target="_blank" rel="external">https://t.co/bENdn6U5uk</a> <a href="https://t.co/VgYfFLfMbD" target="_blank" rel="external">pic.twitter.com/VgYfFLfMbD</a></p>&mdash; Jeff McSpadden (@macspaddy) <a href="https://twitter.com/macspaddy/status/962108600465395712?ref_src=twsrc%5Etfw" target="_blank" rel="external">February 9, 2018</a></blockquote>
+</div>
+
+<h2 id="numbers"><a href="#numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>Since v0.7.0 was released in September 20th, 2017:</p>
+<ul>
+<li>There have been 30 new contributors, totalling 223.</li>
+<li>We have 1246 new members in the Slack community for a total of 5980.</li>
+<li>202,000 people have visited <a href="https://aframe.io">aframe.io</a> since last release.</li>
+</ul>
+<h2 id="what’s-next"><a href="#what’s-next" class="headerlink" title="What’s Next?"></a>What’s Next?</h2><p>We will continue performance improvements and battle testing. We will look at
+how to enable people to build more full applications and games versus small
+demos.  That includes disseminating the knowledge we’ve gained from building a
+browser, full games, and complex applications using A-Frame. Via guides,
+frameworks, boilerplates, and open game projects!</p>
+]]></content:encoded>
+      
+      <comments>https://aframe.io/blog/aframe-v0.8.0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>A Week of A-Frame 100</title>
@@ -1904,77 +2016,6 @@ j
 ]]></content:encoded>
       
       <comments>https://aframe.io/blog/awoa-79-80/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>A-Frame v0.7.0 - Windows Mixed Reality Headsets and glTF 2.0</title>
-      <link>https://aframe.io/blog/aframe-v0.7.0/</link>
-      <guid>https://aframe.io/blog/aframe-v0.7.0/</guid>
-      <pubDate>Thu, 21 Sep 2017 10:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;We welcome Microsoft to the A-Frame family. 0.7.0 ships out of the box support for Microsoft Mixed Reality headsets and controllers on Microsoft Edge thanks to the work of &lt;a href=&quot;https://github.com/olga-microsoft&quot;&gt;Olga Milovanova&lt;/a&gt;, &lt;a href=&quot;https://github.com/leweaver&quot;&gt;Lewis Weaver&lt;/a&gt;, &lt;a href=&quot;https://github.com/NellWaliczek&quot;&gt;Nell Waliczek&lt;/a&gt; and &lt;a href=&quot;https://github.com/SamiraAtMicrosoft&quot;&gt;Samira Hirji&lt;/a&gt;. A-Frame 0.7.0 fully adopts glTF 2.0, unlocking a huge pool of models you can now import in your experiences.&lt;/p&gt;
-&lt;p&gt;Use it today with &lt;code&gt;&amp;lt;script src=&amp;quot;https://aframe.io/releases/0.7.0/aframe.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;what’s-new&quot;&gt;&lt;a href=&quot;#what’s-new&quot; class=&quot;headerlink&quot; title=&quot;What’s New?&quot;&gt;&lt;/a&gt;What’s New?&lt;/h2&gt;&lt;p&gt;The glTF ecosystem has made huge progress and all the learnings have consolidated in the 2.0 version of the format. Thanks to the work of &lt;a href=&quot;http://github.com/donmccurdy/&quot;&gt;Don McCurdy&lt;/a&gt; and &lt;a href=&quot;https://github.com/takahirox&quot;&gt;Takahiro&lt;/a&gt; on A-Frame and THREE fronts you can now import glTF 2.0 models with a &lt;a href=&quot;https://aframe.io/docs/0.7.0/components/gltf-model.html#example&quot;&gt;single line of markup&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Microsoft is fully embracing immersive computing with Windows Mixed Reality and you can now have fun with your favorite framework on Microsoft Edge as well.&lt;/p&gt;
-&lt;p&gt;0.7.0 has now full support for all the major headsets and controllers: Daydream, Gear VR, Windows Mixed Reality, Oculus Rift and HTC Vive.&lt;/p&gt;
-&lt;p&gt;Performance is top priority for us and A-Frame 0.7.0 ships a bunch of improvements to tame the garbage collector beast:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Added some caching and reduced some type checking in critical paths of object updates.&lt;/li&gt;
-&lt;li&gt;Reduced memory usage by caching textures.&lt;/li&gt;
-&lt;li&gt;Reduced memory usage by reducing the number of instantiated JavaScript objects.&lt;/li&gt;
-&lt;li&gt;Eliminated duplicate asset network requests when using &lt;code&gt;&amp;lt;a-assets&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Throttled the &lt;code&gt;componentchanged&lt;/code&gt; event which gets emitted very often.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/aframevr/aframe/releases/tag/v0.7.0&quot;&gt;release notes&lt;/a&gt; for the complete changelog which
-includes a list of all new features, optimizations, and bug fixes.&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>We welcome Microsoft to the A-Frame family. 0.7.0 ships out of the box support for Microsoft Mixed Reality headsets and controllers on Microsoft Edge thanks to the work of <a href="https://github.com/olga-microsoft" target="_blank" rel="external">Olga Milovanova</a>, <a href="https://github.com/leweaver" target="_blank" rel="external">Lewis Weaver</a>, <a href="https://github.com/NellWaliczek" target="_blank" rel="external">Nell Waliczek</a> and <a href="https://github.com/SamiraAtMicrosoft" target="_blank" rel="external">Samira Hirji</a>. A-Frame 0.7.0 fully adopts glTF 2.0, unlocking a huge pool of models you can now import in your experiences.</p>
-<p>Use it today with <code>&lt;script src=&quot;https://aframe.io/releases/0.7.0/aframe.min.js&quot;&gt;&lt;/script&gt;</code>.</p>
-<h2 id="what’s-new"><a href="#what’s-new" class="headerlink" title="What’s New?"></a>What’s New?</h2><p>The glTF ecosystem has made huge progress and all the learnings have consolidated in the 2.0 version of the format. Thanks to the work of <a href="http://github.com/donmccurdy/" target="_blank" rel="external">Don McCurdy</a> and <a href="https://github.com/takahirox" target="_blank" rel="external">Takahiro</a> on A-Frame and THREE fronts you can now import glTF 2.0 models with a <a href="https://aframe.io/docs/0.7.0/components/gltf-model.html#example">single line of markup</a>.</p>
-<p>Microsoft is fully embracing immersive computing with Windows Mixed Reality and you can now have fun with your favorite framework on Microsoft Edge as well.</p>
-<p>0.7.0 has now full support for all the major headsets and controllers: Daydream, Gear VR, Windows Mixed Reality, Oculus Rift and HTC Vive.</p>
-<p>Performance is top priority for us and A-Frame 0.7.0 ships a bunch of improvements to tame the garbage collector beast:</p>
-<ul>
-<li>Added some caching and reduced some type checking in critical paths of object updates.</li>
-<li>Reduced memory usage by caching textures.</li>
-<li>Reduced memory usage by reducing the number of instantiated JavaScript objects.</li>
-<li>Eliminated duplicate asset network requests when using <code>&lt;a-assets&gt;</code>.</li>
-<li>Throttled the <code>componentchanged</code> event which gets emitted very often.</li>
-</ul>
-<p>Check out the <a href="https://github.com/aframevr/aframe/releases/tag/v0.7.0" target="_blank" rel="external">release notes</a> for the complete changelog which
-includes a list of all new features, optimizations, and bug fixes.</p>
-<a id="more"></a>
-<h2 id="what-have-people-built"><a href="#what-have-people-built" class="headerlink" title="What Have People Built?"></a>What Have People Built?</h2><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>We’ve had over 10 entries of <a href="https://aframe.io/blog/">A Week of A-Frame</a> since
-v0.6.0 was released. Highlights include the release of WebVR in Firefox 55. A-Frame powered immersive Websites are now just one click away for millions of people. We saw great progress made on multiuser experiences thanks to the <a href="https://github.com/haydenjameslee/networked-aframe" target="_blank" rel="external">Networked A-Frame Component</a>. The quality of the tooling is sky rocketing as <a href="https://hologram.cool/" target="_blank" rel="external">Hologram</a> or <a href="https://fasility.com/beblock/#link=https://vr.google.com/objects/2AJLgaNhQTD&amp;env=tron&amp;shadows=false&amp;smooth=false&amp;rap=0~0&amp;mode=orbit&amp;height=0&amp;scale=1" target="_blank" rel="external">BeBlock</a> demonstrate. VR UIs are getting fancy thanks to the <a href="https://github.com/etiennepinchon/aframe-material" target="_blank" rel="external">A-Frame Material Kit</a>. WebVR calls back home as <a href="http://home.cern/" target="_blank" rel="external">CERN</a>, where the Web was born, dips the toes in A-Frame. That’s a top achievement unlocked by the whole community.</p>
-<div class="tweets">
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Tada!! 🎉😁 <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> is getting a keyboard, input, checkbox, radio button and way more with a material design look! <a href="https://t.co/HCDNVAoqYm" target="_blank" rel="external">https://t.co/HCDNVAoqYm</a> <a href="https://t.co/XDYj3DgEts" target="_blank" rel="external">pic.twitter.com/XDYj3DgEts</a></p>&mdash; Etienne Pinchon (@EtiennePinchon) <a href="https://twitter.com/EtiennePinchon/status/904539478823448578" target="_blank" rel="external">September 4, 2017</a></blockquote>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">👁️ Hologram: all-in-one WebVR creation using <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> including Blocks support!<a href="https://t.co/oQwXfBZ557" target="_blank" rel="external">https://t.co/oQwXfBZ557</a> by <a href="https://twitter.com/EtiennePinchon" target="_blank" rel="external">@EtiennePinchon</a> <a href="https://t.co/Vyri3o710n" target="_blank" rel="external">pic.twitter.com/Vyri3o710n</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/894831140531339264" target="_blank" rel="external">August 8, 2017</a></blockquote>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">View <a href="https://twitter.com/googlevr" target="_blank" rel="external">@googlevr</a>&#39;s <a href="https://twitter.com/hashtag/MadeWithBlocks?src=hash" target="_blank" rel="external">#MadeWithBlocks</a> models in WebVR or WebAR with environments! Built in <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> by <a href="https://twitter.com/Fasility_VR" target="_blank" rel="external">@Fasility_VR</a> <a href="https://t.co/ojwAZnTfhF" target="_blank" rel="external">https://t.co/ojwAZnTfhF</a> <a href="https://t.co/YOdOkY85lR" target="_blank" rel="external">pic.twitter.com/YOdOkY85lR</a></p>&mdash; A-Frame (@aframevr) <a href="https://twitter.com/aframevr/status/892362454323281920" target="_blank" rel="external">August 1, 2017</a></blockquote>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Made a multi-user WebVR scene with cute little raccoons using Google Blocks + Networked-Aframe <a href="https://twitter.com/hashtag/MadeWithBlocks?src=hash" target="_blank" rel="external">#MadeWithBlocks</a> 😍<a href="https://t.co/KQmi4NncVD" target="_blank" rel="external">https://t.co/KQmi4NncVD</a> <a href="https://t.co/3zszko0rpO" target="_blank" rel="external">pic.twitter.com/3zszko0rpO</a></p>&mdash; Hayden Lee (@HaydenLee37) <a href="https://twitter.com/HaydenLee37/status/883507706539122688" target="_blank" rel="external">July 8, 2017</a></blockquote>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Visit CMS and the <a href="https://twitter.com/hashtag/LHC?src=hash" target="_blank" rel="external">#LHC</a> at <a href="https://twitter.com/CERN" target="_blank" rel="external">@CERN</a> with <a href="https://twitter.com/hashtag/VirtualReality?src=hash" target="_blank" rel="external">#VirtualReality</a>, powered by <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> and using <a href="https://twitter.com/googlevr" target="_blank" rel="external">@googlevr</a>&#39;s <a href="https://twitter.com/hashtag/googlecardboard?src=hash" target="_blank" rel="external">#googlecardboard</a>: <a href="https://t.co/l5c0xd3tie" target="_blank" rel="external">https://t.co/l5c0xd3tie</a> <a href="https://t.co/cF2qpeGyKS" target="_blank" rel="external">pic.twitter.com/cF2qpeGyKS</a></p>&mdash; CMS Experiment CERN (@CMSexperiment) <a href="https://twitter.com/CMSexperiment/status/890223864562810880" target="_blank" rel="external">July 26, 2017</a></blockquote>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">made a virtual reality game where you pet a dog. thats it thats the whole game <a href="https://t.co/YqBbtRFBiA" target="_blank" rel="external">pic.twitter.com/YqBbtRFBiA</a></p>&mdash; manny4߷4 (@mannynotfound) <a href="https://twitter.com/mannynotfound/status/879853657713516544" target="_blank" rel="external">June 28, 2017</a></blockquote>
-</div>
-
-<h2 id="numbers"><a href="#numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>Since v0.6.0 was released in Jun 29 2017:</p>
-<ul>
-<li>A-Frame has gained 24 new contributors, totalling 193.</li>
-<li>We have 749 new members in the Slack community for a total of 4,734. </li>
-<li>101,966 people have visited <a href="https://aframe.io">aframe.io</a> since last release.</li>
-</ul>
-<h2 id="what’s-next"><a href="#what’s-next" class="headerlink" title="What’s Next?"></a>What’s Next?</h2><p>We will keep profiling and measuring to make sure that A-Frame overhead is negligable and your content runs buttery smooth. We are starting to consolidate the API and want to get soon to a point we feel confortable with the design and ship a 1.0.0 release. 0.7.0 has shippped a bit earlier than we planned to make sure that Windows Mixed Reality headsets and Microsoft Edge are well supported at launch. A couple of features, such as Vive tracker support and spectator camera, have moved to 0.8.0. Keep an eye on the <a href="https://github.com/aframevr/aframe/blob/master/ROADMAP.md" target="_blank" rel="external">roadmap</a> to see what’s coming.</p>
-]]></content:encoded>
-      
-      <comments>https://aframe.io/blog/aframe-v0.7.0/#disqus_thread</comments>
     </item>
     
   </channel>

@@ -10,6 +10,8 @@
 
 
 
+  
+
 
 
 <!DOCTYPE html>
@@ -29,7 +31,7 @@
       data-aframe-version="0.8.0"
       data-docs-version="0.8.0">
   <head>
-    <title>A Week of A-Frame 34 – A-Frame</title>
+    <title>A-Frame v0.8.0 - Performance and Production – A-Frame</title>
     
 
 <script>
@@ -45,13 +47,12 @@
     <!-- Don't index old documentation pages. -->
     <meta name="robots"
       content="all">
-    <meta name="description" content="
-
-
-  How many cats can live in a small room? So purfect: https://t.co/lPyaH6Dzwf (built w/ @aframevr for Itch.io 2016 Procedural Generation Jam) pic.twitter.com/0eK2pkjqy3&amp;mdash; chris van wiemeersch (@cvanw) November 17, 2016
-
-
-  You’ve wanted this your entire life and just didn">
+    <meta name="description" content="The A-Frame train continues! v0.8.0 has been released, bringing many, many
+performance improvements through being battle-tested in production
+applications. Notably, we ported many fixes and performance through building
+out Supermedium using
+A-Frame!
+We hit A Week of A-Frame 100, ">
     <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-03-24 -->
@@ -59,31 +60,29 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="A Week of A-Frame 34 – A-Frame">
+    <meta property="og:title" content="A-Frame v0.8.0 - Performance and Production – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="
-
-
-  How many cats can live in a small room? So purfect: https://t.co/lPyaH6Dzwf (built w/ @aframevr for Itch.io 2016 Procedural Generation Jam) pic.twitter.com/0eK2pkjqy3&amp;mdash; chris van wiemeersch (@cvanw) November 17, 2016
-
-
-  You’ve wanted this your entire life and just didn">
-    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
-    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta property="og:description" content="The A-Frame train continues! v0.8.0 has been released, bringing many, many
+performance improvements through being battle-tested in production
+applications. Notably, we ported many fixes and performance through building
+out Supermedium using
+A-Frame!
+We hit A Week of A-Frame 100, ">
+    <meta property="og:image" content="https://aframe.io/images/blog/v0.8.0.jpg">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/blog/v0.8.0.jpg">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="A Week of A-Frame 34 – A-Frame">
-    <meta name="twitter:description" content="
-
-
-  How many cats can live in a small room? So purfect: https://t.co/lPyaH6Dzwf (built w/ @aframevr for Itch.io 2016 Procedural Generation Jam) pic.twitter.com/0eK2pkjqy3&amp;mdash; chris van wiemeersch (@cvanw) November 17, 2016
-
-
-  You’ve wanted this your entire life and just didn">
-    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:title" content="A-Frame v0.8.0 - Performance and Production – A-Frame">
+    <meta name="twitter:description" content="The A-Frame train continues! v0.8.0 has been released, bringing many, many
+performance improvements through being battle-tested in production
+applications. Notably, we ported many fixes and performance through building
+out Supermedium using
+A-Frame!
+We hit A Week of A-Frame 100, ">
+    <meta name="twitter:image" content="https://aframe.io/images/blog/v0.8.0.jpg">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
     <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
@@ -234,9 +233,9 @@
     <h3 class="section-title">Blog Posts</h3>
     <ul class="subnav section-subnav blog-subnav">
       
-        <li class="subnav-item ">
+        <li class="subnav-item  subnav-item-current">
           <a href="/blog/aframe-v0.8.0/"
-             class="subnav-link"
+             class="subnav-link current"
              title="A-Frame v0.8.0 - Performance and Production">
             A-Frame v0.8.0 - Performance and Production
           </a>
@@ -730,9 +729,9 @@
           </a>
         </li>
       
-        <li class="subnav-item  subnav-item-current">
+        <li class="subnav-item ">
           <a href="/blog/awoa-34/"
-             class="subnav-link current"
+             class="subnav-link"
              title="A Week of A-Frame 34">
             A Week of A-Frame 34
           </a>
@@ -1150,7 +1149,7 @@
   </div>
 </aside>
 
-  <div class="content content--blog copy post content--awoa">
+  <div class="content content--blog copy post ">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1205,9 +1204,9 @@
             <a href="/blog/" class="borderless-link">Blog</a>
           </p>
 
-          <h1 class="page__title post__heading">A Week of A-Frame 34</h1>
+          <h1 class="page__title post__heading">A-Frame v0.8.0 - Performance and Production</h1>
           <div class="post__metadata">
-  <p class="post__timestamp">Nov 11, 2016</p>
+  <p class="post__timestamp">Mar 9, 2018</p>
   
     <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/andgokevin">Kevin Ngo</a></p>
   
@@ -1215,100 +1214,86 @@
 
 
           
+
+          
             
-              <i>What's up with A-Frame, a WebVR framework for building virtual reality experiences, for the week of Nov 4, 2016 to Nov 11, 2016.</i>
-            
-            
+  
+  
+    
+  
+
+  
+    <img src="/images/blog/v0.8.0.jpg" alt="A-Frame v0.8.0 - Performance and Production">
+  
+
 
           
 
-          
-
-          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<div class="tweets tweets-feature">
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">How many cats can live in a small room? So purfect: <a href="https://t.co/lPyaH6Dzwf" target="_blank" rel="external">https://t.co/lPyaH6Dzwf</a> (built w/ <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> for Itch.io 2016 Procedural Generation Jam) <a href="https://t.co/0eK2pkjqy3" target="_blank" rel="external">pic.twitter.com/0eK2pkjqy3</a></p>&mdash; chris van wiemeersch (@cvanw) <a href="https://twitter.com/cvanw/status/799091305708011521" target="_blank" rel="external">November 17, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">You’ve wanted this your entire life and just didn’t know <a href="https://twitter.com/kubernetesio" target="_blank" rel="external">@kubernetesio</a> in VR presentation from Kubecon is now live - <a href="https://t.co/PQkDfF0py6" target="_blank" rel="external">https://t.co/PQkDfF0py6</a> <a href="https://t.co/1CYaYnrp3S" target="_blank" rel="external">pic.twitter.com/1CYaYnrp3S</a></p>&mdash; Ryan van Niekerk (@iamnayr) <a href="https://twitter.com/iamnayr/status/798953712777502720" target="_blank" rel="external">November 16, 2016</a></blockquote>
-
-</div>
-
+          <p>The A-Frame train continues! v0.8.0 has been released, bringing many, many
+performance improvements through being battle-tested in production
+applications. Notably, we ported many fixes and performance through building
+out <a href="http://store.steampowered.com/app/803010/Supermedium/" target="_blank" rel="external">Supermedium</a> using
+A-Frame!</p>
+<p>We hit A Week of A-Frame 100, highlighting the long way we’ve come such that
+there are companies and startups taking the leap with A-Frame. Including:</p>
+<ul>
+<li><a href="https://ottifox.com/" target="_blank" rel="external">Ottifox</a> - A nimble design app that helps you create VR and AR prototypes that run in the browser - without writing code.</li>
+<li><a href="https://www.halolabs.io/" target="_blank" rel="external">Halo Labs</a> - VR/AR design, prototyping, and collaboration solution for teams.</li>
+<li><a href="https://spaces.archilogic.com/explore" target="_blank" rel="external">Archilogic</a> - Turn floor plans into virtual tours.</li>
+<li><a href="https://getfader.com/" target="_blank" rel="external">Vragments</a> - Build and publishh your own 360 story.</li>
+<li><a href="https://scapic.com/" target="_blank" rel="external">Scapic</a> - Create immersive worlds.</li>
+<li><a href="https://supermedium.com/" target="_blank" rel="external">Supermedium</a> - The virtual reality browser.</li>
+</ul>
+<p>Alongside many other companies!</p>
+<h2 id="what’s-new"><a href="#what’s-new" class="headerlink" title="What’s New?"></a>What’s New?</h2><p>The biggest change is allowing to modify three.js Object3D position, rotation,
+scale, and visible directly while still maintining in sync in the A-Frame
+layer. There is currently overhead with <code>.setAttribute</code>, but all of that can be
+skipped for position, rotation, scale, visible by directly modifying three.js
+Object3D. That is a simple object property change. Since object transformations
+are one of the most often updated things, this saves on a lot of overhead. In
+general, we begin to try to find ways to skip <code>.setAttribute</code> when able.</p>
+<p>Lots of other performance improvements, both in the core of A-Frame and in top
+A-Frame community components (e.g., animation). We scoured a lot of the
+codebase removing unnecessary memory allocations and event emissions.</p>
+<p>We’ve also upgraded to three.js’s WebVR API, which was a long and grueling
+process to integrate and catch all the bugs, but we did it! Still a lot to be
+done on the performance side.</p>
+<p>The A-Frame Inspector also got a few nifty features such as tree collapsing on
+the entity panel, pressing <code>f</code> to focus on an entity, and some bug fixes.</p>
+<p>Check out the <a href="https://github.com/aframevr/aframe/releases/tag/v0.8.0" target="_blank" rel="external">release notes</a> for the complete changelog which
+includes a list of all new features, optimizations, and bug fixes.</p>
 <a id="more"></a>
-<h2 id="projects"><a href="#projects" class="headerlink" title="Projects"></a>Projects</h2><div class="tweets">
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Playing with <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>. Soon you will be able to peruse my site from a private beach in Trawangan, Indonesia.<br><br>BECAUSE <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a>, THAT&#39;S WHY! <a href="https://t.co/4EguHzqtzr" target="_blank" rel="external">pic.twitter.com/4EguHzqtzr</a></p>&mdash; Nick Spiel (@nickspiel) <a href="https://twitter.com/nickspiel/status/797678183462014976" target="_blank" rel="external">November 13, 2016</a></blockquote>
+<h2 id="what-have-people-built"><a href="#what-have-people-built" class="headerlink" title="What Have People Built?"></a>What Have People Built?</h2><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div class="tweets">
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We have released a beta version of our new funny webvr game Cross the Street Fun <a href="https://t.co/BWfCqOxxiR" target="_blank" rel="external">https://t.co/BWfCqOxxiR</a> .<br>Do not get hit by the car.<a href="https://twitter.com/hashtag/threejs?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#threejs</a> <a href="https://twitter.com/hashtag/aframe?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#aframe</a> <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/webxr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webxr</a> <a href="https://t.co/nEPOCVhugl" target="_blank" rel="external">pic.twitter.com/nEPOCVhugl</a></p>&mdash; sromline (@sromline) <a href="https://twitter.com/sromline/status/958793852139331584?ref_src=twsrc%5Etfw" target="_blank" rel="external">January 31, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">ð Weâre excited to announce the launch of Supermedium, the virtual reality browser! Download it from <a href="https://t.co/Lnyvgt7HBY" target="_blank" rel="external">https://t.co/Lnyvgt7HBY</a>, put on a headset, and surf dozens of VR experiences on the Web. <a href="https://t.co/2rloFZl5ko" target="_blank" rel="external">https://t.co/2rloFZl5ko</a> <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/ycombinator?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#ycombinator</a> <a href="https://t.co/6aArQKvgpn" target="_blank" rel="external">pic.twitter.com/6aArQKvgpn</a></p>&mdash; Supermedium (@supermediumvr) <a href="https://twitter.com/supermediumvr/status/958799213877370880?ref_src=twsrc%5Etfw" target="_blank" rel="external">January 31, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Todayâs the day! Ottifox 2 is here - with Google Poly search built straight into the app, grouping features, streamlined UI and more! For a full run down of all the new features check out our blog post: <a href="https://t.co/pzcTTGZJz5" target="_blank" rel="external">https://t.co/pzcTTGZJz5</a> Examples to come! <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/aframe?ref_src=twsrc%5Etfw" target="_blank" rel="external">@aframe</a> <a href="https://twitter.com/hashtag/madewithblocks?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#madewithblocks</a> <a href="https://twitter.com/hashtag/VR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#VR</a> <a href="https://t.co/6FfpLZjpqJ" target="_blank" rel="external">pic.twitter.com/6FfpLZjpqJ</a></p>&mdash; Ottifox (@ottifox) <a href="https://twitter.com/ottifox/status/960994033169448966?ref_src=twsrc%5Etfw" target="_blank" rel="external">February 6, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;ve just released an <a href="https://twitter.com/aframevr?ref_src=twsrc%5Etfw" target="_blank" rel="external">@aframevr</a> component to pan, rotate and scale the user camera on <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a>, inspired by VR editors like <a href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#UnrealEngine</a> and <a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#unity3d</a>. <a href="https://twitter.com/hashtag/threejs?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#threejs</a> version coming soon :) <a href="https://t.co/bDyWnZVbcH" target="_blank" rel="external">https://t.co/bDyWnZVbcH</a> <a href="https://t.co/iNF97dhpZy" target="_blank" rel="external">pic.twitter.com/iNF97dhpZy</a></p>&mdash; Fernando Serrano (@fernandojsg) <a href="https://twitter.com/fernandojsg/status/968839714445975553?ref_src=twsrc%5Etfw" target="_blank" rel="external">February 28, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Starting to look familiar. <a href="https://twitter.com/hashtag/WebVR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#WebVR</a> browser game with <a href="https://twitter.com/aframevr?ref_src=twsrc%5Etfw" target="_blank" rel="external">@aframevr</a>. Added cities you must defend from incoming missiles. <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#gamedev</a> <a href="https://t.co/GtPcIJL7on" target="_blank" rel="external">pic.twitter.com/GtPcIJL7on</a></p>&mdash; Adam Alexander (@AdamAlexandr) <a href="https://twitter.com/AdamAlexandr/status/950126707033309184?ref_src=twsrc%5Etfw" target="_blank" rel="external">January 7, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Weâre proud to announce the launch of our first WebVR experience! Visit Pierre Koenigâs Case Study House 22 in full 3D on your HTC Vive, desktop, or mobile device. Check it out! <a href="https://t.co/SljvOHRnQ2" target="_blank" rel="external">https://t.co/SljvOHRnQ2</a><a href="https://twitter.com/hashtag/VR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#VR</a> <a href="https://twitter.com/hashtag/webvr?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/aframe?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#aframe</a> <a href="https://twitter.com/hashtag/threejs?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#threejs</a> <a href="https://twitter.com/hashtag/losangeles?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#losangeles</a> <a href="https://twitter.com/hashtag/midcentury?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#midcentury</a> <a href="https://twitter.com/hashtag/modern?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#modern</a> <a href="https://twitter.com/hashtag/architecture?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#architecture</a> <a href="https://t.co/iM8AJ8DYT3" target="_blank" rel="external">pic.twitter.com/iM8AJ8DYT3</a></p>&mdash; Paragram (@ParagramVR) <a href="https://twitter.com/ParagramVR/status/932070709983145985?ref_src=twsrc%5Etfw" target="_blank" rel="external">November 19, 2017</a></blockquote>
 
 
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Data generated <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> <a href="https://twitter.com/googlecardboard" target="_blank" rel="external">@googlecardboard</a> <a href="https://twitter.com/sidefx" target="_blank" rel="external">@sidefx</a> <a href="https://twitter.com/openstreetmap" target="_blank" rel="external">@openstreetmap</a> fun Low Mann -fighting my Samsung S6  <a href="https://t.co/wydaWpYhpU" target="_blank" rel="external">https://t.co/wydaWpYhpU</a> <a href="https://t.co/ZWxRIzZNCd" target="_blank" rel="external">pic.twitter.com/ZWxRIzZNCd</a></p>&mdash; Scott Singer (@scottsingercg) <a href="https://twitter.com/scottsingercg/status/798388903845785600" target="_blank" rel="external">November 15, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">roomscale scatterplot<br>an <a href="https://twitter.com/hashtag/aframevr?src=hash" target="_blank" rel="external">#aframevr</a> + <a href="https://twitter.com/hashtag/d3js?src=hash" target="_blank" rel="external">#d3js</a> experiment<br>for the <a href="https://twitter.com/hashtag/htcvive?src=hash" target="_blank" rel="external">#htcvive</a> <br>🎩 <a href="https://twitter.com/bryik_ws" target="_blank" rel="external">@bryik_ws</a> <a href="https://twitter.com/donrmccurdy" target="_blank" rel="external">@donrmccurdy</a> <a href="https://t.co/YpPMjru4s8" target="_blank" rel="external">https://t.co/YpPMjru4s8</a> <a href="https://t.co/EgdZFQUmja" target="_blank" rel="external">pic.twitter.com/EgdZFQUmja</a></p>&mdash; Micah Stubbs (@micahstubbs) <a href="https://twitter.com/micahstubbs/status/797649785524129792" target="_blank" rel="external">November 13, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Holzerisms - a <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> news ticker experiment using <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://t.co/yUiu7Po8t2" target="_blank" rel="external">https://t.co/yUiu7Po8t2</a> <a href="https://t.co/Wh8XZQs7hr" target="_blank" rel="external">pic.twitter.com/Wh8XZQs7hr</a></p>&mdash; The Last Medium (@LastMedium) <a href="https://twitter.com/LastMedium/status/798354383494901760" target="_blank" rel="external">November 15, 2016</a></blockquote>
-
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Try âc o m p o s u r eâ - immersive experience for stress relief. Built with <a href="https://twitter.com/aframevr?ref_src=twsrc%5Etfw" target="_blank" rel="external">@aframevr</a>, its <a href="https://twitter.com/hashtag/WebVR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#WebVR</a> &amp; <a href="https://twitter.com/hashtag/3daudio?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#3daudio</a> for desktop, mobile and <a href="https://twitter.com/hashtag/VR?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="external">#VR</a>! Many thanks to <a href="https://twitter.com/ianpetrarca?ref_src=twsrc%5Etfw" target="_blank" rel="external">@ianpetrarca</a> &amp; <a href="https://twitter.com/datavized?ref_src=twsrc%5Etfw" target="_blank" rel="external">@datavized</a> for their skills, wisdom and guidance. Try it. PM me your feedback. Share! : <a href="https://t.co/bENdn6U5uk" target="_blank" rel="external">https://t.co/bENdn6U5uk</a> <a href="https://t.co/VgYfFLfMbD" target="_blank" rel="external">pic.twitter.com/VgYfFLfMbD</a></p>&mdash; Jeff McSpadden (@macspaddy) <a href="https://twitter.com/macspaddy/status/962108600465395712?ref_src=twsrc%5Etfw" target="_blank" rel="external">February 9, 2018</a></blockquote>
 </div>
 
-<h2 id="components"><a href="#components" class="headerlink" title="Components"></a>Components</h2><div class="tweets">
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Maknig A-Frame MMD component… <a href="https://t.co/2IGsUkrLNj" target="_blank" rel="external">https://t.co/2IGsUkrLNj</a> <a href="https://t.co/J8v7B1sTPR" target="_blank" rel="external">https://t.co/J8v7B1sTPR</a> <a href="https://t.co/LFfE5WSxQR" target="_blank" rel="external">https://t.co/LFfE5WSxQR</a> <a href="https://twitter.com/hashtag/aframevr?src=hash" target="_blank" rel="external">#aframevr</a> <a href="https://twitter.com/hashtag/vr?src=hash" target="_blank" rel="external">#vr</a> <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/threejs?src=hash" target="_blank" rel="external">#threejs</a></p>&mdash; takahiro(John Smith) (@superhoge) <a href="https://twitter.com/superhoge/status/797326137466572801" target="_blank" rel="external">November 12, 2016</a></blockquote>
-
-</div>
-
-<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><div class="tweets">
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Exploring Your <a href="https://twitter.com/hashtag/Kubernetes?src=hash" target="_blank" rel="external">#Kubernetes</a> Cluster in <a href="https://twitter.com/hashtag/VR?src=hash" target="_blank" rel="external">#VR</a> with <a href="https://twitter.com/lonelyplanet" target="_blank" rel="external">@lonelyplanet</a>&#39;s <a href="https://twitter.com/iamnayr" target="_blank" rel="external">@iamnayr</a> <a href="https://twitter.com/hashtag/Kubecon?src=hash" target="_blank" rel="external">#Kubecon</a> <a href="https://twitter.com/hashtag/CloudNativeCon?src=hash" target="_blank" rel="external">#CloudNativeCon</a> <a href="https://t.co/bzZMk6BF9k" target="_blank" rel="external">pic.twitter.com/bzZMk6BF9k</a></p>&mdash; Dan Romlein (@danielromlein) <a href="https://twitter.com/danielromlein/status/796458408098467840" target="_blank" rel="external">November 9, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We&#39;re having an <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>/@d3jsbayarea VR meetup at Mozilla Mountain View Sat. afternoon. Organized by <a href="https://twitter.com/micahstubbs" target="_blank" rel="external">@micahstubbs</a>. <a href="https://t.co/vgSlfpdASx" target="_blank" rel="external">https://t.co/vgSlfpdASx</a></p>&mdash; Kevin Ngo (@andgokevin) <a href="https://twitter.com/andgokevin/status/798722478310686720" target="_blank" rel="external">November 16, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just added a new speaker to Dec2-3 Web 1.0 Conf at <a href="https://twitter.com/medialab" target="_blank" rel="external">@medialab</a>! <a href="https://twitter.com/_liooil" target="_blank" rel="external">@_liooil</a> on building WebVR content with <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>! <a href="https://t.co/RXpwtnxAgX" target="_blank" rel="external">https://t.co/RXpwtnxAgX</a> <a href="https://t.co/j6IqJCBRwy" target="_blank" rel="external">pic.twitter.com/j6IqJCBRwy</a></p>&mdash; Amber Case (@caseorganic) <a href="https://twitter.com/caseorganic/status/797908166969159680" target="_blank" rel="external">November 13, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Missed my <a href="https://twitter.com/hashtag/webVR?src=hash" target="_blank" rel="external">#webVR</a> talk yesterday at Be.VR? Here are my slides: <a href="https://t.co/nn7hnVjRKp" target="_blank" rel="external">https://t.co/nn7hnVjRKp</a> trickier without me talking BUT questions welcomed!</p>&mdash; Fabien Benetou (@utopiah) <a href="https://twitter.com/utopiah/status/799139719120637952" target="_blank" rel="external">November 17, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Creating scene using <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> .<br>It was a wonderful experience for attendees.<a href="https://twitter.com/hashtag/MozActivate?src=hash" target="_blank" rel="external">#MozActivate</a> <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a><a href="https://twitter.com/ram_gurumukhi" target="_blank" rel="external">@ram_gurumukhi</a> <a href="https://twitter.com/andgokevin" target="_blank" rel="external">@andgokevin</a> <a href="https://twitter.com/OshoParth" target="_blank" rel="external">@OshoParth</a> <a href="https://t.co/m3RhUDL7fV" target="_blank" rel="external">pic.twitter.com/m3RhUDL7fV</a></p>&mdash; Md Shahbaz Alam (@mdsbzalam) <a href="https://twitter.com/mdsbzalam/status/797426391738413057" target="_blank" rel="external">November 12, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="in" dir="ltr"><a href="https://twitter.com/MYNET55" target="_blank" rel="external">@MYNET55</a> introduing <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> at <a href="https://twitter.com/hashtag/MozpacersMozactivate?src=hash" target="_blank" rel="external">#MozpacersMozactivate</a>.  <a href="https://twitter.com/StartMozilla" target="_blank" rel="external">@StartMozilla</a> <a href="https://t.co/oncc7CLyj1" target="_blank" rel="external">pic.twitter.com/oncc7CLyj1</a></p>&mdash; Pushpita Piku Dey (@PushpitaPikuDey) <a href="https://twitter.com/PushpitaPikuDey/status/797513353392320512" target="_blank" rel="external">November 12, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/aframevr?src=hash" target="_blank" rel="external">#aframevr</a> + <a href="https://twitter.com/hashtag/d3js?src=hash" target="_blank" rel="external">#d3js</a> open lab <br>this weekend at <a href="https://twitter.com/mozilla" target="_blank" rel="external">@mozilla</a> in Mountain View <br>🖥️ <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/andgokevin" target="_blank" rel="external">@andgokevin</a> <a href="https://twitter.com/enjalot" target="_blank" rel="external">@enjalot</a> 🌐<a href="https://t.co/CqZgXJuNnW" target="_blank" rel="external">https://t.co/CqZgXJuNnW</a> <a href="https://t.co/lJPkNZt3vJ" target="_blank" rel="external">pic.twitter.com/lJPkNZt3vJ</a></p>&mdash; D3.BayArea() (@D3BayArea) <a href="https://twitter.com/D3BayArea/status/798757894141288448" target="_blank" rel="external">November 16, 2016</a></blockquote>
-
-</div>
-
+<h2 id="numbers"><a href="#numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>Since v0.7.0 was released in September 20th, 2017:</p>
 <ul>
-<li><a href="http://tiptoes.ca/campus-clubs-grace-hopper-open-source-day/" target="_blank" rel="external">Mozilla Campus Clubs @ Grace Hopper Open Source Day</a> by @sunnydeveloper</li>
+<li>There have been 30 new contributors, totalling 223.</li>
+<li>We have 1246 new members in the Slack community for a total of 5980.</li>
+<li>202,000 people have visited <a href="https://aframe.io">aframe.io</a> since last release.</li>
 </ul>
-<h2 id="articles"><a href="#articles" class="headerlink" title="Articles"></a>Articles</h2><div class="tweets">
-  <blockquote class="twitter-tweet"><p lang="de" dir="ltr">Im frisch gedruckten <a href="https://twitter.com/t3n" target="_blank" rel="external">@t3n</a> Magazin ist ein Artikel von mir zum <a href="https://twitter.com/hashtag/Web?src=hash" target="_blank" rel="external">#Web</a> <a href="https://twitter.com/hashtag/VR?src=hash" target="_blank" rel="external">#VR</a> Framework <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> – also kaufen, lesen und dann Fragen an mich! :) <a href="https://t.co/7J7WypjStM" target="_blank" rel="external">pic.twitter.com/7J7WypjStM</a></p>&mdash; VR JUMP (@vrjump) <a href="https://twitter.com/vrjump/status/799294332637351936" target="_blank" rel="external">November 17, 2016</a></blockquote>
+<h2 id="what’s-next"><a href="#what’s-next" class="headerlink" title="What’s Next?"></a>What’s Next?</h2><p>We will continue performance improvements and battle testing. We will look at
+how to enable people to build more full applications and games versus small
+demos.  That includes disseminating the knowledge we’ve gained from building a
+browser, full games, and complex applications using A-Frame. Via guides,
+frameworks, boilerplates, and open game projects!</p>
 
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Workshop Report of the <a href="https://twitter.com/w3c" target="_blank" rel="external">@W3C</a> Workshop on Web &amp; Virtual Reality  <a href="https://t.co/vOBUZbl748" target="_blank" rel="external">https://t.co/vOBUZbl748</a> <a href="https://twitter.com/hashtag/w3cvr?src=hash" target="_blank" rel="external">#w3cvr</a> <a href="https://twitter.com/hashtag/webVR?src=hash" target="_blank" rel="external">#webVR</a> via  <a href="https://twitter.com/dontcallmeDOM" target="_blank" rel="external">@dontcallmedom</a></p>&mdash; Fabien Benetou (@utopiah) <a href="https://twitter.com/utopiah/status/799238651972612096" target="_blank" rel="external">November 17, 2016</a></blockquote>
-
-</div>
-
-<ul>
-<li><a href="http://www.mattnutsch.com/How_to_Make_a_VR_Game" target="_blank" rel="external">How to Make a VR Game in JavaScript</a> by Matt Nutsch</li>
-</ul>
-<h2 id="miscellaneous"><a href="#miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h2><div class="tweets">
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hey what&#39;s this? a VR fox!<br>Done with <a href="https://twitter.com/hashtag/apainter?src=hash" target="_blank" rel="external">#apainter</a> See it here: <a href="https://t.co/NMhTN5nblb" target="_blank" rel="external">https://t.co/NMhTN5nblb</a> <a href="https://t.co/0TGdcdMxts" target="_blank" rel="external">pic.twitter.com/0TGdcdMxts</a></p>&mdash; Diego F. Goberna (@feiss) <a href="https://twitter.com/feiss/status/799399665640697856" target="_blank" rel="external">November 17, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">(video) <a href="https://twitter.com/hashtag/Firefox?src=hash" target="_blank" rel="external">#Firefox</a> team &amp; <a href="https://twitter.com/Bitly" target="_blank" rel="external">@Bitly</a> face off in a game of <a href="https://twitter.com/hashtag/VR?src=hash" target="_blank" rel="external">#VR</a> Pictionary - <a href="https://t.co/5pK2iXcM0X" target="_blank" rel="external">https://t.co/5pK2iXcM0X</a><a href="https://twitter.com/firefox" target="_blank" rel="external">@firefox</a> <a href="https://twitter.com/mozillavr" target="_blank" rel="external">@mozillavr</a> <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/MozPk?src=hash" target="_blank" rel="external">#MozPk</a> <a href="https://t.co/ZNConHN45l" target="_blank" rel="external">pic.twitter.com/ZNConHN45l</a></p>&mdash; Mozilla Pakistan (@MozPk) <a href="https://twitter.com/MozPk/status/797463632078663680" target="_blank" rel="external">November 12, 2016</a></blockquote>
-
-
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Developers, designers, artists: create accessible VR experiences with <a href="https://twitter.com/mozilla" target="_blank" rel="external">@Mozilla</a>&#39;s A-Frame <a href="https://t.co/Ohi8otmHfU" target="_blank" rel="external">https://t.co/Ohi8otmHfU</a> <a href="https://twitter.com/mozillavr" target="_blank" rel="external">@mozillavr</a> <a href="https://twitter.com/hashtag/teachtheweb?src=hash" target="_blank" rel="external">#teachtheweb</a> <a href="https://t.co/rq83VcT8b6" target="_blank" rel="external">pic.twitter.com/rq83VcT8b6</a></p>&mdash; Mozilla Learning (@MozLearn) <a href="https://twitter.com/MozLearn/status/798397621211725824" target="_blank" rel="external">November 15, 2016</a></blockquote>
-
-</div>
-
-
-          
-            
-
-            
-
-            
 
           
         </article>
@@ -1318,10 +1303,8 @@
           
           
           
-            <span class="float-left"><a href="/blog/awoa-33/" class="guide-link guide-link-left">← A Week of A-Frame 33</a></span>
+            <span class="float-left"><a href="/blog/awoa-100/" class="guide-link guide-link-left">← A Week of A-Frame 100</a></span>
           
-          
-            <span class="float-right"><a href="/blog/awoa-35-39/" class="guide-link guide-link-right">A Week of A-Frame 35 - 39 →</a></span>
           
         </footer>
       
@@ -1329,7 +1312,7 @@
       <footer class="footer footnote">
         <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
         
-          <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/awoa-34.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+          <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/aframe-v0.8.0.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
         
 
         <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
@@ -1343,6 +1326,63 @@
       </footer>
     </div>
 
+    
+      <div class="secondary-sidebar">
+        
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#what’s-new">What’s New?</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#what-have-people-built">What Have People Built?</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#numbers">Numbers</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#what’s-next">What’s Next?</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
     
   </div>
 </div>
