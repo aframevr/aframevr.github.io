@@ -1153,7 +1153,7 @@ where the developer places an entity in 3D space, or in which order they define
 the elements in markup. We can often run into scenarios where foreground
 entities occlude background entities. This creates confusion and unwanted
 visual defects.</p>
-<p>To work around this issue, try changing the order of the entities in the HTML.</p>
+<p>To work around this issue, try changing the order of the entities in the HTML. In case of png images, sometimes this issue can be solved by setting attribute <code>alpha-test</code>, for example, <code>alpha-test=&quot;0.5&quot;</code>. You should play around with its value to see the one that solves the issue.</p>
 <h2 id="register-a-custom-shader-material"><a href="#register-a-custom-shader-material" class="headerlink" title="Register a Custom Shader Material"></a>Register a Custom Shader Material</h2><p>We can register custom shader materials for appearances and effects using
 <code>AFRAME.registerShader</code>.</p>
 <p>Let’s walk through an <a href="https://codepen.io/machenmusik/pen/WZyQNj" target="_blank" rel="external">example CodePen</a> with step-by-step commentary.
