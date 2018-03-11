@@ -1147,6 +1147,46 @@ both build on top of the raycaster component.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="intersection-object"><a href="#intersection-object" class="headerlink" title="Intersection Object"></a>Intersection Object</h3><p>The event detail contains intersection objects. They are returned straight from
+<a href="https://threejs.org/docs/#api/core/Raycaster" target="_blank" rel="external">three.js <code>Raycaster.intersectObjects.</code></a>:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>distance</td>
+<td>distance between the origin of the ray and the intersection</td>
+</tr>
+<tr>
+<td>point</td>
+<td>point of intersection, in world coordinates</td>
+</tr>
+<tr>
+<td>face</td>
+<td>intersected face</td>
+</tr>
+<tr>
+<td>faceIndex</td>
+<td>index of the intersected face</td>
+</tr>
+<tr>
+<td>indices</td>
+<td>indices of vertices comprising the intersected face</td>
+</tr>
+<tr>
+<td>object</td>
+<td>the intersected object</td>
+</tr>
+<tr>
+<td>uv</td>
+<td>U,V coordinates at point of intersection</td>
+</tr>
+</tbody>
+</table>
 <h2 id="members"><a href="#members" class="headerlink" title="Members"></a>Members</h2><table>
 <thead>
 <tr>
@@ -1279,6 +1319,10 @@ shoot straight through.</p>
         <!-- Nested. -->
         
           <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#intersection-object">Intersection Object</a>
+              </li>
             
           </ul>
         
