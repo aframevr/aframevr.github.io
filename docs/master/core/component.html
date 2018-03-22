@@ -1349,7 +1349,7 @@ will call a component’s <code>tick</code> handler:</p>
 the controller’s animations, update the controller’s position and rotation, and
 check for button presses.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'tracked-controls'</span>, &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params">time, timeDelta</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.updateMeshAnimation();</span><br><span class="line">    <span class="keyword">this</span>.updatePose();</span><br><span class="line">    <span class="keyword">this</span>.updateButtons();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="tock-time-timedelta"><a href="#tock-time-timedelta" class="headerlink" title=".tock (time, timeDelta)"></a><code>.tock (time, timeDelta)</code></h3><p>Identical to the tick method but invoked after the scene has rendered. </p>
+<h3 id="tock-time-timedelta-camera"><a href="#tock-time-timedelta-camera" class="headerlink" title=".tock (time, timeDelta, camera)"></a><code>.tock (time, timeDelta, camera)</code></h3><p>Identical to the tick method but invoked after the scene has rendered. </p>
 <p>The <code>tock</code> handler is used to run logic that needs access to the drawn scene before it’s pushed into the headset like postprocessing effects.</p>
 <h3 id="pause"><a href="#pause" class="headerlink" title=".pause ()"></a><code>.pause ()</code></h3><p><code>.pause ()</code> is called when the entity or scene pauses. The entity can call a
 component’s <code>pause</code> handler:</p>
@@ -1551,7 +1551,7 @@ example component:</p>
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#tock-time-timedelta">.tock (time, timeDelta)</a>
+                <a class="subnav-link" href="#tock-time-timedelta-camera">.tock (time, timeDelta, camera)</a>
               </li>
             
               <li class="subnav-item">
