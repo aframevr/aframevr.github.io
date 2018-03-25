@@ -1057,15 +1057,13 @@
       <p>The camera component defines from which perspective the user views the scene.
 The camera is commonly paired with controls components that allow input devices
 to move and rotate the camera.</p>
-<h2 id="examples"><a href="#examples" class="headerlink" title="Examples"></a>Examples</h2><p>A camera situated at the average height of human eye level (1.6 meters).
-When used with controls that receive rotation or position (e.g. from a
-VR device) this position will be overridden.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"0 1.6 0"</span> <span class="attr">camera</span> <span class="attr">look-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>When moving or rotating the camera relative to the scene, use a camera rig
-around the camera. By doing so, the camera’s height offset can be updated
-by roomscale devices, while still allowing the tracked area to be
-moved independently around the scene.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"#rig"</span> <span class="attr">position</span>=<span class="string">"25 10 0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"camera"</span> <span class="attr">position</span>=<span class="string">"0 1.6 0"</span> <span class="attr">camera</span> <span class="attr">look-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="examples"><a href="#examples" class="headerlink" title="Examples"></a>Examples</h2><p>A camera should usually be positioned at the average height of human eye level (1.6 meters). When used with controls that receive rotation or position (e.g. from a VR device) this position will be overridden.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span> <span class="attr">look-controls</span> <span class="attr">position</span>=<span class="string">"0 1.6 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>When moving or rotating the camera relative to the scene, use a camera rig.
+By doing so, the camera’s height offset can be updated by roomscale devices,
+while still allowing the tracked area to be moved independently around the
+scene.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"#rig"</span> <span class="attr">position</span>=<span class="string">"25 10 0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"camera"</span> <span class="attr">camera</span> <span class="attr">look-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
