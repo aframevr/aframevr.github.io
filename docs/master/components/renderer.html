@@ -29,7 +29,7 @@
       data-aframe-version="0.8.0"
       data-docs-version="master">
   <head>
-    <title>&lt;a-octahedron> – A-Frame</title>
+    <title>renderer – A-Frame</title>
     
 
 <script>
@@ -53,7 +53,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="&lt;a-octahedron&gt; – A-Frame">
+    <meta property="og:title" content="renderer – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -63,7 +63,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="&lt;a-octahedron&gt; – A-Frame">
+    <meta name="twitter:title" content="renderer – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -117,7 +117,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="primitives">
+  <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
 
 
@@ -497,7 +497,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <p class="section-title-link">Components</p>
       </h3>
 
@@ -672,9 +672,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/components/renderer.html"
-               class="subnav-link">
+               class="subnav-link current">
               renderer
             </a>
           </li>
@@ -775,7 +775,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <p class="section-title-link">Primitives</p>
       </h3>
 
@@ -887,9 +887,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-octahedron.html"
-               class="subnav-link current">
+               class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
@@ -984,7 +984,7 @@
 </aside>
 
   <!-- Documentation. -->
-  <div class="content content--structured content--primitives copy">
+  <div class="content content--structured content--components copy">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1035,13 +1035,13 @@
     <div class="copy__wrap">
       <div class="page__section docs-header">
         <p>
-          <a href="/docs/master/primitives/a-box.html" class="borderless-link">
-            master &rsaquo; Primitives
+          <a href="/docs/master/components/geometry.html" class="borderless-link">
+            master &rsaquo; Components
           </a>
         </p>
       </div>
       <h1 class="page__title">
-        &lt;a-octahedron&gt;
+        renderer
       </h1>
 
       
@@ -1054,153 +1054,64 @@
 
       
 
-      <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-octahedron</span> <span class="attr">color</span>=<span class="string">"#FF926B"</span> <span class="attr">radius</span>=<span class="string">"5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-octahedron</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><table>
+      <p>The <code>renderer</code> component configures a scene’s
+<a href="https://threejs.org/docs/#api/renderers/WebGLRenderer" target="_blank" rel="external">THREE.WebGLRenderer</a> instance.</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">renderer</span>=<span class="string">"antialias: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   gammaOutput: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   sortObjects: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   physicallyCorrectLights: true;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Component Mapping</th>
+<th>Property</th>
+<th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ambient-occlusion-map</td>
-<td>material.ambientOcclusionMap</td>
-<td>None</td>
+<td>antialias</td>
+<td>Whether to perform antialiasing. If <code>auto</code>, antialiasing is disabled on mobile.</td>
+<td>auto</td>
 </tr>
 <tr>
-<td>ambient-occlusion-map-intensity</td>
-<td>material.ambientOcclusionMapIntensity</td>
-<td>1</td>
-</tr>
-<tr>
-<td>ambient-occlusion-texture-offset</td>
-<td>material.ambientOcclusionTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>ambient-occlusion-texture-repeat</td>
-<td>material.ambientOcclusionTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>color</td>
-<td>material.color</td>
-<td>#FFF</td>
-</tr>
-<tr>
-<td>detail</td>
-<td>geometry.detail</td>
-<td>0</td>
-</tr>
-<tr>
-<td>displacement-bias</td>
-<td>material.displacementBias</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>displacement-map</td>
-<td>material.displacementMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>displacement-scale</td>
-<td>material.displacementScale</td>
-<td>1</td>
-</tr>
-<tr>
-<td>displacement-texture-offset</td>
-<td>material.displacementTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>displacement-texture-repeat</td>
-<td>material.displacementTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>env-map</td>
-<td>material.envMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>fog</td>
-<td>material.fog</td>
-<td>true</td>
-</tr>
-<tr>
-<td>height</td>
-<td>material.height</td>
-<td>256</td>
-</tr>
-<tr>
-<td>metalness</td>
-<td>material.metalness</td>
-<td>0</td>
-</tr>
-<tr>
-<td>normal-map</td>
-<td>material.normalMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>normal-scale</td>
-<td>material.normalScale</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>normal-texture-offset</td>
-<td>material.normalTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>normal-texture-repeat</td>
-<td>material.normalTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>radius</td>
-<td>geometry.radius</td>
-<td>1</td>
-</tr>
-<tr>
-<td>repeat</td>
-<td>material.repeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>roughness</td>
-<td>material.roughness</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>spherical-env-map</td>
-<td>material.sphericalEnvMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>src</td>
-<td>material.src</td>
-<td>None</td>
-</tr>
-<tr>
-<td>width</td>
-<td>material.width</td>
-<td>512</td>
-</tr>
-<tr>
-<td>wireframe</td>
-<td>material.wireframe</td>
+<td>gammaOutput</td>
+<td>Whether to pre-multiply gamma on textures and colors before rendering.</td>
 <td>false</td>
 </tr>
 <tr>
-<td>wireframe-linewidth</td>
-<td>material.wireframeLinewidth</td>
-<td>2</td>
+<td>sortObjects</td>
+<td>Whether to sort objects before rendering.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>physicallyCorrectLights</td>
+<td>Whether to use physically-correct light attenuation.</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
+<h3 id="antialias"><a href="#antialias" class="headerlink" title="antialias"></a>antialias</h3><p>When enabled, smooths jagged edges on curved lines and diagonals at moderate performance cost.
+By default, antialiasing is disabled on mobile devices.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Once the scene is initialized, <code>antialias</code> may no longer be
+changed.</p>
+</blockquote>
+<h3 id="gammaoutput"><a href="#gammaoutput" class="headerlink" title="gammaOutput"></a>gammaOutput</h3><p>Typically, textures are converted to linear colorspace in the renderer for lighting calculations.
+Unless post-processing used after the initial render,
+<a href="https://en.wikipedia.org/wiki/Gamma_correction" target="_blank" rel="external">gamma correction</a> should be applied with
+<code>renderer=&quot;gammaOutput: true;&quot;</code> for best color reproduction. By default, gamma correction is off
+in order to preserve backward-compatibility. When changed, adjustments to lighting may be needed.</p>
+<h3 id="sortobjects"><a href="#sortobjects" class="headerlink" title="sortObjects"></a>sortObjects</h3><p>Sorting is used to attempt to properly render objects that have some degree of transparency.
+Due to various limitations, proper transparency often requires some amount of careful setup.
+By default, objects are not sorted, and the order of elements in the DOM determines order of
+rendering. Re-ordering DOM elements provides one way of forcing a consistent behavior, whereas
+use of <code>renderer=&quot;sortObjects: true&quot;</code> may cause unwanted changes as the camera moves.</p>
+<h3 id="physicallycorrectlights"><a href="#physicallycorrectlights" class="headerlink" title="physicallyCorrectLights"></a>physicallyCorrectLights</h3><p>By default, point and spot lights attenuate (or, appear dimmer as they become farther away)
+according to a model that is classically common, but physically inaccurate. For more realistic
+light attenuation, set <code>renderer=&quot;physicallyCorrectLights: true&quot;</code>. Light intensities may need to
+be adjusted when making this change. Performance is not significantly affected in either mode.</p>
+<blockquote>
+<p><strong>NOTE:</strong> When glTF models contain lights, use the physically-correct lighting mode to match
+the results in the original modeling tool.</p>
+</blockquote>
 
 
       <!-- Previous / Next navigation. -->
@@ -1213,7 +1124,7 @@
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-octahedron.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/renderer.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 
   <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
     <div class="message">Supported by</div>
@@ -1247,11 +1158,27 @@
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#attributes">Attributes</a>
+        <a class="subnav-link" href="#properties">Properties</a>
 
         <!-- Nested. -->
         
           <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#antialias">antialias</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#gammaoutput">gammaOutput</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#sortobjects">sortObjects</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#physicallycorrectlights">physicallyCorrectLights</a>
+              </li>
             
           </ul>
         
@@ -1261,11 +1188,25 @@
 </div>
 
       
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        <li class="subnav-item">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/renderer.md" style="font-style: italic">
+            No examples for this page yet. Add one!
+          </a>
+        </li>
+      </ul>
+    
+  </div>
+
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-octahedron.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/renderer.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/extras/primitives/primitives/meshPrimitives.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/renderer.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
