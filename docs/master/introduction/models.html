@@ -1112,6 +1112,7 @@ model or <code>.mtl</code> file.</p>
 <li>Search for the name of your texture (e.g., <code>texture.jpg</code>)</li>
 <li>Fix the path to the texture by making it relative instead of absolute</li>
 </ol>
+<p>If this didn’t work, you should check your MTL file and you might notice it is trying to use TGA or some other sort of textures that aren’t plain images. In this case, you need to include additional three.js loaders. However it might be easier to try converting all the TGAs to just use images like PNGs using a converter, and replace all instances of ‘tga’ with ‘png’.</p>
 <h3 id="my-model-isn’t-animating"><a href="#my-model-isn’t-animating" class="headerlink" title="My Model Isn’t Animating"></a>My Model Isn’t Animating</h3><p>The <a href="https://github.com/donmccurdy/aframe-extras/tree/master/src/loaders#animation" target="_blank" rel="external">animation-mixer component</a>, part of <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external">aframe-extras</a> by Don McCurdy,
 provides controls for playing animations in three.js (.json) and glTF (.gltf)
 models.</p>
