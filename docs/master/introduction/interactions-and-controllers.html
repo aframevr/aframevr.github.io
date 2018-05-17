@@ -1089,7 +1089,7 @@ clicking directly on the entity using a raycaster.</p>
 <p>We’ll first go over gaze-based interactions. Gaze-based interactions rely on
 rotating our heads and looking at objects to interact with them. This type of
 interaction is for headsets without a controller. Even with a rotation-only
-controller (Daydream, GearVR), the interaction is still similar. Since A-Frame
+controller (Daydream, GearVR, Oculus Go), the interaction is still similar. Since A-Frame
 provides mouse-drag controls by default, gaze-based can sort of be used on
 desktop to preview the interaction by dragging the camera rotation.</p>
 <p>To add gaze-based interaction, we need to add or implement a component. A-Frame
@@ -1152,7 +1152,7 @@ freedom (6DoF). With controllers, people can reach out and around the scene and
 interact with objects with their hands.</p>
 <p>A-Frame provides components for controllers across the spectrum as supported by
 their respective WebVR browsers through the <a href="https://developer.mozilla.org/docs/Web/API/Gamepad_API/Using_the_Gamepad_API" target="_blank" rel="external">Gamepad Web API</a>. There
-are components for Vive, Oculus Touch, Daydream, and GearVR controllers.</p>
+are components for Vive, Oculus Touch, Daydream, GearVR and Oculus Go controllers.</p>
 <p>To inspect the Gamepad object for poking around or to get the Gamepad ID, we
 can call <code>navigator.getGamepads()</code> in the browser console. This will return a
 <code>GamepadList</code> array with all of the connected controllers.</p>
@@ -1193,14 +1193,14 @@ gestures, and animations when buttons are pressed or touched.</li>
 </ul>
 <p>The controller components following are only activated if they detect the
 controller is found and seen as connected in the Gamepad API.</p>
-<h3 id="adding-3dof-controllers-daydream-controls-gearvr-controls"><a href="#adding-3dof-controllers-daydream-controls-gearvr-controls" class="headerlink" title="Adding 3DoF Controllers (daydream-controls, gearvr-controls)"></a>Adding 3DoF Controllers (daydream-controls, gearvr-controls)</h3><p>Controllers with <em>3 degrees of freedom</em> (3DoF) are limited to rotational
+<h3 id="adding-3dof-controllers-daydream-controls-gearvr-controls-oculus-go-controls"><a href="#adding-3dof-controllers-daydream-controls-gearvr-controls-oculus-go-controls" class="headerlink" title="Adding 3DoF Controllers (daydream-controls, gearvr-controls, oculus-go-controls)"></a>Adding 3DoF Controllers (daydream-controls, gearvr-controls, oculus-go-controls)</h3><p>Controllers with <em>3 degrees of freedom</em> (3DoF) are limited to rotational
 tracking. 3DoF controllers have no positional tracking meaning we can’t reach
 out nor move our hand back-and-forth or up-and-down. Having a controller with
 only 3DoF is like having a hand and wrist without an arm. <a href="http://www.roadtovr.com/introduction-positional-tracking-degrees-freedom-dof/" target="_blank" rel="external">Read more about
 degrees of freedom for VR</a>.</p>
 <p>The 3DoF controller components provide rotational tracking, a default model
 matching the real-life hardware, and events to abstract the button mappings.
-The controllers for Google Daydream and Samsung GearVR have 3DoF, and both
+The controllers for Google Daydream, Samsung GearVR and Oculus Go have 3DoF, and both
 support only one controller for one hand.</p>
 <p>To add a controller for Google Daydream, use the <a href="../components/daydream-controls.html">daydream-controls
 component</a>. Then try it out on Chrome for Android on a
@@ -1210,6 +1210,10 @@ Daydream smartphone:</p>
 component</a>. Then try it out on Oculus Carmel or Samsung
 Internet on a smartphone with GearVR:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gearvr-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>To add a controller for Oculus Go, use the <a href="../components/oculus-go-controls.html">oculus-go-controls
+component</a>. Then try it out on Oculus Browser or Samsung
+Internet on an Oculus Go standalone headset:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-go-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="adding-6dof-controllers-vive-controls-oculus-touch-controls"><a href="#adding-6dof-controllers-vive-controls-oculus-touch-controls" class="headerlink" title="Adding 6DoF Controllers (vive-controls, oculus-touch-controls)"></a>Adding 6DoF Controllers (vive-controls, oculus-touch-controls)</h3><p>Controllers with <em>6 degrees of freedom</em> (6DoF) have both rotational and
 positional tracking. Unlike controllers with 3DoF which are constrained to
 orientation, controllers with 6DoF are able to move freely in 3D space. 6DoF
@@ -1429,7 +1433,7 @@ a single vr-editor component for cloning, moving, deleting, placing, and scaling
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#adding-3dof-controllers-daydream-controls-gearvr-controls">Adding 3DoF Controllers (daydream-controls, gearvr-controls)</a>
+                <a class="subnav-link" href="#adding-3dof-controllers-daydream-controls-gearvr-controls-oculus-go-controls">Adding 3DoF Controllers (daydream-controls, gearvr-controls, oculus-go-controls)</a>
               </li>
             
               <li class="subnav-item">
