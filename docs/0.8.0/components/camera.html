@@ -1079,6 +1079,8 @@ to move and rotate the camera.</p>
 <tr>
 <td>spectator</td>
 <td>Whether the camera is used to render a third-person view of the scene on the 2D display while in VR mode.</td>
+</tr>
+<tr>
 <td>false</td>
 </tr>
 <tr>
@@ -1089,7 +1091,7 @@ to move and rotate the camera.</p>
 </tbody>
 </table>
 <h2 id="default-camera"><a href="#default-camera" class="headerlink" title="Default Camera"></a>Default Camera</h2><p>If a camera is not specified, A-Frame will inject a default camera:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>=<span class="string">"active: true"</span> <span class="attr">look-controls</span> <span class="attr">wasd-controls</span> <span class="attr">position</span>=<span class="string">"0 1.6 0"</span> <span class="attr">data-aframe-default-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span>=<span class="string">"active: true"</span> <span class="attr">look-controls</span> <span class="attr">wasd-controls</span> <span class="attr">position</span>=<span class="string">"0 0 0"</span> <span class="attr">data-aframe-default-camera</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>If a camera is specified (e.g., our own <code>&lt;a-camera&gt;</code> or <code>&lt;a-entity camera&gt;</code>),
 then the default camera will not be added.</p>
 <h2 id="vr-behavior"><a href="#vr-behavior" class="headerlink" title="VR Behavior"></a>VR Behavior</h2><p>When exiting VR, the camera will restore its rotation to its rotation <em>before</em>
