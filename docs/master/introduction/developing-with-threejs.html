@@ -1095,7 +1095,7 @@ References to the mesh and light are stored as different types of three.js
 objects in the entity’s <code>.object3DMap</code>.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(entityEl.object3DMap);</span><br><span class="line"><span class="comment">// &#123;mesh: THREE.Mesh, light: THREE.Light&#125;</span></span><br></pre></td></tr></table></figure>
 <p>But we can access them through the entity’s <code>.getObject3D(name)</code> method:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.getObject3D(<span class="string">'mesh'</span>);  <span class="comment">// THREE.Mesh</span></span><br><span class="line">entityEl.getObject3D(<span class="string">'light'</span>);  <span class="comment">// THREE.Mesh</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.getObject3D(<span class="string">'mesh'</span>);  <span class="comment">// THREE.Mesh</span></span><br><span class="line">entityEl.getObject3D(<span class="string">'light'</span>);  <span class="comment">// THREE.Light</span></span><br></pre></td></tr></table></figure>
 <p>Now let’s see how these three.js objects were set in the first place.</p>
 <h3 id="setting-an-object3d-on-an-entity"><a href="#setting-an-object3d-on-an-entity" class="headerlink" title="Setting an Object3D on an Entity"></a>Setting an <code>Object3D</code> on an Entity</h3><p>Setting an <code>Object3D</code> on an entity adds the <code>Object3D</code> to the entity’s <code>Group</code>,
 which makes the newly set <code>Object3D</code> part of the three.js scene. We set the
