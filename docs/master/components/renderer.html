@@ -1058,7 +1058,7 @@
 
       <p>The <code>renderer</code> component configures a scene’s
 <a href="https://threejs.org/docs/#api/renderers/WebGLRenderer" target="_blank" rel="external">THREE.WebGLRenderer</a> instance.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">renderer</span>=<span class="string">"antialias: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   gammaOutput: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   sortObjects: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   physicallyCorrectLights: true;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">renderer</span>=<span class="string">"antialias: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   gammaOutput: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   sortObjects: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   physicallyCorrectLights: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   maxCanvasWidth: 1920;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   maxCanvasHeight: 1920;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
@@ -1087,6 +1087,16 @@
 <td>physicallyCorrectLights</td>
 <td>Whether to use physically-correct light attenuation.</td>
 <td>false</td>
+</tr>
+<tr>
+<td>maxCanvasWidth</td>
+<td>Maximum canvas width. Uses the size multiplied by device pixel ratio. Does not limit canvas width if set to -1.</td>
+<td>1920</td>
+</tr>
+<tr>
+<td>maxCanvasHeight</td>
+<td>Maximum canvas height. Behaves the same as maxCanvasWidth.</td>
+<td>1920</td>
 </tr>
 </tbody>
 </table>
