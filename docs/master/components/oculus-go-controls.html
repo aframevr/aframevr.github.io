@@ -29,7 +29,7 @@
       data-aframe-version="0.8.0"
       data-docs-version="master">
   <head>
-    <title>HTML & Primitives – A-Frame</title>
+    <title>oculus-go-controls – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="HTML &amp; Primitives – A-Frame">
+    <meta property="og:title" content="oculus-go-controls – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="HTML &amp; Primitives – A-Frame">
+    <meta name="twitter:title" content="oculus-go-controls – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -119,7 +119,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="introduction">
+  <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
 
 
@@ -274,7 +274,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <p class="section-title-link">Introduction</p>
       </h3>
 
@@ -302,9 +302,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/introduction/html-and-primitives.html"
-               class="subnav-link current">
+               class="subnav-link">
               HTML & Primitives
             </a>
           </li>
@@ -499,7 +499,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <p class="section-title-link">Components</p>
       </h3>
 
@@ -646,9 +646,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/components/oculus-go-controls.html"
-               class="subnav-link">
+               class="subnav-link current">
               oculus-go-controls
             </a>
           </li>
@@ -993,7 +993,7 @@
 </aside>
 
   <!-- Documentation. -->
-  <div class="content content--structured content--introduction copy">
+  <div class="content content--structured content--components copy">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1044,13 +1044,13 @@
     <div class="copy__wrap">
       <div class="page__section docs-header">
         <p>
-          <a href="/docs/master/introduction/" class="borderless-link">
-            master &rsaquo; Introduction
+          <a href="/docs/master/components/geometry.html" class="borderless-link">
+            master &rsaquo; Components
           </a>
         </p>
       </div>
       <h1 class="page__title">
-        HTML & Primitives
+        oculus-go-controls
       </h1>
 
       
@@ -1063,113 +1063,107 @@
 
       
 
-      <p>This section will go over the concepts of A-Frame’s primitive elements and
-their relation to the entity-component framework. If you’re looking for a guide
-on using HTML and primitives, <a href="../guides/building-a-basic-scene.html">check out the <em>Building a Basic Scene</em>
-guide</a>.</p>
-<!--toc-->
-
-<h2 id="html"><a href="#html" class="headerlink" title="HTML"></a>HTML</h2><p>A-Frame is based on top of <a href="https://developer.mozilla.org/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank" rel="external">HTML</a> and <a href="https://developer.mozilla.org/docs/Web/API/Document_Object_Model" target="_blank" rel="external">the DOM</a> using a polyfill for
-Custom Elements. HTML is the building block of the Web, providing one of the
-most accessible computing languages around. There are no installations or build
-steps required, creating with HTML involves just text in an HTML file and
-opening the HTML file in a browser. Since most of the Web was built on top of
-HTML, most existing tools and libraries work with A-Frame including React,
-Vue.js, Angular, d3.js, and jQuery.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/25414676/cb87f7c4-29e7-11e7-9c98-e6880c9def05.jpg" alt="HTML Scene"></p>
-<p>If you don’t have too much experience with HTML, no problem! It’s fairly easy
-to pick up and perhaps even easier to grasp than 2D HTML. Once you pick up the
-general structure or syntax of HTML (opening tag, attributes, closing tag),
-then you’re good to go! <a href="https://developer.mozilla.org/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank" rel="external">Read an introduction to HTML on MDN</a>.</p>
-<p><img src="https://user-images.githubusercontent.com/6694476/27047689-94689672-4fc6-11e7-9cf5-828a508c6522.jpg" alt="HTML"></p>
-<h2 id="primitives"><a href="#primitives" class="headerlink" title="Primitives"></a>Primitives</h2><p>While the HTML layer looks basic, HTML and the DOM are only the outermost
-abstraction layer of A-Frame. Underneath, A-Frame is an entity-component
-framework for three.js that is exposed declaratively.</p>
-<p>A-Frame provides a handful of elements such as <code>&lt;a-box&gt;</code> or <code>&lt;a-sky&gt;</code> called
-<em>primitives</em> that wrap the entity-component pattern to make it appealing for
-beginners. At the bottom of the documentation navigation sidebar, we can see
-every primitive that A-Frame provides out of the box. Developers can create
-their own primitives as well.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Below is the <em>Hello, WebVR</em> example that uses a few basic primitives. A-Frame
-provides primitives to create meshes, render 360&deg; content, customize the
-environment, place the camera, etc.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.8.2/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">"-1 0.5 -3"</span> <span class="attr">rotation</span>=<span class="string">"0 45 0"</span> <span class="attr">color</span>=<span class="string">"#4CC3D9"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"0 1.25 -5"</span> <span class="attr">radius</span>=<span class="string">"1.25"</span> <span class="attr">color</span>=<span class="string">"#EF2D5E"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">position</span>=<span class="string">"1 0.75 -3"</span> <span class="attr">radius</span>=<span class="string">"0.5"</span> <span class="attr">height</span>=<span class="string">"1.5"</span> <span class="attr">color</span>=<span class="string">"#FFC65D"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">position</span>=<span class="string">"0 0 -4"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">width</span>=<span class="string">"4"</span> <span class="attr">height</span>=<span class="string">"4"</span> <span class="attr">color</span>=<span class="string">"#7BC8A4"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#ECECEC"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="under-the-hood"><a href="#under-the-hood" class="headerlink" title="Under the Hood"></a>Under the Hood</h3><p>Primitives act as a convenience layer (i.e., syntactic sugar) primarily for
-newcomers. Keep in mind for now that primitives are <code>&lt;a-entity&gt;</code>s under the
-hood that:</p>
-<ul>
-<li>Have a semantic name (e.g., <code>&lt;a-box&gt;</code>)</li>
-<li>Have a preset bundle of components with default values</li>
-<li>Map or proxy HTML attributes to <a href="../core/component.html">component</a> data</li>
-</ul>
-<p>Primitives are similar to <a href="http://docs.unity3d.com/Manual/Prefabs.html" target="_blank" rel="external">prefabs in Unity</a>. Some literature on the
-entity-component-system pattern refer to them as <a href="http://vasir.net/blog/game-development/how-to-build-entity-component-system-in-javascript" target="_blank" rel="external">assemblages</a>.
-They abstract the core entity-component API to:</p>
-<ul>
-<li>Pre-compose useful components together with prescribed defaults</li>
-<li>Act as a shorthand for complex-but-common types of entities (e.g., <code>&lt;a-sky&gt;</code>)</li>
-<li>Provide a familiar interface for beginners since A-Frame takes HTML in a new direction</li>
-</ul>
-<p>Under the hood, this <code>&lt;a-box&gt;</code> primitive:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">width</span>=<span class="string">"3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>represents this entity-component form:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; width: 3"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>&lt;a-box&gt;</code> defaults the <code>geometry.primitive</code> property to <code>box</code>. And the
-primitive maps the HTML <code>width</code> attribute to the underlying <code>geometry.width</code>
-property as well as the HTML <code>color</code> attribute to the underlying
-<code>material.color</code> property.</p>
-<h2 id="attaching-components-to-primitives"><a href="#attaching-components-to-primitives" class="headerlink" title="Attaching Components to Primitives"></a>Attaching Components to Primitives</h2><p>Primitives are just <code>&lt;a-entity&gt;</code>s under the hood. This means primitives have
-the same API as entities such as positioning, rotating, scaling, and attaching
-components.</p>
-<h3 id="example-1"><a href="#example-1" class="headerlink" title="Example"></a>Example</h3><p>Let’s attach community physics components to primitives. We include the source
-for <a href="https://github.com/donmccurdy/aframe-physics-system" target="_blank" rel="external">Don McCurdy’s
-<code>aframe-physics-system</code></a> and attach
-the physics components via HTML attributes:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/0.8.2/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">physics</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">"-1 4 -3"</span> <span class="attr">rotation</span>=<span class="string">"0 45 0"</span> <span class="attr">color</span>=<span class="string">"#4CC3D9"</span> <span class="attr">dynamic-body</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">position</span>=<span class="string">"0 0 -4"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">width</span>=<span class="string">"4"</span> <span class="attr">height</span>=<span class="string">"4"</span> <span class="attr">color</span>=<span class="string">"#7BC8A4"</span> <span class="attr">static-body</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#ECECEC"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="registering-a-primitive"><a href="#registering-a-primitive" class="headerlink" title="Registering a Primitive"></a>Registering a Primitive</h2><p>We can register our own primitives (i.e., register an element) using
-<code>AFRAME.registerPrimitive(name, definition)</code>. <code>name</code> is a string and must contain a dash (i.e. <code>&#39;a-foo&#39;</code>). <code>definition</code> is a JavaScript
-object defining these properties:</p>
-<table>
+      <p>The oculus-go-controls component interfaces with the Oculus Go controllers.
+It wraps the <a href="./tracked-controls.html">tracked-controls component</a> while adding button
+mappings, events, and an Oculus Go controller model that highlights the touched
+and/or pressed buttons (trackpad, trigger).</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Match Oculus Go controller if present, regardless of hand. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-go-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Match Oculus Go controller if present and for specified hand. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-go-controls</span>=<span class="string">"hand: left"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-go-controls</span>=<span class="string">"hand: right"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="value"><a href="#value" class="headerlink" title="Value"></a>Value</h2><table>
 <thead>
 <tr>
 <th>Property</th>
 <th>Description</th>
-<th>Example</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>defaultComponents</td>
-<td>Object specifying default components of the primitive. The keys are the components’ names and the values are the components’ default data.</td>
-<td><code>{geometry: {primitive: &#39;box&#39;}}</code></td>
+<td>armModel</td>
+<td>Whether the arm model is used for positional data.</td>
+<td>true</td>
 </tr>
 <tr>
-<td>mappings</td>
-<td>Object specifying mapping between HTML attribute name and component property names. Whenever the HTML attribute name is updated, the primitive will update the corresponding component property. The component property is defined using a dot syntax <code>${componentName}.${propertyName}</code>.</td>
-<td><code>{depth: &#39;geometry.depth&#39;, height: &#39;geometry.height&#39;, width: &#39;geometry.width&#39;}</code></td>
+<td>buttonColor</td>
+<td>Button colors when not pressed.</td>
+<td>#000000</td>
+</tr>
+<tr>
+<td>buttonTouchedColor</td>
+<td>Button colors when touched.</td>
+<td>#777777</td>
+</tr>
+<tr>
+<td>buttonHighlightColor</td>
+<td>Button colors when pressed and active.</td>
+<td>#FFFFFF</td>
+</tr>
+<tr>
+<td>hand</td>
+<td>The hand that will be tracked (e.g., right, left).</td>
+<td></td>
+</tr>
+<tr>
+<td>model</td>
+<td>Whether the Oculus Go controller model is loaded.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>orientationOffset</td>
+<td>Offset to apply to model orientation.</td>
+<td>x: 0, y: 0, z: 0</td>
 </tr>
 </tbody>
 </table>
-<h3 id="example-2"><a href="#example-2" class="headerlink" title="Example"></a>Example</h3><p>For example, below is A-Frame’s registration for the <code>&lt;a-box&gt;</code> primitive:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> extendDeep = AFRAME.utils.extendDeep;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The mesh mixin provides common material properties for creating mesh-based primitives.</span></span><br><span class="line"><span class="comment">// This makes the material component a default component and maps all the base material properties.</span></span><br><span class="line"><span class="keyword">var</span> meshMixin = AFRAME.primitives.getMeshMixin();</span><br><span class="line"></span><br><span class="line">AFRAME.registerPrimitive(<span class="string">'a-box'</span>, extendDeep(&#123;&#125;, meshMixin, &#123;</span><br><span class="line">  <span class="comment">// Preset default components. These components and component properties will be attached to the entity out-of-the-box.</span></span><br><span class="line">  defaultComponents: &#123;</span><br><span class="line">    geometry: &#123;<span class="attr">primitive</span>: <span class="string">'box'</span>&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Defined mappings from HTML attributes to component properties (using dots as delimiters).</span></span><br><span class="line">  <span class="comment">// If we set `depth="5"` in HTML, then the primitive will automatically set `geometry="depth: 5"`.</span></span><br><span class="line">  mappings: &#123;</span><br><span class="line">    depth: <span class="string">'geometry.depth'</span>,</span><br><span class="line">    height: <span class="string">'geometry.height'</span>,</span><br><span class="line">    width: <span class="string">'geometry.width'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
-<p>For example, Don McCurdy’s <a href="https://github.com/donmccurdy/aframe-extras" target="_blank" rel="external"><code>aframe-extras</code></a> package includes an
-<code>&lt;a-ocean&gt;</code> primitive that wraps his <code>ocean</code> component. Here is the definition
-for <code>&lt;a-ocean&gt;</code>.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerPrimitive(<span class="string">'a-ocean'</span>, &#123;</span><br><span class="line">  <span class="comment">// Attaches the `ocean` component by default.</span></span><br><span class="line">  <span class="comment">// Defaults the ocean to be parallel to the ground.</span></span><br><span class="line">  defaultComponents: &#123;</span><br><span class="line">    ocean: &#123;&#125;,</span><br><span class="line">    rotation: &#123;<span class="attr">x</span>: <span class="number">-90</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">z</span>: <span class="number">0</span>&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Maps HTML attributes to the `ocean` component's properties.</span></span><br><span class="line">  mappings: &#123;</span><br><span class="line">    width: <span class="string">'ocean.width'</span>,</span><br><span class="line">    depth: <span class="string">'ocean.depth'</span>,</span><br><span class="line">    density: <span class="string">'ocean.density'</span>,</span><br><span class="line">    color: <span class="string">'ocean.color'</span>,</span><br><span class="line">    opacity: <span class="string">'ocean.opacity'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>With the <code>&lt;a-ocean&gt;</code> primitive registered, we’d be able to create oceans using
-a line of traditional HTML:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-ocean</span> <span class="attr">color</span>=<span class="string">"aqua"</span> <span class="attr">depth</span>=<span class="string">"100"</span> <span class="attr">width</span>=<span class="string">"100"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-ocean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trackpadchanged</td>
+<td>Trackpad changed.</td>
+</tr>
+<tr>
+<td>trackpaddown</td>
+<td>Trackpad pressed.</td>
+</tr>
+<tr>
+<td>trackpadup</td>
+<td>Trackpad released.</td>
+</tr>
+<tr>
+<td>trackpadtouchstart</td>
+<td>Trackpad touched.</td>
+</tr>
+<tr>
+<td>trackpadtouchend</td>
+<td>Trackpad not touched.</td>
+</tr>
+<tr>
+<td>triggerchanged</td>
+<td>Trigger changed.</td>
+</tr>
+<tr>
+<td>triggerdown</td>
+<td>Trigger pressed.</td>
+</tr>
+<tr>
+<td>triggerup</td>
+<td>Trigger released.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assets"><a href="#assets" class="headerlink" title="Assets"></a>Assets</h2><ul>
+<li><a href="https://cdn.aframe.io/controllers/oculus/go/oculus-go-controller.gltf" target="_blank" rel="external">Controller GLTF</a></li>
+</ul>
 
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
         
-          <span class="float-left">
-            <a href="/docs/master/introduction/vr-headsets-and-webvr-browsers.html" class="guide-link guide-link-left">← VR Headsets &amp; WebVR Browsers </a></span>
-        
-        
-          <span class="float-right">
-            <a href="/docs/master/introduction/entity-component-system.html" class="guide-link guide-link-right">Entity-Component-System →</a></span>
         
       </footer>
 
@@ -1177,7 +1171,7 @@ a line of traditional HTML:</p>
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/html-and-primitives.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/oculus-go-controls.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 
   <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
     <div class="message">Supported by</div>
@@ -1200,67 +1194,44 @@ a line of traditional HTML:</p>
   <ul class="subnav">
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#html">HTML</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#primitives">Primitives</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
         <a class="subnav-link" href="#example">Example</a>
 
         <!-- Nested. -->
         
           <ul>
             
-              <li class="subnav-item">
-                <a class="subnav-link" href="#under-the-hood">Under the Hood</a>
-              </li>
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#value">Value</a>
+
+        <!-- Nested. -->
+        
+          <ul>
             
           </ul>
         
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#attaching-components-to-primitives">Attaching Components to Primitives</a>
+        <a class="subnav-link" href="#events">Events</a>
 
         <!-- Nested. -->
         
           <ul>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#example-1">Example</a>
-              </li>
             
           </ul>
         
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#registering-a-primitive">Registering a Primitive</a>
+        <a class="subnav-link" href="#assets">Assets</a>
 
         <!-- Nested. -->
         
           <ul>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#example-2">Example</a>
-              </li>
             
           </ul>
         
@@ -1276,7 +1247,7 @@ a line of traditional HTML:</p>
     
       <ul class="subnav">
         <li class="subnav-item">
-          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/html-and-primitives.md" style="font-style: italic">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/oculus-go-controls.md" style="font-style: italic">
             No examples for this page yet. Add one!
           </a>
         </li>
@@ -1286,7 +1257,9 @@ a line of traditional HTML:</p>
 
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/html-and-primitives.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/oculus-go-controls.md" target="_blank" rel="external">Edit Page</a>
+        
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/oculus-go-controls.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
