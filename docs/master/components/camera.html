@@ -1066,7 +1066,9 @@
       <p>The camera component defines from which perspective the user views the scene.
 The camera is commonly paired with controls components that allow input devices
 to move and rotate the camera.</p>
-<h2 id="examples"><a href="#examples" class="headerlink" title="Examples"></a>Examples</h2><p>A camera should usually be positioned at the average height of human eye level (1.6 meters). When used with controls that receive rotation or position (e.g. from a VR device) this position will be overridden.</p>
+<h2 id="examples"><a href="#examples" class="headerlink" title="Examples"></a>Examples</h2><p>A camera should usually be positioned at the average height of human eye level
+(1.6 meters). When used with controls that receive rotation or position (e.g.
+from a VR device) this position will be overridden.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span> <span class="attr">look-controls</span> <span class="attr">position</span>=<span class="string">"0 1.6 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>When moving or rotating the camera relative to the scene, use a camera rig.
 By doing so, the camera’s height offset can be updated by roomscale devices,
@@ -1132,6 +1134,13 @@ cases might be a heads-up display (HUD).</p>
 in VR. Consider integrating menus into the fabric of the world itself. If you
 do create a HUD, make sure that the HUD is more in the center of the field of
 view such that the user does not have to strain their eyes to read it.</p>
+<h2 id="reading-position-or-rotation-of-the-camera"><a href="#reading-position-or-rotation-of-the-camera" class="headerlink" title="Reading Position or Rotation of the Camera"></a>Reading Position or Rotation of the Camera</h2><p>To actively read the position or rotation of the camera, use a <code>tick</code> handler
+of a component that reads the position or rotation, and does something with it.
+Then attach the component to the camera.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'rotation-reader'</span>, &#123;</span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// `this.el` is the element.</span></span><br><span class="line">    <span class="comment">// `object3D` is the three.js object.</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// `rotation` is a three.js Euler using radians. `quaternion` also available.</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.el.object3D.rotation);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// `position` is a three.js Vector3.</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.el.object3D.rotation);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;a-entity camera look-controls rotation-reader&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="reading-world-position-or-rotation-of-the-camera"><a href="#reading-world-position-or-rotation-of-the-camera" class="headerlink" title="Reading World Position or Rotation of the Camera"></a>Reading World Position or Rotation of the Camera</h3><p>three.js has methods to attain position or rotation (or scale) in world space
+versus object local space.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'rotation-reader'</span>, &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * We use IIFE (immediately-invoked function expression) to only allocate one</span></span><br><span class="line"><span class="comment">   * vector or euler and not re-create on every tick to save memory.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  tick: (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> position = <span class="keyword">new</span> THREE.Vector3();</span><br><span class="line">    <span class="keyword">var</span> rotation = <span class="keyword">new</span> THREE.Euler();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.el.object3D.getWorldPosition(position);</span><br><span class="line">      <span class="keyword">this</span>.el.object3D.getWorldRotation(rotation);</span><br><span class="line">      <span class="comment">// position and rotation now contain vector and euler in world space.</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->
@@ -1227,6 +1236,21 @@ view such that the user does not have to strain their eyes to read it.</p>
         <!-- Nested. -->
         
           <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#reading-position-or-rotation-of-the-camera">Reading Position or Rotation of the Camera</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#reading-world-position-or-rotation-of-the-camera">Reading World Position or Rotation of the Camera</a>
+              </li>
             
           </ul>
         

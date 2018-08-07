@@ -1220,7 +1220,7 @@ called from a component, often within the remove handler:</p>
 </tr>
 <tr>
 <td>componentchanged</td>
-<td>One of the entity’s components was modified.</td>
+<td>One of the entity’s components was modified. This event is throttled. Do not use this for reading position and rotation changes, rather <a href="../camera.html#reading-position-or-rotation-of-the-camera">use a tick handler</a>.</td>
 </tr>
 <tr>
 <td>componentinitialized</td>
