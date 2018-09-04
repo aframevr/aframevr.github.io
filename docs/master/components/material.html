@@ -460,13 +460,6 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/core/animations.html"
-               class="subnav-link">
-              Animations
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/master/core/mixins.html"
                class="subnav-link">
               Mixins
@@ -505,6 +498,13 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/animation.html"
+               class="subnav-link">
+              Animation
+            </a>
+          </li>
         
           <li class="subnav-item ">
             <a href="/docs/master/components/background.html"
@@ -1622,7 +1622,7 @@ best practice to avoid creating garbage for performance reasons:</p>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'myoffset-updater'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.offset = <span class="keyword">new</span> THREE.Vector3();</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params">t, dt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.offset.copy(<span class="keyword">this</span>.el.sceneEl.camera.el.getAttribute(<span class="string">'position'</span>));</span><br><span class="line">    <span class="keyword">this</span>.offset.y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">this</span>.el.setAttribute(<span class="string">'material'</span>, <span class="string">'myOffset'</span>, <span class="keyword">this</span>.offset);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>We then apply the component to the entity with the custom shader:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">material</span>=<span class="string">"shader:displacement-offset"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">myoffset-updater</span></span></span><br><span class="line"><span class="tag">            <span class="attr">scale</span>=<span class="string">"1 1 1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">radius</span>=<span class="string">"0.2"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">position</span>=<span class="string">"0 1.5 -2"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">segments-height</span>=<span class="string">"128"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">segments-width</span>=<span class="string">"128"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"scale"</span> <span class="attr">direction</span>=<span class="string">"alternate-reverse"</span> <span class="attr">dur</span>=<span class="string">"5000"</span> <span class="attr">from</span>=<span class="string">"1 1 1"</span> <span class="attr">to</span>=<span class="string">"4 4 4"</span> <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"#CCC"</span> <span class="attr">width</span>=<span class="string">"3"</span> <span class="attr">depth</span>=<span class="string">"3"</span> <span class="attr">height</span>=<span class="string">"0.1"</span> <span class="attr">position</span>=<span class="string">"0 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sphere</span></span></span><br><span class="line"><span class="tag">    <span class="attr">animation</span>=<span class="string">"property: scale; dir: alternate; dur: 5000; loop: true; to: 4 4 4"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">geometry</span>=<span class="string">"radius: 0.2"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">material</span>=<span class="string">"shader: displacement-offset"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">myoffset-updater</span></span></span><br><span class="line"><span class="tag">    <span class="attr">position</span>=<span class="string">"0 1.5 -2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"#CCC"</span> <span class="attr">width</span>=<span class="string">"3"</span> <span class="attr">depth</span>=<span class="string">"3"</span> <span class="attr">height</span>=<span class="string">"0.1"</span> <span class="attr">position</span>=<span class="string">"0 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Voila!</p>
 <ul>
 <li><a href="https://aframe-displacement-offset-registershader.glitch.me/" target="_blank" rel="external">Live demo</a></li>

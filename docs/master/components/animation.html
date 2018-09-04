@@ -29,7 +29,7 @@
       data-aframe-version="0.8.0"
       data-docs-version="master">
   <head>
-    <title>Animations – A-Frame</title>
+    <title>Animation – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="Animations – A-Frame">
+    <meta property="og:title" content="Animation – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="Animations – A-Frame">
+    <meta name="twitter:title" content="Animation – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -119,7 +119,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="core">
+  <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
 
 
@@ -424,7 +424,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <p class="section-title-link">Core API</p>
       </h3>
 
@@ -456,13 +456,6 @@
             <a href="/docs/master/core/scene.html"
                class="subnav-link">
               Scene
-            </a>
-          </li>
-        
-          <li class="subnav-item  subnav-item-current">
-            <a href="/docs/master/core/animations.html"
-               class="subnav-link current">
-              Animations
             </a>
           </li>
         
@@ -499,12 +492,19 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <p class="section-title-link">Components</p>
       </h3>
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/master/components/animation.html"
+               class="subnav-link current">
+              Animation
+            </a>
+          </li>
         
           <li class="subnav-item ">
             <a href="/docs/master/components/background.html"
@@ -993,7 +993,7 @@
 </aside>
 
   <!-- Documentation. -->
-  <div class="content content--structured content--core copy">
+  <div class="content content--structured content--components copy">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1044,13 +1044,13 @@
     <div class="copy__wrap">
       <div class="page__section docs-header">
         <p>
-          <a href="/docs/master/core/entity.html" class="borderless-link">
-            master &rsaquo; Core API
+          <a href="/docs/master/components/geometry.html" class="borderless-link">
+            master &rsaquo; Components
           </a>
         </p>
       </div>
       <h1 class="page__title">
-        Animations
+        Animation
       </h1>
 
       
@@ -1063,231 +1063,296 @@
 
       
 
-      <blockquote>
-<p>Also check out the
-<a href="https://github.com/ngokevin/kframe/tree/master/components/animation/" target="_blank" rel="external">aframe-animation-component</a></p>
-</blockquote>
-<p>We can add animations in A-Frame attaching an <code>&lt;a-animation&gt;</code> element as a
-child of the entity to animate.</p>
-<p>As an introductory example, to define a 5-meter orbit on an entity about the
-Y-axis that takes 10 seconds, we can offset its position and animate the
-rotation of a parent entity. This animation starts with the initial rotation
-about the Y-axis of 0 degrees and goes around to 360 degrees. It’s defined with
-a duration of 10000 milliseconds, maintains the final value on each cycle of
-the animation, and loops indefinitely.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"5 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"rotation"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">dur</span>=<span class="string">"10000"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">fill</span>=<span class="string">"forwards"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">to</span>=<span class="string">"0 360 0"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      <p>The animation component lets us animate and tween values including:</p>
+<ul>
+<li>Component values (e.g., <code>position</code>, <code>visible</code>)</li>
+<li>Component property values (e.g., <code>light.intensity</code>)</li>
+</ul>
+<p>We can also tween values directly for better performance versus going through
+<code>.setAttribute</code>, such as by animating values:</p>
+<ul>
+<li>On the <code>object3D</code> (e.g., <code>object3D.position.y</code>, <code>object3D.rotation.z</code>)</li>
+<li>Directly within a component (e.g., <code>components.material.material.color</code>, <code>components.text.material.uniforms.opacity.value</code>),</li>
+</ul>
+<p>For example, translating a box:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">"0 1.6 0"</span> <span class="attr">animation</span>=<span class="string">"property: position; to: 5 1.6 0; dur: 1500; easing: linear"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Or orbiting a sphere in a 5-meter radius:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">rotation</span>=<span class="string">"0 0 0"</span> <span class="attr">animation</span>=<span class="string">"property: rotation; to: 0 360 0; loop: true; dur: 10000"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"5 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Read more below for additional options and discovering how to properly animate
+different types of values.</p>
 <!--toc-->
 
-<h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><p>Here is an overview of animation attributes. We’ll go into more detail below.</p>
-<table>
+<h2 id="api"><a href="#api" class="headerlink" title="API"></a>API</h2><h3 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h3><table>
 <thead>
 <tr>
-<th>Attribute</th>
+<th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
+<th>Values</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>attribute</td>
-<td>Attribute to animate. To specify a component attribute, use <code>componentName.property</code> syntax (e.g., <code>light.intensity</code>).</td>
-<td>rotation</td>
+<td>property</td>
+<td>Property to animate. Can be a component name, a dot-delimited property of a component (e.g., <code>material.color</code>), or a plain attribute.</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>begin</td>
-<td>Event name to wait on before beginning animation.</td>
-<td>‘’</td>
-</tr>
-<tr>
-<td>delay</td>
-<td>Delay (in milliseconds) or event name to wait on before beginning animation.</td>
-<td>0</td>
-</tr>
-<tr>
-<td>direction</td>
-<td>Direction of the animation (between <code>from</code> and <code>to</code>). One of <code>alternate</code>, <code>alternateReverse</code>, <code>normal</code>, <code>reverse</code>.</td>
-<td>normal</td>
-</tr>
-<tr>
-<td>dur</td>
-<td>Duration in (milliseconds) of the animation.</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>easing</td>
-<td>Easing function of the animation. There are very many to choose from.</td>
-<td>ease</td>
-</tr>
-<tr>
-<td>end</td>
-<td>Event name to wait on before stopping animation.</td>
-<td>‘’</td>
-</tr>
-<tr>
-<td>fill</td>
-<td>Determines effect of animation when not actively in play. One of <code>backwards</code>, <code>both</code>, <code>forwards</code>, <code>none</code>.</td>
-<td>forwards</td>
+<td>isRawProperty</td>
+<td>Flag to animate an arbitrary object property outside of A-Frame components for better performance. If set to true, for example, we can set <code>property</code> to like <code>components.material.material.opacity</code>. If <code>property</code> starts with <code>components</code> or <code>object3D</code>, this will be inferred to <code>true</code>.</td>
+<td>false</td>
+<td></td>
 </tr>
 <tr>
 <td>from</td>
-<td>Starting value.</td>
-<td>Current value.</td>
-</tr>
-<tr>
-<td>repeat</td>
-<td>Repeat count or <code>indefinite</code>.</td>
-<td>0</td>
+<td>Initial value at start of animation. If not specified, the current property value of the entity will be used (will be sampled on each animation start). It is best to specify a <code>from</code> value when possible for stability.</td>
+<td>null</td>
+<td></td>
 </tr>
 <tr>
 <td>to</td>
-<td>Ending value. Must be specified.</td>
-<td>None</td>
-</tr>
-</tbody>
-</table>
-<h2 id="animating-different-types-of-properties"><a href="#animating-different-types-of-properties" class="headerlink" title="Animating Different Types of Properties"></a>Animating Different Types of Properties</h2><p>A-Frame’s animation system can animate different types of properties.</p>
-<h3 id="vec3-properties"><a href="#vec3-properties" class="headerlink" title="vec3 Properties"></a>vec3 Properties</h3><p>A-Frame has standard <code>vec3</code> components (i.e., <code>position</code>, <code>rotation</code>,
-and <code>scale</code>). These components consist of three factors: X, Y, and Z. We can
-pass three space-delimited numbers to the <code>from</code> and <code>to</code> attributes just as we
-would define them on an entity. In this case, the animation system will assume
-we are animating a <code>vec3</code> value.</p>
-<p>For example, if we want to animate an entity going from one spot to another, we
-can animate the <code>position</code> component.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"position"</span> <span class="attr">from</span>=<span class="string">"1 1 1"</span> <span class="attr">to</span>=<span class="string">"2 4 -8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="boolean-properties"><a href="#boolean-properties" class="headerlink" title="Boolean Properties"></a>Boolean Properties</h3><p>A-Frame has standard components that accept a single boolean value.  Boolean
-values can be “animated” as well by flipping the boolean at the end of each
-animation cycle.</p>
-<p>For example, we can define an animation that toggles off the visibility of an
-entity after 5 seconds.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"visible"</span> <span class="attr">dur</span>=<span class="string">"5000"</span> <span class="attr">to</span>=<span class="string">"false"</span> <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="numeric-properties"><a href="#numeric-properties" class="headerlink" title="Numeric Properties"></a>Numeric Properties</h3><p>We can animate numeric attributes as well. For example, we can animate the
-intensity of the light primitive.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">intensity</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"intensity"</span> <span class="attr">to</span>=<span class="string">"3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="color-properties"><a href="#color-properties" class="headerlink" title="Color Properties"></a>Color Properties</h3><p>We can animate any component property that has a color type. For example, we
-can animate a box from white to red.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"blushing-cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"material.color"</span> <span class="attr">from</span>=<span class="string">"white"</span> <span class="attr">to</span>=<span class="string">"red"</span> <span class="attr">dur</span>=<span class="string">"1000"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="component-properties"><a href="#component-properties" class="headerlink" title="Component Properties"></a>Component Properties</h3><p>We can animate a certain property of a multi-property component. To do so, we
-select the component property using the dot syntax:
-<code>componentName.propertyName</code>.</p>
-<p>For example, to animate a cone’s top radius, we can select the <code>radiusTop</code>
-value with <code>geometry.radiusTop</code>.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cone; radiusTop: 1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"geometry.radiusTop"</span> <span class="attr">to</span>=<span class="string">"0.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="begin"><a href="#begin" class="headerlink" title="Begin"></a>Begin</h2><p>The <code>begin</code> attribute defines when the animation should start playing.</p>
-<p>This can either be a <em>number</em>, representing milliseconds to wait, or an <em>event
-name</em> to wait for. For example, we can define an animation that waits 2 seconds
-before scaling an entity.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"scale"</span> <span class="attr">begin</span>=<span class="string">"2000"</span> <span class="attr">to</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Or we can define an animation that waits for the parent element to trigger an
-event named <code>fade</code> before fading an entity.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"fading-cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"opacity: 1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"material.opacity"</span> <span class="attr">begin</span>=<span class="string">"fade"</span> <span class="attr">to</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Trigger an event to begin fading.</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#fading-cube'</span>).emit(<span class="string">'fade'</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="direction"><a href="#direction" class="headerlink" title="Direction"></a>Direction</h2><p>The <code>direction</code> attribute defines which way to animate between the starting
-value and the final value.</p>
-<p>When we define an alternating direction, the animation will go back and forth
-between the <code>from</code> and <code>to</code> values like a yo-yo. Alternating directions only
-take affect when we repeat the animation.</p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>alternate</td>
-<td>On even-numbered cycles, animate from <code>from</code> to <code>to</code>. On odd-numbered cycles, animation from <code>to</code> to <code>from</code></td>
+<td>Target value at end of animation.</td>
+<td>null</td>
+<td></td>
 </tr>
 <tr>
-<td>alternate-reverse</td>
-<td>On odd-numbered cycles, animate from <code>from</code> to <code>to</code>. On even-numbered cycles, animation from <code>to</code> to <code>from</code></td>
+<td>type</td>
+<td>Right now only supports <code>color</code> for tweening <code>isRawProperty</code> color XYZ/RGB vector  values.</td>
+<td>‘’</td>
+<td></td>
 </tr>
 <tr>
+<td>delay</td>
+<td>How long (milliseconds) to wait before starting.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>dir</td>
+<td>Which dir to go from <code>from</code> to <code>to</code>.</td>
 <td>normal</td>
-<td>Animate from <code>from</code> to <code>to</code>.</td>
+<td>alternate, reverse</td>
 </tr>
 <tr>
-<td>reverse</td>
-<td>Animate from <code>to</code> to <code>from</code>.</td>
+<td>dur</td>
+<td>How long (milliseconds) each cycle of the animation is.</td>
+<td>1000</td>
+<td></td>
+</tr>
+<tr>
+<td>easing</td>
+<td>Easing function of animation. To ease in, ease out, ease in and out.</td>
+<td>easeInQuad</td>
+<td>See <a href="#easings">easings</a></td>
+</tr>
+<tr>
+<td>elasticity</td>
+<td>How much to bounce (higher is stronger).</td>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>loop</td>
+<td>How many times the animation should repeat. If the value is <code>true</code>, the animation will repeat infinitely.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>round</td>
+<td>Whether to round values.</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>startEvents</td>
+<td>Comma-separated list of events to listen to trigger a restart and play. Animation will not autoplay if specified. <code>startEvents</code> will <strong>restart</strong> the animation, use <code>pauseEvents</code> to resume it. If there are other animation components on the entity animating the same property, those animations will be automatically paused to not conflict.</td>
+<td>null</td>
+<td></td>
+</tr>
+<tr>
+<td>pauseEvents</td>
+<td>Comma-separated list of events to listen to trigger pause. Can be resumed with <code>resumeEvents</code>.</td>
+<td>null</td>
+<td></td>
+</tr>
+<tr>
+<td>resumeEvents</td>
+<td>Comma-separated list of events to listen to trigger resume after pausing.</td>
+<td>null</td>
+<td></td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>Whether or not the animation should <code>autoplay</code>. Should be specified if the animation is defined for the <a href="https://www.npmjs.com/package/aframe-animation-timeline-component" target="_blank" rel="external"><code>animation-timeline</code> component</a>.</td>
+<td>null</td>
+<td></td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>If disabled, animation will stop and startEvents will not trigger animation start.</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
-<h2 id="easing"><a href="#easing" class="headerlink" title="Easing"></a>Easing</h2><p>The <code>easing</code> attribute defines the easing function of the animation, which
-defaults to <code>ease</code>. There are too many easing functions to list, but we can
-implicitly explain them.</p>
-<p>One possible value is <code>linear</code>. And the basic easing functions are <code>ease</code>,
-<code>ease-in</code>, <code>ease-out</code>, and <code>ease-in-out</code>.</p>
-<p>Then there are more groups of easing functions. The above basic easing
-functions prefix each group of easing functions. The groups of easing functions
-are <code>cubic</code>, <code>quad</code>, <code>quart</code>, <code>quint</code>, <code>sine</code>, <code>expo</code>, <code>circ</code>, <code>elastic</code>,
-<code>back</code>, and <code>bounce</code>.</p>
-<p>For example, the <code>cubic</code> group of easing functions would consist of
-<code>ease-cubic</code>, <code>ease-in-cubic</code>, <code>ease-out-cubic</code>, <code>ease-in-out-cubic</code>.</p>
-<h2 id="fill"><a href="#fill" class="headerlink" title="Fill"></a>Fill</h2><p>The <code>fill</code> attribute defines the effect of animation when not actively in play.
-Think of <code>fill</code> as what values the animation sets on the entity <em>before</em> and/or
-<em>after</em> each animation cycle. Below are the possible values for <code>fill</code> and
-their effects.</p>
+<h3 id="multiple-animations"><a href="#multiple-animations" class="headerlink" title="Multiple Animations"></a>Multiple Animations</h3><p>The component’s base name is <code>animation</code>. We can attach multiple animations to
+one entity by name-spacing the component with double underscores (<code>__</code>):</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">animation</span>=<span class="string">"property: rotation"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">animation__2</span>=<span class="string">"property: position"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">animation__color</span>=<span class="string">"property: material.color"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="easings"><a href="#easings" class="headerlink" title="Easings"></a>Easings</h3><p>Easings define the accelerations and speed throughout the cycle of the
+animation.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
+<th>easeIn</th>
+<th>easeOut</th>
+<th>easeInOut</th>
+<th>Others</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>easeInQuad</td>
+<td>easeOutQuad</td>
+<td>easeInOutQuad</td>
+<td>linear</td>
+</tr>
+<tr>
+<td>easeInCubic</td>
+<td>easeOutCubic</td>
+<td>easeInOutCubic</td>
+<td></td>
+</tr>
+<tr>
+<td>easeInQuart</td>
+<td>easeOutQuart</td>
+<td>easeInOutQuart</td>
+<td></td>
+</tr>
+<tr>
+<td>easeInQuint</td>
+<td>easeOutQuint</td>
+<td>easeInOutQuint</td>
+<td></td>
+</tr>
+<tr>
+<td>easeInSine</td>
+<td>easeOutSine</td>
+<td>easeInOutSine</td>
+<td></td>
+</tr>
+<tr>
+<td>easeInExpo</td>
+<td>easeOutExpo</td>
+<td>easeInOutExpo</td>
+<td></td>
+</tr>
+<tr>
+<td>easeInCirc</td>
+<td>easeOutCirc</td>
+<td>easeInOutCirc</td>
+<td></td>
+</tr>
+<tr>
+<td>easeInBack</td>
+<td>easeOutBack</td>
+<td>easeInOutBack</td>
+<td></td>
+</tr>
+<tr>
+<td>easeInElastic</td>
+<td>easeOutElastic</td>
+<td>easeInOutElastic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h3><table>
+<thead>
+<tr>
+<th>Property</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>backwards</td>
-<td>Before the animation starts, set the starting value to the <code>from</code> value.</td>
+<td>animationbegin</td>
+<td>Animation began. Event detail contains <code>name</code> of animation.</td>
 </tr>
 <tr>
-<td>both</td>
-<td>Combine the effects of both backwards fill and forwards fill.</td>
-</tr>
-<tr>
-<td>forwards</td>
-<td>After the animation finishes, the final value will stay at the <code>to</code> value. The default fill.</td>
-</tr>
-<tr>
-<td>none</td>
-<td>Before the animation starts, set the starting value to the initial value. After the animation finishes, reset the value to the initial value.</td>
+<td>animationcomplete</td>
+<td>Animation completed. Event detail contains <code>name</code> of animation.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="repeat"><a href="#repeat" class="headerlink" title="Repeat"></a>Repeat</h2><p>The <code>repeat</code> attribute defines how often the animation repeats. We call each
-repeat of the animation a cycle. Repeat can either be a number that counts down
-on each animation cycle until it reaches <code>0</code> at which point the animation will
-end, or we can set <code>repeat</code> to <code>indefinite</code> and the animation will loop
-continuously until the animation is manually removed or stopped.</p>
-<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><p>The <code>&lt;a-animation&gt;</code> element emits a couple of events.</p>
+<h3 id="members"><a href="#members" class="headerlink" title="Members"></a>Members</h3><p>Accessed as <code>el.components.animation.&lt;MEMBER&gt;</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Event Name</th>
+<th>Member</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>animationend</td>
-<td>Emitted when the animation finishes. In case of repeats, emitted when the repeat count reaches <code>0</code>. Not emitted for indefinite repeats.</td>
+<td>animation</td>
+<td>anime.js object.</td>
 </tr>
 <tr>
-<td>animationstart</td>
-<td>Emitted immediately when the animation begins playing.</td>
+<td>config</td>
+<td>Config passed to anime.js.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="animating-different-types-of-values"><a href="#animating-different-types-of-values" class="headerlink" title="Animating Different Types of Values"></a>Animating Different Types of Values</h2><p>We’ll go over different cases of animating different types of values.</p>
+<h3 id="component-values"><a href="#component-values" class="headerlink" title="Component Values"></a>Component Values</h3><p>We can animate a single-property component value (e.g., <code>property: visible</code>,
+we’ll go over booleans in a bit) or animate a property of a multi-property
+component using a dot <code>.</code> as a separator (e.g., <code>property: light.intensity</code>,
+<code>property: material.color</code>).</p>
+<p>If the property is a <code>vec3</code>, that is also supported (e.g., <code>property:
+someComponent.vec3Value; to: 5 5 5</code>).</p>
+<p>However, animating component values this way is not the most optimal way as it
+will invoke <code>.setAttribute</code> on each frame of the animation. For an animation
+here or there, it won’t be a big deal, but we can save time and memory by
+animating values directly.</p>
+<p>A special note to try not to animate values of the <code>geometry</code> component as that
+will recreate the geometry on each tick. Rather animate <code>scale</code> if we want to
+animate the size.</p>
+<h3 id="boolean-values"><a href="#boolean-values" class="headerlink" title="Boolean Values"></a>Boolean Values</h3><p>We can “animate” boolean values where the <code>to</code> value will be applied at the end
+of the animation. Like <code>property: visible; from: false; to: true; dur: 1</code>.</p>
+<h3 id="direct-values-through-object3d-and-components"><a href="#direct-values-through-object3d-and-components" class="headerlink" title="Direct Values through object3D and components"></a>Direct Values through <code>object3D</code> and <code>components</code></h3><p>The animation component supports animating values directly through <code>object3D</code>
+or <code>components</code>.</p>
+<p>For example, we can animate values on <code>object3D</code> like <code>property:
+object3D.position.z; to: 5</code> which will tween the entity’s <code>object3D.position.z</code>
+value directly without calling <code>.setAttribute</code>; it’s the most direct way and
+lets us animate a single axis at a time. Note, for <code>object3D.rotation</code>, degrees
+are used.</p>
+<p>Or we can animate values by reaching into <code>components</code>. For example, rather than
+animating <code>property: material.opacity</code> which would call <code>.setAttribute</code> on each
+frame, we can animate the opacity value directly with <code>property:
+components.material.material.opacity</code>. We use a dot-delimited path to walk the
+object tree to find the value we want to animate, and the animation process
+under the hood reduces down to changing a number.</p>
+<h4 id="direct-color-values"><a href="#direct-color-values" class="headerlink" title="Direct Color Values"></a>Direct Color Values</h4><p>We can animate three.js color values directly, but we’ll need to specify <code>type:
+color</code>. So rather than animating <code>property: material.color</code>, we can do
+<code>property: components.material.material.color; type: color</code>.</p>
+<p>A note on color values, we can specify color values using hex, color names,
+hsl, or rgb (e.g., <code>from: red; to: #FFCCAA</code> or <code>from: rgb(100, 100, 100); to:
+hsl(213, 100%, 70%)</code>)..</p>
+<h2 id="using-anime-js-directly"><a href="#using-anime-js-directly" class="headerlink" title="Using anime.js Directly"></a>Using anime.js Directly</h2><p>anime is a popular and powerful animation engine. The component prefers to do
+just basic tweening and touches the surface of what anime can do (e.g.,
+timelines, motion paths, progress, seeking). If we need more animation
+features, create a separate component that invokes anime.js directly. anime is
+accessible via <strong><code>AFRAME.ANIME</code></strong>.</p>
+<p>Read through and explore the <a href="https://github.com/juliangarnier/anime" target="_blank" rel="external">anime.js
+documentation</a> and
+<a href="https://animejs.com" target="_blank" rel="external">website</a>.</p>
+<h2 id="see-also"><a href="#see-also" class="headerlink" title="See Also"></a>See Also</h2><ul>
+<li><a href="https://www.npmjs.com/package/aframe-animation-timeline-component" target="_blank" rel="external">animation-timeline component</a></li>
+</ul>
 
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
         
-          <span class="float-left">
-            <a href="/docs/master/core/scene.html" class="guide-link guide-link-left">← Scene </a></span>
-        
-        
-          <span class="float-right">
-            <a href="/docs/master/core/mixins.html" class="guide-link guide-link-right">Mixins →</a></span>
         
       </footer>
 
@@ -1295,7 +1360,7 @@ continuously until the animation is manually removed or stopped.</p>
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/animations.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/animation.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 
   <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
     <div class="message">Supported by</div>
@@ -1318,41 +1383,30 @@ continuously until the animation is manually removed or stopped.</p>
   <ul class="subnav">
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#attributes">Attributes</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#animating-different-types-of-properties">Animating Different Types of Properties</a>
+        <a class="subnav-link" href="#api">API</a>
 
         <!-- Nested. -->
         
           <ul>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#vec3-properties">vec3 Properties</a>
+                <a class="subnav-link" href="#properties">Properties</a>
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#boolean-properties">Boolean Properties</a>
+                <a class="subnav-link" href="#multiple-animations">Multiple Animations</a>
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#numeric-properties">Numeric Properties</a>
+                <a class="subnav-link" href="#easings">Easings</a>
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#color-properties">Color Properties</a>
+                <a class="subnav-link" href="#events">Events</a>
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#component-properties">Component Properties</a>
+                <a class="subnav-link" href="#members">Members</a>
               </li>
             
           </ul>
@@ -1360,7 +1414,30 @@ continuously until the animation is manually removed or stopped.</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#begin">Begin</a>
+        <a class="subnav-link" href="#animating-different-types-of-values">Animating Different Types of Values</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#component-values">Component Values</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#boolean-values">Boolean Values</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#direct-values-through-object3d-and-components">Direct Values through object3D and components</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#using-anime-js-directly">Using anime.js Directly</a>
 
         <!-- Nested. -->
         
@@ -1371,51 +1448,7 @@ continuously until the animation is manually removed or stopped.</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#direction">Direction</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#easing">Easing</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#fill">Fill</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#repeat">Repeat</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#events">Events</a>
+        <a class="subnav-link" href="#see-also">See Also</a>
 
         <!-- Nested. -->
         
@@ -1434,20 +1467,22 @@ continuously until the animation is manually removed or stopped.</p>
 
     
       <ul class="subnav">
-        <li class="subnav-item">
-          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/core/animations.md" style="font-style: italic">
-            No examples for this page yet. Add one!
-          </a>
-        </li>
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/~aframe-shooting-stars">
+              Generated Animations
+            </a>
+          </li>
+        
       </ul>
     
   </div>
 
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/core/animations.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/animation.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/core/a-animation.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/animation.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
