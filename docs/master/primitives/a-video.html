@@ -1148,6 +1148,9 @@
 </ul>
 <p>Since iOS 11, iOS has required user interaction to trigger video playback. This is also true on a number of Android device and
 browser combinations.</p>
+<h2 id="fine-tuning"><a href="#fine-tuning" class="headerlink" title="Fine-Tuning"></a>Fine-Tuning</h2><p>Ensuring that the video is not distorted by stretching requires us to appropriately set the <code>width</code> and <code>height</code> preserving the original aspect ratio of the video. This properties are set in meters, don’t confuse with pixels.</p>
+<p>For example, a 2:1 video:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-video</span> <span class="attr">src</span>=<span class="string">"#myvideo"</span> <span class="attr">width</span>=<span class="string">"3"</span> <span class="attr">height</span>=<span class="string">"1.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-video</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->
@@ -1206,6 +1209,17 @@ browser combinations.</p>
     
       <li class="subnav-item">
         <a class="subnav-link" href="#caveats">Caveats</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#fine-tuning">Fine-Tuning</a>
 
         <!-- Nested. -->
         
