@@ -29,7 +29,7 @@
       data-aframe-version="0.8.0"
       data-docs-version="master">
   <head>
-    <title>link – A-Frame</title>
+    <title>loading-screen – A-Frame</title>
     
 
 <script>
@@ -55,19 +55,19 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="link – A-Frame">
+    <meta property="og:title" content="loading-screen – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
     <meta property="og:description" content="">
-    <meta property="og:image" content="https://user-images.githubusercontent.com/674727/27721720-19388346-5d17-11e7-912b-499886be0a8d.gif">
-    <meta property="og:image:secure_url" content="https://user-images.githubusercontent.com/674727/27721720-19388346-5d17-11e7-912b-499886be0a8d.gif">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="link – A-Frame">
+    <meta name="twitter:title" content="loading-screen – A-Frame">
     <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="https://user-images.githubusercontent.com/674727/27721720-19388346-5d17-11e7-912b-499886be0a8d.gif">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
     <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
@@ -618,16 +618,16 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/components/link.html"
-               class="subnav-link current">
+               class="subnav-link">
               link
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/components/loading-screen.html"
-               class="subnav-link">
+               class="subnav-link current">
               loading-screen
             </a>
           </li>
@@ -1057,11 +1057,9 @@
         </p>
       </div>
       <h1 class="page__title">
-        link
+        loading-screen
       </h1>
 
-      
-        <img src="https://user-images.githubusercontent.com/674727/27721720-19388346-5d17-11e7-912b-499886be0a8d.gif">
       
 
       
@@ -1072,27 +1070,13 @@
 
       
 
-      <p>The link component connects between experiences and allows for traversing
-between VR web pages. When activated via an event, the link component sends the
-user to a different page, just like a normal web page redirect. To maintain VR
-across pages, the following conditions must apply:</p>
-<ul>
-<li>The browser is up-to-date with the WebVR specification and implements the <code>vrdisplayactivate</code> event.</li>
-<li>The destination web page listens to the window [<code>vrdisplayactivate</code>] event and enters VR.</li>
-</ul>
-<h2 id="link-ux"><a href="#link-ux" class="headerlink" title="Link UX"></a>Link UX</h2><p>A link in VR can be anything such as grabbing onto an object, placing something
-on our head, clicking something, even eating something! We provide a default
-implementation of links as a portal or window, using a 360&deg; image thumbnail
-to preview the destination.</p>
-<p>The UX of link traversal will continue to refine as we iterate and experiment,
-both in content and from the browser.</p>
-<h3 id="controls"><a href="#controls" class="headerlink" title="Controls"></a>Controls</h3><p>The default UX of the link component as a portal can be interacted with using a
-cursor or controllers. This is not provided directly in the A-Frame core, but
-there is a <a href="https://github.com/aframevr/aframe/blob/master/examples/showcase/link-traversal/js/components/link-controls.js" target="_blank" rel="external">link-controls component in the A-Frame examples</a>. This component
-shows tooltips and provides button mappings for peeking and entering portals.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"homeThumbnail"</span> <span class="attr">src</span>=<span class="string">"home.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">link</span>=<span class="string">"href: index.html; title: My Homepage; image: #homeThumbnail"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>We also provide a link primitive with a different syntax:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-link</span> <span class="attr">href</span>=<span class="string">"index.html"</span> <span class="attr">title</span>=<span class="string">"My Homepage"</span> <span class="attr">image</span>=<span class="string">"#homeThumbnail"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      <p>The loading screen component configures the loading screen visual style.</p>
+<p>To configure the style of the loader title bar one can redefine
+<code>.a-loader-title</code> style. The example below sets the text color to red:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.a-loader-title</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The title text is set to whatever is in <code>document.title</code> or <code>&lt;title&gt;&lt;/title&gt;</code>.</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>The example below sets the background color to black and dots color to red.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">loading-screen</span>=<span class="string">"dotsColor: red; backgroundColor: black"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
@@ -1103,64 +1087,22 @@ shows tooltips and provides button mappings for peeking and entering portals.</p
 </thead>
 <tbody>
 <tr>
+<td>dotsColor</td>
+<td>Loader dots color.</td>
+<td>white</td>
+</tr>
+<tr>
 <td>backgroundColor</td>
-<td>Inner (background) color of the portal.</td>
-<td>red</td>
+<td>Loader background color.</td>
+<td>#24CAFF</td>
 </tr>
 <tr>
-<td>borderColor</td>
-<td>Border color of the portal.</td>
-<td>white</td>
-</tr>
-<tr>
-<td>highlighted</td>
-<td>Boolean to toggle link highlight color.</td>
-<td>false</td>
-</tr>
-<tr>
-<td>highlightedColor</td>
-<td>Border color when highlighted.</td>
-<td>‘#24CAFF’</td>
-</tr>
-<tr>
-<td>href</td>
-<td>Destination URL where the link points to.</td>
-<td>‘’</td>
-</tr>
-<tr>
-<td>image</td>
-<td>360&deg; image used as scene preview in the portal. Can be a selector to an <code>&lt;img&gt;</code> element or a URL.</td>
-<td>‘’</td>
-</tr>
-<tr>
-<td>on</td>
-<td>Event to listen to that triggers link traversal.</td>
-<td>‘click’</td>
-</tr>
-<tr>
-<td>peekMode</td>
-<td>Whether the 360&deg; image is fully expanded for preview.</td>
-<td>false</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Text displayed on the link. The <code>href</code> or page URL is used if not defined.</td>
-<td>‘’</td>
-</tr>
-<tr>
-<td>titleColor</td>
-<td>Color of the text displayed on the link.</td>
-<td>white</td>
-</tr>
-<tr>
-<td>visualAspectEnabled</td>
-<td>Whether to enable the default visual appearance of a portal. Set to false if we want to implement our own pattern or form of link traversal.</td>
+<td>enabled</td>
+<td>Enables / Disables the loading screen.</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<h2 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="navigate-url"><a href="#navigate-url" class="headerlink" title=".navigate (url)"></a>.navigate (url)</h3><p>Sends the user to the page specified by the <code>href</code> property:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-link'</span>).navigate(<span class="string">'destination.html'</span>);</span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->
@@ -1173,7 +1115,7 @@ shows tooltips and provides button mappings for peeking and entering portals.</p
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/link.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/loading-screen.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 
   <span class="sponsor" itemscope itemprop="organization" itemtype="http://schema.org/Organization">
     <div class="message">Supported by</div>
@@ -1194,21 +1136,6 @@ shows tooltips and provides button mappings for peeking and entering portals.</p
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#link-ux">Link UX</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#controls">Controls</a>
-              </li>
-            
-          </ul>
-        
-      </li>
     
       <li class="subnav-item">
         <a class="subnav-link" href="#example">Example</a>
@@ -1232,21 +1159,6 @@ shows tooltips and provides button mappings for peeking and entering portals.</p
         
       </li>
     
-      <li class="subnav-item">
-        <a class="subnav-link" href="#methods">Methods</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#navigate-url">.navigate (url)</a>
-              </li>
-            
-          </ul>
-        
-      </li>
-    
   </ul>
 </div>
 
@@ -1257,7 +1169,7 @@ shows tooltips and provides button mappings for peeking and entering portals.</p
     
       <ul class="subnav">
         <li class="subnav-item">
-          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/link.md" style="font-style: italic">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/loading-screen.md" style="font-style: italic">
             No examples for this page yet. Add one!
           </a>
         </li>
@@ -1267,9 +1179,7 @@ shows tooltips and provides button mappings for peeking and entering portals.</p
 
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/link.md" target="_blank" rel="external">Edit Page</a>
-        
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/link.js" title="View Source" target="_blank" rel="external">View Source</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/loading-screen.md" target="_blank" rel="external">Edit Page</a>
         
       </div>
     </div>

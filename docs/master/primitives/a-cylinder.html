@@ -626,6 +626,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/loading-screen.html"
+               class="subnav-link">
+              loading-screen
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/look-controls.html"
                class="subnav-link">
               look-controls
@@ -1066,6 +1073,9 @@
       <p>The cylinder primitive is used to create tubes and curved surfaces.</p>
 <h2 id="examples"><a href="#examples" class="headerlink" title="Examples"></a>Examples</h2><p>The cylinder primitive is versatile and can be used to create different kinds of shapes:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Basic cylinder. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">color</span>=<span class="string">"crimson"</span> <span class="attr">height</span>=<span class="string">"3"</span> <span class="attr">radius</span>=<span class="string">"1.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Hexagon. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">color</span>=<span class="string">"cyan"</span> <span class="attr">segments-radial</span>=<span class="string">"6"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Pac-man. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">color</span>=<span class="string">"yellow"</span> <span class="attr">theta-start</span>=<span class="string">"50"</span> <span class="attr">theta-length</span>=<span class="string">"280"</span> <span class="attr">side</span>=<span class="string">"double"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Green pipe. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">color</span>=<span class="string">"green"</span> <span class="attr">open-ended</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>In degrees, <code>thetaStart</code> defines where to start the arc and <code>thetaLength</code> defines where the arc ends. </p>
+<p>Also, we can create a tube by making the cylinder open-ended, which removes the top and bottom surfaces of the cylinder such that the inside is visible. Then, we need a double-sided material to render properly:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">color</span>=<span class="string">"cyan"</span> <span class="attr">material</span>=<span class="string">"side: double"</span> <span class="attr">open-ended</span>=<span class="string">"true"</span> <span class="attr">rotation</span>=<span class="string">"90 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><table>
 <thead>
 <tr>

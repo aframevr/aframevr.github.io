@@ -626,6 +626,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/loading-screen.html"
+               class="subnav-link">
+              loading-screen
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/look-controls.html"
                class="subnav-link">
               look-controls
@@ -1092,7 +1099,7 @@ both build on top of the raycaster component.</p>
 <tr>
 <td>direction</td>
 <td>Vector3 coordinate of which direction the ray should point from relative to the entity’s origin.</td>
-<td>0, 0, 0</td>
+<td>0, 0, -1</td>
 </tr>
 <tr>
 <td>enabled</td>
@@ -1106,7 +1113,7 @@ both build on top of the raycaster component.</p>
 </tr>
 <tr>
 <td>interval</td>
-<td>Number of milliseconds to wait in between each intersection test. Lower number is better for faster updates. Higher number is better for performance.</td>
+<td>Number of milliseconds to wait in between each intersection test. Lower number is better for faster updates. Higher number is better for performance. Intersection tests are performed at most once per frame.</td>
 <td>0</td>
 </tr>
 <tr>
