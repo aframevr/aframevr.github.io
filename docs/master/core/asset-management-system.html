@@ -1090,10 +1090,9 @@ before initializing and rendering.</p>
 browser to serve assets with <a href="https://wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="external">cross-origin resource sharing (CORS)
 headers</a> if the asset is on a different domain. Otherwise, we’d have
 to host assets on the same origin as the scene.</p>
-<p>For some options, <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> serves everything with CORS headers.
-We recommend GitHub Pages as a simple deployment platform.  Or you could also
-upload assets using the <a href="https://cdn.aframe.io" target="_blank" rel="external">A-Frame + Uploadcare Uploader</a>, a service
-that serves files with CORS headers set.</p>
+<p>For other options, <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> serves everything with CORS headers.
+We recommend GitHub Pages as a simple deployment platform. Or another service
+that serves files with CORS headers set (such as Amazon S3).</p>
 <p>Given that <a href="https://developer.mozilla.org/docs/Web/HTML/CORS_enabled_image" target="_blank" rel="external">CORS headers</a> <em>are</em> set, <code>&lt;a-assets&gt;</code> will automatically set
 <code>crossorigin</code> attributes on media elements (e.g., <code>&lt;audio&gt;</code>, <code>&lt;img&gt;</code>,
 <code>&lt;video&gt;</code>) if it detects the resource is on a different domain.</p>
