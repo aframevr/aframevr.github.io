@@ -1116,7 +1116,7 @@ both build on top of the raycaster component.</p>
 </tr>
 <tr>
 <td>objects</td>
-<td>Query selector to pick which objects to test for intersection. If not specified, all entities will be tested.</td>
+<td>Query selector to pick which objects to test for intersection. If not specified, all entities will be tested. Note that only objects attached via <code>.setObject3D</code> will be tested.</td>
 <td>null</td>
 </tr>
 <tr>
@@ -1126,7 +1126,7 @@ both build on top of the raycaster component.</p>
 </tr>
 <tr>
 <td>recursive</td>
-<td>Checks all children of objects if set. Else only checks intersections with root objects.</td>
+<td>Checks children of objects if set. Else only checks intersections with root objects. Note that only objects attached via <code>setObject3D</code> are tested.</td>
 <td>true</td>
 </tr>
 <tr>
