@@ -1130,6 +1130,8 @@ then the default camera will not be added.</p>
 <h2 id="vr-behavior"><a href="#vr-behavior" class="headerlink" title="VR Behavior"></a>VR Behavior</h2><p>When exiting VR, the camera will restore its rotation to its rotation <em>before</em>
 it entered VR. This is so when we exit VR, the rotation of the camera is back
 to normal for a desktop screen.</p>
+<p>Far, near, fov, zoom properties only apply in 2D and magic window modes. 
+In VR mode the camera parameters are supplied by the WebVR / WebXR API to match IPD and headset FOV. Those aren’t configurable. </p>
 <h2 id="changing-the-active-camera"><a href="#changing-the-active-camera" class="headerlink" title="Changing the Active Camera"></a>Changing the Active Camera</h2><p>When the <code>active</code> property gets toggled, the component will notify the camera system
 to change the current camera used by the renderer:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> secondCameraEl = <span class="built_in">document</span>.querySelector(<span class="string">'#second-camera'</span>);</span><br><span class="line">secondCameraEl.setAttribute(<span class="string">'camera'</span>, <span class="string">'active'</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
