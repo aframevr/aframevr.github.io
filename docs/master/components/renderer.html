@@ -514,13 +514,6 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/components/collada-model.html"
-               class="subnav-link">
-              collada-model
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/master/components/cursor.html"
                class="subnav-link">
               cursor
@@ -820,13 +813,6 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/a-collada-model.html"
-               class="subnav-link">
-              &lt;a-collada-model&gt;
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-cone.html"
                class="subnav-link">
               &lt;a-cone&gt;
@@ -1070,9 +1056,9 @@
 
       
 
-      <p>The <code>renderer</code> component configures a scene’s
+      <p>The <code>renderer</code> system configures a scene’s
 <a href="https://threejs.org/docs/#api/renderers/WebGLRenderer" target="_blank" rel="external">THREE.WebGLRenderer</a> instance.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">renderer</span>=<span class="string">"antialias: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   gammaOutput: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   sortObjects: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   physicallyCorrectLights: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   maxCanvasWidth: 1920;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   maxCanvasHeight: 1920;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">renderer</span>=<span class="string">"antialias: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   colorManagement: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   sortObjects: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   physicallyCorrectLights: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   maxCanvasWidth: 1920;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   maxCanvasHeight: 1920;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
@@ -1088,8 +1074,8 @@
 <td>auto</td>
 </tr>
 <tr>
-<td>gammaOutput</td>
-<td>Whether to pre-multiply gamma on textures and colors before rendering.</td>
+<td>colorManagement</td>
+<td>Whether to use a color-managed linear workflow.</td>
 <td>false</td>
 </tr>
 <tr>
@@ -1112,19 +1098,28 @@
 <td>Maximum canvas height. Behaves the same as maxCanvasWidth.</td>
 <td>1920</td>
 </tr>
+<tr>
+<td>logarithmicDepthBuffer</td>
+<td>Whether to use a logarithmic depth buffer.</td>
+<td>auto</td>
+</tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>NOTE:</strong> Once the scene is initialized, these properties may no longer be changed.</p>
+</blockquote>
 <h3 id="antialias"><a href="#antialias" class="headerlink" title="antialias"></a>antialias</h3><p>When enabled, smooths jagged edges on curved lines and diagonals at moderate performance cost.
 By default, antialiasing is disabled on mobile devices.</p>
+<h3 id="colormanagement"><a href="#colormanagement" class="headerlink" title="colorManagement"></a>colorManagement</h3><p>Color management provides more accurate rendering and reduces the likelihood that scenes
+will appear overlit or “washed out.” Enabling color management is recommended for precisely
+matching colors from texturing and modeling tools, but unofficial components may not always
+respond to color management properly at this time.</p>
+<p>Managed and unmanaged color modes are similar to linear and gamma workflows, respectively, in
+other engines and tools.</p>
 <blockquote>
-<p><strong>NOTE:</strong> Once the scene is initialized, <code>antialias</code> may no longer be
-changed.</p>
+<p><strong>NOTE:</strong> In three.js, and previous versions of A-Frame, a <code>gammaOutput: true</code> property was
+available. This is applied automatically when color management is enabled.</p>
 </blockquote>
-<h3 id="gammaoutput"><a href="#gammaoutput" class="headerlink" title="gammaOutput"></a>gammaOutput</h3><p>Typically, textures are converted to linear colorspace in the renderer for lighting calculations.
-Unless post-processing used after the initial render,
-<a href="https://en.wikipedia.org/wiki/Gamma_correction" target="_blank" rel="external">gamma correction</a> should be applied with
-<code>renderer=&quot;gammaOutput: true;&quot;</code> for best color reproduction. By default, gamma correction is off
-in order to preserve backward-compatibility. When changed, adjustments to lighting may be needed.</p>
 <h3 id="sortobjects"><a href="#sortobjects" class="headerlink" title="sortObjects"></a>sortObjects</h3><p>Sorting is used to attempt to properly render objects that have some degree of transparency.
 Due to various limitations, proper transparency often requires some amount of careful setup.
 By default, objects are not sorted, and the order of elements in the DOM determines order of
@@ -1138,6 +1133,8 @@ be adjusted when making this change. Performance is not significantly affected i
 <p><strong>NOTE:</strong> When glTF models contain lights, use the physically-correct lighting mode to match
 the results in the original modeling tool.</p>
 </blockquote>
+<h3 id="logarithmicdepthbuffer"><a href="#logarithmicdepthbuffer" class="headerlink" title="logarithmicDepthBuffer"></a>logarithmicDepthBuffer</h3><p>A logarithmic depth buffer may provide better sorting and rendering in scenes containing very
+large differences of scale and distance.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1195,7 +1192,7 @@ the results in the original modeling tool.</p>
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#gammaoutput">gammaOutput</a>
+                <a class="subnav-link" href="#colormanagement">colorManagement</a>
               </li>
             
               <li class="subnav-item">
@@ -1204,6 +1201,10 @@ the results in the original modeling tool.</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#physicallycorrectlights">physicallyCorrectLights</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#logarithmicdepthbuffer">logarithmicDepthBuffer</a>
               </li>
             
           </ul>

@@ -514,13 +514,6 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/components/collada-model.html"
-               class="subnav-link">
-              collada-model
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/master/components/cursor.html"
                class="subnav-link">
               cursor
@@ -820,13 +813,6 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/master/primitives/a-collada-model.html"
-               class="subnav-link">
-              &lt;a-collada-model&gt;
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-cone.html"
                class="subnav-link">
               &lt;a-cone&gt;
@@ -1095,14 +1081,14 @@ more powerful set of features. In addition to all of the above, glTF offers:</p>
 </ul>
 <p>For simple models with no animation, OBJ is nevertheless a common and reliable
 choice.</p>
-<p>In comparison to <a href="./collada-model.html">COLLADA</a>, the supported features are very
+<p>In comparison to COLLADA or FBX, the supported features are very
 similar. However, because glTF focuses on providing a “transmission format”
 rather than an editor format, it is more interoperable with web technologies.
 By analogy, the .PSD (Adobe Photoshop) format is helpful for editing 2D images,
 but images are converted to .JPG for use on the web. In the same way, glTF is a
 simpler way of transmitting 3D assets while rendering the same result.</p>
-<p>In short, expect glTF models to work with A-Frame more reliably than COLLADA
-models.</p>
+<p>In short, expect glTF models to work with A-Frame more reliably than other
+formats.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Load a glTF model by pointing to an asset that specifies the <code>src</code> for a glTF
 file.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"tree"</span> <span class="attr">src</span>=<span class="string">"/path/to/tree.gltf"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gltf-model</span>=<span class="string">"#tree"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
