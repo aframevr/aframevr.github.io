@@ -89,6 +89,56 @@ pre .xml .css,
 pre .xml .cdata {
   opacity: 0.5;
 }
+#communityShowcase {
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+#communityShowcase li {
+  margin: 0;
+  padding: 10px 10px 10px 0;
+  width: 50%;
+}
+#communityShowcase li img {
+  box-shadow: 0px 0px 1px 1px #bbb;
+  margin-bottom: 5px;
+}
+#communityShowcase li img:hover {
+  box-shadow: 0px 0px 1px 1px #888;
+}
+#communityShowcase li a {
+  border-bottom: 0;
+}
+#communityShowcase li .projectInfo {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+#communityShowcase li .projectInfo p {
+  margin-top: 0;
+}
+#communityShowcase li .projectInfo .projectTitle {
+  margin-bottom: 5px;
+}
+#communityShowcase li .projectInfo .projectName {
+  font-weight: bold;
+}
+#communityShowcase li .projectInfo .projectAuthor {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+#communityShowcase li .projectInfo .projectDescription {
+  font-size: 12px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -380,36 +430,6 @@ h4 {
     margin-bottom: 20px;
   }
 }
-.sponsor {
-  vertical-align: middle;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 0 20px 20px;
-  height: 30px;
-}
-.sponsor .message {
-  margin-right: 7px;
-  display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  vertical-align: top;
-  font-weight: 300;
-}
-a.mozilla-logo {
-  display: inline-block;
-  opacity: 0.8;
-  background: url("../images/mozilla-logo.svg") no-repeat;
-  height: 24px;
-  width: 84px;
-  border: none;
-  margin-left: 0.25ch;
-  top: 1px;
-  transition: 0.15s opacity ease-in-out;
-}
-a.mozilla-logo:hover {
-  opacity: 1;
-}
 .github-emoji {
   vertical-align: top;
 }
@@ -461,7 +481,7 @@ ul {
   -ms-overflow-style: none;
   width: 270px;
 }
-.sidebar::-webkit-scrollbar {
+.sidebar-webkit-scrollbar {
   width: 0 !important;
 }
 .sidebar .page-title {
@@ -538,7 +558,7 @@ ul {
   color: #fff;
   width: 100%;
 }
-.subnav-link:hover {
+.subnav-linkhover {
   background-color: rgba(0,0,0,0.05);
   color: #fff;
 }
@@ -547,7 +567,7 @@ ul {
   background-color: rgba(0,0,0,0.5);
 }
 .subnav-link.current,
-.subnav-link.current:hover {
+.subnav-link.currenthover {
   font-weight: 500;
   color: #fff;
 }
@@ -580,7 +600,7 @@ ul {
   width: 90px;
   margin: 0px 20px 20px;
 }
-.credits:hover {
+.creditshover {
   background-color: rgba(0,0,0,0.1);
 }
 .sponsor {
@@ -598,20 +618,6 @@ ul {
   line-height: 30px;
   vertical-align: top;
   font-weight: 300;
-}
-a.mozilla-logo {
-  display: inline-block;
-  opacity: 0.8;
-  background: url("../images/mozilla-logo.svg") no-repeat;
-  height: 24px;
-  width: 88px;
-  border: none;
-  position: relative;
-  top: 1px;
-  transition: 0.15s opacity ease-in-out;
-}
-a.mozilla-logo:hover {
-  opacity: 1;
 }
 .examples-subnav {
   margin-top: 0.5rem;
@@ -660,10 +666,11 @@ span[itemprop] {
 .menu-item a {
   text-transform: uppercase;
   color: rgba(0,0,0,0.75);
+  font-size: 14px;
   margin-right: 20px;
   border: none;
 }
-.menu-item a:hover {
+.menu-item ahover {
   color: #000;
   background-color: rgba(0,0,0,0.02);
   border-bottom: 1px solid rgba(0,0,0,0.5);
@@ -688,6 +695,9 @@ span[itemprop] {
 }
 .get-started:active {
   opacity: 0.8;
+}
+.sidebar .get-started {
+  padding: 8px 30px;
 }
 .mobile-get-started {
   margin: 0 0 20px;
@@ -790,8 +800,52 @@ span[itemprop] {
 .example-nav {
   margin-top: 18px;
 }
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .example-nav {
     display: none;
   }
+}
+@media (max-height: 475px) {
+  #usersContainer {
+    display: none;
+  }
+}
+#usersContainer {
+  bottom: 0;
+  padding: 15px 30px;
+  position: absolute;
+  right: 0;
+}
+#usersContainer p {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 4px;
+  text-align: center;
+}
+#users {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+#users a {
+  border: 0;
+}
+#users img {
+  margin: 5px;
+  max-height: 40px;
+  opacity: 0.8;
+  transition: opacity 0.1s;
+  vertical-align: middle;
+  width: 48px;
+}
+#users img:hover {
+  opacity: 0.95;
+}
+#homeContent {
+  position: relative;
 }
