@@ -1155,7 +1155,7 @@ refresh its list of objects it is raycasting against.</p>
 <tbody>
 <tr>
 <td>raycaster-intersected</td>
-<td>Emitted on the intersected entity. Entity is intersecting with a raycaster. Event detail will contain <code>el</code>, the raycasting entity, and <code>intersection</code>, an object containing detailed data about the intersection.</td>
+<td>Emitted on the intersected entity. Entity is intersecting with a raycaster. Event detail will contain <code>el</code>, the raycasting entity, and <code>intersection</code>, and <code>.getIntersection (el)</code> function which can be used to obtain current intersection data.</td>
 </tr>
 <tr>
 <td>raycaster-intersected-cleared</td>
@@ -1163,7 +1163,7 @@ refresh its list of objects it is raycasting against.</p>
 </tr>
 <tr>
 <td>raycaster-intersection</td>
-<td>Emitted on the raycasting entity. Raycaster is intersecting with one or more entities. Event detail will contain <code>els</code>, an array with the intersected entities, and <code>intersections</code>, an array of objects containing detailed data about the intersections.</td>
+<td>Emitted on the raycasting entity. Raycaster is intersecting with one or more entities. Event detail will contain <code>els</code>, an array with the intersected entities, and <code>intersections</code>, and <code>.getIntersection (el)</code> function which can be used to obtain current intersection data.</td>
 </tr>
 <tr>
 <td>raycaster-intersection-cleared</td>
@@ -1242,20 +1242,37 @@ refresh its list of objects it is raycasting against.</p>
 </thead>
 <tbody>
 <tr>
+<td>getIntersection (el)</td>
+<td>Given an entity, return current intersection data if any. This method is also passed into intersection event details for convenience.</td>
+</tr>
+<tr>
 <td>refreshObjects</td>
 <td>Refreshes the list of objects based off of the <code>objects</code> property to test for intersection.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="whitelisting-entities-to-test-for-intersection"><a href="#whitelisting-entities-to-test-for-intersection" class="headerlink" title="Whitelisting Entities to Test for Intersection"></a>Whitelisting Entities to Test for Intersection</h2><p>We usually don’t want to test everything in the scene for intersections (e.g.,
-for collisions or for clicks). Selective intersections are good for performance
-to limit the number of entities to test for intersection since intersection
-testing is an operation that will run over 60 times per second.</p>
+<h2 id="selecting-entities-to-test-for-intersection"><a href="#selecting-entities-to-test-for-intersection" class="headerlink" title="Selecting Entities to Test for Intersection"></a>Selecting Entities to Test for Intersection</h2><p>Raycasting is a relatively expensive operation. We heavily recommend and
+prescribe setting the <code>objects</code> property which will filter what entities the
+raycaster is listening to for intersections.  Selective intersections are good
+for performance to limit the number of entities to test for intersection since
+  intersection testing is an operation that many times per second.</p>
 <p>To select or pick the entities we want to test for intersection, we can use the
 <code>objects</code> property. If this property is not defined, then the raycaster will
 test every object in the scene for intersection. <code>objects</code> takes a query
 selector value:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">raycaster</span>=<span class="string">"objects: .clickable"</span> <span class="attr">cursor</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">"clickable"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">position</span>=<span class="string">"1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">"not-clickable"</span> <span class="attr">geometry</span>=<span class="string">"primitive: sphere"</span> <span class="attr">position</span>=<span class="string">"-1 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>In that example, we can remove or add entities to the raycast list by setting
+or removing the <code>clickable</code> class (<code>el.classList.toggle(&#39;clickable&#39;)</code>). Another
+good way to filter is using data attributes instead of classes
+(<code>[data-raycastable]</code> and <code>el.setAttribute(&#39;data-raycastable&#39;, &#39;&#39;)</code>).</p>
+<h2 id="listening-for-raycaster-intersection-data-change"><a href="#listening-for-raycaster-intersection-data-change" class="headerlink" title="Listening for Raycaster Intersection Data Change"></a>Listening for Raycaster Intersection Data Change</h2><p>When we want to listen for change to the intersection data (e.g., listen to
+change of the actual point of intersection), we can use the <code>.getIntersection
+(el)</code> method, which takes an entity and returns intersection data if the
+raycaster is currently intersecting the entity. Below is an example component
+of doing so in the tick handler:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'raycaster-listen'</span>, &#123;</span><br><span class="line">	init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Use events to figure out what raycaster is listening so we don't have to</span></span><br><span class="line">    <span class="comment">// hardcode the raycaster.</span></span><br><span class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'raycaster-intersected'</span>, evt =&gt; &#123;</span><br><span class="line">      <span class="keyword">this</span>.raycaster = evt.detail.el;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'raycaster-intersected-cleared'</span>, evt =&gt; &#123;</span><br><span class="line">      <span class="keyword">this</span>.raycaster = <span class="literal">null</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.raycaster) &#123; <span class="keyword">return</span>; &#125;  <span class="comment">// Not intersecting.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> intersection = <span class="keyword">this</span>.raycaster.getIntersection(<span class="keyword">this</span>.el);</span><br><span class="line">    <span class="keyword">if</span> (!intersection) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(intersection.point);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;a-entity id="raycaster" raycaster&gt;&lt;/a-entity&gt;</span></span><br><span class="line"><span class="comment">// &lt;a-entity geometry material raycaster-listen&gt;&lt;/a-entity&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Now on every frame, the entity will check its intersection data and do
+something with it (e.g., draw a sphere at the point of intersection).</p>
 <h2 id="manually-refreshing-the-target-entities-of-the-raycaster"><a href="#manually-refreshing-the-target-entities-of-the-raycaster" class="headerlink" title="Manually Refreshing the Target Entities of the Raycaster"></a>Manually Refreshing the Target Entities of the Raycaster</h2><p>The raycaster component keeps a local array of objects and entities that the
 raycaster tests against for intersection. This array defaults to every 3D
 object in the three.js Scene. If the <code>objects</code> property is specified, then
@@ -1366,7 +1383,18 @@ shoot straight through.</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#whitelisting-entities-to-test-for-intersection">Whitelisting Entities to Test for Intersection</a>
+        <a class="subnav-link" href="#selecting-entities-to-test-for-intersection">Selecting Entities to Test for Intersection</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#listening-for-raycaster-intersection-data-change">Listening for Raycaster Intersection Data Change</a>
 
         <!-- Nested. -->
         
