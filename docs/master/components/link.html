@@ -1161,8 +1161,8 @@ shows tooltips and provides button mappings for peeking and entering portals.</p
 </tr>
 </tbody>
 </table>
-<h2 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="navigate-url"><a href="#navigate-url" class="headerlink" title=".navigate (url)"></a>.navigate (url)</h3><p>Sends the user to the page specified by the <code>href</code> property:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-link'</span>).navigate(<span class="string">'destination.html'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="manually-navigating"><a href="#manually-navigating" class="headerlink" title="Manually Navigating"></a>Manually Navigating</h2><p>To navigate manually, use <code>window.location</code> API. See this <a href="https://stackoverflow.com/questions/503093/how-do-i-redirect-to-another-webpage" target="_blank" rel="external">StackOverflow question on navigating</a>. For example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.location.href = <span class="string">'https://supermedium.com/supercraft/'</span>;</span><br><span class="line"><span class="comment">// or window.location.replace</span></span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->
@@ -1226,15 +1226,11 @@ shows tooltips and provides button mappings for peeking and entering portals.</p
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#methods">Methods</a>
+        <a class="subnav-link" href="#manually-navigating">Manually Navigating</a>
 
         <!-- Nested. -->
         
           <ul>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#navigate-url">.navigate (url)</a>
-              </li>
             
           </ul>
         
