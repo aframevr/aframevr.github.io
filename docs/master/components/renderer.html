@@ -1127,6 +1127,11 @@
 <td>Fragment shader <a href="#precision">precision</a> : low, medium or high.</td>
 <td>high</td>
 </tr>
+<tr>
+<td>alpha</td>
+<td>Whether the canvas should contain an alpha buffer.</td>
+<td>true</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -1160,6 +1165,7 @@ the results in the original modeling tool.</p>
 <h3 id="logarithmicdepthbuffer"><a href="#logarithmicdepthbuffer" class="headerlink" title="logarithmicDepthBuffer"></a>logarithmicDepthBuffer</h3><p>A logarithmic depth buffer may provide better sorting and rendering in scenes containing very
 large differences of scale and distance.</p>
 <h3 id="precision"><a href="#precision" class="headerlink" title="Precision"></a>Precision</h3><p>Set precision in fragment shaders. Main use is to address issues in older hardware / drivers. Adreno 300 series GPU based phones are <a href="https://github.com/mrdoob/three.js/issues/14137" target="_blank" rel="external">particularly problematic</a>. You can set to <code>mediump</code> as a workaround. It will improve performance, in mobile in particular but be aware that might cause visual artifacts in shaders / textures.</p>
+<h3 id="alpha"><a href="#alpha" class="headerlink" title="alpha"></a>alpha</h3><p>Whether the canvas should contain an alpha buffer. If this is true the renderer will have a transparent backbuffer and the canvas can be composited with the rest of the webpage. <a href="https://webglfundamentals.org/webgl/lessons/webgl-and-alpha.html" target="_blank" rel="external">See here for more info.</a></p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1225,6 +1231,10 @@ large differences of scale and distance.</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#precision">Precision</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#alpha">alpha</a>
               </li>
             
           </ul>
