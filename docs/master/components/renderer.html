@@ -1071,7 +1071,8 @@
       
 
       <p>The <code>renderer</code> system configures a scene’s
-<a href="https://threejs.org/docs/#api/renderers/WebGLRenderer" target="_blank" rel="external">THREE.WebGLRenderer</a> instance.</p>
+<a href="https://threejs.org/docs/#api/renderers/WebGLRenderer" target="_blank" rel="external">THREE.WebGLRenderer</a> instance.
+It also configures presentation attributes when entering WebVR/WebXR.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">renderer</span>=<span class="string">"antialias: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   colorManagement: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   sortObjects: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   physicallyCorrectLights: true;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   maxCanvasWidth: 1920;</span></span></span><br><span class="line"><span class="tag"><span class="string">                   maxCanvasHeight: 1920;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
@@ -1096,6 +1097,11 @@
 <td>highRefreshRate</td>
 <td>Toggles 72hz mode on Oculus Browser. Defaults to 60hz.</td>
 <td>false</td>
+</tr>
+<tr>
+<td>foveationLevel</td>
+<td>Enables foveation in VR to improve perf. 0 none, 1 low, 2 medium, 3 high</td>
+<td>0</td>
 </tr>
 <tr>
 <td>sortObjects</td>
@@ -1149,6 +1155,11 @@ other engines and tools.</p>
 <p><strong>NOTE:</strong> In three.js, and previous versions of A-Frame, a <code>gammaOutput: true</code> property was
 available. This is applied automatically when color management is enabled.</p>
 </blockquote>
+<h3 id="highrefreshrate"><a href="#highrefreshrate" class="headerlink" title="highRefreshRate"></a>highRefreshRate</h3><p>Toggles on the highest refresh rate for the given device. Currently this is supported on the Oculus
+Browser in Oculus Go and switches rendering from 60hz to 72hz.</p>
+<h3 id="foveationlevel"><a href="#foveationlevel" class="headerlink" title="foveationLevel"></a>foveationLevel</h3><p>Sets the level of requested foveation which renders fewer pixels around the edges of the viewport
+when in stereo rendering mode on certain systems. This is currently supported by the Oculus Browser
+on the Oculus Go with values ranging from 0 (none) to 3 (high). </p>
 <h3 id="sortobjects"><a href="#sortobjects" class="headerlink" title="sortObjects"></a>sortObjects</h3><p>Sorting is used to attempt to properly render objects that have some degree of transparency.
 Due to various limitations, proper transparency often requires some amount of careful setup.
 By default, objects are not sorted, and the order of elements in the DOM determines order of
@@ -1215,6 +1226,14 @@ large differences of scale and distance.</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#colormanagement">colorManagement</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#highrefreshrate">highRefreshRate</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#foveationlevel">foveationLevel</a>
               </li>
             
               <li class="subnav-item">
