@@ -1374,7 +1374,7 @@ will call a component’s <code>tick</code> handler:</p>
 the controller’s animations, update the controller’s position and rotation, and
 check for button presses.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'tracked-controls'</span>, &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params">time, timeDelta</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.updateMeshAnimation();</span><br><span class="line">    <span class="keyword">this</span>.updatePose();</span><br><span class="line">    <span class="keyword">this</span>.updateButtons();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="tock-time-timedelta-camera"><a href="#tock-time-timedelta-camera" class="headerlink" title=".tock (time, timeDelta, camera)"></a><code>.tock (time, timeDelta, camera)</code></h3><p>Identical to the tick method but invoked after the scene has rendered. </p>
+<h3 id="tock-time-timedelta-camera"><a href="#tock-time-timedelta-camera" class="headerlink" title=".tock (time, timeDelta, camera)"></a><code>.tock (time, timeDelta, camera)</code></h3><p>Identical to the tick method but invoked after the scene has rendered.</p>
 <p>The <code>tock</code> handler is used to run logic that needs access to the drawn scene before it’s pushed into the headset like postprocessing effects.</p>
 <h3 id="pause"><a href="#pause" class="headerlink" title=".pause ()"></a><code>.pause ()</code></h3><p><code>.pause ()</code> is called when the entity or scene pauses. The entity can call a
 component’s <code>pause</code> handler:</p>
@@ -1441,6 +1441,18 @@ a component instance is set with <code>foo__bar</code>, then <code>this.attrName
 <code>foo__bar</code>. This gives us a namespace and an ID to set an <code>object3D</code> on the
 entity’s <code>object3DMap</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  multiple: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// An object3D will be set using `foo__bar` as the key.</span></span><br><span class="line">    <span class="keyword">this</span>.el.setObject3D(<span class="keyword">this</span>.attrName, <span class="keyword">new</span> THREE.Mesh());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="events"><a href="#events" class="headerlink" title="events"></a><code>events</code></h3><p>The <code>events</code> object allows for conveniently defining event handlers that get
+binded and automatically attached and detached at appropriate times during the
+component’s lifecycle:</p>
+<ul>
+<li>Attached on <code>.play()</code></li>
+<li>Detached on <code>.pause()</code> and <code>.remove()</code></li>
+</ul>
+<p>Using <code>events</code> ensures that event handlers properly clean themselves up when
+the entity or scene is paused, or the component is detached. If a component’s
+event handlers are registered manually and not detached properly, the event
+handler can still fire even after the component no longer exists.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  events: &#123;</span><br><span class="line">    click: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'This entity was clicked!'</span>);</span><br><span class="line">      <span class="keyword">this</span>.el.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, <span class="string">'red'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="component-prototype-methods"><a href="#component-prototype-methods" class="headerlink" title="Component Prototype Methods"></a>Component Prototype Methods</h2><h3 id="flushtodom"><a href="#flushtodom" class="headerlink" title=".flushToDOM ()"></a><code>.flushToDOM ()</code></h3><p>To save on CPU time on stringification, A-Frame will only update in debug mode
 the component’s serialized representation in the actual DOM. Calling
 <code>flushToDOM ()</code> will manually serialize the component’s data and update the
@@ -1599,6 +1611,10 @@ example component:</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#multiple">multiple</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#events">events</a>
               </li>
             
           </ul>
