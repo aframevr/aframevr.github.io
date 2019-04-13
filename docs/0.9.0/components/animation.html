@@ -1283,6 +1283,10 @@ animation.</p>
 <td>animationcomplete</td>
 <td>Animation completed. Event detail contains <code>name</code> of animation.</td>
 </tr>
+<tr>
+<td>animationcomplete__<id></id></td>
+<td>Animation completed if animation has an ID (e.g., <code>animation__click</code>).</td>
+</tr>
 </tbody>
 </table>
 <h3 id="members"><a href="#members" class="headerlink" title="Members"></a>Members</h3><p>Accessed as <code>el.components.animation.&lt;MEMBER&gt;</code>.</p>
@@ -1304,6 +1308,9 @@ animation.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="animating-on-events"><a href="#animating-on-events" class="headerlink" title="Animating on Events"></a>Animating on Events</h2><p>We can use the <code>startEvents</code> property to animate upon events:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"mouseCursor"</span> <span class="attr">cursor</span>=<span class="string">"rayOrigin: mouse"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">"primitive: box"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">"color: red"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseenter</span>=<span class="string">"property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500"</span>;</span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseleave</span>=<span class="string">"property: components.material.material.color; type: color; to: red; startEvents: mouseleave; dur: 500"</span>;</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://glitch.com/edit/#!/aframe-animation-events?path=index.html:1:0" target="_blank" rel="external">Remix the Animating on Events Glitch</a>.</p>
 <h2 id="animating-different-types-of-values"><a href="#animating-different-types-of-values" class="headerlink" title="Animating Different Types of Values"></a>Animating Different Types of Values</h2><p>We’ll go over different cases of animating different types of values.</p>
 <h3 id="component-values"><a href="#component-values" class="headerlink" title="Component Values"></a>Component Values</h3><p>We can animate a single-property component value (e.g., <code>property: visible</code>,
 we’ll go over booleans in a bit) or animate a property of a multi-property
@@ -1407,6 +1414,17 @@ documentation</a> and
       </li>
     
       <li class="subnav-item">
+        <a class="subnav-link" href="#animating-on-events">Animating on Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
         <a class="subnav-link" href="#animating-different-types-of-values">Animating Different Types of Values</a>
 
         <!-- Nested. -->
@@ -1460,6 +1478,12 @@ documentation</a> and
 
     
       <ul class="subnav">
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-animation-events?path=index.html:1:0">
+              Animating on Events
+            </a>
+          </li>
         
           <li class="subnav-item">
             <a class="subnav-link" href="https://glitch.com/~aframe-shooting-stars">
