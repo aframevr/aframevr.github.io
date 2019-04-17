@@ -1170,6 +1170,7 @@ parsing for the value. For example, the <a href="../components/position.html">po
 single-property component, but its property type parser allows it to take an
 object:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.setAttribute(<span class="string">'position'</span>, &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">3</span> &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="destroy"><a href="#destroy" class="headerlink" title="destroy ()"></a><code>destroy ()</code></h3><p>Clean up memory related to the entity such as clearing all components and their data.</p>
 <h4 id="updating-multi-property-component-data"><a href="#updating-multi-property-component-data" class="headerlink" title="Updating Multi-Property Component Data"></a>Updating Multi-Property Component Data</h4><p>To update component data for a multi-property component, we can pass the name
 of a registered component as the <code>componentName</code>, and pass an object of
 properties as the <code>value</code>. A string is also acceptable (e.g., <code>type: spot;
@@ -1462,6 +1463,10 @@ the scene attaches or detaches an entity:</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#setattribute-componentname-value-propertyvalue-clobber">setAttribute (componentName, value, [propertyValue | clobber])</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#destroy">destroy ()</a>
               </li>
             
               <li class="subnav-item">
