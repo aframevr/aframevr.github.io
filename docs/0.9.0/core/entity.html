@@ -1165,6 +1165,7 @@ parsing for the value. For example, the <a href="../components/position.html">po
 single-property component, but its property type parser allows it to take an
 object:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.setAttribute(<span class="string">'position'</span>, &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">3</span> &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="destroy"><a href="#destroy" class="headerlink" title="destroy ()"></a><code>destroy ()</code></h3><p>Clean up memory related to the entity such as clearing all components and their data.</p>
 <h4 id="updating-multi-property-component-data"><a href="#updating-multi-property-component-data" class="headerlink" title="Updating Multi-Property Component Data"></a>Updating Multi-Property Component Data</h4><p>To update component data for a multi-property component, we can pass the name
 of a registered component as the <code>componentName</code>, and pass an object of
 properties as the <code>value</code>. A string is also acceptable (e.g., <code>type: spot;
@@ -1192,7 +1193,7 @@ detail when <code>setObject3D</code> is called.</p>
 <h3 id="removeattribute-componentname-propertyname"><a href="#removeattribute-componentname-propertyname" class="headerlink" title="removeAttribute (componentName, propertyName)"></a><code>removeAttribute (componentName, propertyName)</code></h3><p>If <code>componentName</code> is the name of a registered component, along with removing the
 attribute from the DOM, <code>removeAttribute</code> will also detach the component from
 the entity, invoking the component’s <code>remove</code> lifecycle method.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.removeAttribute(<span class="string">'goemetry'</span>);  <span class="comment">// Detach the geometry component.</span></span><br><span class="line">entity.removeAttribute(<span class="string">'sound'</span>);  <span class="comment">// Detach the sound component.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.removeAttribute(<span class="string">'geometry'</span>);  <span class="comment">// Detach the geometry component.</span></span><br><span class="line">entity.removeAttribute(<span class="string">'sound'</span>);  <span class="comment">// Detach the sound component.</span></span><br></pre></td></tr></table></figure>
 <p>If <code>propertyName</code> is given, <code>removeAttribute</code> will reset the property value of
 that property specified by <code>propertyName</code> to the property’s default value:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, <span class="string">'blue'</span>);  <span class="comment">// The color is blue.</span></span><br><span class="line">entity.removeAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>);  <span class="comment">// Reset the color to the default value, white.</span></span><br></pre></td></tr></table></figure>
@@ -1457,6 +1458,10 @@ the scene attaches or detaches an entity:</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#setattribute-componentname-value-propertyvalue-clobber">setAttribute (componentName, value, [propertyValue | clobber])</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#destroy">destroy ()</a>
               </li>
             
               <li class="subnav-item">
