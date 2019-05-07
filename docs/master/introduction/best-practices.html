@@ -1082,7 +1082,9 @@ purpose of using A-Frame.</p>
 <p><strong>Do this</strong>:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  AFRAME.registerComponent(&apos;code-that-does-this&apos;, &#123;</span><br><span class="line">    init: function () &#123;</span><br><span class="line">      // Code here.</span><br><span class="line">      console.log(this.el);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  AFRAME.registerComponent(&apos;code-to-attach-to-box&apos;, &#123;</span><br><span class="line">    init: function () &#123;</span><br><span class="line">      // Code here.</span><br><span class="line">      console.log(this.el);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;a-scene code-that-does-this&gt;</span><br><span class="line">  &lt;a-box code-to-attach-to-box&gt;&lt;/a-box&gt;</span><br><span class="line">  &lt;!-- ... --&gt;</span><br><span class="line">&lt;/a-scene&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="webvr"><a href="#webvr" class="headerlink" title="WebVR"></a>WebVR</h2><p><a href="https://www.supermedium.com/blog/webvr-guidelines" target="_blank" rel="external">See WebVR Guidelines</a>.</p>
-<h2 id="performance"><a href="#performance" class="headerlink" title="Performance"></a>Performance</h2><p>Performance is critical in VR. A high framerate must be maintained in order for
+<h2 id="performance"><a href="#performance" class="headerlink" title="Performance"></a>Performance</h2><p>[pool]
+[geometrymerger]: <a href="https://www.npmjs.com/package/aframe-geometry-merger-component" target="_blank" rel="external">https://www.npmjs.com/package/aframe-geometry-merger-component</a></p>
+<p>Performance is critical in VR. A high framerate must be maintained in order for
 people to feel comfortable. Here are some ways to help improve performance of
 an A-Frame scene:</p>
 <ul>
@@ -1092,8 +1094,8 @@ vertex and face count, geometry and material count, draw calls, number of
 entities). We want to maximize FPS and minimize everything else.</li>
 <li>Limit draw calls as much as possible. Each geometry, object, model without
 optimization is generally a draw call. Rule of thumb, try to keep under 300
-maximum. <a href="https://www.npmjs.com/package/aframe-geometry-merger-component" target="_blank" rel="external">Merge</a> together all static meshes if possible. You
-can use <a href="https://www.npmjs.com/package/aframe-geometry-merger-component" target="_blank" rel="external">geometry-merger</a> and then make use a three.js
+maximum. [Merge][geometrymerger] together all static meshes if possible. You
+can use [geometry-merger][geometrymerger] and then make use a three.js
 material with vertex colors enabled. three.js geometries keep data such as
 color, uvs per vertex that can be used to maintain and manipulate geometries
 post-merge.</li>
@@ -1106,8 +1108,8 @@ on real-time lighting and shadows.</li>
 256x256, 512x1024) in order to avoid the renderer having to resize the
 texture during runtime.</li>
 <li>Limit the number of faces and vertices on models.</li>
-<li>Some further techniques include geometry instancing, <a href="https://www.npmjs.com/package/aframe-geometry-merger-component" target="_blank" rel="external">geometry
-merging</a>, level of detail (LOD).</li>
+<li>Some further techniques include geometry instancing, [geometry
+merging][geometrymerger], level of detail (LOD).</li>
 <li>When using raycasters or colliders, select which entities are to be raycasted
 against rather than raycasting against every object in the scene.</li>
 <li>When adding continuously running behaviors, use A-Frame component <code>tick</code>
@@ -1120,10 +1122,13 @@ unnecessary geometry.</li>
 <li>Update <code>position</code>, <code>rotation</code>, <code>scale</code>, and <code>visible</code> using at the three.js
 level (<code>el.object3D.position</code>, <code>el.object3D.rotation</code>, <code>el.object3D.scale</code>,
 <code>el.object3D.visible</code>) to avoid overhead on <code>.setAttribute</code>.</li>
-<li>When using the animation component, [animate values
-directly][animationdirect] which will skip <code>.setAttribute</code> and animate JS
-values directly. For example, instead of <code>material.opacity</code>, animate
-<code>components.material.material.opacity</code>.</li>
+<li>If you need to create, remove and re-create many entities of the same type,
+use the <strong><a href="../components/pool.html">pool component</a></strong> to pre-generate and reuse entities. This
+avoids the cost of creating entities on the fly and reduces garbage collection.</li>
+<li>When using the animation component, <a href="../components/animation.html#direct-values-through-object3d-and-components">animate values directly</a> 
+which will skip <code>.setAttribute</code> and animate JS values directly. 
+For example, instead of <code>material.opacity</code>, 
+animate <code>components.material.material.opacity</code>.</li>
 </ul>
 <h3 id="gpu-texture-preloading"><a href="#gpu-texture-preloading" class="headerlink" title="GPU Texture Preloading"></a>GPU Texture Preloading</h3><p>Until non-blocking texture uploads to the GPU are available, try to draw all
 materials and textures up front. When materials and textures are drawn for the
