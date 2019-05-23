@@ -1124,6 +1124,12 @@ needing to create an object to set rotation:</p>
 A-Frame will convert from radians and degrees and return a normal JavaScript
 object with x/y/z properties.</p>
 <p>See also <a href="./camera.html#reading-position-or-rotation-of-the-camera">reading position and rotation of the camera</a>.</p>
+<h3 id="order-of-transformations"><a href="#order-of-transformations" class="headerlink" title="Order of Transformations"></a>Order of Transformations</h3><p>Transformations are applied to entities in this order:</p>
+<ul>
+<li><a href="scale.html">scale</a></li>
+<li>rotation</li>
+<li><a href="position.html">position/translation</a></li>
+</ul>
 
 
       <!-- Previous / Next navigation. -->
@@ -1191,6 +1197,10 @@ object with x/y/z properties.</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#getting-rotation">Getting Rotation</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#order-of-transformations">Order of Transformations</a>
               </li>
             
           </ul>
