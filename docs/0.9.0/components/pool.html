@@ -1068,10 +1068,12 @@
       <p>The pool component allows for <a href="https://en.wikipedia.org/wiki/Object_pool_pattern" target="_blank" rel="external">object
 pooling</a>. This gives us a
 reusable pool of entities to avoid creating and destroying the same kind of
-entities in dynamic scenes. Object pooling helps reduce GC pauses.</p>
+entities in dynamic scenes. Object pooling helps reduce garbage collection pauses.</p>
+<p>Note that entities requested from the pool are paused by default and you need 
+to call <code>.play()</code> in order to activate their components’ tick functions.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we may have a game with enemy entities that we want to reuse.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">pool__enemy</span>=<span class="string">"mixin: enemy; size : 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> el = sceneEl.components.pool__enemy.requestEntity();</span><br><span class="line">sceneEl.components.pool__enemy.returnEntity(el);</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">pool__enemy</span>=<span class="string">"mixin: enemy; size: 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> el = sceneEl.components.pool__enemy.requestEntity();</span><br><span class="line">el.play();</span><br><span class="line">sceneEl.components.pool__enemy.returnEntity(el);</span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
@@ -1103,8 +1105,10 @@ entities in dynamic scenes. Object pooling helps reduce GC pauses.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="requestentity"><a href="#requestentity" class="headerlink" title=".requestEntity ()"></a>.requestEntity ()</h3><p>Request one of the available entities in the pool.</p>
-<h3 id="returnentity-entityel"><a href="#returnentity-entityel" class="headerlink" title=".returnEntity (entityEl)"></a>.returnEntity (entityEl)</h3><p>Relinquish an entity back to the pool.</p>
+<h2 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="requestentity"><a href="#requestentity" class="headerlink" title=".requestEntity ()"></a>.requestEntity ()</h3><p>Request one of the available entities in the pool. Will return <code>undefined</code> and 
+log a warning if <code>grow</code> is set to <code>false</code> and you have exhausted the pool.</p>
+<h3 id="returnentity-entityel"><a href="#returnentity-entityel" class="headerlink" title=".returnEntity (entityEl)"></a>.returnEntity (entityEl)</h3><p>Relinquish an entity back to the pool. Will log a warning if you attempt to return
+an entity that did not belong to this pool.</p>
 
 
       <!-- Previous / Next navigation. -->
