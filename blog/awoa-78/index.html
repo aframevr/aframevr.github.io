@@ -1,0 +1,1574 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.9.0"
+      data-docs-version="0.9.0">
+  <head>
+    <title>A Week of A-Frame 78 – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="all">
+    <meta name="description" content="
+
+
+Checkout our new site and app! WebVR Studio is now:https://t.co/LNmuFrn1s3Design for #WebVR and export to @aframevr pic.twitter.com/zcYwthwVzR&amp;mdash; Ottifox (@ottifox) September 12, 2017
+
+Big news for my super-hands @aframevr #WebVR library in v2.0.0: a universal progressive-">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="A Week of A-Frame 78 – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="
+
+
+Checkout our new site and app! WebVR Studio is now:https://t.co/LNmuFrn1s3Design for #WebVR and export to @aframevr pic.twitter.com/zcYwthwVzR&amp;mdash; Ottifox (@ottifox) September 12, 2017
+
+Big news for my super-hands @aframevr #WebVR library in v2.0.0: a universal progressive-">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/674727/30478771-4232c850-99c7-11e7-818d-3f9cbf230584.jpg">
+    <meta property="og:image:secure_url" content="https://user-images.githubusercontent.com/674727/30478771-4232c850-99c7-11e7-818d-3f9cbf230584.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="A Week of A-Frame 78 – A-Frame">
+    <meta name="twitter:description" content="
+
+
+Checkout our new site and app! WebVR Studio is now:https://t.co/LNmuFrn1s3Design for #WebVR and export to @aframevr pic.twitter.com/zcYwthwVzR&amp;mdash; Ottifox (@ottifox) September 12, 2017
+
+Big news for my super-hands @aframevr #WebVR library in v2.0.0: a universal progressive-">
+    <meta name="twitter:image" content="https://user-images.githubusercontent.com/674727/30478771-4232c850-99c7-11e7-818d-3f9cbf230584.jpg">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('create', 'UA-35433268-69', 'auto', 'managers');
+
+  ga('send', 'pageview');
+  ga('managers.send', 'pageview');
+
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('managers.send', 'event', 'pageload.querystring', window.location.search);
+
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+  ga('managers.send', 'event', 'pageload.hash', window.location.hash);
+
+  ga('send', 'event', 'supports.getVRDevices', 'getVRDevices' in navigator);
+  ga('managers.send', 'event', 'supports.getVRDevices', 'getVRDevices' in navigator);
+
+  ga('send', 'event', 'supports.getVRDisplays', 'getVRDisplays' in navigator);
+  ga('managers.send', 'event', 'supports.getVRDisplays', 'getVRDisplays' in navigator);
+
+  ga('send', 'event', 'supports.WEBVRPLUS', 'WEBVRPLUS' in window);
+  ga('managers.send', 'event', 'supports.WEBVRPLUS', 'WEBVRPLUS' in window);
+</script>
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="blog" data-page-type="">
+    <main id="main" class="main"><div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.9.0/introduction/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs current"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <h3 class="section-title">Blog Posts</h3>
+    <ul class="subnav section-subnav blog-subnav">
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-164-169/"
+             class="subnav-link"
+             title="A Week of A-Frame 164 - 169">
+            A Week of A-Frame 164 - 169
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-162-163/"
+             class="subnav-link"
+             title="A Week of A-Frame 162 + 163">
+            A Week of A-Frame 162 + 163
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-159-161/"
+             class="subnav-link"
+             title="A Week of A-Frame 159 - 161">
+            A Week of A-Frame 159 - 161
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-157-158/"
+             class="subnav-link"
+             title="A Week of A-Frame 157 + 158">
+            A Week of A-Frame 157 + 158
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-155-156/"
+             class="subnav-link"
+             title="A Week of A-Frame 155 + 156">
+            A Week of A-Frame 155 + 156
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-153-154/"
+             class="subnav-link"
+             title="A Week of A-Frame 153 - 154">
+            A Week of A-Frame 153 - 154
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-149-152/"
+             class="subnav-link"
+             title="A Week of A-Frame 149 - 152">
+            A Week of A-Frame 149 - 152
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.9.0/"
+             class="subnav-link"
+             title="A-Frame v0.9.0 - Perf & Initial WebXR">
+            A-Frame v0.9.0 - Perf & Initial WebXR
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-145/"
+             class="subnav-link"
+             title="A Week of A-Frame 145">
+            A Week of A-Frame 145
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-143-144/"
+             class="subnav-link"
+             title="A Week of A-Frame 143 - 144">
+            A Week of A-Frame 143 - 144
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-140-142/"
+             class="subnav-link"
+             title="A Week of A-Frame 140 - 142">
+            A Week of A-Frame 140 - 142
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-139/"
+             class="subnav-link"
+             title="A Week of A-Frame 139">
+            A Week of A-Frame 139
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-138/"
+             class="subnav-link"
+             title="A Week of A-Frame 138">
+            A Week of A-Frame 138
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-137/"
+             class="subnav-link"
+             title="A Week of A-Frame 137">
+            A Week of A-Frame 137
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-133-136/"
+             class="subnav-link"
+             title="A Week of A-Frame 132 - 138">
+            A Week of A-Frame 132 - 138
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-129-132/"
+             class="subnav-link"
+             title="A Week of A-Frame 129 - 132">
+            A Week of A-Frame 129 - 132
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-124-128/"
+             class="subnav-link"
+             title="A Week of A-Frame 124 - 128">
+            A Week of A-Frame 124 - 128
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-120-123/"
+             class="subnav-link"
+             title="A Week of A-Frame 120 - 123">
+            A Week of A-Frame 120 - 123
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-116-119/"
+             class="subnav-link"
+             title="A Week of A-Frame 116 - 119">
+            A Week of A-Frame 116 - 119
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-115/"
+             class="subnav-link"
+             title="A Week of A-Frame 115">
+            A Week of A-Frame 115
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-111-114/"
+             class="subnav-link"
+             title="A Week of A-Frame 111 - 114">
+            A Week of A-Frame 111 - 114
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-106-110/"
+             class="subnav-link"
+             title="A Week of A-Frame 106 - 110">
+            A Week of A-Frame 106 - 110
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-105-106/"
+             class="subnav-link"
+             title="A Week of A-Frame 105 - 106">
+            A Week of A-Frame 105 - 106
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-101-104/"
+             class="subnav-link"
+             title="A Week of A-Frame 101 - 104">
+            A Week of A-Frame 101 - 104
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.8.0/"
+             class="subnav-link"
+             title="A-Frame v0.8.0 - Performance and Production">
+            A-Frame v0.8.0 - Performance and Production
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-100/"
+             class="subnav-link"
+             title="A Week of A-Frame 100">
+            A Week of A-Frame 100
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-98-99/"
+             class="subnav-link"
+             title="A Week of A-Frame 98 + 99">
+            A Week of A-Frame 98 + 99
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-96-97/"
+             class="subnav-link"
+             title="A Week of A-Frame 96 + 97">
+            A Week of A-Frame 96 + 97
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-92-95/"
+             class="subnav-link"
+             title="A Week of A-Frame 92 - 95">
+            A Week of A-Frame 92 - 95
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-91/"
+             class="subnav-link"
+             title="A Week of A-Frame 91">
+            A Week of A-Frame 91
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-90/"
+             class="subnav-link"
+             title="A Week of A-Frame 90">
+            A Week of A-Frame 90
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-88-89/"
+             class="subnav-link"
+             title="A Week of A-Frame 88 - 89">
+            A Week of A-Frame 88 - 89
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-87/"
+             class="subnav-link"
+             title="A Week of A-Frame 87">
+            A Week of A-Frame 87
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-86/"
+             class="subnav-link"
+             title="A Week of A-Frame 86">
+            A Week of A-Frame 86
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-85/"
+             class="subnav-link"
+             title="A Week of A-Frame 85">
+            A Week of A-Frame 85
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-84/"
+             class="subnav-link"
+             title="A Week of A-Frame 84">
+            A Week of A-Frame 84
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-82-83/"
+             class="subnav-link"
+             title="A Week of A-Frame 82 - 83">
+            A Week of A-Frame 82 - 83
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-81/"
+             class="subnav-link"
+             title="A Week of A-Frame 81">
+            A Week of A-Frame 81
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-79-80/"
+             class="subnav-link"
+             title="A Week of A-Frame 79 - 80">
+            A Week of A-Frame 79 - 80
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.7.0/"
+             class="subnav-link"
+             title="A-Frame v0.7.0 - Windows Mixed Reality Headsets and glTF 2.0">
+            A-Frame v0.7.0 - Windows Mixed Reality Headsets and glTF 2.0
+          </a>
+        </li>
+      
+        <li class="subnav-item  subnav-item-current">
+          <a href="/blog/awoa-78/"
+             class="subnav-link current"
+             title="A Week of A-Frame 78">
+            A Week of A-Frame 78
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-76/"
+             class="subnav-link"
+             title="A Week of A-Frame 76">
+            A Week of A-Frame 76
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-77/"
+             class="subnav-link"
+             title="A Week of A-Frame 77">
+            A Week of A-Frame 77
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-75/"
+             class="subnav-link"
+             title="A Week of A-Frame 75">
+            A Week of A-Frame 75
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-74/"
+             class="subnav-link"
+             title="A Week of A-Frame 74">
+            A Week of A-Frame 74
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-73/"
+             class="subnav-link"
+             title="A Week of A-Frame 73">
+            A Week of A-Frame 73
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-72/"
+             class="subnav-link"
+             title="A Week of A-Frame 72">
+            A Week of A-Frame 72
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-71/"
+             class="subnav-link"
+             title="A Week of A-Frame 71">
+            A Week of A-Frame 71
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-70/"
+             class="subnav-link"
+             title="A Week of A-Frame 70">
+            A Week of A-Frame 70
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-69/"
+             class="subnav-link"
+             title="A Week of A-Frame 69">
+            A Week of A-Frame 69
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/arjs/"
+             class="subnav-link"
+             title="Creating Augmented Reality with AR.js and A-Frame">
+            Creating Augmented Reality with AR.js and A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-67-68/"
+             class="subnav-link"
+             title="A Week of A-Frame 67 - 68">
+            A Week of A-Frame 67 - 68
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.6.0/"
+             class="subnav-link"
+             title="A-Frame v0.6.0 - Link Traversal">
+            A-Frame v0.6.0 - Link Traversal
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-66/"
+             class="subnav-link"
+             title="A Week of A-Frame 66">
+            A Week of A-Frame 66
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-65/"
+             class="subnav-link"
+             title="A Week of A-Frame 65">
+            A Week of A-Frame 65
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-64/"
+             class="subnav-link"
+             title="A Week of A-Frame 64">
+            A Week of A-Frame 64
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-63/"
+             class="subnav-link"
+             title="A Week of A-Frame 63">
+            A Week of A-Frame 63
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-62/"
+             class="subnav-link"
+             title="A Week of A-Frame 62">
+            A Week of A-Frame 62
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-61/"
+             class="subnav-link"
+             title="A Week of A-Frame 61">
+            A Week of A-Frame 61
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/donmccurdy/"
+             class="subnav-link"
+             title="Don McCurdy as an A-Frame Core Developer">
+            Don McCurdy as an A-Frame Core Developer
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-60/"
+             class="subnav-link"
+             title="A Week of A-Frame 60">
+            A Week of A-Frame 60
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-59/"
+             class="subnav-link"
+             title="A Week of A-Frame 59">
+            A Week of A-Frame 59
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-58/"
+             class="subnav-link"
+             title="A Week of A-Frame 58">
+            A Week of A-Frame 58
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-57/"
+             class="subnav-link"
+             title="A Week of A-Frame 57">
+            A Week of A-Frame 57
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-56/"
+             class="subnav-link"
+             title="A Week of A-Frame 56">
+            A Week of A-Frame 56
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/gamestate/"
+             class="subnav-link"
+             title="Managing Application and Game State in A-Frame">
+            Managing Application and Game State in A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-55/"
+             class="subnav-link"
+             title="A Week of A-Frame 55">
+            A Week of A-Frame 55
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/motion-capture/"
+             class="subnav-link"
+             title="Rapid Motion-Capture-Powered VR Development">
+            Rapid Motion-Capture-Powered VR Development
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-54/"
+             class="subnav-link"
+             title="A Week of A-Frame 54">
+            A Week of A-Frame 54
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-53/"
+             class="subnav-link"
+             title="A Week of A-Frame 53">
+            A Week of A-Frame 53
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-52/"
+             class="subnav-link"
+             title="A Week of A-Frame 52">
+            A Week of A-Frame 52
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-51/"
+             class="subnav-link"
+             title="A Week of A-Frame 51">
+            A Week of A-Frame 51
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-50/"
+             class="subnav-link"
+             title="A Week of A-Frame 50">
+            A Week of A-Frame 50
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-49/"
+             class="subnav-link"
+             title="A Week of A-Frame 49">
+            A Week of A-Frame 49
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-48/"
+             class="subnav-link"
+             title="A Week of A-Frame 48">
+            A Week of A-Frame 48
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-47/"
+             class="subnav-link"
+             title="A Week of A-Frame 47">
+            A Week of A-Frame 47
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.5.0/"
+             class="subnav-link"
+             title="A-Frame v0.5.0 - Features & Tools">
+            A-Frame v0.5.0 - Features & Tools
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-46/"
+             class="subnav-link"
+             title="A Week of A-Frame 46">
+            A Week of A-Frame 46
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-45/"
+             class="subnav-link"
+             title="A Week of A-Frame 45">
+            A Week of A-Frame 45
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-44/"
+             class="subnav-link"
+             title="A Week of A-Frame 44">
+            A Week of A-Frame 44
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-43/"
+             class="subnav-link"
+             title="A Week of A-Frame 43">
+            A Week of A-Frame 43
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-42/"
+             class="subnav-link"
+             title="A Week of A-Frame 42">
+            A Week of A-Frame 42
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-40-41/"
+             class="subnav-link"
+             title="A Week of A-Frame 40 - 41">
+            A Week of A-Frame 40 - 41
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/screenshot/"
+             class="subnav-link"
+             title="Taking Screenshots in A-Frame">
+            Taking Screenshots in A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.4.0/"
+             class="subnav-link"
+             title="A-Frame v0.4.0 - The Registry">
+            A-Frame v0.4.0 - The Registry
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-35-39/"
+             class="subnav-link"
+             title="A Week of A-Frame 35 - 39">
+            A Week of A-Frame 35 - 39
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-34/"
+             class="subnav-link"
+             title="A Week of A-Frame 34">
+            A Week of A-Frame 34
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-33/"
+             class="subnav-link"
+             title="A Week of A-Frame 33">
+            A Week of A-Frame 33
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/teleport-component/"
+             class="subnav-link"
+             title="Developing an A-Frame Teleport Component">
+            Developing an A-Frame Teleport Component
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-31-32/"
+             class="subnav-link"
+             title="A Week of A-Frame 31 + 32">
+            A Week of A-Frame 31 + 32
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/ghost-train-builder/"
+             class="subnav-link"
+             title="Halloween Feature! Building Ghost Train Builder">
+            Halloween Feature! Building Ghost Train Builder
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/istaging/"
+             class="subnav-link"
+             title="Why iStaging Chose A-Frame">
+            Why iStaging Chose A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-30/"
+             class="subnav-link"
+             title="A Week of A-Frame 30">
+            A Week of A-Frame 30
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-29/"
+             class="subnav-link"
+             title="A Week of A-Frame 29">
+            A Week of A-Frame 29
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-28/"
+             class="subnav-link"
+             title="A Week of A-Frame 28">
+            A Week of A-Frame 28
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/a-painter/"
+             class="subnav-link"
+             title="A-Painter: Paint in VR in Your Browser">
+            A-Painter: Paint in VR in Your Browser
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-27/"
+             class="subnav-link"
+             title="A Week of A-Frame 27">
+            A Week of A-Frame 27
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-26/"
+             class="subnav-link"
+             title="A Week of A-Frame 26">
+            A Week of A-Frame 26
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.3.0/"
+             class="subnav-link"
+             title="A-Frame v0.3.0 - Walk in a Web Page">
+            A-Frame v0.3.0 - Walk in a Web Page
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-25/"
+             class="subnav-link"
+             title="A Week of A-Frame 25">
+            A Week of A-Frame 25
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-24/"
+             class="subnav-link"
+             title="A Week of A-Frame 24">
+            A Week of A-Frame 24
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-23/"
+             class="subnav-link"
+             title="A Week of A-Frame 23">
+            A Week of A-Frame 23
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-22/"
+             class="subnav-link"
+             title="A Week of A-Frame 22">
+            A Week of A-Frame 22
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-21/"
+             class="subnav-link"
+             title="A Week of A-Frame 21">
+            A Week of A-Frame 21
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-20/"
+             class="subnav-link"
+             title="A Week of A-Frame 20">
+            A Week of A-Frame 20
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-19/"
+             class="subnav-link"
+             title="A Week of A-Frame 19">
+            A Week of A-Frame 19
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-18/"
+             class="subnav-link"
+             title="A Week of A-Frame 18">
+            A Week of A-Frame 18
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-17/"
+             class="subnav-link"
+             title="A Week of A-Frame 17">
+            A Week of A-Frame 17
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-16/"
+             class="subnav-link"
+             title="A Week of A-Frame 16">
+            A Week of A-Frame 16
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-15/"
+             class="subnav-link"
+             title="A Week of A-Frame 15">
+            A Week of A-Frame 15
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-14/"
+             class="subnav-link"
+             title="A Week of A-Frame 14">
+            A Week of A-Frame 14
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-13/"
+             class="subnav-link"
+             title="A Week of A-Frame 13">
+            A Week of A-Frame 13
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-12/"
+             class="subnav-link"
+             title="A Week of A-Frame 12">
+            A Week of A-Frame 12
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-11/"
+             class="subnav-link"
+             title="A Week of A-Frame 11">
+            A Week of A-Frame 11
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-10/"
+             class="subnav-link"
+             title="A Week of A-Frame 10">
+            A Week of A-Frame 10
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-09/"
+             class="subnav-link"
+             title="A Week of A-Frame 9">
+            A Week of A-Frame 9
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/syria/"
+             class="subnav-link"
+             title="Amnesty International UK Presents "Fear of the Sky"">
+            Amnesty International UK Presents "Fear of the Sky"
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/aframe-v0.2.0/"
+             class="subnav-link"
+             title="A-Frame v0.2.0 - The Extensible VR Web">
+            A-Frame v0.2.0 - The Extensible VR Web
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/mars/"
+             class="subnav-link"
+             title="The Washington Post Presents "Mars: An Interactive Journey"">
+            The Washington Post Presents "Mars: An Interactive Journey"
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-08/"
+             class="subnav-link"
+             title="A Week of A-Frame 8">
+            A Week of A-Frame 8
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-07/"
+             class="subnav-link"
+             title="A Week of A-Frame 7">
+            A Week of A-Frame 7
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-06/"
+             class="subnav-link"
+             title="A Week of A-Frame 6">
+            A Week of A-Frame 6
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-05/"
+             class="subnav-link"
+             title="A Week of A-Frame 5">
+            A Week of A-Frame 5
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-04/"
+             class="subnav-link"
+             title="A Week of A-Frame 4">
+            A Week of A-Frame 4
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-03/"
+             class="subnav-link"
+             title="A Week of A-Frame 3">
+            A Week of A-Frame 3
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-02/"
+             class="subnav-link"
+             title="A Week of A-Frame 2">
+            A Week of A-Frame 2
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/tron/"
+             class="subnav-link"
+             title="Step Inside the Computer World, TRON!">
+            Step Inside the Computer World, TRON!
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-01/"
+             class="subnav-link"
+             title="A Week of A-Frame 1">
+            A Week of A-Frame 1
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/photosphere-viewer/"
+             class="subnav-link"
+             title="360&deg; Photosphere Viewer">
+            360&deg; Photosphere Viewer
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/solar-system/"
+             class="subnav-link"
+             title="WebVR Solar System">
+            WebVR Solar System
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/testscape/"
+             class="subnav-link"
+             title="TestScape">
+            TestScape
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/popmotion/"
+             class="subnav-link"
+             title="Popmotion Physics & Animation with A-Frame">
+            Popmotion Physics & Animation with A-Frame
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/charleston/"
+             class="subnav-link"
+             title="WebVR Tour of Public Projects in Charleston, SC">
+            WebVR Tour of Public Projects in Charleston, SC
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/flickr-textures/"
+             class="subnav-link"
+             title="CC-Licensed Textures from Flickr">
+            CC-Licensed Textures from Flickr
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/spheres-and-fog/"
+             class="subnav-link"
+             title="Sense of Scale with Spheres and Fog">
+            Sense of Scale with Spheres and Fog
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/drawvr-minecraft/"
+             class="subnav-link"
+             title="Creating a Minecraft Scene in WebVR">
+            Creating a Minecraft Scene in WebVR
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/shopping/"
+             class="subnav-link"
+             title="Prototyping a Shopping Example">
+            Prototyping a Shopping Example
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/introducing-aframe/"
+             class="subnav-link"
+             title="Introducing A-Frame v0.1.0">
+            Introducing A-Frame v0.1.0
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</aside>
+
+  <div class="content content--blog copy post content--awoa">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      
+        <article class="post post-full">
+          <p class="page__section">
+            <a href="/blog/" class="borderless-link">Blog</a>
+          </p>
+
+          <h1 class="page__title post__heading">A Week of A-Frame 78</h1>
+          <div class="post__metadata">
+  <p class="post__timestamp">Sep 15, 2017</p>
+  
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/andgokevin">Kevin Ngo</a></p>
+  
+</div>
+
+
+          
+            
+              <i>What's up with A-Frame, a WebVR framework for building virtual reality experiences, from Sep 8, 2017 to Sep 15, 2017.</i>
+            
+            
+
+          
+
+          
+
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div class="tweets tweets-feature">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Checkout our new site and app! WebVR Studio is now:<a href="https://t.co/LNmuFrn1s3" target="_blank" rel="external">https://t.co/LNmuFrn1s3</a><br>Design for <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> and export to <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://t.co/zcYwthwVzR" target="_blank" rel="external">pic.twitter.com/zcYwthwVzR</a></p>&mdash; Ottifox (@ottifox) <a href="https://twitter.com/ottifox/status/907632252359655430" target="_blank" rel="external">September 12, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Big news for my super-hands <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> library in v2.0.0: a universal progressive-controls component…<a href="https://t.co/JPtuzFjCw1" target="_blank" rel="external">https://t.co/JPtuzFjCw1</a> <a href="https://t.co/1WF8gTpglm" target="_blank" rel="external">pic.twitter.com/1WF8gTpglm</a></p>&mdash; Will Murphy 🔥E🌳½1⃣ (@Datatitian) <a href="https://twitter.com/Datatitian/status/907651014484000768" target="_blank" rel="external">September 12, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">v1.2.1 release of A-Frame Colorwheel Component complete.  Now with swatches, bug fixes. Welcome PR&#39;s, issues, features.<a href="https://twitter.com/hashtag/aframevr?src=hash" target="_blank" rel="external">#aframevr</a> <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> <a href="https://t.co/sUbbgpXRgt" target="_blank" rel="external">pic.twitter.com/sUbbgpXRgt</a></p>&mdash; Mo Kargas (@mokargas) <a href="https://twitter.com/mokargas/status/908127452706177024" target="_blank" rel="external">September 14, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Another fun night experimenting with <a href="https://twitter.com/hashtag/aframe?src=hash" target="_blank" rel="external">#aframe</a> and <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a>. Tonight its phyllotactic spirals.<a href="https://t.co/BWvvdWUWDc" target="_blank" rel="external">https://t.co/BWvvdWUWDc</a></p>&mdash; Green Giant (@GreenGiant83) <a href="https://twitter.com/GreenGiant83/status/908200218574946304" target="_blank" rel="external">September 14, 2017</a></blockquote>
+
+</div>
+
+<a id="more"></a>
+<h2 id="projects"><a href="#projects" class="headerlink" title="Projects"></a>Projects</h2><div class="tweets">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Check out Polyhedron Runner - <a href="https://twitter.com/hashtag/js13k?src=hash" target="_blank" rel="external">#js13k</a> entry by <a href="https://twitter.com/BoldBigflank" target="_blank" rel="external">@BoldBigflank</a> for the <a href="https://twitter.com/js13kGames" target="_blank" rel="external">@js13kGames</a> 2017 competition! <a href="https://t.co/muRhvZY9FQ" target="_blank" rel="external">https://t.co/muRhvZY9FQ</a></p>&mdash; js13kGames (@js13kGames) <a href="https://twitter.com/js13kGames/status/907917938241413120" target="_blank" rel="external">September 13, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">here&#39;s a moving screenshot from my upcoming <a href="https://twitter.com/hashtag/js13kgames?src=hash" target="_blank" rel="external">#js13kgames</a> entry. <a href="https://twitter.com/hashtag/aframe?src=hash" target="_blank" rel="external">#aframe</a> <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/javascript?src=hash" target="_blank" rel="external">#javascript</a> <a href="https://t.co/CQRpgv2sC6" target="_blank" rel="external">pic.twitter.com/CQRpgv2sC6</a></p>&mdash; Ͳìʍʍվ Ҡօҟҟҽ 🌷 (@Sorskoot) <a href="https://twitter.com/Sorskoot/status/906524200076275714" target="_blank" rel="external">September 9, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We played with a new example: <a href="https://t.co/Z5juCrpJkw" target="_blank" rel="external">https://t.co/Z5juCrpJkw</a> exported to <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> with models from <a href="https://twitter.com/hashtag/MadeWithBlocks?src=hash" target="_blank" rel="external">#MadeWithBlocks</a> by <a href="https://twitter.com/JarlanPerez" target="_blank" rel="external">@JarlanPerez</a> <a href="https://t.co/R0ganCYoN9" target="_blank" rel="external">pic.twitter.com/R0ganCYoN9</a></p>&mdash; Ottifox (@ottifox) <a href="https://twitter.com/ottifox/status/908227016851197952" target="_blank" rel="external">September 14, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I wrote a fun little randomt rails experiment last night in <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> that works with <a href="https://twitter.com/hashtag/motioncontrollers?src=hash" target="_blank" rel="external">#motioncontrollers</a><a href="https://t.co/I4mw9PlO6t" target="_blank" rel="external">https://t.co/I4mw9PlO6t</a></p>&mdash; Green Giant (@GreenGiant83) <a href="https://twitter.com/GreenGiant83/status/907952535553667072" target="_blank" rel="external">September 13, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I am so proud of my first <a href="https://twitter.com/hashtag/webVR?src=hash" target="_blank" rel="external">#webVR</a> game! It&#39;s a kind of magic ☄️✨ <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/gamedev?src=hash" target="_blank" rel="external">#gamedev</a> <a href="https://twitter.com/hashtag/js?src=hash" target="_blank" rel="external">#js</a> <a href="https://twitter.com/hashtag/js13k?src=hash" target="_blank" rel="external">#js13k</a> GalacticDiamond: <a href="https://t.co/4NGCKMIJmq" target="_blank" rel="external">https://t.co/4NGCKMIJmq</a> <a href="https://t.co/1jE1r0wuka" target="_blank" rel="external">pic.twitter.com/1jE1r0wuka</a></p>&mdash; Katarzyna Mitrus (@mitruska) <a href="https://twitter.com/mitruska/status/908050522166448129" target="_blank" rel="external">September 13, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Don&#39;t have a ticket for <a href="https://twitter.com/hashtag/AppleEvent2017?src=hash" target="_blank" rel="external">#AppleEvent2017</a> ? Check out <a href="https://twitter.com/hashtag/SteveJobsTheater?src=hash" target="_blank" rel="external">#SteveJobsTheater</a> here: <a href="https://t.co/YGYqtOANVw" target="_blank" rel="external">https://t.co/YGYqtOANVw</a> <a href="https://twitter.com/hashtag/aframe?src=hash" target="_blank" rel="external">#aframe</a> <a href="https://twitter.com/hashtag/3dio?src=hash" target="_blank" rel="external">#3dio</a> <a href="https://twitter.com/hashtag/iPhoneX?src=hash" target="_blank" rel="external">#iPhoneX</a> <a href="https://twitter.com/Archilogic3D" target="_blank" rel="external">@Archilogic3D</a> <a href="https://t.co/uHcQm9Bl4C" target="_blank" rel="external">pic.twitter.com/uHcQm9Bl4C</a></p>&mdash; Dominique Burgauer (@dburgauer) <a href="https://twitter.com/dburgauer/status/907646024348553218" target="_blank" rel="external">September 12, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I made a <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> experiment. Dupliverts with hand interactions.   <a href="https://t.co/RXEJOnH8i2" target="_blank" rel="external">https://t.co/RXEJOnH8i2</a></p>&mdash; Green Giant (@GreenGiant83) <a href="https://twitter.com/GreenGiant83/status/906544743236161536" target="_blank" rel="external">September 9, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fun with <a href="https://twitter.com/hashtag/webar?src=hash" target="_blank" rel="external">#webar</a> on <a href="https://twitter.com/hashtag/s8?src=hash" target="_blank" rel="external">#s8</a> thanks <a href="https://twitter.com/judax" target="_blank" rel="external">@judax</a> for the browser build and <a href="https://twitter.com/machenmusik" target="_blank" rel="external">@machenmusik</a> for the <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> component! <a href="https://t.co/HbGX0ftMe2" target="_blank" rel="external">https://t.co/HbGX0ftMe2</a> <a href="https://t.co/kSkYmA1Zx0" target="_blank" rel="external">pic.twitter.com/kSkYmA1Zx0</a></p>&mdash; Kieran Farr (@kfarr) <a href="https://twitter.com/kfarr/status/905886452302528512" target="_blank" rel="external">September 7, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Pleased with the fidelity in my <a href="https://twitter.com/hashtag/aframevr?src=hash" target="_blank" rel="external">#aframevr</a> retail prototype for the moment. PBR bump goodness in the browser. <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/vr?src=hash" target="_blank" rel="external">#vr</a> <a href="https://twitter.com/hashtag/react?src=hash" target="_blank" rel="external">#react</a> <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://t.co/V3rei0ZnXP" target="_blank" rel="external">pic.twitter.com/V3rei0ZnXP</a></p>&mdash; Mo Kargas (@mokargas) <a href="https://twitter.com/mokargas/status/906786174068391937" target="_blank" rel="external">September 10, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Area Lights in WebVR look when coupled with PBR. Use sparingly, GPU intensive. <a href="https://twitter.com/hashtag/aframevr?src=hash" target="_blank" rel="external">#aframevr</a> <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/hashtag/vr?src=hash" target="_blank" rel="external">#vr</a> <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>  <a href="https://t.co/cMXZWoGQKB" target="_blank" rel="external">https://t.co/cMXZWoGQKB</a></p>&mdash; Mo Kargas (@mokargas) <a href="https://twitter.com/mokargas/status/906455070350336007" target="_blank" rel="external">September 9, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Checking out the shared 360 photo viewer in Edorble WebVR. Try it with a pal! <a href="https://t.co/AWWSKkUmFi" target="_blank" rel="external">https://t.co/AWWSKkUmFi</a> <a href="https://twitter.com/hashtag/vr?src=hash" target="_blank" rel="external">#vr</a> <a href="https://twitter.com/hashtag/mobilevr?src=hash" target="_blank" rel="external">#mobilevr</a> <a href="https://twitter.com/hashtag/webvr?src=hash" target="_blank" rel="external">#webvr</a> <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/edtech?src=hash" target="_blank" rel="external">#edtech</a> <a href="https://t.co/kmuLnXcSN4" target="_blank" rel="external">pic.twitter.com/kmuLnXcSN4</a></p>&mdash; Edorble (@edorble) <a href="https://twitter.com/edorble/status/906968761055375360" target="_blank" rel="external">September 10, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Haven&#39;t made anything with code in a while, so decided to have a quick play with <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>  Love the simplicity!<a href="https://twitter.com/hashtag/threejs?src=hash" target="_blank" rel="external">#threejs</a> <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> <a href="https://twitter.com/hashtag/VR?src=hash" target="_blank" rel="external">#VR</a> <a href="https://t.co/yMdwNyagNs" target="_blank" rel="external">pic.twitter.com/yMdwNyagNs</a></p>&mdash; Daisy Smith (@daisysmells) <a href="https://twitter.com/daisysmells/status/906971755134283776" target="_blank" rel="external">September 10, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some weekend work. Thanks to the A Frame community I&#39;m adding hotspots to my VR project. :D Now to style more. <a href="https://twitter.com/hashtag/xAPICohort?src=hash" target="_blank" rel="external">#xAPICohort</a> <a href="https://twitter.com/hashtag/xAPI?src=hash" target="_blank" rel="external">#xAPI</a> <a href="https://t.co/X92Fe246C3" target="_blank" rel="external">pic.twitter.com/X92Fe246C3</a></p>&mdash; Melissa Milloway (@MelMilloway) <a href="https://twitter.com/MelMilloway/status/906632555532656641" target="_blank" rel="external">September 9, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">First results with our <a href="https://twitter.com/hashtag/homestaging?src=hash" target="_blank" rel="external">#homestaging</a> <a href="https://twitter.com/hashtag/AI?src=hash" target="_blank" rel="external">#AI</a> in <a href="https://twitter.com/hashtag/webAR?src=hash" target="_blank" rel="external">#webAR</a> on <a href="https://twitter.com/hashtag/ARCore?src=hash" target="_blank" rel="external">#ARCore</a> <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/3dio?src=hash" target="_blank" rel="external">#3dio</a> <a href="https://twitter.com/Archilogic3D" target="_blank" rel="external">@Archilogic3D</a> <a href="https://t.co/qGA66dpMgk" target="_blank" rel="external">https://t.co/qGA66dpMgk</a> Fun times ahead! <a href="https://t.co/frOneBVL1F" target="_blank" rel="external">pic.twitter.com/frOneBVL1F</a></p>&mdash; Frederic Schwarz (@fredric_) <a href="https://twitter.com/fredric_/status/907441827359444993" target="_blank" rel="external">September 12, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some experiments with <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> <a href="https://twitter.com/hashtag/VR?src=hash" target="_blank" rel="external">#VR</a> <a href="https://twitter.com/hashtag/aframe?src=hash" target="_blank" rel="external">#aframe</a> <br>Demo - <a href="https://t.co/26uT1X0eSm" target="_blank" rel="external">https://t.co/26uT1X0eSm</a><br>feel free to remix it <a href="https://t.co/dQsbjcuLDa" target="_blank" rel="external">https://t.co/dQsbjcuLDa</a> <a href="https://t.co/M8gYhP5U1N" target="_blank" rel="external">pic.twitter.com/M8gYhP5U1N</a></p>&mdash; Артем Кисляков (@kysliakov) <a href="https://twitter.com/kysliakov/status/907316391983943681" target="_blank" rel="external">September 11, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A little glitch to help conceptualise spatial audio in <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://t.co/rhnwHqENPZ" target="_blank" rel="external">https://t.co/rhnwHqENPZ</a> <a href="https://t.co/tAWlRV2acH" target="_blank" rel="external">pic.twitter.com/tAWlRV2acH</a></p>&mdash; andrew burrell (@andrewxburrell) <a href="https://twitter.com/andrewxburrell/status/906437941618139137" target="_blank" rel="external">September 9, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A <a href="https://twitter.com/hashtag/prototype?src=hash" target="_blank" rel="external">#prototype</a> of sunpath in <a href="https://twitter.com/hashtag/VR?src=hash" target="_blank" rel="external">#VR</a> using <a href="https://twitter.com/hashtag/d3js?src=hash" target="_blank" rel="external">#d3js</a> and <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> got students fairly excited today! <a href="https://t.co/OyO7Ap5OnZ" target="_blank" rel="external">https://t.co/OyO7Ap5OnZ</a> thanks <a href="https://twitter.com/ta" target="_blank" rel="external">@ta</a> for suncalc.</p>&mdash; Mostapha Roudsari (@<strong>Mostapha</strong>) <a href="https://twitter.com/__Mostapha__/status/907623669442256896" target="_blank" rel="external">September 12, 2017</a></blockquote>
+
+</div>
+
+<p><a href="https://aframe-photobump.glitch.me/" target="_blank" rel="external">Convert 2D Drawings to 3D</a></p>
+<h2 id="components"><a href="#components" class="headerlink" title="Components"></a>Components</h2><div class="tweets">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">State component for <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a>. What I&#39;m currently using, and it&#39;s working well so far. Unit testable too.  <a href="https://t.co/hD5Ms0ELx5" target="_blank" rel="external">https://t.co/hD5Ms0ELx5</a></p>&mdash; Kevin Ngo (@andgokevin) <a href="https://twitter.com/andgokevin/status/906122987086069760" target="_blank" rel="external">September 8, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Version 1.1 of my A-Frame color-wheel UI. Hex output with one click copy to clipboard <a href="https://t.co/nxTNG1vIHU" target="_blank" rel="external">https://t.co/nxTNG1vIHU</a> <a href="https://twitter.com/hashtag/aframevr?src=hash" target="_blank" rel="external">#aframevr</a> <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> <a href="https://twitter.com/hashtag/vr?src=hash" target="_blank" rel="external">#vr</a> <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a></p>&mdash; Mo Kargas (@mokargas) <a href="https://twitter.com/mokargas/status/907413368868290560" target="_blank" rel="external">September 12, 2017</a></blockquote>
+
+</div>
+
+<h2 id="articles"><a href="#articles" class="headerlink" title="Articles"></a>Articles</h2><div class="tweets">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Put the New York snowfall on your coffee table — <a href="https://twitter.com/joshmarinacci" target="_blank" rel="external">@joshmarinacci</a> gives the Meta 2 AR DevKit a whirl with <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> 😎 <a href="https://t.co/IlXi2FpZAe" target="_blank" rel="external">https://t.co/IlXi2FpZAe</a> <a href="https://t.co/SgiWNx2tCB" target="_blank" rel="external">pic.twitter.com/SgiWNx2tCB</a></p>&mdash; Mozilla Hacks (@mozhacks) <a href="https://twitter.com/mozhacks/status/906170617392758784" target="_blank" rel="external">September 8, 2017</a></blockquote>
+
+</div>
+
+<p><a href="https://www.timmykokke.com/2017/09/js13kgames-post-mortem/" target="_blank" rel="external">JS13K Post-Mortem</a>
+on a space platformer game.</p>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><div class="tweets">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">VR is super complex under the hood, but tooling (e.g <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> )is making it accessible for developers today <a href="https://twitter.com/hashtag/TechExeter?src=hash" target="_blank" rel="external">#TechExeter</a> <a href="https://t.co/MSkNLkpLGh" target="_blank" rel="external">pic.twitter.com/MSkNLkpLGh</a></p>&mdash; Tony Edwards (@tonyedwardspz) <a href="https://twitter.com/tonyedwardspz/status/906109622859247616" target="_blank" rel="external">September 8, 2017</a></blockquote>
+
+</div>
+
+<h2 id="miscellaneous"><a href="#miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h2><div class="tweets">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Physics compound shapes for <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> by calc. a rough center of mass, change body position, offset shape positions. <a href="https://t.co/Wr2uGP16yM" target="_blank" rel="external">https://t.co/Wr2uGP16yM</a></p>&mdash; Kevin Ngo (@andgokevin) <a href="https://twitter.com/andgokevin/status/908049721616343041" target="_blank" rel="external">September 13, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Started a running FAQ for using <a href="https://twitter.com/glTF3D" target="_blank" rel="external">@glTF3D</a> 2.0 as a <a href="https://twitter.com/hashtag/WebVR?src=hash" target="_blank" rel="external">#WebVR</a> dev:<a href="https://t.co/rfALPDorDi" target="_blank" rel="external">https://t.co/rfALPDorDi</a> <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> <a href="https://twitter.com/hashtag/threejs?src=hash" target="_blank" rel="external">#threejs</a></p>&mdash; Don McCurdy (@donrmccurdy) <a href="https://twitter.com/donrmccurdy/status/907758453153607680" target="_blank" rel="external">September 13, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Check out this brand new video about coding with <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> and a <a href="https://twitter.com/MozGig" target="_blank" rel="external">@MozGig</a> grantee - My Brother&#39;s Keeper - in Austin <a href="https://t.co/yBb8e37SeK" target="_blank" rel="external">https://t.co/yBb8e37SeK</a></p>&mdash; Mozilla Gigabit (@MozGig) <a href="https://twitter.com/MozGig/status/908067275894292480" target="_blank" rel="external">September 13, 2017</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/NellWaliczek" target="_blank" rel="external">@NellWaliczek</a> speaking about WebVR at Microsoft Edge Web Summit. Welcoming Microsoft to the <a href="https://twitter.com/aframevr" target="_blank" rel="external">@aframevr</a> family 🙏 <a href="https://t.co/mdQ8Bunfbl" target="_blank" rel="external">https://t.co/mdQ8Bunfbl</a></p>&mdash; Diego (@dmarcos) <a href="https://twitter.com/dmarcos/status/908112386321608704" target="_blank" rel="external">September 13, 2017</a></blockquote>
+
+</div>
+
+
+          
+            
+
+            
+
+            
+
+          
+        </article>
+
+        <footer class="footer guide-links c">
+          
+          
+          
+          
+            <span class="float-left"><a href="/blog/awoa-76/" class="guide-link guide-link-left">← A Week of A-Frame 76</a></span>
+          
+          
+            <span class="float-right"><a href="/blog/aframe-v0.7.0/" class="guide-link guide-link-right">A-Frame v0.7.0 - Windows Mixed Reality Headsets and glTF 2.0 →</a></span>
+          
+        </footer>
+      
+
+      <footer class="footer footnote">
+        <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+        
+          <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/awoa-78.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+        
+      </footer>
+    </div>
+
+    
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.9.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>

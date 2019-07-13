@@ -1,0 +1,1348 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-24056643-4"
+      data-aframe-version="0.9.0"
+      data-docs-version="0.6.0">
+  <head>
+    <title>Hosting & Publishing – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Hosting &amp; Publishing – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Hosting &amp; Publishing – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24056643-4', 'auto');
+  ga('create', 'UA-35433268-69', 'auto', 'managers');
+
+  ga('send', 'pageview');
+  ga('managers.send', 'pageview');
+
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('managers.send', 'event', 'pageload.querystring', window.location.search);
+
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+  ga('managers.send', 'event', 'pageload.hash', window.location.hash);
+
+  ga('send', 'event', 'supports.getVRDevices', 'getVRDevices' in navigator);
+  ga('managers.send', 'event', 'supports.getVRDevices', 'getVRDevices' in navigator);
+
+  ga('send', 'event', 'supports.getVRDisplays', 'getVRDisplays' in navigator);
+  ga('managers.send', 'event', 'supports.getVRDisplays', 'getVRDisplays' in navigator);
+
+  ga('send', 'event', 'supports.WEBVRPLUS', 'WEBVRPLUS' in window);
+  ga('managers.send', 'event', 'supports.WEBVRPLUS', 'WEBVRPLUS' in window);
+</script>
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="introduction">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/0.9.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/0.9.0/introduction/">
+          0.9.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.8.0/introduction/">
+          0.8.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.7.0/introduction/">
+          0.7.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.6.0/introduction/">
+          0.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <p class="section-title-link">Introduction</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/vr-headsets-and-webvr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebVR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.6.0/introduction/hosting-and-publishing.html"
+               class="subnav-link current">
+              Hosting & Publishing
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Guides</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/guides/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/guides/building-with-magicavoxel.html"
+               class="subnav-link">
+              Building with MagicaVoxel
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Core API</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/globals.html"
+               class="subnav-link">
+              Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Components</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/line.html"
+               class="subnav-link">
+              line
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/link.html"
+               class="subnav-link">
+              link
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Primitives</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-link.html"
+               class="subnav-link">
+              &lt;a-link&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.6.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+  <!-- Documentation. -->
+  <div class="content content--structured content--introduction copy">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.6.0/introduction/" class="borderless-link">
+            0.6.0 &rsaquo; Introduction
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        Hosting & Publishing
+      </h1>
+
+      
+
+      
+      
+        <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 0.6.0 version of A-Frame. Check out the <a href="/docs/0.9.0/introduction/">documentation for the current 0.9.0 version</a></p>
+</blockquote>
+
+      
+
+      <p>This section will show several ways to deploy, host, and publish an A-Frame
+site and its assets onto the Web for the world to see.</p>
+<!--toc-->
+
+<h2 id="publishing-a-site"><a href="#publishing-a-site" class="headerlink" title="Publishing a Site"></a>Publishing a Site</h2><p>There are many free services to deploy and host a site. We’ll go over some of
+the more easy or popular options, but there are certainly other options such
+as AWS, Heroku, or self-hosting. An important note is that these sites should
+be served with SSL/HTTPS due to a common security restriction of the browser’s
+WebVR API. All the options below serve with SSL/HTTPS.</p>
+<h3 id="glitch"><a href="#glitch" class="headerlink" title="Glitch"></a>Glitch</h3><p><img src="https://cloud.githubusercontent.com/assets/674727/25643449/b5ee2542-2f54-11e7-9d45-22f3aa0b208f.jpg" alt="Glitch"></p>
+<p><em>“Glitch is the friendly community where you’ll build the app of your dreams
+With working example apps to remix, a code editor to modify them, instant
+hosting and deployment - anybody can build a web app on Glitch, for free.”</em></p>
+<p><a href="https://glitch.com" target="_blank" rel="external">Glitch</a> is the easiest and fastest way to create and
+publish a site from within the browser. Glitch lets us add code and files,
+upload assets, edit with other people, define our own URL name, and instantly
+deploy changes on every change. We don’t even need to make an account nor
+login:</p>
+<ol>
+<li>Try going to the <a href="https://glitch.com/~aframe/" target="_blank" rel="external">A-Frame Starter Glitch</a>.</li>
+<li>Hit <strong>Remix your own</strong> to copy the project.</li>
+<li>Click the <em>Project info and options</em> icon on the top-left to rename our
+application (e.g., <code>https://yoursitename.glitch.me</code>).</li>
+<li>Edit the HTML, add files, modify the project.</li>
+<li>Click <strong>Show</strong> to view the application (e.g., the starter glitch is hosted at <code>https://aframe.glitch.me</code>).</li>
+<li>Every change to the project will update the application instantly. This can
+be toggled off by signing in, clicking your user avatar, and toggling <strong>Refresh
+App on Changes</strong>.</li>
+</ol>
+<h3 id="neocities"><a href="#neocities" class="headerlink" title="Neocities"></a>Neocities</h3><p><img src="https://cloud.githubusercontent.com/assets/674727/25643397/6db47790-2f54-11e7-9eb3-ac18a1513e9f.jpg" alt="Neocities"></p>
+<p><em>“Create your own free website.  Unlimited creativity, zero ads.  Neocities is
+a social network of 129,100 web sites that are bringing back the lost
+individual creativity of the web. We offer free web hosting and tools that
+allow you to create your own web site. Join us!”</em></p>
+<p><a href="https://neocities.org" target="_blank" rel="external">Neocities</a> is also another free and easy way to create
+and publish a site from within the browser. While it doesn’t have some of the
+features of Glitch, Neocities is friendly and lets us upload assets into the
+project directory versus a CDN.  This makes Neocities at least better at
+hosting models. With Neocities, we can create and edit files. They’ll then be
+hosted and published for us (e.g., <code>ngokevin.neocities.org</code>):</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25643399/704cffe0-2f54-11e7-8d32-868b51407f81.jpg" alt="Neocities Editor"></p>
+<h3 id="surge"><a href="#surge" class="headerlink" title="Surge"></a>Surge</h3><p><em>“Static web publishing for Front-End Developers Simple, single-command web
+publishing. Publish HTML, CSS, and JS for free, without leaving the command
+line.”</em></p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25644655/a0172784-2f5c-11e7-9e44-002d61d4d076.jpg" alt="Surge"></p>
+<p><a href="https://surge.sh" target="_blank" rel="external">Surge</a> is a tool to publish web sites with a single command
+from the command line. This is a great tool if you’re comfortable with the
+command line.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25644695/e80f6ccc-2f5c-11e7-8442-7a963b9786ef.jpg" alt="Surge Usage"></p>
+<h3 id="github-pages"><a href="#github-pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p><em>“Websites for you and your projects.  Hosted directly from your GitHub
+repository. Just edit, push, and your changes are live.”</em></p>
+<p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> is a preferred way of publishing our
+project if our project is on GitHub. The easiest way is to go our project’s
+GitHub <strong>Settings</strong>, scroll down to the <strong>GitHub Pages</strong> section, and set to
+publish <strong>master branch</strong>. This will publish the project at
+<code>https://&lt;username&gt;.github.io/&lt;repositoryname&gt;</code>.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25644905/5694c7c2-2f5e-11e7-8cde-9d4be7498850.jpg" alt="GitHub"></p>
+<p>Alternatively, we can set to publish the <code>gh-pages</code> branch if we don’t want
+<code>master</code> changes to be published. Command line tools such as
+<a href="https://github.com/cvan/ghpages" target="_blank" rel="external"><code>ghpages</code></a> can make that a one-command
+publish process.</p>
+<h2 id="hosting-assets"><a href="#hosting-assets" class="headerlink" title="Hosting Assets"></a>Hosting Assets</h2><p>We’ll also go over hosting assets such as audio, textures, models, and video.</p>
+<p>If the A-Frame site is being published alongside its assets in the same
+directory (i.e., the same domain), then we don’t need to worry much about
+hosting assets. The A-Frame site can use relative URLs to reference the asset,
+and since they’re on the same domain, there is no issue with fetching that
+asset. For example, if we have all your resources in the same root directory
+and we publish everything via Neocities, GitHub Pages, or Surge, there will be
+no issues.</p>
+<h2 id="content-delivery-network-cdn"><a href="#content-delivery-network-cdn" class="headerlink" title="Content Delivery Network (CDN)"></a>Content Delivery Network (CDN)</h2><p>If we’re hosting assets externally, like on a CDN, then we need to take in
+considerations .The primary requirement for assets is that they be served with
+<a href="https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">cross-origin resource sharing
+(CORS)</a>
+enabled. This allows the A-Frame site to fetch the asset to display in the
+scene. Plus, if we’re using <code>&lt;a-assets&gt;</code>, we should usually set
+<code>crossorigin=&quot;anonymous&quot;</code> on assets such as <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, and <code>&lt;video&gt;</code>.</p>
+<p>There are several simple options to host assets via a CDN:</p>
+<ul>
+<li><a href="https://cdn.aframe.io/" target="_blank" rel="external">A-Frame Asset Uploader</a> - Uses UploadCare.</li>
+<li><a href="https://glitch.com/" target="_blank" rel="external">Glitch Asset Uploader</a> - The Glitch code editor has a
+panel to upload assets and get CDN URLs in return.</li>
+<li><a href="https://imgur.com/" target="_blank" rel="external">imgur</a> - For images, we could use imgur, a popular image
+hosting service.</li>
+</ul>
+<h3 id="hosting-models"><a href="#hosting-models" class="headerlink" title="Hosting Models"></a>Hosting Models</h3><p>Hosting models is not as simple. Models usually come as groups of files in a
+folder, where the model file relatively references other files such as images.
+Thus, models have to be uploaded as a single folder in the same directory. Many
+of the free asset hosting services support only uploading one file a time. One
+solution would be to rename all of the image paths to the CDN paths after the
+images are individually uploaded, but that is tedious. There are a couple known
+solutions for easily hosting models via CDN:</p>
+<p>If publishing a site via Neocities, we can upload any number of files and
+directories into the site directory:</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25639880/713c8266-2f42-11e7-9f2a-8e552bda80fa.jpg" alt="Neocities"></p>
+<p><em>Neocities Asset Uploader</em></p>
+<p>Or we can upload assets to a GitHub repository, and use GitHub to serve the
+model files.</p>
+<ol>
+<li>Go to one of our GitHub repositories.</li>
+<li>Click <strong>Upload files</strong>.</li>
+<li>Upload our assets and wait for the upload to finish.</li>
+<li>Type a quick message at the bottom and hit <strong>Commit changes</strong>.</li>
+<li>Wait for processing.</li>
+<li>Once finished, click on the primary asset file.</li>
+<li>Click on <strong>Raw</strong>.</li>
+<li>Then we have our asset URL hosted on GitHub. We can also change
+<code>raw.githubusercontent.com</code> to <code>cdn.rawgit.com</code> to use a different CDN.</li>
+</ol>
+<p>Below is a video of the workflow:</p>
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/_D_C_oSKp9Y?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
+<h2 id="sharing-our-project"><a href="#sharing-our-project" class="headerlink" title="Sharing Our Project"></a>Sharing Our Project</h2><p>Once we’ve published our awesome project, we’ll want to share it so other
+people dive inside!</p>
+<h3 id="creating-media"><a href="#creating-media" class="headerlink" title="Creating Media"></a>Creating Media</h3><p>A-Frame and VR are very visual; we’ll want to create videos and GIFs of our
+project.</p>
+<p>First, we want to record the screen. On OS X, record the screen using built-in
+QuickTime Player’s Screen Recording or <a href="https://obsproject.com/" target="_blank" rel="external">OBS Studio</a>. On Windows, we can
+use <a href="https://obsproject.com/" target="_blank" rel="external">OBS Studio</a>. OBS Studio also supports streaming and compositing a
+webcam image on top of the screen, which is useful to show the person using the
+headset in reality (even with mixed reality).</p>
+<p>Then, we can possibly want to trim the video. On OS X, we can use QuickTime
+Player’s trim tool (<code>&lt;cmd&gt; + t</code>).</p>
+<p>To convert to a GIF with one command, use <a href="https://github.com/ngokevin/gifpardy" target="_blank" rel="external">gifpardy</a>. <code>gifpardy</code> uses ffmpeg
+and gifsicle under the hood:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gifpardy in.mp4</span><br><span class="line">gifpardy in.mp4 out.gif</span><br><span class="line">gifpardy -r 320x240 --delay 8 in.mp4</span><br></pre></td></tr></table></figure>
+<p>Alternatively, we can use <a href="https://itunes.apple.com/us/app/gif-brewery-by-gfycat-capture-make-video-gifs/id1081413713?mt=12" target="_blank" rel="external">GIF Brewery</a> which has UI to trim, resize,
+crop, and preview a GIF before exporting. Or capture straight to GIF using
+<a href="https://licecap.en.softonic.com/" target="_blank" rel="external">LICECap</a>.</p>
+<h3 id="sharing-media"><a href="#sharing-media" class="headerlink" title="Sharing Media"></a>Sharing Media</h3><p>If you create something with A-Frame, please share it with us! If you share
+your project, we’ll feature it on <a href="https://aframe.io/blog/"><em>A Week of
+A-Frame</em></a> for the community to see. Great channels
+include:</p>
+<ul>
+<li><a href="https://twitter.com" target="_blank" rel="external">Twitter</a> - Mention <code>@aframevr</code> or include the <code>#webvr</code>
+hashtag.</li>
+<li><a href="http://aframevr.slackarchive.io/projects/" target="_blank" rel="external"><code>#projects</code> channel on Slack</a></li>
+<li><a href="https://github.com/aframevr/awesome-aframe/" target="_blank" rel="external"><code>awesome-aframe</code> GitHub repository</a>.</li>
+<li><a href="https://webvr-slack.herokuapp.com/" target="_blank" rel="external">WebVR Slack channel</a>.</li>
+<li><a href="https://www.reddit.com/r/webvr" target="_blank" rel="external">/r/WebVR subreddit</a>.</li>
+<li>Write a case study and tell us to feature on the <a href="https://aframe.io/blog/">A-Frame Blog</a>.</li>
+</ul>
+<h2 id="embedding"><a href="#embedding" class="headerlink" title="Embedding"></a>Embedding</h2><p>If we want to embed an A-Frame scene into the layout of 2D web page, we can use
+the <a href="../components/embedded.html">embedded component</a> to remove fullscreen styles
+and allow us to style the canvas with CSS.</p>
+<p>Note we can only embed one scene at a time into a page. If we need multiple
+scenes, we can use
+<a href="https://developer.mozilla.org/docs/Web/HTML/Element/iframe" target="_blank" rel="external"><code>&lt;iframe&gt;</code>s</a>.</p>
+
+
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+          <span class="float-left">
+            <a href="/docs/0.6.0/introduction/visual-inspector-and-dev-tools.html" class="guide-link guide-link-left">← Visual Inspector &amp; Dev Tools </a></span>
+        
+        
+          <span class="float-right">
+            <a href="/docs/0.6.0/introduction/best-practices.html" class="guide-link guide-link-right">Best Practices →</a></span>
+        
+      </footer>
+
+      <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/hosting-and-publishing.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+</footer>
+
+    </div>
+
+    <div class="secondary-sidebar">
+      
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#publishing-a-site">Publishing a Site</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#glitch">Glitch</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#neocities">Neocities</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#surge">Surge</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#github-pages">GitHub Pages</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#hosting-assets">Hosting Assets</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#content-delivery-network-cdn">Content Delivery Network (CDN)</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#hosting-models">Hosting Models</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#sharing-our-project">Sharing Our Project</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#creating-media">Creating Media</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#sharing-media">Sharing Media</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#embedding">Embedding</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/hosting-and-publishing.md" target="_blank" rel="external">Edit Page</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.6.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>
