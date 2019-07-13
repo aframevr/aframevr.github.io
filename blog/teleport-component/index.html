@@ -242,6 +242,14 @@ The HTC Vive introduced room scale VR letting users">
     <ul class="subnav section-subnav blog-subnav">
       
         <li class="subnav-item ">
+          <a href="/blog/awoa-170-171/"
+             class="subnav-link"
+             title="A Week of A-Frame 170 - 172">
+            A Week of A-Frame 170 - 172
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
           <a href="/blog/awoa-164-169/"
              class="subnav-link"
              title="A Week of A-Frame 164 - 169">
@@ -570,18 +578,18 @@ The HTC Vive introduced room scale VR letting users">
         </li>
       
         <li class="subnav-item ">
-          <a href="/blog/awoa-76/"
-             class="subnav-link"
-             title="A Week of A-Frame 76">
-            A Week of A-Frame 76
-          </a>
-        </li>
-      
-        <li class="subnav-item ">
           <a href="/blog/awoa-77/"
              class="subnav-link"
              title="A Week of A-Frame 77">
             A Week of A-Frame 77
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/awoa-76/"
+             class="subnav-link"
+             title="A Week of A-Frame 76">
+            A Week of A-Frame 76
           </a>
         </li>
       
@@ -1314,18 +1322,18 @@ The HTC Vive introduced room scale VR letting users">
         </li>
       
         <li class="subnav-item ">
-          <a href="/blog/spheres-and-fog/"
-             class="subnav-link"
-             title="Sense of Scale with Spheres and Fog">
-            Sense of Scale with Spheres and Fog
-          </a>
-        </li>
-      
-        <li class="subnav-item ">
           <a href="/blog/drawvr-minecraft/"
              class="subnav-link"
              title="Creating a Minecraft Scene in WebVR">
             Creating a Minecraft Scene in WebVR
+          </a>
+        </li>
+      
+        <li class="subnav-item ">
+          <a href="/blog/spheres-and-fog/"
+             class="subnav-link"
+             title="Sense of Scale with Spheres and Fog">
+            Sense of Scale with Spheres and Fog
           </a>
         </li>
       
@@ -1435,16 +1443,16 @@ The HTC Vive introduced room scale VR letting users">
 </blockquote>
 <p>The <a href="http://www.vive.com" target="_blank" rel="external">HTC Vive</a> introduced room scale VR letting users walk around naturally in the virtual space. While compelling, experiences are constrained to the available physical space of a few meters. In <a href="http://store.steampowered.com/app/450390/" target="_blank" rel="external">The Lab</a>, Valve introduced a system to select a distant point to teleport yourself instantaneously, allowing you to explore large virtual spaces without physical boundaries.</p>
 <p><strong>Today, We’re releasing an A-Frame teleport <a href="https://aframe.io/docs/0.3.0/core/component.html">component</a></strong> so you can easily use this technique in your experiences. The idea is simple; when holding the thumbpad, a line is displayed between you and the place you want to go. Move your hand to change the target position and release to teleport!</p>
-<p><img src="/images/blog/teleport-component/thelab.jpg" alt=""></p>
+<p><img src="/images/blog/teleport-component/thelab.jpg" alt></p>
 <a id="more"></a>
 <p>Just include the component, and then the <code>teleport</code> HTML attribute is all it takes to enable teleportation in your experience:</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">vive-controls</span>=<span class="string">âhand:</span> <span class="attr">left</span>â <span class="attr">teleport-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="creating-a-curved-trajectory"><a href="#creating-a-curved-trajectory" class="headerlink" title="Creating a Curved Trajectory"></a>Creating a Curved Trajectory</h2><p>The first version of the component used a straight line to select the destination.</p>
-<p><img src="/images/blog/teleport-component/line.png" alt=""></p>
+<p><img src="/images/blog/teleport-component/line.png" alt></p>
 <p>Using a straight ray only works when there’s a direct line of sight between you and your target destination. For instance, if you want to move to a higher position you won’t be able to point accurately with a straight line.</p>
-<p><img src="/images/blog/teleport-component/line-curve-comparison.png" alt=""></p>
+<p><img src="/images/blog/teleport-component/line-curve-comparison.png" alt></p>
 <p>The solution is to use a curved line to be able to select an occluded target destination. We use simple physics to determine a <a href="https://en.wikipedia.org/wiki/Projectile_motion" target="_blank" rel="external">projectile shot curve</a>:</p>
-<p><img src="/images/blog/teleport-component/formula.png" alt=""></p>
+<p><img src="/images/blog/teleport-component/formula.png" alt></p>
 <p>where:</p>
 <ul>
 <li><strong>p<sub>0</sub> (Initial position)</strong> is the initial position of the projectile. Is the controller position when the teleport button is pressed.</li>
@@ -1452,18 +1460,18 @@ The HTC Vive introduced room scale VR letting users">
 <li><strong>t (time)</strong> is the time since shot.</li>
 <li><strong>a (acceleration)</strong> with gravity at 9.8m/s<sup>2</sup>.</li>
 </ul>
-<p><img src="/images/blog/teleport-component/curve.jpg" alt=""></p>
+<p><img src="/images/blog/teleport-component/curve.jpg" alt></p>
 <p>To paint the curve, we create an auxiliary <code>Mesh</code> class called <code>RayCurve</code>. Its constructor takes the number of points in the curve and a width value. Then you keep calling <code>setPoint(i, Vector3)</code> to define each point on the curve. It creates a <code>triangleStrip</code> mesh with two vertices for each point in the curve perpendicular to the direction of the line.</p>
-<p><img src="/images/blog/teleport-component/trianglestrip.jpg" alt=""></p>
-<p><img src="/images/blog/teleport-component/testing-curve.gif" alt=""></p>
+<p><img src="/images/blog/teleport-component/trianglestrip.jpg" alt></p>
+<p><img src="/images/blog/teleport-component/testing-curve.gif" alt></p>
 <h2 id="detecting-collisions"><a href="#detecting-collisions" class="headerlink" title="Detecting Collisions"></a>Detecting Collisions</h2><p>By default, we detect collisions against the floor (plane at origin <code>0, 0, 0</code> with the normal pointing up <code>0, 1, 0</code>), but you can define which entities to collide against. But in both cases, we use a raycaster that moves along the segments in the curve path checking collision within the distance between them.</p>
-<p><img src="/images/blog/teleport-component/raycasters.jpg" alt=""></p>
+<p><img src="/images/blog/teleport-component/raycasters.jpg" alt></p>
 <p>If the raycaster detects a collision, an entity will be placed at the target destination where the user will be teleported. If you don’t provide an entity, the component will create a cylinder with a gradient texture. When the user releases the button, the user (camera and controllers) will be teleported to the destination point.</p>
 <p>Here’s the pseudocode that showing how the curve painting and collision flow works:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">lastPoint = p0;</span><br><span class="line">hitPoint = <span class="literal">null</span>;</span><br><span class="line">hit = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span> to numCurvePoints) &#123;</span><br><span class="line">  <span class="comment">// Get the next point on the curve.</span></span><br><span class="line">  nextPoint = parabolicCurve(p0, v0, a, i);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Add it to the curve mesh.</span></span><br><span class="line">  curve.addPoint(i, nextPoint);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Set up raycaster between next and previous point and run hit test.</span></span><br><span class="line">  raycaster.setFromSegment(lastPoint, nextPoint);</span><br><span class="line">  hitPoint = raycaster.intersect(collisionEntity)</span><br><span class="line">  <span class="keyword">if</span> (hitPoint &amp;&amp; validCollision(hitPoint)) &#123;</span><br><span class="line">    hit = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>To prevent the user from teleporting over steep surfaces like walls, we used the <code>validCollision()</code> function. <code>validCollision()</code> will check if the angle between the face normal where the raycaster hit and the default ground normal (defined by the user and defaults to <code>UP=(0, 1, 0)</code>) is under a defined max angle.</p>
-<p><img src="/images/blog/teleport-component/landing-normal.png" alt=""></p>
-<p><img src="/images/blog/teleport-component/demo-mesh.gif" alt=""></p>
+<p><img src="/images/blog/teleport-component/landing-normal.png" alt></p>
+<p><img src="/images/blog/teleport-component/demo-mesh.gif" alt></p>
 <h2 id="using-events"><a href="#using-events" class="headerlink" title="Using Events"></a>Using Events</h2><p>The teleport component depends on the <a href="https://aframe.io/docs/0.3.0/components/tracked-controls.html">tracked-controls component</a> to handle the controller position, orientation, and button events. The default button to activate the teleport is the thumbpad so we added listeners for two buttons events:</p>
 <ul>
 <li><strong>thumbpadDown</strong> will activate and make the teleportation curve (which is generated on each <code>tick</code>) visible.</li>
@@ -1487,13 +1495,13 @@ The HTC Vive introduced room scale VR letting users">
 <li><strong>landingNormal:</strong> Normal vector to detect collisions with the <code>collisionEntity</code>.</li>
 <li><strong>landingMaxAngle:</strong> Angle threshold (in degrees) used together with <code>landingNormal</code> to detect the maximum steepness of a surface that can be teleported to.</li>
 </ul>
-<p><img src="/images/blog/teleport-component/customize.gif" alt=""></p>
-<h2 id="using-the-teleport-component-in-your-experience"><a href="#using-the-teleport-component-in-your-experience" class="headerlink" title="Using the Teleport Component in Your Experience"></a>Using the Teleport Component in Your Experience</h2><p><img src="/images/blog/teleport-component/existing-demos.gif" alt=""></p>
+<p><img src="/images/blog/teleport-component/customize.gif" alt></p>
+<h2 id="using-the-teleport-component-in-your-experience"><a href="#using-the-teleport-component-in-your-experience" class="headerlink" title="Using the Teleport Component in Your Experience"></a>Using the Teleport Component in Your Experience</h2><p><img src="/images/blog/teleport-component/existing-demos.gif" alt></p>
 <p>Using the component in an already existing experience is straightforward. Just include a <code>&lt;script&gt;</code> tag to the url of the component:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"</span></span></span><br></pre></td></tr></table></figure>
 <p>Then plug in the <code>teleport</code> component to your controller entities. For example, here’s an example adding the teleport component to both hands in <a href="https://aframe.io/a-painter">A-Painter</a>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"left-hand"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">brush</span></span></span><br><span class="line"><span class="tag">  <span class="attr">paint-controls</span>=<span class="string">"hand: left"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">ui</span></span></span><br><span class="line"><span class="tag">  <span class="attr">teleport-controls</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"right-hand"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">brush</span></span></span><br><span class="line"><span class="tag">  <span class="attr">paint-controls</span>=<span class="string">"hand: right"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">ui</span></span></span><br><span class="line"><span class="tag">  <span class="attr">teleport-controls</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/images/blog/teleport-component/apainter-teleport.png" alt=""></p>
+<p><img src="/images/blog/teleport-component/apainter-teleport.png" alt></p>
 <h3 id="from-the-inspector"><a href="#from-the-inspector" class="headerlink" title="From the Inspector"></a>From the Inspector</h3><p>You can also use the inspector to install the teleport component to an existing scene:</p>
 <ul>
 <li>Press <code>&lt;ctrl&gt; + &lt;alt&gt; + i</code> within an A-Frame scene running in the browser to launch the <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">Inspector</a>.</li>
@@ -1502,7 +1510,7 @@ The HTC Vive introduced room scale VR letting users">
 <li>Hit <code>Esc</code> to go back to scene.</li>
 <li>Enjoy teleporting around the scene!</li>
 </ul>
-<p><img src="/images/blog/teleport-component/inspector.png" alt=""></p>
+<p><img src="/images/blog/teleport-component/inspector.png" alt></p>
 <h2 id="perhaps-we-could…"><a href="#perhaps-we-could…" class="headerlink" title="Perhaps We Could…"></a>Perhaps We Could…</h2><p>Some possible ideas and features:</p>
 <ul>
 <li>Add an effects when performing the teleportation. Something like a simple fade in and out would work.</li>
