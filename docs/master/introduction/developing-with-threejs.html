@@ -1148,17 +1148,17 @@ coordinate into foo’s coordinate space. In 3D programming, these operations ar
 accomplished with matrices, but three.js provides helpers to make them easier.</p>
 <h3 id="local-to-world-transforms"><a href="#local-to-world-transforms" class="headerlink" title="Local to World Transforms"></a>Local to World Transforms</h3><p>Normally, we’d need to call <code>.updateMatrixWorld ()</code> on parent <code>Object3D</code>s, but
 three.js defaults <code>Object3D.matrixAutoUpdate</code> to <code>true</code>. We can use three.js’s
-<code>.getWorldPosition ()</code> and <code>.getWorldRotation ()</code>.</p>
+<code>.getWorldPosition (vector)</code> and <code>.getWorldQuaternion (quaternion)</code>.</p>
 <p>To get the world position of an <code>Object3D</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.object3D.getWorldPosition();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> worldPosition = <span class="keyword">new</span> THREE.Vector3();</span><br><span class="line">entityEl.object3D.getWorldPosition(worldPosition);</span><br></pre></td></tr></table></figure>
 <p>To get the world rotation of an <code>Object3D</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.object3D.getWorldRotation();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> worldQuaternion = <span class="keyword">new</span> THREE.Quaternion();</span><br><span class="line">entityEl.object3D.getWorldQuaternion(worldQuaternion);</span><br></pre></td></tr></table></figure>
 <p>three.js <code>Object3D</code> has <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external">more functions available for local-to-world transforms</a>:</p>
 <ul>
 <li><code>.localToWorld (vector)</code></li>
-<li><code>.getWorldDirection ()</code></li>
-<li><code>.getWorldQuaternion ()</code></li>
-<li><code>.getWorldScale ()</code></li>
+<li><code>.getWorldDirection (vector)</code></li>
+<li><code>.getWorldQuaternion (quaternion)</code></li>
+<li><code>.getWorldScale (vector)</code></li>
 </ul>
 <h3 id="world-to-local-transforms"><a href="#world-to-local-transforms" class="headerlink" title="World to Local Transforms"></a>World to Local Transforms</h3><p>To obtain a matrix that transforms from world to an object’s local space, get
 the inverse of the object’s world matrix.</p>
