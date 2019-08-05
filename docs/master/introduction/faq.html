@@ -1248,7 +1248,7 @@ and pull requests:</p>
 <h2 id="where-is-the-roadmap"><a href="#where-is-the-roadmap" class="headerlink" title="Where is the roadmap?"></a>Where is the roadmap?</h2><p>The <a href="https://github.com/aframevr/aframe/blob/master/ROADMAP.md" target="_blank" rel="external">roadmap is on GitHub</a>!</p>
 <h2 id="do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”"><a href="#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”" class="headerlink" title="Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?"></a>Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?</h2><p>A-Frame!</p>
 <h2 id="why-do-my-textures-render-black"><a href="#why-do-my-textures-render-black" class="headerlink" title="Why do my textures render black?"></a>Why do my textures render black?</h2><p>Phones with Adreno 300 series GPUs are notoriously problematic. Set <a href="../components/renderer.html#precision">renderer precision</a> to <code>medium</code> as a workaround. Real fix has to happen at the driver / device level.</p>
-<h2 id="why-is-the-gyroscope-magic-window-mode-not-working-on-ios"><a href="#why-is-the-gyroscope-magic-window-mode-not-working-on-ios" class="headerlink" title="Why is the gyroscope / magic window mode not working on iOS?"></a>Why is the gyroscope / magic window mode not working on iOS?</h2><p>Since iOS 12.2 Safari applies new restrictions on the devicemotion API. The content has to be served over <code>https</code> and the user has to enable the API manually on <code>Settings -&gt; Safari -&gt; Motion &amp; Orientation access</code>. iOS 12.3 is introducing a <code>DeviceOrientationEvent.requestPermission</code> method that A-Frame will call to ask for user permission without requiring manual steps.</p>
+<h2 id="why-is-the-gyroscope-not-working-on-ios"><a href="#why-is-the-gyroscope-not-working-on-ios" class="headerlink" title="Why is the gyroscope not working on iOS?"></a>Why is the gyroscope not working on iOS?</h2><p>iOS 12.2 Safari applies new restrictions to the devicemotion API. Pages have to be served over <code>https</code> and the user has to enable the API manually on <code>Settings -&gt; Safari -&gt; Motion &amp; Orientation access</code>. iOS 12.3 is introducing a <code>DeviceOrientationEvent.requestPermission</code> method that A-Frame will call to ask for user permission without manual steps.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1509,7 +1509,7 @@ and pull requests:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#why-is-the-gyroscope-magic-window-mode-not-working-on-ios">Why is the gyroscope / magic window mode not working on iOS?</a>
+        <a class="subnav-link" href="#why-is-the-gyroscope-not-working-on-ios">Why is the gyroscope not working on iOS?</a>
 
         <!-- Nested. -->
         
