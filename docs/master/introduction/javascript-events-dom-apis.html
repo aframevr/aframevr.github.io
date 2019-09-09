@@ -1112,7 +1112,7 @@ their scene element:</p>
 <p>If an element has an ID, we can use an ID selector (i.e., <code>#&lt;ID&gt;</code>). Let’s grab
 the red box which has an ID. Before we did a query selector on the entire
 document. Here, we’ll do a query selector just within the scope of the scene.
-With query selectors, we’re able to limit to scope of the query to within any
+With query selectors, we’re able to limit the scope of the query to within any
 element:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sceneEl = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(sceneEl.querySelector(<span class="string">'#redBox'</span>));</span><br><span class="line"><span class="comment">// &lt;a-box id="redBox" class="clickable" color="red"&gt;&lt;/a-box&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="with-queryselectorall"><a href="#with-queryselectorall" class="headerlink" title="With .querySelectorAll()"></a>With <code>.querySelectorAll()</code></h3><p>If we want to grab a group of elements, we use <code>.querySelectorAll()</code> which returns
