@@ -29,7 +29,7 @@
       data-aframe-version="0.9.0"
       data-docs-version="master">
   <head>
-    <title>&lt;a-plane> – A-Frame</title>
+    <title>device-orientation-permission-ui – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="&lt;a-plane&gt; – A-Frame">
+    <meta property="og:title" content="device-orientation-permission-ui – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="&lt;a-plane&gt; – A-Frame">
+    <meta name="twitter:title" content="device-orientation-permission-ui – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -119,7 +119,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="primitives">
+  <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
 
 
@@ -499,7 +499,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <p class="section-title-link">Components</p>
       </h3>
 
@@ -548,9 +548,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/components/device-orientation-permission-ui.html"
-               class="subnav-link">
+               class="subnav-link current">
               device-orientation-permission-ui
             </a>
           </li>
@@ -805,7 +805,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <p class="section-title-link">Primitives</p>
       </h3>
 
@@ -917,9 +917,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-plane.html"
-               class="subnav-link current">
+               class="subnav-link">
               &lt;a-plane&gt;
             </a>
           </li>
@@ -1007,7 +1007,7 @@
 </aside>
 
   <!-- Documentation. -->
-  <div class="content content--structured content--primitives copy">
+  <div class="content content--structured content--components copy">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1058,13 +1058,13 @@
     <div class="copy__wrap">
       <div class="page__section docs-header">
         <p>
-          <a href="/docs/master/primitives/a-box.html" class="borderless-link">
-            master &rsaquo; Primitives
+          <a href="/docs/master/components/geometry.html" class="borderless-link">
+            master &rsaquo; Components
           </a>
         </p>
       </div>
       <h1 class="page__title">
-        &lt;a-plane&gt;
+        device-orientation-permission-ui
       </h1>
 
       
@@ -1077,158 +1077,49 @@
 
       
 
-      <p>The plane primitive creates flat surfaces using the <a href="../components/geometry.html">geometry</a>
-component with the type set to <code>plane</code>.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"ground"</span> <span class="attr">src</span>=<span class="string">"ground.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Basic plane. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">color</span>=<span class="string">"#CCC"</span> <span class="attr">height</span>=<span class="string">"20"</span> <span class="attr">width</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Textured plane parallel to ground. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">src</span>=<span class="string">"#ground"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><table>
+      <p>Some browsers like Safari on iOS 13 and later require sites to request user permission to access DeviceOrientation events. This component presents a permission dialog for the user to grant or deny access.
+The device-orientation-permission-ui component applies only to the <a href="../core/scene.html"><code>&lt;a-scene&gt;</code> element</a></p>
+<p>To configure the style of the dialog one can redefine the associated css styles. To change the colors of the allow, deny and ok buttons:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.a-dialog-allow-button</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.a-dialog-deny-button</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.a-dialog-ok-button</span> &#123;</span><br><span class="line">   <span class="attribute">background-color</span>: green;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">device-orientation-permission-ui</span>=<span class="string">"enabled: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Component Mapping</th>
+<th>Property</th>
+<th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ambient-occlusion-map</td>
-<td>material.ambientOcclusionMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>ambient-occlusion-map-intensity</td>
-<td>material.ambientOcclusionMapIntensity</td>
-<td>1</td>
-</tr>
-<tr>
-<td>ambient-occlusion-texture-offset</td>
-<td>material.ambientOcclusionTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>ambient-occlusion-texture-repeat</td>
-<td>material.ambientOcclusionTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>color</td>
-<td>material.color</td>
-<td>#FFF</td>
-</tr>
-<tr>
-<td>displacement-bias</td>
-<td>material.displacementBias</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>displacement-map</td>
-<td>material.displacementMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>displacement-scale</td>
-<td>material.displacementScale</td>
-<td>1</td>
-</tr>
-<tr>
-<td>displacement-texture-offset</td>
-<td>material.displacementTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>displacement-texture-repeat</td>
-<td>material.displacementTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>env-map</td>
-<td>material.envMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>fog</td>
-<td>material.fog</td>
+<td>enabled</td>
+<td>Whether or not to display the dialog when required</td>
 <td>true</td>
-</tr>
-<tr>
-<td>height</td>
-<td>geometry.height</td>
-<td>1</td>
-</tr>
-<tr>
-<td>metalness</td>
-<td>material.metalness</td>
-<td>0</td>
-</tr>
-<tr>
-<td>normal-map</td>
-<td>material.normalMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>normal-scale</td>
-<td>material.normalScale</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>normal-texture-offset</td>
-<td>material.normalTextureOffset</td>
-<td>0 0</td>
-</tr>
-<tr>
-<td>normal-texture-repeat</td>
-<td>material.normalTextureRepeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>repeat</td>
-<td>material.repeat</td>
-<td>1 1</td>
-</tr>
-<tr>
-<td>roughness</td>
-<td>material.roughness</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>segments-height</td>
-<td>geometry.segmentsHeight</td>
-<td>1</td>
-</tr>
-<tr>
-<td>segments-width</td>
-<td>geometry.segmentsWidth</td>
-<td>1</td>
-</tr>
-<tr>
-<td>spherical-env-map</td>
-<td>material.sphericalEnvMap</td>
-<td>None</td>
-</tr>
-<tr>
-<td>src</td>
-<td>material.src</td>
-<td>None</td>
-</tr>
-<tr>
-<td>width</td>
-<td>geometry.width</td>
-<td>1</td>
-</tr>
-<tr>
-<td>wireframe</td>
-<td>material.wireframe</td>
-<td>false</td>
-</tr>
-<tr>
-<td>wireframe-linewidth</td>
-<td>material.wireframeLinewidth</td>
-<td>2</td>
 </tr>
 </tbody>
 </table>
-<h2 id="parallelizing-to-the-ground"><a href="#parallelizing-to-the-ground" class="headerlink" title="Parallelizing to the Ground"></a>Parallelizing to the Ground</h2><p>To make a plane parallel to the ground or make a plane the ground itself,
-rotate it around the X-axis:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceorientationpermissiongranted</td>
+<td>User has granted access to DeviceOrientation events</td>
+</tr>
+<tr>
+<td>deviceorientationpermissionrejected</td>
+<td>User or browser has denied access to DeviceOrientation events</td>
+</tr>
+<tr>
+<td>deviceorientationpermissionrequested</td>
+<td>Application has requested permission to access DeviceOrientation events</td>
+</tr>
+</tbody>
+</table>
 
 
       <!-- Previous / Next navigation. -->
@@ -1241,7 +1132,7 @@ rotate it around the X-axis:</p>
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-plane.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/device-orientation-permission-ui.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
 </footer>
 
     </div>
@@ -1266,7 +1157,7 @@ rotate it around the X-axis:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#attributes">Attributes</a>
+        <a class="subnav-link" href="#properties">Properties</a>
 
         <!-- Nested. -->
         
@@ -1277,7 +1168,7 @@ rotate it around the X-axis:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#parallelizing-to-the-ground">Parallelizing to the Ground</a>
+        <a class="subnav-link" href="#events">Events</a>
 
         <!-- Nested. -->
         
@@ -1293,9 +1184,9 @@ rotate it around the X-axis:</p>
       
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-plane.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/device-orientation-permission-ui.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/extras/primitives/primitives/meshPrimitives.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/scene/device-orientation-permission-ui.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
