@@ -47,7 +47,8 @@
     <!-- Don't index old documentation pages. -->
     <meta name="robots"
       content="all">
-    <meta name="description" content="">
+    <meta name="description" content="Google Chrome and Oculus Browser are now shipping WebXR enabled by default for VR headsets. The Web magic doesn’t stop there. AR is also coming to the standard and you can experiment today on ARCore compatible devices and Chrome 79 or newer.
+Enable the experimental WebXR AR modul">
     <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
@@ -61,14 +62,16 @@
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="">
+    <meta property="og:description" content="Google Chrome and Oculus Browser are now shipping WebXR enabled by default for VR headsets. The Web magic doesn’t stop there. AR is also coming to the standard and you can experiment today on ARCore compatible devices and Chrome 79 or newer.
+Enable the experimental WebXR AR modul">
     <meta property="og:image" content="https://aframe.io/images/blog/ar-comic.gif">
     <meta property="og:image:secure_url" content="https://aframe.io/images/blog/ar-comic.gif">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
     <meta name="twitter:title" content="Experiment with AR and A-Frame – A-Frame">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:description" content="Google Chrome and Oculus Browser are now shipping WebXR enabled by default for VR headsets. The Web magic doesn’t stop there. AR is also coming to the standard and you can experiment today on ARCore compatible devices and Chrome 79 or newer.
+Enable the experimental WebXR AR modul">
     <meta name="twitter:image" content="https://aframe.io/images/blog/ar-comic.gif">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
@@ -1721,7 +1724,7 @@
           <div class="post__metadata">
   <p class="post__timestamp">Dec 31, 2019</p>
   
-    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/klausweidner">Klaus Weidner twitter</a></p>
+    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/klausw">Klaus Weidner</a></p>
   
 </div>
 
@@ -1745,6 +1748,7 @@
           <p><strong>Google Chrome and Oculus Browser are now shipping WebXR enabled by default for VR headsets</strong>. The Web magic doesn’t stop there. <strong>AR is also coming</strong> to the <a href="https://immersive-web.github.io/webxr-ar-module/" target="_blank" rel="external">standard</a> and you can <strong>experiment today</strong> on <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank" rel="external">ARCore compatible devices</a> and <a href="https://chromereleases.googleblog.com/2019/12/chrome-for-android-update_17.html" target="_blank" rel="external">Chrome 79 or newer</a>.</p>
 <p>Enable the experimental <a href="https://immersive-web.github.io/webxr-ar-module/" target="_blank" rel="external">WebXR AR module</a> in <code>chrome://flags</code> and make sure your page is served over HTTPS. <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">A-Frame 1.0.3 or newer</a> automatically detects AR and shows the new <code>Enter AR</code> button:</p>
 <p><img src="/images/blog/ar-vr-buttons.png" alt="button image"></p>
+<a id="more"></a>
 <p>Build a scene in the same way than you do for VR. Just make sure that the background doesn’t block the camera view 🙂</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span> <span class="attr">timeout</span>=<span class="string">"30000"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"spinosaurus"</span> <span class="attr">src</span>=<span class="string">"dino-model.glb"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-camera</span> <span class="attr">position</span>=<span class="string">"0 1.2 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 2D environment omitted for simplicity --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"dino"</span> <span class="attr">position</span>=<span class="string">"-1 0 -3"</span> <span class="attr">scale</span>=<span class="string">"0.5 0.5 0.5"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"0 2.15 0"</span> <span class="attr">rotation</span>=<span class="string">"0 55 0"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">gltf-model</span>=<span class="string">"#spinosaurus"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">animation-mixer</span></span></span><br><span class="line"><span class="tag">              <span class="attr">shadow</span>=<span class="string">"cast: true; receive: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Lights configuration omitted for simplicity --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://xr-spinosaurus.glitch.me/" target="_blank" rel="external">Try now on your ARCore phone</a> and check out the <a href="https://glitch.com/edit/#!/xr-spinosaurus?path=index.html:1:0" target="_blank" rel="external">source code</a></p>
@@ -1754,6 +1758,7 @@
 <p>Developers will be able to cast rays into the real world and retrieve a list of intersection points against the real world understanding. A ray might be triggered by user input like touches or mouse clicks to for instance, place or move virtual objects in the real world.</p>
 <p><strong><a href="https://github.com/immersive-web/dom-overlays/blob/master/explainer.md" target="_blank" rel="external">DOM Overlay layer</a></strong></p>
 <p>When entering AR or VR mode, only WebGL content and the real world or camera image are rendered on screen. DOM layers will allow overlaying HTML elements to present for instance 2D UIs, instructions or contextual information associated to virtual or real world objects.</p>
+<hr>
 <p><strong><a href="https://discordapp.com/invite/tGYjkYr" target="_blank" rel="external">Join our discord channel</a></strong>. The community will love to see what you make.</p>
 <p>If you’d like to continue to support us, please <strong><a href="https://aframe.io/subscribe/">subscribe to the A-Frame
 newsletter</a></strong> where we’ll not only provide
