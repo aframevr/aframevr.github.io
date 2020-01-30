@@ -1097,22 +1097,30 @@ with animated gestures. hand-controls wraps the <a href="./vive-controls.html">v
 component</a>. By specifying just <code>hand-controls</code>, we have something that
 works well with both Vive and Rift. The component gives extra events and
 handles hand animations and poses.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"leftHand"</span> <span class="attr">hand-controls</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"rightHand"</span> <span class="attr">hand-controls</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="values"><a href="#values" class="headerlink" title="Values"></a>Values</h2><table>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"leftHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: left; handModelStyle: lowPoly; color: #ffcccc"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"rightHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: right; handModelStyle: lowPoly; color: #ffcccc"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
-<th>Value</th>
+<th>Property</th>
 <th>Description</th>
+<th>Default Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>left</td>
-<td>The entity will track the left hand controller.</td>
+<td>color</td>
+<td>Color of hand material.</td>
+<td>white</td>
 </tr>
 <tr>
-<td>right</td>
-<td>The entity will track the right hand controller.</td>
+<td>hand</td>
+<td>Associated controller. Can be <code>left</code> or <code>right</code>.</td>
+<td>left</td>
+</tr>
+<tr>
+<td>handModelStyle</td>
+<td>Style of the hand 3D model loaded. Can be <code>lowPoly</code>, <code>highPoly</code> or <code>toon</code>.</td>
+<td>lowPoly</td>
 </tr>
 </tbody>
 </table>
@@ -1167,8 +1175,16 @@ handles hand animations and poses.</p>
 </tbody>
 </table>
 <h2 id="assets"><a href="#assets" class="headerlink" title="Assets"></a>Assets</h2><ul>
-<li><a href="https://cdn.aframe.io/controllers/hands/leftHand.glb" target="_blank" rel="external">Left hand model</a></li>
-<li><a href="https://cdn.aframe.io/controllers/hands/rightHand.glb" target="_blank" rel="external">Right hand model</a></li>
+<li><a href="https://cdn.aframe.io/controllers/hands/leftHandLow.glb" target="_blank" rel="external">Left hand low poly model</a></li>
+<li><p><a href="https://cdn.aframe.io/controllers/hands/rightHandLow.glb" target="_blank" rel="external">Right hand low poly model</a></p>
+</li>
+<li><p><a href="https://cdn.aframe.io/controllers/hands/leftHandHigh.glb" target="_blank" rel="external">Left hand high poly model</a></p>
+</li>
+<li><p><a href="https://cdn.aframe.io/controllers/hands/rightHandHigh.glb" target="_blank" rel="external">Right hand high poly model</a></p>
+</li>
+<li><p><a href="https://cdn.aframe.io/controllers/hands/leftHand.glb" target="_blank" rel="external">Left hand toon model</a></p>
+</li>
+<li><a href="https://cdn.aframe.io/controllers/hands/rightHand.glb" target="_blank" rel="external">Right hand toon model</a></li>
 </ul>
 
 
@@ -1207,7 +1223,7 @@ handles hand animations and poses.</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#values">Values</a>
+        <a class="subnav-link" href="#properties">Properties</a>
 
         <!-- Nested. -->
         
