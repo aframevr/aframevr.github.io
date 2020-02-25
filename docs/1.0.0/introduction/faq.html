@@ -1120,7 +1120,7 @@ common use cases. However, performance is ultimately determined by the
 complexity and characteristics of each individual application. To get the best
 use of resources, we will need deeper understanding about 3D graphics.  See
 <a href="../introduction/best-practices.html">best performance practices and guidelines</a> to get started.</p>
-<h2 id="why-is-my-experiencing-not-entering-vr-or-ar-mode"><a href="#why-is-my-experiencing-not-entering-vr-or-ar-mode" class="headerlink" title="Why is my experiencing not entering VR or AR mode?"></a>Why is my experiencing not entering VR or AR mode?</h2><p>If you are using A-Frame 1.0.3 or older you probably need to update to the <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">latest release</a>. Browsers are migrating to the <a href="https://immersive-web.github.io/webxr/" target="_blank" rel="external">WebXR standard</a> and old versions might no longer work.</p>
+<h2 id="why-is-my-experiencing-not-entering-vr-or-ar-mode"><a href="#why-is-my-experiencing-not-entering-vr-or-ar-mode" class="headerlink" title="Why is my experiencing not entering VR or AR mode?"></a>Why is my experiencing not entering VR or AR mode?</h2><p>If you are using A-Frame 1.0.4 or older you probably need to update to the <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">latest release</a>. Browsers are migrating to the <a href="https://immersive-web.github.io/webxr/" target="_blank" rel="external">WebXR standard</a> and old versions might no longer work.</p>
 <p>You also have to serve your content over HTTPS. The WebXR API won’t be available over HTTP.</p>
 <h2 id="why-does-my-asset-e-g-image-video-model-not-load"><a href="#why-does-my-asset-e-g-image-video-model-not-load" class="headerlink" title="Why does my asset (e.g., image, video, model) not load?"></a>Why does my asset (e.g., image, video, model) not load?</h2><p>First, if you are doing local development, make sure you are <a href="./installation.html#local-development">using a local
 server</a> so that asset requests work properly.</p>
@@ -1266,7 +1266,7 @@ and pull requests:</p>
 <h2 id="where-is-the-roadmap"><a href="#where-is-the-roadmap" class="headerlink" title="Where is the roadmap?"></a>Where is the roadmap?</h2><p>The <a href="https://github.com/aframevr/aframe/blob/master/ROADMAP.md" target="_blank" rel="external">roadmap is on GitHub</a>!</p>
 <h2 id="do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”"><a href="#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”" class="headerlink" title="Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?"></a>Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?</h2><p>A-Frame!</p>
 <h2 id="why-do-my-textures-render-black"><a href="#why-do-my-textures-render-black" class="headerlink" title="Why do my textures render black?"></a>Why do my textures render black?</h2><p>Phones with Adreno 300 series GPUs are notoriously problematic. Set <a href="../components/renderer.html#precision">renderer precision</a> to <code>medium</code> as a workaround. Real fix has to happen at the driver / device level.</p>
-<h2 id="why-is-the-gyroscope-not-working-on-ios"><a href="#why-is-the-gyroscope-not-working-on-ios" class="headerlink" title="Why is the gyroscope not working on iOS?"></a>Why is the gyroscope not working on iOS?</h2><p>iOS 12.2 Safari applies new restrictions to the devicemotion API. Pages have to be served over <code>https</code> and the user has to enable the API manually on <code>Settings -&gt; Safari -&gt; Motion &amp; Orientation access</code>. iOS 12.3 is introducing a <code>DeviceOrientationEvent.requestPermission</code> method that A-Frame will call to ask for user permission without manual steps.</p>
+<h2 id="why-is-the-gyroscope-magic-window-mode-not-working"><a href="#why-is-the-gyroscope-magic-window-mode-not-working" class="headerlink" title="Why is the gyroscope / magic window mode not working?"></a>Why is the gyroscope / magic window mode not working?</h2><p><a href="https://www.w3.org/TR/orientation-event/#dom-deviceorientationevent-requestpermission" target="_blank" rel="external">New browser policies</a> require sites to prompt the user for permission before getting access to DeviceMotionEvents. <a href="https://webkit.org/blog/9674/new-webkit-features-in-safari-13/" target="_blank" rel="external">Starting with iOS 13</a> DeviceMotionEvents are only available for pages served over <code>https</code>. Other browsers will also apply same policies and restrictions. A-Frame now <a href="https://aframe.io/docs/1.0.0/components/device-orientation-permission-ui.html#sidebar">incorporates customoziable UI</a> to request the necessary permissions to the user. Make sure to update to <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">A-Frame latest version</a>  </p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1538,7 +1538,7 @@ and pull requests:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#why-is-the-gyroscope-not-working-on-ios">Why is the gyroscope not working on iOS?</a>
+        <a class="subnav-link" href="#why-is-the-gyroscope-magic-window-mode-not-working">Why is the gyroscope / magic window mode not working?</a>
 
         <!-- Nested. -->
         
