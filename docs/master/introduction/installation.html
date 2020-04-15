@@ -1165,6 +1165,20 @@ or Webpack:</p>
 <p>If you use npm, you can use <a href="https://www.npmjs.com/package/angle" target="_blank" rel="external"><code>angle</code></a>, a command line interface for
 A-Frame.  <code>angle</code> can initialize a scene template with a single command:</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g angle &amp;&amp; angle initscene</span><br></pre></td></tr></table></figure>
+<h2 id="cordova-development"><a href="#cordova-development" class="headerlink" title="Cordova Development"></a>Cordova Development</h2><p>A-Frame is compatible with Cordova apps. Currently, network access is required as A-Frame and its dependencies load assets from CDN sources.</p>
+<p><a href="https://github.com/benallfree/cordova-aframe-showcase" target="_blank" rel="external">Cordova A-Frame Showcase App (demo)</a></p>
+<h3 id="installation"><a href="#installation" class="headerlink" title="Installation"></a>Installation</h3><p>Install the <a href="https://github.com/benallfree/cordova-plugin-xhr-local-file" target="_blank" rel="external">cordova-plugin-xhr-local-file</a> plugin. This is needed because
+Cordova runs from <code>file://</code>, and XHR requests to local <code>file://</code> assets (JSON fonts, 3D models, etc) will fail without this plugin.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cordova plugin add cordova-plugin-xhr-local-file</span><br></pre></td></tr></table></figure>
+<p>In your <code>index.html</code>, adjust as follows:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag">        <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">content</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">          default-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            data: </span></span></span><br><span class="line"><span class="tag"><span class="string">            gap: </span></span></span><br><span class="line"><span class="tag"><span class="string">            https://ssl.gstatic.com </span></span></span><br><span class="line"><span class="tag"><span class="string">            'unsafe-eval' </span></span></span><br><span class="line"><span class="tag"><span class="string">            https://cdn.aframe.io         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://dpdb.webvr.rocks      &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://fonts.googleapis.com  &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://cdn.jsdelivr.net      &lt;-- your choice, see below</span></span></span><br><span class="line"><span class="tag"><span class="string">            ; </span></span></span><br><span class="line"><span class="tag"><span class="string">          style-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            'unsafe-inline'</span></span></span><br><span class="line"><span class="tag"><span class="string">            ; </span></span></span><br><span class="line"><span class="tag"><span class="string">          media-src *; </span></span></span><br><span class="line"><span class="tag"><span class="string">          img-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            data:                         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            content:                      &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            blob:                         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            ;</span></span></span><br><span class="line"><span class="tag"><span class="string">        "</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe-master.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">'my-scene'</span> <span class="attr">type</span>=<span class="string">"text/html"</span>&gt;</span></span><br><span class="line">    ...your scene goes here...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.addEventListener(<span class="string">'deviceready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// After the 'deviceready' event, Cordova is ready for you to render your A-Frame scene.</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">'scene-root'</span>).innerHTML = <span class="built_in">document</span>.getElementById(<span class="string">'my-scene'</span>).innerHTML</span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'scene-root'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="discussion"><a href="#discussion" class="headerlink" title="Discussion"></a>Discussion</h3><h4 id="deviceready"><a href="#deviceready" class="headerlink" title="deviceready"></a>deviceready</h4><p>The most important difference between a browser environment and a Cordova environment is waiting for the <code>deviceready</code> event
+before rendering your scene. </p>
+<p>The sample above shows a pure DOM+JS approach, but you can also use a framework like React:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'deviceready'</span>, () =&gt; &#123;</span><br><span class="line">  ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Root</span> /&gt;</span>, document.getElementById('root'))</span></span><br><span class="line"><span class="xml">&#125;)</span></span><br></pre></td></tr></table></figure>
+<h4 id="layout"><a href="#layout" class="headerlink" title="Layout"></a>Layout</h4><p>Depending on your target device, you may find that A-Frame’s default CSS causes certain buttons and controls to appear out of
+position or too close to the edge of the phone screen. Supply your own CSS overrides to adjust positioning to fit
+the target device.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1236,6 +1250,25 @@ A-Frame.  <code>angle</code> can initialize a scene template with a single comma
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#install-from-npm">Install from npm</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#cordova-development">Cordova Development</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#installation">Installation</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#discussion">Discussion</a>
               </li>
             
           </ul>
