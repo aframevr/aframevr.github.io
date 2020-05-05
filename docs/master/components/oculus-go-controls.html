@@ -1158,28 +1158,28 @@ and/or pressed buttons (trackpad, trigger).</p>
 </thead>
 <tbody>
 <tr>
-<td>trackpadchanged</td>
-<td>Trackpad changed.</td>
+<td>touchpadchanged</td>
+<td>Touchpad changed.</td>
 </tr>
 <tr>
-<td>trackpaddown</td>
-<td>Trackpad pressed.</td>
+<td>touchpaddown</td>
+<td>Touchpad pressed.</td>
 </tr>
 <tr>
-<td>trackpadup</td>
-<td>Trackpad released.</td>
+<td>touchpadup</td>
+<td>Touchpad released.</td>
 </tr>
 <tr>
-<td>trackpadtouchstart</td>
-<td>Trackpad touched.</td>
+<td>touchpadtouchstart</td>
+<td>Touchpad touched.</td>
 </tr>
 <tr>
-<td>trackpadtouchend</td>
-<td>Trackpad not touched.</td>
+<td>touchpadtouchend</td>
+<td>Touchpad not touched.</td>
 </tr>
 <tr>
-<td>trackpadmoved</td>
-<td>Trackpad moved.</td>
+<td>touchpadmoved</td>
+<td>Touchpad moved.</td>
 </tr>
 <tr>
 <td>triggerchanged</td>
@@ -1195,6 +1195,10 @@ and/or pressed buttons (trackpad, trigger).</p>
 </tr>
 </tbody>
 </table>
+<h3 id="legacy-webvr-browsers"><a href="#legacy-webvr-browsers" class="headerlink" title="Legacy WebVR Browsers"></a>Legacy WebVR Browsers</h3><p>Legacy WebVR browsers use the older ‘trackpadXXXX’ event names, rather than the
+<a href="https://github.com/immersive-web/webxr-input-profiles/tree/master/packages/assets/profiles" target="_blank" rel="external">WebXR nomenclature</a>
+‘touchpadXXXX’. If you want to support both event types, then you can listen for both flavors of event names.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">el.addEventListener(&apos;touchpadchanged&apos;, yourHandler);</span><br><span class="line">el.addEventListener(&apos;trackpadchanged&apos;, yourHandler);</span><br></pre></td></tr></table></figure>
 <h2 id="assets"><a href="#assets" class="headerlink" title="Assets"></a>Assets</h2><ul>
 <li><a href="https://cdn.aframe.io/controllers/oculus/go/oculus-go-controller.gltf" target="_blank" rel="external">Controller GLTF</a></li>
 </ul>
@@ -1251,6 +1255,10 @@ and/or pressed buttons (trackpad, trigger).</p>
         <!-- Nested. -->
         
           <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#legacy-webvr-browsers">Legacy WebVR Browsers</a>
+              </li>
             
           </ul>
         
