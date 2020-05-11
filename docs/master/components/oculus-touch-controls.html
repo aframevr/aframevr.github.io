@@ -1177,6 +1177,10 @@ mappings, events, and a Touch controller model.</p>
 <td>Thumbstick changed.</td>
 </tr>
 <tr>
+<td>thumbstickmoved</td>
+<td>Thumbstick direction changed.</td>
+</tr>
+<tr>
 <td>gripdown</td>
 <td>Grip button pressed.</td>
 </tr>
@@ -1298,6 +1302,11 @@ mappings, events, and a Touch controller model.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="read-thumbstick-values"><a href="#read-thumbstick-values" class="headerlink" title="Read thumbstick values"></a>Read thumbstick values</h2><p>Listen to the <code>thumbstick</code> event and the values are available in the object passed to the handler</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-touch-controls</span>=<span class="string">"hand: left"</span> <span class="attr">thumbstick-logging</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-touch-controls</span>=<span class="string">"hand: right"</span> <span class="attr">thumbstick-logging</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'thumbstick-logging'</span>,&#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'thumbstickmoved'</span>, <span class="keyword">this</span>.logThumbstick);</span><br><span class="line">  &#125;,</span><br><span class="line">  logThumbstick: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (evt.detail.y &gt; <span class="number">0.95</span>) &#123; <span class="built_in">console</span>.log(<span class="string">"DOWN"</span>); &#125;</span><br><span class="line">    <span class="keyword">if</span> (evt.detail.y &lt; <span class="number">-0.95</span>) &#123; <span class="built_in">console</span>.log(<span class="string">"UP"</span>); &#125;</span><br><span class="line">    <span class="keyword">if</span> (evt.detail.x &lt; <span class="number">-0.95</span>) &#123; <span class="built_in">console</span>.log(<span class="string">"LEFT"</span>); &#125;</span><br><span class="line">    <span class="keyword">if</span> (evt.detail.x &gt; <span class="number">0.95</span>) &#123; <span class="built_in">console</span>.log(<span class="string">"RIGHT"</span>); &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>If a camera is specified (e.g., our own <code>&lt;a-camera&gt;</code> or <code>&lt;a-entity camera&gt;</code>),
+then the default camera will not be added.</p>
 <h2 id="assets"><a href="#assets" class="headerlink" title="Assets"></a>Assets</h2><ul>
 <li><a href="https://cdn.aframe.io/controllers/oculus/oculus-touch-controller-left.obj" target="_blank" rel="external">Left Controller OBJ</a></li>
 <li><a href="https://cdn.aframe.io/controllers/oculus/oculus-touch-controller-left.mtl" target="_blank" rel="external">Left Controller MTL</a></li>
@@ -1353,6 +1362,17 @@ mappings, events, and a Touch controller model.</p>
     
       <li class="subnav-item">
         <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#read-thumbstick-values">Read thumbstick values</a>
 
         <!-- Nested. -->
         
