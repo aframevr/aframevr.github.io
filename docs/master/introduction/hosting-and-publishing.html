@@ -1148,26 +1148,6 @@ project directory versus a CDN.  This makes Neocities at least better at
 hosting models. With Neocities, we can create and edit files. They’ll then be
 hosted and published for us (e.g., <code>ngokevin.neocities.org</code>):</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/25643399/704cffe0-2f54-11e7-8d32-868b51407f81.jpg" alt="Neocities Editor"></p>
-<h3 id="surge"><a href="#surge" class="headerlink" title="Surge"></a>Surge</h3><p><em>“Static web publishing for Front-End Developers Simple, single-command web
-publishing. Publish HTML, CSS, and JS for free, without leaving the command
-line.”</em></p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/25644655/a0172784-2f5c-11e7-9e44-002d61d4d076.jpg" alt="Surge"></p>
-<p><a href="https://surge.sh" target="_blank" rel="external">Surge</a> is a tool to publish web sites with a single command
-from the command line. This is a great tool if you’re comfortable with the
-command line.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/25644695/e80f6ccc-2f5c-11e7-8442-7a963b9786ef.jpg" alt="Surge Usage"></p>
-<h3 id="github-pages"><a href="#github-pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p><em>“Websites for you and your projects.  Hosted directly from your GitHub
-repository. Just edit, push, and your changes are live.”</em></p>
-<p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> is a preferred way of publishing our
-project if our project is on GitHub. The easiest way is to go our project’s
-GitHub <strong>Settings</strong>, scroll down to the <strong>GitHub Pages</strong> section, and set to
-publish <strong>master branch</strong>. This will publish the project at
-<code>https://&lt;username&gt;.github.io/&lt;repositoryname&gt;</code>.</p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/25644905/5694c7c2-2f5e-11e7-8cde-9d4be7498850.jpg" alt="GitHub"></p>
-<p>Alternatively, we can set to publish the <code>gh-pages</code> branch if we don’t want
-<code>master</code> changes to be published. Command line tools such as
-<a href="https://github.com/cvan/ghpages" target="_blank" rel="external"><code>ghpages</code></a> can make that a one-command
-publish process.</p>
 <h2 id="hosting-assets"><a href="#hosting-assets" class="headerlink" title="Hosting Assets"></a>Hosting Assets</h2><p>We’ll also go over hosting assets such as audio, textures, models, and video.</p>
 <p>If the A-Frame site is being published alongside its assets in the same
 directory (i.e., the same domain), then we don’t need to worry much about
@@ -1217,6 +1197,9 @@ hosted and referenced via <a href="https://www.jsdelivr.com/?docs=gh" target="_b
 <p>Below is a video of the workflow:</p>
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/_D_C_oSKp9Y?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
+<p>Though ee can also host the model the same as we serve all of our other assets,
+and let the server and CDN handle it. If we want a special place to host them,
+S3 is another option.</p>
 <h2 id="sharing-our-project"><a href="#sharing-our-project" class="headerlink" title="Sharing Our Project"></a>Sharing Our Project</h2><p>Once we’ve published our awesome project, we’ll want to share it so other
 people dive inside!</p>
 <h3 id="creating-media"><a href="#creating-media" class="headerlink" title="Creating Media"></a>Creating Media</h3><p>A-Frame and VR are very visual; we’ll want to create videos and GIFs of our
@@ -1297,14 +1280,6 @@ scenes, we can use
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#neocities">Neocities</a>
-              </li>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#surge">Surge</a>
-              </li>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#github-pages">GitHub Pages</a>
               </li>
             
           </ul>
