@@ -1161,6 +1161,7 @@ attached, <code>object3DMap</code> might look like:</p>
 <h2 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="addstate-statename"><a href="#addstate-statename" class="headerlink" title="addState (stateName)"></a><code>addState (stateName)</code></h3><p><code>addState</code> will push a state onto the entity. This will emit the <code>stateadded</code>
 event, and we can check the state can for existence using <code>.is</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.addEventListener(<span class="string">'stateadded'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (evt.detail === <span class="string">'selected'</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Entity now selected!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">entity.addState(<span class="string">'selected'</span>);</span><br><span class="line">entity.is(<span class="string">'selected'</span>);  <span class="comment">// &gt;&gt; true</span></span><br></pre></td></tr></table></figure>
+<h3 id="destroy"><a href="#destroy" class="headerlink" title="destroy ()"></a><code>destroy ()</code></h3><p>Clean up memory related to the entity such as clearing all components and their data.</p>
 <h3 id="emit-name-detail-bubbles"><a href="#emit-name-detail-bubbles" class="headerlink" title="emit (name, detail, bubbles)"></a><code>emit (name, detail, bubbles)</code></h3><p><code>emit</code> emits a custom DOM event on the entity. For example, we can emit an event to
 <a href="../components/animation.html">trigger an animation</a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// &lt;a-entity animation="property: rotation; to: 0 360 0; startEvents: rotate"&gt;</span></span><br><span class="line">entity.emit(<span class="string">'rotate'</span>);</span><br></pre></td></tr></table></figure>
@@ -1207,7 +1208,6 @@ parsing for the value. For example, the <a href="../components/position.html">po
 single-property component, but its property type parser allows it to take an
 object:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.setAttribute(<span class="string">'position'</span>, &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">3</span> &#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="destroy"><a href="#destroy" class="headerlink" title="destroy ()"></a><code>destroy ()</code></h3><p>Clean up memory related to the entity such as clearing all components and their data.</p>
 <h4 id="updating-multi-property-component-data"><a href="#updating-multi-property-component-data" class="headerlink" title="Updating Multi-Property Component Data"></a>Updating Multi-Property Component Data</h4><p>To update component data for a multi-property component, we can pass the name
 of a registered component as the <code>componentName</code>, and pass an object of
 properties as the <code>value</code>. A string is also acceptable (e.g., <code>type: spot;
@@ -1471,6 +1471,10 @@ the scene attaches or detaches an entity:</p>
               </li>
             
               <li class="subnav-item">
+                <a class="subnav-link" href="#destroy">destroy ()</a>
+              </li>
+            
+              <li class="subnav-item">
                 <a class="subnav-link" href="#emit-name-detail-bubbles">emit (name, detail, bubbles)</a>
               </li>
             
@@ -1500,10 +1504,6 @@ the scene attaches or detaches an entity:</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#setattribute-componentname-value-propertyvalue-clobber">setAttribute (componentName, value, [propertyValue | clobber])</a>
-              </li>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#destroy">destroy ()</a>
               </li>
             
               <li class="subnav-item">
