@@ -1109,7 +1109,6 @@ time, to encapsulate reusable code, and to make use of the framework which is th
 purpose of using A-Frame.</p>
 <p><strong>Do this</strong>:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  AFRAME.registerComponent(&apos;code-that-does-this&apos;, &#123;</span><br><span class="line">    init: function () &#123;</span><br><span class="line">      // Code here.</span><br><span class="line">      console.log(this.el);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  AFRAME.registerComponent(&apos;code-to-attach-to-box&apos;, &#123;</span><br><span class="line">    init: function () &#123;</span><br><span class="line">      // Code here.</span><br><span class="line">      console.log(this.el);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;a-scene code-that-does-this&gt;</span><br><span class="line">  &lt;a-box code-to-attach-to-box&gt;&lt;/a-box&gt;</span><br><span class="line">  &lt;!-- ... --&gt;</span><br><span class="line">&lt;/a-scene&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="webvr"><a href="#webvr" class="headerlink" title="WebVR"></a>WebVR</h2><p><a href="https://www.supermedium.com/blog/webvr-guidelines" target="_blank" rel="external">See WebVR Guidelines</a>.</p>
 <h2 id="performance"><a href="#performance" class="headerlink" title="Performance"></a>Performance</h2><p>[pool]
 [geometrymerger]: <a href="https://www.npmjs.com/package/aframe-geometry-merger-component" target="_blank" rel="external">https://www.npmjs.com/package/aframe-geometry-merger-component</a></p>
 <p>Performance is critical in VR. A high framerate must be maintained in order for
@@ -1268,17 +1267,6 @@ to a specific form factor versus watering it down for all platforms at once.</p>
     
       <li class="subnav-item">
         <a class="subnav-link" href="#a-frame">A-Frame</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#webvr">WebVR</a>
 
         <!-- Nested. -->
         
