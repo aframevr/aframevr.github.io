@@ -29,7 +29,7 @@
       data-aframe-version="1.0.0"
       data-docs-version="master">
   <head>
-    <title>&lt;a-obj-model> – A-Frame</title>
+    <title>layer – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="&lt;a-obj-model&gt; – A-Frame">
+    <meta property="og:title" content="layer – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="&lt;a-obj-model&gt; – A-Frame">
+    <meta name="twitter:title" content="layer – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -103,7 +103,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="primitives">
+  <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
 
 
@@ -506,7 +506,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <p class="section-title-link">Components</p>
       </h3>
 
@@ -625,9 +625,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/components/layer.html"
-               class="subnav-link">
+               class="subnav-link current">
               layer
             </a>
           </li>
@@ -833,7 +833,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <p class="section-title-link">Primitives</p>
       </h3>
 
@@ -931,9 +931,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/primitives/a-obj-model.html"
-               class="subnav-link current">
+               class="subnav-link">
               &lt;a-obj-model&gt;
             </a>
           </li>
@@ -1035,7 +1035,7 @@
 </aside>
 
   <!-- Documentation. -->
-  <div class="content content--structured content--primitives copy">
+  <div class="content content--structured content--components copy">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1086,13 +1086,13 @@
     <div class="copy__wrap">
       <div class="page__section docs-header">
         <p>
-          <a href="/docs/master/primitives/a-box.html" class="borderless-link">
-            master &rsaquo; Primitives
+          <a href="/docs/master/components/geometry.html" class="borderless-link">
+            master &rsaquo; Components
           </a>
         </p>
       </div>
       <h1 class="page__title">
-        &lt;a-obj-model&gt;
+        layer
       </h1>
 
       
@@ -1105,37 +1105,37 @@
 
       
 
-      <blockquote>
-<p>We recommend glTF for distributing assets in production over the web. Check
-out using the <a href="a-gltf-model.html">glTF model primitive</a>. You can
-either instead export to COLLADA and use <a href="https://cesiumjs.org/convertmodel.html" target="_blank" rel="external">the
-converter</a> or try out the <a href="https://github.com/AnalyticalGraphicsInc/OBJ2GLTF" target="_blank" rel="external">OBJ
-converter</a>.</p>
-</blockquote>
-<p>The .OBJ model primitive displays a 3D Wavefront model.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"crate-obj"</span> <span class="attr">src</span>=<span class="string">"crate.obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"crate-mtl"</span> <span class="attr">src</span>=<span class="string">"crate.mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Using the asset management system. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-obj-model</span> <span class="attr">src</span>=<span class="string">"#crate-obj"</span> <span class="attr">mtl</span>=<span class="string">"#crate-mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-obj-model</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Defining the URL inline. Not recommended but may be more comfortable. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-obj-model</span> <span class="attr">src</span>=<span class="string">"crate.obj"</span> <span class="attr">mtl</span>=<span class="string">"crate.mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-obj-model</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="attribute"><a href="#attribute" class="headerlink" title="Attribute"></a>Attribute</h2><table>
+      <p>The layer component renders images, videos or cubemaps into a <a href="https://immersive-web.github.io/layers/" target="_blank" rel="external">WebXR compositor layer</a> on supported browsers.</p>
+<p>The benefits of layers are:</p>
+<ul>
+<li><strong>Performance and judder:</strong> Once the layer is submitted, the compositor is in charge of render it at a fixed refresh rate (72Hz, 90Hz… depending on device). Even if the application cannot keep up with the compositor refresh rate the layer won’t drop any frames resulting in a smoother experience.</li>
+<li><strong>Visual fidelity:</strong> The images in a layer will be sampled only once by the compositor. Regular WebGL content is sampled twice: Once one rendering to the eye buffer and a second time when copied to the compositor. This results in a loss of details.</li>
+<li><strong>Battery life:</strong> No double sampling results in less memory copies reducing operations and battery consumption.</li>
+<li><strong>Latency:</strong> Headset pose sampling for layers takes place at the end of the frame using the most recent HMD pose. This paired with reprojection techniques reduce the effective latency.</li>
+</ul>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"comicbook"</span> <span class="attr">crossOrigin</span>=<span class="string">"anonymous"</span> <span class="attr">src</span>=<span class="string">"/path/to/comicbook.png"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">layer</span>=<span class="string">"type: quad; src: #comicbook"</span> <span class="attr">position</span>=<span class="string">"0 1.8 -1.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Component Mapping</th>
-<th>Default Value</th>
+<th>Properties</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>mtl</td>
-<td>obj-model.mtl</td>
-<td>null</td>
+<td>type</td>
+<td><code>quad</code>, <code>monocubemap</code> or <code>stereocubemap</code></td>
 </tr>
 <tr>
 <td>src</td>
-<td>obj-model.obj</td>
-<td>null</td>
+<td>Image or video loade in the layer.</td>
+</tr>
+<tr>
+<td>rotateCubemap</td>
+<td>Rotates the cubemap 180 degrees in the y-axis.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="troubleshooting"><a href="#troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><p>See <a href="../introduction/models.html#troubleshooting">Introduction → 3D Models → Troubleshooting</a>.</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1148,7 +1148,7 @@ converter</a>.</p>
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-obj-model.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/layer.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
   <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
 </footer>
 
@@ -1174,18 +1174,7 @@ converter</a>.</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#attribute">Attribute</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#troubleshooting">Troubleshooting</a>
+        <a class="subnav-link" href="#properties">Properties</a>
 
         <!-- Nested. -->
         
@@ -1199,11 +1188,25 @@ converter</a>.</p>
 </div>
 
       
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        <li class="subnav-item">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/layer.md" style="font-style: italic">
+            No examples for this page yet. Add one!
+          </a>
+        </li>
+      </ul>
+    
+  </div>
+
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/primitives/a-obj-model.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/layer.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/extras/primitives/primitives/a-obj-model.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/layer.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
