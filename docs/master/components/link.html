@@ -1107,15 +1107,15 @@
 
       
 
-      <p>The link component connects between experiences and allows for traversing
-between VR web pages. When activated via an event, the link component sends the
-user to a different page, just like a normal web page redirect. To maintain VR
-across pages, the following conditions must apply:</p>
+      <p>The link component connects between experiences and allows for traversing between VR web pages. When activated via an event, the link component sends the user to a different page, just like a normal web page redirect. To maintain VR across pages, the following conditions must apply:</p>
 <ul>
-<li>The browser is up-to-date with the WebVR specification and implements the <code>vrdisplayactivate</code> event.</li>
-<li>The destination web page listens to the window [<code>vrdisplayactivate</code>] event and enters VR. A-Frame experiences behave this way by default.</li>
-<li>At the moment, in-VR navigation is only implemented by Firefox desktop,
-Oculus Browser, Samsung Internet, and Supermedium.</li>
+<li>Your browser implements the WebXR <a href="https://github.com/immersive-web/navigation#api-proposal" target="_blank" rel="external">in-VR navigation proposal</a>. Notice that is not yet part of the standard. Support is experimental an varies accross browsers.</li>
+</ul>
+<ul>
+<li><p>The destination Web page listens to the window [<code>sessiongranted</code>] event and enters VR. A-Frame experiences behave this way by default.</p>
+</li>
+<li><p>At the moment, The Oculus Browser on Quest is the only browser shipping the <a href="https://github.com/immersive-web/navigation#api-proposal" target="_blank" rel="external">in-VR navigation proposal</a>.</p>
+</li>
 </ul>
 <h2 id="link-ux"><a href="#link-ux" class="headerlink" title="Link UX"></a>Link UX</h2><p>A link in VR can be anything such as grabbing onto an object, placing something
 on our head, clicking something, even eating something! We provide a default
