@@ -1109,6 +1109,7 @@
 The device-orientation-permission-ui component applies only to the <a href="../core/scene.html"><code>&lt;a-scene&gt;</code> element</a></p>
 <p>To configure the style of the dialog one can redefine the associated css styles. To change the colors of the allow, deny and ok buttons:</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.a-dialog-allow-button</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.a-dialog-deny-button</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.a-dialog-ok-button</span> &#123;</span><br><span class="line">   <span class="attribute">background-color</span>: green;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>The dialog can also be disabled all together if you prefer to handle the permissions workflow differently.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">device-orientation-permission-ui</span>=<span class="string">"enabled: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
@@ -1123,6 +1124,21 @@ The device-orientation-permission-ui component applies only to the <a href="../c
 <td>enabled</td>
 <td>Whether or not to display the dialog when required</td>
 <td>true</td>
+</tr>
+<tr>
+<td>deviceMotionMessage</td>
+<td>Message in dialog requesting user permission to enable the Device Motion API.</td>
+<td>English text</td>
+</tr>
+<tr>
+<td>mobileDestkopMessage</td>
+<td>Message displayed in modal requesting user to switch to mobile browsing mode.</td>
+<td>English text</td>
+</tr>
+<tr>
+<td>httpsMessage</td>
+<td>Message requesting user to switch to HTTPS.</td>
+<td>English text</td>
 </tr>
 </tbody>
 </table>
