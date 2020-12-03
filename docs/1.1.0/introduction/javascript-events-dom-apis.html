@@ -1,0 +1,1540 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-111391431-24"
+      data-aframe-version="1.1.0"
+      data-docs-version="1.1.0">
+  <head>
+    <title>JavaScript, Events, DOM APIs – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="all">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="JavaScript, Events, DOM APIs – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="JavaScript, Events, DOM APIs – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111391431-24', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+</script>
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="introduction">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/1.1.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://supermedium.com/discord/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Discord Channel">
+          <span>Discord</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://aframe.io/subscribe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Newsletter</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option selected
+                data-href="/docs/1.1.0/introduction/">
+          1.1.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.0.0/introduction/">
+          1.0.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.9.0/introduction/">
+          0.9.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.8.0/introduction/">
+          0.8.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.7.0/introduction/">
+          0.7.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.6.0/introduction/">
+          0.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <p class="section-title-link">Introduction</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/vr-headsets-and-webvr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebVR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/1.1.0/introduction/javascript-events-dom-apis.html"
+               class="subnav-link current">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting & Publishing
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Guides</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/guides/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Core API</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/core/globals.html"
+               class="subnav-link">
+              Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Components</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/animation.html"
+               class="subnav-link">
+              Animation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/background.html"
+               class="subnav-link">
+              background
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/device-orientation-permission-ui.html"
+               class="subnav-link">
+              device-orientation-permission-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/hand-tracking-controls.html"
+               class="subnav-link">
+              hand-tracking-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/layer.html"
+               class="subnav-link">
+              layer
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/line.html"
+               class="subnav-link">
+              line
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/link.html"
+               class="subnav-link">
+              link
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/loading-screen.html"
+               class="subnav-link">
+              loading-screen
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/magicleap-controls.html"
+               class="subnav-link">
+              magicleap-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/oculus-go-controls.html"
+               class="subnav-link">
+              oculus-go-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/renderer.html"
+               class="subnav-link">
+              renderer
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/vive-focus-controls.html"
+               class="subnav-link">
+              vive-focus-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/webxr.html"
+               class="subnav-link">
+              webxr
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Primitives</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-link.html"
+               class="subnav-link">
+              &lt;a-link&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.1.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+  <!-- Documentation. -->
+  <div class="content content--structured content--introduction copy">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/1.1.0/introduction/" class="borderless-link">
+            1.1.0 &rsaquo; Introduction
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        JavaScript, Events, DOM APIs
+      </h1>
+
+      
+
+      
+      
+
+      <p>Since A-Frame is just HTML, we can control the scene and its entities using
+JavaScript and <a href="https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="external">DOM</a> APIs as we mostly would in ordinary web development.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/20290105/e1573210-aa92-11e6-8f1a-8a31fb6dad52.jpg" alt="With JavaScript">
+<small class="image-caption"><i>Image by Ruben Mueller from <a href="http://vrjump.de" target="_blank" rel="external">The VR Jump</a>.</i></small></p>
+<p>Every element in the scene, even elements such as <code>&lt;a-box&gt;</code> or <code>&lt;a-sky&gt;</code>, are entities (represented as <code>&lt;a-entity&gt;</code>). A-Frame modifies the HTML element prototype to add some extra behavior for certain DOM APIs to tailor them to
+A-Frame. See the <a href="../core/entity.html">Entity API documentation</a> for reference on most of
+the APIs discussed below.</p>
+<!--toc-->
+
+<h2 id="where-to-place-javascript-code-for-a-frame"><a href="#where-to-place-javascript-code-for-a-frame" class="headerlink" title="Where to Place JavaScript Code for A-Frame"></a>Where to Place JavaScript Code for A-Frame</h2><p><strong>Important:</strong> Before we go over the different ways to use JavaScript and DOM
+APIs, we prescribe encapsulating your JavaScript code within <a href="../core/component.html">A-Frame
+components</a>.  Components modularize code, make logic and behavior visible from
+HTML, and ensure that code is executed at the correct time (e.g., after the
+scene and entities have attached and initialized). As the most basic example,
+to register a <code>console.log</code> component <em>before</em> <code>&lt;a-scene&gt;</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'log'</span>, &#123;</span><br><span class="line">  schema: &#123;<span class="attr">type</span>: <span class="string">'string'</span>&#125;,</span><br><span class="line"></span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> stringToLog = <span class="keyword">this</span>.data;</span><br><span class="line">    <span class="built_in">console</span>.log(stringToLog);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>And <em>after</em> the registration, use the component from HTML:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">log</span>=<span class="string">"Hello, Scene!"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">log</span>=<span class="string">"Hello, Box!"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Components encapsulate all of our code to be reusable, declarative, and
+shareable. Though if we’re just poking around at runtime, we can use our
+browser’s Developer Tools Console to run JavaScript on our scene.</p>
+<p>Do <strong>not</strong> try to put A-Frame-related JavaScript in a raw <code>&lt;script&gt;</code> tag after
+<code>&lt;a-scene&gt;</code> as we would with traditional 2D scripting. If we do, we’d have to
+take special measures to make sure code runs at the right time (see <a href="../core/scene.html#running-content-scripts-on-the-scene">Running
+Content Scripts on the Scene</a>).</p>
+<h2 id="getting-entities-by-querying-and-traversing"><a href="#getting-entities-by-querying-and-traversing" class="headerlink" title="Getting Entities by Querying and Traversing"></a>Getting Entities by Querying and Traversing</h2><p>The wonderful thing about the DOM as a scene graph is that the standard DOM
+provides utilities for traversal, querying, finding, and selecting through
+<code>.querySelector()</code> and <code>.querySelectorAll()</code>. Originally inspired by <a href="https://api.jquery.com/category/selectors/" target="_blank" rel="external">jQuery
+selectors</a>, we can <a href="https://developer.mozilla.org/docs/Web/API/Document/querySelector" target="_blank" rel="external">learn about query selectors on
+MDN</a>.</p>
+<p>Let’s run a few example query selectors. Take the scene below for example.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">id</span>=<span class="string">"redBox"</span> <span class="attr">class</span>=<span class="string">"clickable"</span> <span class="attr">color</span>=<span class="string">"red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">class</span>=<span class="string">"clickable"</span> <span class="attr">color</span>=<span class="string">"blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"green"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: ambient"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type: directional"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="with-queryselector"><a href="#with-queryselector" class="headerlink" title="With .querySelector()"></a>With <code>.querySelector()</code></h3><p>If we want to grab just one element, we use <code>.querySelector()</code> which returns
+one element. Let’s grab the scene element:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sceneEl = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</span><br></pre></td></tr></table></figure>
+<p>Note if we were working within a component, we’d already have a reference to
+the scene element without needing to query. All entities have reference to
+their scene element:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.el.sceneEl);  <span class="comment">// Reference to the scene element.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>If an element has an ID, we can use an ID selector (i.e., <code>#&lt;ID&gt;</code>). Let’s grab
+the red box which has an ID. Before we did a query selector on the entire
+document. Here, we’ll do a query selector just within the scope of the scene.
+With query selectors, we’re able to limit the scope of the query to within any
+element:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sceneEl = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(sceneEl.querySelector(<span class="string">'#redBox'</span>));</span><br><span class="line"><span class="comment">// &lt;a-box id="redBox" class="clickable" color="red"&gt;&lt;/a-box&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="with-queryselectorall"><a href="#with-queryselectorall" class="headerlink" title="With .querySelectorAll()"></a>With <code>.querySelectorAll()</code></h3><p>If we want to grab a group of elements, we use <code>.querySelectorAll()</code> which returns
+an array of elements. We can query across element names:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(sceneEl.querySelectorAll(<span class="string">'a-box'</span>));</span><br><span class="line"><span class="comment">// [</span></span><br><span class="line"><span class="comment">//  &lt;a-box id="redBox" class="clickable" color="red"&gt;&lt;/a-box&gt;,</span></span><br><span class="line"><span class="comment">//  &lt;a-box color="green"&gt;&lt;/a-box&gt;</span></span><br><span class="line"><span class="comment">// ]</span></span><br></pre></td></tr></table></figure>
+<p>We can query for elements that have a class with a class selector (i.e.,
+<code>.&lt;CLASS_NAME&gt;</code>). Let’s grab every entity that has the <code>clickable</code> class:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(sceneEl.querySelectorAll(<span class="string">'.clickable'</span>));</span><br><span class="line"><span class="comment">// [</span></span><br><span class="line"><span class="comment">//  &lt;a-box id="redBox" class="clickable" color="red"&gt;&lt;/a-box&gt;</span></span><br><span class="line"><span class="comment">//  &lt;a-sphere class="clickable" color="blue"&gt;&lt;/a-sphere&gt;</span></span><br><span class="line"><span class="comment">// ]</span></span><br></pre></td></tr></table></figure>
+<p>We can query for elements containing an attribute (or in this case, a
+component) with an attribute selector (i.e., <code>[&lt;ATTRIBUTE_NAME&gt;]</code>). Let’s grab
+every entity that has a light:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(sceneEl.querySelectorAll(<span class="string">'[light]'</span>));</span><br><span class="line"><span class="comment">// [</span></span><br><span class="line"><span class="comment">//  &lt;a-entity light="type: ambient"&gt;&lt;/a-entity&gt;</span></span><br><span class="line"><span class="comment">// &lt;a-entity light="type: directional"&gt;&lt;/a-entity&gt;</span></span><br><span class="line"><span class="comment">// ]</span></span><br></pre></td></tr></table></figure>
+<h3 id="looping-over-entities-from-queryselectorall"><a href="#looping-over-entities-from-queryselectorall" class="headerlink" title="Looping Over Entities from .querySelectorAll()"></a>Looping Over Entities from <code>.querySelectorAll()</code></h3><p>If we grabbed a group of entities using <code>.querySelectorAll()</code>, we can loop over
+them with a <code>for</code> loop. Let’s loop over every element in the scene with <code>*</code>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> els = sceneEl.querySelectorAll(<span class="string">'*'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; els.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(els[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="a-note-about-performance"><a href="#a-note-about-performance" class="headerlink" title="A Note About Performance"></a>A Note About Performance</h4><p>Avoid using <code>.querySelector</code> and <code>.querySelectorAll</code> in <code>tick</code> and <code>tock</code> functions
+that get called every frame as it does take some time to loop over the DOM to retrieve
+entities. Instead, keep a cached list of entities, calling the query selectors beforehand,
+and then just loop over that.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'query-selector-example'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.entities = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.box'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Don't call query selector in here, query beforehand.</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.entities.length; i++) &#123;</span><br><span class="line">      <span class="comment">// Do something with entities.</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="retrieving-component-data-with-getattribute"><a href="#retrieving-component-data-with-getattribute" class="headerlink" title="Retrieving Component Data with .getAttribute()"></a>Retrieving Component Data with <code>.getAttribute()</code></h2><p>We can get the data of components of an entity via <code>.getAttribute</code>. A-Frame
+augments <code>.getAttribute</code> to return values rather than strings (e.g., returning
+objects in most cases since components usually consist of multiple properties,
+or returning an actual boolean for like <code>.getAttribute(&#39;visible&#39;)</code>.  Often,
+<code>.getAttribute</code> will return the internal data object of the component so do not
+modify the object directly:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// &lt;a-entity geometry="primitive: sphere; radius: 2"&gt;&lt;/a-entity&gt;</span></span><br><span class="line">el.getAttribute(<span class="string">'geometry'</span>);</span><br><span class="line"><span class="comment">// &gt;&gt; &#123;"primitive": "sphere", "radius": 2, ...&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="retrieving-position-and-scale"><a href="#retrieving-position-and-scale" class="headerlink" title="Retrieving position and scale"></a>Retrieving <code>position</code> and <code>scale</code></h3><p>Doing <code>el.getAttribute(&#39;position&#39;)</code> or <code>el.getAttribute(&#39;scale&#39;)</code> will return
+the three.js <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external">Object3D</a> position and scale properties which are
+<a href="https://threejs.org/docs/#api/math/Vector3" target="_blank" rel="external">Vector3</a>s. Keep in mind that modifying these objects will modify the
+actual entity data.</p>
+<p>This is because A-Frame allows us to <a href="#updating-position-rotation-scale-visible">modify position, rotation, scale,
+visible</a> at the three.js level, and in order for <code>.getAttribute</code> to
+return the correct data, A-Frame returns the actual three.js Object3D objects.</p>
+<p>This is not true for the <code>.getAttribute(&#39;rotation&#39;)</code> because A-Frame, for
+better or worse, uses degrees instead of radians. In such case, a normal
+JavaScript object with x/y/z properties is returned. The Object3D Euler can be
+retrieved via <code>el.object3D.rotation</code> if we need to work at a lower level with
+radians.</p>
+<h2 id="modifying-the-a-frame-scene-graph"><a href="#modifying-the-a-frame-scene-graph" class="headerlink" title="Modifying the A-Frame Scene Graph"></a>Modifying the A-Frame Scene Graph</h2><p>With JavaScript and DOM APIs, we can dynamically add and remove entities as we
+would with normal HTML elements.</p>
+<h3 id="creating-an-entity-with-createelement"><a href="#creating-an-entity-with-createelement" class="headerlink" title="Creating an Entity with .createElement()"></a>Creating an Entity with <code>.createElement()</code></h3><p>To create an entity, we can use <code>document.createElement</code>. This will give us a
+blank entity:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.createElement(<span class="string">'a-entity'</span>);</span><br></pre></td></tr></table></figure>
+<p>However, this entity will not be initialized or be a part of the scene until we
+attach it to our scene.</p>
+<h3 id="adding-an-entity-with-appendchild"><a href="#adding-an-entity-with-appendchild" class="headerlink" title="Adding an Entity with .appendChild()"></a>Adding an Entity with <code>.appendChild()</code></h3><p>To add an entity to the DOM, we can use <code>.appendChild(element)</code>. Specifically,
+we want to add it to our scene. We grab the scene, create the entity, and
+append the entity to our scene.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sceneEl = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</span><br><span class="line"><span class="keyword">var</span> entityEl = <span class="built_in">document</span>.createElement(<span class="string">'a-entity'</span>);</span><br><span class="line"><span class="comment">// Do `.setAttribute()`s to initialize the entity.</span></span><br><span class="line">sceneEl.appendChild(entityEl);</span><br></pre></td></tr></table></figure>
+<p>Note that <code>.appendChild()</code> is an <em>asynchronous</em> operation in the browser. Until
+the entity has finished appending to the DOM, we can’t do many operations on
+the entity (such as calling <code>.getAttribute()</code>). If we need to query an
+attribute on an entity that has just been appended, we can listen to the
+<code>loaded</code> event on the entity, or place logic in an A-Frame component so that
+it is executed once it is ready:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sceneEl = <span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>);</span><br><span class="line"></span><br><span class="line">AFRAME.registerComponent(<span class="string">'do-something-once-loaded'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// This will be called after the entity has properly attached and loaded.</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'I am ready!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> entityEl = <span class="built_in">document</span>.createElement(<span class="string">'a-entity'</span>);</span><br><span class="line">entityEl.setAttribute(<span class="string">'do-something-once-loaded'</span>, <span class="string">''</span>);</span><br><span class="line">sceneEl.appendChild(entityEl);</span><br></pre></td></tr></table></figure>
+<h3 id="removing-an-entity-with-removechild"><a href="#removing-an-entity-with-removechild" class="headerlink" title="Removing an Entity with .removeChild()"></a>Removing an Entity with <code>.removeChild()</code></h3><p>To remove an entity from the DOM and thus from the scene, we call
+<code>.removeChild(element)</code> from the parent element. If we have an entity, we have to
+ask its parent (<code>parentNode</code>) to remove the entity.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.parentNode.removeChild(entityEl);</span><br></pre></td></tr></table></figure>
+<h2 id="modifying-an-entity"><a href="#modifying-an-entity" class="headerlink" title="Modifying an Entity"></a>Modifying an Entity</h2><p>A blank entity doesn’t do anything. We can modify the entity by adding
+components, configuring component properties, and removing components.</p>
+<h3 id="adding-a-component-with-setattribute"><a href="#adding-a-component-with-setattribute" class="headerlink" title="Adding a Component with .setAttribute()"></a>Adding a Component with <code>.setAttribute()</code></h3><p>To add a component, we can use <code>.setAttribute(componentName, data)</code>. Let’s add
+a geometry component to the entity.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.setAttribute(<span class="string">'geometry'</span>, &#123;</span><br><span class="line">  primitive: <span class="string">'box'</span>,</span><br><span class="line">  height: <span class="number">3</span>,</span><br><span class="line">  width: <span class="number">1</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Or adding <a href="https://github.com/donmccurdy/aframe-physics-system" target="_blank" rel="external">the community physics component</a>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.setAttribute(<span class="string">'dynamic-body'</span>, &#123;</span><br><span class="line">  shape: <span class="string">'box'</span>,</span><br><span class="line">  mass: <span class="number">1.5</span>,</span><br><span class="line">  linearDamping: <span class="number">0.005</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Unlike a normal HTML <code>.setAttribute()</code>, an entity’s <code>.setAttribute()</code> is
+improved to take a variety of types of arguments such as objects, or to be able
+to update a single property of a component. <a href="../core/entity.html#setattribute-attr-value-componentattrvalue">Read more about
+<code>Entity.setAttribute()</code></a>.</p>
+<h3 id="updating-a-component-with-setattribute"><a href="#updating-a-component-with-setattribute" class="headerlink" title="Updating a Component with .setAttribute()"></a>Updating a Component with <code>.setAttribute()</code></h3><p>To update a component, we also use <code>.setAttribute()</code>. Updating a component
+takes several forms.</p>
+<h4 id="updating-property-of-single-property-component"><a href="#updating-property-of-single-property-component" class="headerlink" title="Updating Property of Single-Property Component"></a>Updating Property of Single-Property Component</h4><p>Let’s update the property of the <a href="../components/position.html">position component</a>, a
+single-property component. We can pass either an object or a string. It is
+slightly preferred to pass an object so A-Frame doesn’t have to parse the
+string.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.setAttribute(<span class="string">'position'</span>, &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">-3</span>&#125;);</span><br><span class="line"><span class="comment">// Read on to see why `entityEl.object3D.position.set(1, 2, -3)` is preferred though.</span></span><br></pre></td></tr></table></figure>
+<h4 id="updating-single-property-of-multi-property-component"><a href="#updating-single-property-of-multi-property-component" class="headerlink" title="Updating Single Property of Multi-Property Component"></a>Updating Single Property of Multi-Property Component</h4><p>Let’s update a single property of the <a href="../components/material.html">material component</a>, a
+multi-property component. We do this by providing the component name, property
+name, and then property value to <code>.setAttribute()</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, <span class="string">'red'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="updating-multiple-properties-of-a-multi-property-component"><a href="#updating-multiple-properties-of-a-multi-property-component" class="headerlink" title="Updating Multiple Properties of a Multi-Property Component"></a>Updating Multiple Properties of a Multi-Property Component</h4><p>Let’s update multiple properties at once of the <a href="../components/material.html">light component</a>, a
+multi-property component. We do this by providing the component name and an
+object of properties to <code>.setAttribute()</code>. We’ll change the light’s color and
+intensity but leave the type the same:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// &lt;a-entity light="type: directional; color: #CAC; intensity: 0.5"&gt;&lt;/a-entity&gt;</span></span><br><span class="line">entityEl.setAttribute(<span class="string">'light'</span>, &#123;<span class="attr">color</span>: <span class="string">'#ACC'</span>, <span class="attr">intensity</span>: <span class="number">0.75</span>&#125;);</span><br><span class="line"><span class="comment">// &lt;a-entity light="type: directional; color: #ACC; intensity: 0.75"&gt;&lt;/a-entity&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="updating-position-rotation-scale-and-visible"><a href="#updating-position-rotation-scale-and-visible" class="headerlink" title="Updating position, rotation, scale, and visible."></a>Updating <code>position</code>, <code>rotation</code>, <code>scale</code>, and <code>visible</code>.</h4><p>As a special case, for better performance, memory, and access to utilities, we
+recommend modifying <code>position</code>, <code>rotation</code>, <code>scale</code>, and <code>visible</code> directly at
+the three.js level via the entity’s <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" rel="external">Object3D</a> rather than via
+<code>.setAttribute</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Examples for position.</span></span><br><span class="line">entityEl.object3D.position.set(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">entityEl.object3D.position.x += <span class="number">5</span>;</span><br><span class="line">entityEl.object3D.position.multiplyScalar(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Examples for rotation.</span></span><br><span class="line">entityEl.object3D.rotation.y = THREE.Math.degToRad(<span class="number">45</span>);</span><br><span class="line">entityEl.object3D.rotation.divideScalar(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Examples for scale.</span></span><br><span class="line">entityEl.object3D.scale.set(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">entityEl.object3D.scale.z += <span class="number">1.5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Examples for visible.</span></span><br><span class="line">entityEl.object3D.visible = <span class="literal">false</span>;</span><br><span class="line">entityEl.object3D.visible = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>This lets us skip over the <code>.setAttribute</code> overhead and instead do simple
+setting of properties for components that are most commonly updated. Updates at
+the three.js level will still be reflected when doing for example
+<code>entityEl.getAttribute(&#39;position&#39;);</code>.</p>
+<h4 id="replacing-properties-of-a-multi-property-component"><a href="#replacing-properties-of-a-multi-property-component" class="headerlink" title="Replacing Properties of a Multi-Property Component"></a>Replacing Properties of a Multi-Property Component</h4><p>Let’s replace all the properties of the <a href="../components/geometry.html">geometry component</a>, a
+multi-property component. We do this by providing the component name, an object
+of properties to <code>.setAttribute()</code>, and a flag that specifies to clobber the
+existing properties. We’ll replace all of the geometry’s existing properties with new properties:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// &lt;a-entity geometry="primitive: cylinder; height: 4; radius: 2"&gt;&lt;/a-entity&gt;</span></span><br><span class="line">entityEl.setAttribute(<span class="string">'geometry'</span>, &#123;<span class="attr">primitive</span>: <span class="string">'torusKnot'</span>, <span class="attr">p</span>: <span class="number">1</span>, <span class="attr">q</span>: <span class="number">3</span>, <span class="attr">radiusTubular</span>: <span class="number">4</span>&#125;, <span class="literal">true</span>);</span><br><span class="line"><span class="comment">// &lt;a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"&gt;&lt;/a-entity&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="removing-a-component-with-removeattribute"><a href="#removing-a-component-with-removeattribute" class="headerlink" title="Removing a Component with .removeAttribute()"></a>Removing a Component with <code>.removeAttribute()</code></h3><p>To remove or detach a component from an entity, we can use
+<code>.removeAttribute(componentName)</code>. Let’s remove the default <code>wasd-controls</code>
+from the camera entity:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> cameraEl = <span class="built_in">document</span>.querySelector(<span class="string">'[camera]'</span>);</span><br><span class="line">cameraEl.removeAttribute(<span class="string">'wasd-controls'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="events-and-event-listeners"><a href="#events-and-event-listeners" class="headerlink" title="Events and Event Listeners"></a>Events and Event Listeners</h2><p>With JavaScript and the DOM, there is an easy way for entities and components
+to communicate with one another: events and event listeners.  Events are a way
+to send out a signal that other code can pick up and respond to. <a href="http://javascript.info/tutorial/introduction-browser-events" target="_blank" rel="external">Read more
+about browser events</a>.</p>
+<h3 id="emitting-an-event-with-emit"><a href="#emitting-an-event-with-emit" class="headerlink" title="Emitting an Event with .emit()"></a>Emitting an Event with <code>.emit()</code></h3><p>A-Frame elements provide an easy way to emit custom events with
+<code>.emit(eventName, eventDetail, bubbles)</code>. For example, let’s say we are
+building a physics component and we want the entity to send out a signal when
+it has collided with another entity:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.emit(<span class="string">'physicscollided'</span>, &#123;<span class="attr">collidingEntity</span>: anotherEntityEl&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<p>Then other parts of the code can wait and listen on this event and run code in
+response. We can pass information and data through the event detail as the
+second argument. And we can specify whether the event <em>bubbles</em>, meaning that
+the parent entities will also emit the event. So other parts of the code can
+register an event listener.</p>
+<h3 id="adding-an-event-listener-with-addeventlistener"><a href="#adding-an-event-listener-with-addeventlistener" class="headerlink" title="Adding an Event Listener with .addEventListener()"></a>Adding an Event Listener with <code>.addEventListener()</code></h3><p>Like with normal HTML elements, we can register an event listener with
+<code>.addEventListener(eventName, function)</code>. When the event the listener is
+registered to is emitted, then the function will be called and handle the
+event. For example, continuing from the previous example with the physics
+collision event:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.addEventListener(<span class="string">'physicscollided'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Entity collided with'</span>, event.detail.collidingEntity);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>When the entity emits the <code>physicscollided</code> event, the function will be called
+with the event object. Notably in the event object, we have the event detail
+which contains data and information passed through the event.</p>
+<h3 id="removing-an-event-listener-with-removeeventlistener"><a href="#removing-an-event-listener-with-removeeventlistener" class="headerlink" title="Removing an Event Listener with .removeEventListener()"></a>Removing an Event Listener with <code>.removeEventListener()</code></h3><p>Like with normal HTML elements, when we want to remove the event listener, we
+can use <code>.removeEventListener(eventName, function)</code>. We have to pass the same
+event name and function that the listener was registered with. For example,
+continuing from the previous example with the physics collision event:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// We have to define this function with a name if we later remove it.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">collisionHandler</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Entity collided with'</span>, event.detail.collidingEntity);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">entityEl.addEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</span><br><span class="line">entityEl.removeEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</span><br></pre></td></tr></table></figure>
+<h2 id="caveats"><a href="#caveats" class="headerlink" title="Caveats"></a>Caveats</h2><p>A-Frame entities and primitives are implemented in a way that
+<a href="./faq.html#why-is-the-html-not-updating-when-i-check-the-browser-inspector">favours performance</a> such that some HTML APIs may not work as expected.
+For instance, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors" target="_blank" rel="external">attribute selectors involving values</a> won’t work
+and a <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver" target="_blank" rel="external">mutation observer</a> won’t trigger changes when a entity’s
+component is altered.</p>
+
+
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+          <span class="float-left">
+            <a href="/docs/1.1.0/introduction/entity-component-system.html" class="guide-link guide-link-left">← Entity-Component-System </a></span>
+        
+        
+          <span class="float-right">
+            <a href="/docs/1.1.0/introduction/developing-with-threejs.html" class="guide-link guide-link-right">Developing with three.js →</a></span>
+        
+      </footer>
+
+      <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/javascript-events-dom-apis.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
+</footer>
+
+    </div>
+
+    <div class="secondary-sidebar">
+      
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#where-to-place-javascript-code-for-a-frame">Where to Place JavaScript Code for A-Frame</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#getting-entities-by-querying-and-traversing">Getting Entities by Querying and Traversing</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#with-queryselector">With .querySelector()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#with-queryselectorall">With .querySelectorAll()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#looping-over-entities-from-queryselectorall">Looping Over Entities from .querySelectorAll()</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#retrieving-component-data-with-getattribute">Retrieving Component Data with .getAttribute()</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#retrieving-position-and-scale">Retrieving position and scale</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#modifying-the-a-frame-scene-graph">Modifying the A-Frame Scene Graph</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#creating-an-entity-with-createelement">Creating an Entity with .createElement()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-an-entity-with-appendchild">Adding an Entity with .appendChild()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#removing-an-entity-with-removechild">Removing an Entity with .removeChild()</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#modifying-an-entity">Modifying an Entity</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-a-component-with-setattribute">Adding a Component with .setAttribute()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#updating-a-component-with-setattribute">Updating a Component with .setAttribute()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#removing-a-component-with-removeattribute">Removing a Component with .removeAttribute()</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events-and-event-listeners">Events and Event Listeners</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#emitting-an-event-with-emit">Emitting an Event with .emit()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-an-event-listener-with-addeventlistener">Adding an Event Listener with .addEventListener()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#removing-an-event-listener-with-removeeventlistener">Removing an Event Listener with .removeEventListener()</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#caveats">Caveats</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-school-js?path=solution.html">
+              A-Frame School &mdash; Getting Entities
+            </a>
+          </li>
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-school-js?path=solution2.html">
+              A-Frame School &mdash; Modifying Entities
+            </a>
+          </li>
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-school-js?path=solution3.html">
+              A-Frame School &mdash; Creating Entities
+            </a>
+          </li>
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-school-js?path=solution4.html">
+              A-Frame School &mdash; Handling Events
+            </a>
+          </li>
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-animated-lights?path=index.html">
+              Animated Lights
+            </a>
+          </li>
+        
+      </ul>
+    
+  </div>
+
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/javascript-events-dom-apis.md" target="_blank" rel="external">Edit Page</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:1.1.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>
