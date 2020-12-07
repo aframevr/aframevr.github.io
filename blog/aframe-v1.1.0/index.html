@@ -29,7 +29,7 @@
       data-aframe-version="1.1.0"
       data-docs-version="1.1.0">
   <head>
-    <title>A Week of A-Frame 27 – A-Frame</title>
+    <title>A-Frame v1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation – A-Frame</title>
     
 
 <script>
@@ -55,19 +55,19 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="A Week of A-Frame 27 – A-Frame">
+    <meta property="og:title" content="A-Frame v1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
     <meta property="og:description" content="">
-    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
-    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/39342/101406103-e5b01b00-388d-11eb-9d76-f45b6a0556e1.png">
+    <meta property="og:image:secure_url" content="https://user-images.githubusercontent.com/39342/101406103-e5b01b00-388d-11eb-9d76-f45b6a0556e1.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="A Week of A-Frame 27 – A-Frame">
+    <meta name="twitter:title" content="A-Frame v1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation – A-Frame">
     <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:image" content="https://user-images.githubusercontent.com/39342/101406103-e5b01b00-388d-11eb-9d76-f45b6a0556e1.png">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
     <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
@@ -230,9 +230,9 @@
     <ul class="subnav section-subnav blog-subnav">
       
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/blog/aframe-v1.1.0/"
-               class="subnav-link"
+               class="subnav-link current"
                title="A-Frame v1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation">
               A-Frame v1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation
             </a>
@@ -1260,9 +1260,9 @@
         
       
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/blog/awoa-27/"
-               class="subnav-link current"
+               class="subnav-link"
                title="A Week of A-Frame 27">
               A Week of A-Frame 27
             </a>
@@ -1738,507 +1738,40 @@
             <a href="/blog/" class="borderless-link">Blog</a>
           </p>
 
-          <h1 class="page__title post__heading">A Week of A-Frame 27</h1>
+          <h1 class="page__title post__heading">A-Frame v1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation</h1>
           <div class="post__metadata">
-  <p class="post__timestamp">Sep 15, 2016</p>
+  <p class="post__timestamp">Dec 16, 2020</p>
   
-    <p class="post__author">By <a class="blog-attribution" href="https://twitter.com/andgokevin">Kevin Ngo</a></p>
+    <p class="post__author">By <a class="blog-attribution" href="https://supermedium.com">Diego Marcos</a></p>
   
 </div>
 
 
           
+
+          
             
-              <i>What's up with A-Frame, a WebVR framework for building virtual reality experiences, for the week of Sep 8, 2016 to Sep 15, 2016.</i>
-            
-            
-  <div class="post__projects">
-    
-      
-        <a href="https://apps.tlt.stonybrook.edu/hanoi/" title="Towers of Hanoi"
-           style="background-image: url(/images/awoa/hanoi.gif)"></a>
-      
-    
-      
-        <a href="http://tbaloo.com/tumbvr" title="TumbVR with Vive"
-           style="background-image: url(/images/awoa/tumbvr.gif)"></a>
-      
-    
-      
-        <a href="https://ngokevin.github.io/aframe-draw/" title="City Draw"
-           style="background-image: url(/images/awoa/city-draw.gif)"></a>
-      
-    
-      
-        <a href="http://nwarner.com/mandala/" title="Mandala"
-           style="background-image: url(/images/awoa/mandala.jpg)"></a>
-      
-    
-      
-        <a href="https://medium.com/samsung-internet-dev/a-frame-scene-to-equirectangular-image-e0c2965945aa" title="Equirectangular A-Frame Screenshot"
-           style="background-image: url(/images/awoa/equirectangular-aframe-screenshot.jpg)"></a>
-      
-    
-      
-        <a href="https://github.com/derickson/aframe-play" title="Spectator Component"
-           style="background-image: url(/images/awoa/spectator-component.gif)"></a>
-      
-    
-      
-        <a href="https://youtu.be/u7vu1PiBgwo" title="Kinect with A-Frame"
-           style="background-image: url(/images/awoa/kinect.jpg)"></a>
-      
-    
-      
-        <a href="https://s3-us-west-1.amazonaws.com/geopogo/nolli/nolli_0_2/index.html" title="GeoPogo"
-           style="background-image: url(/images/awoa/geopogo.jpg)"></a>
-      
-    
-      
-        <a href="https://github.com/aframevr/aframe-presentation-kit" title="A-Frame Presentation Kit"
-           style="background-image: url(/images/awoa/aframe-presentation-kit.jpg)"></a>
-      
-    
-      
-        <a href="https://ngokevin.github.io/kframe" title="K-Frame"
-           style="background-image: url(/images/awoa/kframe.jpg)"></a>
-      
-    
-  </div>
+  
+  
+
+  
+    <img src="https://user-images.githubusercontent.com/39342/101406103-e5b01b00-388d-11eb-9d76-f45b6a0556e1.png" alt="A-Frame v1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation">
+  
 
 
           
 
-          
-
-          <p>A couple weeks of backlog since half the team was around Asia. But the WebVR
-show goes on! More Vive demos and some unique applications such as with Kinect
-and green screen compositing.</p>
-
-
-          
-            
-  <h3>Projects</h3>
-  <ul class="post__projects-text">
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/JimPalmeri">JimPalmeri</a> built <a href="https://apps.tlt.stonybrook.edu/hanoi/">Towers of Hanoi</a> &mdash; <p>Solve the classic puzzle, Towers of Hanoi in the Vive, by the TLT Media Lab of Stony Brook University.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/thomasbalou">thomasbalou</a> built <a href="http://tbaloo.com/tumbvr">TumbVR with Vive</a> &mdash; <p>Tumblr VR gallery now with Vive support, music, and physics.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/kfarr">kfarr</a> built <a href="https://ngokevin.github.io/aframe-draw/">City Draw</a> &mdash; <p>Experiment with the Vive drawing city streets.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/nickwarner">nickwarner</a> built <a href="http://nwarner.com/mandala/">Mandala</a> &mdash; <p>An abstract surreal scene in black and white.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/lady_ada_king">lady_ada_king</a> built <a href="https://medium.com/samsung-internet-dev/a-frame-scene-to-equirectangular-image-e0c2965945aa">Equirectangular A-Frame Screenshot</a> &mdash; <p>Bookmarklet to produce equirectangular images suitable for sky spheres from A-Frame scenes.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/davebenigno">davebenigno</a> built <a href="https://github.com/derickson/aframe-play">Spectator Component</a> &mdash; <p>Multiple cameras and renderers, and green screen compositing.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/rondagdag">rondagdag</a> built <a href="https://youtu.be/u7vu1PiBgwo">Kinect with A-Frame</a> &mdash; <p>Hooking up tracking from the Kinect and rendering to A-Frame.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/scottsingercg">scottsingercg</a> built <a href="https://s3-us-west-1.amazonaws.com/geopogo/nolli/nolli_0_2/index.html">GeoPogo</a> &mdash; <p>Model exported from SideFX’s Houdini.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a> built <a href="https://github.com/aframevr/aframe-presentation-kit">A-Frame Presentation Kit</a> &mdash; <p>Official starter slides for giving presentations about WebVR and A-Frame.</p>
-
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a> built <a href="https://ngokevin.github.io/kframe">K-Frame</a> &mdash; <p>All of Kevin’s components and scenes now consolidated into one repository.</p>
-
-      </li>
-    
-  </ul>
-
-
-            
-  <h3>Media</h3>
-  <ul class="post__projects-text">
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/MicrosoftEdge">MicrosoftEdge</a>
-        <p>announces</p>
-
-        <a href="https://blogs.windows.com/msedgedev/2016/09/09/webvr-in-development-edge/"><p>development of WebVR support in the Microsoft Edge browser.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/kearwoodgilbert">kearwoodgilbert</a>
-        <p>wrote about</p>
-
-        <a href="https://medium.com/mozilla-tech/experimental-htc-vive-support-in-firefox-nightly-3ab9eeb5dfd9"><p><em>Experimental HTC Vive Support in Firefox Nightly</em>.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/armthethinker">armthethinker</a>
-        <p>wrote about exploring a virtual world with minimum nausea and maximum context in</p>
-
-        <a href="https://medium.com/humane-virtuality/environment-traversal-in-vr-bebc10417761"><p><em>Environment Traversal in VR.</em></p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a>
-        <p>presented at JSConf China (NingJS) 2016</p>
-
-        <a href="https://github.com/ngokevin/ningjs-presentation"><p><em>Building Virtual Reality on the Web</em>.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/utopiah">utopiah</a>
-        <p>showed off</p>
-
-        <a href="https://twitter.com/utopiah/status/771734751166300160"><p>A-Frame AR in the Argon Browser</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/mozilla">mozilla</a>
-        <p>currently featuring</p>
-
-        <a href="https://mozilla.org"><p>A-Frame on the homepage of mozilla.org</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/rondagdag">rondagdag</a>
-        <p>wrote about</p>
-
-        <a href="https://www.hackster.io/RONDAGDAG/posture-recognition-using-kinect-azure-iot-ml-and-webvr-e9c4f7"><p><em>Posture Recognition using Kinect, Azure IoT, ML and WebVR</em>.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/fabricus">fabricus</a>
-        <p>is running an A-Frame workshop</p>
-
-        <a href="http://copenx.com/speakers/virtual-reality-web"><p>at CopenX 2016 AR/VR Conference.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/cvanw">cvanw</a>
-        <p>presented with @whoyee</p>
-
-        <a href="https://twitter.com/aadrake/status/773340497003749376"><p>about WebVR in Tech in Asia 2016 in Tokyo.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/tusharaoljgd">tusharaoljgd</a>
-        <p>wrote a introductory guide</p>
-
-        <a href="https://curiousbrickinthewall.wordpress.com/2016/08/18/a-frame-vr-on-web-made-super-easy/"><p><em>A-Frame: VR on the Web made super easy!</em></p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/MozillaIN">MozillaIN</a>
-        <p>held</p>
-
-        <a href="https://twitter.com/Srushtika/status/773568231151849472"><p>their first monthly call for their Grow WebVR initiative.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/ram_gurumukhi">ram_gurumukhi</a>
-        <p>introduced</p>
-
-        <a href="https://twitter.com/MozillaIN/status/769485883804295168"><p>WebVR at the Mozilla India meetup.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/ram_gurumukhi">ram_gurumukhi</a>
-        <p>presented slides</p>
-
-        <a href="https://twitter.com/ram_gurumukhi/status/769591597126213636"><p>of WebVR at the Mozilla India meetup.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/CreativeBloq">CreativeBloq</a>
-        <p>featured A-Frame in</p>
-
-        <a href="http://www.creativebloq.com/features/5-hot-new-ways-to-use-javascript"><p><em>5 Hot New Ways to Use JavaScript</em>.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/misslivirose">misslivirose</a>
-        <p>presented</p>
-
-        <a href="https://twitter.com/misslivirose/status/770962112730505216"><p>A-Frame and WebVR at Coldfront 2016.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/rondagdag">rondagdag</a>
-        <p>presented</p>
-
-        <a href="https://www.meetup.com/DFW-Front-end-development/events/233296070/"><p>WebVR at DFW Frontend Development meetup in Dallas.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/AndreElijah">AndreElijah</a>
-        <p>showed off</p>
-
-        <a href="https://twitter.com/AndreElijah/status/772123159151730688/photo/1"><p>an Unreal Engine scene captured to A-Frame.</p>
-</a>
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/sumantro93">sumantro93</a>
-        <p>wrote about setting up</p>
-
-        <a href="http://sumantrom.blogspot.com/2016/08/webvr-in-fedora-25-pre-release.html"><p><em>WebVR in Fedora/RHEL 25 Pre Release</em>.</p>
-</a>
-      </li>
-    
-  </ul>
-
-
-            
-  <h3>Contributions</h3>
-  <ul class="post__projects-text">
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/ZeouterLimits">ZeouterLimits</a>
-        <a href="https://github.com/aframevr/aframe/pull/1910">fixed</a>
-        <p>error for assets with no set <code>src</code>.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a>
-        <a href="https://github.com/aframevr/aframe/commit/ad425c283579bd04ca08d9fdd3b381dcfa152f90">added</a>
-        <p>A-Frame Inspector guide.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/dmarcos">dmarcos</a>
-        <a href="https://github.com/aframevr/aframe/pull/1875">fixed</a>
-        <p>tracked controls if mesh not defined.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/kevinzwh">kevinzwh</a>
-        <a href="https://github.com/aframevr/aframe/pull/1874">made</a>
-        <p>performance stats easier to read.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/davidwalshblog">davidwalshblog</a>
-        <a href="https://github.com/aframevr/aframe/pull/1878">fixed</a>
-        <p>stats on Safari.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/davidwalshblog">davidwalshblog</a>
-        <a href="https://github.com/aframevr/aframe/pull/1869">made</a>
-        <p>object literal style consistent.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/andgokevin">andgokevin</a>
-        <a href="https://github.com/aframevr/aframe/pull/1904">added</a>
-        <p>unit tests for WASD controls.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/ZeouterLimits">ZeouterLimits</a>
-        <a href="https://github.com/aframevr/aframe/pull/1867">replaced</a>
-        <p>custom GitHub pages script with one from npm.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/davidwalshblog">davidwalshblog</a>
-        <a href="https://github.com/aframevr/aframe/pull/1877">made</a>
-        <p>camera default height a constant.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/Dongeg">Dongeg</a>
-        <a href="https://github.com/aframevr/aframe/pull/1870">fixed</a>
-        <p>typo in documentation guide.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/patcat">patcat</a>
-        <a href="https://github.com/aframevr/aframe/pull/1860">fixed</a>
-        <p>documentation typo for <code>a-cursor</code>.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/ChrisCar">ChrisCar</a>
-        <a href="https://github.com/aframevr/aframe/pull/1910">fixed</a>
-        <p>documentation typo for <code>&lt;a-image&gt;</code>.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/maniart">maniart</a>
-        <a href="https://github.com/aframevr/aframe/pull/1876">fixed</a>
-        <p>documentation typo for <code>a-entity</code>.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/mininao">mininao</a>
-        <a href="https://github.com/aframevr/aframe/pull/1903">fixed</a>
-        <p>documentation for <code>cursor.fuseTimeout</code>.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/seromehno">seromehno</a>
-        <a href="https://github.com/aframevr/aframe/pull/1893">fixed</a>
-        <p>documentation link in introduction.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/d4rekanguok">d4rekanguok</a>
-        <a href="https://github.com/aframevr/aframe/pull/1898">fixed</a>
-        <p>documentation for <code>add/removeState</code>.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/dechov">dechov</a>
-        <a href="https://github.com/aframevr/aframe/pull/1895">fixed</a>
-        <p>documentation link in components page.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://github.com/Dongeg">Dongeg</a>
-        <a href="https://github.com/aframevr/aframe/pull/1892">fixed</a>
-        <p>documentation typo for <code>a-sound</code>.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-      <li>
-        <a class="blog-attribution" href="https://twitter.com/davidwalshblog">davidwalshblog</a>
-        <a href="https://github.com/aframevr/aframe/pull/1851">tweaked</a>
-        <p>documentation guides.</p>
-
-
-        <!-- If contribution is not to A-Frame proper (e.g., editor), then note project. -->
-        
-        
-      </li>
-    
-  </ul>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><strong>A-Frame 1.1.0 is out!</strong> Core functionality is more polished and robust than ever. Full support for <a href="https://github.com/immersive-web/webxr-ar-module" target="_blank" rel="external">WebXR AR module</a> and initial integration for upcoming and exciting WebXR APIs that now ship experimentally in some browsers like <a href="https://github.com/immersive-web/navigation" target="_blank" rel="external">immersive navigation</a>, <a href="https://www.w3.org/TR/webxr-hand-input-1/" target="_blank" rel="external">hand tracking</a>, <a href="https://www.w3.org/TR/2020/WD-webxrlayers-1-20201203/" target="_blank" rel="external">compositor layers</a> or <a href="https://immersive-web.github.io/hit-test/" target="_blank" rel="external">hit tests</a></p>
+<p><strong>This week also marks A-Frame’s fith birthday</strong>. Five years ago, on December, 2015,
+we released the first version of A-Frame to make it easier for anyone to build VR
+experiences. What started as a little personal project it’s today a community of hundreds of thousands of developers worldwide.</p>
+<p>More than 40 A-Framers helped to get 1.1.0 across the finish line. 20 of those made their first contribution. We appreciate help from everybody and newcomers are always specially celebrated. A-Frame is only as strong as its community.</p>
+<p>We also thank Google and Oculus WebXR teams. They made an outstanding effort in a tough year. They kept the Immersive Web standard moving forward with new APIs while delivering new implementations in Chrome and the Oculus browsers.</p>
+<p>Read the <a href="https://github.com/aframevr/aframe/releases/tag/v1.0.1" target="_blank" rel="external">release notes and changelog</a> to check all the new features and celebrate everyone that make it happen.</p>
+<p>Consider supporting A-Frame development by buying a <a href="https://cottonbureau.com/products/fragment" target="_blank" rel="external">gorgeous t-shirt</a></p>
+<p>Happy immersive Christmas! 🎄</p>
 
 
           
@@ -2249,10 +1782,8 @@ and green screen compositing.</p>
           
           
           
-            <span class="float-left"><a href="/blog/awoa-26/" class="guide-link guide-link-left">← A Week of A-Frame 26</a></span>
+            <span class="float-left"><a href="/blog/newsletter2/" class="guide-link guide-link-left">← A-Frame Newsletter 2</a></span>
           
-          
-            <span class="float-right"><a href="/blog/a-painter/" class="guide-link guide-link-right">A-Painter: Paint in VR in Your Browser →</a></span>
           
         </footer>
       
@@ -2260,11 +1791,24 @@ and green screen compositing.</p>
       <footer class="footer footnote">
         <p>Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="external">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
         
-          <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/awoa-27.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
+          <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/_posts/aframe-v1.1.0.md" class="github-file-link" rel="external">Suggest an edit on GitHub</a></p>
         
       </footer>
     </div>
 
+    
+      <div class="secondary-sidebar">
+        
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+  </ul>
+</div>
+
+      </div>
     
   </div>
 </div>
