@@ -14,7 +14,7 @@
 
 <!DOCTYPE html>
 <html lang="en"
-      data-is-home="true"
+      data-is-home="false"
       data-is-mobile="false"
       data-supports-vr="false"
       data-supports-touch="false"
@@ -29,7 +29,7 @@
       data-aframe-version="1.1.0"
       data-docs-version="1.1.0">
   <head>
-    <title>A-Frame – Make WebVR</title>
+    <title>Hand Tracking – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="A-Frame – Make WebVR">
+    <meta property="og:title" content="Hand Tracking – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="A-Frame – Make WebVR">
+    <meta name="twitter:title" content="Hand Tracking – A-Frame">
     <meta name="twitter:description" content="A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -95,6 +95,8 @@
     
       <link rel="stylesheet" href="/css/index.css">
       
+        <link rel="stylesheet" href="/css/examples.css">
+      
     
 
     
@@ -104,7 +106,7 @@
     
   </head>
 
-  <body data-page-layout="index" data-page-type="examples">
+  <body data-page-layout="" data-page-type="examples">
     <main id="main" class="main">
 
 <!-- Homepage examples bar. -->
@@ -176,15 +178,15 @@
             </li>
           
             
-            <li data-current="false"
+            <li data-current="true"
                 data-supports-mobile="true"
                 data-example-url="/examples/showcase/handtracking/"
                 data-scene-url="https://aframe.io/aframe/examples/showcase/hand-tracking/"
                 data-slug="handtracking"
                 data-idx="2"
-                class="example-item subnav-item">
+                class="example-item subnav-item current">
               <a href="/examples/showcase/handtracking/"
-                 class="subnav-link"
+                 class="subnav-link current"
                  
                    title="By Supermedium (@supermediumvr)"
                  >
@@ -447,52 +449,25 @@
 </aside>
 
 
-<div class="content content--index home-content">
-  <div class="home-center">
-    <iframe
-      id="exampleIframe" class="example__iframe"
-      width="100%" height="100%"
-      src="https://aframe.io/aframe/examples/animation/aframe-logo/?ui=false"
-      allowfullscreen="yes" allowvr="yes" scrolling="no"></iframe>
-  </div>
+<div class="content content--examples">
+  <div class="content--body">
+    <!-- Example. -->
+    <iframe id="exampleIframe" class="example__iframe"
+            width="100%"
+            height="100%"
+            allowfullscreen="yes" scrolling="no"
+            allowvr="yes" src="https://aframe.io/aframe/examples/showcase/hand-tracking/"></iframe>
 
-  <div id="homeContent" class="copy__wrap">
-    <ul class="menu">
-      <li class="menu-item">
-        <a href="/docs/1.1.0/introduction/">Docs</a>
-      </li>
-      <li class="menu-item">
-        <a href="/faq/">FAQ</a>
-      </li>
-      <li class="menu-item">
-        <a href="/blog/">Blog</a>
-      </li>
-      <li class="menu-item">
-        <a href="/community/">Community</a>
-      </li>
-      <li class="menu-item">
-        <a href="/showcase/">Showcase</a>
-      </li>
-    </ul>
-
-    <h1 class="slogan">
-  A web framework for building 3D/AR/VR experiences
-</h1>
-
-<div class="intro">
-  <p>Make 3D worlds with HTML and Entity-Component</p>
-  <p>For Quest, Rift, WMR, SteamVR, mobile, desktop</p>
-</div>
-
-
-    <a href="/docs/1.1.0/introduction/"
-       class="get-started nav-link">
-      Get Started
-    </a>
-
-    <div id="usersContainer">
-      <p>Maintained by</p>
-      <a href="https://supermedium.com"><img src="/images/users/supermedium.svg"></a>
+    <!-- Actions. -->
+    <div class="example__controls">
+      
+        <a id="exampleInspector" class="btn" rel="nofollow"
+           title="Or open with `<ctrl> + <alt> + i`.">Visual Inspector</a>
+      
+      
+        <a id="exampleViewSource" class="btn" href="https://glitch.com/edit/#!/bristle-curly-primula?path=index.html%3A14%3A0" target="_blank"
+           title="View the HTML on GitHub">View Source</a>
+      
     </div>
   </div>
 </div>
