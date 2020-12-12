@@ -1170,7 +1170,7 @@ attribute values are empty.</p>
 stringification operations. This also means mutation observations will not
 fire. Use the <a href="../components/debug.html">debug component</a> or <a href="../core/entity.html#flushtodom-recursive"><code>.flushToDOM</code> methods</a>
 if you need to sync to the DOM.</p>
-<h2 id="why-does-my-video-not-play-on-mobile"><a href="#why-does-my-video-not-play-on-mobile" class="headerlink" title="Why does my video not play on mobile?"></a>Why does my video not play on mobile?</h2><p>Mobile browsers have had limitations playing inline video.</p>
+<h2 id="why-does-my-video-not-play"><a href="#why-does-my-video-not-play" class="headerlink" title="Why does my video not play?"></a>Why does my video not play?</h2><p>Mobile and now desktop browsers have limitations playing inline video.</p>
 <p>Because of an <a href="https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/iAdJSProgGuide/PlayingVideosinAds/PlayingVideosinAds.html" target="_blank" rel="external">iOS platform restriction</a> in order to get inline video
 (with or without autoplay), we must:</p>
 <ul>
@@ -1178,13 +1178,13 @@ if you need to sync to the DOM.</p>
 <li>Set the <code>playsinline</code> attribute to the video element (is automatically added to all videos).</li>
 <li>Possibly pin the webpage to the homescreen for older iOS versions.</li>
 </ul>
-<p>Inline video support on iOS 10 may change this. On certain Android devices or
-browsers, we must:</p>
-<ul>
-<li>Require user interaction to trigger the video (such as a click or tap event). See <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=178297" target="_blank" rel="external">Chromium Bug 178297</a>.</li>
-</ul>
-<p>Lately, there has been improving support. We do not focus too much on video,
-but below are GitHub issues that may contain helpful information from community:</p>
+<p>Mobile and desktop browsers have been tightening the video autoplay policies to preserve battery and avoid intrusive advertisements. Most browsers now require a user action (such as a click or tap event) to start video playback:</p>
+<p>-<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=178297" target="_blank" rel="external">Chrome for Android</a>
+-<a href="https://www.chromium.org/audio-video/autoplay" target="_blank" rel="external">Chrome desktop</a>
+-<a href="https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/" target="_blank" rel="external">Safari</a>
+-<a href="https://hacks.mozilla.org/2019/02/firefox-66-to-block-automatically-playing-audible-video-and-audio/" target="_blank" rel="external">Firefox</a></p>
+<p>There’s an <a href="https://aframe.io/aframe/examples/test/video/">A-Frame example that includes the necessary logic</a> to request the user clicking or tapping to start video playback. <a href="https://github.com/mayognaise/aframe-html-shader/" target="_blank" rel="external">The source code is also available</a></p>
+<p>We do not focus too much on video, but below are GitHub issues that may contain helpful information from community:</p>
 <ul>
 <li><a href="https://github.com/aframevr/aframe/issues/316" target="_blank" rel="external"><em>Videos and videospheres don’t work on mobile</em></a></li>
 <li><a href="https://github.com/aframevr/aframe/issues/1846" target="_blank" rel="external"><em>Document iOS video encoding restrictions</em></a></li>
@@ -1297,7 +1297,7 @@ and pull requests:</p>
 <h2 id="where-is-the-roadmap"><a href="#where-is-the-roadmap" class="headerlink" title="Where is the roadmap?"></a>Where is the roadmap?</h2><p>The <a href="https://github.com/aframevr/aframe/blob/master/ROADMAP.md" target="_blank" rel="external">roadmap is on GitHub</a>!</p>
 <h2 id="do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”"><a href="#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”" class="headerlink" title="Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?"></a>Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?</h2><p>A-Frame!</p>
 <h2 id="why-do-my-textures-render-black"><a href="#why-do-my-textures-render-black" class="headerlink" title="Why do my textures render black?"></a>Why do my textures render black?</h2><p>Phones with Adreno 300 series GPUs are notoriously problematic. Set <a href="../components/renderer.html#precision">renderer precision</a> to <code>medium</code> as a workaround. Real fix has to happen at the driver / device level.</p>
-<h2 id="why-is-the-gyroscope-magic-window-mode-not-working"><a href="#why-is-the-gyroscope-magic-window-mode-not-working" class="headerlink" title="Why is the gyroscope / magic window mode not working?"></a>Why is the gyroscope / magic window mode not working?</h2><p><a href="https://www.w3.org/TR/orientation-event/#dom-deviceorientationevent-requestpermission" target="_blank" rel="external">New browser policies</a> require sites to prompt the user for permission before getting access to DeviceMotionEvents. <a href="https://webkit.org/blog/9674/new-webkit-features-in-safari-13/" target="_blank" rel="external">Starting with iOS 13</a> DeviceMotionEvents are only available for pages served over <code>https</code>. Other browsers will also apply same policies and restrictions. A-Frame now <a href="https://aframe.io/docs/1.0.0/components/device-orientation-permission-ui.html#sidebar">incorporates customizable UI</a> to request the necessary permissions to the user. Make sure to update to <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">A-Frame latest version</a>  </p>
+<h2 id="why-is-the-gyroscope-magic-window-mode-not-working"><a href="#why-is-the-gyroscope-magic-window-mode-not-working" class="headerlink" title="Why is the gyroscope / magic window mode not working?"></a>Why is the gyroscope / magic window mode not working?</h2><p><a href="https://www.w3.org/TR/orientation-event/#dom-deviceorientationevent-requestpermission" target="_blank" rel="external">New browser policies</a> require sites to prompt the user for permission before getting access to DeviceMotionEvents. <a href="https://webkit.org/blog/9674/new-webkit-features-in-safari-13/" target="_blank" rel="external">Starting with iOS 13</a> DeviceMotionEvents are only available for pages served over <code>https</code>. Other browsers will also apply same policies and restrictions. A-Frame now <a href="https://aframe.io/docs/1.0.0/components/device-orientation-permission-ui.html#sidebar">incorporates customizable UI</a> to request the necessary permissions to the user. Make sure to update to <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">A-Frame latest version</a></p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1372,7 +1372,7 @@ and pull requests:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#why-does-my-video-not-play-on-mobile">Why does my video not play on mobile?</a>
+        <a class="subnav-link" href="#why-does-my-video-not-play">Why does my video not play?</a>
 
         <!-- Nested. -->
         
