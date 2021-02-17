@@ -1127,6 +1127,9 @@ performant than <code>a-sky</code> since geometry is not created. There are no u
 frustum culling issues when <code>a-sky</code> is further than the far plane of the
 camera. There are no unexpected occlusions either with far objects that might
 be behind of the sphere geometry of <code>a-sky</code>.</p>
+<p>The background component can also generate a default environment cube map for all
+materials, if you find GLB models end up too dark or reflective materials don’t
+reflect the environment this will provide a default reflective environment.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>The example below sets the background color to red.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">background</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
@@ -1147,6 +1150,11 @@ be behind of the sphere geometry of <code>a-sky</code>.</p>
 <td>transparent</td>
 <td>Background is transparent. The color property is ignored.</td>
 <td>false</td>
+</tr>
+<tr>
+<td>generateEnvironment</td>
+<td>Whether to generate a default environment</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
