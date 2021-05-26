@@ -1177,11 +1177,6 @@ entity’s <code>.getObject3D(name)</code> method as described before:</p>
 <p>And when we set a three.js object on an A-Frame entity, A-Frame will set a
 reference to the A-Frame entity from the three.js object via <code>.el</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.getObject3D(<span class="string">'light'</span>).el;  <span class="comment">// entityEl</span></span><br></pre></td></tr></table></figure>
-<p>There’s also a <code>.getOrCreateObject3D(name, constructor)</code> method for creating
-and setting an <code>Object3D</code> if one has not been set with the name. This is
-commonly used in the case of <code>THREE.Mesh</code> when both the geometry and material
-components need to get or create a mesh. Whichever component gets initialized
-first creates the mesh, then the other component gets the mesh.</p>
 <h3 id="removing-an-object3d-from-an-entity"><a href="#removing-an-object3d-from-an-entity" class="headerlink" title="Removing an Object3D From an Entity"></a>Removing an <code>Object3D</code> From an Entity</h3><p>To remove an <code>Object3D</code> from an entity, and consequently the three.js scene, we
 can use the entity’s <code>.removeObject3D(name)</code> method. Going back to our example
 with the point light, we remove the light when the component is detached:</p>
