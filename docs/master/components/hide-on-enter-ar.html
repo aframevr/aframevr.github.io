@@ -29,7 +29,7 @@
       data-aframe-version="1.2.0"
       data-docs-version="master">
   <head>
-    <title>shadow – A-Frame</title>
+    <title>hide-on-enter-ar – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="shadow – A-Frame">
+    <meta property="og:title" content="hide-on-enter-ar – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="shadow – A-Frame">
+    <meta name="twitter:title" content="hide-on-enter-ar – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -621,9 +621,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/components/hide-on-enter-ar.html"
-               class="subnav-link">
+               class="subnav-link current">
               hide-on-enter-ar
             </a>
           </li>
@@ -768,9 +768,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/components/shadow.html"
-               class="subnav-link current">
+               class="subnav-link">
               shadow
             </a>
           </li>
@@ -1116,7 +1116,7 @@
         </p>
       </div>
       <h1 class="page__title">
-        shadow
+        hide-on-enter-ar
       </h1>
 
       
@@ -1129,68 +1129,12 @@
 
       
 
-      <p>The shadow component enables shadows for an entity and its children. Receiving
-shadows from surrounding objects and casting shadows onto other objects may
-(and often should) be enabled independently.</p>
-<p>Without this component, an entity will not cast nor receive shadows.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>The example below configures a tree model to cast shadows onto the surrounding
-scene but not receive shadows itself.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">light</span>=<span class="string">"type:directional; castShadow:true;"</span> <span class="attr">position</span>=<span class="string">"1 1 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-gltf-model</span> <span class="attr">src</span>=<span class="string">"tree.gltf"</span> <span class="attr">shadow</span>=<span class="string">"receive: false"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-gltf-model</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>IMPORTANT:</strong> Adding the <code>shadow</code> component alone is not enough to display
-shadows in your scene. We must have at least one light with <code>castShadow:
-true</code> enabled.  Additionally, the light’s shadow camera (used for depth
-projection) usually must be configured correctly. Refer to the <a href="./light.html#configuring-shadows">light</a>
-component for more information.</p>
-<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cast</td>
-<td>Whether the entity casts shadows onto the surrounding scene.</td>
-<td>true</td>
-</tr>
-<tr>
-<td>receive</td>
-<td>Whether the entity receives shadows from the surrounding scene.</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<h2 id="scene-properties"><a href="#scene-properties" class="headerlink" title="Scene Properties"></a>Scene Properties</h2><p>The shadow system exposes scene-level properties for configuring the renderer
-for shadows. These are set on <code>&lt;a-scene&gt;</code> (e.g., <code>&lt;a-scene shadow=&quot;autoUpdate:
-  false&quot;&gt;</code>).</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>enabled</td>
-<td>Whether to disable shadows globally, even if there is a shadow component and a light with <code>castShadow: true</code> enabled.</td>
-<td>true</td>
-</tr>
-<tr>
-<td>autoUpdate</td>
-<td>Whether to dynamically update the shadow map every frame. Disable and manually update by setting <code>renderer.shadowMap.needsUpdate = true</code> for best performance. Calculating shadow maps is expensive.</td>
-<td>true</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Shadow type. One of <code>pcf</code>, <code>basic</code>, <code>pcfsoft</code>.</td>
-<td><code>pcf</code> (percentage closer filtering)</td>
-</tr>
-</tbody>
-</table>
+      <p>When the user enters AR this component will hide the component by toggling it’s <code>visible</code> state.</p>
+<p>This is used to hide background elements such as floors, sky boxes, environments and other large elements. Letting the user comfortably fit the remaining visible elements into their physical space.</p>
+<p>You can also use this to disable scene lighting if you will be using lighting estimation instead.</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">hide-on-enter-ar</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">hide-on-enter-ar</span> <span class="attr">color</span>=<span class="string">"skyblue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><p>None</p>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><p>None</p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1203,7 +1147,7 @@ for shadows. These are set on <code>&lt;a-scene&gt;</code> (e.g., <code>&lt;a-sc
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/shadow.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/hide-on-enter-ar.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
   <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
 </footer>
 
@@ -1240,7 +1184,7 @@ for shadows. These are set on <code>&lt;a-scene&gt;</code> (e.g., <code>&lt;a-sc
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#scene-properties">Scene Properties</a>
+        <a class="subnav-link" href="#events">Events</a>
 
         <!-- Nested. -->
         
@@ -1260,7 +1204,7 @@ for shadows. These are set on <code>&lt;a-scene&gt;</code> (e.g., <code>&lt;a-sc
     
       <ul class="subnav">
         <li class="subnav-item">
-          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/shadow.md" style="font-style: italic">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/hide-on-enter-ar.md" style="font-style: italic">
             No examples for this page yet. Add one!
           </a>
         </li>
@@ -1270,9 +1214,9 @@ for shadows. These are set on <code>&lt;a-scene&gt;</code> (e.g., <code>&lt;a-sc
 
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/shadow.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/hide-on-enter-ar.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/shadow.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/hide-on-enter-ar.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
