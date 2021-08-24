@@ -29,7 +29,7 @@
       data-aframe-version="1.2.0"
       data-docs-version="master">
   <head>
-    <title>Mixins – A-Frame</title>
+    <title>hit-test – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="Mixins – A-Frame">
+    <meta property="og:title" content="hit-test – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="Mixins – A-Frame">
+    <meta name="twitter:title" content="hit-test – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -103,7 +103,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="core">
+  <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
 
 
@@ -448,7 +448,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <p class="section-title-link">Core API</p>
       </h3>
 
@@ -483,9 +483,9 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
+          <li class="subnav-item ">
             <a href="/docs/master/core/mixins.html"
-               class="subnav-link current">
+               class="subnav-link">
               Mixins
             </a>
           </li>
@@ -516,7 +516,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <p class="section-title-link">Components</p>
       </h3>
 
@@ -628,9 +628,9 @@
             </a>
           </li>
         
-          <li class="subnav-item ">
+          <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/components/ar-hit-test.html"
-               class="subnav-link">
+               class="subnav-link current">
               hit-test
             </a>
           </li>
@@ -1066,7 +1066,7 @@
 </aside>
 
   <!-- Documentation. -->
-  <div class="content content--structured content--core copy">
+  <div class="content content--structured content--components copy">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1117,13 +1117,13 @@
     <div class="copy__wrap">
       <div class="page__section docs-header">
         <p>
-          <a href="/docs/master/core/entity.html" class="borderless-link">
-            master &rsaquo; Core API
+          <a href="/docs/master/components/geometry.html" class="borderless-link">
+            master &rsaquo; Components
           </a>
         </p>
       </div>
       <h1 class="page__title">
-        Mixins
+        hit-test
       </h1>
 
       
@@ -1136,29 +1136,72 @@
 
       
 
-      <p>Mixins provide a way to compose and reuse commonly-used sets of component
-properties. They are defined using the <code>&lt;a-mixin&gt;</code> element and are placed in
-<a href="./asset-management-system.html"><code>&lt;a-assets&gt;</code></a>. Mixins should be set with an <code>id</code>, and when an entity
-sets that <code>id</code> as its <code>mixin</code> attribute, the entity will absorb all of the
-mixin’s attributes.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"red"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"blue"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red cube"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"blue cube"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>The entity with <code>red cube</code> will take the properties from the <code>red</code> mixin and
-the <code>cube</code> mixin in that order. Likewise with the <code>blue cube</code>. Conceptually,
-the entities above expand to:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">material</span>=<span class="string">"color: red"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">material</span>=<span class="string">"color: blue"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<!--toc-->
-
-<h2 id="merging-component-properties"><a href="#merging-component-properties" class="headerlink" title="Merging Component Properties"></a>Merging Component Properties</h2><p>Properties of a multi-property component will merge if defined by multiple mixins and/or the entity. For example:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"tall"</span> <span class="attr">geometry</span>=<span class="string">"height: 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"wide"</span> <span class="attr">geometry</span>=<span class="string">"width: 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"wide tall box"</span> <span class="attr">geometry</span>=<span class="string">"depth: 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>All of the geometry component properties will merge since they are included as mixins and defined on the entity. The entity would then be equivalent to:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; height: 10; depth: 2; width: 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="order-and-precedence"><a href="#order-and-precedence" class="headerlink" title="Order and Precedence"></a>Order and Precedence</h2><p>When an entity includes multiple mixins that define the same component
-properties, the right-most mixin takes precedence. In the example below, the
-entity includes both <code>red</code> and <code>blue</code> mixins, and since the <code>blue</code> mixin is
-included last, the final color of the cube will be blue.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"red"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"blue"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red blue cube"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>If an entity itself defines a property that is already defined by a mixin, the entity’s definition takes precedence. In the example below, the entity includes both <code>red</code> and <code>blue</code> mixins and also defines a green color. Since the entity directly defines its own color, the final color of the cube will be green.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"red"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"blue"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red blue cube"</span> <span class="attr">material</span>=<span class="string">"color: green"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      <p>This component uses the WebXR hit-test API to position virtual objects in the real world. Remember to request the <code>hit-test</code> optional feature to allow it work.</p>
+<p>You add it to the scene element and then when the user is in Augmented Reality if they tap on the screen or select with a controller it will work out where the user is pointing to in the real world and place a reticle there and fire events.</p>
+<p>If you have set a target property to be an element it will automatically make the reticle to be the same size as the footprint of the target and then when the user selects the object will be telepoted there. It will also set the visible state of the object to true so you can hide the object until the user has placed it for the first time. The <code>hide-on-enter-ar</code> component is useful for that.</p>
+<p>You can toggle this component’s enabled state to not do any interactions until you are ready.</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">webxr</span>=<span class="string">"optionalFeatures:  hit-test;"</span> <span class="attr">ar-hit-test</span>=<span class="string">"target:#myobject;"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"myobject"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>The object to move around.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>Whether to do hit-testing or not</td>
+<td>true</td>
+</tr>
+<tr>
+<td>src</td>
+<td>Image to use for the reticle</td>
+<td>See: Assets</td>
+</tr>
+<tr>
+<td>type</td>
+<td>‘footprint’ or ‘map’ footprint is the shape of the model</td>
+<td>“footprint”</td>
+</tr>
+<tr>
+<td>footprintDepth</td>
+<td>Amount of the model used for the footprint, 1 is full height</td>
+<td>0.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ar-hit-test-start</td>
+<td>The AR Hit Test system has managed start scanning</td>
+</tr>
+<tr>
+<td>ar-hit-test-achieved</td>
+<td>The AR Hit Test system has managed to find a surface to start hit testing on</td>
+</tr>
+<tr>
+<td>ar-hit-test-select</td>
+<td>The user has stopped positioning the detail contains the latest position, orientation and inputSource that was used</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assets"><a href="#assets" class="headerlink" title="Assets"></a>Assets</h2><ul>
+<li><a href="data:image/webp;base64,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" target="_blank" rel="external">Default Reticle Map</a></li>
+</ul>
 
 
       <!-- Previous / Next navigation. -->
@@ -1171,7 +1214,7 @@ included last, the final color of the cube will be blue.</p>
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/mixins.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/ar-hit-test.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
   <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
 </footer>
 
@@ -1186,7 +1229,7 @@ included last, the final color of the cube will be blue.</p>
   <ul class="subnav">
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#merging-component-properties">Merging Component Properties</a>
+        <a class="subnav-link" href="#example">Example</a>
 
         <!-- Nested. -->
         
@@ -1197,7 +1240,29 @@ included last, the final color of the cube will be blue.</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#order-and-precedence">Order and Precedence</a>
+        <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#assets">Assets</a>
 
         <!-- Nested. -->
         
@@ -1216,22 +1281,20 @@ included last, the final color of the cube will be blue.</p>
 
     
       <ul class="subnav">
-        
-          <li class="subnav-item">
-            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-animated-lights?path=index.html">
-              Animated Lights
-            </a>
-          </li>
-        
+        <li class="subnav-item">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/ar-hit-test.md" style="font-style: italic">
+            No examples for this page yet. Add one!
+          </a>
+        </li>
       </ul>
     
   </div>
 
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/core/mixins.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/ar-hit-test.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/core/a-mixin.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/master/src/components/hit-test.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
