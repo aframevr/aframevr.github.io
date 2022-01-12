@@ -29,7 +29,7 @@
       data-aframe-version="1.2.0"
       data-docs-version="master">
   <head>
-    <title>VR Headsets & WebVR Browsers – A-Frame</title>
+    <title>VR Headsets & WebXR Browsers – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="VR Headsets &amp; WebVR Browsers – A-Frame">
+    <meta property="og:title" content="VR Headsets &amp; WebXR Browsers – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="VR Headsets &amp; WebVR Browsers – A-Frame">
+    <meta name="twitter:title" content="VR Headsets &amp; WebXR Browsers – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -327,9 +327,9 @@
           </li>
         
           <li class="subnav-item  subnav-item-current">
-            <a href="/docs/master/introduction/vr-headsets-and-webvr-browsers.html"
+            <a href="/docs/master/introduction/vr-headsets-and-webxr-browsers.html"
                class="subnav-link current">
-              VR Headsets & WebVR Browsers
+              VR Headsets & WebXR Browsers
             </a>
           </li>
         
@@ -1123,7 +1123,7 @@
         </p>
       </div>
       <h1 class="page__title">
-        VR Headsets & WebVR Browsers
+        VR Headsets & WebXR Browsers
       </h1>
 
       
@@ -1237,18 +1237,18 @@ are constrained to looking around and wiggling the controller.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="what-is-webvr"><a href="#what-is-webvr" class="headerlink" title="What is WebVR?"></a>What is WebVR?</h2><p>WebVR is a JavaScript API for creating immersive 3D, virtual reality
+<h2 id="what-is-webxr"><a href="#what-is-webxr" class="headerlink" title="What is WebXR?"></a>What is WebXR?</h2><p>WebXR is a JavaScript API for creating immersive 3D, virtual reality (and augmented reality)
 experiences in your browser. Or simply put, allows VR in the browser over the
 Web.</p>
-<p>A-Frame uses the WebVR API to gain access to VR headset sensor data (position,
+<p>A-Frame uses the WebXR API to gain access to VR headset sensor data (position,
 orientation) to transform the camera and to render content directly to VR
-headsets. Note that WebVR, which provides data, should not be confused nor
+headsets. Note that WebXR, which provides data, should not be confused nor
 conflated with WebGL, which provides graphics and rendering.</p>
 <h2 id="what-browsers-support-vr"><a href="#what-browsers-support-vr" class="headerlink" title="What Browsers Support VR?"></a>What Browsers Support VR?</h2><p>Including <a href="https://supermedium.com" target="_blank" rel="external">Supermedium</a> and
 <a href="https://github.com/exokitxr/exokit" target="_blank" rel="external">Exokit</a>:</p>
 <iframe src="https://caniuse.com/#search=webxr" height="480px" width="100%"></iframe>
 
-<h2 id="where-does-a-frame-want-to-take-webvr"><a href="#where-does-a-frame-want-to-take-webvr" class="headerlink" title="Where Does A-Frame Want to Take WebVR?"></a>Where Does A-Frame Want to Take WebVR?</h2><p>A-Frame aims for highly immersive and interactive VR content with native-like
+<h2 id="where-does-a-frame-want-to-take-webxr"><a href="#where-does-a-frame-want-to-take-webxr" class="headerlink" title="Where Does A-Frame Want to Take WebXR?"></a>Where Does A-Frame Want to Take WebXR?</h2><p>A-Frame aims for highly immersive and interactive VR content with native-like
 performance. For this, A-Frame believes the minimum viable bar will trend
 towards positionally-tracking headsets with positionally-tracked controllers.
 This is the paradigm in which A-Frame wants to innovate as well as discover new
@@ -1291,7 +1291,7 @@ supports include:</p>
 <li><a href="https://www.vive.com/us/ready/" target="_blank" rel="external">HTC Vive Hardware Recommendations</a></li>
 <li>For smartphones, an iPhone 6 for iOS and at least a Galaxy S6 for Android</li>
 </ul>
-<h2 id="which-browsers-does-a-frame-support"><a href="#which-browsers-does-a-frame-support" class="headerlink" title="Which Browsers Does A-Frame Support?"></a>Which Browsers Does A-Frame Support?</h2><p>A-Frame supports VR for any browser that implements the <a href="https://w3c.github.io/webvr/" target="_blank" rel="external">WebVR
+<h2 id="which-browsers-does-a-frame-support"><a href="#which-browsers-does-a-frame-support" class="headerlink" title="Which Browsers Does A-Frame Support?"></a>Which Browsers Does A-Frame Support?</h2><p>A-Frame supports VR for any browser that implements the <a href="https://immersive-web.github.io/webxr/" target="_blank" rel="external">WebXR
 specification</a>, and flat 3D for most browsers. Large browser vendors are
 slowly moving to the WebXR specification, though it does not have much
 front-facing changes to A-Frame developers, involving mostly renaming of APIs.</p>
@@ -1304,9 +1304,9 @@ front-facing changes to A-Frame developers, involving mostly renaming of APIs.</
 <li>Chrome (WebXR under origin trials)</li>
 <li>Exokit (experimental early support)</li>
 </ul>
-<p>A-Frame supports most modern mobile browsers that don’t have WebVR support
-through the <a href="https://github.com/googlevr/webvr-polyfill" target="_blank" rel="external">WebVR polyfill</a>. Note that these browsers do not
-have official WebVR support, and we are using a polyfill; it is important to
+<p>A-Frame supports most modern mobile browsers that don’t have WebXR support
+through the <a href="https://github.com/immersive-web/webxr-polyfill" target="_blank" rel="external">WebXR polyfill</a>. Note that these browsers do not
+have official WebXR support, and we are using a polyfill; it is important to
 lower the expectations that these browsers will provide a quality experience
 and not have quirks:</p>
 <ul>
@@ -1343,7 +1343,7 @@ specifically those that support WebGL including:</p>
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/vr-headsets-and-webvr-browsers.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/vr-headsets-and-webxr-browsers.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
   <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
 </footer>
 
@@ -1377,7 +1377,7 @@ specifically those that support WebGL including:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#what-is-webvr">What is WebVR?</a>
+        <a class="subnav-link" href="#what-is-webxr">What is WebXR?</a>
 
         <!-- Nested. -->
         
@@ -1399,7 +1399,7 @@ specifically those that support WebGL including:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#where-does-a-frame-want-to-take-webvr">Where Does A-Frame Want to Take WebVR?</a>
+        <a class="subnav-link" href="#where-does-a-frame-want-to-take-webxr">Where Does A-Frame Want to Take WebXR?</a>
 
         <!-- Nested. -->
         
@@ -1448,7 +1448,7 @@ specifically those that support WebGL including:</p>
       
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/vr-headsets-and-webvr-browsers.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/vr-headsets-and-webxr-browsers.md" target="_blank" rel="external">Edit Page</a>
         
       </div>
     </div>
