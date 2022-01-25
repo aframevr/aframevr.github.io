@@ -748,6 +748,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/reflection.html"
+               class="subnav-link">
+              reflection
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/renderer.html"
                class="subnav-link">
               renderer
@@ -1141,20 +1148,8 @@ performant than <code>a-sky</code> since geometry is not created. There are no u
 frustum culling issues when <code>a-sky</code> is further than the far plane of the
 camera. There are no unexpected occlusions either with far objects that might
 be behind of the sphere geometry of <code>a-sky</code>.</p>
-<p>The background component can also generate a default environment cube map for all
-materials, this is useful in case you find GLB models end up too dark or reflective
-materials don’t look right because they are not reflecting the environment this
-will provide a default reflective environment.</p>
-<h2 id="scene-lighting-and-lighting-estimation"><a href="#scene-lighting-and-lighting-estimation" class="headerlink" title="Scene Lighting and Lighting Estimation"></a>Scene Lighting and Lighting Estimation</h2><p>The background component will ensure that an environment map is generated from your surroundings using WebXR
-Lighting estimation in Augmented Reality if it is available.</p>
-<p>It will also create lights to match the lighting of the real world. So you should turn off any scene lights when the user enters AR using the <code>hide-on-enter-ar</code> component.</p>
-<p>These lights are a <code>directional</code> and a <code>probe</code> light. If your scene makes use of shadows
-from a directional light you can provide this as the <code>directionalLight</code> property and it
-will control that light instead of making it’s own one. Once the user leaves AR this
-light may have a different color, intensity and position than when they entered AR as it has been
-altered by the lighting estimation.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>The example below sets the background color to red and use lighting estimation for AR.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">webxr</span>=<span class="string">"optionalFeatures: light-estimation;"</span> <span class="attr">background</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">background</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
@@ -1173,16 +1168,6 @@ altered by the lighting estimation.</p>
 <td>transparent</td>
 <td>Background is transparent. The color property is ignored.</td>
 <td>false</td>
-</tr>
-<tr>
-<td>generateEnvironment</td>
-<td>Whether to generate a default environment.</td>
-<td>true</td>
-</tr>
-<tr>
-<td>directionalLight</td>
-<td>Use an existing light for the AR lighting</td>
-<td>null</td>
 </tr>
 </tbody>
 </table>
@@ -1211,17 +1196,6 @@ altered by the lighting estimation.</p>
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#scene-lighting-and-lighting-estimation">Scene Lighting and Lighting Estimation</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
     
       <li class="subnav-item">
         <a class="subnav-link" href="#example">Example</a>
