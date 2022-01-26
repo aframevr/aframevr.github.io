@@ -1420,6 +1420,57 @@ studies. Some people have compiled charts of realistic values for different
 kinds of materials that we can use as a starting point.</p>
 <p>For example, for a tree bark material, as an estimation, we might set:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"src: treebark.png; color: #696969; roughness: 1; metalness: 0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="phong-based-shading"><a href="#phong-based-shading" class="headerlink" title="Phong-Based Shading"></a>Phong-Based Shading</h4><p>Phong shading is an inexpensive shader model which whilst less realistic than the
+standard material is better than flat shading.</p>
+<p>To use it set the shader to phong in the material:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-torus-knot</span> <span class="attr">position</span>=<span class="string">"0 3 0"</span> <span class="attr">material</span>=<span class="string">"shader:phong; reflectivity: 0.9; shininess: 30;"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">"radius: 0.45; radiusTubular: 0.09"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-torus-knot</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>It has the following properties you can use:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>specular</td>
+<td>This defines how shiny the material is and the color of its shine.</td>
+<td>#111111</td>
+</tr>
+<tr>
+<td>shininess</td>
+<td>How shiny the specular highlight is; a higher value gives a sharper highlight</td>
+<td>30</td>
+</tr>
+<tr>
+<td>transparent</td>
+<td>Whether the material is transparent</td>
+<td>false</td>
+</tr>
+<tr>
+<td>combine</td>
+<td>How the environment map mixes with the material. “mix”, “add” or “multiply”</td>
+<td>“mix”</td>
+</tr>
+<tr>
+<td>reflectivity</td>
+<td>How much the environment map affects the surface</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>refract</td>
+<td>Whether the defined envMap should refract</td>
+<td>false</td>
+</tr>
+<tr>
+<td>refractionRatio</td>
+<td>1/refractive index of the material</td>
+<td>0.98</td>
+</tr>
+</tbody>
+</table>
 <h4 id="distortion-maps"><a href="#distortion-maps" class="headerlink" title="Distortion Maps"></a>Distortion Maps</h4><p>There are three properties which give the illusion of complex geometry:</p>
 <ul>
 <li><strong>Ambient occlusion maps</strong> - Applies subtle shadows in areas that receive less
