@@ -1320,6 +1320,22 @@ can use <code>.removeEventListener(eventName, function)</code>. We have to pass 
 event name and function that the listener was registered with. For example,
 continuing from the previous example with the physics collision event:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// We have to define this function with a name if we later remove it.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">collisionHandler</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Entity collided with'</span>, event.detail.collidingEntity);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">entityEl.addEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</span><br><span class="line">entityEl.removeEventListener(<span class="string">'physicscollided'</span>, collisionHandler);</span><br></pre></td></tr></table></figure>
+<h3 id="binding-event-listeners"><a href="#binding-event-listeners" class="headerlink" title="Binding Event Listeners"></a>Binding Event Listeners</h3><p>By default, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="external">Javascript execution context rules</a> binds <code>this</code> to the global context (<code>window</code>) for any independent function, meaning that these functions won’t have access to the component’s <code>this</code> by default.</p>
+<p>In order for the component’s <code>this</code> to be accessible inside an event listener, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="external">it must be bound</a>.</p>
+<p>There are several ways you can do this:</p>
+<ol>
+<li>By using an arrow function to define the event listener.  Arrow functions automatically bind <code>this</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.el.addEventListener(&apos;physicscollided&apos;, (event) =&gt; &#123;</span><br><span class="line">    console.log(this.el.id);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>By defining your event listener within the events object of the component (this will also handling adding and removing the listener automatically)</p>
+<p>See the explanation <a href="../core/component.html#events">here</a>.</p>
+</li>
+</ol>
+<ol start="3">
+<li>By creating another function, which is the bound version of the function.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.listeners = &#123;</span><br><span class="line">    clickListener: this.clickListener.bind(this);</span><br><span class="line">&#125;</span><br><span class="line">entityEl.addEventListener(&apos;click&apos;, this.listeners.clickListener);</span><br></pre></td></tr></table></figure>
 <h2 id="caveats"><a href="#caveats" class="headerlink" title="Caveats"></a>Caveats</h2><p>A-Frame entities and primitives are implemented in a way that
 <a href="./faq.html#why-is-the-html-not-updating-when-i-check-the-browser-inspector">favours performance</a> such that some HTML APIs may not work as expected.
 For instance, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors" target="_blank" rel="external">attribute selectors involving values</a> won’t work
@@ -1469,6 +1485,10 @@ component is altered.</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#removing-an-event-listener-with-removeeventlistener">Removing an Event Listener with .removeEventListener()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#binding-event-listeners">Binding Event Listeners</a>
               </li>
             
           </ul>
