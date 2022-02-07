@@ -332,9 +332,9 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/1.3.0/introduction/vr-headsets-and-webvr-browsers.html"
+            <a href="/docs/1.3.0/introduction/vr-headsets-and-webxr-browsers.html"
                class="subnav-link">
-              VR Headsets & WebVR Browsers
+              VR Headsets & WebXR Browsers
             </a>
           </li>
         
@@ -536,6 +536,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/ar-hit-test.html"
+               class="subnav-link">
+              ar-hit-test
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/1.3.0/components/background.html"
                class="subnav-link">
               background
@@ -623,6 +630,13 @@
             <a href="/docs/1.3.0/components/hand-tracking-controls.html"
                class="subnav-link">
               hand-tracking-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/hide-on-enter-ar.html"
+               class="subnav-link">
+              hide-on-enter-ar
             </a>
           </li>
         
@@ -735,6 +749,13 @@
             <a href="/docs/1.3.0/components/raycaster.html"
                class="subnav-link">
               raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/reflection.html"
+               class="subnav-link">
+              reflection
             </a>
           </li>
         
@@ -1154,12 +1175,10 @@ editors. Both support remixing or forking:</p>
 <h2 id="local-development"><a href="#local-development" class="headerlink" title="Local Development"></a>Local Development</h2><h3 id="use-a-local-server"><a href="#use-a-local-server" class="headerlink" title="Use a Local Server"></a>Use a Local Server</h3><p>For the options below, we should develop projects using a local server so that
 files are properly served. Options of local servers include:</p>
 <ul>
-<li>Downloading the <a href="https://www.cesanta.com/products/binary" target="_blank" rel="external">Mongoose</a> application
-and opening it from the same directory as your HTML file.</li>
+<li>Running <code>npm i -g five-server@latest &amp;&amp; five-server --port=8000</code> in a terminal
+in the same directory as your HTML file.</li>
 <li>Running <code>python -m SimpleHTTPServer</code> (or <code>python -m http.server</code> for Python 3)
 in a terminal in the same directory as your HTML file.</li>
-<li>Running <code>npm install -g live-server &amp;&amp; live-server</code> in a terminal in the same
-directory as your HTML file.</li>
 </ul>
 <p>Once we are running our server, we can open our project in the browser using
 the local URL and port which the server is running on (e.g.,
@@ -1178,10 +1197,10 @@ work.</p>
 <p><a class="btn btn-download" href="https://github.com/aframevr/aframe-boilerplate/archive/master.zip" download="aframe-boilerplate.zip" target="_blank" rel="external">Download .ZIP<span></span></a></p>
 <h3 id="include-the-js-build"><a href="#include-the-js-build" class="headerlink" title="Include the JS Build"></a>Include the JS Build</h3><p>To include A-Frame in an HTML file, we drop a <code>&lt;script&gt;</code> tag pointing to the
 CDN build:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.2.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.3.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>If we want to serve it ourselves, we can download the JS build:</p>
-<p><a id="builds-prod" class="btn btn-download" href="https://aframe.io/releases/1.2.0/aframe.min.js" download>Production Version <span>1.2.0</span></a> <em class="install-note">Minified</em>
-<a id="builds-dev" class="btn btn-download" href="https://aframe.io/releases/1.2.0/aframe.js" download>Development Version <span>1.2.0</span></a> <em class="install-note">Uncompressed with Source Maps</em></p>
+<p><a id="builds-prod" class="btn btn-download" href="https://aframe.io/releases/1.3.0/aframe.min.js" download>Production Version <span>1.3.0</span></a> <em class="install-note">Minified</em>
+<a id="builds-dev" class="btn btn-download" href="https://aframe.io/releases/1.3.0/aframe.js" download>Development Version <span>1.3.0</span></a> <em class="install-note">Uncompressed with Source Maps</em></p>
 <h3 id="install-from-npm"><a href="#install-from-npm" class="headerlink" title="Install from npm"></a>Install from npm</h3><p>We can also install A-Frame through npm:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install aframe</span><br></pre></td></tr></table></figure>
 <p>Then we can bundle A-Frame into our application. For example, with Browserify
@@ -1196,7 +1215,7 @@ A-Frame.  <code>angle</code> can initialize a scene template with a single comma
 Cordova runs from <code>file://</code>, and XHR requests to local <code>file://</code> assets (JSON fonts, 3D models, etc) will fail without this plugin.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cordova plugin add cordova-plugin-xhr-local-file</span><br></pre></td></tr></table></figure>
 <p>In your <code>index.html</code>, adjust as follows:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag">        <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">content</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">          default-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            data: </span></span></span><br><span class="line"><span class="tag"><span class="string">            gap: </span></span></span><br><span class="line"><span class="tag"><span class="string">            https://ssl.gstatic.com </span></span></span><br><span class="line"><span class="tag"><span class="string">            'unsafe-eval' </span></span></span><br><span class="line"><span class="tag"><span class="string">            https://cdn.aframe.io         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://dpdb.webvr.rocks      &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://fonts.googleapis.com  &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://cdn.jsdelivr.net      &lt;-- your choice, see below</span></span></span><br><span class="line"><span class="tag"><span class="string">            ; </span></span></span><br><span class="line"><span class="tag"><span class="string">          style-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            'unsafe-inline'</span></span></span><br><span class="line"><span class="tag"><span class="string">            ; </span></span></span><br><span class="line"><span class="tag"><span class="string">          media-src *; </span></span></span><br><span class="line"><span class="tag"><span class="string">          img-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            data:                         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            content:                      &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            blob:                         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            ;</span></span></span><br><span class="line"><span class="tag"><span class="string">        "</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aframe@1.2.0/dist/aframe-master.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">'my-scene'</span> <span class="attr">type</span>=<span class="string">"text/html"</span>&gt;</span></span><br><span class="line">    ...your scene goes here...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.addEventListener(<span class="string">'deviceready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// After the 'deviceready' event, Cordova is ready for you to render your A-Frame scene.</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">'scene-root'</span>).innerHTML = <span class="built_in">document</span>.getElementById(<span class="string">'my-scene'</span>).innerHTML</span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'scene-root'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag">        <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">content</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">          default-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            data: </span></span></span><br><span class="line"><span class="tag"><span class="string">            gap: </span></span></span><br><span class="line"><span class="tag"><span class="string">            https://ssl.gstatic.com </span></span></span><br><span class="line"><span class="tag"><span class="string">            'unsafe-eval' </span></span></span><br><span class="line"><span class="tag"><span class="string">            https://cdn.aframe.io         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://dpdb.webvr.rocks      &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://fonts.googleapis.com  &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            https://cdn.jsdelivr.net      &lt;-- your choice, see below</span></span></span><br><span class="line"><span class="tag"><span class="string">            ; </span></span></span><br><span class="line"><span class="tag"><span class="string">          style-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            'unsafe-inline'</span></span></span><br><span class="line"><span class="tag"><span class="string">            ; </span></span></span><br><span class="line"><span class="tag"><span class="string">          media-src *; </span></span></span><br><span class="line"><span class="tag"><span class="string">          img-src </span></span></span><br><span class="line"><span class="tag"><span class="string">            'self' </span></span></span><br><span class="line"><span class="tag"><span class="string">            data:                         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            content:                      &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            blob:                         &lt;-- required</span></span></span><br><span class="line"><span class="tag"><span class="string">            ;</span></span></span><br><span class="line"><span class="tag"><span class="string">        "</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aframe@1.3.0/dist/aframe-master.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">'my-scene'</span> <span class="attr">type</span>=<span class="string">"text/html"</span>&gt;</span></span><br><span class="line">    ...your scene goes here...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.addEventListener(<span class="string">'deviceready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// After the 'deviceready' event, Cordova is ready for you to render your A-Frame scene.</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">'scene-root'</span>).innerHTML = <span class="built_in">document</span>.getElementById(<span class="string">'my-scene'</span>).innerHTML</span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'scene-root'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="discussion"><a href="#discussion" class="headerlink" title="Discussion"></a>Discussion</h3><h4 id="deviceready"><a href="#deviceready" class="headerlink" title="deviceready"></a>deviceready</h4><p>The most important difference between a browser environment and a Cordova environment is waiting for the <code>deviceready</code> event
 before rendering your scene. </p>
 <p>The sample above shows a pure DOM+JS approach, but you can also use a framework like React:</p>
@@ -1214,7 +1233,7 @@ the target device.</p>
         
         
           <span class="float-right">
-            <a href="/docs/1.3.0/introduction/vr-headsets-and-webvr-browsers.html" class="guide-link guide-link-right">VR Headsets &amp; WebVR Browsers →</a></span>
+            <a href="/docs/1.3.0/introduction/vr-headsets-and-webxr-browsers.html" class="guide-link guide-link-right">VR Headsets &amp; WebXR Browsers →</a></span>
         
       </footer>
 

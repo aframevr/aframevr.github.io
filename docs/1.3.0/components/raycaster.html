@@ -332,9 +332,9 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/1.3.0/introduction/vr-headsets-and-webvr-browsers.html"
+            <a href="/docs/1.3.0/introduction/vr-headsets-and-webxr-browsers.html"
                class="subnav-link">
-              VR Headsets & WebVR Browsers
+              VR Headsets & WebXR Browsers
             </a>
           </li>
         
@@ -536,6 +536,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/ar-hit-test.html"
+               class="subnav-link">
+              ar-hit-test
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/1.3.0/components/background.html"
                class="subnav-link">
               background
@@ -623,6 +630,13 @@
             <a href="/docs/1.3.0/components/hand-tracking-controls.html"
                class="subnav-link">
               hand-tracking-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/hide-on-enter-ar.html"
+               class="subnav-link">
+              hide-on-enter-ar
             </a>
           </li>
         
@@ -735,6 +749,13 @@
             <a href="/docs/1.3.0/components/raycaster.html"
                class="subnav-link current">
               raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/reflection.html"
+               class="subnav-link">
+              reflection
             </a>
           </li>
         
@@ -1230,11 +1251,15 @@ refresh its list of objects it is raycasting against.</p>
 </tr>
 <tr>
 <td>raycaster-intersection</td>
-<td>Emitted on the raycasting entity. Raycaster is intersecting with one or more entities. Event detail will contain <code>els</code>, an array with the intersected entities, and <code>intersections</code>, and <code>.getIntersection (el)</code> function which can be used to obtain current intersection data.</td>
+<td>Emitted on the raycasting entity. Raycaster is intersecting with one or more entities. Event detail will contain <code>els</code>, an array with the newly intersected entities, and <code>intersections</code>, and <code>.getIntersection (el)</code> function which can be used to obtain current intersection data.  For access to a complete list of intersections (existing &amp; new), see <a href="raycaster.html#members">Members intersectedEls</a>.</td>
 </tr>
 <tr>
 <td>raycaster-intersection-cleared</td>
 <td>Emitted on the raycasting entity. Raycaster is no longer intersecting with one or more entities. Event detail will contain <code>clearedEls</code>, an array with the formerly intersected entities.</td>
+</tr>
+<tr>
+<td>raycaster-closest-entity-changed</td>
+<td>The closest intersected entity has changed</td>
 </tr>
 </tbody>
 </table>

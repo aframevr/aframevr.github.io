@@ -332,9 +332,9 @@
           </li>
         
           <li class="subnav-item ">
-            <a href="/docs/1.3.0/introduction/vr-headsets-and-webvr-browsers.html"
+            <a href="/docs/1.3.0/introduction/vr-headsets-and-webxr-browsers.html"
                class="subnav-link">
-              VR Headsets & WebVR Browsers
+              VR Headsets & WebXR Browsers
             </a>
           </li>
         
@@ -536,6 +536,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/ar-hit-test.html"
+               class="subnav-link">
+              ar-hit-test
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/1.3.0/components/background.html"
                class="subnav-link">
               background
@@ -623,6 +630,13 @@
             <a href="/docs/1.3.0/components/hand-tracking-controls.html"
                class="subnav-link">
               hand-tracking-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/hide-on-enter-ar.html"
+               class="subnav-link">
+              hide-on-enter-ar
             </a>
           </li>
         
@@ -735,6 +749,13 @@
             <a href="/docs/1.3.0/components/raycaster.html"
                class="subnav-link">
               raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/reflection.html"
+               class="subnav-link">
+              reflection
             </a>
           </li>
         
@@ -1244,7 +1265,7 @@ different types of values.</p>
 <tr>
 <td>autoplay</td>
 <td>Whether or not the animation should <code>autoplay</code>. Should be specified if the animation is defined for the <a href="https://www.npmjs.com/package/aframe-animation-timeline-component" target="_blank" rel="external"><code>animation-timeline</code> component</a>.</td>
-<td>null</td>
+<td>true</td>
 <td></td>
 </tr>
 <tr>
@@ -1365,9 +1386,25 @@ animation.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="controlling-animations-using-setattribute"><a href="#controlling-animations-using-setattribute" class="headerlink" title="Controlling Animations using setAttribute"></a>Controlling Animations using setAttribute</h3><p>Like any A-Frame component, the animation component can be configured from JavaScript by calling <a href="https://aframe.io/docs/1.3.0/introduction/javascript-events-dom-apis.html#updating-a-component-with-setattribute">setAttribute()</a> on an element.</p>
+<p>By default, the animation will begin playing immediately (autoplay is true by default).</p>
+<p>However, care should be taken when using the interface in this way.  If a finite (i.e. non-looping) animation is requested twice in a row, with identical parameters, the second animation will not play, and neither will it generate an animationcomplete event.</p>
+<p>This is because A-Frame sees the second request as a duplicate request for configuration already applied to the element, and so the second request never reaches the animation component.</p>
+<p>A better approach is to control the start of an animation using events (see next section)</p>
+<ul>
+<li>On initialization, configure all the animations that may be required on the object, with a custom event configured to start the animation.</li>
+<li>When you want to start a specific animation, do so by using emit() rather than setAttribute().</li>
+</ul>
+<p>This gives more robust control of the animation (avoiding problems where you request the same animation twice in a row), and also reduces the overheads involved in setting up animation config, since it only needs to be done once.</p>
 <h2 id="animating-on-events"><a href="#animating-on-events" class="headerlink" title="Animating on Events"></a>Animating on Events</h2><p>We can use the <code>startEvents</code> property to animate upon events:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"mouseCursor"</span> <span class="attr">cursor</span>=<span class="string">"rayOrigin: mouse"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">"primitive: box"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">"color: red"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseenter</span>=<span class="string">"property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500"</span>;</span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseleave</span>=<span class="string">"property: components.material.material.color; type: color; to: red; startEvents: mouseleave; dur: 500"</span>;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"mouseCursor"</span> <span class="attr">cursor</span>=<span class="string">"rayOrigin: mouse"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">"primitive: box"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">"color: red"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseenter</span>=<span class="string">"property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500"</span>;</span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseleave</span>=<span class="string">"property: components.material.material.color; type: color; to: red; startEvents: mouseleave; dur: 500"</span>;&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://glitch.com/edit/#!/aframe-animation-events?path=index.html:1:0" target="_blank" rel="external">Remix the Animating on Events Glitch</a>.</p>
+<p>To start an animation by explicitly emitting an event, you can do the following:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">el.emit(`startanim001`, null, false);</span><br></pre></td></tr></table></figure>
+<p>The <a href="https://aframe.io/docs/1.3.0/core/entity.html#emit-name-detail-bubbles">third parameter of emit</a> set to “false” parameter ensures the event won’t bubble up to parents, so that you can target the animation at just one particular element.</p>
+<p>This assumes that an animation has already been configured to respond to that custom start event, for example like this:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">el.setAttribute(animation__001, &#123;&apos;property&apos;: position,</span><br><span class="line">                                 &apos;to&apos;: &#123;x: 1, y: 1: z: 1&#125;,                                 </span><br><span class="line">                                 &apos;startEvents&apos;: &apos;startanim001&apos;);</span><br></pre></td></tr></table></figure>
+<p>(configuring startEvents on the animation automatically disables autoplay).</p>
 <h2 id="animating-different-types-of-values"><a href="#animating-different-types-of-values" class="headerlink" title="Animating Different Types of Values"></a>Animating Different Types of Values</h2><p>We’ll go over different cases of animating different types of values.</p>
 <h3 id="component-values"><a href="#component-values" class="headerlink" title="Component Values"></a>Component Values</h3><p>We can animate a single-property component value (e.g., <code>property: visible</code>,
 we’ll go over booleans in a bit) or animate a property of a multi-property
@@ -1465,6 +1502,10 @@ documentation</a> and
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#members">Members</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#controlling-animations-using-setattribute">Controlling Animations using setAttribute</a>
               </li>
             
           </ul>

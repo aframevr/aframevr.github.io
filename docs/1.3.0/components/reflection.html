@@ -29,7 +29,7 @@
       data-aframe-version="1.3.0"
       data-docs-version="1.3.0">
   <head>
-    <title>VR Headsets & WebVR Browsers – A-Frame</title>
+    <title>reflection – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="VR Headsets &amp; WebVR Browsers – A-Frame">
+    <meta property="og:title" content="reflection – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="VR Headsets &amp; WebVR Browsers – A-Frame">
+    <meta name="twitter:title" content="reflection – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -103,7 +103,7 @@
     
   </head>
 
-  <body data-page-layout="docs" data-page-type="introduction">
+  <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
 
 
@@ -310,7 +310,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-active">
+      <h3 class="section-title docs-section-title section-title-inactive">
         <p class="section-title-link">Introduction</p>
       </h3>
 
@@ -331,10 +331,10 @@
             </a>
           </li>
         
-          <li class="subnav-item  subnav-item-current">
-            <a href="/docs/1.3.0/introduction/vr-headsets-and-webvr-browsers.html"
-               class="subnav-link current">
-              VR Headsets & WebVR Browsers
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/introduction/vr-headsets-and-webxr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebXR Browsers
             </a>
           </li>
         
@@ -521,7 +521,7 @@
       
 
       <!-- Section title. -->
-      <h3 class="section-title docs-section-title section-title-inactive">
+      <h3 class="section-title docs-section-title section-title-active">
         <p class="section-title-link">Components</p>
       </h3>
 
@@ -532,6 +532,13 @@
             <a href="/docs/1.3.0/components/animation.html"
                class="subnav-link">
               Animation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/ar-hit-test.html"
+               class="subnav-link">
+              ar-hit-test
             </a>
           </li>
         
@@ -623,6 +630,13 @@
             <a href="/docs/1.3.0/components/hand-tracking-controls.html"
                class="subnav-link">
               hand-tracking-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.3.0/components/hide-on-enter-ar.html"
+               class="subnav-link">
+              hide-on-enter-ar
             </a>
           </li>
         
@@ -735,6 +749,13 @@
             <a href="/docs/1.3.0/components/raycaster.html"
                class="subnav-link">
               raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/1.3.0/components/reflection.html"
+               class="subnav-link current">
+              reflection
             </a>
           </li>
         
@@ -1057,7 +1078,7 @@
 </aside>
 
   <!-- Documentation. -->
-  <div class="content content--structured content--introduction copy">
+  <div class="content content--structured content--components copy">
     <div class="mobile-header">
   <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
   <h1><a href="/">A-Frame</a></h1>
@@ -1108,13 +1129,13 @@
     <div class="copy__wrap">
       <div class="page__section docs-header">
         <p>
-          <a href="/docs/1.3.0/introduction/" class="borderless-link">
-            1.3.0 &rsaquo; Introduction
+          <a href="/docs/1.3.0/components/geometry.html" class="borderless-link">
+            1.3.0 &rsaquo; Components
           </a>
         </p>
       </div>
       <h1 class="page__title">
-        VR Headsets & WebVR Browsers
+        reflection
       </h1>
 
       
@@ -1122,206 +1143,39 @@
       
       
 
-      <!--toc-->
-
-<h2 id="what-is-virtual-reality"><a href="#what-is-virtual-reality" class="headerlink" title="What is Virtual Reality?"></a>What is Virtual Reality?</h2><p>Virtual reality (VR) is a technology that uses head-mounted headsets with
-displays to generate the realistic images, sounds, and other sensations to put
-users into an immersive virtual environment. VR allows us to create unbounded
-worlds that people can walk around and interact with using their hands, to feel
-as if they were transported to another place.</p>
-<h3 id="what-are-the-differences-between-headsets"><a href="#what-are-the-differences-between-headsets" class="headerlink" title="What Are the Differences Between Headsets?"></a>What Are the Differences Between Headsets?</h3><p>There are several consumer VR headsets with different features on the market.
-Important distinguishing features include whether they:</p>
-<ul>
-<li>Have positional tracking (six degrees of freedom (6DoF)) or
-Only have rotational tracking (three degrees of freedom (3DoF)).</li>
-<li>Have controllers or not, and whether those controllers have 6DoF
-or 3DoF. Generally, the number of degrees of freedom of the controllers
-matches that of the headset.</li>
-<li>Are powered by a PC or by a mobile device or standalone.</li>
-</ul>
-<p>Rotational tracking allows people to look around or rotate objects. All
-headsets provide rotational tracking.</p>
-<p>Positional tracking allows people to move around, get closer to objects, reach
-forward. As the VR industry evolves, the minimum viable experience will trend
-towards having positionally-tracked headsets with positionally-tracked
-controllers. Positional tracking is important to give people presence, to make
-them feel they are in a real environment. With rotational-only tracking, people
-are constrained to looking around and wiggling the controller.</p>
-<h3 id="what-are-some-current-headsets"><a href="#what-are-some-current-headsets" class="headerlink" title="What Are Some Current Headsets?"></a>What Are Some Current Headsets?</h3><table>
+      <p>The reflection component generates a default environment cube map for all
+materials, this is useful in case you find GLB models end up too dark or reflective
+materials don’t look right because they are not reflecting the environment this
+will provide a default reflective environment.</p>
+<p><img src="https://user-images.githubusercontent.com/4225330/151032019-1f14a079-604a-4c5f-b377-ea30a4e2b098.png" alt="Left hand side has objects with no reflection, the objects on the right reflect the environment"></p>
+<h2 id="scene-lighting-and-lighting-estimation"><a href="#scene-lighting-and-lighting-estimation" class="headerlink" title="Scene Lighting and Lighting Estimation"></a>Scene Lighting and Lighting Estimation</h2><p>The reflection component will generate an environment map from your surroundings using WebXR
+Lighting estimation in Augmented Reality if it is available.</p>
+<p>During this it will also take control of your scene’s main directional light to ensure it’s direction and color matches that of the rest of the environemnt. This works really well for your scene’s shadows.
+It will also create a probe light to match the lighting of the real world.
+So you should turn off any additional global scene lights, such as other directional lights, hemisphere lights or ambient lights, when the user enters AR. You can do this with the <code>hide-on-enter-ar</code> component.</p>
+<p>Once the user leaves AR this light may have a different color, intensity and position than when they entered AR as it has been altered by the lighting estimation.</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>The example below sets the reflection color to red and use lighting estimation for AR.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">reflection</span>=<span class="string">"directionalLight:a-light#dirlight;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a-light</span> <span class="attr">id</span>=<span class="string">"dirlight"</span> <span class="attr">intensity</span>=<span class="string">"1"</span> <span class="attr">light</span>=<span class="string">"castShadow:true;type:directional"</span> <span class="attr">position</span>=<span class="string">"1 1 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
 <tr>
-<th>Headset</th>
-<th>Platform</th>
-<th>Positional Tracking</th>
-<th>Controllers</th>
-<th>Controller Positional Tracking</th>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://www.vive.com/" target="_blank" rel="external">HTC Vive</a></td>
-<td>PC</td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-</tr>
-<tr>
-<td>[Oculus Rift]</td>
-<td>PC</td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-</tr>
-<tr>
-<td><a href="https://vr.google.com/daydream/" target="_blank" rel="external">Google Daydream</a></td>
-<td>Android</td>
-<td><img class="github-emoji" title="x" alt="x" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="x" alt="x" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" height="20" width="20"></td>
-</tr>
-<tr>
-<td><a href="http://www.samsung.com/global/galaxy/gear-vr/" target="_blank" rel="external">Samsung GearVR</a></td>
-<td>Android</td>
-<td><img class="github-emoji" title="x" alt="x" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="x" alt="x" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" height="20" width="20"></td>
-</tr>
-<tr>
-<td><a href="https://developer.microsoft.com/en-us/windows/mixed-reality/" target="_blank" rel="external">Windows Mixed Reality</a></td>
-<td>PC</td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-</tr>
-<tr>
-<td>[Oculus Go]</td>
-<td>Standalone</td>
-<td><img class="github-emoji" title="x" alt="x" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="x" alt="x" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" height="20" width="20"></td>
-</tr>
-<tr>
-<td><a href="https://enterprise.vive.com/us/vivefocus/" target="_blank" rel="external">Vive Focus</a></td>
-<td>Standalone</td>
-<td><img class="github-emoji" title="x" alt="x" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="x" alt="x" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" height="20" width="20"></td>
-</tr>
-<tr>
-<td>[Oculus Quest]</td>
-<td>Standalone</td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-</tr>
-<tr>
-<td>[Oculus Quest 2]</td>
-<td>Standalone</td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
-<td><img class="github-emoji" title="white_check_mark" alt="white_check_mark" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" height="20" width="20"></td>
+<td>directionalLight</td>
+<td>Light to control during WebXR Lighting Estimation</td>
 </tr>
 </tbody>
 </table>
-<h2 id="what-is-webvr"><a href="#what-is-webvr" class="headerlink" title="What is WebVR?"></a>What is WebVR?</h2><p>WebVR is a JavaScript API for creating immersive 3D, virtual reality
-experiences in your browser. Or simply put, allows VR in the browser over the
-Web.</p>
-<p>A-Frame uses the WebVR API to gain access to VR headset sensor data (position,
-orientation) to transform the camera and to render content directly to VR
-headsets. Note that WebVR, which provides data, should not be confused nor
-conflated with WebGL, which provides graphics and rendering.</p>
-<h2 id="what-browsers-support-vr"><a href="#what-browsers-support-vr" class="headerlink" title="What Browsers Support VR?"></a>What Browsers Support VR?</h2><p>Including <a href="https://supermedium.com" target="_blank" rel="external">Supermedium</a> and
-<a href="https://github.com/exokitxr/exokit" target="_blank" rel="external">Exokit</a>:</p>
-<iframe src="https://caniuse.com/#search=webxr" height="480px" width="100%"></iframe>
-
-<h2 id="where-does-a-frame-want-to-take-webvr"><a href="#where-does-a-frame-want-to-take-webvr" class="headerlink" title="Where Does A-Frame Want to Take WebVR?"></a>Where Does A-Frame Want to Take WebVR?</h2><p>A-Frame aims for highly immersive and interactive VR content with native-like
-performance. For this, A-Frame believes the minimum viable bar will trend
-towards positionally-tracking headsets with positionally-tracked controllers.
-This is the paradigm in which A-Frame wants to innovate as well as discover new
-grounds that are specific to the VR Web (e.g., link traversal,
-decentralization, identity). Contrast this type of content against flat and
-static 360&deg; content and menus.</p>
-<p>At the same time, A-Frame wants everyone to be able to get involved with VR
-content creation. A-Frame supports all major headsets with their controllers.
-Fortunately with the large community and contributors, A-Frame is able to both
-look far towards the future as well as satisfy the needs of today’s VR
-landscape.</p>
-<h2 id="which-platforms-does-a-frame-support"><a href="#which-platforms-does-a-frame-support" class="headerlink" title="Which Platforms Does A-Frame Support?"></a>Which Platforms Does A-Frame Support?</h2><p>A-Frame supports almost all platforms through browsers. General platforms that
-A-Frame supports include:</p>
-<ul>
-<li>VR on desktop with a headset</li>
-<li>VR on mobile with a headset</li>
-<li>VR on standalone headset</li>
-<li>Flat on desktop (i.e., mouse and keyboard)</li>
-<li>Flat mobile (i.e., magic window)</li>
-</ul>
-<p>Some other platforms that have been shown to work with A-Frame include:</p>
-<ul>
-<li>Augmented reality (AR) on AR headsets (e.g., Magic Leap, HoloLens)</li>
-<li>Augmented reality (AR) on mobile (i.e., magic window, ARKit, ARCore)</li>
-</ul>
-<h2 id="which-vr-headsets-does-a-frame-support"><a href="#which-vr-headsets-does-a-frame-support" class="headerlink" title="Which VR Headsets Does A-Frame Support?"></a>Which VR Headsets Does A-Frame Support?</h2><p>A-Frame supports most headsets through browsers. Some VR headsets that A-Frame
-supports include:</p>
-<ul>
-<li>HTC Vive</li>
-<li>Oculus Rift</li>
-<li>Oculus Quest</li>
-<li>Oculus Go</li>
-<li>Google Daydream</li>
-<li>Samsung GearVR</li>
-<li>Vive Focus</li>
-</ul>
-<p>For general hardware recommendations (not requirements):</p>
-<ul>
-<li><a href="https://www.oculus.com/en-us/oculus-ready-pcs/" target="_blank" rel="external">Oculus Rift Hardware Recommendations</a></li>
-<li><a href="https://www.vive.com/us/ready/" target="_blank" rel="external">HTC Vive Hardware Recommendations</a></li>
-<li>For smartphones, an iPhone 6 for iOS and at least a Galaxy S6 for Android</li>
-</ul>
-<h2 id="which-browsers-does-a-frame-support"><a href="#which-browsers-does-a-frame-support" class="headerlink" title="Which Browsers Does A-Frame Support?"></a>Which Browsers Does A-Frame Support?</h2><p>A-Frame supports VR for any browser that implements the <a href="https://w3c.github.io/webvr/" target="_blank" rel="external">WebVR
-specification</a>, and flat 3D for most browsers. Large browser vendors are
-slowly moving to the WebXR specification, though it does not have much
-front-facing changes to A-Frame developers, involving mostly renaming of APIs.</p>
-<ul>
-<li><a href="https://www.supermedium.com" target="_blank" rel="external">Supermedium</a> (available on Oculus and Steam)</li>
-<li>Firefox</li>
-<li>Oculus Browser</li>
-<li>Samsung Internet</li>
-<li>Microsoft Edge</li>
-<li>Chrome (WebXR under origin trials)</li>
-<li>Exokit (experimental early support)</li>
-</ul>
-<p>A-Frame supports most modern mobile browsers that don’t have WebVR support
-through the <a href="https://github.com/googlevr/webvr-polyfill" target="_blank" rel="external">WebVR polyfill</a>. Note that these browsers do not
-have official WebVR support, and we are using a polyfill; it is important to
-lower the expectations that these browsers will provide a quality experience
-and not have quirks:</p>
-<ul>
-<li>Safari for iOS</li>
-<li>Chrome for Android</li>
-<li>Firefox for iOS</li>
-<li>Samsung Internet</li>
-<li>UC Browser</li>
-</ul>
-<p>For flat or plain 3D support, A-Frame supports all modern browsers,
-specifically those that support WebGL including:</p>
-<ul>
-<li>Firefox</li>
-<li>Chrome</li>
-<li>Safari</li>
-<li>Edge</li>
-<li>Internet Explorer 11</li>
-</ul>
 
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
         
-          <span class="float-left">
-            <a href="/docs/1.3.0/introduction/installation.html" class="guide-link guide-link-left">← Installation </a></span>
-        
-        
-          <span class="float-right">
-            <a href="/docs/1.3.0/introduction/html-and-primitives.html" class="guide-link guide-link-right">HTML &amp; Primitives →</a></span>
         
       </footer>
 
@@ -1329,7 +1183,7 @@ specifically those that support WebGL including:</p>
   <p>
     The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
   </p>
-  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/vr-headsets-and-webvr-browsers.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/reflection.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
   <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
 </footer>
 
@@ -1344,26 +1198,7 @@ specifically those that support WebGL including:</p>
   <ul class="subnav">
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#what-is-virtual-reality">What is Virtual Reality?</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#what-are-the-differences-between-headsets">What Are the Differences Between Headsets?</a>
-              </li>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#what-are-some-current-headsets">What Are Some Current Headsets?</a>
-              </li>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#what-is-webvr">What is WebVR?</a>
+        <a class="subnav-link" href="#scene-lighting-and-lighting-estimation">Scene Lighting and Lighting Estimation</a>
 
         <!-- Nested. -->
         
@@ -1374,7 +1209,7 @@ specifically those that support WebGL including:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#what-browsers-support-vr">What Browsers Support VR?</a>
+        <a class="subnav-link" href="#example">Example</a>
 
         <!-- Nested. -->
         
@@ -1385,40 +1220,7 @@ specifically those that support WebGL including:</p>
       </li>
     
       <li class="subnav-item">
-        <a class="subnav-link" href="#where-does-a-frame-want-to-take-webvr">Where Does A-Frame Want to Take WebVR?</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#which-platforms-does-a-frame-support">Which Platforms Does A-Frame Support?</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#which-vr-headsets-does-a-frame-support">Which VR Headsets Does A-Frame Support?</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#which-browsers-does-a-frame-support">Which Browsers Does A-Frame Support?</a>
+        <a class="subnav-link" href="#properties">Properties</a>
 
         <!-- Nested. -->
         
@@ -1432,9 +1234,25 @@ specifically those that support WebGL including:</p>
 </div>
 
       
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        <li class="subnav-item">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/reflection.md" style="font-style: italic">
+            No examples for this page yet. Add one!
+          </a>
+        </li>
+      </ul>
+    
+  </div>
+
 
       <div class="doc-actions">
-        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/vr-headsets-and-webvr-browsers.md" target="_blank" rel="external">Edit Page</a>
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/reflection.md" target="_blank" rel="external">Edit Page</a>
+        
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v1.3.0/src/components/reflection.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
