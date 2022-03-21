@@ -1216,10 +1216,20 @@ It also configures presentation attributes when entering WebVR/WebXR.</p>
 <td>Whether the canvas should contain an alpha buffer.</td>
 <td>true</td>
 </tr>
+<tr>
+<td>toneMapping</td>
+<td>Type of toneMapping to use, one of: ‘no’, ‘ACESFilmic’, ‘linear’, ‘reinhard’, ‘cineon’</td>
+<td>‘no’</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>When any toneMapping other than “no” is used this can be used to make the overall scene brighter or darker</td>
+<td>1</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>NOTE:</strong> Once the scene is initialized, these properties may no longer be changed.</p>
+<p><strong>NOTE:</strong> Once the scene is initialized, none of these properties may no longer be changed apart from “exposure” and “toneMapping” which can be set dynamically.</p>
 </blockquote>
 <h3 id="antialias"><a href="#antialias" class="headerlink" title="antialias"></a>antialias</h3><p>When enabled, smooths jagged edges on curved lines and diagonals at moderate performance cost.
 By default, antialiasing is disabled on mobile devices.</p>
