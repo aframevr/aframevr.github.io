@@ -1,506 +1,109 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<% var isHome = is_current('index.html') %>
+<% var showExamples = page.type === 'examples' %>
+<% var isSecondary = page.layout !== 'examples' %>
+<% var isDocs = page.layout === 'docs' %>
+<% var is404 = page.layout === '404' %>
+<% var delimiter = ' – ' %>
+<% var projectTitle = config.title + delimiter + config.subtitle %>
+<% var sectionTitle = isDocs ? ' Docs ' + delimiter : '' %>
+<% var pageTitle = page.title ? page.title + delimiter : '' %>
+<% pageTitle = page.full_title || (isHome ? projectTitle : pageTitle + config.title) %>
+<% src = page.image && page.image.src %>
+<% if (src && src.indexOf('http') === -1) { %>
+  <% src = absolute_url_for('/images/blog/' + src); %>
+<% } %>
+<% var metaImage = src || (absolute_url_for(meta_image(page, 'images/card.jpg'), {secure: false}) + '?v2') %>
+<% var metaImageSecure = src || (absolute_url_for(meta_image(page, 'images/card.jpg'), {secure: true}) + '?v2') %>
 <!DOCTYPE html>
 <html lang="en"
-      data-is-home="false"
+      data-is-home="<%- isHome %>"
       data-is-mobile="false"
       data-supports-vr="false"
       data-supports-touch="false"
-      data-site-base-url="https://aframe.io"
-      data-site-root-path="/"
-      data-site-home-url="https://aframe.io/"
-      data-lib-home-url="https://aframe.io/"
-      data-lib-examples-url="https://aframe.io/aframe/examples"
-      data-title="{title} | A-Frame"
-      data-is-spa="false"
-      data-ga-id="UA-111391431-24"
-      data-aframe-version="1.3.0"
-      data-docs-version="1.3.0">
+      data-site-base-url="<%- config.url %>"
+      data-site-root-path="<%- config.root %>"
+      data-site-home-url="<%- config.url + config.root %>"
+      data-lib-home-url="<%- config.aframe_lib.home_url %>"
+      data-lib-examples-url="<%- config.aframe_lib.examples_url %>"
+      data-title="{title} | <%= config.title %>"
+      data-is-spa="<%= config.spa %>"
+      data-ga-id="<%- config.google_analytics %>"
+      data-aframe-version="<%= config.aframe_version %>"
+      data-docs-version="<%= docs_active_version(page) %>">
   <head>
-    <title>Super Says – A-Frame</title>
-    
-
-<script>
-  var host = window.location.protocol + '//' + window.location.hostname;
-  if (window.location.protocol === 'http:' &&
-      window.location.hostname === 'https://aframe.io') {
-    window.location.href = 'https:' + window.location.href.substring(6);
-  }
-</script>
-
-
+    <title><%- pageTitle.replace('<', '&lt;') %></title>
+    <%- partial('partials/force_https') %>
     <meta charset="utf-8">
     <!-- Don't index old documentation pages. -->
     <meta name="robots"
-      content="all">
-    <meta name="description" content="A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.">
-    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+      content="<%- docs_active_version(page) === config.aframe_version ? config.robots : 'NOINDEX' %>">
+    <meta name="description" content="<%= meta_description(page) %>">
+    <meta name="keywords" content="<%= config.keywords.join(',') %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
     <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
     <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
     <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
-    <link rel="canonical" href="https://aframe.io">
+    <link rel="canonical" href="<%= config.url %>">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
-    <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="Super Says – A-Frame">
-    <meta property="og:site_name" content="A-Frame">
+    <meta property="fb:app_id" content="<%- config.fb_app_id %>">
+    <meta property="og:title" content="<%= pageTitle %>">
+    <meta property="og:site_name" content="<%= config.title %>">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aframe.io">
-    <meta property="og:description" content="A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.">
-    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
-    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta property="og:url" content="<%= config.url %>">
+    <meta property="og:description" content="<%= meta_description(page) %>">
+    <meta property="og:image" content="<%- metaImage %>">
+    <meta property="og:image:secure_url" content="<%- metaImageSecure %>">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@aframevr">
-    <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="Super Says – A-Frame">
-    <meta name="twitter:description" content="A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.">
-    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:site" content="@<%- config.twitter.username %>">
+    <meta name="twitter:creator" content="@<%- config.twitter.username %>">
+    <meta name="twitter:title" content="<%= pageTitle %>">
+    <meta name="twitter:description" content="<%= meta_description(page) %>">
+    <meta name="twitter:image" content="<%- metaImage %>">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="black">
-    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="theme-color" content="<%- config.theme_color %>">
+    <link rel="icon" sizes="192x192" href="<%- absolute_url_for('images/aframe-logo-192.png') %>">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
-    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <link rel="apple-touch-icon" href="<%- absolute_url_for('images/aframe-logo-152.png') %>">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="<%- absolute_url_for(config.feed.path) %>">
+    <%- partial('partials/ga') %>
 
-  ga('create', 'UA-111391431-24', 'auto');
-  ga('send', 'pageview');
-  ga('send', 'event', 'pageload.querystring', window.location.search);
-  ga('send', 'event', 'pageload.hash', window.location.hash);
-</script>
+    <% if (!is404) { %>
+      <%- js('js/compat.js') %>
+    <% } %>
 
+    <% if (showExamples) { %>
+      <%- css('css/index') %>
+      <% if (!isHome) { %>
+        <%- css('css/examples') %>
+      <% } %>
+    <% } else if (!is404) { %>
+      <%- css('css/secondary') %>
+    <% } %>
 
-    
-      <script src="/js/compat.js"></script>
-    
-
-    
-      <link rel="stylesheet" href="/css/index.css">
-      
-        <link rel="stylesheet" href="/css/examples.css">
-      
-    
-
-    
+    <% if (isSecondary || is404) { %>
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
-    
+      <%- css('css/search') %>
+    <% } %>
   </head>
 
-  <body data-page-layout="" data-page-type="examples">
-    <main id="main" class="main">
+  <body data-page-layout="<%- page.layout %>" data-page-type="<%- page.type %>">
+    <main id="main" class="main"><%- body %></main>
 
-<!-- Homepage examples bar. -->
-<aside class="sidebar">
-  <div class="sidebar__wrap">
-    <div class="sidebar__wrap__inner">
+    <% if (!is404) { %>
+      <%- js('js/common.js') %>
+      <% if (showExamples) { %>
+        <%- js('js/examples.js') %>
+      <% } %>
+      <% if (isSecondary) { %>
+        <%- js('js/docs.js') %>
+      <% } %>
+    <% } %>
 
-      <!-- Wordmark. -->
-      <header id="header" class="header">
-        <a id="logo" class="logo borderless-links" href="/">
-          <span class="logo__wordmark">A-Frame</span>
-        </a>
-      </header>
-
-      <!-- Get Started for Mobile. -->
-      <a href="/docs/" class="mobile-get-started nav-link get-started">
-        Get Started
-      </a>
-
-      <div class="list examples-list blog-list">
-        <h2 class="page-title"><a href="/blog">Blog</a></h2>
-        <ul id="examplesSubnav"
-            class="subnav examples-subnav borderless-links">
-          
-          <li class="example-item">
-            <a class="subnav-link" href="https://aframe.io/blog/aframe-v1.1.0/" title="A-Frame 1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation">A-Frame 1.1.0 - AR, Quest 2 Support, hand tracking, compositor layers, immersive navigation</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Examples. -->
-      <div class="list examples-list">
-        <h2 class="page-title">Examples</h2>
-        <ul id="examplesSubnav"
-            class="subnav examples-subnav borderless-links">
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/helloworld/"
-                data-scene-url="https://aframe.io/aframe/examples/boilerplate/hello-world/"
-                data-slug="helloworld"
-                data-idx="0"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/helloworld/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">Hello WebVR</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/modelviewer/"
-                data-scene-url="https://aframe.io/aframe/examples/showcase/model-viewer/"
-                data-slug="modelviewer"
-                data-idx="1"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/modelviewer/"
-                 class="subnav-link"
-                 
-                   title="By Supermedium (@supermediumvr)"
-                 >
-                <span class="sidebar__link__text">Model Viewer</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/handtracking/"
-                data-scene-url="https://aframe.io/aframe/examples/showcase/hand-tracking/"
-                data-slug="handtracking"
-                data-idx="2"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/handtracking/"
-                 class="subnav-link"
-                 
-                   title="By Supermedium (@supermediumvr)"
-                 >
-                <span class="sidebar__link__text">Hand Tracking</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/responsiveui/"
-                data-scene-url="https://aframe.io/aframe/examples/showcase/ui/"
-                data-slug="responsiveui"
-                data-idx="3"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/responsiveui/"
-                 class="subnav-link"
-                 
-                   title="By Supermedium (@supermediumvr)"
-                 >
-                <span class="sidebar__link__text">Responsive UI</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/sky/"
-                data-scene-url="https://aframe.io/aframe/examples/boilerplate/panorama/"
-                data-slug="sky"
-                data-idx="4"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/sky/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">360&deg; Image</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/360-video/"
-                data-scene-url="https://aframe.io/aframe/examples/boilerplate/360-video/"
-                data-slug="360-video"
-                data-idx="5"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/360-video/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">360 Video</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/anime-UI/"
-                data-scene-url="https://aframe.io/aframe/examples/showcase/anime-UI/"
-                data-slug="anime-UI"
-                data-idx="6"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/anime-UI/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">Anime UI</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="false"
-                data-example-url="/examples/showcase/beatsaver-viewer/"
-                data-scene-url="https://supermedium.com/beatsaver-viewer/?id=1183-814"
-                data-slug="beatsaver-viewer"
-                data-idx="7"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/beatsaver-viewer/"
-                 class="subnav-link"
-                 
-                   title="By Supermedium (@supermediumvr)"
-                 >
-                <span class="sidebar__link__text">BeatSaver Viewer</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="false"
-                data-example-url="/examples/showcase/moonrider/"
-                data-scene-url="https://moonrider.xyz"
-                data-slug="moonrider"
-                data-idx="8"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/moonrider/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">Moon Rider</span>
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="false"
-                data-example-url="/examples/showcase/gunters-of-oasis/"
-                data-scene-url="https://supermedium.com/gunters-of-oasis-deploy/"
-                data-slug="gunters-of-oasis"
-                data-idx="9"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/gunters-of-oasis/"
-                 class="subnav-link"
-                 
-                   title="By Supermedium (@supermediumvr)"
-                 >
-                <span class="sidebar__link__text">Gunters of OASIS</span>
-                
-                  <img class="example-tracked-controllers" src="/images/controllers.png" title="This example supports or requires tracked controllers.">
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/supercraft/"
-                data-scene-url="https://supermedium.com/craft/icky-snake"
-                data-slug="supercraft"
-                data-idx="10"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/supercraft/"
-                 class="subnav-link"
-                 
-                   title="By Supermedium (@supermediumvr)"
-                 >
-                <span class="sidebar__link__text">Supercraft</span>
-                
-                  <img class="example-tracked-controllers" src="/images/controllers.png" title="This example supports or requires tracked controllers.">
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="true"
-                data-supports-mobile="false"
-                data-example-url="/examples/showcase/super-says/"
-                data-scene-url="https://supermedium.github.io/supersays/src/"
-                data-slug="super-says"
-                data-idx="11"
-                class="example-item subnav-item current">
-              <a href="/examples/showcase/super-says/"
-                 class="subnav-link current"
-                 
-                   title="By Supermedium (@supermediumvr)"
-                 >
-                <span class="sidebar__link__text">Super Says</span>
-                
-                  <img class="example-tracked-controllers" src="/images/controllers.png" title="This example supports or requires tracked controllers.">
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="false"
-                data-example-url="/examples/showcase/towermaxfitness/"
-                data-scene-url="https://towermax.fitness/tower/"
-                data-slug="towermaxfitness"
-                data-idx="12"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/towermaxfitness/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">Towermax Fitness</span>
-                
-                  <img class="example-tracked-controllers" src="/images/controllers.png" title="This example supports or requires tracked controllers.">
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/a-blast/"
-                data-scene-url="https://aframe.io/a-blast/"
-                data-slug="a-blast"
-                data-idx="13"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/a-blast/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">A-Blast</span>
-                
-                  <img class="example-tracked-controllers" src="/images/controllers.png" title="This example supports or requires tracked controllers.">
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/a-painter/"
-                data-scene-url="https://aframe.io/a-painter/?url=https://ucarecdn.com/962b242b-87a9-422c-b730-febdc470f203/"
-                data-slug="a-painter"
-                data-idx="14"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/a-painter/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">A-Painter</span>
-                
-                  <img class="example-tracked-controllers" src="/images/controllers.png" title="This example supports or requires tracked controllers.">
-                
-              </a>
-            </li>
-          
-            
-            <li data-current="false"
-                data-supports-mobile="true"
-                data-example-url="/examples/showcase/a-saturday-night/"
-                data-scene-url="https://aframe.io/a-saturday-night/"
-                data-slug="a-saturday-night"
-                data-idx="15"
-                class="example-item subnav-item">
-              <a href="/examples/showcase/a-saturday-night/"
-                 class="subnav-link"
-                 >
-                <span class="sidebar__link__text">A Saturday Night</span>
-                
-                  <img class="example-tracked-controllers" src="/images/controllers.png" title="This example supports or requires tracked controllers.">
-                
-              </a>
-            </li>
-          
-        </ul>
-
-        <div id="subscribeForm">
-          <p>Subscribe to get updates on A-Frame and our VR projects!</p>
-          <form>
-            <input name="email" type="email" placeholder="Email address">
-            <input name="group" type="hidden" value="0335f346e8">
-            <button class="submit" type="submit">Subscribe</button>
-          </form>
-        </div>
-
-        <!-- Navigation arrows. -->
-        <nav class="example-nav c">
-          <a id="examplePrev" class="example-nav-link example-nav-prev" href="#">← <span>Previous</span></a>
-          <a id="exampleNext" class="example-nav-link example-nav-next float-right" href="#"><span>Next</span> →</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</aside>
-
-
-<div class="content content--examples">
-  <div class="content--body">
-    <!-- Example. -->
-    <iframe id="exampleIframe" class="example__iframe"
-            width="100%"
-            height="100%"
-            allowfullscreen="yes" scrolling="no"
-            allowvr="yes" src="https://supermedium.github.io/supersays/src/"></iframe>
-
-    <!-- Actions. -->
-    <div class="example__controls">
-      
-        <a id="exampleInspector" class="btn" rel="nofollow"
-           title="Or open with `<ctrl> + <alt> + i`.">Visual Inspector</a>
-      
-      
-        <a id="exampleViewSource" class="btn" href="https://github.com/supermedium/supersays" target="_blank"
-           title="View the HTML on GitHub">View Source</a>
-      
-    </div>
-  </div>
-</div>
-</main>
-
-    
-      <script src="/js/common.js"></script>
-      
-        <script src="/js/examples.js"></script>
-      
-      
-        <script src="/js/docs.js"></script>
-      
-    
-
-    
-      <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-<script type="text/javascript">
-  var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
-    indexName: 'aframe',
-    algoliaOptions: {
-      facetFilters: ['version:1.3.0'],
-      hitsPerPage: 10
-    },
-    debug: false
-  };
-
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
-</script>
-
-    
+    <% if (isSecondary || is404) { %>
+      <%- partial('partials/search') %>
+    <% } %>
   </body>
 </html>

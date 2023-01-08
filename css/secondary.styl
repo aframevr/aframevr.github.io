@@ -1,0 +1,589 @@
+@import "_common"
+@import "_sidebar"
+@import "community"
+
+.page__section,
+.section-title,
+.install-note,
+.mobile-nav-btn,
+.nav-item
+    font-family $code-font
+
+.page__title
+    color $pink
+    font 300 36px/1.3 $body-font
+    margin -7px 0 20px
+
+h2.post__heading
+    margin 0
+
+a
+    border-bottom 1px solid rgba(53,196,232,0.15)
+    color hsl(192, 80%, 40%)
+    position relative
+    text-decoration none
+    transition 0.05s ease
+    &:hover
+        border-bottom-color rgba(53,196,232,0.3)
+        color hsl(192, 80%, 25%)
+    &:active,
+    &.click
+        border-bottom-color rgba(53,196,232,0.6)
+        color rgba(53,196,232,0.9)
+        top 1px
+        left 0.5px
+
+.copy p a
+    margin 0 1px
+
+.nav
+    border-bottom 1px solid rgba(0, 0, 0, 0.1)
+    margin-bottom 20px
+    padding-bottom 15px
+
+.nav-link
+    color rgba(0,0,0,0.35)
+    display block
+    padding 0.25rem 0
+    transition 0.05s color ease
+    &:hover
+        color rgba(0,0,0,0.75)
+    &:active
+        color rgba(0,0,0,0.85)
+    &.current,
+    &.active,
+    &.current:hover,
+    &.active:hover
+        color $pink
+        font-weight 600
+
+.nav-link-disabled
+    pointer-events none
+
+.nav-item
+    text-transform uppercase
+    &:first-child .nav-link
+        padding-top 0
+    &:last-child .nav-link
+        padding-bottom 0
+
+.subnav-link
+    display block
+    color rgba(0,0,0,0.35)
+    line-height 1.8
+    text-indent -10px
+    padding-left 10px
+    transition 0.05s color ease
+    width 100%
+    &:hover
+        color rgba(0,0,0,0.75)
+    &:active
+        color rgba(0,0,0,0.85)
+    &.current,
+    &.active,
+    &.current:hover,
+    &.active:hover
+        color #333
+        font-weight 500
+    +media--desktop()
+        line-height 1.6
+
+.sponsor
+    bottom 5px
+    display block
+    margin 0 0 25px
+    position relative
+
+    a.mozilla-logo
+        background-color #BBB
+        background-position 0 -1px
+        background-size 100px 30px
+        margin-left -10px
+        top -1px
+        transform scale(0.8)
+        width 100px
+
+    .message
+        margin 0
+        padding-bottom 25px
+
+.example__iframe
+    height 100vh
+    width 100%
+
+.main
+    display flex
+
+.content
+    display flex
+    flex 1
+    padding-top 60px
+    position relative
+
+    +media--desktop()
+        padding-left 280px  // Fixed sidebar.
+        padding-top 0
+
+.copy .footnote
+    border-top 2px solid #eee
+    clear both
+    color #999
+    font-size 0.8rem
+    margin-top 30px
+
+    br
+        display none
+
+    .github-file-link
+        margin-left 0.5rem
+
+.guide-links
+    margin-top 30px
+
+// We have to target it like this so it doesn't interfere with the code snippets
+.copy__wrap > table
+    border-collapse collapse
+    width 100%
+
+    th, td
+        padding 4px 8px
+
+    th
+        background #2ac
+        color #fff
+        font-size $table-heading-font-size
+        font-weight 400
+        line-height 1.8
+        text-align left
+        white-space nowrap
+        + th
+            border-left 1px solid rgba(255,255,255,0.1)
+
+    td
+        background #fff
+        border-bottom 1px solid #eee
+        font-size $table-body-font-size
+        font-size 12px
+        vertical-align top
+
+    tr:not(:last-child) td
+        border-bottom 1px solid #eee
+
+    td code
+        font-weight 600
+        padding 0 1px
+        margin 0 1px
+
+// The sub-heading above the title of the Docs page or Blog post.
+.page__section > p
+    font-size 11px
+    font-weight 600
+    line-height 1.2
+    margin 0 0 10px
+    text-transform uppercase
+    a
+        color $light
+        display block
+
+.section-title,
+.subnav-label
+    font-size 11px
+    line-height 1.2
+    padding 5px 0 10px
+    text-transform uppercase
+
+.subnav-label[for="docs-version"]
+    margin-right 5px
+
+.section-title-active
+    font-weight 600
+
+.section-title-link
+    display block
+    margin -5px 0 -10px
+    padding 5px 0 10px
+
+.section-subnav
+    margin-bottom 10px
+
+.post__projects
+    display flex
+    flex-wrap wrap
+    margin 15px 0 25px -1px
+    a
+        background-position center
+        background-repeat no-repeat
+        background-size cover
+        border 2px solid transparent
+        height 160px
+        margin-bottom 4px
+        width 50%
+        &:hover
+            border-color $copy-link-hover
+.post__projects-text
+  li p
+    display inline
+  .blog-attribution
+    border none
+    color $medium
+
+.post__timestamp
+    font-weight 500
+
+.post__author:before
+    content "\00a0|\00a0"
+
+.post__metadata
+    align-items center
+    display flex
+    margin-bottom 15px
+    p
+      margin 0
+
+.content--blog h1 + .post--listing
+    margin-top 9px  /* To align the borders nicely since there's no visible <h1>. */
+
+.post--listing + .post--listing
+    margin-top 30px
+
+.post--listing .post__metadata p
+    margin 20px 0 0
+
+/* Show only the first two thumbnails/previews. */
+.post--listing .post__projects a:nth-child(2) ~ a
+    display none
+
+.post__image
+    display block
+    margin-top 20px
+
+.post .guide-links
+    .float-right
+        text-align right
+    span
+        max-width 40%
+
+// To prevent the active sections from loading.
+prevent_clicks_on_active_links = true
+
+if prevent_clicks_on_active_links
+    .section-title-active
+        cursor pointer
+
+    .section-title-link-active
+        cursor pointer
+        pointer-events none
+
+numbered_debug = false
+
+// Useful for changing `order` of docs.
+if numbered_debug
+    .subnav
+        color red
+        list-style-type decimal
+
+.section-title
+    margin-top 15px
+
+.subnav-item + .subnav-item
+    margin-top 0.25rem
+
+.highlight
+    position relative
+    background-color $codebg
+    padding .2em .2em .1em
+    line-height 1.1em
+    border-radius $radius
+    overflow-x auto
+    table, tr, td
+        width 100%
+        border-collapse collapse
+        padding 0
+        margin 0
+    .gutter
+        width 1.5em
+    .code
+        pre
+            padding 1.2em 1.4em
+            line-height 1.5em
+            margin 0
+    &.html, &.js, &.bash, &.css
+        &:after
+            position absolute
+            top 0
+            right 0
+            color #ccc
+            text-align right
+            font-size .75em
+            padding 5px 10px 0
+            line-height 15px
+            height 15px
+            font-weight 600
+    &.html:after
+        content 'HTML'
+    &.js:after
+        content 'JS'
+    &.bash:after
+        content 'Shell'
+    &.css:after
+        content 'CSS'
+
+.github-file-link
+    background $codebg
+    border 1px solid $border
+    border-radius $radius
+    transition 0.05s ease
+    color #666
+    display inline-block
+    padding 0.25rem 1rem
+    &:after
+        background url(../images/github-icon.svg) no-repeat
+        content ''
+        display inline-block
+        margin-left 0.5em
+        opacity .5
+        height 14px
+        transition 0.05s opacity ease
+        vertical-align middle
+        width 12px
+    &:hover,
+    &:active
+        border-color $border-dark
+        color #333
+        &:after
+            opacity 1
+    &:active
+        background rgba(0,0,0,0.1)
+        opacity 0.5
+
+.copy
+    a.btn  // See `_common` for base styles.
+        background-color lighten($blue, 8%)
+        border-bottom 2px solid darken($blue, 12%)
+        border-radius 4px
+        color #fff
+        display inline-block
+        font-family $code-font
+        margin 5px 0
+        padding 12px 24px
+        transition 0.15s ease
+        &.btn-download
+            padding 12px 8px
+            min-width 220px
+        &:hover
+            background-color lighten($blue, 15%)
+            transform translate(0, 1px)
+            transition none
+        &:active,
+        &.click
+            background-color darken($blue, 12%)
+            transform translate(0, 2px)
+        span
+            font-size 0.8rem
+            font-weight 300
+    p br ~ a.button
+        margin-top 10px
+
+.install-note
+    color #999
+    font-size 0.8rem
+    font-weight normal
+    margin-left 10px
+    &:after
+        display block
+        content ""
+
+.content
+    h2[id],
+    h3[id],
+    h4[id],
+    h5[id],
+    h6[id],
+    .copy__wrap > table[id] tr th:first-child,
+    .copy__wrap > table tr[id] td:first-child
+        cursor pointer
+        position relative
+        &:before
+            border-bottom 1px solid #fff
+            color #ccc
+            content ""
+            height 100%
+            left -1.5rem
+            position absolute
+            text-indent 0
+            width 1.5rem
+        &:target,
+        &:hover
+            &:before
+                content "#"
+        &:hover
+            &:before
+                color #aaa
+
+#toc + ul a
+    border-bottom 0
+
+video
+    max-width 100%
+
+.post img
+    max-height 320px
+
+.docs-header
+    display flex
+    flex-direction column-reverse
+    position relative
+    width 100%
+    +media--desktop()
+        display block
+
+.docs-search-wrapper
+    align-items flex-start
+    display flex
+    flex-direction column
+    margin-bottom 20px
+    max-width 100%
+
+.docs-header + blockquote
+    margin 4em 0 2em
+
+.blog-subnav a
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+[data-is-mobile="true"] #docs-version
+    border 1px solid #CCC
+
+@media screen and (max-width: 800px)
+    .main
+        flex-direction column
+        min-width 100%
+
+    .copy .footnote
+        br
+            display inline-block
+
+        .github-file-link
+            margin-left 0
+
+    .content--structured
+        h2[id],
+        h3[id],
+        h4[id],
+        h5[id],
+        h6[id],
+        .copy__wrap > table[id] tr th:first-child,
+        .copy__wrap > table tr[id] td:first-child
+            &:before
+                left: -1rem
+
+.tweets
+  display flex
+  flex-direction column
+  justify-content center
+
+@media screen and (min-width: 480px)
+  .tweets
+    flex-direction row
+    flex-wrap wrap
+    justify-content space-between
+
+    .twitter-tweet
+      width 49% !important
+
+@media screen and (min-width: 1100px)
+  .tweets
+    justify-content flex-start
+
+    .twitter-tweet
+      margin-right 10px
+      width 32% !important
+
+@media screen and (min-width: 1350px)
+  .tweets .twitter-tweet
+    width 24% !important
+
+.post--listing,
+.content:not(.content--awoa)
+  .tweets .twitter-tweet
+    width 48% !important
+
+.content--awoa .copy__wrap
+  max-width 100%
+
+  p
+    max-width 700px
+
+.secondary-sidebar
+  display none
+  height 100%
+  overflow auto
+  padding-bottom 30px
+  padding-top 40px
+  position fixed
+  left 980px
+  width 300px
+  +media--desktop()
+      display block
+
+.docs-view-source
+  font-size 12px
+
+.docs-suggest-edit
+  font-size 12px
+
+.nav-list
+  .section-title
+      margin 0
+      padding-top 0
+  > ul
+      margin-left 0
+      margin-top 0
+      padding-left 0
+  ul
+      list-style none
+  ul + ul
+      margin-left 0
+  li
+      padding 0
+  a
+      border-bottom 0
+      max-width 100%
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
+
+.content--blog .page__title
+    margin-bottom 7px
+
+.logo__wordmark
+    margin-bottom 20px
+
+.wordmark
+    display none
+    padding 40px 40px 0 40px
+    position fixed
+    z-index 10
+    +media--desktop()
+      display block
+
+.secondary-nav .docs-search-wrapper
+  +media--desktop()
+    display none
+
+.secondary-nav header
+  +media--desktop()
+    display none
+
+.guide-links .guide-link
+  border-bottom 0
+  padding 10px 20px 0 20px
+
+.post > .page__section:first-child
+  margin-top 0
+
+

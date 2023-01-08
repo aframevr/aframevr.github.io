@@ -21,6 +21,18 @@ people who come together to make developing WebVR a rewarding experience.
   Overflow](http://stackoverflow.com/questions/tagged/aframe), and put effort
   into the question by providing context and code samples.
 
+## Newsletter
+
+Get updates on A-Frame as well as our upcoming VR projects!
+
+<div id="subscribeForm">
+  <form>
+    <input name="email" type="email" placeholder="Email address">
+    <input name="group" type="hidden" value="0335f346e8">
+    <button class="submit" type="submit">Subscribe</button>
+  </form>
+</div>
+
 ## Core Team
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -87,7 +99,7 @@ directly!
 
 ## Slack
 
-[Sign up to the A-Frame Slack](https://aframe.io/slack-invite/) to hang
+[Sign up to the A-Frame Slack](https://join.slack.com/t/aframevr/shared_invite/zt-f6rne3ly-ekVaBU~Xu~fsZHXr56jacQ) to hang
 out and join the discussion. The Slack is pretty active with currently over 7000
 people!
 
