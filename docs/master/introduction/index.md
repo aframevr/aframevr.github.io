@@ -27,7 +27,7 @@ free. Alternatively, create an `.html` file and include A-Frame in the
 ```html
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -129,17 +129,17 @@ running smoothly at 90fps.
 [inspector]: ./visual-inspector-and-dev-tools.md
 
 :mag: **Visual Inspector**: A-Frame provides a handy built-in [visual 3D
-inspector][inspector]. Open up *any* A-Frame scene, hit `<ctrl> + <alt> + i` or `<ctrl> + <option> + i`,
+inspector][inspector]. Open up *any* A-Frame scene, hit `<ctrl> + <alt> + i`,
 and fly around to peek under the hood!
 
 ![Inspector](https://cloud.githubusercontent.com/assets/674727/25377018/27be9cce-295b-11e7-9098-3e85ac1fe172.gif)
 
 [augmented reality]: https://github.com/jeromeetienne/AR.js#augmented-reality-for-the-web-in-less-than-10-lines-of-html
 [environment]: https://github.com/supermedium/aframe-environment-component
-[multiuser]: https://github.com/networked-aframe/networked-aframe
-[oceans]: https://github.com/n5ro/aframe-extras/tree/master/src/primitives
+[multiuser]: https://github.com/haydenjameslee/networked-aframe
+[oceans]: https://github.com/donmccurdy/aframe-extras/tree/master/src/primitives
 [particle systems]: https://github.com/IdeaSpaceVR/aframe-particle-system-component
-[physics]: https://github.com/n5ro/aframe-physics-system
+[physics]: https://github.com/donmccurdy/aframe-physics-system
 [state]: https://npmjs.com/package/aframe-state-component
 [super hands]: https://github.com/wmurphyrd/aframe-super-hands-component
 [teleportation]: https://github.com/fernandojsg/aframe-teleport-controls
@@ -159,25 +159,27 @@ as Google, Microsoft, Oculus, and Samsung have made contributions to A-Frame.
 ## Off You Go!
 
 [Discord]: https://supermedium.com/discord
-[slack]: https://aframevr.slack.com/join/shared_invite/zt-f6rne3ly-ekVaBU~Xu~fsZHXr56jacQ
 
 If it's your first time here, here's a plan for success for getting into
 A-Frame:
 
-1. [Subscribe to the Newsletter](https://aframe.io/subscribe/) for updates and
-tips on A-Frame and to see featured community projects.
+1. For inspiration, check out what other people have built with A-Frame on the
+[Weekly Blog](https://aframe.io/blog/) or [WebVR Directory](https://webvr.directory).
 
 2. Read through the documentation to get a grasp.
 [Glitch](https://glitch.com/~aframe) is used as a recommended coding playground
 and for examples.
 
-3. [Join us on Discord][Discord] and [Slack][slack] and if you have any
-questions, [search and ask on StackOverflow](http://stackoverflow.com/questions/ask/?tags=aframe),
-and someone will try to get to you!
+3. Run through [A-Frame School](https://aframe.io/school/), a brief
+step-by-step visual tutorial.
 
-4. When you build something, share your project online and we'll try to feature
-it on the [newsletter](https://aframe.io/subscribe/) and the
-[blog](https://aframe.io/blog/)!
+4. [Join us on Slack](https://aframe.io/slack-invite) or [Discord] and if
+you have any questions, [search and ask on
+StackOverflow](http://stackoverflow.com/questions/ask/?tags=aframe), and
+someone will try to get to you!
+
+5. When you build something, share your project online and we'll try to feature
+it on [*A Week of A-Frame*](https://aframe.io/blog/)!
 
 And it really helps to have a dig into the fundamentals on JavaScript and
-[three.js](https://threejs.org/). Have fun!
+three.js. Have fun!

@@ -23,7 +23,7 @@ examples:
 The geometry component provides a basic shape for an entity. The `primitive`
 property defines the general shape. Geometric primitives, in computer graphics,
 are irreducible basic shapes. A material component is commonly defined to
-provide an appearance alongside the shape to create a complete mesh.
+provide a appearance alongside the shape to create a complete mesh.
 
 <!--toc-->
 
@@ -33,6 +33,7 @@ Every geometry type will have these properties:
 
 | Property  | Description                                                                                                                          | Default Value |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| buffer    | Transform geometry into a BufferGeometry to reduce memory usage at the cost of being harder to manipulate.                           | true          |
 | primitive | Name of a geometry (e.g., one of the geometries listed below). Determines the geometry type and what other properties are available. | box           |
 | skipCache | Disable retrieving the shared geometry object from the cache.                                                                        | false         |
 
@@ -40,7 +41,7 @@ Every geometry type will have these properties:
 
 ### `box`
 
-The box geometry defines boxes (i.e., any quadrilateral, not just cubes).
+The box geometry defines boxes (i.e., any quadilateral, not just cubes).
 
 ```html
 <a-entity geometry="primitive: box; width: 1; height: 1; depth: 1"></a-entity>
@@ -175,19 +176,7 @@ The octahedron geometry creates a polygon with eight equilateral triangular face
 
 | Property | Description                            | Default Value |
 |----------|----------------------------------------|---------------|
-| radius   | Radius (in meters) of the octahedron. | 1             |
-
-### `icosahedron`
-
-The icosahedron geometry creates a polygon with twenty equilateral triangular faces.
-
-```html
-<a-entity geometry="primitive: icosahedron"></a-entity>
-```
-
-| Property | Description                            | Default Value |
-|----------|----------------------------------------|---------------|
-| radius   | Radius (in meters) of the icosahedron. | 1             |
+| radius   | Radius (in meters) of the tetrahedron. | 1             |
 
 ### `plane`
 
@@ -358,16 +347,17 @@ AFRAME.registerGeometry('example', {
   },
 
   init: function (data) {
-    var geometry = new THREE.BufferGeometry();
-     const pointsArray = new Array();
-     data.vertices.map(function (vertex) {
-     var points = vertex.split(' ').map(function(x){return parseInt(x);});
-     pointsArray.push(new THREE.Vector3(points[0], points[1], points[2]));
-     });
-     geometry.setFromPoints(pointsArray);
-     geometry.computeBoundingBox();
-     geometry.computeVertexNormals();
-     this.geometry = geometry;
+    var geometry = new THREE.Geometry();
+    geometry.vertices = data.vertices.map(function (vertex) {
+        var points = vertex.split(' ').map(function(x){return parseInt(x);});
+        return new THREE.Vector3(points[0], points[1], points[2]);
+    });
+    geometry.computeBoundingBox();
+    geometry.faces.push(new THREE.Face3(0, 1, 2));
+    geometry.mergeVertices();
+    geometry.computeFaceNormals();
+    geometry.computeVertexNormals();
+    this.geometry = geometry;
   }
 });
 ```

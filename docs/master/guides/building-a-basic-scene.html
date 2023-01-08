@@ -1,0 +1,1647 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-111391431-24"
+      data-aframe-version="1.3.0"
+      data-docs-version="master">
+  <head>
+    <title>Building a Basic Scene – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Building a Basic Scene – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/674727/29746371-b7906dcc-8a8c-11e7-8ef4-3f7e4d224ce7.jpg">
+    <meta property="og:image:secure_url" content="https://user-images.githubusercontent.com/674727/29746371-b7906dcc-8a8c-11e7-8ef4-3f7e4d224ce7.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Building a Basic Scene – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://user-images.githubusercontent.com/674727/29746371-b7906dcc-8a8c-11e7-8ef4-3f7e4d224ce7.jpg">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111391431-24', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+</script>
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="guides">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/1.3.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://supermedium.com/discord/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Discord Channel">
+          <span>Discord</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://aframe.io/subscribe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Newsletter</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option selected
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/1.3.0/introduction/">
+          1.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.2.0/introduction/">
+          1.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.1.0/introduction/">
+          1.1.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.0.0/introduction/">
+          1.0.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.9.0/introduction/">
+          0.9.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.8.0/introduction/">
+          0.8.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.7.0/introduction/">
+          0.7.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.6.0/introduction/">
+          0.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Introduction</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/vr-headsets-and-webxr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebXR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/javascript-events-dom-apis.html"
+               class="subnav-link">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting & Publishing
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <p class="section-title-link">Guides</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/master/guides/building-a-basic-scene.html"
+               class="subnav-link current">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Core API</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/globals.html"
+               class="subnav-link">
+              Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Components</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/animation.html"
+               class="subnav-link">
+              Animation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/ar-hit-test.html"
+               class="subnav-link">
+              ar-hit-test
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/background.html"
+               class="subnav-link">
+              background
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/device-orientation-permission-ui.html"
+               class="subnav-link">
+              device-orientation-permission-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/hand-tracking-controls.html"
+               class="subnav-link">
+              hand-tracking-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/hide-on-enter-ar.html"
+               class="subnav-link">
+              hide-on-enter-ar
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/layer.html"
+               class="subnav-link">
+              layer
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/line.html"
+               class="subnav-link">
+              line
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/link.html"
+               class="subnav-link">
+              link
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/loading-screen.html"
+               class="subnav-link">
+              loading-screen
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/magicleap-controls.html"
+               class="subnav-link">
+              magicleap-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/oculus-go-controls.html"
+               class="subnav-link">
+              oculus-go-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/reflection.html"
+               class="subnav-link">
+              reflection
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/renderer.html"
+               class="subnav-link">
+              renderer
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/vive-focus-controls.html"
+               class="subnav-link">
+              vive-focus-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/webxr.html"
+               class="subnav-link">
+              webxr
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Primitives</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-link.html"
+               class="subnav-link">
+              &lt;a-link&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+  <!-- Documentation. -->
+  <div class="content content--structured content--guides copy">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/master/guides/building-a-basic-scene.html" class="borderless-link">
+            master &rsaquo; Guides
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        Building a Basic Scene
+      </h1>
+
+      
+        <img src="https://user-images.githubusercontent.com/674727/29746371-b7906dcc-8a8c-11e7-8ef4-3f7e4d224ce7.jpg">
+      
+
+      
+      
+        <blockquote>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.3.0/introduction/">documentation for the current 1.3.0 version</a></p>
+</blockquote>
+
+      
+
+      <p>Let’s start by building a basic A-Frame scene. For this, we will need a basic
+understanding of HTML. We will learn how to:</p>
+<ul>
+<li>Add 3D entities (i.e., objects) with <a href="../primitives/">primitives</a></li>
+<li>Transform to transform entities in 3D space with position, rotation, scale</li>
+<li>Add an environment</li>
+<li>Add textures</li>
+<li>Add basic interactivity using animations and events</li>
+<li>Add text</li>
+</ul>
+<p><a href="https://glitch.com/~aframe-basic-guide-with-environment" target="_blank" rel="external">Remix the Basic Guide example on Glitch</a>.</p>
+<!--toc-->
+
+<h2 id="starting-with-html"><a href="#starting-with-html" class="headerlink" title="Starting with HTML"></a>Starting with HTML</h2><p>We start out with a minimal HTML structure:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.3.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>We include A-Frame as a script tag in the <code>&lt;head&gt;</code>, pointing to the A-Frame
+build hosted on a CDN. This has to be included <em>before</em> <code>&lt;a-scene&gt;</code> because
+A-Frame registers custom HTML elements which must be defined before <code>&lt;a-scene&gt;</code>
+is attached or else <code>&lt;a-scene&gt;</code> will do nothing.</p>
+<p>Next, we include <a href="../core/scene.html"><code>&lt;a-scene&gt;</code></a> in the <code>&lt;body&gt;</code>. <code>&lt;a-scene&gt;</code> will contain every
+entity in our scene. <code>&lt;a-scene&gt;</code> handles all of the setup that is required for
+3D: setting up WebGL, the canvas, camera, lights, renderer, render loop as well
+as out of the box WebVR support on platforms such as HTC Vive, Oculus Rift,
+Samsung GearVR, and smartphones (Google Cardboard). <code>&lt;a-scene&gt;</code> alone takes a
+lot of load off of us!</p>
+<h2 id="adding-an-entity"><a href="#adding-an-entity" class="headerlink" title="Adding an Entity"></a>Adding an Entity</h2><p>Within our <code>&lt;a-scene&gt;</code>, we attach 3D entities using one of A-Frame’s standard
+<a href="../primitives/">primitives</a> <code>&lt;a-box&gt;</code>. We can use <code>&lt;a-box&gt;</code> just like a normal HTML element,
+defining the tag and using HTML attributes to customize it. Some other examples
+of primitives that come with A-Frame include <code>&lt;a-cylinder&gt;</code>, <code>&lt;a-plane&gt;</code>, or
+<code>&lt;a-sphere&gt;</code>.</p>
+<p>Here we define the color <code>&lt;a-box&gt;</code>, see <a href="../primitives/a-box.html"><code>&lt;a-box&gt;</code>‘s documentation</a> for
+the more attributes (e.g., <code>width</code>, <code>height</code>, <code>depth</code>).</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/20326452/b7f94966-ab3d-11e6-95e1-47cabf425278.jpg" alt="boximage">
+<small class="image-caption"><i>Image by Ruben Mueller from vrjump.de</i></small></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>As a side note, primitives are A-Frame’s easy-to-use HTML elements that wrap
+the underlying entity-component assembly. They can be convenient, but
+underneath <code>&lt;a-box&gt;</code> is <a href="../core/entity.html"><code>&lt;a-entity&gt;</code></a> with the <a href="../components/geometry.html">geometry</a> and
+<a href="../components/material.html">material</a> components:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>However, because the default <a href="../components/camera.html">camera</a> and the box are positioned at the default
+position at the <code>0 0 0</code> origin, we won’t be able to see the box unless we move
+it. We can do this by using the <a href="../components/position.html">position</a> component to transform the
+box in 3D space.</p>
+<h2 id="transforming-an-entity-in-3d"><a href="#transforming-an-entity-in-3d" class="headerlink" title="Transforming an Entity in 3D"></a>Transforming an Entity in 3D</h2><p>Let’s first go over 3D space. A-Frame uses a right-handed coordinate system.
+With the default camera direction: positive X-axis extends <em>right</em>, positive
+Y-axis extends <em>up</em>, and the positive Z-axis extends <em>out</em> of the screen
+towards us:</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/20328731/326137a8-ab49-11e6-9b76-4e3a65f333d9.jpg" alt="righthandimage">
+<small class="image-caption"><i>Image from what-when-how.com</i></small></p>
+<p>A-Frame’s distance unit is in <strong>meters</strong> because the <a href="https://developer.mozilla.org/docs/Web/API/WebVR_API" target="_blank" rel="external">WebVR
+API</a> returns pose data in meters. When designing a scene for VR, it is
+important to consider the real world scale of the entities we create. A box with
+<code>height=&quot;10&quot;</code> may look normal on our computer screens, but in VR the box will
+appear massive.</p>
+<p>A-Frame’s rotational unit in A-Frame is in <strong>degrees</strong>, although it will get
+internally converted to radians when passing to three.js. To determine the
+positive direction of rotation, use the <a href="https://wikipedia.org/wiki/Right-hand_rule" target="_blank" rel="external">right-hand rule</a>. Point our thumbs
+down the direction of a positive axis, and the direction which our fingers curl
+around the positive direction of rotation.</p>
+<p>To translate, rotate, and scale the box, we can change the
+<a href="../components/position.html">position</a>, <a href="../components/rotation.html">rotation</a>, and <a href="../components/scale.html">scale</a> components.
+Let’s first apply the rotation and scale components:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>This will rotate our box at an angle and double its size.</p>
+<h3 id="parent-and-child-transforms"><a href="#parent-and-child-transforms" class="headerlink" title="Parent and Child Transforms"></a>Parent and Child Transforms</h3><p>A-Frame HTML represent a 3D <a href="https://wikipedia.org/wiki/Scene_graph" target="_blank" rel="external">scene graph</a>. In a scene graph, entities can have
+a single parent and multiple children. Child entities inherit transformations
+(i.e., position, rotation, and scale) from their parent.</p>
+<p>For example, we could have a sphere as a child of a box:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">position</span>=<span class="string">"0 2 0"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 4 2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"1 0 3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>If we calculate the sphere’s world position, it would be <code>1 2 3</code>, achieved by
+composing the sphere’s parent position with its own position. Similarly, for
+rotation and scale, the sphere would inherit the box’s rotation and scale. The
+sphere too would be rotated and stretched just as like its parent box. If the
+box were to change its position, rotation, or scale, it would immediately apply
+to and affect the sphere.</p>
+<p>If we were to add a cylinder as a child to our sphere, the cylinder’s transform
+would be affected by both the sphere’s <em>and</em> box’s transforms. Under the hood
+in three.js, this is done by multiplying <em>transformation matrices</em> together.
+Fortunately, we don’t have to think about that!</p>
+<h3 id="placing-our-box-in-front-of-the-camera"><a href="#placing-our-box-in-front-of-the-camera" class="headerlink" title="Placing our Box in Front of the Camera"></a>Placing our Box in Front of the Camera</h3><p>Now let’s get back to making our box visible to the camera from the start. We
+can move the box back <em>5 meters</em> on the negative Z-axis with the position
+component. We also have to move it up <em>2 meters</em> on the positive Y-axis so the
+box doesn’t intersect with the ground since we scaled the box and scaling happens
+from the center:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Now we see our box!</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/20327511/34a5e5f6-ab42-11e6-8107-66c42b80f846.png" alt="boximage2"></p>
+<h3 id="default-controls"><a href="#default-controls" class="headerlink" title="Default Controls"></a>Default Controls</h3><p>For flat displays (i.e., laptop, desktop), the default control scheme lets us
+look around by click-dragging the mouse and move around with the <code>WASD</code> or
+arrow keys. On mobile, we can pan the phone around to rotate the camera.
+Although A-Frame is tailored for WebVR, this default control scheme allows
+people to view scenes without a headset.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/20328949/69e2c628-ab4a-11e6-97e9-6e25104d6673.png" alt="webvrimage"></p>
+<blockquote>
+<p><a href="http://mozvr.com/#start" target="_blank" rel="external">Check out the instructions on the Mozilla VR homepage for setting up and entering WebVR</a>.</p>
+</blockquote>
+<p>Upon <a href="http://mozvr.com/#start" target="_blank" rel="external">entering VR</a> by clicking the goggles icon with a VR headset
+connected (e.g., Oculus Rift, HTC Vive), we can experience the scene in
+immersive VR. If room-scale is available, we can physically <em>walk</em> around the
+scene!</p>
+<h2 id="adding-an-environment"><a href="#adding-an-environment" class="headerlink" title="Adding an Environment"></a>Adding an Environment</h2><p>A-Frame allows developers to create and share reusable components for others to
+easily use. <a href="https://github.com/feiss/" target="_blank" rel="external">@feiss</a>‘s <a href="https://github.com/feiss/aframe-environment-component/" target="_blank" rel="external">environment component</a> procedurally
+generates a variety of entire environments for us with a single line of HTML.
+The environment component is a great and easy way to visually bootstrap our VR
+application, providing over a dozen environments with numerous parameters:</p>
+<p>First, include the environment component using a script tag after A-Frame:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.3.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Then within the scene, add an entity with the environment component attached.
+We can specify a preset (e.g., <code>forest</code>) with along many other parameters
+(e.g., 200 trees):</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Out of the box environment! --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">environment</span>=<span class="string">"preset: forest; dressingAmount: 500"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="applying-an-image-texture"><a href="#applying-an-image-texture" class="headerlink" title="Applying an Image Texture"></a>Applying an Image Texture</h2><blockquote>
+<p>Make sure you’re <a href="../introduction/getting-started.html#using-a-local-server">serving your HTML using a local server</a>
+for textures to load properly.</p>
+</blockquote>
+<p>We can apply an image texture to the box with an image, video, or <code>&lt;canvas&gt;</code>
+using the <code>src</code> attribute, just like we would with a normal <code>&lt;img&gt;</code> element.
+We also should remove the <code>color=&quot;red&quot;</code> that we set so that the color doesn’t
+get blended in with the texture. The default material color is <code>white</code>, so
+removing the color attribute is good enough.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#222"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Now we’ll see our box with an image texture pulled from online:</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/20329111/368aea3e-ab4b-11e6-89e1-d13c994290ce.png" alt="boxtextureimage"></p>
+<h3 id="using-the-asset-management-system"><a href="#using-the-asset-management-system" class="headerlink" title="Using the Asset Management System"></a>Using the Asset Management System</h3><p>However, we recommend using the <a href="../core/asset-management-system.html">asset management system</a> for performance. The
+asset management system makes it easier for the browser to cache assets (e.g.,
+images, videos, models) and A-Frame will make sure all of the assets are
+fetched before rendering.</p>
+<p>If we define an <code>&lt;img&gt;</code> in the asset management system, later three.js doesn’t
+have to internally create an <code>&lt;img&gt;</code>. Creating the <code>&lt;img&gt;</code> ourselves also gives
+us more control and lets us reuse the texture across multiple entities. A-Frame
+is also smart enough to set <code>crossOrigin</code> and other such attributes when
+necessary.</p>
+<p>To use the asset management system for an image texture:</p>
+<ul>
+<li>Add <code>&lt;a-assets&gt;</code> to the scene.</li>
+<li>Define the texture as an <code>&lt;img&gt;</code> under <code>&lt;a-assets&gt;</code>.</li>
+<li>Give the <code>&lt;img&gt;</code> an HTML ID (e.g., <code>id=&quot;boxTexture&quot;</code>).</li>
+<li>Reference the asset using the ID in DOM selector format (<code>src=&quot;#boxTexture&quot;</code>).</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"boxTexture"</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#222"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="creating-a-custom-environment-optional"><a href="#creating-a-custom-environment-optional" class="headerlink" title="Creating a Custom Environment (Optional)"></a>Creating a Custom Environment (Optional)</h2><p>Previously we had the environment component generate the environment. Though
+it’s good to know a bit on creating a basic environment for learning purposes.</p>
+<h3 id="adding-a-background-to-the-scene"><a href="#adding-a-background-to-the-scene" class="headerlink" title="Adding a Background to the Scene"></a>Adding a Background to the Scene</h3><p>We can add a background with <a href="../primitives/a-sky.html"><code>&lt;a-sky&gt;</code></a> that surrounds the scene.
+<code>&lt;a-sky&gt;</code>, which is a material applied to the inside of a large sphere, can be
+a flat color, a 360&deg; image, or a 360&deg; video. For example, a dark gray
+background would be:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">"red"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">"#222"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Or we can use an image texture to get a 360&deg; background image by using
+<code>src</code> instead of <code>color</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"boxTexture"</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"skyTexture"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">src</span>=<span class="string">"#skyTexture"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="adding-a-ground"><a href="#adding-a-ground" class="headerlink" title="Adding a Ground"></a>Adding a Ground</h3><p>To add a ground, we can use <a href="../primitives/a-plane.html"><code>&lt;a-plane&gt;</code></a>. By default, planes are
+oriented parallel to the XY axis. To make it parallel to the ground, we need to
+orient it along the XZ axis. We can do so by rotating the plane negative
+90&deg; on the X-axis.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>We’ll want the ground to be large, so we can increase the <code>width</code> and <code>height</code>. Let’s
+make it 30-meters in each direction:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">width</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Then we can apply an image texture to our ground:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"groundTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/floor.jpg"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">src</span>=<span class="string">"#groundTexture"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">width</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- ... --&gt;</span></span><br></pre></td></tr></table></figure>
+<p>To tile our texture, we can use the <code>repeat</code> attribute. <code>repeat</code> takes two
+numbers, how many times to repeat in the X direction and how many times to
+repeat in the Y direction (commonly referred to as U and V for textures).</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">src</span>=<span class="string">"#groundTexture"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">width</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"30"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">repeat</span>=<span class="string">"10 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="tweaking-lighting"><a href="#tweaking-lighting" class="headerlink" title="Tweaking Lighting"></a>Tweaking Lighting</h3><p>We can change how the scene is lit by using <a href="../primitives/a-light.html"><code>&lt;a-light&gt;s</code></a>. By default
+if we don’t specify any lights, A-Frame adds an ambient light and a directional
+light. If A-Frame didn’t add lights for us, the scene would be black. Once we
+add lights of our own, however, the default lighting setup is removed and
+replaced with our setup.</p>
+<p>We’ll add an ambient light that has a slight blue-green hue that matches the
+sky. Ambient lights are applied to all entities in the scene (given they have
+the default material applied at least).</p>
+<p>We’ll also add a point light. Point lights are like light bulbs; we can
+position them around the scene, and the effect of the point light on an entity
+depends on its distance to the entity:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"boxTexture"</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"skyTexture"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"groundTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/floor.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">src</span>=<span class="string">"#skyTexture"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-light</span> <span class="attr">type</span>=<span class="string">"ambient"</span> <span class="attr">color</span>=<span class="string">"#445451"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-light</span> <span class="attr">type</span>=<span class="string">"point"</span> <span class="attr">intensity</span>=<span class="string">"2"</span> <span class="attr">position</span>=<span class="string">"2 4 4"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="adding-animation"><a href="#adding-animation" class="headerlink" title="Adding Animation"></a>Adding Animation</h2><p>We can add animations to the box using A-Frame’s <a href="../components/animation.html">built-in animation
+system</a>. Animations interpolate or tween a value over time. We can
+set the animation component on the entity. Let’s have the box hover up and down
+to add some motion to the scene.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"boxTexture"</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">animation</span>=<span class="string">"property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>We tell the animation component to:</p>
+<ul>
+<li>Animate the <a href="../core/entity.html">entity’s</a> <a href="../core/entity.html#object3d">object3D’s</a> position’s Y axis.</li>
+<li>Animate <em>to</em> <code>2.2</code> which is 20 centimeters higher.</li>
+<li>Alternate the <em>dir</em> (direction) of the animation on each repeated cycle of the animation so it goes back and forth.</li>
+<li>Last for 2000 millisecond <em>dur</em> (duration) on each cycle.</li>
+<li><em>Loop</em> or repeat the animation forever.</li>
+</ul>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/20375894/e8b3fa48-ac36-11e6-9ecd-5a5fe33cb9db.gif" alt="animationgif"></p>
+<h2 id="adding-interaction"><a href="#adding-interaction" class="headerlink" title="Adding Interaction"></a>Adding Interaction</h2><p>Let’s add interaction with the box: when we look at the box, we’ll increase the
+size of the box, and when we “click” on the box, we’ll make it spin.</p>
+<p>Given that many developers currently do not have proper VR hardware with
+controllers, we’ll focus this section on using basic mobile and desktop inputs
+with the built-in <a href="../components/cursor.html">cursor component</a>. The cursor component by default provides
+the ability to “click” on entities by staring or gazing at them on mobile, or
+on desktop, looking at an entity and click the mouse. But know that the cursor
+component is just one way to add interactions, things open up if we have access
+to actual controllers.</p>
+<p>To have a visible cursor fixed to the <a href="../components/camera.html">camera</a>, we place the cursor as a child
+of the camera as explained above in <a href="#parent-and-child-transforms">Parent and Child Transforms</a>.</p>
+<p>Since we didn’t specifically define a camera, A-Frame included a default camera
+for us. But since we need to add a cursor as a child of the camera, we will
+need to now define <a href="../components/camera.html"><code>&lt;a-camera&gt;</code></a> containing <code>&lt;a-cursor&gt;</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"boxTexture"</span> <span class="attr">src</span>=<span class="string">"https://i.imgur.com/mYmmbrp.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">animation</span>=<span class="string">"property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-camera</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-cursor</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cursor</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>If we check the <a href="../components/cursor.html">documentation of the cursor component</a> that
+<code>&lt;a-cursor&gt;</code> wraps, we see that it emits hover events such as <code>mouseenter</code>,
+<code>mouseleave</code> as well as <code>click</code>.</p>
+<h3 id="event-listener-component-intermediate"><a href="#event-listener-component-intermediate" class="headerlink" title="Event Listener Component (Intermediate)"></a>Event Listener Component (Intermediate)</h3><p>One way to manually handle the cursor events is to <a href="https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="external">add an event listener with
+JavaScript</a> just like we would with a normal DOM element. If
+you aren’t comfortable with JavaScript, you may skip to <a href="#animating-on-events">Animating on
+Events</a> below.</p>
+<p>In JavaScript, we grab the box with <a href="https://developer.mozilla.org/docs/Web/API/Document/querySelector" target="_blank" rel="external"><code>querySelector</code></a>, use
+<a href="https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="external"><code>addEventListener</code></a>, and then <a href="../core/entity.html#setattribute-componentname-value-propertyvalue-clobber"><code>setAttribute</code></a>
+to make the box grow its scale when its hovered over. Note that A-Frame adds
+features to <code>setAttribute</code> to work with multi-property components. We can pass
+a full <code>{x, y, z}</code> object as the second argument.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> boxEl = <span class="built_in">document</span>.querySelector(<span class="string">'a-box'</span>);</span><br><span class="line">  boxEl.addEventListener(<span class="string">'mouseenter'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    boxEl.setAttribute(<span class="string">'scale'</span>, &#123;<span class="attr">x</span>: <span class="number">2</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">2</span>&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>But a much more robust method would be to encapsulate this logic into an
+A-Frame component. This way, we don’t have to wait for the scene to load, we
+don’t have to run query selectors because components give us context, and
+components can be reused and configured versus having an uncontrolled script
+running on the page. And better yet would be to skip calling <code>.setAttribute</code>
+and set the value on the <code>this.el.object3D.scale</code> directly for performance.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  AFRAME.registerComponent(<span class="string">'scale-on-mouseenter'</span>, &#123;</span><br><span class="line">    schema: &#123;</span><br><span class="line">      to: &#123;<span class="attr">default</span>: <span class="string">'2.5 2.5 2.5'</span>, <span class="attr">type</span>: <span class="string">'vec3'</span>&#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</span><br><span class="line">      <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</span><br><span class="line">      <span class="keyword">this</span>.el.addEventListener(<span class="string">'mouseenter'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        el.object3D.scale.copy(data.to);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>We can attach this component to our box straight from HTML:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  AFRAME.registerComponent(<span class="string">'scale-on-mouseenter'</span>, &#123;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// ...</span></span></span><br><span class="line">  &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">"#boxTexture"</span> <span class="attr">position</span>=<span class="string">"0 2 -5"</span> <span class="attr">rotation</span>=<span class="string">"0 45 45"</span> <span class="attr">scale</span>=<span class="string">"2 2 2"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">animation</span>=<span class="string">"property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">scale-on-mouseenter</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="animating-on-events"><a href="#animating-on-events" class="headerlink" title="Animating on Events"></a>Animating on Events</h3><p>The animation component has a feature to start its animation when the entity
+emits an event. This can be done through the <code>startEvents</code> attribute, which
+takes a comma-separated list of event names.</p>
+<p>We can add two animations for the cursor component’s <code>mouseenter</code> and 
+<code>mouseleave</code> events to change the box’s scale, and one for rotating the box
+around the Y-axis on <code>click</code>. Note that an entity can have multiple animations
+by suffixing the attribute name with <code>__&lt;ID&gt;</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-box</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"#boxTexture"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">"0 2 -5"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">rotation</span>=<span class="string">"0 45 45"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">scale</span>=<span class="string">"2 2 2"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__position</span>=<span class="string">"property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseenter</span>=<span class="string">"property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseleave</span>=<span class="string">"property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="adding-audio"><a href="#adding-audio" class="headerlink" title="Adding Audio"></a>Adding Audio</h2><p>Audio is important for providing immersion and presence in VR. Even adding
+simple white noise in the background goes a long way. We recommend having some
+audio for every scene. One way would be to add an <code>&lt;audio&gt;</code> element to our
+HTML (preferably under <code>&lt;a-assets&gt;</code>) to play an audio file:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"</span> <span class="attr">autoplay</span></span></span><br><span class="line"><span class="tag">      <span class="attr">preload</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Or we can add positional audio using <code>&lt;a-sound&gt;</code>. This makes the sound get
+louder as we approach it and get softer as we distance from it. We could place
+the sound in our scene using <code>position</code>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sound</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"</span> <span class="attr">autoplay</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">position</span>=<span class="string">"-3 1 -4"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sound</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="adding-text"><a href="#adding-text" class="headerlink" title="Adding Text"></a>Adding Text</h2><p>A-Frame comes with a <a href="../components/text.html">text component</a>. There are several ways to render
+text, each with their own advantages and disadvantages. A-Frame comes with an SDF
+text implementation using <a href="https://github.com/Jam3/three-bmfont-text" target="_blank" rel="external"><code>three-bmfont-text</code></a> that is
+relatively sharp and performant:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">text</span>=<span class="string">"value: Hello, A-Frame!; color: #BBB"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">"-0.9 0.2 -3"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">scale</span>=<span class="string">"1.5 1.5 1.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="play-with-it"><a href="#play-with-it" class="headerlink" title="Play With It!"></a>Play With It!</h2><p>And that’s the basic example!</p>
+<p><a href="https://glitch.com/~aframe-basic-guide-with-environment" target="_blank" rel="external">Remix the example on Glitch</a>.</p>
+<p><a href="https://aframe-basic-guide-with-environment.glitch.me" target="_blank" rel="external">View the example on Glitch</a>.</p>
+
+
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+      </footer>
+
+      <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/guides/building-a-basic-scene.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
+</footer>
+
+    </div>
+
+    <div class="secondary-sidebar">
+      
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#starting-with-html">Starting with HTML</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-an-entity">Adding an Entity</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#transforming-an-entity-in-3d">Transforming an Entity in 3D</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#parent-and-child-transforms">Parent and Child Transforms</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#placing-our-box-in-front-of-the-camera">Placing our Box in Front of the Camera</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#default-controls">Default Controls</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-an-environment">Adding an Environment</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#applying-an-image-texture">Applying an Image Texture</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#using-the-asset-management-system">Using the Asset Management System</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#creating-a-custom-environment-optional">Creating a Custom Environment (Optional)</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-a-background-to-the-scene">Adding a Background to the Scene</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#adding-a-ground">Adding a Ground</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#tweaking-lighting">Tweaking Lighting</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-animation">Adding Animation</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-interaction">Adding Interaction</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#event-listener-component-intermediate">Event Listener Component (Intermediate)</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#animating-on-events">Animating on Events</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-audio">Adding Audio</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-text">Adding Text</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#play-with-it">Play With It!</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-basic-guide-with-environment?path=index.html">
+              Basic Guide with Environment
+            </a>
+          </li>
+        
+      </ul>
+    
+  </div>
+
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/guides/building-a-basic-scene.md" target="_blank" rel="external">Edit Page</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:master'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>

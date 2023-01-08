@@ -4,10 +4,7 @@ type: components
 layout: docs
 parent_section: components
 source_code: src/components/text.js
-examples:
-  - title: Stock Font Showcase
-    src: https://glitch.com/~aframe-text-fonts-demo
-
+examples: []
 ---
 
 The text component renders signed distance field (SDF) font text.
@@ -22,7 +19,7 @@ The text component renders signed distance field (SDF) font text.
 [three-bmfont-text]: https://github.com/Jam3/three-bmfont-text
 
 Note that rendering text in 3D is hard. In 2D web development, text is the most
-basic thing because the browser's renderer and layout engine handle
+basic thing because the browser's renderer and layout engine handles
 everything. In a 3D context, we don't have those luxuries. There are several
 other different ways to render text in A-Frame including:
 
@@ -48,13 +45,13 @@ configuration.
 See more examples to see configuration of alignments, anchors, baselines,
 scaling, and auto-sizing.
 
-[exampletext]: https://aframe.io/aframe/examples/test/text/index.html
+[exampletext]: https://a-frobot.github.io/aframe/examples/test/text/index.html
 [codetext]: https://github.com/aframevr/aframe/blob/master/examples/test/text/index.html
-[exampleanchors]: https://aframe.io/aframe/examples/test/text/anchors.html
+[exampleanchors]: https://a-frobot.github.io/aframe/examples/test/text/anchors.html
 [codeanchors]: https://github.com/aframevr/aframe/blob/master/examples/test/text/anchors.html
-[examplescenarios]: https://aframe.io/aframe/examples/test/text/scenarios.html
+[examplescenarios]: https://a-frobot.github.io/aframe/examples/test/text/scenarios.html
 [codescenarios]: https://github.com/aframevr/aframe/blob/master/examples/test/text/scenarios.html
-[examplesizes]: https://aframe.io/aframe/examples/test/text/sizes.html
+[examplesizes]: https://a-frobot.github.io/aframe/examples/test/text/sizes.html
 [codesizes]: https://github.com/aframevr/aframe/blob/master/examples/test/text/sizes.html
 
 - [Text Example][exampletext] ([code][codetext])
@@ -173,12 +170,7 @@ the SDF font, DejaVu:
 
 To use non-ascii characters, you need to create your own custom font. The easiest way is to use [a web-based MSDF tool][msdf-bmfont-web]. Select your required character set and generate your own custom msdf font zip file.
 
-Here is an example of a French character set you can use:
-
-    ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.?!/:;,*§£$ø@+°-~#&²'{}[]|`\()=%*µ àâéèëêïîöôùüûÀÂÉÈËÊÏÎÖÔÜÛçÇ€
-
-Once you download your custom msdf font zip file, extract it, then put both png and json files to your A-Frame directory.
-From A-Frame 0.9.0 and above, you don't need to rename `*.png` to `*-msdf.png` anymore, A-Frame loads the image defined in the json file.
+Once you download your custom msdf font zip file, extract it and rename `*.png` to `*-msdf.png`, then put both png and json files to your A-Frame directory.
 
 Lastly, you should specify the character set used in your HTML by using `<meta>` tag to avoid text to be garbled. If your text is garbled, it is not rendered.
 
@@ -186,12 +178,12 @@ Lastly, you should specify the character set used in your HTML by using `<meta>`
 <html>
   <head>
     <meta charset="UTF-8">
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
       <a-sky color="lightblue"></a-sky>
-      <a-text value="ABCあいうえお日本語" font="custom-msdf.json" font-image="custom-msdf.png" negate="false" scale="2 2 1" position="-2 2 -4"></a-text>
+      <a-text value="ABCあいうえお日本語" font="custom-msdf.json" negate="false" scale="2 2 1" position="-2 2 -4"></a-text>
     </a-scene>
   </body>
 </html>

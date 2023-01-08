@@ -1,0 +1,1498 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-111391431-24"
+      data-aframe-version="1.3.0"
+      data-docs-version="0.7.0">
+  <head>
+    <title>Visual Inspector & Dev Tools – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Visual Inspector &amp; Dev Tools – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Visual Inspector &amp; Dev Tools – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111391431-24', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+</script>
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="introduction">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/1.3.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://supermedium.com/discord/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Discord Channel">
+          <span>Discord</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://aframe.io/subscribe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Newsletter</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/1.3.0/introduction/">
+          1.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.2.0/introduction/">
+          1.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.1.0/introduction/">
+          1.1.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.0.0/introduction/">
+          1.0.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.9.0/introduction/">
+          0.9.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.8.0/introduction/">
+          0.8.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.7.0/introduction/">
+          0.7.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.6.0/introduction/">
+          0.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <p class="section-title-link">Introduction</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/vr-headsets-and-webvr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebVR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/javascript-events-dom-apis.html"
+               class="subnav-link">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.7.0/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link current">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting & Publishing
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Guides</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/guides/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/guides/building-with-magicavoxel.html"
+               class="subnav-link">
+              Building with MagicaVoxel
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Core API</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/globals.html"
+               class="subnav-link">
+              Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Components</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/line.html"
+               class="subnav-link">
+              line
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/link.html"
+               class="subnav-link">
+              link
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Primitives</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-link.html"
+               class="subnav-link">
+              &lt;a-link&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+  <!-- Documentation. -->
+  <div class="content content--structured content--introduction copy">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.7.0/introduction/" class="borderless-link">
+            0.7.0 &rsaquo; Introduction
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        Visual Inspector & Dev Tools
+      </h1>
+
+      
+
+      
+      
+        <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 0.7.0 version of A-Frame. Check out the <a href="/docs/1.3.0/introduction/">documentation for the current 1.3.0 version</a></p>
+</blockquote>
+
+      
+
+      <p>This section will go over many useful tools that will improve VR development
+experience:</p>
+<ul>
+<li><a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external"><strong>A-Frame Inspector</strong></a> - Inspector tool to get a different view of the scene
+and see the visual effect of tweaking entities. The VR analog to the
+browser’s DOM inspector. Can be opened on any A-Frame scene with <code>&lt;ctrl&gt; +
+&lt;alt&gt; + i</code>.</li>
+<li><a href="https://github.com/dmarcos/aframe-motion-capture-components" target="_blank" rel="external"><strong>Motion Capture</strong></a> - A tool to record and replay headset and
+controller pose and events. Hit record, move around inside the VR headset,
+interact with objects with the controller. Then replay that recording back on
+any computer for rapid development and testing. Reduce the amount of time going
+in and out of the headset.</li>
+</ul>
+<p>We’ll later also skim across some of the useful developer tools when using
+A-Frame with <a href="https://github.com/facebook/react" target="_blank" rel="external">React</a>, <a href="https://github.com/facebook/react" target="_blank" rel="external">Preact</a>, and/or <a href="http://reduxjs.org/" target="_blank" rel="external">Redux</a>:</p>
+<ul>
+<li><a href="https://github.com/facebook/react-devtools" target="_blank" rel="external"><strong>React DevTools</strong></a> - If using React or Preact with A-Frame,
+we can use React DevTools to inspect React component props, state, and tree.</li>
+<li><a href="https://github.com/gaearon/react-hot-loader" target="_blank" rel="external"><strong>Hot Loading</strong></a> - If using React or Preact with A-Frame, we can
+use hot module replacement (HMR) to tweak React Components in real-time. All
+application state and internal A-Frame entity data will be preserved, letting
+us see changes in real-time even in the headset.</li>
+<li><a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank" rel="external"><strong>Redux DevTools</strong></a> - If Redux is integrated with A-Frame, we can
+use Redux DevTools to inspect the application state and all of its changes. Or
+do actions such as time travel by committing and rewinding state.</li>
+</ul>
+<p>We’ll go over GUI tools built on top of A-Frame that can be used without code.
+And touch on other tools that can ease development across multiple machines.</p>
+<!--toc-->
+
+<h2 id="a-frame-inspector"><a href="#a-frame-inspector" class="headerlink" title="A-Frame Inspector"></a>A-Frame Inspector</h2><p>The <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">A-Frame Inspector</a> is a visual tool for inspecting and tweaking
+scenes. With the Inspector, we can:</p>
+<ul>
+<li>Drag, rotate, and scale entities using handles and helpers</li>
+<li>Tweak an entity’s components and their properties using widgets</li>
+<li>Immediately see results from changing values without having to go back and
+forth between code and the browser</li>
+</ul>
+<p>The Inspector is similar to the browser’s DOM inspector but tailored for 3D and
+A-Frame. We can toggle the Inspector to open up any A-Frame scene in the wild
+Let’s view source!</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/17754515/b5596eb6-6489-11e6-9485-4cb10fa5b100.png" alt="Inspector Preview"></p>
+<h3 id="opening-the-inspector"><a href="#opening-the-inspector" class="headerlink" title="Opening the Inspector"></a>Opening the Inspector</h3><p>The easiest way to use is to press the <strong><code>&lt;ctrl&gt; + &lt;alt&gt; + i</code></strong> shortcut on
+our keyboard. This will fetch the Inspector code via CDN and open up our scene
+in the Inspector. The same shortcut toggles the Inspector closed.</p>
+<p>Not only can we open our local scenes inside the Inspector, we can open any
+A-Frame scene in the wild using the Inspector (as long as the author has not
+explicitly disabled it).</p>
+<p>See the <a href="https://github.com/aframevr/aframe-inspector" target="_blank" rel="external">Inspector README</a> for details on serving local,
+development, or custom builds of the Inspector.</p>
+<h3 id="using-the-inspector"><a href="#using-the-inspector" class="headerlink" title="Using the Inspector"></a>Using the Inspector</h3><h4 id="scene-graph"><a href="#scene-graph" class="headerlink" title="Scene Graph"></a>Scene Graph</h4><p>The Inspector’s scene graph is a tree-based representation of the scene.  We
+can use the scene graph to <em>select, search, delete, clone, and add entities</em> or
+exporting HTML.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/18565455/ae082fea-7b44-11e6-856f-2b9ca0e60bed.gif" alt="Inspector Scene Graph"></p>
+<p>The scene graph lists A-Frame entities rather than internal three.js objects.
+Given HTML is also a representation of the scene graph, the Inspector’s scene
+graph mirrors the underlying HTML closely. Entities are displayed using their
+HTML ID or HTML tag name.</p>
+<h4 id="viewport"><a href="#viewport" class="headerlink" title="Viewport"></a>Viewport</h4><p>The viewport displays the scene from the Inspector’s point of the view. We can
+rotate, pan, or zoom the viewport to change the view of the scene:</p>
+<ul>
+<li><strong>Rotate:</strong> hold down left mouse button (or one finger down on a trackpad) and drag</li>
+<li><strong>Pan:</strong> hold down right mouse button (or two fingers down on a trackpad) and drag</li>
+<li><strong>Zoom:</strong> scroll up and down (or two-finger scroll on a trackpad)</li>
+</ul>
+<p>From the viewport, we can also select entities and transform them:</p>
+<ul>
+<li><strong>Select</strong>: left-click on an entity, double-click to focus the camera on it</li>
+<li><strong>Transform</strong>: select a helper tool on the upper-right corner of the
+viewport, drag the red/blue/green helpers surrounding an entity to transform
+it</li>
+</ul>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/18565454/ad047c84-7b44-11e6-8c4a-0f1fe55c6682.gif" alt="Inspector Viewport"></p>
+<h4 id="components-panel"><a href="#components-panel" class="headerlink" title="Components Panel"></a>Components Panel</h4><p>The components panel displays the selected entity’s components and properties.
+We can modify values of common components (e.g., position, rotation, scale),
+modify values of attached components, add and remove mixins, and add and remove
+components.</p>
+<p>The type of widget for each property depends on the property type. For example,
+booleans use a checkbox, numbers use a value slide, and colors use a color
+picker.</p>
+<p>We can copy the HTML output of individual components. This is useful for
+visually tweaking and finding the desired value of a component and then syncing
+it back to source code.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/18565449/aa63a7b6-7b44-11e6-999c-450c88812293.gif" alt="Inspector Components"></p>
+<h4 id="shortcuts"><a href="#shortcuts" class="headerlink" title="Shortcuts"></a>Shortcuts</h4><p>We can press <strong><code>h</code></strong> key to see a list of all the shortcuts available.</p>
+<h2 id="motion-capture"><a href="#motion-capture" class="headerlink" title="Motion Capture"></a>Motion Capture</h2><p>Room scale VR can be cumbersome to develop. Every change to the code, we have
+to:</p>
+<ul>
+<li>Open a web page (often running on a separate computer)</li>
+<li>Enter VR</li>
+<li>Put on the headset</li>
+<li>Grab the controllers (often having to turn them back on)</li>
+<li>Do our test run with the headset and controllers</li>
+<li>Take off the headset and controllers and pop open the browser development tools</li>
+<li>Restart the browser if necessary since they’re currently experimental and buggy</li>
+<li>Repeat</li>
+</ul>
+<p>Room scale VR development becomes molasses. But we’ve come up with a workflow
+to supercharge VR development so we can automate, develop rapidly, and on the
+go with <a href="https://github.com/dmarcos/aframe-motion-capture-components/" target="_blank" rel="external">A-Frame Motion Capture
+Components</a>.</p>
+<p>With the motion capture components, we can record VR actions (e.g., headset and
+controller movement, controller button presses), and repeatedly replay those VR
+actions, on any device from anywhere without a headset.</p>
+<h3 id="use-cases"><a href="#use-cases" class="headerlink" title="Use Cases"></a>Use Cases</h3><p><img src="https://cloud.githubusercontent.com/assets/674727/24733615/9cb99dae-1a2d-11e7-85e3-a75d6c06bb91.gif" alt="Rapid Development"></p>
+<p>Below are several real-life use cases of motion capture vastly improving VR
+development ergonomics:</p>
+<ol>
+<li><p><strong>Faster test trials:</strong> No need to take the headset on and off, enter VR,
+grab the controllers, do manual actions, or restart browsers. Just record once
+and develop for hours on a single recording.</p>
+</li>
+<li><p><strong>Development on the go</strong>: Rather than having to re-enter the headset and VR
+every time we want to test something, we can take our recording, send it to,
+say, a Macbook, head out to a coffee shop, and continue developing our VR
+application using the recording on a stable browser. Add some <code>console.log</code>s,
+refactor our application, or freeze the replay with the A-Frame Inspector
+(<code>&lt;ctrl&gt; + &lt;alt&gt; + i</code>) to poke around.</p>
+</li>
+<li><p><strong>Automated integration testing</strong>: We can record a bunch of different recordings as
+regression test cases and QA. Store the recordings, do some development, and
+occasionally click through the recordings to make sure everything still works.
+We store multiple recordings in projects for later testing.</p>
+</li>
+<li><p><strong>Multiple developers sharing one headset</strong>: One developer can take a recording
+with the Vive and go off somewhere else to develop with the recording, leaving
+the Vive free for the other developers to use or take recordings.</p>
+</li>
+<li><p><strong>Requests for recordings</strong>: Perhaps we don’t have a Vive or Rift handy but our
+colleague or friend does.  Give them a link to our web application maybe via
+<a href="https://ngrok.io" target="_blank" rel="external">ngrok</a> (isn’t the Web awesome?), have them take a recording,
+and send it to us! Now we’re unblocked from developing.</p>
+</li>
+<li><p><strong>Demonstrating bugs</strong>: Or let’s say we found a bug in a VR web application
+and want to show it to someone. Take a recording and send it to them to debug.
+No need to give bug reproduction steps, it’s all in the recording!</p>
+</li>
+</ol>
+<ol start="7">
+<li><strong>Automated unit testing</strong>: We can use recordings with unit testing
+frameworks such as Karma and Mocha to replay the recording and make assertions.
+For example, touch an box and check that it changes color. See <a href="https://github.com/wmurphyrd/aframe-machinima-testing/" target="_blank" rel="external">A-Frame
+Machinima Testing</a> by <a href="https://twitter.com/datatitian" target="_blank" rel="external">William Murphy</a> for an example.</li>
+</ol>
+<h3 id="how-to-record"><a href="#how-to-record" class="headerlink" title="How to Record"></a>How to Record</h3><p>Read the <a href="https://github.com/dmarcos/aframe-motion-capture-components/" target="_blank" rel="external">Motion Capture
+documentation</a>
+for more information. Here’s how to set up the recording:</p>
+<ol>
+<li>Drop the Motion Capture Components script tag into our HTML file (e.g., <code>&lt;script src=&quot;https://unpkg.com/aframe-motion-capture-components/dist/aframe-motion-capture-components.min.js&quot;&gt;</code>)</li>
+<li>Add the <code>avatar-recorder</code> component to the scene (i.e., <code>&lt;a-scene avatar-recorder&gt;</code>)</li>
+<li>Enter VR</li>
+<li>Press <code>&lt;space&gt;</code> to start recording</li>
+<li>Record movements and actions</li>
+<li>Press <code>&lt;space&gt;</code> to stop recording</li>
+<li>Save the recording JSON file or upload it by hitting <code>u</code> to get a short URL to share between computers</li>
+</ol>
+<p>Now we can replay the recording. We can try recording the camera with WASD and
+mouse drag controls right now on a desktop. Head to the <a href="http://dmarcos.github.io/aframe-motion-capture-components/" target="_blank" rel="external">Record
+Example</a>, open the
+browser Console to get feedback, and hit <code>&lt;space&gt;</code> to start and stop recording!</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/24766726/3d660b7e-1ab1-11e7-9f64-d97b5732ec43.gif" alt="Record"></p>
+<h3 id="how-to-replay"><a href="#how-to-replay" class="headerlink" title="How to Replay"></a>How to Replay</h3><p>By default, the recording will also be saved and replayed from localStorage. If
+we want to take our recording on the go, here’s how to replay a recording
+(assuming we already have the script tag above):</p>
+<ol>
+<li>Put the recording file somewhere accessible to the web page (i.e., in the project directory or online)</li>
+<li>Add <code>avatar-replayer</code> component to the scene (i.e., <code>&lt;a-scene avatar-replayer&gt;</code>)</li>
+<li>Append <code>?avatar-recording=path/to/recording.json</code> to the URL <em>or</em> set <code>&lt;a-scene avatar-replayer=&quot;src: path/to/recording.json&gt;</code></li>
+</ol>
+<p>Then replay the recording on any device from anywhere without a headset to our
+heart’s content. Get in the headset, record some clicks, and then from a
+laptop, we can build event handlers on top of the controller events we emitted
+in the recording.</p>
+<h3 id="spectator-mode"><a href="#spectator-mode" class="headerlink" title="Spectator Mode"></a>Spectator Mode</h3><p>The A-Frame Motion Capture Components have a Spectator Mode feature that can be
+enabled from the <code>avatar-replayer</code> component:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a-scene avatar-replayer=&quot;spectatorMode: true&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>This lets us view the recording from a third-person view. This can be useful
+since it is hard to see what was happening in first person. The first-person
+view is naturally shaky, hands would occlude the camera, actions would be
+happening off-screen, and its hard to focus on one place if the camera is
+always moving away. The Spectator Mode lets us free move around the scene and
+view at whatever angle or focus on whatever area.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/24733331/f2bc6094-1a2b-11e7-9442-bcf30d18af79.gif" alt="Spectator Mode"></p>
+<h2 id="gui-tools-based-on-a-frame"><a href="#gui-tools-based-on-a-frame" class="headerlink" title="GUI Tools Based on A-Frame"></a>GUI Tools Based on A-Frame</h2><p>People have built tools on top of A-Frame to abstract away code via an
+interface or application, making content creation even easier. These act as
+more complete editors rather than developer tools.</p>
+<h3 id="webvr-studio"><a href="#webvr-studio" class="headerlink" title="WebVR Studio"></a><a href="http://webvrstudio.com/" target="_blank" rel="external">WebVR Studio</a></h3><p><em>“The new design app for virtual reality. Whether you want to prototype VR
+interactions, or create fully immersive experiences, WebVR Studio helps you get
+there.  Design impressive VR scenes for phone and desktop browsers.”</em></p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25638463/5cc90a3e-2f3d-11e7-987e-d8d299773f67.jpg" alt="WebVR Studio"></p>
+<h3 id="ideaspacevr"><a href="#ideaspacevr" class="headerlink" title="IdeaSpaceVR"></a><a href="https://www.ideaspacevr.org/" target="_blank" rel="external">IdeaSpaceVR</a></h3><p><em>“Manage your virtual reality spaces and assets like you would manage blog
+posts. Run it on your own server. All you need is PHP and a database (eg.
+MySQL, MariaDB).”</em></p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/26017126/ed464306-371c-11e7-9554-2848b2773d71.jpg" alt="IdeaSpaceVR"></p>
+<h3 id="fader"><a href="#fader" class="headerlink" title="Fader"></a><a href="https://fader.vragments.com/" target="_blank" rel="external">Fader</a></h3><p><em>“Create your own VR story now. Fader allows you to create and publish VR
+stories.  Add multiple layers of information to your 360 spheres, design scenes
+and tell your story.  Easy, fast and web based!”</em></p>
+<p><em>“Fader is designed and developed by Vragments, a Berlin based Virtual Reality
+startup. Vragments is a team of technologists and journalists who are dedicated
+to bring new ways of storytelling to content producers by providing an
+easy-to-use VR tool.</em>“</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25638761/53535724-2f3e-11e7-90f2-5efb3a58c549.jpg" alt="Fader"></p>
+<h2 id="cross-machine-development"><a href="#cross-machine-development" class="headerlink" title="Cross-Machine Development"></a>Cross-Machine Development</h2><p>With VR development, it is common to develop across multiple machines. For
+example, developing on a laptop and testing on a VR desktop. The tools below
+help with that process:</p>
+<h3 id="synergy"><a href="#synergy" class="headerlink" title="Synergy"></a>Synergy</h3><p><img src="https://cloud.githubusercontent.com/assets/674727/25640613/07a10392-2f45-11e7-94a5-f07cf8e32ad9.jpg" alt="Synergy"></p>
+<p><a href="https://symless.com/synergy" target="_blank" rel="external">Synergy</a> lets us share one mouse and keyboard
+between multiple computers. For example, this lets us control a desktop from a
+laptop. We can code from the laptop. Then using the laptop, we can control the
+desktop to refresh the browser, enter VR, visit different URLs, take motion
+capture recordings, or inspect the browser’s developer tools. No need to have
+two sets of keyboards and mice on our desk space.</p>
+<p>A Synergy Basic license costs $19, but it is well worth it if we are developing
+with multiple computers.</p>
+<h3 id="ngrok"><a href="#ngrok" class="headerlink" title="ngrok"></a>ngrok</h3><p><img src="https://cloud.githubusercontent.com/assets/674727/25640652/38effdcc-2f45-11e7-99a9-c98bd694e79c.jpg" alt="ngrok"></p>
+<p><a href="https://ngrok.io" target="_blank" rel="external">ngrok</a> lets us easily expose a local development server for
+other computers to access, even through firewalls or NAT networks. The steps
+are to:</p>
+<ol>
+<li>Download ngrok</li>
+<li>Open the command line and head to the same directory ngrok was downloaded to</li>
+<li>Have a local development server running (e.g., <code>python -m SimpleHTTPServer 8080</code>)</li>
+<li>Run <code>./ngrok http &lt;PORT&gt;</code> (e.g., <code>./ngrok http 8080</code>)</li>
+<li>An ngrok instance will spin up and provide a URL that the other computer can
+access from its browser (e.g., <code>https://abcdef123456.ngrok.io</code>)</li>
+</ol>
+<p>ngrok is most ergonomic if we get a premium account and reserve our own
+domains to get easy-to-remember URLs. Otherwise, the URL is randomized each
+time and very hard to type. The Basic license provides 3 reserved domains for
+$5/mo, and the Pro license provides 2 simultaneous instances for $8.25/mo. <a href="https://ngrok.com/product#pricing" target="_blank" rel="external">See
+ngrok pricing details</a>.</p>
+<p>With reserved domains, we can reserve a URL like <code>https://abc.ngrok.io</code>. Note
+<code>abc</code> is just an example, and it is currently taken. Then every time we start
+ngrok, we pass the domain:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">./ngrok http --subdomain=abc 8080</span><br></pre></td></tr></table></figure>
+<p>Every time we start ngrok, we can reliably use the same URL. To make it even
+simpler, we could add a Bash alias:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alias ngrok=&quot;~/path/to/ngrok http --subdomain=abc&quot;</span><br></pre></td></tr></table></figure>
+<p>And use it simply from the command line from anywhere:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ngrok 8080</span><br></pre></td></tr></table></figure>
+<p>Alternatively, we could have both computers connected on the same local
+network, and use <code>ipconfig</code> or <code>ifconfig</code> to point one computer to the other
+using the local IP address (e.g., <code>http://192.168.1.135:8000</code>). But that can
+disrupt workflow because we have to run commands to get the local IP address,
+the local IP address often changes, and it’s hard to remember and type the IP.</p>
+<h3 id="motion-capture-1"><a href="#motion-capture-1" class="headerlink" title="Motion Capture"></a>Motion Capture</h3><p>Motion capture was described above, but to reiterate, motion capture helps
+immensely in developing across machines. The VR recordings can be shared, and
+replayed on other computers. After taking a motion capture recording with
+<code>&lt;space&gt;</code>, press <code>u</code> on the keyboard to upload the recording data and get a URL
+that can easily be transferred (versus emailing ourselves). Alternatively,
+recordings can be transferred using <a href="https://file.io" target="_blank" rel="external">file.io</a>.</p>
+
+
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+          <span class="float-left">
+            <a href="/docs/0.7.0/introduction/writing-a-component.html" class="guide-link guide-link-left">← Writing a Component </a></span>
+        
+        
+          <span class="float-right">
+            <a href="/docs/0.7.0/introduction/hosting-and-publishing.html" class="guide-link guide-link-right">Hosting &amp; Publishing →</a></span>
+        
+      </footer>
+
+      <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/visual-inspector-and-dev-tools.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
+</footer>
+
+    </div>
+
+    <div class="secondary-sidebar">
+      
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#a-frame-inspector">A-Frame Inspector</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#opening-the-inspector">Opening the Inspector</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#using-the-inspector">Using the Inspector</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#motion-capture">Motion Capture</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#use-cases">Use Cases</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#how-to-record">How to Record</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#how-to-replay">How to Replay</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#spectator-mode">Spectator Mode</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#gui-tools-based-on-a-frame">GUI Tools Based on A-Frame</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#webvr-studio">WebVR Studio</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#ideaspacevr">IdeaSpaceVR</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#fader">Fader</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#cross-machine-development">Cross-Machine Development</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#synergy">Synergy</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#ngrok">ngrok</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#motion-capture-1">Motion Capture</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/visual-inspector-and-dev-tools.md" target="_blank" rel="external">Edit Page</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.7.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>

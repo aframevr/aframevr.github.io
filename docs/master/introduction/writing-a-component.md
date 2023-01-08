@@ -293,25 +293,17 @@ AFRAME.registerComponent('log', {
     var data = this.data;
     var el = this.el;
 
-    // `event` updated.
-    if (data.event !== oldData.event) {
-
-      // Remove the previous event listener, if it exists.
-      if (oldData.event) {
-        el.removeEventListener(oldData.event, this.eventHandlerFn);
-      }
-
-      // Add listener for new event, if it exists.
-      if (data.event) {
-        el.addEventListener(data.event, this.eventHandlerFn);
-      }
+    // `event` updated. Remove the previous event listener if it exists.
+    if (oldData.event && data.event !== oldData.event) {
+      el.removeEventListener(oldData.event, this.eventHandlerFn);
     }
 
-    if (!data.event) {
+    if (data.event) {
+      el.addEventListener(data.event, this.eventHandlerFn);
+    } else {
       console.log(data.message);
     }
   }
-  
 });
 ```
 
@@ -642,15 +634,6 @@ AFRAME.registerComponent('follow', {
 });
 ```
 
-Later, when we use this component via HTML, the syntax will look like:
-
-```html
-<a-scene>
-  <a-box id="target-box" color="#5E82C5" position="-3 0 -5"></a-box>
-  <a-box follow="target: #target-box; speed: 1" color="#FF6B6B" position="3 0 -5"></a-box>
-</a-scene>
-```
-
 ### Creating a Helper Vector
 
 Since the `.tick()` handler will be called on every frame (e.g., 90 times per
@@ -747,30 +730,24 @@ source on GitHub.  One way to learn is to browse the source code of other
 components to see how they're built and what use cases they provide for. Here
 are a few places to look:
 
+[registry]: https://aframe.io/registry/
 [corecomponents]: https://github.com/aframevr/aframe/tree/master/src/components
 [paintercomponents]: https://github.com/aframevr/a-painter/tree/master/src/components
 
-[weekofaframe]: https://aframe.io/blog/
-[officialsite]: https://aframe.io/
-[community]: https://aframe.io/community/
-[npmcomponents]: https://www.npmjs.com/search?q=keywords:aframe&page=1&ranking=optimal
-[aframetwitter]: https://twitter.com/aframevr/
-
+- [A-Frame Registry][registry] - Curated community components.
 - [A-Frame core components][corecomponents] - Source code of A-Frame's standard components.
 - [A-Painter components][paintercomponents] - Application-specific components for A-Painter.
-- [**A Week of A-Frame** Weekly Series][weekofaframe]
-- [Official Site][officialsite]
-- [Community][community]
-- [Components on npm][npmcomponents]
-- [Twitter][aframetwitter]
 
 ## Publishing a Component
 
 [angle]: https://www.npmjs.com/package/angle
+[awesome]: https://github.com/aframevr/awesome-aframe
+[registry]: https://aframe.io/registry/
 
 Many components in practice will be application-specific or one-off components.
 But if you wrote a component that could be useful to the community and is
-generalized enough to work in other applications, you should publish it!
+generalized enough to work in other applications, you should publish it to the
+ecosystem via [the A-Frame Registry][registry] and [`awesome-aframe`][awesome]!
 
 For a component template, we recommend using [`angle`][angle].  `angle` is a
 command-line interface for A-Frame; one of its features is to set up a
@@ -781,6 +758,12 @@ with all the other components in the ecosystem. To install the template:
 npm install -g angle && angle initcomponent
 ```
 
+[guidelines]: https://github.com/aframevr/aframe-registry#submitting-a-component
+[pr]: https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
+
 `initcomponent` will ask for some information like the component name to get
-the template set up. Write some code, examples, and documentation, and publish
-to GitHub and npm!
+the template set up. Write some code, examples, and documentation, and [send a
+pull request][pr] to the [A-Frame Registry][registry] to get it featured! Follow the
+[Registry guidelines][guidelines], we'll do a quick code review, and then the
+community will be able to use your component, and hopefully send some helpful
+pull requests back if needed!

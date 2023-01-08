@@ -56,11 +56,9 @@ to the distance to the intersection point.
 
 ## Properties
 
-| Properties        | Description                                             |
-|-------------------|---------------------------------------------------------|
-| hand              | `left` or `right`.                                      |
-| model             | Whether the default model for the controller is loaded. |
-| defaultModelColor | Color for the default controller model.                 |
+| Properties | Description        |
+|------------|--------------------|
+| hand       | `left` or `right`. |
 
 ## Customizing the Raycaster
 
@@ -81,5 +79,5 @@ See [*Raycaster: Customizing the Line*][customize].
 For example:
 
 ```html
-<a-entity laser-controls raycaster="lineColor: red; lineOpacity: 0.5"></a-entity>
+<a-entity laser-controls line="color: red; opacity: 0.75"></a-entity>
 ```

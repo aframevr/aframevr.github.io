@@ -1,0 +1,1458 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-111391431-24"
+      data-aframe-version="1.3.0"
+      data-docs-version="0.9.0">
+  <head>
+    <title>Asset Management System – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Asset Management System – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Asset Management System – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111391431-24', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+</script>
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="core">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/1.3.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://supermedium.com/discord/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Discord Channel">
+          <span>Discord</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://aframe.io/subscribe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Newsletter</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/1.3.0/introduction/">
+          1.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.2.0/introduction/">
+          1.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.1.0/introduction/">
+          1.1.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.0.0/introduction/">
+          1.0.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.9.0/introduction/">
+          0.9.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.8.0/introduction/">
+          0.8.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.7.0/introduction/">
+          0.7.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.6.0/introduction/">
+          0.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Introduction</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/vr-headsets-and-webvr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebVR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/javascript-events-dom-apis.html"
+               class="subnav-link">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting & Publishing
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Guides</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/guides/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <p class="section-title-link">Core API</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.9.0/core/asset-management-system.html"
+               class="subnav-link current">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/globals.html"
+               class="subnav-link">
+              Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Components</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/animation.html"
+               class="subnav-link">
+              Animation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/background.html"
+               class="subnav-link">
+              background
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/line.html"
+               class="subnav-link">
+              line
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/link.html"
+               class="subnav-link">
+              link
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/loading-screen.html"
+               class="subnav-link">
+              loading-screen
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/oculus-go-controls.html"
+               class="subnav-link">
+              oculus-go-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/renderer.html"
+               class="subnav-link">
+              renderer
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/vive-focus-controls.html"
+               class="subnav-link">
+              vive-focus-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Primitives</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-link.html"
+               class="subnav-link">
+              &lt;a-link&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+  <!-- Documentation. -->
+  <div class="content content--structured content--core copy">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.9.0/core/entity.html" class="borderless-link">
+            0.9.0 &rsaquo; Core API
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        Asset Management System
+      </h1>
+
+      
+
+      
+      
+        <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 0.9.0 version of A-Frame. Check out the <a href="/docs/1.3.0/introduction/">documentation for the current 1.3.0 version</a></p>
+</blockquote>
+
+      
+
+      <p>A-Frame has an asset management system that allows us to place our assets in
+one place and to preload and cache assets for better performance. Note the asset
+management system is purely for <strong>preloading assets</strong>. Assets that are set on
+entities at runtime could be done via direct URLs to the assets.</p>
+<p>Games and rich 3D experiences traditionally preload their assets, such as
+models or textures, before rendering their scenes. This makes sure that assets
+aren’t missing visually, and this is beneficial for performance to ensure
+scenes don’t try to fetch assets while rendering.</p>
+<p>We place assets within <code>&lt;a-assets&gt;</code>, and we place <code>&lt;a-assets&gt;</code> within
+<code>&lt;a-scene&gt;</code>. Assets include:</p>
+<ul>
+<li><code>&lt;a-asset-item&gt;</code> - Miscellaneous assets such as 3D models and materials</li>
+<li><code>&lt;audio&gt;</code> - Sound files</li>
+<li><code>&lt;img&gt;</code> - Image textures</li>
+<li><code>&lt;video&gt;</code> - Video textures</li>
+</ul>
+<p>The scene won’t render or initialize until the browser fetches (or errors out)
+all the assets or the asset system reaches the timeout.</p>
+<!--toc-->
+
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>We can define our assets in <code>&lt;a-assets&gt;</code> and point to those assets from our
+entities using selectors:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- Asset management system. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"horse-obj"</span> <span class="attr">src</span>=<span class="string">"horse.obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">id</span>=<span class="string">"horse-mtl"</span> <span class="attr">src</span>=<span class="string">"horse.mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"giant"</span> <span class="attr">scale</span>=<span class="string">"5 5 5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"neigh"</span> <span class="attr">src</span>=<span class="string">"neigh.mp3"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"advertisement"</span> <span class="attr">src</span>=<span class="string">"ad.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"kentucky-derby"</span> <span class="attr">src</span>=<span class="string">"derby.mp4"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Scene. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">src</span>=<span class="string">"#advertisement"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sound</span> <span class="attr">src</span>=<span class="string">"#neigh"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sound</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane"</span> <span class="attr">material</span>=<span class="string">"src: #kentucky-derby"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"giant"</span> <span class="attr">obj-model</span>=<span class="string">"obj: #horse-obj; mtl: #horse-mtl"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>The scene and its entities will wait for every asset (up until the timeout)
+before initializing and rendering.</p>
+<h2 id="cross-origin-resource-sharing-cors"><a href="#cross-origin-resource-sharing-cors" class="headerlink" title="Cross-Origin Resource Sharing (CORS)"></a>Cross-Origin Resource Sharing (CORS)</h2><p>Since A-Frame fetches assets using <a href="https://developer.mozilla.org/docs/Web/API/XMLHttpRequest" target="_blank" rel="external">XHRs</a>, browser security requires the
+browser to serve assets with <a href="https://wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="external">cross-origin resource sharing (CORS)
+headers</a> if the asset is on a different domain. Otherwise, we’d have
+to host assets on the same origin as the scene.</p>
+<p>For other options, <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> serves everything with CORS headers.
+We recommend GitHub Pages as a simple deployment platform. Or another service
+that serves files with CORS headers set (such as Amazon S3).</p>
+<p>Given that <a href="https://developer.mozilla.org/docs/Web/HTML/CORS_enabled_image" target="_blank" rel="external">CORS headers</a> <em>are</em> set, <code>&lt;a-assets&gt;</code> will automatically set
+<code>crossorigin</code> attributes on media elements (e.g., <code>&lt;audio&gt;</code>, <code>&lt;img&gt;</code>,
+<code>&lt;video&gt;</code>) if it detects the resource is on a different domain.</p>
+<h2 id="preloading-audio-and-video"><a href="#preloading-audio-and-video" class="headerlink" title="Preloading Audio and Video"></a>Preloading Audio and Video</h2><p>Audio and video assets will only block the scene if we set <code>autoplay</code> or if we
+set <code>preload=&quot;auto&quot;</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- These will not block. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"blockus.mp3"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"loadofblocks.mp4"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- These will block. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"blocky.mp3"</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"blockiscooking.mp4"</span> <span class="attr">preload</span>=<span class="string">"auto"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="setting-a-timeout"><a href="#setting-a-timeout" class="headerlink" title="Setting a Timeout"></a>Setting a Timeout</h2><p>We can set a timeout that when reached, the scene will begin rendering and
+entities will begin initializing regardless of whether all the assets have
+loaded. The default timeout is 3 seconds. To set a different timeout, we just
+pass in the number of milliseconds to the <code>timeout</code> attribute:</p>
+<p>If some assets are taking a long time to load, we may want to set an
+appropriate timeout such that the user isn’t waiting all day in case their
+network is slow.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span> <span class="attr">timeout</span>=<span class="string">"10000"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- You got until the count of 10 to load else the show will go on without you. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bigimage.png"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><p>Since <code>&lt;a-assets&gt;</code> and <code>&lt;a-asset-item&gt;</code> are <em>nodes</em> in A-Frame, they will emit
+the <code>loaded</code> event when they say they have finished loading.</p>
+<h3 id><a href="#" class="headerlink" title></a><a-assets></a-assets></h3><table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loaded</td>
+<td>All assets were loaded, or assets timed out.</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>Assets timed out.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load-progress-on-individual-assets"><a href="#load-progress-on-individual-assets" class="headerlink" title="Load Progress on Individual Assets"></a>Load Progress on Individual Assets</h2><h3 id="lt-a-asset-item-gt"><a href="#lt-a-asset-item-gt" class="headerlink" title="&lt;a-asset-item&gt;"></a><code>&lt;a-asset-item&gt;</code></h3><p><code>&lt;a-asset-item&gt;</code> invokes the <a href="https://threejs.org/docs/#api/en/loaders/FileLoader" target="_blank" rel="external">three.js
+FileLoader</a>.  We can use
+<code>&lt;a-asset-item&gt;</code> for any file type. When finished, it will set its <code>data</code>
+member with the text response.</p>
+<table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>Fetch error. Event detail contains <code>xhr</code> with <code>XMLHttpRequest</code> instance.</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>Emitted on progress. Event detail contains <code>xhr</code> with <code>XMLHttpRequest</code> instance, <code>loadedBytes</code>, and <code>totalBytes</code>.</td>
+</tr>
+<tr>
+<td>loaded</td>
+<td>Asset pointed to by <code>src</code> was loaded.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lt-img-gt"><a href="#lt-img-gt" class="headerlink" title="&lt;img&gt;"></a><code>&lt;img&gt;</code></h3><p>Images are a standard DOM element so we can listen to the standard DOM events.</p>
+<table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>load</td>
+<td>Image was loaded.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="htmlmediaelement"><a href="#htmlmediaelement" class="headerlink" title="HTMLMediaElement"></a><code>HTMLMediaElement</code></h3><p>Audio and video assets are <a href="https://developer.mozilla.org/docs/Web/API/HTMLMediaElement" target="_blank" rel="external"><code>HTMLMediaElement</code></a>s. The browser triggers
+particular events on these elements; noted here for convenience:</p>
+<table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>There was an error loading the asset.</td>
+</tr>
+<tr>
+<td>loadeddata</td>
+<td>Progress.</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>Progress.</td>
+</tr>
+</tbody>
+</table>
+<p>A-Frame uses these progress events, comparing how much time the browser
+buffered with the duration of the asset, to detect when the asset becomes loaded.</p>
+<h2 id="specifying-response-type"><a href="#specifying-response-type" class="headerlink" title="Specifying Response Type"></a>Specifying Response Type</h2><p>Content fetched by <code>&lt;a-asset-item&gt;</code> will be returned as plain text. If we want
+to use a different response type such as <code>arraybuffer</code>, use <code>&lt;a-asset-item&gt;</code>‘s
+<code>response-type</code> attribute:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-asset-item</span> <span class="attr">response-type</span>=<span class="string">"arraybuffer"</span> <span class="attr">src</span>=<span class="string">"model.gltf"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-asset-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="how-it-works-internally"><a href="#how-it-works-internally" class="headerlink" title="How It Works Internally"></a>How It Works Internally</h2><p>Every element in A-Frame inherits from <code>&lt;a-node&gt;</code>, the <code>AFRAME.ANode</code>
+prototype. <code>ANode</code> controls load and initialization order. For an element to
+initialize (whether it be <code>&lt;a-assets&gt;</code>, <code>&lt;a-asset-item&gt;</code>, <code>&lt;a-scene&gt;</code>, or
+<code>&lt;a-entity&gt;</code>), its children must have already initialized. Nodes initialize
+bottom up.</p>
+<p><code>&lt;a-assets&gt;</code> is an <code>ANode</code>, and it waits for its children to load before
+it loads. And since <code>&lt;a-assets&gt;</code> is a child of <code>&lt;a-scene&gt;</code>, the scene
+effectively must wait for all assets to load. We also added extra load logic to
+<code>&lt;a-entity&gt;</code> such that they explicitly wait for <code>&lt;a-assets&gt;</code> to load if we have
+defined <code>&lt;a-assets&gt;</code>.</p>
+<p><code>&lt;a-asset-item&gt;</code> uses <code>THREE.FileLoader</code> to fetch files. three.js stores the
+returned data in <code>THREE.Cache</code>. Every three.js loader inherits from
+<code>THREE.FileLoader</code>, whether they are a <code>ColladaLoader</code>, <code>OBJLoader</code>,
+<code>ImageLoader</code>, etc. And they all have access and are aware of the central
+<code>THREE.Cache</code>. If A-Frame already fetched a file, A-Frame won’t try to fetch it
+again.</p>
+<p>Thus, since we block entity initialization on assets, by the time entities
+load, all assets will have been already fetched. As long as we define
+<code>&lt;a-asset-item&gt;</code>s, and the entity is fetching files using some form
+<code>THREE.FileLoader</code>, then caching will automatically work.</p>
+<h2 id="accessing-the-fileloader-and-cache"><a href="#accessing-the-fileloader-and-cache" class="headerlink" title="Accessing the FileLoader and Cache"></a>Accessing the <code>FileLoader</code> and Cache</h2><p>To access the three.js <code>FileLoader</code> if we want to listen more closely:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">'a-assets'</span>).fileLoader);</span><br></pre></td></tr></table></figure>
+<p>To access the cache that stores XHR responses:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(THREE.Cache);</span><br></pre></td></tr></table></figure>
+
+
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+          <span class="float-right">
+            <a href="/docs/0.9.0/core/globals.html" class="guide-link guide-link-right">Globals →</a></span>
+        
+      </footer>
+
+      <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/core/asset-management-system.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
+</footer>
+
+    </div>
+
+    <div class="secondary-sidebar">
+      
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing (CORS)</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#preloading-audio-and-video">Preloading Audio and Video</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#setting-a-timeout">Setting a Timeout</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#"></a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#load-progress-on-individual-assets">Load Progress on Individual Assets</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#lt-a-asset-item-gt">&lt;a-asset-item&gt;</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#lt-img-gt">&lt;img&gt;</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#htmlmediaelement">HTMLMediaElement</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#specifying-response-type">Specifying Response Type</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#how-it-works-internally">How It Works Internally</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#accessing-the-fileloader-and-cache">Accessing the FileLoader and Cache</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        <li class="subnav-item">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/core/asset-management-system.md" style="font-style: italic">
+            No examples for this page yet. Add one!
+          </a>
+        </li>
+      </ul>
+    
+  </div>
+
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/core/asset-management-system.md" target="_blank" rel="external">Edit Page</a>
+        
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v0.9.0/src/core/a-assets.js" title="View Source" target="_blank" rel="external">View Source</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.9.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>

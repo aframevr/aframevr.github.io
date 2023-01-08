@@ -166,12 +166,10 @@ need to know the component's npm package name and the path:
 <html>
   <head>
     <title>360° Image Browser</title>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
-     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.jss"></script>
-    
   </head>
   <body>
     <a-scene>
@@ -203,11 +201,11 @@ template component.
 [template]: https://github.com/supermedium/superframe/tree/master/components/template#aframe-template-component
 
 If we read the [template component's documentation][template], we see one way
-to define a template is via a script tag in `<head>`. Let's make our link a
+to define a template is via a script tag in `<a-assets>`. Let's make our link a
 template and give it a name using an `id`:
 
 ```html
-<head>
+<a-assets>
   <!-- ... -->
   <script id="plane" type="text/html">
     <a-entity class="link"
@@ -215,7 +213,7 @@ template and give it a name using an `id`:
       material="shader: flat; src: #cubes-thumb"
       sound="on: click; src: #click-sound"></a-entity>
   </script>
-</head>
+</a-assets>
 ```
 
 Then we can use the template to create multiple planes without much work:
@@ -309,7 +307,7 @@ the `setAttribute` calls. Notice that the event-set component can have
 [multiple instances][multiple]:
 
 ```html
-<script id="plane" type="text/html">
+<script id="link" type="text/html">
   <a-entity class="link"
     geometry="primitive: plane; height: 1; width: 1"
     material="shader: flat; src: ${thumb}"
@@ -370,7 +368,7 @@ The `animation__fadeback` is interesting in that we start it once the
 that is emitted by animation component when an animation finishes. We
 effectively chained these animations!
 
-[Writing a Component]: ../introduction/writing-a-component.md
+[Writing a Component]: ../core/writing-a-component.md
 
 Wielding components, we were able to do a lot in a few dozen lines of HTML,
 working on VR across most headsets and browsers. Though the ecosystem has a lot

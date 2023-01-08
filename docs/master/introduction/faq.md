@@ -9,7 +9,7 @@ order: 14
 [ecs]: ./entity-component-system.md
 [github]: http://github.com/aframevr/aframe/
 [three]: http://threejs.org
-[slack]: https://aframevr.slack.com/join/shared_invite/zt-f6rne3ly-ekVaBU~Xu~fsZHXr56jacQ
+[slack]: https://aframe.io/slack-invite
 [twitter]: https://twitter.com/aframevr/
 [stackoverflow]: http://stackoverflow.com/questions/tagged/aframe/
 
@@ -57,22 +57,10 @@ complexity and characteristics of each individual application. To get the best
 use of resources, we will need deeper understanding about 3D graphics.  See
 [best performance practices and guidelines][bestpractices] to get started.
 
-## Why is my experience not entering VR or AR mode?
-
-[release]: https://github.com/aframevr/aframe/releases
-[webxr]: https://immersive-web.github.io/webxr/
-
-If you are using A-Frame 1.4.0 or older you probably need to update to the [latest release][release]. Browsers are migrating to the [WebXR standard][webxr] and old versions might no longer work.
-
-You also have to serve your content over HTTPS. The WebXR API won't be available over HTTP.
-
 ## Why does my asset (e.g., image, video, model) not load?
 
 [cors]: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
 [localserver]: ./installation.md#local-development
-[startplayback]: https://aframe.io/aframe/examples/test/video/
-[videotestcode]: https://github.com/aframevr/aframe/blob/master/examples/test/video/index.html
-[videoplaycomponent]: https://github.com/aframevr/aframe/blob/master/examples/js/play-on-click.js
 
 First, if you are doing local development, make sure you are [using a local
 server][localserver] so that asset requests work properly.
@@ -84,8 +72,6 @@ the same domain (directory) as your application.
 
 If you are trying to load a video, make sure the browser supports the video
 (i.e., encoding, framerate, size).
-
-Video autoplay policies are getting more and more strict and rules might vary across browsers. Mandatory user gesture is now commonly enforced. For maximum compatibility, you can offer a button that the user can click to start [video playback][startplayback]. [Simple sample code][videotestcode] can be found in the docs. Pay particular attention to the [play-on-click component][videoplaycomponent]
 
 Read the [*Hosting and Publishing* guide](./hosting-and-publishing.md) for more
 information.
@@ -105,11 +91,11 @@ stringification operations. This also means mutation observations will not
 fire. Use the [debug component][debug] or [`.flushToDOM` methods][flushtodom]
 if you need to sync to the DOM.
 
-## Why does my video not play?
+## Why does my video not play on mobile?
 
 [iosvideo]: https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/iAdJSProgGuide/PlayingVideosinAds/PlayingVideosinAds.html
 
-Mobile and now desktop browsers have limitations playing inline video.
+Mobile browsers have had limitations playing inline video.
 
 Because of an [iOS platform restriction][iosvideo] in order to get inline video
 (with or without autoplay), we must:
@@ -118,19 +104,15 @@ Because of an [iOS platform restriction][iosvideo] in order to get inline video
 - Set the `playsinline` attribute to the video element (is automatically added to all videos).
 - Possibly pin the webpage to the homescreen for older iOS versions.
 
-Mobile and desktop browsers have been tightening the video autoplay policies to preserve battery and avoid intrusive advertisements. Most browsers now require a user action (such as a click or tap event) to start video playback:
+Inline video support on iOS 10 may change this. On certain Android devices or
+browsers, we must:
 
--[Chrome for Android](https://bugs.chromium.org/p/chromium/issues/detail?id=178297)
--[Chrome desktop](https://www.chromium.org/audio-video/autoplay)
--[Safari](https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/)
--[Firefox](https://hacks.mozilla.org/2019/02/firefox-66-to-block-automatically-playing-audible-video-and-audio/)
+[android-touch-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=178297
 
-[video-playback-example]: https://aframe.io/aframe/examples/test/video/
-[video-playback-code]: https://github.com/mayognaise/aframe-html-shader/
+- Require user interaction to trigger the video (such as a click or tap event). See [Chromium Bug 178297][android-touch-bug].
 
-There's an [A-Frame example that includes the necessary logic][video-playback-example] to request the user clicking or tapping to start video playback. [The source code is also available][video-playback-code]
-
-We do not focus too much on video, but below are GitHub issues that may contain helpful information from community:
+Lately, there has been improving support. We do not focus too much on video,
+but below are GitHub issues that may contain helpful information from community:
 
 - [*Videos and videospheres don't work on mobile*](https://github.com/aframevr/aframe/issues/316)
 - [*Document iOS video encoding restrictions*](https://github.com/aframevr/aframe/issues/1846)
@@ -194,6 +176,7 @@ For 360&deg; images, search for [equirectangular images on Flickr][flickr].
 
 For 3D models, check out:
 
+- [Google Blocks](https://vr.google.com/objects)
 - [Sketchfab](https://sketchfab.com)
 - [Clara.io](http://clara.io)
 - [Archive3D](http://archive3d.net)
@@ -298,7 +281,7 @@ including:
 
 ## Which headsets, browsers, devices, and platforms does A-Frame support?
 
-[deviceplatform]: ./vr-headsets-and-webxr-browsers.md
+[deviceplatform]: ./vr-headsets-and-webvr-browsers.md
 
 Most of them. Read *[VR Headsets and WebVR Browsers][deviceplatform]* for more
 information.
@@ -334,12 +317,3 @@ A-Frame!
 [precision]: ../components/renderer.md#precision
 
 Phones with Adreno 300 series GPUs are notoriously problematic. Set [renderer precision][precision] to `medium` as a workaround. Real fix has to happen at the driver / device level.
-
-## Why is the gyroscope / magic window mode not working?
-
-[New browser policies](https://www.w3.org/TR/orientation-event/#dom-deviceorientationevent-requestpermission) require sites to prompt the user for permission before getting access to DeviceMotionEvents. [Starting with iOS 13](https://webkit.org/blog/9674/new-webkit-features-in-safari-13/) DeviceMotionEvents are only available for pages served over `https`. Other browsers will also apply same policies and restrictions. A-Frame now [incorporates customizable UI](https://aframe.io/docs/1.0.0/components/device-orientation-permission-ui.html#sidebar) to request the necessary permissions to the user. Make sure to update to [A-Frame latest version](https://github.com/aframevr/aframe/releases)
-
-
-## Can I use A-Frame offline or self hosted?
-
-Using A-Frame online sometimes is not possible or inconvenient, like for instance when traveling or during public events with poor Internet connectivity. A-Frame is mostly self-contained so including the build (aframe.min.js) in your project will be sufficient in many cases. Some specific parts are lazy loaded and only fetched when used. This is for example the case of the fonts for the text component and the 3D models for controllers. In order to make an A-Frame build work either offline or without relying on A-Frame hosting infrastructure (typically cdn.aframe.io), you can monitor network requests on your browser console. This will show precisely what assets are being loaded and thus as required for your specific experience. Fonts can be found via FONT_BASE_URL in the whereas controllers via MODEL_URLS. Both can be modified in the source and included in your own [custom build](https://github.com/aframevr/aframe#generating-builds)

@@ -73,7 +73,6 @@ depending on the material type applied.
 | vertexColors | Whether to use vertex or face colors to shade the material. Can be one of `none`, `vertex`, or `face`.                                            | none          |
 | visible      | Whether material is visible. Raycasters will ignore invisible materials.                                                                          | true          |
 | blending     | The blending mode for the material's RGB and Alpha sent to the WebGLRenderer. Can be one of `none`, `normal`, `additive`, `subtractive` or `multiply`.  | normal          |
-| dithering    | Whether material is dithered with noise. Removes banding from gradients like ones produced by lighting.                                           | true          |
 
 ## Events
 
@@ -147,30 +146,6 @@ For example, for a tree bark material, as an estimation, we might set:
 </a-entity>
 ```
 
-#### Phong-Based Shading
-
-Phong shading is an inexpensive shader model which whilst less realistic than the
-standard material is better than flat shading.
-
-To use it set the shader to phong in the material:
-
-```html
-<a-torus-knot position="0 3 0" material="shader:phong; reflectivity: 0.9; shininess: 30;"
-  geometry="radius: 0.45; radiusTubular: 0.09">
-</a-torus-knot>
-```
-
-It has the following properties you can use:
-
-|  Name          | Description                                                                   | Default |
-|----------------|-------------------------------------------------------------------------------|---------|
-|specular        | This defines how shiny the material is and the color of its shine.            | #111111 |
-|shininess       | How shiny the specular highlight is; a higher value gives a sharper highlight | 30      |
-|transparent     | Whether the material is transparent                                           | false   |
-|combine         | How the environment map mixes with the material. "mix", "add" or "multiply"   | "mix"   |
-|reflectivity    | How much the environment map affects the surface                              | 0.9     |
-|refract         | Whether the defined envMap should refract                                     | false   |
-|refractionRatio | 1/refractive index of the material                                            | 0.98    |
 #### Distortion Maps
 
 There are three properties which give the illusion of complex geometry:
@@ -238,7 +213,6 @@ such as images or videos. Set `shader` to `flat`:
 | height               | Height of video (in pixels), if defining a video texture.                                                                            | 360           |
 | repeat               | How many times a texture (defined by `src`) repeats in the X and Y direction.                                                        | 1 1           |
 | src                  | Image or video texture map. Can either be a selector to an `<img>` or `<video>`, or an inline URL.                                   | None          |
-| toneMapped           | Whether to ignore toneMapping, set to false you are using renderer.toneMapping and an element should appear to emit light.           | true          |
 | width                | Width of video (in pixels), if defining a video texture.                                                                             | 640           |
 | wireframe            | Whether to render just the geometry edges.                                                                                           | false         |
 | wireframeLinewidth   | Width in px of the rendered line.                                                                                                    | 2             |
@@ -278,24 +252,17 @@ A-Frame caches textures so as to not push redundant textures to the GPU.
 
 ### Video Textures
 
-[startplayback]: https://aframe.io/aframe/examples/test/video/
-[videotestcode]: https://github.com/aframevr/aframe/blob/master/examples/test/video/index.html
-[videoplaycomponent]: https://github.com/aframevr/aframe/blob/master/examples/js/play-on-click.js
-
-
 Whether the video texture loops or autoplays depends on the video element used
 to create the texture. If we simply pass a URL instead of creating and passing
 a video element, then the texture will loop and autoplay by default. To specify
 otherwise, create a video element in the asset management system, and pass a
 selector for the `id` attribute (e.g., `#my-video`):
 
-Video autoplay policies are getting more and more strict and rules might vary across browsers. Mandatory user gesture is now commonly enforced. For maximum compatibility, you can offer a button that the user can click to start [video playback][startplayback]. [Simple sample code][videotestcode] can be found in the docs. Pay particular attention to the [play-on-click component][videoplaycomponent]
-
 ```html
 <a-scene>
   <a-assets>
     <!-- No loop. -->
-    <video id="my-video" src="video.mp4" autoplay="true"></video>
+    <video id="my-video" src="video.mp4" autoplay="true">
   </a-assets>
 
   <a-entity geometry="primitive: box" material="src: #my-video"></a-entity>
@@ -321,7 +288,8 @@ element, we should define one in `<a-assets>`.
 
 ## Canvas Textures
 
-We can use a `<canvas>` as a texture source. If the canvas if modified, you'll need to refresh the texture by using code that follows the example shown [here](https://github.com/aframevr/aframe/blob/master/examples/test/canvas-texture/components/canvas-updater.js).
+We can use a `<canvas>` as a texture source. The texture will automatically
+refresh itself as the canvas changes.
 
 ```html
 <script>
@@ -394,7 +362,7 @@ Let's walk through an [example CodePen][example] with step-by-step commentary.
 As always, we need to include the A-Frame script.
 
 ```js
-<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 ```
 
 Next, we define any components and shaders we need after the A-Frame
@@ -611,10 +579,6 @@ And using from HTML markup:
 
 ***
 
-For an example with textures, [Remix this Texture Shader on Glitch](https://glitch.com/edit/#!/aframe-texture-shader)
-
-![textureShaderPreview](https://user-images.githubusercontent.com/165293/107857210-2f673580-6dea-11eb-8c7a-ab115d9dd67a.gif)
-
 For a more advanced example, [try Real-Time Vertex Displacement](https://glitch.com/edit/#!/aframe-displacement-registershader).
 
 ![b19320eb-802a-462a-afcd-3d0dd9480aee-861-000004c2a8504498](https://cloud.githubusercontent.com/assets/1848368/24825518/b52e5bf6-1bd4-11e7-8eb2-9a9c1ff82ce9.gif)
@@ -744,10 +708,8 @@ AFRAME.registerComponent('custom-material', {
   },
 
   init: function () {
-    this.el.addEventListener("loaded", e => { // when using gltf models use "model-loaded" instead
-      this.material = this.el.getObject3D('mesh').material = new THREE.ShaderMaterial({
+    this.material = this.el.getOrCreateObject3D('mesh').material = new THREE.ShaderMaterial({
       // ...
-      });
     });
   },
 

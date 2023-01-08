@@ -23,7 +23,7 @@ Let's start by building a basic A-Frame scene. For this, we will need a basic
 understanding of HTML. We will learn how to:
 
 - Add 3D entities (i.e., objects) with [primitives][primitives]
-- Transform entities in 3D space with position, rotation, scale
+- Transform to transform entities in 3D space with position, rotation, scale
 - Add an environment
 - Add textures
 - Add basic interactivity using animations and events
@@ -40,7 +40,7 @@ We start out with a minimal HTML structure:
 ```html
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -228,7 +228,7 @@ First, include the environment component using a script tag after A-Frame:
 
 ```html
 <head>
-  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
 </head>
 ```
@@ -425,7 +425,7 @@ depends on its distance to the entity:
 
 ## Adding Animation
 
-[animation]: ../components/animation.md
+[animation]: ../components/animations.md
 
 We can add animations to the box using A-Frame's [built-in animation
 system][animation]. Animations interpolate or tween a value over time. We can
@@ -574,11 +574,11 @@ We can attach this component to our box straight from HTML:
 
 ### Animating on Events
 
-The animation component has a feature to start its animation when the entity
-emits an event. This can be done through the `startEvents` attribute, which
-takes a comma-separated list of event names.
+The animation component has a feature to start its animation when the entity an
+event. This can be done through the `startEvents` attribute, which takes an
+comma-separated list of event names.
 
-We can add two animations for the cursor component's `mouseenter` and 
+We can add two animations for the cursor component's `mouseenter` and one
 `mouseleave` events to change the box's scale, and one for rotating the box
 around the Y-axis on `click`. Note that an entity can have multiple animations
 by suffixing the attribute name with `__<ID>`:
@@ -598,7 +598,7 @@ by suffixing the attribute name with `__<ID>`:
 
 Audio is important for providing immersion and presence in VR. Even adding
 simple white noise in the background goes a long way. We recommend having some
-audio for every scene. One way would be to add an `<audio>` element to our
+audio for every scene. One way would be to add an `<audio>` element to to our
 HTML (preferably under `<a-assets>`) to play an audio file:
 
 ```html
@@ -631,7 +631,7 @@ the sound in our scene using `position`.
 [three-bmfont-text]: https://github.com/Jam3/three-bmfont-text
 
 A-Frame comes with a [text component][text]. There are several ways to render
-text, each with their own advantages and disadvantages. A-Frame comes with an SDF
+text, each with their advantages and disadvantages, A-Frame comes with an SDF
 text implementation using [`three-bmfont-text`][three-bmfont-text] that is
 relatively sharp and performant:
 

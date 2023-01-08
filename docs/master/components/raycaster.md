@@ -14,7 +14,7 @@ examples: []
 The raycaster component provides line-based intersection testing with a
 [raycaster][wiki-raycasting]. Raycasting is the method of extending a line from
 an origin towards a direction, and checking whether that line intersects with
-other entities.
+other entites.
 
 The raycaster component uses the [three.js raycaster][3ray]. The raycaster
 checks for intersections at a certain interval against a list of objects, and
@@ -63,11 +63,9 @@ AFRAME.registerComponent('collider-check', {
 | autoRefresh         | Whether to automatically refresh raycaster's list of objects to test for intersection using mutation observers to detect added or removed entities and components.                                             | true          |
 | direction           | Vector3 coordinate of which direction the ray should point from relative to the entity's origin.                                                                                                               | 0, 0, -1      |
 | enabled             | Whether raycaster is actively checking for intersections.                                                                                                                                                      | true          |
-| far                 | Maximum distance under which resulting entities are returned. Cannot be lower than `near`.                                                                                                                     | 1000   |
+| far                 | Maximum distance under which resulting entities are returned. Cannot be lower than `near`.                                                                                                                     | Infinity      |
 | interval            | Number of milliseconds to wait in between each intersection test. Lower number is better for faster updates. Higher number is better for performance. Intersection tests are performed at most once per frame. | 0             |
-| lineColor           | Raycaster line color if showLine is enabled.                                                                                                                                                      | white          |
-| lineOpacity         | Raycaster line opacity if showLine is enabled.                                                                                                                                                      | 1          |
-| near                | Minimum distance over which resulting entities are returned. Cannot be lower than 0.                                                                                                                          | 0             |
+| near                | Minimum distance over which resuilting entities are returned. Cannot be lower than 0.                                                                                                                          | 0             |
 | objects             | Query selector to pick which objects to test for intersection. If not specified, all entities will be tested. Note that only objects attached via `.setObject3D` and their recursive children will be tested.                               | null          |
 | origin              | Vector3 coordinate of where the ray should originate from relative to the entity's origin.                                                                                                                     | 0, 0, 0       |
 | showLine            | Whether or not to display the raycaster visually with the [line component][line].                                                                                                                              | false         |
@@ -77,13 +75,12 @@ AFRAME.registerComponent('collider-check', {
 
 The raycaster component is useful because of the events it emits on entities. It will emit events on both the raycasting entity and the intersected entities.
 
-| Event Name                     | Description                                                  |
-| ------------------------------ | ------------------------------------------------------------ |
-| raycaster-intersected          | Emitted on the intersected entity. Entity is intersecting with a raycaster. Event detail will contain `el`, the raycasting entity, and `intersection`, and `.getIntersection (el)` function which can be used to obtain current intersection data. |
-| raycaster-intersected-cleared  | Emitted on the intersected entity. Entity is no longer intersecting with a raycaster. Event detail will contain `el`, the raycasting entity. |
-| raycaster-intersection         | Emitted on the raycasting entity. Raycaster is intersecting with one or more entities. Event detail will contain `els`, an array with the newly intersected entities, and `intersections`, and `.getIntersection (el)` function which can be used to obtain current intersection data.  For access to a complete list of intersections (existing & new), see [Members intersectedEls][intersectedEls]. |
-| raycaster-intersection-cleared | Emitted on the raycasting entity. Raycaster is no longer intersecting with one or more entities. Event detail will contain `clearedEls`, an array with the formerly intersected entities. |
-| raycaster-closest-entity-changed | The closest intersected entity has changed  |
+| Event Name                     | Description                                                                            |
+|--------------------------------|----------------------------------------------------------------------------------------|
+| raycaster-intersected          | Emitted on the intersected entity. Entity is intersecting with a raycaster. Event detail will contain `el`, the raycasting entity, and `intersection`, and `.getIntersection (el)` function which can be used to obtain current intersection data.            |
+| raycaster-intersected-cleared  | Emitted on the intersected entity. Entity is no longer intersecting with a raycaster. Event detail will contain `el`, the raycasting entity.  |
+| raycaster-intersection         | Emitted on the raycasting entity. Raycaster is intersecting with one or more entities. Event detail will contain `els`, an array with the intersected entities, and `intersections`, and `.getIntersection (el)` function which can be used to obtain current intersection data. |
+| raycaster-intersection-cleared | Emitted on the raycasting entity. Raycaster is no longer intersecting with one or more entities. Event detail will contain `clearedEls`, an array with the formerly intersected entities.  |
 
 ### Intersection Object
 
@@ -103,7 +100,6 @@ The event detail contains intersection objects. They are returned straight from
 | uv        | U,V coordinates at point of intersection                    |
 
 ## Members
-[intersectedEls]: raycaster.md#members
 
 | Member         | Description                                                                                                      |
 |----------------|------------------------------------------------------------------------------------------------------------------|
@@ -208,10 +204,11 @@ mutations (e.g., some entity changes its `class`).
 
 If `showLine` is set to `true`, the raycaster will configure the line given the
 raycaster's `origin`, `direction`, and `far` properties. To customize the line
-appearance provided by the `showLine: true` property, we can use the `lineColor` and `lineOpacity`:
+appearance provided by the `showLine: true` property, we configure the [line
+component][line]:
 
 ```html
-<a-entity raycaster="showLine: true; far: 100; lineColor: red; lineOpacity: 0.5"></a-entity>
+<a-entity raycaster="showLine: true; far: 100" line="color: orange; opacity: 0.5"></a-entity>
 ```
 
 The line length is the raycaster's `far` property when the raycaster is not

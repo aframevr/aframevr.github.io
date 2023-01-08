@@ -242,7 +242,7 @@ AFRAME.registerComponent('foo', {
   },
 
   remove: function () {
-    // Do something when the component or its entity is detached.
+    // Do something the component or its entity is detached.
   },
 
   tick: function (time, timeDelta) {
@@ -343,16 +343,15 @@ to look at include:
 - [A-Painter](https://github.com/aframevr/a-painter/)
 - [A-Blast](https://github.com/aframevr/a-blast/)
 
-#### A-Frame Blog
+#### *A Week of A-Frame*
 
 [blog]: https://aframe.io/blog/
 [homepage]: https://aframe.io/
 
-The A-Frame Blog archives include details of components as they were released or updated, and can be a good place to find links to components.
-
-#### A-Frame Wiki
-
-The [A-Frame Wiki](https://aframe.wiki/) is a useful community-driven initiative that collects information and tips about available A-Frame components. Everyone is encouraged to participate. It's very easy to add and edit information.
+[Every week on the blog][blog], we round up all the activity in the A-Frame
+community and ecosystem. This includes featuring components that have been
+freshly released or updated. [The homepage of A-Frame][homepage] will usually
+have a link to the most recent *A Week of A-Frame* entry.
 
 ### Using a Community Component
 
@@ -419,7 +418,7 @@ Now we can include it into our HTML:
 ```html
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
   </head>
   <body>
@@ -440,7 +439,7 @@ Now we can include it into our HTML:
 ```html
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
   </head>
   <body>
@@ -464,11 +463,11 @@ Glitch][glitch].
 ```html
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
     <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
-    <script src="https://unpkg.com/aframe-gradient-sky@1.4.0/dist/gradientsky.min.js"></script>
+    <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
   </head>
   <body>
     <a-scene>

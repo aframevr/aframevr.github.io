@@ -60,14 +60,20 @@ purpose of using A-Frame.
 </a-scene>
 ```
 
+## WebVR
+
+[See WebVR Guidelines](https://www.supermedium.com/blog/webvr-guidelines).
+
 ## Performance
 
 [animation]: ../components/animation.md#direct-values-through-object3d-and-components
 [asm]: ../core/asset-management-system.md
-[hardware]: ./vr-headsets-and-webxr-browsers.md
+[hardware]: ./vr-headsets-and-webvr-browsers.md
+[merge]: https://www.npmjs.com/package/aframe-geometry-merger-component
 [stats]: ../components/stats.md
 [pool]: ../components/pool.md
 [background]: ../components/background.md
+[pool]
 [geometrymerger]: https://www.npmjs.com/package/aframe-geometry-merger-component
 
 
@@ -106,7 +112,7 @@ an A-Frame scene:
 - Use the **[background component][background]** instead of `a-sky` to define a
   solid color as the scene background. This prevents the creation of
   unnecessary geometry.
-- Update `position`, `rotation`, `scale`, and `visible` at the three.js
+- Update `position`, `rotation`, `scale`, and `visible` using at the three.js
   level (`el.object3D.position`, `el.object3D.rotation`, `el.object3D.scale`,
   `el.object3D.visible`) to avoid overhead on `.setAttribute`.
 - If you need to create, remove and re-create many entities of the same type,
@@ -196,8 +202,6 @@ More articles on reducing garbage collector activity:
 
 ### `tick` Handlers
 
-[throttle]: ../core/utils.html#aframe-utils-throttletick-function-t-dt-minimuminterval-optionalcontext
-
 In component tick handlers, be frugal on creating new objects. Try to reuse
 objects. A pattern to create private reusable auxiliary variables is with a
 closure. Below we create a helper vector and quaternion and reuse them between
@@ -244,8 +248,7 @@ AFRAME.registerComponent('foo', {
 ```
 
 Again be careful what you do in tick functions, treat them as critical
-performance code because they will be run 90 times per second. [Consider
-using `utils.throttleTick`][throttle] to run your code at less frequent intervals.
+performance code because they will be run 90 times per second.
 
 ## VR Design
 
