@@ -1,0 +1,1516 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-111391431-24"
+      data-aframe-version="1.3.0"
+      data-docs-version="1.4.0">
+  <head>
+    <title>cursor – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="cursor – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="cursor – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111391431-24', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+</script>
+
+
+    
+      <script src="/js/compat.js"></script>
+    
+
+    
+      <link rel="stylesheet" href="/css/secondary.css">
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      <link rel="stylesheet" href="/css/search.css">
+    
+  </head>
+
+  <body data-page-layout="docs" data-page-type="components">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/1.3.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://supermedium.com/discord/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Discord Channel">
+          <span>Discord</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://aframe.io/subscribe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Newsletter</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option selected
+                data-href="/docs/1.4.0/introduction/">
+          1.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.3.0/introduction/">
+          1.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.2.0/introduction/">
+          1.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.1.0/introduction/">
+          1.1.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.0.0/introduction/">
+          1.0.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.9.0/introduction/">
+          0.9.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.8.0/introduction/">
+          0.8.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.7.0/introduction/">
+          0.7.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.6.0/introduction/">
+          0.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Introduction</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/vr-headsets-and-webxr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebXR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/javascript-events-dom-apis.html"
+               class="subnav-link">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting & Publishing
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Guides</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/guides/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Core API</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/core/globals.html"
+               class="subnav-link">
+              Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <p class="section-title-link">Components</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/animation.html"
+               class="subnav-link">
+              Animation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/ar-hit-test.html"
+               class="subnav-link">
+              ar-hit-test
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/background.html"
+               class="subnav-link">
+              background
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/1.4.0/components/cursor.html"
+               class="subnav-link current">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/device-orientation-permission-ui.html"
+               class="subnav-link">
+              device-orientation-permission-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/hand-tracking-controls.html"
+               class="subnav-link">
+              hand-tracking-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/hide-on-enter-ar.html"
+               class="subnav-link">
+              hide-on-enter-ar
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/layer.html"
+               class="subnav-link">
+              layer
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/line.html"
+               class="subnav-link">
+              line
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/link.html"
+               class="subnav-link">
+              link
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/loading-screen.html"
+               class="subnav-link">
+              loading-screen
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/magicleap-controls.html"
+               class="subnav-link">
+              magicleap-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/oculus-go-controls.html"
+               class="subnav-link">
+              oculus-go-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/reflection.html"
+               class="subnav-link">
+              reflection
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/renderer.html"
+               class="subnav-link">
+              renderer
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/vive-focus-controls.html"
+               class="subnav-link">
+              vive-focus-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/webxr.html"
+               class="subnav-link">
+              webxr
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Primitives</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-link.html"
+               class="subnav-link">
+              &lt;a-link&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/1.4.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+  <!-- Documentation. -->
+  <div class="content content--structured content--components copy">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/1.4.0/components/geometry.html" class="borderless-link">
+            1.4.0 &rsaquo; Components
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        cursor
+      </h1>
+
+      
+
+      
+      
+        <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 1.4.0 version of A-Frame. Check out the <a href="/docs/1.3.0/introduction/">documentation for the current 1.3.0 version</a></p>
+</blockquote>
+
+      
+
+      <p>The cursor component provides hover and click states for interaction on top of
+the <a href="./raycaster.html">raycaster component</a>. The cursor component can be used for
+both gaze-based and controller-based interactions, but the appearance needs
+to be configured depending on the use case. The <a href="../primitives/a-cursor.html"><code>&lt;a-cursor&gt;</code>
+primitive</a> provides a default reticle appearance for a gaze-based
+cursor, and the <a href="./laser-controls.html">laser-controls component</a> configures the
+cursor for all controllers.</p>
+<p>The cursor component listens to events and keeps state on what’s being hovered
+and pressed in order to provide <code>mousedown</code>, <code>mouseup</code>, <code>mouseenter</code>,
+<code>mouseleave</code>, and <code>click</code> events. We use the name <code>mouse</code> to mimic
+traditional web development for now. Under the hood, the cursor component uses
+the <code>raycaster-intersection</code> and <code>raycaster-intersection-cleared</code> events,
+capturing the closest visible intersected entity.</p>
+<p>By default, the cursor is configured to be used in a gaze-based mode and will
+register user input via mouse or touch. Specifying the <code>downEvents</code> and
+<code>upEvents</code> properties allows the cursor to work with controllers. For example,
+the <a href="./laser-controls.html">laser-controls component</a> automatically configures these
+properties to work with most controllers.</p>
+<p>To provide a shape or appearance to the cursor, we should apply either the
+<a href="./geometry.html">geometry</a> and <a href="./material.html">material</a> components or use the raycaster
+component’s <code>showLine</code> property to draw a line using the <a href="./line.html">line
+component</a>.</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we can create a ring-shaped cursor fixed to the center of the
+screen. To fix the cursor to the screen so the cursor is always present no
+matter where we look, we place it as a child of the active <a href="./camera.html">camera</a>
+entity. We pull it in front of the camera by placing it on the negative Z axis.
+When the cursor clicks on the box, we can listen to the click event.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span> <span class="attr">look-controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span>=<span class="string">"fuse: true; fuseTimeout: 500"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">position</span>=<span class="string">"0 0 -1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">geometry</span>=<span class="string">"primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">material</span>=<span class="string">"color: black; shader: flat"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">cursor-listener</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: blue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Component to change to a sequential color on click.</span></span><br><span class="line">AFRAME.registerComponent(<span class="string">'cursor-listener'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lastIndex = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">var</span> COLORS = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">      lastIndex = (lastIndex + <span class="number">1</span>) % COLORS.length;</span><br><span class="line">      <span class="keyword">this</span>.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, COLORS[lastIndex]);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'I was clicked at: '</span>, evt.detail.intersection.point);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>downEvents</td>
+<td>Array of additional events on the entity to <em>listen</em> to for triggering <code>mousedown</code> (e.g., <code>triggerdown</code> for vive-controls).</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>fuse</td>
+<td>Whether cursor is fuse-based.</td>
+<td>false on desktop, true on mobile</td>
+</tr>
+<tr>
+<td>fuseTimeout</td>
+<td>How long to wait (in milliseconds) before triggering a fuse-based click event.</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>mouseCursorStylesEnabled</td>
+<td>Whether to show pointer cursor in <code>rayOrigin: mouse</code> mode when hovering over entity.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>rayOrigin</td>
+<td>Where the intersection ray is cast from (i.e. xrselect ,entity or mouse). <code>rayOrigin: mouse</code> is extremely useful for VR development on a mouse and keyboard.</td>
+<td>entity</td>
+</tr>
+<tr>
+<td>upEvents</td>
+<td>Array of additional events on the entity to <em>listen</em> to for triggering <code>mouseup</code> (e.g., <code>trackpadup</code> for daydream-controls).</td>
+<td>[]</td>
+</tr>
+</tbody>
+</table>
+<p>To further customize the cursor component, we configure the cursor’s dependency
+component, <a href="./raycaster.html">the raycaster component</a>.</p>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>Emitted on both cursor and intersected entity if a currently intersected entity is clicked (whether by mouse or by fuse).</td>
+</tr>
+<tr>
+<td>fusing</td>
+<td>Emitted on both cursor and intersected entity when fuse-based cursor starts counting down.</td>
+</tr>
+<tr>
+<td>mousedown</td>
+<td>Emitted on both cursor and intersected entity (if any) on mousedown on the canvas element.</td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>Emitted on both cursor and intersected entity (if any) when cursor intersects with an entity.</td>
+</tr>
+<tr>
+<td>mouseleave</td>
+<td>Emitted on both cursor and intersected entity (if any) when cursor no longer intersects with previously intersected entity.</td>
+</tr>
+<tr>
+<td>mouseup</td>
+<td>Emitted on both cursor and intersected entity (if any) on mouseup on the canvas element.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="event-data"><a href="#event-data" class="headerlink" title="Event Data"></a>Event Data</h3><p>Additional detail is included in the <code>detail</code> object on the event as follows:</p>
+<h4 id="intersection"><a href="#intersection" class="headerlink" title="intersection"></a>intersection</h4><p>Relevant events will contain in the event detail <code>intersection</code>, which will
+contain <code>{distance, point, face, faceIndex, indices, object}</code> about specific
+data about the intersection:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.el.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(evt.detail.intersection.point);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="intersectedel"><a href="#intersectedel" class="headerlink" title="intersectedEl"></a>intersectedEl</h4><p>Events emitted on the cursor entity also include event detail <code>intersectedEl</code>, which provides a reference to the intersected entity.</p>
+<h4 id="mouseevent-and-touchevent"><a href="#mouseevent-and-touchevent" class="headerlink" title="mouseEvent and touchEvent"></a>mouseEvent and touchEvent</h4><p>Where the trigger for a cursor event is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent" target="_blank" rel="external">MouseEvent</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent" target="_blank" rel="external">TouchEvent</a>, event detail <code>mouseEvent</code> or <code>touchEvent</code> provides a reference to that event.</p>
+<p>These events provide a wealth of additional detail about the event, as detailed in the APIs linked above.  Among other things, they can indicate:</p>
+<ul>
+<li>which mouse button was used</li>
+<li>information about the state of the mouse buttons (or multi-touch for touch events), and relevant keys shuch as Shift, Ctrl etc. at the time of the mouse or touch event.</li>
+<li>the screen co-ordinates where the event occured.</li>
+</ul>
+<p>This information can be used by applications to handle cursor events differently, depending on this information (e.g. different handling of left click &amp; right click).</p>
+<p>For example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.el.addEventListener(&apos;click&apos;, function (evt) &#123;</span><br><span class="line">  if (!evt.detail.mouseEvent || evt.detail.mouseEvent.button === 0) &#123;</span><br><span class="line">    console.log(&quot;left button clicked (or touch event / no information)&quot;);</span><br><span class="line">  </span><br><span class="line">  &#125; else if (evt.detail.mouseEvent.button === 2) &#123;</span><br><span class="line">    console.log(&quot;right button clicked&quot;); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>At most one of  <code>mouseEvent</code> or <code>touchEvent</code> will be present on a cursor event, and sometimes neither will.  Neither will be present on <code>mousenter</code>, <code>mouseleave</code> and <code>fusing</code> events, nor on a <code>click</code> event that has been triggered by a fuse timeout rather than a mouse click or touch event.</p>
+<h2 id="states"><a href="#states" class="headerlink" title="States"></a>States</h2><p>The cursor will add states to the cursor entity on certain events:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cursor-fusing</td>
+<td>Added when the cursor is fusing on another entity.</td>
+</tr>
+<tr>
+<td>cursor-hovering</td>
+<td>Added when the cursor is hovering over another entity.</td>
+</tr>
+</tbody>
+</table>
+<p>The cursor will add states to intersected entities on certain events:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cursor-hovered</td>
+<td>Added to the intersected entity when the cursor is hovering over it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuring-the-cursor-through-the-raycaster-component"><a href="#configuring-the-cursor-through-the-raycaster-component" class="headerlink" title="Configuring the Cursor through the Raycaster Component"></a>Configuring the Cursor through the Raycaster Component</h2><p>The cursor builds on top of and depends on the raycaster component. If we
+want to customize the raycasting pieces of the cursor, we can do by changing
+the <a href="./raycaster.html#properties">raycaster component properties</a>. Say we want set a max
+distance, check for intersections less frequently, and set which objects are
+clickable:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span> <span class="attr">raycaster</span>=<span class="string">"far: 20; interval: 1000; objects: .clickable"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="fuse-based-cursor"><a href="#fuse-based-cursor" class="headerlink" title="Fuse-Based Cursor"></a>Fuse-Based Cursor</h2><p>Also known as gaze-based cursor. If we set the cursor to be fuse-based, the
+cursor will trigger a click if the user gazes at an entity for a set amount of
+time. Imagine a laser strapped to the user’s head, and the laser extends out
+into the scene. If the user stares at an entity long enough (i.e., the
+<code>fuseTimeout</code>), then the cursor will trigger a click.</p>
+<p>The advantage of fuse-based interactions for VR is that it does not require
+extra input devices other than the headset. The fuse-based cursor is primarily
+intended for Google Cardboard applications. The disadvantage of fuse-based
+interactions is that it requires the user to turn their head a lot.</p>
+<h2 id="adding-visual-feedback"><a href="#adding-visual-feedback" class="headerlink" title="Adding Visual Feedback"></a>Adding Visual Feedback</h2><p>To add visual feedback to the cursor to show when the cursor is clicking or
+fusing, we can use the <a href="./animation.html">animation component</a>.  When the cursor
+intersects the entity, it will emit an event, and the animation system will
+pick up event with the <code>begin</code> attribute:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__click</span>=<span class="string">"property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__fusing</span>=<span class="string">"property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseleave</span>=<span class="string">"property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor</span>=<span class="string">"fuse: true;"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">"color: black; shader: flat"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">"0 0 -3"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">"primitive: ring"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>To play with an example of a cursor with visual feedback, check out the <a href="https://codepen.io/Absulit/pen/WEKjqm" target="_blank" rel="external">Cursor
+with Visual Feedback example on CodePen</a>.</p>
+<h2 id="xr-select-cursor"><a href="#xr-select-cursor" class="headerlink" title="XR Select Cursor"></a>XR Select Cursor</h2><p>When an XR <code>&quot;selectstart&quot;</code> event happens the raycaster picks an element based upon it’s current location.
+This works for handheld AR, and headmounted VR and AR. This works well with the mouse <code>rayOrigin</code> too.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor__mouse</span>=<span class="string">"rayOrigin: mouse"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor__xrselect</span>=<span class="string">"rayOrigin: xrselect"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">raycaster</span>=<span class="string">"objects:#objects *;"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+      </footer>
+
+      <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/cursor.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
+</footer>
+
+    </div>
+
+    <div class="secondary-sidebar">
+      
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#event-data">Event Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#states">States</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#configuring-the-cursor-through-the-raycaster-component">Configuring the Cursor through the Raycaster Component</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#fuse-based-cursor">Fuse-Based Cursor</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#adding-visual-feedback">Adding Visual Feedback</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#xr-select-cursor">XR Select Cursor</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/a-frame-mouse-click-example">
+              Mouse Click Example
+            </a>
+          </li>
+        
+      </ul>
+    
+  </div>
+
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/cursor.md" target="_blank" rel="external">Edit Page</a>
+        
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v1.4.0/src/components/cursor.js" title="View Source" target="_blank" rel="external">View Source</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+    
+      <script src="/js/common.js"></script>
+      
+      
+        <script src="/js/docs.js"></script>
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:1.4.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>

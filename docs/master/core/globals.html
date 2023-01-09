@@ -240,6 +240,11 @@
         </option>
       
         <option false
+                data-href="/docs/1.4.0/introduction/">
+          1.4.0
+        </option>
+      
+        <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
@@ -1251,8 +1256,8 @@ global. This same interface is also exposed if requiring with CommonJS
 </tr>
 </tbody>
 </table>
-<h2 id="requiring-aframe-in-a-node-js-environment"><a href="#requiring-aframe-in-a-node-js-environment" class="headerlink" title="Requiring AFRAME in a Node.js Environment"></a>Requiring <code>AFRAME</code> in a Node.js Environment</h2><p>It is possible to run A-Frame in <a href="https://nodejs.org/en/about" target="_blank" rel="external">Node.js</a> to get access to its globals. The only catch is we need to supply a browser <code>window</code> mock since Node.js lacks a <code>window</code> object. A-Frame is tested with <a href="https://github.com/tmpvar/jsdom" target="_blank" rel="external">jsdom</a>, although any JavaScript-based browser implementation should work.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">global.window = <span class="built_in">require</span>(<span class="string">'jsdom'</span>).jsdom().defaultView;</span><br><span class="line"><span class="keyword">var</span> aframe = <span class="built_in">require</span>(<span class="string">'aframe/src'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(aframe.version);</span><br></pre></td></tr></table></figure>
+<h2 id="requiring-aframe-in-a-node-js-environment"><a href="#requiring-aframe-in-a-node-js-environment" class="headerlink" title="Requiring AFRAME in a Node.js Environment"></a>Requiring <code>AFRAME</code> in a Node.js Environment</h2><p>It is possible to run A-Frame in <a href="https://nodejs.org/en/about" target="_blank" rel="external">Node.js</a> to get access to its globals. The only catch is we need to supply a browser <code>window</code> mock since Node.js lacks a <code>window</code> object. A-Frame is tested with <a href="https://github.com/jsdom/jsdom" target="_blank" rel="external">jsdom</a>, although any JavaScript-based browser implementation should work.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> jsdom = <span class="built_in">require</span>(<span class="string">"jsdom"</span>);</span><br><span class="line">global.window = <span class="keyword">new</span> jsdom.JSDOM().window;</span><br><span class="line"><span class="keyword">var</span> aframe = <span class="built_in">require</span>(<span class="string">'aframe/src'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(aframe.version);</span><br></pre></td></tr></table></figure>
 <p>Although A-Frame can load in Node.js, A-Frame isn’t (yet) able to run any simulations at run time.</p>
 
 

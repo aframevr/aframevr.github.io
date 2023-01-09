@@ -240,6 +240,11 @@
         </option>
       
         <option false
+                data-href="/docs/1.4.0/introduction/">
+          1.4.0
+        </option>
+      
+        <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
@@ -1154,6 +1159,7 @@ reusable pool of entities to avoid creating and destroying the same kind of
 entities in dynamic scenes. Object pooling helps reduce garbage collection pauses.</p>
 <p>Note that entities requested from the pool are paused by default and you need 
 to call <code>.play()</code> in order to activate their components’ tick functions.</p>
+<p>For performance reasons, unused entities in the pool are detached from the THREE.js scene graph, which means that they are not rendered, their matrices are not updated, and they are excluded from raycasting.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we may have a game with enemy entities that we want to reuse.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">pool__enemy</span>=<span class="string">"mixin: enemy; size: 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> el = sceneEl.components.pool__enemy.requestEntity();</span><br><span class="line">el.play();</span><br><span class="line">sceneEl.components.pool__enemy.returnEntity(el);</span><br></pre></td></tr></table></figure>
