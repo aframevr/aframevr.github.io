@@ -240,11 +240,6 @@
         </option>
       
         <option false
-                data-href="/docs/1.4.0/introduction/">
-          1.4.0
-        </option>
-      
-        <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
@@ -1201,7 +1196,7 @@ three.js <a href="https://threejs.org/docs/#api/core/Object3D" target="_blank" r
 <p>This method is easier because we have access to all the <a href="https://threejs.org/docs/index.html#api/math/Euler" target="_blank" rel="external">Euler
 utilities</a>, and faster by skipping <code>.setAttribute</code> overhead and not
 needing to create an object to set rotation:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// With three.js</span></span><br><span class="line">el.object3D.rotation.set(</span><br><span class="line">  THREE.MathUtils.degToRad(<span class="number">15</span>),</span><br><span class="line">  THREE.MathUtils.degToRad(<span class="number">30</span>),</span><br><span class="line">  THREE.MathUtils.degToRad(<span class="number">90</span>)</span><br><span class="line">);</span><br><span class="line">el.object3D.rotation.x += <span class="built_in">Math</span>.PI;</span><br><span class="line"></span><br><span class="line"><span class="comment">// With .setAttribute (less recommended).</span></span><br><span class="line">el.setAttribute(<span class="string">'rotation'</span>, &#123;<span class="attr">x</span>: <span class="number">15</span>, <span class="attr">y</span>: <span class="number">30</span>, <span class="attr">z</span>: <span class="number">90</span>&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// With three.js</span></span><br><span class="line">el.object3D.rotation.set(</span><br><span class="line">  THREE.Math.degToRad(<span class="number">15</span>),</span><br><span class="line">  THREE.Math.degToRad(<span class="number">30</span>),</span><br><span class="line">  THREE.Math.degToRad(<span class="number">90</span>)</span><br><span class="line">);</span><br><span class="line">el.object3D.rotation.x += <span class="built_in">Math</span>.PI;</span><br><span class="line"></span><br><span class="line"><span class="comment">// With .setAttribute (less recommended).</span></span><br><span class="line">el.setAttribute(<span class="string">'rotation'</span>, &#123;<span class="attr">x</span>: <span class="number">15</span>, <span class="attr">y</span>: <span class="number">30</span>, <span class="attr">z</span>: <span class="number">90</span>&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="getting-rotation"><a href="#getting-rotation" class="headerlink" title="Getting Rotation"></a>Getting Rotation</h3><p>Updates at the three.js level will still be reflected in A-Frame when doing
 <code>entityEl.getAttribute(&#39;rotation&#39;);</code>. When calling <code>.getAttribute(&#39;rotation&#39;)</code>,
 A-Frame will convert from radians to degrees and return a normal JavaScript

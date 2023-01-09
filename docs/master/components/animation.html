@@ -240,11 +240,6 @@
         </option>
       
         <option false
-                data-href="/docs/1.4.0/introduction/">
-          1.4.0
-        </option>
-      
-        <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
@@ -1396,7 +1391,7 @@ animation.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="controlling-animations-using-setattribute"><a href="#controlling-animations-using-setattribute" class="headerlink" title="Controlling Animations using setAttribute"></a>Controlling Animations using setAttribute</h3><p>Like any A-Frame component, the animation component can be configured from JavaScript by calling <a href="https://aframe.io/docs/1.4.0/introduction/javascript-events-dom-apis.html#updating-a-component-with-setattribute">setAttribute()</a> on an element.</p>
+<h3 id="controlling-animations-using-setattribute"><a href="#controlling-animations-using-setattribute" class="headerlink" title="Controlling Animations using setAttribute"></a>Controlling Animations using setAttribute</h3><p>Like any A-Frame component, the animation component can be configured from JavaScript by calling <a href="https://aframe.io/docs/1.3.0/introduction/javascript-events-dom-apis.html#updating-a-component-with-setattribute">setAttribute()</a> on an element.</p>
 <p>By default, the animation will begin playing immediately (autoplay is true by default).</p>
 <p>However, care should be taken when using the interface in this way.  If a finite (i.e. non-looping) animation is requested twice in a row, with identical parameters, the second animation will not play, and neither will it generate an animationcomplete event.</p>
 <p>This is because A-Frame sees the second request as a duplicate request for configuration already applied to the element, and so the second request never reaches the animation component.</p>
@@ -1411,7 +1406,7 @@ animation.</p>
 <p><a href="https://glitch.com/edit/#!/aframe-animation-events?path=index.html:1:0" target="_blank" rel="external">Remix the Animating on Events Glitch</a>.</p>
 <p>To start an animation by explicitly emitting an event, you can do the following:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">el.emit(`startanim001`, null, false);</span><br></pre></td></tr></table></figure>
-<p>The <a href="https://aframe.io/docs/1.4.0/core/entity.html#emit-name-detail-bubbles">third parameter of emit</a> set to “false” parameter ensures the event won’t bubble up to parents, so that you can target the animation at just one particular element.</p>
+<p>The <a href="https://aframe.io/docs/1.3.0/core/entity.html#emit-name-detail-bubbles">third parameter of emit</a> set to “false” parameter ensures the event won’t bubble up to parents, so that you can target the animation at just one particular element.</p>
 <p>This assumes that an animation has already been configured to respond to that custom start event, for example like this:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">el.setAttribute(&apos;animation__001&apos;, &#123;&apos;property&apos;: &apos;position&apos;,</span><br><span class="line">                                 &apos;to&apos;: &#123;x: 1, y: 1, z: 1&#125;,                                 </span><br><span class="line">                                 &apos;startEvents&apos;: &apos;startanim001&apos;);</span><br></pre></td></tr></table></figure>
 <p>(configuring startEvents on the animation automatically disables autoplay).</p>

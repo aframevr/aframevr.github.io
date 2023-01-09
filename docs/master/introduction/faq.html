@@ -240,11 +240,6 @@
         </option>
       
         <option false
-                data-href="/docs/1.4.0/introduction/">
-          1.4.0
-        </option>
-      
-        <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
@@ -1187,7 +1182,7 @@ common use cases. However, performance is ultimately determined by the
 complexity and characteristics of each individual application. To get the best
 use of resources, we will need deeper understanding about 3D graphics.  See
 <a href="../introduction/best-practices.html">best performance practices and guidelines</a> to get started.</p>
-<h2 id="why-is-my-experience-not-entering-vr-or-ar-mode"><a href="#why-is-my-experience-not-entering-vr-or-ar-mode" class="headerlink" title="Why is my experience not entering VR or AR mode?"></a>Why is my experience not entering VR or AR mode?</h2><p>If you are using A-Frame 1.4.0 or older you probably need to update to the <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">latest release</a>. Browsers are migrating to the <a href="https://immersive-web.github.io/webxr/" target="_blank" rel="external">WebXR standard</a> and old versions might no longer work.</p>
+<h2 id="why-is-my-experience-not-entering-vr-or-ar-mode"><a href="#why-is-my-experience-not-entering-vr-or-ar-mode" class="headerlink" title="Why is my experience not entering VR or AR mode?"></a>Why is my experience not entering VR or AR mode?</h2><p>If you are using A-Frame 1.3.0 or older you probably need to update to the <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">latest release</a>. Browsers are migrating to the <a href="https://immersive-web.github.io/webxr/" target="_blank" rel="external">WebXR standard</a> and old versions might no longer work.</p>
 <p>You also have to serve your content over HTTPS. The WebXR API won’t be available over HTTP.</p>
 <h2 id="why-does-my-asset-e-g-image-video-model-not-load"><a href="#why-does-my-asset-e-g-image-video-model-not-load" class="headerlink" title="Why does my asset (e.g., image, video, model) not load?"></a>Why does my asset (e.g., image, video, model) not load?</h2><p>First, if you are doing local development, make sure you are <a href="./installation.html#local-development">using a local
 server</a> so that asset requests work properly.</p>
@@ -1260,6 +1255,7 @@ free assets.</p>
 <p>For 360&deg; images, search for <a href="https://www.flickr.com/groups/equirectangular/" target="_blank" rel="external">equirectangular images on Flickr</a>.</p>
 <p>For 3D models, check out:</p>
 <ul>
+<li><a href="https://vr.google.com/objects" target="_blank" rel="external">Google Blocks</a></li>
 <li><a href="https://sketchfab.com" target="_blank" rel="external">Sketchfab</a></li>
 <li><a href="http://clara.io" target="_blank" rel="external">Clara.io</a></li>
 <li><a href="http://archive3d.net" target="_blank" rel="external">Archive3D</a></li>
@@ -1319,7 +1315,7 @@ including:</p>
 <li>Ember.js</li>
 <li>Meteor</li>
 </ul>
-<h2 id="which-headsets-browsers-devices-and-platforms-does-a-frame-support"><a href="#which-headsets-browsers-devices-and-platforms-does-a-frame-support" class="headerlink" title="Which headsets, browsers, devices, and platforms does A-Frame support?"></a>Which headsets, browsers, devices, and platforms does A-Frame support?</h2><p>Most of them. Read <em><a href="./vr-headsets-and-webxr-browsers.html">VR Headsets and WebVR Browsers</a></em> for more
+<h2 id="which-headsets-browsers-devices-and-platforms-does-a-frame-support"><a href="#which-headsets-browsers-devices-and-platforms-does-a-frame-support" class="headerlink" title="Which headsets, browsers, devices, and platforms does A-Frame support?"></a>Which headsets, browsers, devices, and platforms does A-Frame support?</h2><p>Most of them. Read <em><a href="./vr-headsets-and-webvr-browsers.html">VR Headsets and WebVR Browsers</a></em> for more
 information.</p>
 <h2 id="how-can-i-improve-performance"><a href="#how-can-i-improve-performance" class="headerlink" title="How can I improve performance?"></a>How can I improve performance?</h2><p>Read <em><a href="./best-practices.html#performance">Best Practices &mdash; Performance</a></em> for more information.</p>
 <h2 id="how-can-i-get-in-touch-with-the-a-frame-team"><a href="#how-can-i-get-in-touch-with-the-a-frame-team" class="headerlink" title="How can I get in touch with the A-Frame team?"></a>How can I get in touch with the A-Frame team?</h2><p>We try to be responsive and helpful! We love questions, feedback, bug reports,
@@ -1334,7 +1330,6 @@ and pull requests:</p>
 <h2 id="do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”"><a href="#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”" class="headerlink" title="Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?"></a>Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?</h2><p>A-Frame!</p>
 <h2 id="why-do-my-textures-render-black"><a href="#why-do-my-textures-render-black" class="headerlink" title="Why do my textures render black?"></a>Why do my textures render black?</h2><p>Phones with Adreno 300 series GPUs are notoriously problematic. Set <a href="../components/renderer.html#precision">renderer precision</a> to <code>medium</code> as a workaround. Real fix has to happen at the driver / device level.</p>
 <h2 id="why-is-the-gyroscope-magic-window-mode-not-working"><a href="#why-is-the-gyroscope-magic-window-mode-not-working" class="headerlink" title="Why is the gyroscope / magic window mode not working?"></a>Why is the gyroscope / magic window mode not working?</h2><p><a href="https://www.w3.org/TR/orientation-event/#dom-deviceorientationevent-requestpermission" target="_blank" rel="external">New browser policies</a> require sites to prompt the user for permission before getting access to DeviceMotionEvents. <a href="https://webkit.org/blog/9674/new-webkit-features-in-safari-13/" target="_blank" rel="external">Starting with iOS 13</a> DeviceMotionEvents are only available for pages served over <code>https</code>. Other browsers will also apply same policies and restrictions. A-Frame now <a href="https://aframe.io/docs/1.0.0/components/device-orientation-permission-ui.html#sidebar">incorporates customizable UI</a> to request the necessary permissions to the user. Make sure to update to <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">A-Frame latest version</a></p>
-<h2 id="can-i-use-a-frame-offline-or-self-hosted"><a href="#can-i-use-a-frame-offline-or-self-hosted" class="headerlink" title="Can I use A-Frame offline or self hosted?"></a>Can I use A-Frame offline or self hosted?</h2><p>Using A-Frame online sometimes is not possible or inconvenient, like for instance when traveling or during public events with poor Internet connectivity. A-Frame is mostly self-contained so including the build (aframe.min.js) in your project will be sufficient in many cases. Some specific parts are lazy loaded and only fetched when used. This is for example the case of the fonts for the text component and the 3D models for controllers. In order to make an A-Frame build work either offline or without relying on A-Frame hosting infrastructure (typically cdn.aframe.io), you can monitor network requests on your browser console. This will show precisely what assets are being loaded and thus as required for your specific experience. Fonts can be found via FONT_BASE_URL in the whereas controllers via MODEL_URLS. Both can be modified in the source and included in your own <a href="https://github.com/aframevr/aframe#generating-builds" target="_blank" rel="external">custom build</a></p>
 
 
       <!-- Previous / Next navigation. -->
@@ -1608,17 +1603,6 @@ and pull requests:</p>
     
       <li class="subnav-item">
         <a class="subnav-link" href="#why-is-the-gyroscope-magic-window-mode-not-working">Why is the gyroscope / magic window mode not working?</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#can-i-use-a-frame-offline-or-self-hosted">Can I use A-Frame offline or self hosted?</a>
 
         <!-- Nested. -->
         

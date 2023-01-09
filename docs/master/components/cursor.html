@@ -240,11 +240,6 @@
         </option>
       
         <option false
-                data-href="/docs/1.4.0/introduction/">
-          1.4.0
-        </option>
-      
-        <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
@@ -1213,7 +1208,7 @@ When the cursor clicks on the box, we can listen to the click event.</p>
 </tr>
 <tr>
 <td>rayOrigin</td>
-<td>Where the intersection ray is cast from (i.e. xrselect ,entity or mouse). <code>rayOrigin: mouse</code> is extremely useful for VR development on a mouse and keyboard.</td>
+<td>Where the intersection ray is cast from (i.e.,entity or mouse). <code>rayOrigin: mouse</code> is extremely useful for VR development on a mouse and keyboard.</td>
 <td>entity</td>
 </tr>
 <tr>
@@ -1259,23 +1254,10 @@ component, <a href="./raycaster.html">the raycaster component</a>.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="event-data"><a href="#event-data" class="headerlink" title="Event Data"></a>Event Data</h3><p>Additional detail is included in the <code>detail</code> object on the event as follows:</p>
-<h4 id="intersection"><a href="#intersection" class="headerlink" title="intersection"></a>intersection</h4><p>Relevant events will contain in the event detail <code>intersection</code>, which will
+<h3 id="intersection-data"><a href="#intersection-data" class="headerlink" title="Intersection Data"></a>Intersection Data</h3><p>Relevant events will contain in the event detail <code>intersection</code>, which will
 contain <code>{distance, point, face, faceIndex, indices, object}</code> about specific
 data about the intersection:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.el.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(evt.detail.intersection.point);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="intersectedel"><a href="#intersectedel" class="headerlink" title="intersectedEl"></a>intersectedEl</h4><p>Events emitted on the cursor entity also include event detail <code>intersectedEl</code>, which provides a reference to the intersected entity.</p>
-<h4 id="mouseevent-and-touchevent"><a href="#mouseevent-and-touchevent" class="headerlink" title="mouseEvent and touchEvent"></a>mouseEvent and touchEvent</h4><p>Where the trigger for a cursor event is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent" target="_blank" rel="external">MouseEvent</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent" target="_blank" rel="external">TouchEvent</a>, event detail <code>mouseEvent</code> or <code>touchEvent</code> provides a reference to that event.</p>
-<p>These events provide a wealth of additional detail about the event, as detailed in the APIs linked above.  Among other things, they can indicate:</p>
-<ul>
-<li>which mouse button was used</li>
-<li>information about the state of the mouse buttons (or multi-touch for touch events), and relevant keys shuch as Shift, Ctrl etc. at the time of the mouse or touch event.</li>
-<li>the screen co-ordinates where the event occured.</li>
-</ul>
-<p>This information can be used by applications to handle cursor events differently, depending on this information (e.g. different handling of left click &amp; right click).</p>
-<p>For example:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.el.addEventListener(&apos;click&apos;, function (evt) &#123;</span><br><span class="line">  if (!evt.detail.mouseEvent || evt.detail.mouseEvent.button === 0) &#123;</span><br><span class="line">    console.log(&quot;left button clicked (or touch event / no information)&quot;);</span><br><span class="line">  </span><br><span class="line">  &#125; else if (evt.detail.mouseEvent.button === 2) &#123;</span><br><span class="line">    console.log(&quot;right button clicked&quot;); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>At most one of  <code>mouseEvent</code> or <code>touchEvent</code> will be present on a cursor event, and sometimes neither will.  Neither will be present on <code>mousenter</code>, <code>mouseleave</code> and <code>fusing</code> events, nor on a <code>click</code> event that has been triggered by a fuse timeout rather than a mouse click or touch event.</p>
 <h2 id="states"><a href="#states" class="headerlink" title="States"></a>States</h2><p>The cursor will add states to the cursor entity on certain events:</p>
 <table>
 <thead>
@@ -1332,9 +1314,6 @@ pick up event with the <code>begin</code> attribute:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__click</span>=<span class="string">"property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__fusing</span>=<span class="string">"property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseleave</span>=<span class="string">"property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor</span>=<span class="string">"fuse: true;"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">"color: black; shader: flat"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">"0 0 -3"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">"primitive: ring"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>To play with an example of a cursor with visual feedback, check out the <a href="https://codepen.io/Absulit/pen/WEKjqm" target="_blank" rel="external">Cursor
 with Visual Feedback example on CodePen</a>.</p>
-<h2 id="xr-select-cursor"><a href="#xr-select-cursor" class="headerlink" title="XR Select Cursor"></a>XR Select Cursor</h2><p>When an XR <code>&quot;selectstart&quot;</code> event happens the raycaster picks an element based upon it’s current location.
-This works for handheld AR, and headmounted VR and AR. This works well with the mouse <code>rayOrigin</code> too.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor__mouse</span>=<span class="string">"rayOrigin: mouse"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor__xrselect</span>=<span class="string">"rayOrigin: xrselect"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">raycaster</span>=<span class="string">"objects:#objects *;"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->
@@ -1391,7 +1370,7 @@ This works for handheld AR, and headmounted VR and AR. This works well with the 
           <ul>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#event-data">Event Data</a>
+                <a class="subnav-link" href="#intersection-data">Intersection Data</a>
               </li>
             
           </ul>
@@ -1433,17 +1412,6 @@ This works for handheld AR, and headmounted VR and AR. This works well with the 
     
       <li class="subnav-item">
         <a class="subnav-link" href="#adding-visual-feedback">Adding Visual Feedback</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#xr-select-cursor">XR Select Cursor</a>
 
         <!-- Nested. -->
         
