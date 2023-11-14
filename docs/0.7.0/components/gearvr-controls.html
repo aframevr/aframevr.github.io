@@ -26,7 +26,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-111391431-24"
-      data-aframe-version="1.4.0"
+      data-aframe-version="1.5.0"
       data-docs-version="0.7.0">
   <head>
     <title>gearvr-controls – A-Frame</title>
@@ -145,7 +145,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/1.4.0/introduction/"
+        <a href="/docs/1.5.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -199,7 +199,7 @@
       </li>
     
       <li  data-slug="slug" class="nav-item">
-        <a href="https://supermedium.com/discord/"
+        <a href="https://discord.com/invite/tGYjkYr"
            class="nav-link nav-link-docs"
             rel="external"
             title="A-Frame Discord Channel">
@@ -237,6 +237,11 @@
         <option false
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/1.5.0/introduction/">
+          1.5.0
         </option>
       
         <option false
@@ -1078,7 +1083,7 @@
       
       
         <blockquote>
-<p><strong>Note:</strong> This documentation is for the old 0.7.0 version of A-Frame. Check out the <a href="/docs/1.4.0/introduction/">documentation for the current 1.4.0 version</a></p>
+<p><strong>Note:</strong> This documentation is for the old 0.7.0 version of A-Frame. Check out the <a href="/docs/1.5.0/introduction/">documentation for the current 1.5.0 version</a></p>
 </blockquote>
 
       
@@ -1290,20 +1295,21 @@ and/or pressed buttons (trackpad, trigger).</p>
 
     
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: 'bd49ee3285733d62473816cbd2b55fb4',
     indexName: 'aframe',
-    algoliaOptions: {
+    searchParameters: {
       facetFilters: ['version:0.7.0'],
       hitsPerPage: 10
     },
-    debug: false
+    debug: true
   };
 
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
-  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+  docsearch(Object.assign(searchConfig, {container: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {container: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
     
