@@ -26,7 +26,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-111391431-24"
-      data-aframe-version="1.5.0"
+      data-aframe-version="1.6.0"
       data-docs-version="master">
   <head>
     <title>Component – A-Frame</title>
@@ -145,7 +145,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/1.5.0/introduction/"
+        <a href="/docs/1.6.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -237,6 +237,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/1.6.0/introduction/">
+          1.6.0
         </option>
       
         <option false
@@ -647,6 +652,13 @@
             <a href="/docs/master/components/hide-on-enter-ar.html"
                class="subnav-link">
               hide-on-enter-ar
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/hide-on-enter-vr.html"
+               class="subnav-link">
+              hide-on-enter-vr
             </a>
           </li>
         
@@ -1167,7 +1179,7 @@
       
       
         <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.5.0/introduction/">documentation for the current 1.5.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
 </blockquote>
 
       
@@ -1416,7 +1428,7 @@ then attached to the scene via <code>appendChild</code>.</li>
 </ul>
 <p>For example, a cursor component’s <code>init</code> would set state variables, bind
 methods, and add event listeners:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'cursor'</span>, &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Set up initial state and variables.</span></span><br><span class="line">    <span class="keyword">this</span>.intersection = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// Bind methods.</span></span><br><span class="line">    <span class="keyword">this</span>.onIntersection = AFRAME.utils.bind(<span class="keyword">this</span>.onIntersection, <span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">// Attach event listener.</span></span><br><span class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'raycaster-intersection'</span>, <span class="keyword">this</span>.onIntersection);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'cursor'</span>, &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Set up initial state and variables.</span></span><br><span class="line">    <span class="keyword">this</span>.intersection = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// Bind methods.</span></span><br><span class="line">    <span class="keyword">this</span>.onIntersection = <span class="keyword">this</span>.onIntersection.bind(<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">// Attach event listener.</span></span><br><span class="line">    <span class="keyword">this</span>.el.addEventListener(<span class="string">'raycaster-intersection'</span>, <span class="keyword">this</span>.onIntersection);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
 <h3 id="update-olddata"><a href="#update-olddata" class="headerlink" title=".update (oldData)"></a><code>.update (oldData)</code></h3><p><code>.update (oldData)</code> is called whenever the component’s properties change,
 including at the beginning of the component’s lifecycle. An entity can call a
 component’s <code>update</code> handler:</p>
@@ -1543,6 +1555,12 @@ a component instance is set with <code>foo__bar</code>, then <code>this.attrName
 <code>foo__bar</code>. This gives us a namespace and an ID to set an <code>object3D</code> on the
 entity’s <code>object3DMap</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  multiple: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// An object3D will be set using `foo__bar` as the key.</span></span><br><span class="line">    <span class="keyword">this</span>.el.setObject3D(<span class="keyword">this</span>.attrName, <span class="keyword">new</span> THREE.Mesh());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="sceneonly"><a href="#sceneonly" class="headerlink" title="sceneOnly"></a><code>sceneOnly</code></h3><p>The <code>sceneOnly</code> flag indicates if a component can only be applied to the scene
+entity. Since <code>sceneOnly</code> is set to <code>false</code> by default, the component can be added
+to any entity. For example, any entity could have a geometry component.</p>
+<p>But if a component has <code>sceneOnly</code> set to <code>true</code>, then the component can only be
+applied to <code>&lt;a-scene&gt;</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  sceneOnly: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="events"><a href="#events" class="headerlink" title="events"></a><code>events</code></h3><p>The <code>events</code> object allows for conveniently defining event handlers that get
 binded and automatically attached and detached at appropriate times during the
 component’s lifecycle:</p>
@@ -1555,6 +1573,21 @@ the entity or scene is paused, or the component is detached. If a component’s
 event handlers are registered manually and not detached properly, the event
 handler can still fire even after the component no longer exists.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  events: &#123;</span><br><span class="line">    click: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'This entity was clicked!'</span>);</span><br><span class="line">      <span class="keyword">this</span>.el.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, <span class="string">'red'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="before-after"><a href="#before-after" class="headerlink" title="before / after"></a><code>before</code> / <code>after</code></h3><p>The <code>before</code> and <code>after</code> properties allow a component to specify when their <code>.tick()</code>
+and <code>.tock()</code> methods should be called in relation to other components. This is
+useful in cases where the component depends on the result of others. For example, a
+component that uses the world position of the users hands would want to run <em>after</em> the
+<code>hand-tracking-controls</code> component so that the position it sees is up to date.</p>
+<p>While both a <code>before</code> and a <code>after</code> constraint can be specified, only one is needed.
+A-Frame will automatically determine a suitable order among all registered components.
+In case the constraints cause an impossible situation, e.g. when one component would
+need to be both <em>before</em> and <em>after</em> another component, a warning will be logged and
+the resulting order is undefined.</p>
+<p>Here’s an example showing how to use <code>before</code> and <code>after</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  after: [<span class="string">'bar'</span>],</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Called second'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">AFRAME.registerComponent(<span class="string">'bar'</span>, &#123;</span><br><span class="line">  before: [<span class="string">'foo'</span>],</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Called first'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Note that the order is global, meaning in the above example <em>all</em> <code>bar</code> components get
+their <code>.tick()</code> method called before <em>any</em> <code>foo</code> component. It does not matter if these
+components are on the same entity or not.</p>
 <h2 id="component-prototype-methods"><a href="#component-prototype-methods" class="headerlink" title="Component Prototype Methods"></a>Component Prototype Methods</h2><h3 id="flushtodom"><a href="#flushtodom" class="headerlink" title=".flushToDOM ()"></a><code>.flushToDOM ()</code></h3><p>To save on CPU time on stringification, A-Frame will only update in debug mode
 the component’s serialized representation in the actual DOM. Calling
 <code>flushToDOM ()</code> will manually serialize the component’s data and update the
@@ -1717,7 +1750,15 @@ example component:</p>
               </li>
             
               <li class="subnav-item">
+                <a class="subnav-link" href="#sceneonly">sceneOnly</a>
+              </li>
+            
+              <li class="subnav-item">
                 <a class="subnav-link" href="#events">events</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#before-after">before / after</a>
               </li>
             
           </ul>

@@ -26,7 +26,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-111391431-24"
-      data-aframe-version="1.5.0"
+      data-aframe-version="1.6.0"
       data-docs-version="master">
   <head>
     <title>FAQ – A-Frame</title>
@@ -145,7 +145,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/1.5.0/introduction/"
+        <a href="/docs/1.6.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -237,6 +237,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/1.6.0/introduction/">
+          1.6.0
         </option>
       
         <option false
@@ -647,6 +652,13 @@
             <a href="/docs/master/components/hide-on-enter-ar.html"
                class="subnav-link">
               hide-on-enter-ar
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/master/components/hide-on-enter-vr.html"
+               class="subnav-link">
+              hide-on-enter-vr
             </a>
           </li>
         
@@ -1167,7 +1179,7 @@
       
       
         <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.5.0/introduction/">documentation for the current 1.5.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
 </blockquote>
 
       
@@ -1206,7 +1218,7 @@ common use cases. However, performance is ultimately determined by the
 complexity and characteristics of each individual application. To get the best
 use of resources, we will need deeper understanding about 3D graphics.  See
 <a href="../introduction/best-practices.html">best performance practices and guidelines</a> to get started.</p>
-<h2 id="why-is-my-experience-not-entering-vr-or-ar-mode"><a href="#why-is-my-experience-not-entering-vr-or-ar-mode" class="headerlink" title="Why is my experience not entering VR or AR mode?"></a>Why is my experience not entering VR or AR mode?</h2><p>If you are using A-Frame 1.5.0 or older you probably need to update to the <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">latest release</a>. Browsers are migrating to the <a href="https://immersive-web.github.io/webxr/" target="_blank" rel="external">WebXR standard</a> and old versions might no longer work.</p>
+<h2 id="why-is-my-experience-not-entering-vr-or-ar-mode"><a href="#why-is-my-experience-not-entering-vr-or-ar-mode" class="headerlink" title="Why is my experience not entering VR or AR mode?"></a>Why is my experience not entering VR or AR mode?</h2><p>If you are using A-Frame 1.6.0 or older you probably need to update to the <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">latest release</a>. Browsers are migrating to the <a href="https://immersive-web.github.io/webxr/" target="_blank" rel="external">WebXR standard</a> and old versions might no longer work.</p>
 <p>You also have to serve your content over HTTPS. The WebXR API won’t be available over HTTP.</p>
 <h2 id="why-does-my-asset-e-g-image-video-model-not-load"><a href="#why-does-my-asset-e-g-image-video-model-not-load" class="headerlink" title="Why does my asset (e.g., image, video, model) not load?"></a>Why does my asset (e.g., image, video, model) not load?</h2><p>First, if you are doing local development, make sure you are <a href="./installation.html#local-development">using a local
 server</a> so that asset requests work properly.</p>
@@ -1354,6 +1366,10 @@ and pull requests:</p>
 <h2 id="why-do-my-textures-render-black"><a href="#why-do-my-textures-render-black" class="headerlink" title="Why do my textures render black?"></a>Why do my textures render black?</h2><p>Phones with Adreno 300 series GPUs are notoriously problematic. Set <a href="../components/renderer.html#precision">renderer precision</a> to <code>medium</code> as a workaround. Real fix has to happen at the driver / device level.</p>
 <h2 id="why-is-the-gyroscope-magic-window-mode-not-working"><a href="#why-is-the-gyroscope-magic-window-mode-not-working" class="headerlink" title="Why is the gyroscope / magic window mode not working?"></a>Why is the gyroscope / magic window mode not working?</h2><p><a href="https://www.w3.org/TR/orientation-event/#dom-deviceorientationevent-requestpermission" target="_blank" rel="external">New browser policies</a> require sites to prompt the user for permission before getting access to DeviceMotionEvents. <a href="https://webkit.org/blog/9674/new-webkit-features-in-safari-13/" target="_blank" rel="external">Starting with iOS 13</a> DeviceMotionEvents are only available for pages served over <code>https</code>. Other browsers will also apply same policies and restrictions. A-Frame now <a href="https://aframe.io/docs/1.0.0/components/device-orientation-permission-ui.html#sidebar">incorporates customizable UI</a> to request the necessary permissions to the user. Make sure to update to <a href="https://github.com/aframevr/aframe/releases" target="_blank" rel="external">A-Frame latest version</a></p>
 <h2 id="can-i-use-a-frame-offline-or-self-hosted"><a href="#can-i-use-a-frame-offline-or-self-hosted" class="headerlink" title="Can I use A-Frame offline or self hosted?"></a>Can I use A-Frame offline or self hosted?</h2><p>Using A-Frame online sometimes is not possible or inconvenient, like for instance when traveling or during public events with poor Internet connectivity. A-Frame is mostly self-contained so including the build (aframe.min.js) in your project will be sufficient in many cases. Some specific parts are lazy loaded and only fetched when used. This is for example the case of the fonts for the text component and the 3D models for controllers. In order to make an A-Frame build work either offline or without relying on A-Frame hosting infrastructure (typically cdn.aframe.io), you can monitor network requests on your browser console. This will show precisely what assets are being loaded and thus as required for your specific experience. Fonts can be found via FONT_BASE_URL in the whereas controllers via MODEL_URLS. Both can be modified in the source and included in your own <a href="https://github.com/aframevr/aframe#generating-builds" target="_blank" rel="external">custom build</a></p>
+<h2 id="can-i-load-a-frame-as-an-es-module"><a href="#can-i-load-a-frame-as-an-es-module" class="headerlink" title="Can I load A-Frame as an ES module?"></a>Can I load A-Frame as an ES module?</h2><p>You can load A-Frame as an ES module using a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#import_a_module_for_its_side_effects_only" target="_blank" rel="external">side effect import</a>. A-Frame will then initialize any <code>&lt;a-scene&gt;</code> in the document. It’s still important to register any components or systems you need before this happens:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"importmap"</span>&gt;</span></span><br><span class="line">    &#123;</span><br><span class="line"><span class="javascript">        <span class="string">"imports"</span>: &#123;</span></span><br><span class="line"><span class="javascript">            <span class="string">"aframe"</span>: <span class="string">"https://aframe.io/releases/1.6.0/aframe.min.js"</span>,</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> <span class="string">'aframe'</span>;</span></span><br><span class="line"><span class="javascript">    AFRAME.registerComponent(<span class="string">'my-component'</span>, &#123;</span></span><br><span class="line">      ...</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>If it’s not possible to register everything synchronously to importing A-Frame, you can set the <code>window.AFRAME_ASYNC</code> flag. This prevents A-Frame from initializing <code>&lt;a-scene&gt;</code> tags, until you give a ready signal by calling <code>window.AFRAME.emitReady()</code>. Note that this flag must be set before importing A-Frame, as shown in the following example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.AFRAME_ASYNC = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">'aframe'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Asynchronously register components/systems</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.AFRAME.ready();</span><br></pre></td></tr></table></figure>
 <h2 id="what-order-does-a-frame-render-objects-in"><a href="#what-order-does-a-frame-render-objects-in" class="headerlink" title="What order does A-Frame render objects in?"></a>What order does A-Frame render objects in?</h2><p>In many cases, the order in which objects is rendered doesn’t matter much - most scenes will look the same whatever order the objects are rendered in - but there are a few cases where sorting is important:</p>
 <ul>
 <li>for transparent objects, it’s typically better to render objects furthest to nearest (although some cases are more complex and require <a href="https://threejs.org/manual/?q=transp[#en/transparency" target="_blank" rel="external">more sophisticated approaches</a>).  However, when the camera and/or objects are moving, this can result in undesirable visual effects when objects switch in terms of their relative distance from the camera</li>
@@ -1650,6 +1666,17 @@ and pull requests:</p>
     
       <li class="subnav-item">
         <a class="subnav-link" href="#can-i-use-a-frame-offline-or-self-hosted">Can I use A-Frame offline or self hosted?</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#can-i-load-a-frame-as-an-es-module">Can I load A-Frame as an ES module?</a>
 
         <!-- Nested. -->
         
