@@ -30,7 +30,7 @@
       data-docs-version="master">
   <head>
     <title>Best Practices – A-Frame</title>
-
+    
 
 <script>
   var host = window.location.protocol + '//' + window.location.hostname;
@@ -43,8 +43,8 @@
 
     <meta charset="utf-8">
     <!-- Don't index old documentation pages. -->
-
-
+    <meta name="robots"
+      content="NOINDEX">
     <meta name="description" content="">
     <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,20 +88,26 @@
 </script>
 
 
+    
+      
+<script src="/js/compat.js"></script>
 
-      <script src="/js/compat.js"></script>
+    
 
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
 
+    
 
-      <link rel="stylesheet" href="/css/secondary.css">
-
-
-
+    
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
 
-  </head>
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="docs" data-page-type="introduction">
     <main id="main" class="main">
@@ -115,7 +121,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar">
@@ -125,7 +131,7 @@
 </div>
 
 <aside id="sidebar" class="sidebar borderless-links">
-
+  
 
 <div id="secondary-nav" class="secondary-nav">
   <header id="header" class="header">
@@ -134,7 +140,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar-mobile">
@@ -143,43 +149,43 @@
 
 
   <ul id="nav" class="nav">
-
+    
       <li  class="nav-item">
         <a href="/docs/1.6.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
-
+           
            >
           <span>Docs</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/blog/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Blog</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/community/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Community</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/showcase/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Showcase</span>
         </a>
       </li>
-
+    
       <li  data-slug="github" class="nav-item">
         <a href="https://github.com/aframevr/aframe/"
            class="nav-link nav-link-docs"
@@ -188,7 +194,7 @@
           <span>GitHub</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://aframe.io/slack-invite/"
            class="nav-link nav-link-docs"
@@ -197,7 +203,7 @@
           <span>Slack</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://discord.com/invite/tGYjkYr"
            class="nav-link nav-link-docs"
@@ -206,7 +212,7 @@
           <span>Discord</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://aframe.io/subscribe/"
            class="nav-link nav-link-docs"
@@ -215,7 +221,7 @@
           <span>Newsletter</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
            class="nav-link nav-link-docs"
@@ -224,7 +230,7 @@
           <span>Ask a Question</span>
         </a>
       </li>
-
+    
   </ul>
 </div>
 
@@ -233,96 +239,96 @@
     <!-- Version dropdown. -->
     <label class="subnav-label" for="docs-version"><b>Version</b></label>
     <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-
+      
         <option selected
                 data-href="/docs/master/introduction/">
           master
         </option>
-
+      
         <option false
                 data-href="/docs/1.6.0/introduction/">
           1.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.5.0/introduction/">
           1.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.4.0/introduction/">
           1.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.2.0/introduction/">
           1.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.1.0/introduction/">
           1.1.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.0.0/introduction/">
           1.0.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.9.0/introduction/">
           0.9.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.8.0/introduction/">
           0.8.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.7.0/introduction/">
           0.7.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.6.0/introduction/">
           0.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.5.0/introduction/">
           0.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.4.0/introduction/">
           0.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.3.0/introduction/">
           0.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.2.0/guide/">
           0.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.1.0/guide/">
           0.1.0
         </option>
-
+      
     </select>
 
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-active">
@@ -331,108 +337,108 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/"
                class="subnav-link">
               Introduction
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/installation.html"
                class="subnav-link">
               Installation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/vr-headsets-and-webxr-browsers.html"
                class="subnav-link">
               VR Headsets & WebXR Browsers
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/html-and-primitives.html"
                class="subnav-link">
               HTML & Primitives
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/entity-component-system.html"
                class="subnav-link">
               Entity-Component-System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/javascript-events-dom-apis.html"
                class="subnav-link">
               JavaScript, Events, DOM APIs
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/developing-with-threejs.html"
                class="subnav-link">
               Developing with three.js
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/writing-a-component.html"
                class="subnav-link">
               Writing a Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/interactions-and-controllers.html"
                class="subnav-link">
               Interactions & Controllers
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/models.html"
                class="subnav-link">
               3D Models
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/visual-inspector-and-dev-tools.html"
                class="subnav-link">
               Visual Inspector & Dev Tools
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/hosting-and-publishing.html"
                class="subnav-link">
               Hosting & Publishing
             </a>
           </li>
-
+        
           <li class="subnav-item  subnav-item-current">
             <a href="/docs/master/introduction/best-practices.html"
                class="subnav-link current">
               Best Practices
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/introduction/faq.html"
                class="subnav-link">
               FAQ
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -441,31 +447,31 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/guides/building-a-basic-scene.html"
                class="subnav-link">
               Building a Basic Scene
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/guides/building-a-360-image-gallery.html"
                class="subnav-link">
               Building a 360&deg; Image Gallery
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/guides/building-a-minecraft-demo.html"
                class="subnav-link">
               Building a Minecraft Demo
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -474,66 +480,66 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/core/entity.html"
                class="subnav-link">
               Entity
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/core/component.html"
                class="subnav-link">
               Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/core/systems.html"
                class="subnav-link">
               System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/core/scene.html"
                class="subnav-link">
               Scene
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/core/mixins.html"
                class="subnav-link">
               Mixins
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/core/asset-management-system.html"
                class="subnav-link">
               Asset Management System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/core/globals.html"
                class="subnav-link">
               Globals
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/core/utils.html"
                class="subnav-link">
               Utils
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -542,367 +548,367 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/anchored.html"
                class="subnav-link">
               anchored
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/animation.html"
                class="subnav-link">
               animation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/ar-hit-test.html"
                class="subnav-link">
               ar-hit-test
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/background.html"
                class="subnav-link">
               background
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/camera.html"
                class="subnav-link">
               camera
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/cursor.html"
                class="subnav-link">
               cursor
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/debug.html"
                class="subnav-link">
               debug
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/device-orientation-permission-ui.html"
                class="subnav-link">
               device-orientation-permission-ui
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/embedded.html"
                class="subnav-link">
               embedded
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/fog.html"
                class="subnav-link">
               fog
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/geometry.html"
                class="subnav-link">
               geometry
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/gltf-model.html"
                class="subnav-link">
               gltf-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/hand-controls.html"
                class="subnav-link">
               hand-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/hand-tracking-controls.html"
                class="subnav-link">
               hand-tracking-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/hand-tracking-grab-controls.html"
                class="subnav-link">
               hand-tracking-grab-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/hide-on-enter-ar.html"
                class="subnav-link">
               hide-on-enter-ar
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/hide-on-enter-vr.html"
                class="subnav-link">
               hide-on-enter-vr
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/keyboard-shortcuts.html"
                class="subnav-link">
               keyboard-shortcuts
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/laser-controls.html"
                class="subnav-link">
               laser-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/layer.html"
                class="subnav-link">
               layer
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/light.html"
                class="subnav-link">
               light
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/line.html"
                class="subnav-link">
               line
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/link.html"
                class="subnav-link">
               link
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/loading-screen.html"
                class="subnav-link">
               loading-screen
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/look-controls.html"
                class="subnav-link">
               look-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/magicleap-controls.html"
                class="subnav-link">
               magicleap-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/material.html"
                class="subnav-link">
               material
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/obb-collider.html"
                class="subnav-link">
               obb-collider
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/obj-model.html"
                class="subnav-link">
               obj-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/oculus-touch-controls.html"
                class="subnav-link">
               oculus-touch-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/pool.html"
                class="subnav-link">
               pool
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/position.html"
                class="subnav-link">
               position
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/raycaster.html"
                class="subnav-link">
               raycaster
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/real-world-meshing.html"
                class="subnav-link">
               real-world-meshing
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/reflection.html"
                class="subnav-link">
               reflection
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/renderer.html"
                class="subnav-link">
               renderer
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/rotation.html"
                class="subnav-link">
               rotation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/scale.html"
                class="subnav-link">
               scale
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/screenshot.html"
                class="subnav-link">
               screenshot
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/shadow.html"
                class="subnav-link">
               shadow
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/sound.html"
                class="subnav-link">
               sound
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/stats.html"
                class="subnav-link">
               stats
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/text.html"
                class="subnav-link">
               text
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/tracked-controls.html"
                class="subnav-link">
               tracked-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/visible.html"
                class="subnav-link">
               visible
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/vive-controls.html"
                class="subnav-link">
               vive-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/vive-focus-controls.html"
                class="subnav-link">
               vive-focus-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/wasd-controls.html"
                class="subnav-link">
               wasd-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/webxr.html"
                class="subnav-link">
               webxr
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/windows-motion-controls.html"
                class="subnav-link">
               windows-motion-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/components/xr-mode-ui.html"
                class="subnav-link">
               xr-mode-ui
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -911,205 +917,205 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-box.html"
                class="subnav-link">
               &lt;a-box&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-camera.html"
                class="subnav-link">
               &lt;a-camera&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-circle.html"
                class="subnav-link">
               &lt;a-circle&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-cone.html"
                class="subnav-link">
               &lt;a-cone&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-cubemap.html"
                class="subnav-link">
               &lt;a-cubemap&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-cursor.html"
                class="subnav-link">
               &lt;a-cursor&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-curvedimage.html"
                class="subnav-link">
               &lt;a-curvedimage&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-cylinder.html"
                class="subnav-link">
               &lt;a-cylinder&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-dodecahedron.html"
                class="subnav-link">
               &lt;a-dodecahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-gltf-model.html"
                class="subnav-link">
               &lt;a-gltf-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-icosahedron.html"
                class="subnav-link">
               &lt;a-icosahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-image.html"
                class="subnav-link">
               &lt;a-image&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-light.html"
                class="subnav-link">
               &lt;a-light&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-link.html"
                class="subnav-link">
               &lt;a-link&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-obj-model.html"
                class="subnav-link">
               &lt;a-obj-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-plane.html"
                class="subnav-link">
               &lt;a-plane&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-ring.html"
                class="subnav-link">
               &lt;a-ring&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-sky.html"
                class="subnav-link">
               &lt;a-sky&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-sound.html"
                class="subnav-link">
               &lt;a-sound&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-sphere.html"
                class="subnav-link">
               &lt;a-sphere&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-tetrahedron.html"
                class="subnav-link">
               &lt;a-tetrahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-text.html"
                class="subnav-link">
               &lt;a-text&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-torus-knot.html"
                class="subnav-link">
               &lt;a-torus-knot&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-torus.html"
                class="subnav-link">
               &lt;a-torus&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-triangle.html"
                class="subnav-link">
               &lt;a-triangle&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-video.html"
                class="subnav-link">
               &lt;a-video&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/master/primitives/a-videosphere.html"
                class="subnav-link">
               &lt;a-videosphere&gt;
             </a>
           </li>
-
+        
       </ol>
-
+    
   </div>
 </aside>
 
@@ -1174,43 +1180,45 @@
         Best Practices
       </h1>
 
+      
 
-
-
-
+      
+      
         <blockquote>
 <p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
 </blockquote>
 
+      
 
-
-      <h2 id="a-frame"><a href="#a-frame" class="headerlink" title="A-Frame"></a>A-Frame</h2><p>The core structure of A-Frame is <a href="./entity-component-system.html">entity-component (ECS)</a>. Place and
+      <h2 id="a-frame"><a href="#a-frame" class="headerlink" title="A-Frame"></a>A-Frame</h2><p>The core structure of A-Frame is <a href="./entity-component-system.md">entity-component (ECS)</a>. Place and
 structure application code within purely A-Frame components for reusability,
 modularity, composability, decoupling, encapsulation, declarativeness, and
 testability.</p>
 <p><strong>Do not do this</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a-scene&gt;</span><br><span class="line">  &lt;a-box&gt;&lt;/a-box&gt;</span><br><span class="line">  &lt;!-- ... --&gt;</span><br><span class="line">&lt;/a-scene&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // My JavaScript code here!</span><br><span class="line">  // ... NO!</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;a-scene&gt;</span><br><span class="line">  &lt;a-box&gt;&lt;/a-box&gt;</span><br><span class="line">  &lt;!-- ... --&gt;</span><br><span class="line">&lt;/a-scene&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // My JavaScript code here!</span><br><span class="line">  // ... NO!</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
 <p>Place your code within A-Frame components so they are executed at the correct
 time, to encapsulate reusable code, and to make use of the framework which is the
 purpose of using A-Frame.</p>
 <p><strong>Do this</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  AFRAME.registerComponent(&apos;code-that-does-this&apos;, &#123;</span><br><span class="line">    init: function () &#123;</span><br><span class="line">      // Code here.</span><br><span class="line">      console.log(this.el);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  AFRAME.registerComponent(&apos;code-to-attach-to-box&apos;, &#123;</span><br><span class="line">    init: function () &#123;</span><br><span class="line">      // Code here.</span><br><span class="line">      console.log(this.el);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;a-scene code-that-does-this&gt;</span><br><span class="line">  &lt;a-box code-to-attach-to-box&gt;&lt;/a-box&gt;</span><br><span class="line">  &lt;!-- ... --&gt;</span><br><span class="line">&lt;/a-scene&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  AFRAME.registerComponent(&#x27;code-that-does-this&#x27;, &#123;</span><br><span class="line">    init: function () &#123;</span><br><span class="line">      // Code here.</span><br><span class="line">      console.log(this.el);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  AFRAME.registerComponent(&#x27;code-to-attach-to-box&#x27;, &#123;</span><br><span class="line">    init: function () &#123;</span><br><span class="line">      // Code here.</span><br><span class="line">      console.log(this.el);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;a-scene code-that-does-this&gt;</span><br><span class="line">  &lt;a-box code-to-attach-to-box&gt;&lt;/a-box&gt;</span><br><span class="line">  &lt;!-- ... --&gt;</span><br><span class="line">&lt;/a-scene&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="performance"><a href="#performance" class="headerlink" title="Performance"></a>Performance</h2><p>Performance is critical in VR. A high framerate must be maintained in order for
 people to feel comfortable. Here are some ways to help improve performance of
 an A-Frame scene:</p>
 <ul>
-<li>Use <a href="./vr-headsets-and-webxr-browsers.html">recommended hardware specifications</a>.</li>
-<li>Use the <strong><a href="../components/stats.html">stats component</a></strong> to keep an eye on various metrics (FPS,
+<li>Use <a href="./vr-headsets-and-webxr-browsers.md">recommended hardware specifications</a>.</li>
+<li>Use the <strong><a href="../components/stats.md">stats component</a></strong> to keep an eye on various metrics (FPS,
 vertex and face count, geometry and material count, draw calls, number of
 entities). We want to maximize FPS and minimize everything else.</li>
 <li>Limit draw calls as much as possible. Each geometry, object, model without
 optimization is generally a draw call. Rule of thumb, try to keep under 300
-maximum. <a href="https://www.npmjs.com/package/aframe-geometry-merger-component" target="_blank" rel="external">Merge</a> together all static meshes if possible. You
-can use <a href="https://www.npmjs.com/package/aframe-geometry-merger-component" target="_blank" rel="external">geometry-merger</a> and then make use a three.js
+maximum. <a href="https://www.npmjs.com/package/aframe-geometry-merger-component">Merge</a> together all static meshes if possible. You
+can use <a href="https://www.npmjs.com/package/aframe-geometry-merger-component">geometry-merger</a> and then make use a three.js
 material with vertex colors enabled. three.js geometries keep data such as
 color, uvs per vertex that can be used to maintain and manipulate geometries
 post-merge.</li>
-<li>Make use of the <strong><a href="../core/asset-management-system.html">asset management system</a></strong> to browser cache and
+<li>Make use of the <strong><a href="../core/asset-management-system.md">asset management system</a></strong> to browser cache and
 preload assets.</li>
 <li>If using models, look to bake your lights into textures rather than relying
 on real-time lighting and shadows.</li>
@@ -1219,7 +1227,7 @@ on real-time lighting and shadows.</li>
 256x256, 512x1024) in order to avoid the renderer having to resize the
 texture during runtime.</li>
 <li>Limit the number of faces and vertices on models.</li>
-<li>Some further techniques include geometry instancing, <a href="https://www.npmjs.com/package/aframe-geometry-merger-component" target="_blank" rel="external">geometry
+<li>Some further techniques include geometry instancing, <a href="https://www.npmjs.com/package/aframe-geometry-merger-component">geometry
 merging</a>, level of detail (LOD).</li>
 <li>When using raycasters or colliders, select which entities are to be raycasted
 against rather than raycasting against every object in the scene.</li>
@@ -1227,27 +1235,28 @@ against rather than raycasting against every object in the scene.</li>
 handlers to hook into the global render loop. Use utilities such as
 <code>AFRAME.utils.throttleTick</code> to limit the number of times the <code>tick</code> handler
 is run if appropriate.</li>
-<li>Use the <strong><a href="../components/background.html">background component</a></strong> instead of <code>a-sky</code> to define a
+<li>Use the <strong><a href="../components/background.md">background component</a></strong> instead of <code>a-sky</code> to define a
 solid color as the scene background. This prevents the creation of
 unnecessary geometry.</li>
 <li>Update <code>position</code>, <code>rotation</code>, <code>scale</code>, and <code>visible</code> at the three.js
 level (<code>el.object3D.position</code>, <code>el.object3D.rotation</code>, <code>el.object3D.scale</code>,
 <code>el.object3D.visible</code>) to avoid overhead on <code>.setAttribute</code>.</li>
 <li>If you need to create, remove and re-create many entities of the same type,
-use the <strong><a href="../components/pool.html">pool component</a></strong> to pre-generate and reuse entities. This
+use the <strong><a href="../components/pool.md">pool component</a></strong> to pre-generate and reuse entities. This
 avoids the cost of creating entities on the fly and reduces garbage collection.</li>
-<li>When using the animation component, <a href="../components/animation.html#direct-values-through-object3d-and-components">animate values directly</a>
-which will skip <code>.setAttribute</code> and animate JS values directly.
-For example, instead of <code>material.opacity</code>,
+<li>When using the animation component, <a href="../components/animation.md#direct-values-through-object3d-and-components">animate values directly</a> 
+which will skip <code>.setAttribute</code> and animate JS values directly. 
+For example, instead of <code>material.opacity</code>, 
 animate <code>components.material.material.opacity</code>.</li>
 </ul>
 <h3 id="gpu-texture-preloading"><a href="#gpu-texture-preloading" class="headerlink" title="GPU Texture Preloading"></a>GPU Texture Preloading</h3><p>Until non-blocking texture uploads to the GPU are available, try to draw all
 materials and textures up front. When materials and textures are drawn for the
 first time, the browser will hang and block while uploading to the GPU. We can
 manually preload textures by calling:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'a-scene'</span>).renderer.setTexture2D(ourTexture, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;a-scene&#x27;</span>).<span class="property">renderer</span>.<span class="title function_">setTexture2D</span>(ourTexture, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
 <p>We will try to come with a convenient API in A-Frame to do this automatically.</p>
-<p>For example, this is apparent in the <a href="https://aframe-360-gallery.glitch.me" target="_blank" rel="external">360&deg; image gallery</a>. If we look at
+<p>For example, this is apparent in the <a href="https://aframe-360-gallery.glitch.me/">360&deg; image gallery</a>. If we look at
 the browser performance tools, there will be frame drops when switching to a
 new image for the first time, but smooth transitions when switching back to
 images for the second time.</p>
@@ -1268,20 +1277,20 @@ frames as it pauses to clean up memory. To avoid this, we try to minimize
 allocation of memory and hold onto objects to prevent them from getting garbage
 collected.</p>
 <p>Learn more about detecting allocations and garbage collection in
-<a href="https://developer.mozilla.org/en-US/docs/Tools/Performance/Allocations" target="_blank" rel="external">Firefox</a> and <a href="https://developers.google.com/web/tools/chrome-devtools/memory-problems/#spot_frequent_garbage_collections" target="_blank" rel="external">Chrome</a> performance tools.</p>
-<p>Try to avoid patterns such as <code>Object.keys(obj).forEach(function () { });</code>,
-which create new arrays, functions, and callbacks versus using <code>for (key in
-obj)</code>. Or for array iteration, avoid <code>.forEach</code> and use a simple <code>for</code> loop
+<a href="https://developer.mozilla.org/en-US/docs/Tools/Performance/Allocations">Firefox</a> and <a href="https://developers.google.com/web/tools/chrome-devtools/memory-problems/#spot_frequent_garbage_collections">Chrome</a> performance tools.</p>
+<p>Try to avoid patterns such as <code>Object.keys(obj).forEach(function () &#123; &#125;);</code>,
+which create new arrays, functions, and callbacks versus using <code>for (key in obj)</code>. Or for array iteration, avoid <code>.forEach</code> and use a simple <code>for</code> loop
 instead. Avoid unnecessary copying of objects, using methods like
 <code>utils.extend(target, source)</code> instead of <code>utils.clone</code> or <code>.slice</code>.</p>
 <p>If emitting an event, try to reuse the same object for event details:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.someData = [];</span><br><span class="line">    <span class="keyword">this</span>.evtDetail = &#123;<span class="attr">someData</span>: <span class="keyword">this</span>.someData&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.someData.push(time);</span><br><span class="line">    <span class="keyword">this</span>.el.emit(<span class="string">'bar'</span>, <span class="keyword">this</span>.evtDetail);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;foo&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">someData</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">evtDetail</span> = &#123;<span class="attr">someData</span>: <span class="variable language_">this</span>.<span class="property">someData</span>&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">tick</span>: <span class="keyword">function</span> (<span class="params">time</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">someData</span>.<span class="title function_">push</span>(time);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">el</span>.<span class="title function_">emit</span>(<span class="string">&#x27;bar&#x27;</span>, <span class="variable language_">this</span>.<span class="property">evtDetail</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>All of the suggestions above are <em>especially</em> important in <code>tick()</code> handlers,
 where they will be running on every frame.</p>
 <p>More articles on reducing garbage collector activity:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/18364175/best-practices-for-reducing-garbage-collector-activity-in-javascript" target="_blank" rel="external">Best Practices for Reducing Garbage Collector Activity in JS</a></li>
-<li><a href="https://www.construct.net/en/blogs/construct-official-blog-1/how-to-write-low-garbage-real-time-javascript-761" target="_blank" rel="external">How to Write Low Garbage Real-Time JavaScript</a></li>
+<li><a href="https://stackoverflow.com/questions/18364175/best-practices-for-reducing-garbage-collector-activity-in-javascript">Best Practices for Reducing Garbage Collector Activity in JS</a></li>
+<li><a href="https://www.construct.net/en/blogs/construct-official-blog-1/how-to-write-low-garbage-real-time-javascript-761">How to Write Low Garbage Real-Time JavaScript</a></li>
 </ul>
 <h3 id="tick-handlers"><a href="#tick-handlers" class="headerlink" title="tick Handlers"></a><code>tick</code> Handlers</h3><p>In component tick handlers, be frugal on creating new objects. Try to reuse
 objects. A pattern to create private reusable auxiliary variables is with a
@@ -1289,13 +1298,15 @@ closure. Below we create a helper vector and quaternion and reuse them between
 frames, rather than creating new ones on each frame. Be careful that these
 variables do not hold state because they will be shared between all instances
 of the component. Doing this will reduce memory usage and garbage collection:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.doSomething();</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  doSomething: (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> helperVector = <span class="keyword">new</span> THREE.Vector3();</span><br><span class="line">    <span class="keyword">var</span> helperQuaternion = <span class="keyword">new</span> THREE.Quaternion();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      helperVector.copy(<span class="keyword">this</span>.el.object3D.position);</span><br><span class="line">      helperQuaternion.copy(<span class="keyword">this</span>.el.object3D.quaternion);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;foo&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">tick</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">doSomething</span>();</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">doSomething</span>: (<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> helperVector = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Vector3</span>();</span><br><span class="line">    <span class="keyword">var</span> helperQuaternion = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Quaternion</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      helperVector.<span class="title function_">copy</span>(<span class="variable language_">this</span>.<span class="property">el</span>.<span class="property">object3D</span>.<span class="property">position</span>);</span><br><span class="line">      helperQuaternion.<span class="title function_">copy</span>(<span class="variable language_">this</span>.<span class="property">el</span>.<span class="property">object3D</span>.<span class="property">quaternion</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>Also if we continuously modify a component in the tick, make sure we pass the
 same object for updating properties. A-Frame will keep track of the latest
 passed object and disable type checking on subsequent calls for an extra speed
 boost. Here is an example of a recommended tick function that modifies the
 rotation on every tick:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'foo'</span>, &#123;</span><br><span class="line">  tick: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</span><br><span class="line">    <span class="keyword">var</span> rotationTmp = <span class="keyword">this</span>.rotationTmp = <span class="keyword">this</span>.rotationTmp || &#123;<span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">z</span>: <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">var</span> rotation = el.getAttribute(<span class="string">'rotation'</span>);</span><br><span class="line">    rotationTmp.x = rotation.x + <span class="number">0.1</span>;</span><br><span class="line">    rotationTmp.y = rotation.y + <span class="number">0.1</span>;</span><br><span class="line">    rotationTmp.z = rotation.z + <span class="number">0.1</span>;</span><br><span class="line">    el.setAttribute(<span class="string">'rotation'</span>, rotationTmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;foo&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">tick</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="variable language_">this</span>.<span class="property">el</span>;</span><br><span class="line">    <span class="keyword">var</span> rotationTmp = <span class="variable language_">this</span>.<span class="property">rotationTmp</span> = <span class="variable language_">this</span>.<span class="property">rotationTmp</span> || &#123;<span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">z</span>: <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">var</span> rotation = el.<span class="title function_">getAttribute</span>(<span class="string">&#x27;rotation&#x27;</span>);</span><br><span class="line">    rotationTmp.<span class="property">x</span> = rotation.<span class="property">x</span> + <span class="number">0.1</span>;</span><br><span class="line">    rotationTmp.<span class="property">y</span> = rotation.<span class="property">y</span> + <span class="number">0.1</span>;</span><br><span class="line">    rotationTmp.<span class="property">z</span> = rotation.<span class="property">z</span> + <span class="number">0.1</span>;</span><br><span class="line">    el.<span class="title function_">setAttribute</span>(<span class="string">&#x27;rotation&#x27;</span>, rotationTmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>Again be careful what you do in tick functions, treat them as critical
 performance code because they will be run 90 times per second. <a href="../core/utils.html#aframe-utils-throttletick-function-t-dt-minimuminterval-optionalcontext">Consider
 using <code>utils.throttleTick</code></a> to run your code at less frequent intervals.</p>
@@ -1305,7 +1316,7 @@ user comfort and presence. This has been thoroughly written about so we defer
 to these guides. Note that VR interaction design is fairly new, and nothing is
 absolute:</p>
 <ul>
-<li><a href="https://developer.oculus.com/design/latest/concepts/book-bp/" target="_blank" rel="external">Oculus Best Practices (for VR)</a></li>
+<li><a href="https://developer.oculus.com/design/latest/concepts/book-bp/">Oculus Best Practices (for VR)</a></li>
 </ul>
 <p>Some things to note:</p>
 <ul>
@@ -1321,14 +1332,14 @@ to a specific form factor versus watering it down for all platforms at once.</p>
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
-
+        
           <span class="float-left">
             <a href="/docs/master/introduction/hosting-and-publishing.html" class="guide-link guide-link-left">← Hosting &amp; Publishing </a></span>
-
-
+        
+        
           <span class="float-right">
             <a href="/docs/master/introduction/faq.html" class="guide-link guide-link-right">FAQ →</a></span>
-
+        
       </footer>
 
       <footer class="footer footnote">
@@ -1342,86 +1353,92 @@ to a specific form factor versus watering it down for all platforms at once.</p>
     </div>
 
     <div class="secondary-sidebar">
-
+      
 
 <div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#a-frame">A-Frame</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#performance">Performance</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#gpu-texture-preloading">GPU Texture Preloading</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#minimizing-garbage-collection-in-javascript">Minimizing Garbage Collection in JavaScript</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#tick-handlers">tick Handlers</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#vr-design">VR Design</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
   </ul>
 </div>
 
-
+      
 
       <div class="doc-actions">
         <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/best-practices.md" target="_blank" rel="external">Edit Page</a>
-
+        
       </div>
     </div>
   </div>
 </div>
 </main>
 
+    
+      
+<script src="/js/common.js"></script>
 
-      <script src="/js/common.js"></script>
+      
+      
+        
+<script src="/js/docs.js"></script>
 
+      
+    
 
-        <script src="/js/docs.js"></script>
-
-
-
-
+    
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:master'],
@@ -1434,6 +1451,6 @@ to a specific form factor versus watering it down for all platforms at once.</p>
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
-
+    
   </body>
 </html>

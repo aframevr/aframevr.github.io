@@ -101,19 +101,25 @@ state. Managing lo">
 
 
     
-      <script src="/js/compat.js"></script>
+      
+<script src="/js/compat.js"></script>
+
     
 
     
-      <link rel="stylesheet" href="/css/secondary.css">
+      
+<link rel="stylesheet" href="/css/secondary.css">
+
     
 
     
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
+
     
-  </head>
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="blog" data-page-type="">
     <main id="main" class="main"><div class="wordmark">
@@ -753,20 +759,20 @@ state. Managing lo">
       
         
           <li class="subnav-item ">
-            <a href="/blog/awoa-77/"
+            <a href="/blog/awoa-76/"
                class="subnav-link"
-               title="A Week of A-Frame 77">
-              A Week of A-Frame 77
+               title="A Week of A-Frame 76">
+              A Week of A-Frame 76
             </a>
           </li>
         
       
         
           <li class="subnav-item ">
-            <a href="/blog/awoa-76/"
+            <a href="/blog/awoa-77/"
                class="subnav-link"
-               title="A Week of A-Frame 76">
-              A Week of A-Frame 76
+               title="A Week of A-Frame 77">
+              A Week of A-Frame 77
             </a>
           </li>
         
@@ -1804,27 +1810,28 @@ state. Managing lo">
           
 
           <blockquote>
-<p>The current solution now is the <strong><a href="https://www.npmjs.com/package/aframe-state-component" target="_blank" rel="external">A-Frame State Component</a></strong>, which is sort of based off Redux patterns, but without all the memory issues, simpler API, and tailored for A-Frame performance.</p>
+<p>The current solution now is the <strong><a href="https://www.npmjs.com/package/aframe-state-component">A-Frame State Component</a></strong>, which is sort of based off Redux patterns, but without all the memory issues, simpler API, and tailored for A-Frame performance.</p>
 </blockquote>
 <p>Larger VR applications need a way of cleanly managing application or game
 state. Managing lots of client-side state in a non-tangled manner has been a
 large topic in 2D web development over the past couple of years which has given
 rise to libraries such as
-<a href="http://redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">Redux</a>. Having
+<a href="http://redux.js.org/docs/introduction/ThreePrinciples.html">Redux</a>. Having
 built several non-trivial WebVR applications, we’ll go over how we started to
 bring these ideas of state management into A-Frame’s DOM-based entity-component
 architecture.</p>
 <!--toc-->
 
-<a id="more"></a>
+<span id="more"></span>
+
 <h2 id="initial-approach-with-redux"><a href="#initial-approach-with-redux" class="headerlink" title="Initial Approach with Redux"></a>Initial Approach with Redux</h2><p><img src="https://camo.githubusercontent.com/af8803571294fe373a54d039be8f9709f15a2ad4/687474703a2f2f6d616b6569746f70656e2e636f6d2f7374617469632f696d616765732f72656475785f666c6f7763686172742e706e67" alt="Redux"></p>
-<p><em><a href="http://makeitopen.com/tutorials/building-the-f8-app/data/" target="_blank" rel="external">Image credit to makeitopen.com</a></em></p>
+<p><em><a href="http://makeitopen.com/tutorials/building-the-f8-app/data/">Image credit to makeitopen.com</a></em></p>
 <p>My initial approach was to use Redux straight up with A-Frame. Redux is a
 library to predictably manage and modify state similar to a state management
 machine. Redux has become extremely popular over the last couple of years when
 used with React. I personally started using it the day it was released. Redux
 is an agnostic library that can be integrated into any framework.</p>
-<p><a href="http://redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">Redux’s three
+<p><a href="http://redux.js.org/docs/introduction/ThreePrinciples.html">Redux’s three
 principles</a>: single
 source of truth, read-only state, and changes are made with pure functions.
 The implementation of Redux involves a single global state, making it easy to
@@ -1834,22 +1841,26 @@ making it easy to unit test. Then we can only modify the state by dispatching
 actions (i.e., events), providing a single entry point into modifying the
 state.</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/24901028/ab55bb0a-1e5a-11e7-9aff-57ddb71e48cf.png" alt="Redux and A-Frame Diagram"></p>
-<p>For a basic example, say we have a state <code>{value: 1}</code>. I could have a reducer
+<p>For a basic example, say we have a state <code>&#123;value: 1&#125;</code>. I could have a reducer
 that modifies the state; on the <code>INCREMENT</code> action, the reducer would do return
 a new state with <code>value++;</code>, and on the <code>DECREMENT</code> action, the reducer would
 return a new state with <code>value--;</code>. An action dispatcher would send the
 <code>INCREMENT</code> or <code>DECREMENT</code> actions, triggering a state change.</p>
-<p>I created an <a href="https://github.com/ngokevin/kframe/tree/master/components/redux/" target="_blank" rel="external">A-Frame Redux component</a> to integrate Redux into
+<p>I created an <a href="https://github.com/ngokevin/kframe/tree/master/components/redux/">A-Frame Redux component</a> to integrate Redux into
 A-Frame. The Redux component lets us declaratively set up a Redux store, and
 pass in reducers:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">redux</span>=<span class="string">"reducers: counter"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">redux</span>=<span class="string">&quot;reducers: counter&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>And to register a reducer:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerReducer(<span class="string">'counter'</span>, &#123;</span><br><span class="line">  actions: &#123;</span><br><span class="line">    DECREASE: <span class="string">'COUNTER__DECREASE'</span>,</span><br><span class="line">    INCREASE: <span class="string">'COUNTER__INCREASE'</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  initialState: &#123;<span class="attr">value</span>: <span class="number">0</span>&#125;,</span><br><span class="line"></span><br><span class="line">  reducer: <span class="function"><span class="keyword">function</span> (<span class="params">state, action</span>) </span>&#123;</span><br><span class="line">    state = state || <span class="keyword">this</span>.initialState;</span><br><span class="line">    <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="keyword">this</span>.actions.INCREASE: &#123;</span><br><span class="line">        <span class="keyword">var</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</span><br><span class="line">        newState.value++;</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">case</span> <span class="keyword">this</span>.actions.DECREASE: &#123;</span><br><span class="line">        <span class="keyword">var</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</span><br><span class="line">        newState.value--;</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerReducer</span>(<span class="string">&#x27;counter&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">actions</span>: &#123;</span><br><span class="line">    <span class="attr">DECREASE</span>: <span class="string">&#x27;COUNTER__DECREASE&#x27;</span>,</span><br><span class="line">    <span class="attr">INCREASE</span>: <span class="string">&#x27;COUNTER__INCREASE&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">initialState</span>: &#123;<span class="attr">value</span>: <span class="number">0</span>&#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">reducer</span>: <span class="keyword">function</span> (<span class="params">state, action</span>) &#123;</span><br><span class="line">    state = state || <span class="variable language_">this</span>.<span class="property">initialState</span>;</span><br><span class="line">    <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="variable language_">this</span>.<span class="property">actions</span>.<span class="property">INCREASE</span>: &#123;</span><br><span class="line">        <span class="keyword">var</span> newState = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, state);</span><br><span class="line">        newState.<span class="property">value</span>++;</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">case</span> <span class="variable language_">this</span>.<span class="property">actions</span>.<span class="property">DECREASE</span>: &#123;</span><br><span class="line">        <span class="keyword">var</span> newState = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, state);</span><br><span class="line">        newState.<span class="property">value</span>--;</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>To dispatch actions, grab a handler to the Redux store and dispatch:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">scene.systems.redux.store.dispatch(&#123;<span class="attr">type</span>: <span class="string">'COUNTER__INCREASE'</span>&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">scene.<span class="property">systems</span>.<span class="property">redux</span>.<span class="property">store</span>.<span class="title function_">dispatch</span>(&#123;<span class="attr">type</span>: <span class="string">&#x27;COUNTER__INCREASE&#x27;</span>&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>The Redux component then provided a data-binding component to bind state to
 A-Frame entities:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">redux</span>=<span class="string">"counter.value: text.value"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">redux</span>=<span class="string">&quot;counter.value: text.value&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>The Redux component seems very usable with A-Frame. If I were to build a larger
 application where I needed to compose multiple reducers and split up the
 application state into sub-states, I would personally start reaching for Redux.</p>
@@ -1864,7 +1875,7 @@ architecture and VR.</p>
 projects, but it will evolve. Note we’ll be calling it <em>game state</em> as that’s a
 common term for 3D-related applications, but game state can apply for any
 application in general.</p>
-<p><a href="https://github.com/aframevr/a-blast/" target="_blank" rel="external">A-Blast</a> is a cute VR shooter game. We
+<p><a href="https://github.com/aframevr/a-blast/">A-Blast</a> is a cute VR shooter game. We
 wanted to build an application in one of the most common and popular genres to
 prove A-Frame as a 3D and VR framework.  A-Blast let us see how common concepts
 such as game state would be implemented alongside A-Frame. For A-Blast, we
@@ -1874,10 +1885,10 @@ needed to keep track of things such as the wave, player health, score, phase
 <p>The game state we implemented took ideas of Redux but tailored it for A-Frame:</p>
 <ol>
 <li>A single global game state A-Frame system which is registered on the
-<code>&lt;a-scene&gt;</code> element.</li>
+  <code>&lt;a-scene&gt;</code> element.</li>
 <li>Initial state is specified in the system’s schema.</li>
 <li>State can be accessed via the system’s data (e.g.,
-<code>sceneEl.getAttribute(&#39;gamestate&#39;)</code>).</li>
+  <code>sceneEl.getAttribute(&#39;gamestate&#39;)</code>).</li>
 <li>Actions are dispatched using events</li>
 <li>Handlers in the game state are responsible for transitioning the state</li>
 <li>The game state system publishes the game state and notifies via an event</li>
@@ -1886,7 +1897,8 @@ state to A-Frame component properties in HTML</li>
 </ol>
 <p>Below is a basic skeleton for game state system implementation that mirrors
 A-Blast’s. Fewer than 50 lines of code that does the basics of Redux:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerSystem(<span class="string">'gamestate'</span>, &#123;</span><br><span class="line">  <span class="comment">// Initial state.</span></span><br><span class="line">  schema: &#123;</span><br><span class="line">    value: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> initialState = <span class="keyword">this</span>.initialState;</span><br><span class="line">    <span class="keyword">var</span> sceneEl = <span class="keyword">this</span>.el;</span><br><span class="line">    <span class="keyword">var</span> state = <span class="keyword">this</span>.data;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!initialState) &#123; initialState = state; &#125;</span><br><span class="line"></span><br><span class="line">    sceneEl.emit(<span class="string">'gamestateinitialized'</span>, &#123;<span class="attr">state</span>: initialState&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Application-specific code goes under here! Handlers to transition state.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    registerHandler(<span class="string">'increment'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">newState, evt</span>) </span>&#123;</span><br><span class="line">      newState.value++;</span><br><span class="line">      <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Part of the game state library.</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">registerHandler</span> (<span class="params">eventName, handler</span>) </span>&#123;</span><br><span class="line">      el.addEventListener(eventName, <span class="function"><span class="keyword">function</span> (<span class="params">param</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> newState = handler(AFRAME.utils.extend(&#123;&#125;, state), param);</span><br><span class="line">        publishState(eventName, newState);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Part of the game state library.</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">publishState</span> (<span class="params">event, newState</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> oldState = AFRAME.utils.extend(&#123;&#125;, state);</span><br><span class="line">      el.setAttribute(<span class="string">'gamestate'</span>, newState);</span><br><span class="line">      state = newState;</span><br><span class="line">      el.emit(<span class="string">'gamestatechanged'</span>, &#123;</span><br><span class="line">        event: event,</span><br><span class="line">        diff: AFRAME.utils.diff(oldState, newState),</span><br><span class="line">        state: newState</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerSystem</span>(<span class="string">&#x27;gamestate&#x27;</span>, &#123;</span><br><span class="line">  <span class="comment">// Initial state.</span></span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">value</span>: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> initialState = <span class="variable language_">this</span>.<span class="property">initialState</span>;</span><br><span class="line">    <span class="keyword">var</span> sceneEl = <span class="variable language_">this</span>.<span class="property">el</span>;</span><br><span class="line">    <span class="keyword">var</span> state = <span class="variable language_">this</span>.<span class="property">data</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!initialState) &#123; initialState = state; &#125;</span><br><span class="line"></span><br><span class="line">    sceneEl.<span class="title function_">emit</span>(<span class="string">&#x27;gamestateinitialized&#x27;</span>, &#123;<span class="attr">state</span>: initialState&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Application-specific code goes under here! Handlers to transition state.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="title function_">registerHandler</span>(<span class="string">&#x27;increment&#x27;</span>, <span class="keyword">function</span> (<span class="params">newState, evt</span>) &#123;</span><br><span class="line">      newState.<span class="property">value</span>++;</span><br><span class="line">      <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Part of the game state library.</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">registerHandler</span> (<span class="params">eventName, handler</span>) &#123;</span><br><span class="line">      el.<span class="title function_">addEventListener</span>(eventName, <span class="keyword">function</span> (<span class="params">param</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> newState = <span class="title function_">handler</span>(<span class="variable constant_">AFRAME</span>.<span class="property">utils</span>.<span class="title function_">extend</span>(&#123;&#125;, state), param);</span><br><span class="line">        <span class="title function_">publishState</span>(eventName, newState);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Part of the game state library.</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">publishState</span> (<span class="params">event, newState</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> oldState = <span class="variable constant_">AFRAME</span>.<span class="property">utils</span>.<span class="title function_">extend</span>(&#123;&#125;, state);</span><br><span class="line">      el.<span class="title function_">setAttribute</span>(<span class="string">&#x27;gamestate&#x27;</span>, newState);</span><br><span class="line">      state = newState;</span><br><span class="line">      el.<span class="title function_">emit</span>(<span class="string">&#x27;gamestatechanged&#x27;</span>, &#123;</span><br><span class="line">        <span class="attr">event</span>: event,</span><br><span class="line">        <span class="attr">diff</span>: <span class="variable constant_">AFRAME</span>.<span class="property">utils</span>.<span class="title function_">diff</span>(oldState, newState),</span><br><span class="line">        <span class="attr">state</span>: newState</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>Then to dispatch an action, any A-Frame entity can emit an event, and it’ll
 bubble up to the scene, where the game state can trigger its handlers. No need
 to grab a handle on the game state; entities don’t even have to know about the
@@ -1894,7 +1906,8 @@ game state.</p>
 <p>A-Blast also has a <code>gamestatebind</code> component that updates entities if necessary
 on every state change. If we wanted to bind game state’s <code>value</code> to A-Frame’s
 text component’s <code>value</code> property, we can use the component declaratively:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gamestatebind</span>=<span class="string">"value: text.value"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">gamestatebind</span>=<span class="string">&quot;value: text.value&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Similar to the concepts in React, A-Frame components in this model of game
 state could either be “smart components”, meaning aware of the game state, or
 “dumb components”, meaning they’re agnostic and purely responsible for pieces
@@ -1912,7 +1925,7 @@ list items in HTML.</p>
 <h2 id="game-state-implementation-in-a-saturday-night"><a href="#game-state-implementation-in-a-saturday-night" class="headerlink" title="Game State Implementation in A Saturday Night"></a>Game State Implementation in A Saturday Night</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/24813570/54e183aa-1b83-11e7-840d-aaca5e9a0724.gif" alt="A Saturday Night"></p>
 <p><a href="https://aframe.io/a-saturday-night/">A Saturday Night</a> is a demo for motion
 capture where people can get into their headset, record a dance, and share it
-with their friends. Like a “dancegram”. <a href="https://github.com/dmarcos/" target="_blank" rel="external">Diego
+with their friends. Like a “dancegram”. <a href="https://github.com/dmarcos/">Diego
 Marcos</a> implemented the game state for A Saturday
 Night and took a different approach from scratch, without any bias from Redux.
 This implementation is less generalized but optimized for A Saturday Night.</p>
@@ -1931,11 +1944,13 @@ the state components</li>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/24899932/03e67ace-1e57-11e7-965a-47a78fc4d64b.png" alt="A Saturday Night State Machine"></p>
 <p>Below is a basic skeleton for game state system implementation that mirrors
 A Saturday Night’s:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'game-state'</span>, &#123;</span><br><span class="line">  schema: &#123;</span><br><span class="line">    barCondition: &#123;<span class="attr">default</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">    state: &#123;<span class="attr">default</span>: <span class="string">'foo'</span>, <span class="attr">oneOf</span>: [<span class="string">'bar'</span>, <span class="string">'qux'</span>, <span class="string">'qaz'</span>]&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params">oldData</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</span><br><span class="line">    <span class="keyword">if</span> (oldData.state !== data.state) &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(data.state);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.updateState();</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  updateState: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = <span class="keyword">this</span>.data;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (data.state) &#123;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * Application-specific code goes under here!</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      <span class="keyword">case</span> <span class="string">'foo'</span>: &#123;</span><br><span class="line">        <span class="comment">// Transition to next state depending on condition.</span></span><br><span class="line">        <span class="keyword">if</span> (data.barCondition) &#123;</span><br><span class="line">          el.setAttribute(<span class="string">'game-state'</span>, <span class="string">'state'</span>, <span class="string">'bar'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">default</span>: &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Unknown state'</span>, data.state);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  setState: <span class="function"><span class="keyword">function</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="keyword">this</span>.el;</span><br><span class="line">    <span class="keyword">var</span> states = <span class="keyword">this</span>.schema.state.oneOf;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.updatingState) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    <span class="keyword">if</span> (states.indexOf(state) === <span class="number">-1</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'Unknown state'</span>, state);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Remove all states.</span></span><br><span class="line">    states.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">state</span>) </span>&#123;</span><br><span class="line">      el.removeAttribute(state);</span><br><span class="line">    &#125;);</span><br><span class="line">    el.setAttribute(state, <span class="string">''</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;game-state&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">barCondition</span>: &#123;<span class="attr">default</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">    <span class="attr">state</span>: &#123;<span class="attr">default</span>: <span class="string">&#x27;foo&#x27;</span>, <span class="attr">oneOf</span>: [<span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;qux&#x27;</span>, <span class="string">&#x27;qaz&#x27;</span>]&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">update</span>: <span class="keyword">function</span> (<span class="params">oldData</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> data = <span class="variable language_">this</span>.<span class="property">data</span>;</span><br><span class="line">    <span class="keyword">if</span> (oldData.<span class="property">state</span> !== data.<span class="property">state</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">setState</span>(data.<span class="property">state</span>);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateState</span>();</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">updateState</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> data = <span class="variable language_">this</span>.<span class="property">data</span>;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="variable language_">this</span>.<span class="property">el</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (data.<span class="property">state</span>) &#123;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * Application-specific code goes under here!</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      <span class="keyword">case</span> <span class="string">&#x27;foo&#x27;</span>: &#123;</span><br><span class="line">        <span class="comment">// Transition to next state depending on condition.</span></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">barCondition</span>) &#123;</span><br><span class="line">          el.<span class="title function_">setAttribute</span>(<span class="string">&#x27;game-state&#x27;</span>, <span class="string">&#x27;state&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="attr">default</span>: &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Unknown state&#x27;</span>, data.<span class="property">state</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">setState</span>: <span class="keyword">function</span>(<span class="params">state</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="variable language_">this</span>.<span class="property">el</span>;</span><br><span class="line">    <span class="keyword">var</span> states = <span class="variable language_">this</span>.<span class="property">schema</span>.<span class="property">state</span>.<span class="property">oneOf</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">updatingState</span>) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    <span class="keyword">if</span> (states.<span class="title function_">indexOf</span>(state) === -<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Unknown state&#x27;</span>, state);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Remove all states.</span></span><br><span class="line">    states.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">state</span>) &#123;</span><br><span class="line">      el.<span class="title function_">removeAttribute</span>(state);</span><br><span class="line">    &#125;);</span><br><span class="line">    el.<span class="title function_">setAttribute</span>(state, <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>Components can update the game state, and the game state will decide whether
 conditions have been fulfilled to transition to the next state.</p>
 <p>Then we have components that represent each distinct state:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'bar'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Ran when the game state enters the `bar` state.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Ran when the game state leaves the `bar` state.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;bar&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Ran when the game state enters the `bar` state.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">remove</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Ran when the game state leaves the `bar` state.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h2 id="comparing-implementations-between-redux-approach-a-blast-a-saturday-night"><a href="#comparing-implementations-between-redux-approach-a-blast-a-saturday-night" class="headerlink" title="Comparing Implementations Between Redux Approach, A-Blast, A Saturday Night"></a>Comparing Implementations Between Redux Approach, A-Blast, A Saturday Night</h2><p>A-Blast’s game state was something I came up with, basing it on Redux. The
 advantage is that components don’t have to know about the game state; they just
 emit events, and the game state listens to them. A-Blast’s game state is also
@@ -1977,18 +1992,18 @@ into a dial that we could physically turn to reverse time, and see the world go
 backwards in VR!</p>
 <h2 id="conclusion"><a href="#conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>These have been our initial attempts in implementing game state. I have no
 doubt that our ideas and implementations will change and evolve for the better
-as we build more and more complex WebVR applications. Coincidentally, <a href="https://github.com/aframevr/aframe/issues/2569" target="_blank" rel="external">Don
+as we build more and more complex WebVR applications. Coincidentally, <a href="https://github.com/aframevr/aframe/issues/2569">Don
 McCurdy was brainstorming about state
 machines</a> at the exact time of
 writing of this post! Check out his ideas as well.</p>
 <p>More recently, I have been building the beginnings of a fairly complex
 application where I am often interacting with game state. You can watch my
-<a href="https://twitch.tv/andgokevin/" target="_blank" rel="external">recorded developer logs or catch me working on game state live on
+<a href="https://twitch.tv/andgokevin/">recorded developer logs or catch me working on game state live on
 Twitch</a> as I continue to develop it.</p>
 <p>If you want to see various source code for implementations of game states:</p>
 <ul>
-<li><a href="https://github.com/aframevr/a-blast/blob/master/src/components/gamestate.js" target="_blank" rel="external">A-Blast <code>gamestate</code></a></li>
-<li><a href="https://github.com/aframevr/a-saturday-night/blob/master/src/components/game-state.js" target="_blank" rel="external">A Saturday Night <code>game-state</code></a></li>
+<li><a href="https://github.com/aframevr/a-blast/blob/master/src/components/gamestate.js">A-Blast <code>gamestate</code></a></li>
+<li><a href="https://github.com/aframevr/a-saturday-night/blob/master/src/components/game-state.js">A Saturday Night <code>game-state</code></a></li>
 </ul>
 <p>Whatever becomes the ultimate approach to game state will become the Oracle of
 the Metaverse!</p>
@@ -2103,19 +2118,25 @@ the Metaverse!</p>
 </main>
 
     
-      <script src="/js/common.js"></script>
+      
+<script src="/js/common.js"></script>
+
       
       
-        <script src="/js/docs.js"></script>
+        
+<script src="/js/docs.js"></script>
+
       
     
 
     
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:1.6.0'],

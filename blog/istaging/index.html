@@ -103,19 +103,25 @@ buildings and properties. To uploa">
 
 
     
-      <script src="/js/compat.js"></script>
+      
+<script src="/js/compat.js"></script>
+
     
 
     
-      <link rel="stylesheet" href="/css/secondary.css">
+      
+<link rel="stylesheet" href="/css/secondary.css">
+
     
 
     
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
+
     
-  </head>
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="blog" data-page-type="">
     <main id="main" class="main"><div class="wordmark">
@@ -755,20 +761,20 @@ buildings and properties. To uploa">
       
         
           <li class="subnav-item ">
-            <a href="/blog/awoa-77/"
+            <a href="/blog/awoa-76/"
                class="subnav-link"
-               title="A Week of A-Frame 77">
-              A Week of A-Frame 77
+               title="A Week of A-Frame 76">
+              A Week of A-Frame 76
             </a>
           </li>
         
       
         
           <li class="subnav-item ">
-            <a href="/blog/awoa-76/"
+            <a href="/blog/awoa-77/"
                class="subnav-link"
-               title="A Week of A-Frame 76">
-              A Week of A-Frame 76
+               title="A Week of A-Frame 77">
+              A Week of A-Frame 77
             </a>
           </li>
         
@@ -1807,30 +1813,30 @@ buildings and properties. To uploa">
 
           
 
-          <p>When I joined <a href="http://istaging.co/" target="_blank" rel="external">iStaging</a> a year ago, I was in the position
+          <p>When I joined <a href="http://istaging.co/">iStaging</a> a year ago, I was in the position
 of picking a WebVR framework. A hard decision. Since WebVR was relatively
 young, like the new kid around the block.</p>
 <p>iStaging wanted to build a tool for real estate agents to showcase their
 buildings and properties. To upload panoramic pictures of rooms, create floor
 plans, leave comments, set standpoints. Clients were to be immersed into a real
 estate VR experience from the comfort of their homes.</p>
-<p>We checked <a href="https://krpano.com/" target="_blank" rel="external">KRPano</a>. It was cool. Full of features.
+<p>We checked <a href="https://krpano.com/">KRPano</a>. It was cool. Full of features.
 However, it lacked the flexibility that we needed. And the information
 available on the Internet was very meager. The other framework that we
-investigated was <a href="https://developers.google.com/vr/concepts/vrview" target="_blank" rel="external">Google VR
+investigated was <a href="https://developers.google.com/vr/concepts/vrview">Google VR
 View</a>. However, it turned out
-to be just an image / video inserted inside an <code>iframe</code>. Kind of disappointing.
+to be just an image &#x2F; video inserted inside an <code>iframe</code>. Kind of disappointing.
 Then, one day, scrolling through Github’s trending list, we stumbled upon this
 WebVR framework created by some people at Mozilla. We tried it and we loved it.</p>
 <p>Our virtual tour has since become one of our main products. Thanks to A-Frame
-(and the <a href="https://mozvr.com" target="_blank" rel="external">Mozilla VR team</a>), iStaging has reached thousands
+(and the <a href="https://mozvr.com/">Mozilla VR team</a>), iStaging has reached thousands
 of customers while partnering with companies like <strong>Microsoft, HTC, Lenovo, and
 Alibaba</strong>.</p>
-<a id="more"></a>
-<video src="/videos/istaging.mp4" autoplay></video>
+<span id="more"></span>
 
-<p><a href="http://vrviewer.istaging.co/#!/684173" target="_blank" rel="external">VIEW DEMO</a></p>
-<h2 id="html-based"><a href="#html-based" class="headerlink" title="HTML-Based"></a>HTML-Based</h2><p>Using <a href="https://threejs.org/" target="_blank" rel="external">Three.js</a> would have been like trying to build a
+<p><video src="/videos/istaging.mp4" autoplay></video></p>
+<p><a href="http://vrviewer.istaging.co/#!/684173">VIEW DEMO</a></p>
+<h2 id="html-based"><a href="#html-based" class="headerlink" title="HTML-Based"></a>HTML-Based</h2><p>Using <a href="https://threejs.org/">Three.js</a> would have been like trying to build a
 table from scratch; cutting the wood and finding the nails ourselves. Working
 with KRPano would have been like getting a fully furnished house, but we would
 have had to tear down the walls and throw away the appliances that we didn’t
@@ -1844,27 +1850,28 @@ learned the framework in just a couple of days (without the need of coffee).</p>
 to our HTML. For example, we needed to get the rotation of the 3D camera and
 display its angle as a 2D “range of vision”. With A-Frame this was extremely
 simple. Since its custom elements behave like regular HTML elements, we could
-get the attribute like this: <code>const cameraRotation =
-camera.getAttribute(&#39;rotation&#39;)</code>. Using that information to set the range of
+get the attribute like this: <code>const cameraRotation = camera.getAttribute(&#39;rotation&#39;)</code>. Using that information to set the range of
 vision was equally simple: <code>state.rangeOfVisionRotation = cameraRotation</code>. And
 here’s the HTML:</p>
-  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">:style</span>=<span class="string">"rangeOfVisionRotation"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"rangeOfVision.png"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">:style</span>=<span class="string">&quot;rangeOfVisionRotation&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;rangeOfVision.png&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="pluggable-and-mixable"><a href="#pluggable-and-mixable" class="headerlink" title="Pluggable and Mixable"></a>Pluggable and Mixable</h2><p>The best thing about A-Frame is that it works with plain HTML. So, it can be
 plugged into any framework and mixed with other tools like Lodash, React, and
-Angular. Or, in our case, <a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a>. The process couldn’t
+Angular. Or, in our case, <a href="https://vuejs.org/">Vue.js</a>. The process couldn’t
 have been simpler. All we had to do was to import A-Frame and write stuff like
 the following to swap the panorama while assigning a default position and
 rotation:</p>
-  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sky</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:position</span>=<span class="string">"panoramaPosition"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:rotation</span>=<span class="string">"panoramaRotation"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:src</span>=<span class="string">"panoramaURL"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:opacity</span>=<span class="string">"panoramaOpacity"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sky</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:position</span>=<span class="string">&quot;panoramaPosition&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:rotation</span>=<span class="string">&quot;panoramaRotation&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:src</span>=<span class="string">&quot;panoramaURL&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:opacity</span>=<span class="string">&quot;panoramaOpacity&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Beautiful.</p>
 <h2 id="complete"><a href="#complete" class="headerlink" title="Complete"></a>Complete</h2><p>A-Frame is one of the most complete frameworks out there. Its ecosystem
 includes physics and particle systems. You can even do cool things like walking
-in a 3D world and play with (<a href="https://blog.mozvr.com/a-painter/" target="_blank" rel="external">VR
+in a 3D world and play with (<a href="https://blog.mozvr.com/a-painter/">VR
 controllers</a>) like HTC Vive. Don’t think
 that’s enough? It also has an <a href="https://aframe.io/aframe-inspector/example/">visual
 interface</a> to inspect your 3D
 objects and a <a href="https://aframe.io/a-painter/">tool</a> to paint in a virtual space.</p>
-<h2 id="great-resources"><a href="#great-resources" class="headerlink" title="Great Resources"></a>Great Resources</h2><p>You can find practically anything in <a href="https://github.com/aframevr/awesome-aframe" target="_blank" rel="external">the <code>Awesome A-Frame</code>
+<h2 id="great-resources"><a href="#great-resources" class="headerlink" title="Great Resources"></a>Great Resources</h2><p>You can find practically anything in <a href="https://github.com/aframevr/awesome-aframe">the <code>Awesome A-Frame</code>
 repo</a>. In our case, we were looking
 for a component that displayed text (e.g. to display the price tags and the
 location the standpoints led to). We weren’t satisfied with the first one.
@@ -1872,7 +1879,8 @@ Neither with the second. Luckily, the third, which turned HTML elements into
 textures, worked perfectly.</p>
 <p>Another component that we’re using is one that makes 3D objects draggable and
 clickable:</p>
-  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"#stand-point"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-for</span>=<span class="string">"standPoint in standPoints"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:position</span>=<span class="string">"standPointPosition"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">click</span>=<span class="string">"goToStandPoint"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor-listener</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">&quot;#stand-point&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-for</span>=<span class="string">&quot;standPoint in standPoints&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:position</span>=<span class="string">&quot;standPointPosition&quot;</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">click</span>=<span class="string">&quot;goToStandPoint&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor-listener</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>The result:</p>
 <p><img src="https://i.stack.imgur.com/csm4q.png" alt="https://i.stack.imgur.com/csm4q.png"></p>
 <p>This lets real estate agents create standpoints to navigate between rooms. And
@@ -1887,14 +1895,14 @@ but in less than a day). The community is so active, we don’t need to rely on
 Stack Overflow at all. Also, we’re always amazed by what we find in the
 <code>#projects</code> channel. We’ve seen stuff from AR experiments to VR games. You can
 easily lose yourself in those virtual worlds.</p>
-<h2 id="free-and-open-source"><a href="#free-and-open-source" class="headerlink" title="Free and Open Source"></a>Free and Open Source</h2><p>And last but not least, A-Frame is <a href="https://github.com/aframevr/aframe" target="_blank" rel="external">free and open source on
+<h2 id="free-and-open-source"><a href="#free-and-open-source" class="headerlink" title="Free and Open Source"></a>Free and Open Source</h2><p>And last but not least, A-Frame is <a href="https://github.com/aframevr/aframe">free and open source on
 Github</a>, so its development is rapid and
 community-based. You can follow every change and see big improvements between
 each version. It also gives you freedom. Freedom to use it for wherever you
 want and for any purpose.</p>
 <h2 id="final-words"><a href="#final-words" class="headerlink" title="Final Words"></a>Final Words</h2><p>To date, we have created more than 10K projects. And we believe the figures
-will increase, since <a href="http://toursler.com/360-ridelle-306" target="_blank" rel="external">more</a> and
-<a href="http://storage.net-fs.com/hosting/2727323/6/index.htm" target="_blank" rel="external">more</a> companies are
+will increase, since <a href="http://toursler.com/360-ridelle-306">more</a> and
+<a href="http://storage.net-fs.com/hosting/2727323/6/index.htm">more</a> companies are
 using WebVR to showcase their real estate properties. How many of them will
 succeed? It’s hard to tell. The only certainty is that A-Frame will be the
 leading WebVR framework for a long time.</p>
@@ -2020,19 +2028,25 @@ leading WebVR framework for a long time.</p>
 </main>
 
     
-      <script src="/js/common.js"></script>
+      
+<script src="/js/common.js"></script>
+
       
       
-        <script src="/js/docs.js"></script>
+        
+<script src="/js/docs.js"></script>
+
       
     
 
     
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:1.6.0'],

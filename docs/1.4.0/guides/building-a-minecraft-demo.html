@@ -30,7 +30,7 @@
       data-docs-version="1.4.0">
   <head>
     <title>Building a Minecraft Demo – A-Frame</title>
-
+    
 
 <script>
   var host = window.location.protocol + '//' + window.location.hostname;
@@ -43,8 +43,8 @@
 
     <meta charset="utf-8">
     <!-- Don't index old documentation pages. -->
-
-
+    <meta name="robots"
+      content="NOINDEX">
     <meta name="description" content="">
     <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,20 +88,26 @@
 </script>
 
 
+    
+      
+<script src="/js/compat.js"></script>
 
-      <script src="/js/compat.js"></script>
+    
 
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
 
+    
 
-      <link rel="stylesheet" href="/css/secondary.css">
-
-
-
+    
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
 
-  </head>
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="docs" data-page-type="guides">
     <main id="main" class="main">
@@ -115,7 +121,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar">
@@ -125,7 +131,7 @@
 </div>
 
 <aside id="sidebar" class="sidebar borderless-links">
-
+  
 
 <div id="secondary-nav" class="secondary-nav">
   <header id="header" class="header">
@@ -134,7 +140,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar-mobile">
@@ -143,43 +149,43 @@
 
 
   <ul id="nav" class="nav">
-
+    
       <li  class="nav-item">
         <a href="/docs/1.6.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
-
+           
            >
           <span>Docs</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/blog/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Blog</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/community/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Community</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/showcase/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Showcase</span>
         </a>
       </li>
-
+    
       <li  data-slug="github" class="nav-item">
         <a href="https://github.com/aframevr/aframe/"
            class="nav-link nav-link-docs"
@@ -188,7 +194,7 @@
           <span>GitHub</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://aframe.io/slack-invite/"
            class="nav-link nav-link-docs"
@@ -197,7 +203,7 @@
           <span>Slack</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://discord.com/invite/tGYjkYr"
            class="nav-link nav-link-docs"
@@ -206,7 +212,7 @@
           <span>Discord</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://aframe.io/subscribe/"
            class="nav-link nav-link-docs"
@@ -215,7 +221,7 @@
           <span>Newsletter</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
            class="nav-link nav-link-docs"
@@ -224,7 +230,7 @@
           <span>Ask a Question</span>
         </a>
       </li>
-
+    
   </ul>
 </div>
 
@@ -233,96 +239,96 @@
     <!-- Version dropdown. -->
     <label class="subnav-label" for="docs-version"><b>Version</b></label>
     <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-
+      
         <option false
                 data-href="/docs/master/introduction/">
           master
         </option>
-
+      
         <option false
                 data-href="/docs/1.6.0/introduction/">
           1.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.5.0/introduction/">
           1.5.0
         </option>
-
+      
         <option selected
                 data-href="/docs/1.4.0/introduction/">
           1.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.2.0/introduction/">
           1.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.1.0/introduction/">
           1.1.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.0.0/introduction/">
           1.0.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.9.0/introduction/">
           0.9.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.8.0/introduction/">
           0.8.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.7.0/introduction/">
           0.7.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.6.0/introduction/">
           0.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.5.0/introduction/">
           0.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.4.0/introduction/">
           0.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.3.0/introduction/">
           0.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.2.0/guide/">
           0.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.1.0/guide/">
           0.1.0
         </option>
-
+      
     </select>
 
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -331,108 +337,108 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/"
                class="subnav-link">
               Introduction
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/installation.html"
                class="subnav-link">
               Installation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/vr-headsets-and-webxr-browsers.html"
                class="subnav-link">
               VR Headsets & WebXR Browsers
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/html-and-primitives.html"
                class="subnav-link">
               HTML & Primitives
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/entity-component-system.html"
                class="subnav-link">
               Entity-Component-System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/javascript-events-dom-apis.html"
                class="subnav-link">
               JavaScript, Events, DOM APIs
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/developing-with-threejs.html"
                class="subnav-link">
               Developing with three.js
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/writing-a-component.html"
                class="subnav-link">
               Writing a Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/interactions-and-controllers.html"
                class="subnav-link">
               Interactions & Controllers
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/models.html"
                class="subnav-link">
               3D Models
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/visual-inspector-and-dev-tools.html"
                class="subnav-link">
               Visual Inspector & Dev Tools
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/hosting-and-publishing.html"
                class="subnav-link">
               Hosting & Publishing
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/best-practices.html"
                class="subnav-link">
               Best Practices
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/introduction/faq.html"
                class="subnav-link">
               FAQ
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-active">
@@ -441,31 +447,31 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/guides/building-a-basic-scene.html"
                class="subnav-link">
               Building a Basic Scene
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/guides/building-a-360-image-gallery.html"
                class="subnav-link">
               Building a 360&deg; Image Gallery
             </a>
           </li>
-
+        
           <li class="subnav-item  subnav-item-current">
             <a href="/docs/1.4.0/guides/building-a-minecraft-demo.html"
                class="subnav-link current">
               Building a Minecraft Demo
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -474,66 +480,66 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/core/entity.html"
                class="subnav-link">
               Entity
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/core/component.html"
                class="subnav-link">
               Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/core/systems.html"
                class="subnav-link">
               System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/core/scene.html"
                class="subnav-link">
               Scene
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/core/mixins.html"
                class="subnav-link">
               Mixins
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/core/asset-management-system.html"
                class="subnav-link">
               Asset Management System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/core/globals.html"
                class="subnav-link">
               Globals
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/core/utils.html"
                class="subnav-link">
               Utils
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -542,353 +548,353 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/animation.html"
                class="subnav-link">
               Animation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/ar-hit-test.html"
                class="subnav-link">
               ar-hit-test
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/background.html"
                class="subnav-link">
               background
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/camera.html"
                class="subnav-link">
               camera
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/cursor.html"
                class="subnav-link">
               cursor
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/daydream-controls.html"
                class="subnav-link">
               daydream-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/debug.html"
                class="subnav-link">
               debug
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/device-orientation-permission-ui.html"
                class="subnav-link">
               device-orientation-permission-ui
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/embedded.html"
                class="subnav-link">
               embedded
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/fog.html"
                class="subnav-link">
               fog
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/gearvr-controls.html"
                class="subnav-link">
               gearvr-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/geometry.html"
                class="subnav-link">
               geometry
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/gltf-model.html"
                class="subnav-link">
               gltf-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/hand-controls.html"
                class="subnav-link">
               hand-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/hand-tracking-controls.html"
                class="subnav-link">
               hand-tracking-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/hide-on-enter-ar.html"
                class="subnav-link">
               hide-on-enter-ar
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/keyboard-shortcuts.html"
                class="subnav-link">
               keyboard-shortcuts
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/laser-controls.html"
                class="subnav-link">
               laser-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/layer.html"
                class="subnav-link">
               layer
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/light.html"
                class="subnav-link">
               light
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/line.html"
                class="subnav-link">
               line
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/link.html"
                class="subnav-link">
               link
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/loading-screen.html"
                class="subnav-link">
               loading-screen
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/look-controls.html"
                class="subnav-link">
               look-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/magicleap-controls.html"
                class="subnav-link">
               magicleap-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/material.html"
                class="subnav-link">
               material
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/obj-model.html"
                class="subnav-link">
               obj-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/oculus-go-controls.html"
                class="subnav-link">
               oculus-go-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/oculus-touch-controls.html"
                class="subnav-link">
               oculus-touch-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/pool.html"
                class="subnav-link">
               pool
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/position.html"
                class="subnav-link">
               position
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/raycaster.html"
                class="subnav-link">
               raycaster
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/reflection.html"
                class="subnav-link">
               reflection
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/renderer.html"
                class="subnav-link">
               renderer
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/rotation.html"
                class="subnav-link">
               rotation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/scale.html"
                class="subnav-link">
               scale
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/screenshot.html"
                class="subnav-link">
               screenshot
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/shadow.html"
                class="subnav-link">
               shadow
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/sound.html"
                class="subnav-link">
               sound
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/stats.html"
                class="subnav-link">
               stats
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/text.html"
                class="subnav-link">
               text
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/tracked-controls.html"
                class="subnav-link">
               tracked-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/visible.html"
                class="subnav-link">
               visible
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/vive-controls.html"
                class="subnav-link">
               vive-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/vive-focus-controls.html"
                class="subnav-link">
               vive-focus-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/vr-mode-ui.html"
                class="subnav-link">
               vr-mode-ui
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/wasd-controls.html"
                class="subnav-link">
               wasd-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/webxr.html"
                class="subnav-link">
               webxr
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/components/windows-motion-controls.html"
                class="subnav-link">
               windows-motion-controls
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -897,198 +903,198 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-box.html"
                class="subnav-link">
               &lt;a-box&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-camera.html"
                class="subnav-link">
               &lt;a-camera&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-circle.html"
                class="subnav-link">
               &lt;a-circle&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-cone.html"
                class="subnav-link">
               &lt;a-cone&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-cursor.html"
                class="subnav-link">
               &lt;a-cursor&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-curvedimage.html"
                class="subnav-link">
               &lt;a-curvedimage&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-cylinder.html"
                class="subnav-link">
               &lt;a-cylinder&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-dodecahedron.html"
                class="subnav-link">
               &lt;a-dodecahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-gltf-model.html"
                class="subnav-link">
               &lt;a-gltf-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-icosahedron.html"
                class="subnav-link">
               &lt;a-icosahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-image.html"
                class="subnav-link">
               &lt;a-image&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-light.html"
                class="subnav-link">
               &lt;a-light&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-link.html"
                class="subnav-link">
               &lt;a-link&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-obj-model.html"
                class="subnav-link">
               &lt;a-obj-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-plane.html"
                class="subnav-link">
               &lt;a-plane&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-ring.html"
                class="subnav-link">
               &lt;a-ring&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-sky.html"
                class="subnav-link">
               &lt;a-sky&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-sound.html"
                class="subnav-link">
               &lt;a-sound&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-sphere.html"
                class="subnav-link">
               &lt;a-sphere&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-tetrahedron.html"
                class="subnav-link">
               &lt;a-tetrahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-text.html"
                class="subnav-link">
               &lt;a-text&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-torus-knot.html"
                class="subnav-link">
               &lt;a-torus-knot&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-torus.html"
                class="subnav-link">
               &lt;a-torus&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-triangle.html"
                class="subnav-link">
               &lt;a-triangle&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-video.html"
                class="subnav-link">
               &lt;a-video&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/1.4.0/primitives/a-videosphere.html"
                class="subnav-link">
               &lt;a-videosphere&gt;
             </a>
           </li>
-
+        
       </ol>
-
+    
   </div>
 </aside>
 
@@ -1153,18 +1159,18 @@
         Building a Minecraft Demo
       </h1>
 
+      
 
-
-
-
+      
+      
         <blockquote>
 <p><strong>Note:</strong> This documentation is for the old 1.4.0 version of A-Frame. Check out the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
 </blockquote>
 
-
+      
 
       <blockquote>
-<p><a href="https://glitch.com/~aframe-aincraft/" target="_blank" rel="external">Remix this example on Glitch</a>. Or <a href="https://aframe-aincraft.glitch.me" target="_blank" rel="external">view the demo</a>.</p>
+<p><a href="https://glitch.com/~aframe-aincraft/">Remix this example on Glitch</a>. Or <a href="https://aframe-aincraft.glitch.me/">view the demo</a>.</p>
 </blockquote>
 <p>Let’s build a basic Minecraft (voxel builder) demo that targets room scale VR
 with controllers (e.g., Vive, Rift). The example will be minimally usable on
@@ -1172,7 +1178,8 @@ mobile and desktop.</p>
 <!--toc-->
 
 <h2 id="example-skeleton"><a href="#example-skeleton" class="headerlink" title="Example Skeleton"></a>Example Skeleton</h2><p>We’ll start off with this skeleton HTML:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.4.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.4.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="adding-a-ground"><a href="#adding-a-ground" class="headerlink" title="Adding a Ground"></a>Adding a Ground</h2><p><code>&lt;a-plane&gt;</code> and <code>&lt;a-circle&gt;</code> are basic primitives that are commonly used for
 adding a ground. We’ll be using <code>&lt;a-cylinder&gt;</code> to better work with the
 raycasters our controllers will be using. The cylinder will have a radius of 30
@@ -1181,9 +1188,10 @@ are in meters to match the real-world units returned from the WebVR API.</p>
 <p>The texture of the ground we’ll be using is hosted at
 <code>https://cdn.aframe.io/a-painter/images/floor.jpg&quot;</code>. We’ll add the texture to
 our assets, and create a thin cylinder entity pointing to that texture:</p>
-<p data-height="265" data-theme-id="dark" data-slug-hash="MpbXXe" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 1)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/MpbXXe/" target="_blank" rel="external">Minecraft VR Demo (Part 1)</a> by mozvr (<a href="http://codepen.io/mozvr" target="_blank" rel="external">@mozvr</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="MpbXXe" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 1)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/MpbXXe/">Minecraft VR Demo (Part 1)</a> by mozvr (<a href="http://codepen.io/mozvr">@mozvr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.4.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">"ground"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/floor.jpg"</span> <span class="attr">radius</span>=<span class="string">"32"</span> <span class="attr">height</span>=<span class="string">"0.1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.4.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">&quot;ground&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/floor.jpg&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;32&quot;</span> <span class="attr">height</span>=<span class="string">&quot;0.1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="preloading-assets"><a href="#preloading-assets" class="headerlink" title="Preloading Assets"></a>Preloading Assets</h3><p>Specifying a URL via the <code>src</code> attribute will load the texture at runtime.
 Since network requests can negatively impact render performance, we can
 <em>preload</em> the texture such that the scene doesn’t start rendering until its
@@ -1194,24 +1202,26 @@ models, sounds) into <code>&lt;a-assets&gt;</code>, and point to them from our e
 selector (e.g., <code>#myTexture</code>).</p>
 <p>Let’s move our ground texture to <code>&lt;a-assets&gt;</code> to be preloaded using an
 <code>&lt;img&gt;</code> element:</p>
-<p data-height="265" data-theme-id="dark" data-slug-hash="LWbrBQ" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 2: Preloading Texture)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/LWbrBQ/" target="_blank" rel="external">Minecraft VR Demo (Part 2: Preloading Texture)</a> by mozvr (<a href="http://codepen.io/mozvr" target="_blank" rel="external">@mozvr</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="LWbrBQ" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 2: Preloading Texture)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/LWbrBQ/">Minecraft VR Demo (Part 2: Preloading Texture)</a> by mozvr (<a href="http://codepen.io/mozvr">@mozvr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.4.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"groundTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/floor.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">"ground"</span> <span class="attr">src</span>=<span class="string">"#groundTexture"</span> <span class="attr">radius</span>=<span class="string">"32"</span> <span class="attr">height</span>=<span class="string">"0.1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.4.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;groundTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/floor.jpg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">&quot;ground&quot;</span> <span class="attr">src</span>=<span class="string">&quot;#groundTexture&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;32&quot;</span> <span class="attr">height</span>=<span class="string">&quot;0.1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="adding-a-background"><a href="#adding-a-background" class="headerlink" title="Adding a Background"></a>Adding a Background</h2><p>Let’s add a 360&deg; background to our <code>&lt;a-scene&gt;</code> with the <a href="https://aframe.io/docs/1.4.0/primitives/a-sky.html"><code>&lt;a-sky&gt;</code>
 element</a>. <code>&lt;a-sky&gt;</code> is a large 3D sphere with a material mapped on the
 inside. Just like a normal image, <code>&lt;a-sky&gt;</code> can take an image path with <code>src</code>.
 This ultimately lets us do immersive 360&deg; images with one line of HTML. As
-an exercise later, try using some 360&deg; images from <a href="https://www.flickr.com/groups/equirectangular/" target="_blank" rel="external">Flickr’s
+an exercise later, try using some 360&deg; images from <a href="https://www.flickr.com/groups/equirectangular/">Flickr’s
 equirectangular pool</a>.</p>
 <p>We could add a plain color background (e.g., <code>&lt;a-sky color=&quot;#333&quot;&gt;&lt;/a-sky&gt;</code>) or
-<a href="https://github.com/zcanter/aframe-gradient-sky" target="_blank" rel="external">a gradient</a>, but let’s add a textured background with an image. The
+<a href="https://github.com/zcanter/aframe-gradient-sky">a gradient</a>, but let’s add a textured background with an image. The
 image we’re using is hosted at <code>https://cdn.aframe.io/a-painter/images/sky.jpg</code>.</p>
 <p>The image texture we are using covers semi-sphere so we’ll chop our sphere in
 half with <code>theta-length=&quot;90&quot;</code>, and we’ll give our sphere a radius of 30 meters
 to match the ground:</p>
-<p data-height="265" data-theme-id="dark" data-slug-hash="PpbaBL" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 3: Adding a Background)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/PpbaBL/" target="_blank" rel="external">Minecraft VR Demo (Part 3: Adding a Background)</a> by mozvr (<a href="http://codepen.io/mozvr" target="_blank" rel="external">@mozvr</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="PpbaBL" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 3: Adding a Background)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/PpbaBL/">Minecraft VR Demo (Part 3: Adding a Background)</a> by mozvr (<a href="http://codepen.io/mozvr">@mozvr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.4.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"groundTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/floor.jpg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"skyTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/sky.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">"ground"</span> <span class="attr">src</span>=<span class="string">"#groundTexture"</span> <span class="attr">radius</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"0.1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">id</span>=<span class="string">"background"</span> <span class="attr">src</span>=<span class="string">"#skyTexture"</span> <span class="attr">theta-length</span>=<span class="string">"90"</span> <span class="attr">radius</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.4.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;groundTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/floor.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;skyTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/sky.jpg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">&quot;ground&quot;</span> <span class="attr">src</span>=<span class="string">&quot;#groundTexture&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;30&quot;</span> <span class="attr">height</span>=<span class="string">&quot;0.1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">id</span>=<span class="string">&quot;background&quot;</span> <span class="attr">src</span>=<span class="string">&quot;#skyTexture&quot;</span> <span class="attr">theta-length</span>=<span class="string">&quot;90&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;30&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="adding-voxels"><a href="#adding-voxels" class="headerlink" title="Adding Voxels"></a>Adding Voxels</h2><p>Voxels in our VR application will be like <code>&lt;a-box&gt;</code> but attached with a few
 custom A-Frame components. But first let’s go over the entity-component
 pattern. Let’s see how the easy-to-use primitives such as <code>&lt;a-box&gt;</code> are
@@ -1228,7 +1238,8 @@ appearance, behavior , and logic.</p>
 components. Components are represented as HTML attributes, and component
 properties are defined like CSS styles by default. Here’s what <code>&lt;a-box&gt;</code> looks
 like decomposed to its fundamental components. <code>&lt;a-box&gt;</code> wraps the components:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;a-box color="red" depth="0.5" height="0.5" shader="flat" width="0.5"&gt;&lt;/a-box&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; depth: 0.5; height: 0.5; width: 0.5"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"color: red; shader: standard"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;a-box color=&quot;red&quot; depth=&quot;0.5&quot; height=&quot;0.5&quot; shader=&quot;flat&quot; width=&quot;0.5&quot;&gt;&lt;/a-box&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box; depth: 0.5; height: 0.5; width: 0.5&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;color: red; shader: standard&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>The benefit of components is that they are <strong>composable</strong>. We can mix and match
 from a bunch of existing components to construct different types of objects.
 In 3D development, the possible types of objects we construct are infinite in
@@ -1245,7 +1256,8 @@ can define a schema, (the component’s data) and lifecycle handler methods (the
 component’s logic). For the random color component, we won’t be setting a schema
 since it won’t be configurable. But we will define the <code>init</code> handler, which is
 called exactly once when the component is attached:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'random-color'</span>, &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;random-color&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>For the random color component, we want to set a random color on the entity
 that this component is attached to. Components have a reference to the entity
 with <code>this.el</code> from the handler methods. And to change the color with
@@ -1255,7 +1267,8 @@ vanilla web development. <a href="https://aframe.io/docs/1.4.0/introduction/java
 A-Frame</a>.</p>
 <p>We’ll also add the <code>material</code> component to the list of components that should
 initialize before this one, just so our material isn’t overwritten.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerComponent(<span class="string">'random-color'</span>, &#123;</span><br><span class="line">  dependencies: [<span class="string">'material'</span>],</span><br><span class="line"></span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Set material component's color property to a random color.</span></span><br><span class="line">    <span class="keyword">this</span>.el.setAttribute(<span class="string">'material'</span>, <span class="string">'color'</span>, getRandomColor());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomColor</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> letters = <span class="string">'0123456789ABCDEF'</span>;</span><br><span class="line">  <span class="keyword">var</span> color = <span class="string">'#'</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++ ) &#123;</span><br><span class="line">    color += letters[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">16</span>)];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;random-color&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">dependencies</span>: [<span class="string">&#x27;material&#x27;</span>],</span><br><span class="line"></span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Set material component&#x27;s color property to a random color.</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">el</span>.<span class="title function_">setAttribute</span>(<span class="string">&#x27;material&#x27;</span>, <span class="string">&#x27;color&#x27;</span>, <span class="title function_">getRandomColor</span>());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getRandomColor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> letters = <span class="string">&#x27;0123456789ABCDEF&#x27;</span>;</span><br><span class="line">  <span class="keyword">var</span> color = <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++ ) &#123;</span><br><span class="line">    color += letters[<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">16</span>)];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>After the component is registered, we can attach this component <strong>straight from
 HTML</strong>. All code written within A-Frame’s framework is extending HTML, and
 those extensions can be used on other objects and in other scenes. The
@@ -1265,60 +1278,69 @@ physics to their scene!</p>
 <p>Take our box entity from earlier, we attach the <code>random-color</code> HTML attribute
 to plug in the <code>random-color</code> component. We’ll save the component as a JS file
 and include it before the scene:</p>
-<p data-height="265" data-theme-id="dark" data-slug-hash="ryWKqy" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 4: Random Color Component)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/ryWKqy/" target="_blank" rel="external">Minecraft VR Demo (Part 4: Random Color Component)</a> by mozvr (<a href="http://codepen.io/mozvr" target="_blank" rel="external">@mozvr</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="ryWKqy" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 4: Random Color Component)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/ryWKqy/">Minecraft VR Demo (Part 4: Random Color Component)</a> by mozvr (<a href="http://codepen.io/mozvr">@mozvr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.4.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"components/random-color.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"groundTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/floor.jpg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"skyTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/sky.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Box with random color. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; depth: 0.5; height: 0.5; width: 0.5"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">material</span>=<span class="string">"shader: standard"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">position</span>=<span class="string">"0 0.5 -2"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">random-color</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">"ground"</span> <span class="attr">src</span>=<span class="string">"#groundTexture"</span> <span class="attr">radius</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"0.1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">id</span>=<span class="string">"background"</span> <span class="attr">src</span>=<span class="string">"#skyTexture"</span> <span class="attr">theta-length</span>=<span class="string">"90"</span> <span class="attr">radius</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.4.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;components/random-color.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;groundTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/floor.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;skyTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/sky.jpg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Box with random color. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box; depth: 0.5; height: 0.5; width: 0.5&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">material</span>=<span class="string">&quot;shader: standard&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">position</span>=<span class="string">&quot;0 0.5 -2&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">random-color</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">&quot;ground&quot;</span> <span class="attr">src</span>=<span class="string">&quot;#groundTexture&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;30&quot;</span> <span class="attr">height</span>=<span class="string">&quot;0.1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">id</span>=<span class="string">&quot;background&quot;</span> <span class="attr">src</span>=<span class="string">&quot;#skyTexture&quot;</span> <span class="attr">theta-length</span>=<span class="string">&quot;90&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;30&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Components can be plugged into any entity without having to create or extend a
 class like we’d have to in traditional inheritance. If we wanted to attach it
 to say, <code>&lt;a-sphere&gt;</code> or <code>&lt;a-obj-model&gt;</code>, we could!</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Reusing and attaching the random color component to other entities. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">random-color</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-obj-model</span> <span class="attr">src</span>=<span class="string">"model.obj"</span> <span class="attr">random-color</span>&gt;</span><span class="tag">&lt;/<span class="name">a-obj-model</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Reusing and attaching the random color component to other entities. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">random-color</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-obj-model</span> <span class="attr">src</span>=<span class="string">&quot;model.obj&quot;</span> <span class="attr">random-color</span>&gt;</span><span class="tag">&lt;/<span class="name">a-obj-model</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>if we wanted to share this component for other people to use, we could too.  We
 curate from many handy components from the ecosystem at <a href="https://aframe.io/registry/">the A-Frame
 Registry</a>, similar to the Unity Asset Store. If we developed our
 application using components, all our code is inherently modular and reusable!</p>
 <h3 id="snap-component"><a href="#snap-component" class="headerlink" title="Snap Component"></a>Snap Component</h3><p>We’ll have a <code>snap</code> component to snap our boxes to a grid so they aren’t
 overlapping. We won’t get into the details of how this component is
-implemented, but you can check out <a href="https://cdn.jsdelivr.net/gh/supermedium/superframe@dae06f2d832e4d305ec7da830fb09a6079af4790/scenes/aincraft/components/snap.js" target="_blank" rel="external">the snap component’s source
+implemented, but you can check out <a href="https://cdn.jsdelivr.net/gh/supermedium/superframe@dae06f2d832e4d305ec7da830fb09a6079af4790/scenes/aincraft/components/snap.js">the snap component’s source
 code</a>
 (20 lines of JavaScript).</p>
 <p>We attach the snap component to our box so that it snaps to every half meter,
 also with an offset to center the box:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">   <span class="attr">geometry</span>=<span class="string">"primitive: box; height: 0.5; width: 0.5; depth: 0.5"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">material</span>=<span class="string">"shader: standard"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">random-color</span></span></span><br><span class="line"><span class="tag">   <span class="attr">snap</span>=<span class="string">"offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">   <span class="attr">geometry</span>=<span class="string">&quot;primitive: box; height: 0.5; width: 0.5; depth: 0.5&quot;</span></span></span><br><span class="line"><span class="tag">   <span class="attr">material</span>=<span class="string">&quot;shader: standard&quot;</span></span></span><br><span class="line"><span class="tag">   <span class="attr">random-color</span></span></span><br><span class="line"><span class="tag">   <span class="attr">snap</span>=<span class="string">&quot;offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Now we have a box entity represented as a bundle of components that can be used
 to describe all the voxels in our scene.</p>
 <h3 id="mixins"><a href="#mixins" class="headerlink" title="Mixins"></a>Mixins</h3><p>We can create <a href="https://aframe.io/docs/1.4.0/core/mixins.html">a mixin</a> to define a reusable bundle of components.
 Instead of <code>&lt;a-entity&gt;</code>, which adds an object to the scene, we’ll describe it
 using <code>&lt;a-mixin&gt;</code> which can be reused to create voxels like a prefab:</p>
-<p data-height="265" data-theme-id="dark" data-slug-hash="OpbEaY" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 5: Mixins)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/OpbEaY/" target="_blank" rel="external">Minecraft VR Demo (Part 5: Mixins)</a> by mozvr (<a href="http://codepen.io/mozvr" target="_blank" rel="external">@mozvr</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="OpbEaY" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Part 5: Mixins)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/OpbEaY/">Minecraft VR Demo (Part 5: Mixins)</a> by mozvr (<a href="http://codepen.io/mozvr">@mozvr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.4.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"components/random-color.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"components/snap.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"groundTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/floor.jpg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"skyTexture"</span> <span class="attr">src</span>=<span class="string">"https://cdn.aframe.io/a-painter/images/sky.jpg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"voxel"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">geometry</span>=<span class="string">"primitive: box; height: 0.5; width: 0.5; depth: 0.5"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">material</span>=<span class="string">"shader: standard"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">random-color</span></span></span><br><span class="line"><span class="tag">       <span class="attr">snap</span>=<span class="string">"offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">"ground"</span> <span class="attr">src</span>=<span class="string">"#groundTexture"</span> <span class="attr">radius</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"0.1"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">id</span>=<span class="string">"background"</span> <span class="attr">src</span>=<span class="string">"#skyTexture"</span> <span class="attr">theta-length</span>=<span class="string">"90"</span> <span class="attr">radius</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"voxel"</span> <span class="attr">position</span>=<span class="string">"-1 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"voxel"</span> <span class="attr">position</span>=<span class="string">"0 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"voxel"</span> <span class="attr">position</span>=<span class="string">"0 1 -2"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">animation</span>=<span class="string">"property: rotation; to: 0 360 0; loop: true"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"voxel"</span> <span class="attr">position</span>=<span class="string">"1 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.4.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;components/random-color.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;components/snap.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;groundTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/floor.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;skyTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/sky.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">&quot;voxel&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">geometry</span>=<span class="string">&quot;primitive: box; height: 0.5; width: 0.5; depth: 0.5&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">material</span>=<span class="string">&quot;shader: standard&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">random-color</span></span></span><br><span class="line"><span class="tag">       <span class="attr">snap</span>=<span class="string">&quot;offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cylinder</span> <span class="attr">id</span>=<span class="string">&quot;ground&quot;</span> <span class="attr">src</span>=<span class="string">&quot;#groundTexture&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;30&quot;</span> <span class="attr">height</span>=<span class="string">&quot;0.1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cylinder</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">id</span>=<span class="string">&quot;background&quot;</span> <span class="attr">src</span>=<span class="string">&quot;#skyTexture&quot;</span> <span class="attr">theta-length</span>=<span class="string">&quot;90&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;30&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;voxel&quot;</span> <span class="attr">position</span>=<span class="string">&quot;-1 0 -2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;voxel&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 0 -2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;voxel&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 1 -2&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">animation</span>=<span class="string">&quot;property: rotation; to: 0 360 0; loop: true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;voxel&quot;</span> <span class="attr">position</span>=<span class="string">&quot;1 0 -2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>And we’ve added voxels using that mixin:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"voxel"</span> <span class="attr">position</span>=<span class="string">"-1 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"voxel"</span> <span class="attr">position</span>=<span class="string">"0 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"voxel"</span> <span class="attr">position</span>=<span class="string">"0 1 -2"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">animation</span>=<span class="string">"property: rotation; to: 0 360 0; loop: true"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"voxel"</span> <span class="attr">position</span>=<span class="string">"1 0 -2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;voxel&quot;</span> <span class="attr">position</span>=<span class="string">&quot;-1 0 -2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;voxel&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 0 -2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;voxel&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 1 -2&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">animation</span>=<span class="string">&quot;property: rotation; to: 0 360 0; loop: true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;voxel&quot;</span> <span class="attr">position</span>=<span class="string">&quot;1 0 -2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Next, we’ll be creating voxels dynamically through interaction using tracked
 controllers. Let’s start adding our hands to the application.</p>
 <h2 id="adding-hand-controllers"><a href="#adding-hand-controllers" class="headerlink" title="Adding Hand Controllers"></a>Adding Hand Controllers</h2><p>Adding HTC Vive or Oculus Touch tracked controllers is easy:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Vive. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">vive-controls</span>=<span class="string">"hand: left"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">vive-controls</span>=<span class="string">"hand: right"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Or Rift. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-touch-controls</span>=<span class="string">"hand: left"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-touch-controls</span>=<span class="string">"hand: right"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Vive. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">vive-controls</span>=<span class="string">&quot;hand: left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">vive-controls</span>=<span class="string">&quot;hand: right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Or Rift. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-touch-controls</span>=<span class="string">&quot;hand: left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-touch-controls</span>=<span class="string">&quot;hand: right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>We’ll be using <code>hand-controls</code> which abstracts and works with both Vive and
 Rift controls, providing models of basic hand. We’ll make the left hand
 responsible for teleporting around and the right hand responsible for spawning
 and placing blocks.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"teleHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: left"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"blockHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: right"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;teleHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;blockHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="adding-teleportation-to-the-left-hand"><a href="#adding-teleportation-to-the-left-hand" class="headerlink" title="Adding Teleportation to the Left Hand"></a>Adding Teleportation to the Left Hand</h3><p>We’ll plug in teleportation capabilities to the left hand such that we hold a
 button to show an arc coming out of the controller, and let go of the button to
 teleport to the end of the arc. Before, we wrote our own A-Frame components.
 But we can also use open source components already made from the community
 and just use them straight from HTML!</p>
-<p>For teleportation, there’s a <a href="https://github.com/fernandojsg/aframe-teleport-controls/" target="_blank" rel="external">teleport-controls
+<p>For teleportation, there’s a <a href="https://github.com/fernandojsg/aframe-teleport-controls/">teleport-controls
 component</a> by @fernandojsg. Following the README, we
 add the component via a <code>&lt;script&gt;</code> tag and just set the <code>teleport-controls</code>
 component on the controller on the entity:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.4.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-teleport-controls@0.3.x/dist/aframe-teleport-controls.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"teleHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: left"</span> <span class="attr">teleport-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"blockHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: right"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.4.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aframe-teleport-controls@0.3.x/dist/aframe-teleport-controls.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;teleHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: left&quot;</span> <span class="attr">teleport-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;blockHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Then we’ll configure the <code>teleport-controls</code> component to use an arc <code>type</code> of
 teleportation. By default, <code>teleport-controls</code> will only teleport on the
 ground, but we can specify with <code>collisionEntities</code> to teleport on the blocks
 <em>and</em> the ground using selectors. These properties are part of the API that the
 <code>teleport-controls</code> component was created with:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"teleHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: left"</span> <span class="attr">teleport-controls</span>=<span class="string">"type: parabolic; collisionEntities: [mixin='voxel'], #ground"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;teleHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: left&quot;</span> <span class="attr">teleport-controls</span>=<span class="string">&quot;type: parabolic; collisionEntities: [mixin=&#x27;voxel&#x27;], #ground&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>That’s it! <strong>One script tag and one HTML attribute and we can teleport</strong>.  For
 more cool components, check out the <a href="https://aframe.io/registry/">A-Frame Registry</a>.</p>
 <h3 id="adding-voxel-spawner-to-the-right-hand"><a href="#adding-voxel-spawner-to-the-right-hand" class="headerlink" title="Adding Voxel Spawner to the Right Hand"></a>Adding Voxel Spawner to the Right Hand</h3><p>In WebVR, the ability to click on objects isn’t built-in as it is in 2D
@@ -1331,7 +1353,9 @@ interaction events and checking the raycaster for intersections.</p>
 that attaches the clicking laser to VR tracked controllers.  Like the
 <code>teleport-controls</code> component, we include the script tag and attach the
 <code>laser-controls</code> component. This time to the right hand:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://aframe.io/releases/1.4.0/aframe.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/aframe-teleport-controls@0.3.x/dist/aframe-teleport-controls.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"teleHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: left"</span> <span class="attr">teleport-controls</span>=<span class="string">"type: parabolic; collisionEntities: [mixin='voxel'], #ground"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"blockHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: right"</span> <span class="attr">laser-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.4.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aframe-teleport-controls@0.3.x/dist/aframe-teleport-controls.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;teleHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: left&quot;</span> <span class="attr">teleport-controls</span>=<span class="string">&quot;type: parabolic; collisionEntities: [mixin=&#x27;voxel&#x27;], #ground&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;blockHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: right&quot;</span> <span class="attr">laser-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 <p>Now when we pull the trigger button on the tracked controllers,
 <code>laser-controls</code> will emit a <code>click</code> event on both the controller and the
 entity it is intersecting at the time. Events such as <code>mouseenter</code>,
@@ -1340,14 +1364,16 @@ intersection.</p>
 <p>That provides us with the ability to click, but we’ll have to wire up some code
 to handle those clicks to spawn blocks. We can use an event listener and
 <code>document.createElement</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#blockHand'</span>).addEventListener(<span class="string">`click`</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Create a blank entity.</span></span><br><span class="line">  <span class="keyword">var</span> newVoxelEl = <span class="built_in">document</span>.createElement(<span class="string">'a-entity'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Use the mixin to make it a voxel.</span></span><br><span class="line">  newVoxelEl.setAttribute(<span class="string">'mixin'</span>, <span class="string">'voxel'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Get normal of the face of intersection and scale it down a bit</span></span><br><span class="line">  <span class="keyword">var</span> normal = evt.detail.intersection.face.normal;</span><br><span class="line">  normal.multiplyScalar(<span class="number">0.25</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Get the position of the intersection and add our scaled normal</span></span><br><span class="line">  <span class="keyword">var</span> position = evt.detail.intersection.point;</span><br><span class="line">  position.add(normal);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Set the position using intersection point. The `snap` component above which</span></span><br><span class="line">  <span class="comment">// is part of the mixin will snap it to the closest half meter.</span></span><br><span class="line">  newVoxelEl.setAttribute(<span class="string">'position'</span>, position);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Add to the scene with `appendChild`.</span></span><br><span class="line">  <span class="keyword">this</span>.appendChild(newVoxelEl);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#blockHand&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">`click`</span>, <span class="keyword">function</span> (<span class="params">evt</span>) &#123;</span><br><span class="line">  <span class="comment">// Create a blank entity.</span></span><br><span class="line">  <span class="keyword">var</span> newVoxelEl = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;a-entity&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Use the mixin to make it a voxel.</span></span><br><span class="line">  newVoxelEl.<span class="title function_">setAttribute</span>(<span class="string">&#x27;mixin&#x27;</span>, <span class="string">&#x27;voxel&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Get normal of the face of intersection and scale it down a bit</span></span><br><span class="line">  <span class="keyword">var</span> normal = evt.<span class="property">detail</span>.<span class="property">intersection</span>.<span class="property">face</span>.<span class="property">normal</span>;</span><br><span class="line">  normal.<span class="title function_">multiplyScalar</span>(<span class="number">0.25</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Get the position of the intersection and add our scaled normal</span></span><br><span class="line">  <span class="keyword">var</span> position = evt.<span class="property">detail</span>.<span class="property">intersection</span>.<span class="property">point</span>;</span><br><span class="line">  position.<span class="title function_">add</span>(normal);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Set the position using intersection point. The `snap` component above which</span></span><br><span class="line">  <span class="comment">// is part of the mixin will snap it to the closest half meter.</span></span><br><span class="line">  newVoxelEl.<span class="title function_">setAttribute</span>(<span class="string">&#x27;position&#x27;</span>, position);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Add to the scene with `appendChild`.</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">appendChild</span>(newVoxelEl);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>To generalize creating entities from an intersection event, we’ve created an
 <code>intersection-spawn</code> component that can be configured with any event and list
 of properties. We won’t go into the detail of the implementation, but you can
-<a href="https://github.com/supermedium/superframe/blob/csstricks/scenes/aincraft/components/intersection-spawn.js" target="_blank" rel="external">check out the simple <code>intersection-spawn</code> component source code on
+<a href="https://github.com/supermedium/superframe/blob/csstricks/scenes/aincraft/components/intersection-spawn.js">check out the simple <code>intersection-spawn</code> component source code on
 GitHub</a>. We attach <code>intersection-spawn</code> capabilities to the
 right hand:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"blockHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: right"</span> <span class="attr">laser-controls</span> <span class="attr">intersection-spawn</span>=<span class="string">"event: click; mixin: voxel"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;blockHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: right&quot;</span> <span class="attr">laser-controls</span> <span class="attr">intersection-spawn</span>=<span class="string">&quot;event: click; mixin: voxel&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Now when we click, we spawn voxels!</p>
 <h3 id="adding-support-for-mobile-and-desktop"><a href="#adding-support-for-mobile-and-desktop" class="headerlink" title="Adding Support for Mobile and Desktop"></a>Adding Support for Mobile and Desktop</h3><p>We see how we’ve built a custom type of object (i.e., a tracked hand controller
 with a hand model that has click capabilities and spawns blocks on click) by
@@ -1355,27 +1381,28 @@ mixing together components. The wonderful thing with components is that they
 are reusable in other contexts. We could even attach the <code>intersection-spawn</code>
 component with the gaze-based <code>cursor</code> component so that we can also spawn
 blocks on mobile and desktop, without changing a thing about the component!</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"blockHand"</span> <span class="attr">hand-controls</span>=<span class="string">"hand: right"</span> <span class="attr">laser-controls</span> <span class="attr">intersection-spawn</span>=<span class="string">"event: click; mixin: voxel"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-camera</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cursor</span> <span class="attr">intersection-spawn</span>=<span class="string">"event: click; mixin: voxel"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cursor</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;blockHand&quot;</span> <span class="attr">hand-controls</span>=<span class="string">&quot;hand: right&quot;</span> <span class="attr">laser-controls</span> <span class="attr">intersection-spawn</span>=<span class="string">&quot;event: click; mixin: voxel&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-camera</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cursor</span> <span class="attr">intersection-spawn</span>=<span class="string">&quot;event: click; mixin: voxel&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cursor</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="try-it-out"><a href="#try-it-out" class="headerlink" title="Try It Out!"></a>Try It Out!</h2><blockquote>
-<p><a href="https://github.com/supermedium/superframe/tree/csstricks/scenes/aincraft/" target="_blank" rel="external">Read the source code on GitHub</a>.</p>
+<p><a href="https://github.com/supermedium/superframe/tree/csstricks/scenes/aincraft/">Read the source code on GitHub</a>.</p>
 </blockquote>
 <p>On desktop, we can drag and click to spawn blocks. On mobile, we can pan the
 device around and tap to spawn blocks. If we have a VR headset (e.g., HTC Vive,
-Oculus Rift + Touch), we can grab a <a href="https://webvr.rocks" target="_blank" rel="external">WebVR-enabled browser</a> and <a href="https://supermedium.com/superframe/scenes/aincraft/" target="_blank" rel="external">head
+Oculus Rift + Touch), we can grab a <a href="https://webvr.rocks/">WebVR-enabled browser</a> and <a href="https://supermedium.com/superframe/scenes/aincraft/">head
 over to the demo</a>. Try it in VR by plugging in an HTC Vive or Oculus Rift
-and <a href="https://webvr.rocks" target="_blank" rel="external">using a WebVR-enabled browser</a>.</p>
-<p data-height="265" data-theme-id="dark" data-slug-hash="OpbwMJ" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Final)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/OpbwMJ/" target="_blank" rel="external">Minecraft VR Demo (Final)</a> by mozvr (<a href="http://codepen.io/mozvr" target="_blank" rel="external">@mozvr</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+and <a href="https://webvr.rocks/">using a WebVR-enabled browser</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="OpbwMJ" data-default-tab="html,result" data-user="mozvr" data-embed-version="2" data-pen-title="Minecraft VR Demo (Final)" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/mozvr/pen/OpbwMJ/">Minecraft VR Demo (Final)</a> by mozvr (<a href="http://codepen.io/mozvr">@mozvr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 <p>If we want to view what the experience looks like when used in VR from our
-desktop or mobile device, <a href="https://supermedium.com/superframe/scenes/aincraft/?avatar-recording=recording.json" target="_blank" rel="external">check out the demo with pre-recorded VR motion
+desktop or mobile device, <a href="https://supermedium.com/superframe/scenes/aincraft/?avatar-recording=recording.json">check out the demo with pre-recorded VR motion
 capture and gestures</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
-
-
+        
+        
       </footer>
 
       <footer class="footer footnote">
@@ -1389,155 +1416,161 @@ capture and gestures</a>.</p>
     </div>
 
     <div class="secondary-sidebar">
-
+      
 
 <div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#example-skeleton">Example Skeleton</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#adding-a-ground">Adding a Ground</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#preloading-assets">Preloading Assets</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#adding-a-background">Adding a Background</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#adding-voxels">Adding Voxels</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#entity-component-pattern">Entity-Component Pattern</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#random-color-component">Random Color Component</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#snap-component">Snap Component</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#mixins">Mixins</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#adding-hand-controllers">Adding Hand Controllers</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#adding-teleportation-to-the-left-hand">Adding Teleportation to the Left Hand</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#adding-voxel-spawner-to-the-right-hand">Adding Voxel Spawner to the Right Hand</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#adding-support-for-mobile-and-desktop">Adding Support for Mobile and Desktop</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#try-it-out">Try It Out!</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
   </ul>
 </div>
 
-
+      
   <div id="doc-examples-list" class="nav-list">
     <p class="section-title docs-section-title">Examples</p>
 
-
+    
       <ul class="subnav">
-
+        
           <li class="subnav-item">
             <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-aincraft?path=index.html">
               Aincraft
             </a>
           </li>
-
+        
       </ul>
-
+    
   </div>
 
 
       <div class="doc-actions">
         <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/guides/building-a-minecraft-demo.md" target="_blank" rel="external">Edit Page</a>
-
+        
       </div>
     </div>
   </div>
 </div>
 </main>
 
+    
+      
+<script src="/js/common.js"></script>
 
-      <script src="/js/common.js"></script>
+      
+      
+        
+<script src="/js/docs.js"></script>
 
+      
+    
 
-        <script src="/js/docs.js"></script>
-
-
-
-
+    
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:1.4.0'],
@@ -1550,6 +1583,6 @@ capture and gestures</a>.</p>
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
-
+    
   </body>
 </html>

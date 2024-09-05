@@ -30,7 +30,7 @@
       data-docs-version="0.4.0">
   <head>
     <title>Animations – A-Frame</title>
-
+    
 
 <script>
   var host = window.location.protocol + '//' + window.location.hostname;
@@ -43,8 +43,8 @@
 
     <meta charset="utf-8">
     <!-- Don't index old documentation pages. -->
-
-
+    <meta name="robots"
+      content="NOINDEX">
     <meta name="description" content="">
     <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,20 +88,26 @@
 </script>
 
 
+    
+      
+<script src="/js/compat.js"></script>
 
-      <script src="/js/compat.js"></script>
+    
 
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
 
+    
 
-      <link rel="stylesheet" href="/css/secondary.css">
-
-
-
+    
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
 
-  </head>
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="docs" data-page-type="core">
     <main id="main" class="main">
@@ -115,7 +121,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar">
@@ -125,7 +131,7 @@
 </div>
 
 <aside id="sidebar" class="sidebar borderless-links">
-
+  
 
 <div id="secondary-nav" class="secondary-nav">
   <header id="header" class="header">
@@ -134,7 +140,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar-mobile">
@@ -143,43 +149,43 @@
 
 
   <ul id="nav" class="nav">
-
+    
       <li  class="nav-item">
         <a href="/docs/1.6.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
-
+           
            >
           <span>Docs</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/blog/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Blog</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/community/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Community</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/showcase/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Showcase</span>
         </a>
       </li>
-
+    
       <li  data-slug="github" class="nav-item">
         <a href="https://github.com/aframevr/aframe/"
            class="nav-link nav-link-docs"
@@ -188,7 +194,7 @@
           <span>GitHub</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://aframe.io/slack-invite/"
            class="nav-link nav-link-docs"
@@ -197,7 +203,7 @@
           <span>Slack</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://discord.com/invite/tGYjkYr"
            class="nav-link nav-link-docs"
@@ -206,7 +212,7 @@
           <span>Discord</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://aframe.io/subscribe/"
            class="nav-link nav-link-docs"
@@ -215,7 +221,7 @@
           <span>Newsletter</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
            class="nav-link nav-link-docs"
@@ -224,7 +230,7 @@
           <span>Ask a Question</span>
         </a>
       </li>
-
+    
   </ul>
 </div>
 
@@ -233,96 +239,96 @@
     <!-- Version dropdown. -->
     <label class="subnav-label" for="docs-version"><b>Version</b></label>
     <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-
+      
         <option false
                 data-href="/docs/master/introduction/">
           master
         </option>
-
+      
         <option false
                 data-href="/docs/1.6.0/introduction/">
           1.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.5.0/introduction/">
           1.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.4.0/introduction/">
           1.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.2.0/introduction/">
           1.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.1.0/introduction/">
           1.1.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.0.0/introduction/">
           1.0.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.9.0/introduction/">
           0.9.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.8.0/introduction/">
           0.8.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.7.0/introduction/">
           0.7.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.6.0/introduction/">
           0.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.5.0/introduction/">
           0.5.0
         </option>
-
+      
         <option selected
                 data-href="/docs/0.4.0/introduction/">
           0.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.3.0/introduction/">
           0.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.2.0/guide/">
           0.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.1.0/guide/">
           0.1.0
         </option>
-
+      
     </select>
 
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -331,45 +337,45 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/introduction/"
                class="subnav-link">
               Introduction
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/introduction/getting-started.html"
                class="subnav-link">
               Getting Started
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/introduction/device-and-platform-support.html"
                class="subnav-link">
               Device & Platform Support
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/introduction/best-practices.html"
                class="subnav-link">
               Best Practices
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/introduction/faq.html"
                class="subnav-link">
               FAQ
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -378,59 +384,59 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/guides/"
                class="subnav-link">
               Building a Basic Scene
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/guides/using-the-aframe-inspector.html"
                class="subnav-link">
               Using the A-Frame Inspector
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/guides/building-with-components.html"
                class="subnav-link">
               Building with Components
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/guides/using-javascript-and-dom-apis.html"
                class="subnav-link">
               Using JavaScript and DOM APIs
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/guides/using-with-threejs.html"
                class="subnav-link">
               Using with three.js
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/guides/writing-a-component.html"
                class="subnav-link">
               Writing a Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/guides/building-with-magicavoxel.html"
                class="subnav-link">
               Building with MagicaVoxel
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-active">
@@ -439,80 +445,80 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/"
                class="subnav-link">
               Entity-Component-System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/entity.html"
                class="subnav-link">
               Entity
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/component.html"
                class="subnav-link">
               Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/systems.html"
                class="subnav-link">
               System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/scene.html"
                class="subnav-link">
               Scene
             </a>
           </li>
-
+        
           <li class="subnav-item  subnav-item-current">
             <a href="/docs/0.4.0/core/animations.html"
                class="subnav-link current">
               Animations
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/mixins.html"
                class="subnav-link">
               Mixins
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/asset-management-system.html"
                class="subnav-link">
               Asset Management System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/AFRAME.html"
                class="subnav-link">
               AFRAME Globals
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/core/utils.html"
                class="subnav-link">
               Utils
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -521,206 +527,206 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/blend-model.html"
                class="subnav-link">
               blend-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/camera.html"
                class="subnav-link">
               camera
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/collada-model.html"
                class="subnav-link">
               collada-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/cursor.html"
                class="subnav-link">
               cursor
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/debug.html"
                class="subnav-link">
               debug
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/embedded.html"
                class="subnav-link">
               embedded
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/fog.html"
                class="subnav-link">
               fog
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/geometry.html"
                class="subnav-link">
               geometry
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/hand-controls.html"
                class="subnav-link">
               hand-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/keyboard-shortcuts.html"
                class="subnav-link">
               keyboard-shortcuts
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/light.html"
                class="subnav-link">
               light
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/look-controls.html"
                class="subnav-link">
               look-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/material.html"
                class="subnav-link">
               material
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/obj-model.html"
                class="subnav-link">
               obj-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/oculus-touch-controls.html"
                class="subnav-link">
               oculus-touch-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/pool.html"
                class="subnav-link">
               pool
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/position.html"
                class="subnav-link">
               position
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/raycaster.html"
                class="subnav-link">
               raycaster
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/rotation.html"
                class="subnav-link">
               rotation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/scale.html"
                class="subnav-link">
               scale
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/screenshot.html"
                class="subnav-link">
               screenshot
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/sound.html"
                class="subnav-link">
               sound
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/stats.html"
                class="subnav-link">
               stats
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/tracked-controls.html"
                class="subnav-link">
               tracked-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/visible.html"
                class="subnav-link">
               visible
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/vive-controls.html"
                class="subnav-link">
               vive-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/vr-mode-ui.html"
                class="subnav-link">
               vr-mode-ui
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/components/wasd-controls.html"
                class="subnav-link">
               wasd-controls
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -729,184 +735,184 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/"
                class="subnav-link">
               Introduction
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-box.html"
                class="subnav-link">
               &lt;a-box&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-camera.html"
                class="subnav-link">
               &lt;a-camera&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-circle.html"
                class="subnav-link">
               &lt;a-circle&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-collada-model.html"
                class="subnav-link">
               &lt;a-collada-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-cone.html"
                class="subnav-link">
               &lt;a-cone&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-cursor.html"
                class="subnav-link">
               &lt;a-cursor&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-curvedimage.html"
                class="subnav-link">
               &lt;a-curvedimage&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-cylinder.html"
                class="subnav-link">
               &lt;a-cylinder&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-dodecahedron.html"
                class="subnav-link">
               &lt;a-dodecahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-icosahedron.html"
                class="subnav-link">
               &lt;a-icosahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-image.html"
                class="subnav-link">
               &lt;a-image&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-light.html"
                class="subnav-link">
               &lt;a-light&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-obj-model.html"
                class="subnav-link">
               &lt;a-obj-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-plane.html"
                class="subnav-link">
               &lt;a-plane&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-ring.html"
                class="subnav-link">
               &lt;a-ring&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-sky.html"
                class="subnav-link">
               &lt;a-sky&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-sound.html"
                class="subnav-link">
               &lt;a-sound&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-sphere.html"
                class="subnav-link">
               &lt;a-sphere&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-tetrahedron.html"
                class="subnav-link">
               &lt;a-tetrahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-torus-knot.html"
                class="subnav-link">
               &lt;a-torus-knot&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-torus.html"
                class="subnav-link">
               &lt;a-torus&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-video.html"
                class="subnav-link">
               &lt;a-video&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.4.0/primitives/a-videosphere.html"
                class="subnav-link">
               &lt;a-videosphere&gt;
             </a>
           </li>
-
+        
       </ol>
-
+    
   </div>
 </aside>
 
@@ -971,19 +977,19 @@
         Animations
       </h1>
 
+      
 
-
-
-
+      
+      
         <blockquote>
 <p><strong>Note:</strong> This documentation is for the old 0.4.0 version of A-Frame. Check out the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
 </blockquote>
 
-
+      
 
       <blockquote>
 <p>Also Check out the
-<a href="https://github.com/ngokevin/kframe/tree/master/components/animation/" target="_blank" rel="external">aframe-animation-component</a></p>
+<a href="https://github.com/ngokevin/kframe/tree/master/components/animation/">aframe-animation-component</a></p>
 </blockquote>
 <p>We can add animations in A-Frame attaching an <code>&lt;a-animation&gt;</code> element as a
 child of the entity to animate.</p>
@@ -993,7 +999,8 @@ rotation of a parent entity. This animation starts with the initial rotation
 about the Y-axis of 0 degrees and goes around to 360 degrees. It’s defined with
 a duration of 10000 milliseconds, maintains the final value on each cycle of
 the animation, and loops indefinitely.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">"5 0 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"rotation"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">dur</span>=<span class="string">"10000"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">fill</span>=<span class="string">"forwards"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">to</span>=<span class="string">"0 360 0"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">position</span>=<span class="string">&quot;5 0 0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">&quot;rotation&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">dur</span>=<span class="string">&quot;10000&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">fill</span>=<span class="string">&quot;forwards&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">to</span>=<span class="string">&quot;0 360 0&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">repeat</span>=<span class="string">&quot;indefinite&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <!--toc-->
 
 <h2 id="attributes"><a href="#attributes" class="headerlink" title="Attributes"></a>Attributes</h2><p>Here is an overview of animation attributes. We’ll go into more detail below.</p>
@@ -1005,8 +1012,7 @@ the animation, and loops indefinitely.</p>
 <th>Default Value</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>attribute</td>
 <td>Attribute to animate. To specify a component attribute, use <code>componentName.property</code> syntax (e.g., <code>light.intensity</code>).</td>
 <td>rotation</td>
@@ -1061,8 +1067,7 @@ the animation, and loops indefinitely.</p>
 <td>Ending value. Must be specified.</td>
 <td>None</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="animating-different-types-of-properties"><a href="#animating-different-types-of-properties" class="headerlink" title="Animating Different Types of Properties"></a>Animating Different Types of Properties</h2><p>A-Frame’s animation system can animate different types of properties.</p>
 <h3 id="vec3-properties"><a href="#vec3-properties" class="headerlink" title="vec3 Properties"></a>vec3 Properties</h3><p>A-Frame has standard <code>vec3</code> components (i.e., <code>position</code>, <code>rotation</code>,
 and <code>scale</code>). These components consist of three factors: X, Y, and Z. We can
@@ -1071,34 +1076,42 @@ would define them on an entity. In this case, the animation system will assume
 we are animating a <code>vec3</code> value.</p>
 <p>For example, if we want to animate an entity going from one spot to another, we
 can animate the <code>position</code> component.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"position"</span> <span class="attr">from</span>=<span class="string">"1 1 1"</span> <span class="attr">to</span>=<span class="string">"2 4 -8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">&quot;position&quot;</span> <span class="attr">from</span>=<span class="string">&quot;1 1 1&quot;</span> <span class="attr">to</span>=<span class="string">&quot;2 4 -8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="boolean-properties"><a href="#boolean-properties" class="headerlink" title="Boolean Properties"></a>Boolean Properties</h3><p>A-Frame has standard components that accept a single boolean value.  Boolean
 values can be “animated” as well by flipping the boolean at the end of each
 animation cycle.</p>
 <p>For example, we can define an animation that toggles off the visibility of an
 entity after 5 seconds.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"visible"</span> <span class="attr">dur</span>=<span class="string">"5000"</span> <span class="attr">to</span>=<span class="string">"false"</span> <span class="attr">repeat</span>=<span class="string">"indefinite"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">&quot;visible&quot;</span> <span class="attr">dur</span>=<span class="string">&quot;5000&quot;</span> <span class="attr">to</span>=<span class="string">&quot;false&quot;</span> <span class="attr">repeat</span>=<span class="string">&quot;indefinite&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="numeric-properties"><a href="#numeric-properties" class="headerlink" title="Numeric Properties"></a>Numeric Properties</h3><p>We can animate numeric attributes as well. For example, we can animate the
 intensity of the light primitive.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">intensity</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"intensity"</span> <span class="attr">to</span>=<span class="string">"3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-light</span> <span class="attr">intensity</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">&quot;intensity&quot;</span> <span class="attr">to</span>=<span class="string">&quot;3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="color-properties"><a href="#color-properties" class="headerlink" title="Color Properties"></a>Color Properties</h3><p>We can animate any component property that has a color type. For example, we
 can animate a box from white to red.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"blushing-cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"material.color"</span> <span class="attr">from</span>=<span class="string">"white"</span> <span class="attr">to</span>=<span class="string">"red"</span> <span class="attr">dur</span>=<span class="string">"1000"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;blushing-cube&quot;</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">&quot;material.color&quot;</span> <span class="attr">from</span>=<span class="string">&quot;white&quot;</span> <span class="attr">to</span>=<span class="string">&quot;red&quot;</span> <span class="attr">dur</span>=<span class="string">&quot;1000&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="component-properties"><a href="#component-properties" class="headerlink" title="Component Properties"></a>Component Properties</h3><p>We can animate a certain property of a multi-property component. To do so, we
 select the component property using the dot syntax:
 <code>componentName.propertyName</code>.</p>
 <p>For example, to animate a cone’s top radius, we can select the <code>radiusTop</code>
 value with <code>geometry.radiusTop</code>.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cone; radiusTop: 1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"geometry.radiusTop"</span> <span class="attr">to</span>=<span class="string">"0.5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: cone; radiusTop: 1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">&quot;geometry.radiusTop&quot;</span> <span class="attr">to</span>=<span class="string">&quot;0.5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="begin"><a href="#begin" class="headerlink" title="Begin"></a>Begin</h2><p>The <code>begin</code> attribute defines when the animation should start playing.</p>
 <p>This can either be a <em>number</em>, representing milliseconds to wait, or an <em>event
 name</em> to wait for. For example, we can define an animation that waits 2 seconds
 before scaling an entity.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"scale"</span> <span class="attr">begin</span>=<span class="string">"2000"</span> <span class="attr">to</span>=<span class="string">"2 2 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">&quot;scale&quot;</span> <span class="attr">begin</span>=<span class="string">&quot;2000&quot;</span> <span class="attr">to</span>=<span class="string">&quot;2 2 2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Or we can define an animation that waits for the parent element to trigger an
 event named <code>fade</code> before fading an entity.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">"fading-cube"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"opacity: 1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">"material.opacity"</span> <span class="attr">begin</span>=<span class="string">"fade"</span> <span class="attr">to</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Trigger an event to begin fading.</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#fading-cube'</span>).emit(<span class="string">'fade'</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;fading-cube&quot;</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;opacity: 1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">attribute</span>=<span class="string">&quot;material.opacity&quot;</span> <span class="attr">begin</span>=<span class="string">&quot;fade&quot;</span> <span class="attr">to</span>=<span class="string">&quot;0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Trigger an event to begin fading.</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#fading-cube&#x27;</span>).<span class="title function_">emit</span>(<span class="string">&#x27;fade&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
 <h2 id="direction"><a href="#direction" class="headerlink" title="Direction"></a>Direction</h2><p>The <code>direction</code> attribute defines which way to animate between the starting
 value and the final value.</p>
 <p>When we define an alternating direction, the animation will go back and forth
@@ -1111,8 +1124,7 @@ take affect when we repeat the animation.</p>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>alternate</td>
 <td>On even-numbered cycles, animate from <code>from</code> to <code>to</code>. On odd-numbered cycles, animation from <code>to</code> to <code>from</code></td>
 </tr>
@@ -1128,8 +1140,7 @@ take affect when we repeat the animation.</p>
 <td>reverse</td>
 <td>Animate from <code>to</code> to <code>from</code>.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="easing"><a href="#easing" class="headerlink" title="Easing"></a>Easing</h2><p>The <code>easing</code> attribute defines the easing function of the animation, which
 defaults to <code>ease</code>. There are too many easing functions to list, but we can
 implicitly explain them.</p>
@@ -1142,7 +1153,7 @@ are <code>cubic</code>, <code>quad</code>, <code>quart</code>, <code>quint</code
 <p>For example, the <code>cubic</code> group of easing functions would consist of
 <code>ease-cubic</code>, <code>ease-in-cubic</code>, <code>ease-out-cubic</code>, <code>ease-in-out-cubic</code>.</p>
 <h2 id="fill"><a href="#fill" class="headerlink" title="Fill"></a>Fill</h2><p>The <code>fill</code> attribute defines the effect of animation when not actively in play.
-Think of <code>fill</code> as what values the animation sets on the entity <em>before</em> and/or
+Think of <code>fill</code> as what values the animation sets on the entity <em>before</em> and&#x2F;or
 <em>after</em> each animation cycle. Below are the possible values for <code>fill</code> and
 their effects.</p>
 <table>
@@ -1152,8 +1163,7 @@ their effects.</p>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>backwards</td>
 <td>Before the animation starts, set the starting value to the <code>from</code> value.</td>
 </tr>
@@ -1169,8 +1179,7 @@ their effects.</p>
 <td>none</td>
 <td>Before the animation starts, set the starting value to the initial value. After the animation finishes, reset the value to the initial value.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="repeat"><a href="#repeat" class="headerlink" title="Repeat"></a>Repeat</h2><p>The <code>repeat</code> attribute defines how often the animation repeats. We call each
 repeat of the animation a cycle. Repeat can either be a number that counts down
 on each animation cycle until it reaches <code>0</code> at which point the animation will
@@ -1184,8 +1193,7 @@ continuously until the animation is manually removed or stopped.</p>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>animationend</td>
 <td>Emitted when the animation finishes. In case of repeats, emitted when the repeat count reaches <code>0</code>. Not emitted for indefinite repeats.</td>
 </tr>
@@ -1193,20 +1201,19 @@ continuously until the animation is manually removed or stopped.</p>
 <td>animationstart</td>
 <td>Emitted immediately when the animation begins playing.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
-
+        
           <span class="float-left">
             <a href="/docs/0.4.0/core/scene.html" class="guide-link guide-link-left">← Scene </a></span>
-
-
+        
+        
           <span class="float-right">
             <a href="/docs/0.4.0/core/mixins.html" class="guide-link guide-link-right">Mixins →</a></span>
-
+        
       </footer>
 
       <footer class="footer footnote">
@@ -1220,149 +1227,155 @@ continuously until the animation is manually removed or stopped.</p>
     </div>
 
     <div class="secondary-sidebar">
-
+      
 
 <div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#attributes">Attributes</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#animating-different-types-of-properties">Animating Different Types of Properties</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#vec3-properties">vec3 Properties</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#boolean-properties">Boolean Properties</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#numeric-properties">Numeric Properties</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#color-properties">Color Properties</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#component-properties">Component Properties</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#begin">Begin</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#direction">Direction</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#easing">Easing</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#fill">Fill</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#repeat">Repeat</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#events">Events</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
   </ul>
 </div>
 
-
+      
 
       <div class="doc-actions">
         <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/core/animations.md" target="_blank" rel="external">Edit Page</a>
-
+        
       </div>
     </div>
   </div>
 </div>
 </main>
 
+    
+      
+<script src="/js/common.js"></script>
 
-      <script src="/js/common.js"></script>
+      
+      
+        
+<script src="/js/docs.js"></script>
 
+      
+    
 
-        <script src="/js/docs.js"></script>
-
-
-
-
+    
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:0.4.0'],
@@ -1375,6 +1388,6 @@ continuously until the animation is manually removed or stopped.</p>
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
-
+    
   </body>
 </html>

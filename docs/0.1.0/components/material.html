@@ -30,7 +30,7 @@
       data-docs-version="0.1.0">
   <head>
     <title>Material – A-Frame</title>
-
+    
 
 <script>
   var host = window.location.protocol + '//' + window.location.hostname;
@@ -43,8 +43,8 @@
 
     <meta charset="utf-8">
     <!-- Don't index old documentation pages. -->
-
-
+    <meta name="robots"
+      content="NOINDEX">
     <meta name="description" content="">
     <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,20 +88,26 @@
 </script>
 
 
+    
+      
+<script src="/js/compat.js"></script>
 
-      <script src="/js/compat.js"></script>
+    
 
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
 
+    
 
-      <link rel="stylesheet" href="/css/secondary.css">
-
-
-
+    
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
 
-  </head>
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
@@ -115,7 +121,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar">
@@ -125,7 +131,7 @@
 </div>
 
 <aside id="sidebar" class="sidebar borderless-links">
-
+  
 
 <div id="secondary-nav" class="secondary-nav">
   <header id="header" class="header">
@@ -134,7 +140,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar-mobile">
@@ -143,43 +149,43 @@
 
 
   <ul id="nav" class="nav">
-
+    
       <li  class="nav-item">
         <a href="/docs/1.6.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
-
+           
            >
           <span>Docs</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/blog/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Blog</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/community/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Community</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/showcase/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Showcase</span>
         </a>
       </li>
-
+    
       <li  data-slug="github" class="nav-item">
         <a href="https://github.com/aframevr/aframe/"
            class="nav-link nav-link-docs"
@@ -188,7 +194,7 @@
           <span>GitHub</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://aframe.io/slack-invite/"
            class="nav-link nav-link-docs"
@@ -197,7 +203,7 @@
           <span>Slack</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://discord.com/invite/tGYjkYr"
            class="nav-link nav-link-docs"
@@ -206,7 +212,7 @@
           <span>Discord</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://aframe.io/subscribe/"
            class="nav-link nav-link-docs"
@@ -215,7 +221,7 @@
           <span>Newsletter</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
            class="nav-link nav-link-docs"
@@ -224,7 +230,7 @@
           <span>Ask a Question</span>
         </a>
       </li>
-
+    
   </ul>
 </div>
 
@@ -233,96 +239,96 @@
     <!-- Version dropdown. -->
     <label class="subnav-label" for="docs-version"><b>Version</b></label>
     <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-
+      
         <option false
                 data-href="/docs/master/introduction/">
           master
         </option>
-
+      
         <option false
                 data-href="/docs/1.6.0/introduction/">
           1.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.5.0/introduction/">
           1.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.4.0/introduction/">
           1.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.2.0/introduction/">
           1.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.1.0/introduction/">
           1.1.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.0.0/introduction/">
           1.0.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.9.0/introduction/">
           0.9.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.8.0/introduction/">
           0.8.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.7.0/introduction/">
           0.7.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.6.0/introduction/">
           0.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.5.0/introduction/">
           0.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.4.0/introduction/">
           0.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.3.0/introduction/">
           0.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.2.0/guide/">
           0.2.0
         </option>
-
+      
         <option selected
                 data-href="/docs/0.1.0/guide/">
           0.1.0
         </option>
-
+      
     </select>
 
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -331,80 +337,80 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav numbered-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/"
                class="subnav-link">
               Getting Started
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/installation.html"
                class="subnav-link">
               Installation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/objects.html"
                class="subnav-link">
               Adding objects
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/positioning.html"
                class="subnav-link">
               Positioning
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/entering-vr.html"
                class="subnav-link">
               Entering VR
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/cameras-and-lights.html"
                class="subnav-link">
               Adding cameras and lights
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/interactivity.html"
                class="subnav-link">
               Adding interactivity
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/video-and-audio.html"
                class="subnav-link">
               Adding video and audio
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/materials.html"
                class="subnav-link">
               Adding materials
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/animations.html"
                class="subnav-link">
               Adding animations
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -413,101 +419,101 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/"
                class="subnav-link">
               Introduction
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-camera.html"
                class="subnav-link">
               &lt;a-camera&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-cube.html"
                class="subnav-link">
               &lt;a-cube&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-curvedimage.html"
                class="subnav-link">
               &lt;a-curvedimage&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-cylinder.html"
                class="subnav-link">
               &lt;a-cylinder&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-image.html"
                class="subnav-link">
               &lt;a-image&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-light.html"
                class="subnav-link">
               &lt;a-light&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-model.html"
                class="subnav-link">
               &lt;a-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-plane.html"
                class="subnav-link">
               &lt;a-plane&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-sky.html"
                class="subnav-link">
               &lt;a-sky&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-sphere.html"
                class="subnav-link">
               &lt;a-sphere&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-video.html"
                class="subnav-link">
               &lt;a-video&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-videosphere.html"
                class="subnav-link">
               &lt;a-videosphere&gt;
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -516,66 +522,66 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/"
                class="subnav-link">
               Entity-Component System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/entity.html"
                class="subnav-link">
               Entity
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/component.html"
                class="subnav-link">
               Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/scene.html"
                class="subnav-link">
               Scene
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/templates.html"
                class="subnav-link">
               Templates
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/animation.html"
                class="subnav-link">
               Animation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/mixin.html"
                class="subnav-link">
               Mixin
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/assets.html"
                class="subnav-link">
               Assets
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-active">
@@ -584,121 +590,121 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/"
                class="subnav-link">
               Camera
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/cursor.html"
                class="subnav-link">
               Cursor
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/fog.html"
                class="subnav-link">
               Fog
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/geometry.html"
                class="subnav-link">
               Geometry
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/light.html"
                class="subnav-link">
               Light
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/loader.html"
                class="subnav-link">
               Loader
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/look-at.html"
                class="subnav-link">
               Look-At
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/look-controls.html"
                class="subnav-link">
               Look Controls
             </a>
           </li>
-
+        
           <li class="subnav-item  subnav-item-current">
             <a href="/docs/0.1.0/components/material.html"
                class="subnav-link current">
               Material
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/position.html"
                class="subnav-link">
               Position
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/raycaster.html"
                class="subnav-link">
               Raycaster
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/rotation.html"
                class="subnav-link">
               Rotation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/scale.html"
                class="subnav-link">
               Scale
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/sound.html"
                class="subnav-link">
               Sound
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/visible.html"
                class="subnav-link">
               Visible
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/wasd-controls.html"
                class="subnav-link">
               WASD Controls
             </a>
           </li>
-
+        
       </ol>
-
+    
   </div>
 </aside>
 
@@ -763,19 +769,20 @@
         Material
       </h1>
 
+      
 
-
-
-
+      
+      
         <blockquote>
 <p><strong>Note:</strong> This documentation is for the old 0.1.0 version of A-Frame. Check out the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
 </blockquote>
 
-
+      
 
       <p>The <code>material</code> component defines the appearance of an entity. It can define properties such as color, opacity, or texture. A <a href="geometry.html"><code>geometry</code> component</a> is usually defined alongside the <code>material</code> component.</p>
 <p>Here is an example defining a red material on a box geometry, creating a red cube.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
@@ -784,15 +791,14 @@
 <th>Default Value</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>color</td>
 <td>Base color of the geometry.</td>
 <td>#fff</td>
 </tr>
 <tr>
 <td>envMap</td>
-<td>Environment cubemap texture for reflections. Can be a selector to <a-cubemap> or a comma-separated list of URLs.</a-cubemap></td>
+<td>Environment cubemap texture for reflections. Can be a selector to <a-cubemap> or a comma-separated list of URLs.</td>
 <td>None</td>
 </tr>
 <tr>
@@ -850,38 +856,42 @@
 <td>Width of video (in pixels), if defining a video texture.</td>
 <td>640</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="defining-textures"><a href="#defining-textures" class="headerlink" title="Defining Textures"></a>Defining Textures</h2><p>To set a texture on the material, specify the <code>src</code> property. <code>src</code> can either be a selector to an <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> element:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"my-texture"</span> <span class="attr">src</span>=<span class="string">"texture.png"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"src: #my-texture"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;my-texture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;texture.png&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;src: #my-texture&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><code>src</code> can also be an inline URL:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"src: url(texture.png)"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;src: url(texture.png)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Most of the other properties works together with textures. For example, the <code>color</code> property will act as the base color and be multiplied per-pixel with the texture. Set it to <code>#fff</code> to maintain the original colors of the texture.</p>
 <h3 id="repeating-textures"><a href="#repeating-textures" class="headerlink" title="Repeating Textures"></a>Repeating Textures</h3><p>Often, we want to tile textures rather than having them stretch. The <code>repeat</code> property can be used to repeat textures.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane; width: 100"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"src: carpet.png; repeat: 100 20"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane; width: 100&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;src: carpet.png; repeat: 100 20&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="environment-maps"><a href="#environment-maps" class="headerlink" title="Environment Maps"></a>Environment Maps</h3><p>The <code>envMap</code> property defines what environment the material reflects. This also works together with plain textures. Though unlike regular texture maps, the <code>envMap</code> property takes a cubemap, six images put together to form a cube. The cubemap is wrapped around the entity and applied as a texture.</p>
 <p>If shader is set to <code>standard</code>, which it is by default, the clarity of the reflection depends on the <code>metalness</code>, <code>roughness</code>, and <code>reflectivity</code> properties.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cubemap</span> <span class="attr">id</span>=<span class="string">"sky"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"right.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"left.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"top.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bottom.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"front.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"back.png"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-cubemap</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"envMap: #sky; roughness: 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-cubemap</span> <span class="attr">id</span>=<span class="string">&quot;sky&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;right.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;left.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;top.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;bottom.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;front.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;back.png&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-cubemap</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;envMap: #sky; roughness: 0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="physically-based-shading"><a href="#physically-based-shading" class="headerlink" title="Physically Based Shading"></a>Physically Based Shading</h2><p>By default, A-Frame materials default to a physically based shading model, where the <code>shader</code> property is <code>standard</code>. Physically based shading is a recent trend in rendering systems where materials behave realistically to lighting conditions. Appearance is a result of the interaction between the incoming light and the properties of the material.</p>
 <p>To achieve realism, the diffuse <code>color</code>, <code>metalness</code>, <code>reflectivity</code>, and <code>roughness</code> properties of the material must accurately be controlled, often based on real-world material studies. Some people have compiled charts of realistic
 values for different kinds of materials that can be used as a starting point.</p>
 <p>For example, for a tree bark material, as an estimation, we might set:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"src: treebark.png; color: #696969; roughness: 1; metalness: 0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: cylinder&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;src: treebark.png; color: #696969; roughness: 1; metalness: 0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>For basic scenes, however, physically based materials are not a large concern.</p>
 <h2 id="specifying-flat-shading"><a href="#specifying-flat-shading" class="headerlink" title="Specifying Flat Shading"></a>Specifying Flat Shading</h2><p>Since materials default to physically based shading, materials will reflect light when we might not want them to. To specify flat shading, such as in the case for displaying plain images or videos, we can define the <code>shader</code> property to be <code>flat</code>.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane"</span> <span class="attr">material</span>=<span class="string">"src: #cat-image; shader: flat"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane&quot;</span> <span class="attr">material</span>=<span class="string">&quot;src: #cat-image; shader: flat&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
-
+        
           <span class="float-left">
             <a href="/docs/0.1.0/components/look-controls.html" class="guide-link guide-link-left">← Look Controls </a></span>
-
-
+        
+        
           <span class="float-right">
             <a href="/docs/0.1.0/components/position.html" class="guide-link guide-link-right">Position →</a></span>
-
+        
       </footer>
 
       <footer class="footer footnote">
@@ -895,82 +905,88 @@ values for different kinds of materials that can be used as a starting point.</p
     </div>
 
     <div class="secondary-sidebar">
-
+      
 
 <div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#defining-textures">Defining Textures</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#repeating-textures">Repeating Textures</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#environment-maps">Environment Maps</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#physically-based-shading">Physically Based Shading</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#specifying-flat-shading">Specifying Flat Shading</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
   </ul>
 </div>
 
-
+      
 
       <div class="doc-actions">
         <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/material.md" target="_blank" rel="external">Edit Page</a>
-
+        
       </div>
     </div>
   </div>
 </div>
 </main>
 
+    
+      
+<script src="/js/common.js"></script>
 
-      <script src="/js/common.js"></script>
+      
+      
+        
+<script src="/js/docs.js"></script>
 
+      
+    
 
-        <script src="/js/docs.js"></script>
-
-
-
-
+    
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:0.1.0'],
@@ -983,6 +999,6 @@ values for different kinds of materials that can be used as a starting point.</p
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
-
+    
   </body>
 </html>

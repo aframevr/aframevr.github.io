@@ -100,19 +100,25 @@ Recently I installed the Cardboard Camera app on my phone. It is a 360-degree ph
 
 
     
-      <script src="/js/compat.js"></script>
+      
+<script src="/js/compat.js"></script>
+
     
 
     
-      <link rel="stylesheet" href="/css/secondary.css">
+      
+<link rel="stylesheet" href="/css/secondary.css">
+
     
 
     
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
+
     
-  </head>
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="blog" data-page-type="">
     <main id="main" class="main"><div class="wordmark">
@@ -752,20 +758,20 @@ Recently I installed the Cardboard Camera app on my phone. It is a 360-degree ph
       
         
           <li class="subnav-item ">
-            <a href="/blog/awoa-77/"
+            <a href="/blog/awoa-76/"
                class="subnav-link"
-               title="A Week of A-Frame 77">
-              A Week of A-Frame 77
+               title="A Week of A-Frame 76">
+              A Week of A-Frame 76
             </a>
           </li>
         
       
         
           <li class="subnav-item ">
-            <a href="/blog/awoa-76/"
+            <a href="/blog/awoa-77/"
                class="subnav-link"
-               title="A Week of A-Frame 76">
-              A Week of A-Frame 76
+               title="A Week of A-Frame 77">
+              A Week of A-Frame 77
             </a>
           </li>
         
@@ -1807,21 +1813,22 @@ Recently I installed the Cardboard Camera app on my phone. It is a 360-degree ph
           
 
           <blockquote>
-<p>Chris from <a href="https://www.ideaspacevr.org/" target="_blank" rel="external">IdeaSpaceVR</a> has built an interactive 360-degree photosphere viewer. Space bar toggles a menu system, and a gaze-based cursor selects photos.</p>
+<p>Chris from <a href="https://www.ideaspacevr.org/">IdeaSpaceVR</a> has built an interactive 360-degree photosphere viewer. Space bar toggles a menu system, and a gaze-based cursor selects photos.</p>
 </blockquote>
 <p>Recently I installed the Cardboard Camera app on my phone. It is a 360-degree photosphere VR app for Google Cardboard including a nice menu in VR which allows one to easily select photos from a list. The photosphere is showing photos with a so-called equirectangular projection (did not hear about that term before, as I am not a photo nerd ;-) ).</p>
 <p>Since I knew that A-Frame had been released I thought of implementing this app in A-Frame, as I thought it might be quite easy to do, AND I would learn coding in A-Frame.</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p>After a few hours of playing around I realised that</p>
 <p>(a) yes it is easy to implement a photosphere BUT
 (b) implementing a decent VR menu could not be done by just using A-Frame tags.</p>
 <p>Which lead me to implement my first component for A-Frame. As it turned out, I needed actually two components:</p>
-<p>The first component handles the VR photo menu (showing the menu, hiding the menu, position it in space). This component acts as a container for the photo thumbnails. You can check out the <a href="https://github.com/IdeaSpaceVR/aframe-360-degree-photosphere/blob/master/js/components/isvr_photosphere_menu.js" target="_blank" rel="external">source code here</a>. I have to admit that I was not able to write the code for positioning the menu in space. So I turned to <a href="http://stackoverflow.com/questions/34447119/positioning-a-three-js-object-in-front-of-the-camera-but-not-tied-to-the-camera" target="_blank" rel="external">Stack Overflow</a> which helped me out on that one (again).</p>
+<p>The first component handles the VR photo menu (showing the menu, hiding the menu, position it in space). This component acts as a container for the photo thumbnails. You can check out the <a href="https://github.com/IdeaSpaceVR/aframe-360-degree-photosphere/blob/master/js/components/isvr_photosphere_menu.js">source code here</a>. I have to admit that I was not able to write the code for positioning the menu in space. So I turned to <a href="http://stackoverflow.com/questions/34447119/positioning-a-three-js-object-in-front-of-the-camera-but-not-tied-to-the-camera">Stack Overflow</a> which helped me out on that one (again).</p>
 <p>The second component is associated to each photo thumbnail within the menu container. I handles the selection of the photo via the mouse click event. I disabled the fuse cursors which would normally emit this click event. After many tests I decided that I did not like the fuse cursor for selecting photos. I guess people nowadays either have a Cardboard 2.0 (which supports a button) or an Oculus Rift and a mouse and keyboard. Additionally, I decided to only show the cursor when the menu is visible.</p>
-<p>The main index.html file is straightforward. It contains the code for the photo thumbnail menu animation, the sky tag, the camera, the cursor, and their settings. Here’s the <a href="https://github.com/IdeaSpaceVR/aframe-360-degree-photosphere/blob/master/index.html" target="_blank" rel="external">source code</a>.</p>
+<p>The main index.html file is straightforward. It contains the code for the photo thumbnail menu animation, the sky tag, the camera, the cursor, and their settings. Here’s the <a href="https://github.com/IdeaSpaceVR/aframe-360-degree-photosphere/blob/master/index.html">source code</a>.</p>
 <p>Anyway, this is a very first version of the 360-photosphere viewer, but I am quite pleased with it.</p>
-<p>All photos are licensed under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="external">Creative Commons 2.0 Generic Attribution</a>.</p>
-<p><a href="https://www.flickr.com/search/?text=equirectangular&amp;license=4%2C5%2C9%2C10" target="_blank" rel="external">Flickr is a good source of equirectangular photos</a>, or you can create your own by using Android Camera app (using the photosphere option).</p>
+<p>All photos are licensed under <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons 2.0 Generic Attribution</a>.</p>
+<p><a href="https://www.flickr.com/search/?text=equirectangular&license=4,5,9,10">Flickr is a good source of equirectangular photos</a>, or you can create your own by using Android Camera app (using the photosphere option).</p>
 <p><strong>Instructions for the example:</strong></p>
 <ul>
 <li>Space bar for showing and hiding the menu</li>
@@ -1873,19 +1880,25 @@ Recently I installed the Cardboard Camera app on my phone. It is a 360-degree ph
 </main>
 
     
-      <script src="/js/common.js"></script>
+      
+<script src="/js/common.js"></script>
+
       
       
-        <script src="/js/docs.js"></script>
+        
+<script src="/js/docs.js"></script>
+
       
     
 
     
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:1.6.0'],

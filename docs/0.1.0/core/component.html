@@ -30,7 +30,7 @@
       data-docs-version="0.1.0">
   <head>
     <title>Component – A-Frame</title>
-
+    
 
 <script>
   var host = window.location.protocol + '//' + window.location.hostname;
@@ -43,8 +43,8 @@
 
     <meta charset="utf-8">
     <!-- Don't index old documentation pages. -->
-
-
+    <meta name="robots"
+      content="NOINDEX">
     <meta name="description" content="">
     <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,20 +88,26 @@
 </script>
 
 
+    
+      
+<script src="/js/compat.js"></script>
 
-      <script src="/js/compat.js"></script>
+    
 
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
 
+    
 
-      <link rel="stylesheet" href="/css/secondary.css">
-
-
-
+    
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
 
-  </head>
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="docs" data-page-type="core">
     <main id="main" class="main">
@@ -115,7 +121,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar">
@@ -125,7 +131,7 @@
 </div>
 
 <aside id="sidebar" class="sidebar borderless-links">
-
+  
 
 <div id="secondary-nav" class="secondary-nav">
   <header id="header" class="header">
@@ -134,7 +140,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar-mobile">
@@ -143,43 +149,43 @@
 
 
   <ul id="nav" class="nav">
-
+    
       <li  class="nav-item">
         <a href="/docs/1.6.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
-
+           
            >
           <span>Docs</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/blog/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Blog</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/community/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Community</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/showcase/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Showcase</span>
         </a>
       </li>
-
+    
       <li  data-slug="github" class="nav-item">
         <a href="https://github.com/aframevr/aframe/"
            class="nav-link nav-link-docs"
@@ -188,7 +194,7 @@
           <span>GitHub</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://aframe.io/slack-invite/"
            class="nav-link nav-link-docs"
@@ -197,7 +203,7 @@
           <span>Slack</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://discord.com/invite/tGYjkYr"
            class="nav-link nav-link-docs"
@@ -206,7 +212,7 @@
           <span>Discord</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://aframe.io/subscribe/"
            class="nav-link nav-link-docs"
@@ -215,7 +221,7 @@
           <span>Newsletter</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
            class="nav-link nav-link-docs"
@@ -224,7 +230,7 @@
           <span>Ask a Question</span>
         </a>
       </li>
-
+    
   </ul>
 </div>
 
@@ -233,96 +239,96 @@
     <!-- Version dropdown. -->
     <label class="subnav-label" for="docs-version"><b>Version</b></label>
     <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-
+      
         <option false
                 data-href="/docs/master/introduction/">
           master
         </option>
-
+      
         <option false
                 data-href="/docs/1.6.0/introduction/">
           1.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.5.0/introduction/">
           1.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.4.0/introduction/">
           1.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.2.0/introduction/">
           1.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.1.0/introduction/">
           1.1.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.0.0/introduction/">
           1.0.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.9.0/introduction/">
           0.9.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.8.0/introduction/">
           0.8.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.7.0/introduction/">
           0.7.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.6.0/introduction/">
           0.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.5.0/introduction/">
           0.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.4.0/introduction/">
           0.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.3.0/introduction/">
           0.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.2.0/guide/">
           0.2.0
         </option>
-
+      
         <option selected
                 data-href="/docs/0.1.0/guide/">
           0.1.0
         </option>
-
+      
     </select>
 
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -331,80 +337,80 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav numbered-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/"
                class="subnav-link">
               Getting Started
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/installation.html"
                class="subnav-link">
               Installation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/objects.html"
                class="subnav-link">
               Adding objects
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/positioning.html"
                class="subnav-link">
               Positioning
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/entering-vr.html"
                class="subnav-link">
               Entering VR
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/cameras-and-lights.html"
                class="subnav-link">
               Adding cameras and lights
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/interactivity.html"
                class="subnav-link">
               Adding interactivity
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/video-and-audio.html"
                class="subnav-link">
               Adding video and audio
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/materials.html"
                class="subnav-link">
               Adding materials
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/guide/animations.html"
                class="subnav-link">
               Adding animations
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -413,101 +419,101 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/"
                class="subnav-link">
               Introduction
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-camera.html"
                class="subnav-link">
               &lt;a-camera&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-cube.html"
                class="subnav-link">
               &lt;a-cube&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-curvedimage.html"
                class="subnav-link">
               &lt;a-curvedimage&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-cylinder.html"
                class="subnav-link">
               &lt;a-cylinder&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-image.html"
                class="subnav-link">
               &lt;a-image&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-light.html"
                class="subnav-link">
               &lt;a-light&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-model.html"
                class="subnav-link">
               &lt;a-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-plane.html"
                class="subnav-link">
               &lt;a-plane&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-sky.html"
                class="subnav-link">
               &lt;a-sky&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-sphere.html"
                class="subnav-link">
               &lt;a-sphere&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-video.html"
                class="subnav-link">
               &lt;a-video&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/primitives/a-videosphere.html"
                class="subnav-link">
               &lt;a-videosphere&gt;
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-active">
@@ -516,66 +522,66 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/"
                class="subnav-link">
               Entity-Component System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/entity.html"
                class="subnav-link">
               Entity
             </a>
           </li>
-
+        
           <li class="subnav-item  subnav-item-current">
             <a href="/docs/0.1.0/core/component.html"
                class="subnav-link current">
               Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/scene.html"
                class="subnav-link">
               Scene
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/templates.html"
                class="subnav-link">
               Templates
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/animation.html"
                class="subnav-link">
               Animation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/mixin.html"
                class="subnav-link">
               Mixin
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/core/assets.html"
                class="subnav-link">
               Assets
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -584,121 +590,121 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/"
                class="subnav-link">
               Camera
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/cursor.html"
                class="subnav-link">
               Cursor
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/fog.html"
                class="subnav-link">
               Fog
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/geometry.html"
                class="subnav-link">
               Geometry
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/light.html"
                class="subnav-link">
               Light
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/loader.html"
                class="subnav-link">
               Loader
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/look-at.html"
                class="subnav-link">
               Look-At
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/look-controls.html"
                class="subnav-link">
               Look Controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/material.html"
                class="subnav-link">
               Material
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/position.html"
                class="subnav-link">
               Position
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/raycaster.html"
                class="subnav-link">
               Raycaster
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/rotation.html"
                class="subnav-link">
               Rotation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/scale.html"
                class="subnav-link">
               Scale
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/sound.html"
                class="subnav-link">
               Sound
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/visible.html"
                class="subnav-link">
               Visible
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.1.0/components/wasd-controls.html"
                class="subnav-link">
               WASD Controls
             </a>
           </li>
-
+        
       </ol>
-
+    
   </div>
 </aside>
 
@@ -763,15 +769,15 @@
         Component
       </h1>
 
+      
 
-
-
-
+      
+      
         <blockquote>
 <p><strong>Note:</strong> This documentation is for the old 0.1.0 version of A-Frame. Check out the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
 </blockquote>
 
-
+      
 
       <p>In the entity-component architecture, components are reusable and modular chunks of data that modify an aspect of an entity, changing its appearance, behavior, or functionality.</p>
 <p>As an analogy, if a smartphone were defined as an entity, it might use components to define its appearance (color, shape), to define its behavior (vibrate when called, shut down on low battery), or to define its functionality (camera, screen).</p>
@@ -782,8 +788,7 @@
 <th>Component</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>camera</td>
 </tr>
 <tr>
@@ -831,16 +836,19 @@
 <tr>
 <td>wasd-controls</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="defining-component-data"><a href="#defining-component-data" class="headerlink" title="Defining Component Data"></a>Defining Component Data</h2><p>To declaratively define component data, we can set HTML attributes using a CSS style-like syntax.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; width: 5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box; width: 5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>And component data can also be declaratively defined and composed via mixins.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"red"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">geometry</span>=<span class="string">"primitive: box; width: 5"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">"red box"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">&quot;red&quot;</span> <span class="attr">material</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-mixin</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box; width: 5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-mixin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">mixin</span>=<span class="string">&quot;red box&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>To imperatively set component data, we can use the entity’s <code>setAttribute</code>.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> entity = <span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>);</span><br><span class="line">entity.setAttribute(<span class="string">'material'</span>, <span class="string">'color: red'</span>);</span><br><span class="line">entity.setAttribute(<span class="string">'geometry'</span>, &#123;<span class="attr">primitive</span>: <span class="string">'box'</span>&#125;);</span><br><span class="line">entity.setAttribute(<span class="string">'geometry'</span>, <span class="string">'width'</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> entity = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;a-entity&#x27;</span>);</span><br><span class="line">entity.<span class="title function_">setAttribute</span>(<span class="string">&#x27;material&#x27;</span>, <span class="string">&#x27;color: red&#x27;</span>);</span><br><span class="line">entity.<span class="title function_">setAttribute</span>(<span class="string">&#x27;geometry&#x27;</span>, &#123;<span class="attr">primitive</span>: <span class="string">&#x27;box&#x27;</span>&#125;);</span><br><span class="line">entity.<span class="title function_">setAttribute</span>(<span class="string">&#x27;geometry&#x27;</span>, <span class="string">&#x27;width&#x27;</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
 <h2 id="accessing-a-component"><a href="#accessing-a-component" class="headerlink" title="Accessing a Component"></a>Accessing a Component</h2><p>Components can be imperatively accessed through the entity element via <code>components</code>, an object mapping component names to component instances.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> entity = <span class="built_in">document</span>.querySelector(<span class="string">'a-entity'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(entity.components);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> entity = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;a-entity&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(entity.<span class="property">components</span>);</span><br></pre></td></tr></table></figure>
+
 <h2 id="component-definition-and-lifecycle"><a href="#component-definition-and-lifecycle" class="headerlink" title="Component Definition and Lifecycle"></a>Component Definition and Lifecycle</h2><p>Under the hood, components are object prototypes. They implement an interface to modify the entity according to incoming data. Below we will go over the properties and methods of a component prototype.</p>
 <table>
 <thead>
@@ -849,8 +857,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>data</td>
 <td>Current component data object including defaults defined in schema and mixins.</td>
 </tr>
@@ -862,8 +869,7 @@
 <td>schema</td>
 <td>Defines component data schema (e.g., possible properties, default values, possible values, types).</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <table>
 <thead>
 <tr>
@@ -872,8 +878,7 @@
 <th>Default Behavior</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>init()</td>
 <td>Lifecycle handler method. Called once when component is attached. Generally used for initial setup.</td>
 <td>no-op</td>
@@ -898,9 +903,8 @@
 <td>Serializes data into an HTML attribute string. Can be overridden to do custom stringify-ing.</td>
 <td>CSS style parser</td>
 </tr>
-</tbody>
-</table>
-<h2 id="component-schema"><a href="#component-schema" class="headerlink" title="Component Schema"></a>Component Schema</h2><p>Components define a schema object that specifies default values and type coercion/validation. Each key in the schema object refers to the name of a component property. The values of the schema object are objects that can specify several keys.</p>
+</tbody></table>
+<h2 id="component-schema"><a href="#component-schema" class="headerlink" title="Component Schema"></a>Component Schema</h2><p>Components define a schema object that specifies default values and type coercion&#x2F;validation. Each key in the schema object refers to the name of a component property. The values of the schema object are objects that can specify several keys.</p>
 <table>
 <thead>
 <tr>
@@ -908,8 +912,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>default</td>
 <td>Default value. If no value is specified, this default value is set in the component <code>data</code> for its property. The default value is also used as a reference for type coercion.</td>
 </tr>
@@ -917,28 +920,29 @@
 <td>oneOf</td>
 <td>An array that describes possible values for its property. If a value is set that is not in this array, a warning is thrown.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>For example, let’s take a look at a piece of the light component schema.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  intensity: &#123;</span><br><span class="line">    <span class="keyword">default</span>: <span class="number">1.0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  type: &#123;</span><br><span class="line">    <span class="keyword">default</span>: <span class="string">'directional'</span>,</span><br><span class="line">    oneOf: [<span class="string">'ambient'</span>, <span class="string">'directional'</span>, <span class="string">'hemisphere'</span>, <span class="string">'point'</span>, <span class="string">'spot'</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">intensity</span>: &#123;</span><br><span class="line">    <span class="attr">default</span>: <span class="number">1.0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">type</span>: &#123;</span><br><span class="line">    <span class="attr">default</span>: <span class="string">&#x27;directional&#x27;</span>,</span><br><span class="line">    <span class="attr">oneOf</span>: [<span class="string">&#x27;ambient&#x27;</span>, <span class="string">&#x27;directional&#x27;</span>, <span class="string">&#x27;hemisphere&#x27;</span>, <span class="string">&#x27;point&#x27;</span>, <span class="string">&#x27;spot&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="component-registration"><a href="#component-registration" class="headerlink" title="Component Registration"></a>Component Registration</h2><p>To register your component, use the <code>registerComponent(componentName, componentDefinition)</code> function exposed by the library.</p>
-<h2 id="building-a-component"><a href="#building-a-component" class="headerlink" title="Building a Component"></a>Building a Component</h2><p>Check out the <a href="https://github.com/ngokevin/aframe-component-boilerplate" target="_blank" rel="external">A-Frame component boilerplate</a> to get started on building and sharing a component. More detailed documentation on building a component is coming soon.</p>
+<h2 id="building-a-component"><a href="#building-a-component" class="headerlink" title="Building a Component"></a>Building a Component</h2><p>Check out the <a href="https://github.com/ngokevin/aframe-component-boilerplate">A-Frame component boilerplate</a> to get started on building and sharing a component. More detailed documentation on building a component is coming soon.</p>
 <p>Let’s create an example component that rapidly vibrates an object by shifting its position back and forth.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'aframe'</span>).registerComponent(<span class="string">'vibrate'</span>, &#123;</span><br><span class="line">  schema: &#123;</span><br><span class="line">    dur: &#123;</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">20</span></span><br><span class="line">    &#125;,</span><br><span class="line">    offset: &#123;</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">0.01</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.animationEl = <span class="literal">null</span>;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> anim = <span class="built_in">document</span>.createElement(<span class="string">'a-animation'</span>);</span><br><span class="line">    <span class="keyword">var</span> position = <span class="keyword">this</span>.el.getAttribute(<span class="string">'position'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.animationEl) &#123;</span><br><span class="line">      <span class="keyword">this</span>.el.removeChild(<span class="keyword">this</span>.animationEl);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    anim.setAttribute(<span class="string">'attribute'</span>, <span class="string">'position'</span>);</span><br><span class="line">    anim.setAttribute(<span class="string">'direction'</span>, <span class="string">'alternate'</span>);</span><br><span class="line">    anim.setAttribute(<span class="string">'dur'</span>, <span class="keyword">this</span>.data.dur);</span><br><span class="line">    anim.setAttribute(<span class="string">'repeat'</span>, <span class="string">'indefinite'</span>);</span><br><span class="line">    anim.setAttribute(<span class="string">'to'</span>, position.x + <span class="keyword">this</span>.data.offset + <span class="string">' '</span> +</span><br><span class="line">                            position.y + <span class="keyword">this</span>.data.offset +</span><br><span class="line">                            position.z + <span class="keyword">this</span>.data.offset);</span><br><span class="line">    <span class="keyword">this</span>.animationEl = anim;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  remove: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.animationEl) &#123;</span><br><span class="line">      <span class="keyword">this</span>.el.removeChild(<span class="keyword">this</span>.animationEl);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;aframe&#x27;</span>).<span class="title function_">registerComponent</span>(<span class="string">&#x27;vibrate&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">dur</span>: &#123;</span><br><span class="line">      <span class="attr">default</span>: <span class="number">20</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">offset</span>: &#123;</span><br><span class="line">      <span class="attr">default</span>: <span class="number">0.01</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">animationEl</span> = <span class="literal">null</span>;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">update</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> anim = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;a-animation&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> position = <span class="variable language_">this</span>.<span class="property">el</span>.<span class="title function_">getAttribute</span>(<span class="string">&#x27;position&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">animationEl</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">el</span>.<span class="title function_">removeChild</span>(<span class="variable language_">this</span>.<span class="property">animationEl</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    anim.<span class="title function_">setAttribute</span>(<span class="string">&#x27;attribute&#x27;</span>, <span class="string">&#x27;position&#x27;</span>);</span><br><span class="line">    anim.<span class="title function_">setAttribute</span>(<span class="string">&#x27;direction&#x27;</span>, <span class="string">&#x27;alternate&#x27;</span>);</span><br><span class="line">    anim.<span class="title function_">setAttribute</span>(<span class="string">&#x27;dur&#x27;</span>, <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">dur</span>);</span><br><span class="line">    anim.<span class="title function_">setAttribute</span>(<span class="string">&#x27;repeat&#x27;</span>, <span class="string">&#x27;indefinite&#x27;</span>);</span><br><span class="line">    anim.<span class="title function_">setAttribute</span>(<span class="string">&#x27;to&#x27;</span>, position.<span class="property">x</span> + <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">offset</span> + <span class="string">&#x27; &#x27;</span> +</span><br><span class="line">                            position.<span class="property">y</span> + <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">offset</span> +</span><br><span class="line">                            position.<span class="property">z</span> + <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">offset</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">animationEl</span> = anim;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">remove</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">animationEl</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">el</span>.<span class="title function_">removeChild</span>(<span class="variable language_">this</span>.<span class="property">animationEl</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h2 id="updating-a-component-on-tick"><a href="#updating-a-component-on-tick" class="headerlink" title="Updating a Component on Tick"></a>Updating a Component on Tick</h2><p>To have a component update on each frame or tick, we can register the component to the scene with <code>&lt;a-scene&gt;.addBehavior</code>. <code>addBehavior</code> registers callback functions on every frame or tick. Just pass the component into <code>addBehavior</code>. In the component:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.el.sceneEl.addBehavior(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">el</span>.<span class="property">sceneEl</span>.<span class="title function_">addBehavior</span>(<span class="variable language_">this</span>);</span><br></pre></td></tr></table></figure>
 
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
-
+        
           <span class="float-left">
             <a href="/docs/0.1.0/core/entity.html" class="guide-link guide-link-left">← Entity </a></span>
-
-
+        
+        
           <span class="float-right">
             <a href="/docs/0.1.0/core/scene.html" class="guide-link guide-link-right">Scene →</a></span>
-
+        
       </footer>
 
       <footer class="footer footnote">
@@ -952,118 +956,124 @@
     </div>
 
     <div class="secondary-sidebar">
-
+      
 
 <div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#defining-component-data">Defining Component Data</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#accessing-a-component">Accessing a Component</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#component-definition-and-lifecycle">Component Definition and Lifecycle</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#component-schema">Component Schema</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#component-registration">Component Registration</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#building-a-component">Building a Component</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#updating-a-component-on-tick">Updating a Component on Tick</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
   </ul>
 </div>
 
-
+      
 
       <div class="doc-actions">
         <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/core/component.md" target="_blank" rel="external">Edit Page</a>
-
+        
       </div>
     </div>
   </div>
 </div>
 </main>
 
+    
+      
+<script src="/js/common.js"></script>
 
-      <script src="/js/common.js"></script>
+      
+      
+        
+<script src="/js/docs.js"></script>
 
+      
+    
 
-        <script src="/js/docs.js"></script>
-
-
-
-
+    
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:0.1.0'],
@@ -1076,6 +1086,6 @@
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
-
+    
   </body>
 </html>

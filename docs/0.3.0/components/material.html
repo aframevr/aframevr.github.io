@@ -30,7 +30,7 @@
       data-docs-version="0.3.0">
   <head>
     <title>material – A-Frame</title>
-
+    
 
 <script>
   var host = window.location.protocol + '//' + window.location.hostname;
@@ -43,8 +43,8 @@
 
     <meta charset="utf-8">
     <!-- Don't index old documentation pages. -->
-
-
+    <meta name="robots"
+      content="NOINDEX">
     <meta name="description" content="">
     <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,20 +88,26 @@
 </script>
 
 
+    
+      
+<script src="/js/compat.js"></script>
 
-      <script src="/js/compat.js"></script>
+    
 
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
 
+    
 
-      <link rel="stylesheet" href="/css/secondary.css">
-
-
-
+    
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
 
-  </head>
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="docs" data-page-type="components">
     <main id="main" class="main">
@@ -115,7 +121,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar">
@@ -125,7 +131,7 @@
 </div>
 
 <aside id="sidebar" class="sidebar borderless-links">
-
+  
 
 <div id="secondary-nav" class="secondary-nav">
   <header id="header" class="header">
@@ -134,7 +140,7 @@
     </a>
   </header>
 
-
+  
 
 
 <div class="docs-search-wrapper docs-search-sidebar-mobile">
@@ -143,43 +149,43 @@
 
 
   <ul id="nav" class="nav">
-
+    
       <li  class="nav-item">
         <a href="/docs/1.6.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
-
+           
            >
           <span>Docs</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/blog/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Blog</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/community/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Community</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="/showcase/"
            class="nav-link nav-link-docs"
-
+           
            >
           <span>Showcase</span>
         </a>
       </li>
-
+    
       <li  data-slug="github" class="nav-item">
         <a href="https://github.com/aframevr/aframe/"
            class="nav-link nav-link-docs"
@@ -188,7 +194,7 @@
           <span>GitHub</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://aframe.io/slack-invite/"
            class="nav-link nav-link-docs"
@@ -197,7 +203,7 @@
           <span>Slack</span>
         </a>
       </li>
-
+    
       <li  data-slug="slug" class="nav-item">
         <a href="https://discord.com/invite/tGYjkYr"
            class="nav-link nav-link-docs"
@@ -206,7 +212,7 @@
           <span>Discord</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://aframe.io/subscribe/"
            class="nav-link nav-link-docs"
@@ -215,7 +221,7 @@
           <span>Newsletter</span>
         </a>
       </li>
-
+    
       <li  class="nav-item">
         <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
            class="nav-link nav-link-docs"
@@ -224,7 +230,7 @@
           <span>Ask a Question</span>
         </a>
       </li>
-
+    
   </ul>
 </div>
 
@@ -233,96 +239,96 @@
     <!-- Version dropdown. -->
     <label class="subnav-label" for="docs-version"><b>Version</b></label>
     <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
-
+      
         <option false
                 data-href="/docs/master/introduction/">
           master
         </option>
-
+      
         <option false
                 data-href="/docs/1.6.0/introduction/">
           1.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.5.0/introduction/">
           1.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.4.0/introduction/">
           1.4.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.3.0/introduction/">
           1.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.2.0/introduction/">
           1.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.1.0/introduction/">
           1.1.0
         </option>
-
+      
         <option false
                 data-href="/docs/1.0.0/introduction/">
           1.0.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.9.0/introduction/">
           0.9.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.8.0/introduction/">
           0.8.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.7.0/introduction/">
           0.7.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.6.0/introduction/">
           0.6.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.5.0/introduction/">
           0.5.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.4.0/introduction/">
           0.4.0
         </option>
-
+      
         <option selected
                 data-href="/docs/0.3.0/introduction/">
           0.3.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.2.0/guide/">
           0.2.0
         </option>
-
+      
         <option false
                 data-href="/docs/0.1.0/guide/">
           0.1.0
         </option>
-
+      
     </select>
 
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -331,45 +337,45 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/introduction/"
                class="subnav-link">
               Introduction
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/introduction/getting-started.html"
                class="subnav-link">
               Getting Started
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/introduction/device-and-platform-support.html"
                class="subnav-link">
               Device & Platform Support
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/introduction/best-practices.html"
                class="subnav-link">
               Best Practices
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/introduction/faq.html"
                class="subnav-link">
               FAQ
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -378,38 +384,38 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/guides/"
                class="subnav-link">
               Building with Basic HTML
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/guides/building-with-components.html"
                class="subnav-link">
               Building with Components
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/guides/building-with-magicavoxel.html"
                class="subnav-link">
               Building with MagicaVoxel
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/guides/using-the-aframe-inspector.html"
                class="subnav-link">
               Using the A-Frame Inspector
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -418,80 +424,80 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/"
                class="subnav-link">
               Entity-Component-System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/entity.html"
                class="subnav-link">
               Entity
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/component.html"
                class="subnav-link">
               Component
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/systems.html"
                class="subnav-link">
               System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/scene.html"
                class="subnav-link">
               Scene
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/animations.html"
                class="subnav-link">
               Animations
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/mixins.html"
                class="subnav-link">
               Mixins
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/asset-management-system.html"
                class="subnav-link">
               Asset Management System
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/AFRAME.html"
                class="subnav-link">
               AFRAME Globals
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/core/utils.html"
                class="subnav-link">
               Utils
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-active">
@@ -500,185 +506,185 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/blend-model.html"
                class="subnav-link">
               blend-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/camera.html"
                class="subnav-link">
               camera
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/collada-model.html"
                class="subnav-link">
               collada-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/cursor.html"
                class="subnav-link">
               cursor
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/debug.html"
                class="subnav-link">
               debug
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/embedded.html"
                class="subnav-link">
               embedded
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/fog.html"
                class="subnav-link">
               fog
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/geometry.html"
                class="subnav-link">
               geometry
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/hand-controls.html"
                class="subnav-link">
               hand-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/keyboard-shortcuts.html"
                class="subnav-link">
               keyboard-shortcuts
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/light.html"
                class="subnav-link">
               light
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/look-controls.html"
                class="subnav-link">
               look-controls
             </a>
           </li>
-
+        
           <li class="subnav-item  subnav-item-current">
             <a href="/docs/0.3.0/components/material.html"
                class="subnav-link current">
               material
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/obj-model.html"
                class="subnav-link">
               obj-model
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/position.html"
                class="subnav-link">
               position
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/raycaster.html"
                class="subnav-link">
               raycaster
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/rotation.html"
                class="subnav-link">
               rotation
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/scale.html"
                class="subnav-link">
               scale
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/sound.html"
                class="subnav-link">
               sound
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/stats.html"
                class="subnav-link">
               stats
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/tracked-controls.html"
                class="subnav-link">
               tracked-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/visible.html"
                class="subnav-link">
               visible
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/vive-controls.html"
                class="subnav-link">
               vive-controls
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/vr-mode-ui.html"
                class="subnav-link">
               vr-mode-ui
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/components/wasd-controls.html"
                class="subnav-link">
               wasd-controls
             </a>
           </li>
-
+        
       </ol>
-
-
+    
+      
 
       <!-- Section title. -->
       <h3 class="section-title docs-section-title section-title-inactive">
@@ -687,177 +693,177 @@
 
       <!-- Section links. -->
       <ol class="subnav section-subnav">
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/"
                class="subnav-link">
               Introduction
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-box.html"
                class="subnav-link">
               &lt;a-box&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-camera.html"
                class="subnav-link">
               &lt;a-camera&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-circle.html"
                class="subnav-link">
               &lt;a-circle&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-collada-model.html"
                class="subnav-link">
               &lt;a-collada-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-cone.html"
                class="subnav-link">
               &lt;a-cone&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-cursor.html"
                class="subnav-link">
               &lt;a-cursor&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-curvedimage.html"
                class="subnav-link">
               &lt;a-curvedimage&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-cylinder.html"
                class="subnav-link">
               &lt;a-cylinder&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-dodecahedron.html"
                class="subnav-link">
               &lt;a-dodecahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-image.html"
                class="subnav-link">
               &lt;a-image&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-light.html"
                class="subnav-link">
               &lt;a-light&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-obj-model.html"
                class="subnav-link">
               &lt;a-obj-model&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-octahedron.html"
                class="subnav-link">
               &lt;a-octahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-plane.html"
                class="subnav-link">
               &lt;a-plane&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-ring.html"
                class="subnav-link">
               &lt;a-ring&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-sky.html"
                class="subnav-link">
               &lt;a-sky&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-sound.html"
                class="subnav-link">
               &lt;a-sound&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-sphere.html"
                class="subnav-link">
               &lt;a-sphere&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-tetrahedron.html"
                class="subnav-link">
               &lt;a-tetrahedron&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-torus-knot.html"
                class="subnav-link">
               &lt;a-torus-knot&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-torus.html"
                class="subnav-link">
               &lt;a-torus&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-video.html"
                class="subnav-link">
               &lt;a-video&gt;
             </a>
           </li>
-
+        
           <li class="subnav-item ">
             <a href="/docs/0.3.0/primitives/a-videosphere.html"
                class="subnav-link">
               &lt;a-videosphere&gt;
             </a>
           </li>
-
+        
       </ol>
-
+    
   </div>
 </aside>
 
@@ -922,29 +928,32 @@
         material
       </h1>
 
+      
 
-
-
-
+      
+      
         <blockquote>
 <p><strong>Note:</strong> This documentation is for the old 0.3.0 version of A-Frame. Check out the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
 </blockquote>
 
-
+      
 
       <p>The material component gives appearance to an entity. We can define properties
-such as color, opacity, or texture. This is often paired with the <a href="./geometry.html">geometry
+such as color, opacity, or texture. This is often paired with the <a href="./geometry.md">geometry
 component</a> which provides shape.</p>
 <p>Custom materials and shaders can be registered to extend the material component
 in order to provide a wide range of visual effects.</p>
 <!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Defining a red material using the default standard material:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Here is an example of using a different material:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"shader: flat; color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;shader: flat; color: red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Here is an example of using an example custom material:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"shader: ocean; color: blue; wave-height: 10"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;shader: ocean; color: blue; wave-height: 10&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><p>The material component has a few base properties. More properties will be
 available depending on the material applied.</p>
 <table>
@@ -955,8 +964,7 @@ available depending on the material applied.</p>
 <th>Default Value</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>depthTest</td>
 <td>Whether depth testing is enabled when rendering the material.</td>
 <td>true</td>
@@ -991,8 +999,7 @@ available depending on the material applied.</p>
 <td>Whether material is visible. Raycasters will ignore invisible materials.</td>
 <td>true</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
 <thead>
 <tr>
@@ -1000,8 +1007,7 @@ available depending on the material applied.</p>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>materialtextureloaded</td>
 <td>Texture loaded onto material. Or when the first frame is playing for video textures.</td>
 </tr>
@@ -1009,11 +1015,10 @@ available depending on the material applied.</p>
 <td>materialvideoended</td>
 <td>For video textures, emitted when the video has reached its end (may not work with <code>loop</code>).</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="built-in-materials"><a href="#built-in-materials" class="headerlink" title="Built-in Materials"></a>Built-in Materials</h2><p>A-Frame ships with a few built-in materials.</p>
 <h3 id="standard"><a href="#standard" class="headerlink" title="standard"></a><code>standard</code></h3><p>The <code>standard</code> material is the default material. It uses the physically-based
-<a href="http://threejs.org/docs/#Reference/Materials/MeshStandardMaterial" target="_blank" rel="external">THREE.MeshStandardMaterial</a>.</p>
+<a href="http://threejs.org/docs/#Reference/Materials/MeshStandardMaterial">THREE.MeshStandardMaterial</a>.</p>
 <h4 id="properties-1"><a href="#properties-1" class="headerlink" title="Properties"></a>Properties</h4><p>These properties are available on top of the base material properties.</p>
 <table>
 <thead>
@@ -1023,8 +1028,7 @@ available depending on the material applied.</p>
 <th>Default Value</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>color</td>
 <td>Base diffuse color.</td>
 <td>#fff</td>
@@ -1036,12 +1040,12 @@ available depending on the material applied.</p>
 </tr>
 <tr>
 <td>envMap</td>
-<td>Environment cubemap texture for reflections. Can be a selector to <a-cubemap> or a comma-separated list of URLs.</a-cubemap></td>
+<td>Environment cubemap texture for reflections. Can be a selector to <a-cubemap> or a comma-separated list of URLs.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>fog</td>
-<td>Whether or not material is affected by <a href="./fog.html">fog</a>.</td>
+<td>Whether or not material is affected by <a href="./fog.md">fog</a>.</td>
 <td>true</td>
 </tr>
 <tr>
@@ -1069,8 +1073,7 @@ available depending on the material applied.</p>
 <td>Image or video texture map. Can either be a selector to an <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code>, or an inline URL.</td>
 <td>None</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="physically-based-shading"><a href="#physically-based-shading" class="headerlink" title="Physically-Based Shading"></a>Physically-Based Shading</h4><p>Physically-based shading is a shading model that aims to make materials behave
 realistically to lighting conditions. Appearance is a result of the interaction
 between the incoming light and the properties of the material.</p>
@@ -1080,18 +1083,21 @@ be accurately controlled, often based on real-world material studies. Some
 people have compiled charts of realistic values for different kinds of
 materials that can be used as a starting point.</p>
 <p>For example, for a tree bark material, as an estimation, we might set:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: cylinder"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"src: treebark.png; color: #696969; roughness: 1; metalness: 0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: cylinder&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;src: treebark.png; color: #696969; roughness: 1; metalness: 0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="environment-maps"><a href="#environment-maps" class="headerlink" title="Environment Maps"></a>Environment Maps</h4><p>The <code>envMap</code> property defines what environment the material reflects.  Unlike
 textures, the <code>envMap</code> property takes a cubemap, six images put together to
 form a cube. The cubemap is wrapped around the mesh and applied as a texture.
 The clarity of the environment depends on the <code>metalness</code>, and <code>roughness</code>
 properties.</p>
 <p>For example:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-cubemap</span> <span class="attr">id</span>=<span class="string">"sky"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"right.png"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"left.png"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"top.png"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bottom.png"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"front.png"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"back.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-cubemap</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"envMap: #sky; roughness: 0"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="flat"><a href="#flat" class="headerlink" title="flat"></a><code>flat</code></h3><p>The <code>flat</code> material uses the <a href="http://threejs.org/docs/#Reference/Materials/MeshBasicMaterial" target="_blank" rel="external">THREE.MeshBasicMaterial</a>. Flat materials
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-cubemap</span> <span class="attr">id</span>=<span class="string">&quot;sky&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;right.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;left.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;top.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;bottom.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;front.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;back.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-cubemap</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;envMap: #sky; roughness: 0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="flat"><a href="#flat" class="headerlink" title="flat"></a><code>flat</code></h3><p>The <code>flat</code> material uses the <a href="http://threejs.org/docs/#Reference/Materials/MeshBasicMaterial">THREE.MeshBasicMaterial</a>. Flat materials
 are not affected by the scene’s lighting conditions. This is useful for things
 such as images or videos. Set <code>shader</code> to <code>flat</code>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane"</span> <span class="attr">material</span>=<span class="string">"shader: flat; src: #cat-image"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane&quot;</span> <span class="attr">material</span>=<span class="string">&quot;shader: flat; src: #cat-image&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="properties-2"><a href="#properties-2" class="headerlink" title="Properties"></a>Properties</h4><table>
 <thead>
 <tr>
@@ -1100,15 +1106,14 @@ such as images or videos. Set <code>shader</code> to <code>flat</code>:</p>
 <th>Default Value</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>color</td>
 <td>Base diffuse color.</td>
 <td>#fff</td>
 </tr>
 <tr>
 <td>fog</td>
-<td>Whether or not material is affected by <a href="./fog.html">fog</a>.</td>
+<td>Whether or not material is affected by <a href="./fog.md">fog</a>.</td>
 <td>true</td>
 </tr>
 <tr>
@@ -1131,15 +1136,16 @@ such as images or videos. Set <code>shader</code> to <code>flat</code>:</p>
 <td>Width of video (in pixels), if defining a video texture.</td>
 <td>640</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="textures"><a href="#textures" class="headerlink" title="Textures"></a>Textures</h2><p>To set a texture using one of the built-in materials, specify the <code>src</code>
 property. <code>src</code> can be a selector to either an <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> element in the
-<a href="../core/asset-management-system.html">asset management system</a>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"my-texture"</span> <span class="attr">src</span>=<span class="string">"texture.png"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"src: #my-texture"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<a href="../core/asset-management-system.md">asset management system</a>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;my-texture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;texture.png&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;src: #my-texture&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><code>src</code> can also be an inline URL. Note that we do not get browser caching or
 preloading through this method.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"src: url(texture.png)"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;src: url(texture.png)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Most of the other properties works together with textures. For example, the
 <code>color</code> property will act as the base color and be multiplied per pixel with
 the texture. Set it to <code>#fff</code> to maintain the original colors of the texture.</p>
@@ -1150,19 +1156,23 @@ to create the texture. If we simply pass a URL instead of creating and passing
 a video element, then the texture will loop and autoplay by default. To specify
 otherwise, create a video element in the asset management system, and pass a
 selector for the <code>id</code> attribute (e.g., <code>#my-video</code>):</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- No loop. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"my-video"</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">autoplay</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span> <span class="attr">material</span>=<span class="string">"src: #my-video"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- No loop. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">&quot;my-video&quot;</span> <span class="attr">src</span>=<span class="string">&quot;video.mp4&quot;</span> <span class="attr">autoplay</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;src: #my-video&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="controlling-video-textures"><a href="#controlling-video-textures" class="headerlink" title="Controlling Video Textures"></a>Controlling Video Textures</h4><p>To control the video playback such as pausing or seeking, we can use the video
-element to <a href="https://developer.mozilla.org/docs/Web/Guide/HTML/Using_HTML5_audio_and_video#Controlling_media_playback" target="_blank" rel="external">control media playback</a>. For example:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> videoEl = <span class="built_in">document</span>.querySelector(<span class="string">'#my-video'</span>);</span><br><span class="line">videoEl.currentTime = <span class="number">122</span>;  <span class="comment">// Seek to 122 seconds.</span></span><br><span class="line">videoEl.pause();</span><br></pre></td></tr></table></figure>
+element to <a href="https://developer.mozilla.org/docs/Web/Guide/HTML/Using_HTML5_audio_and_video#Controlling_media_playback">control media playback</a>. For example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> videoEl = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#my-video&#x27;</span>);</span><br><span class="line">videoEl.<span class="property">currentTime</span> = <span class="number">122</span>;  <span class="comment">// Seek to 122 seconds.</span></span><br><span class="line">videoEl.<span class="title function_">pause</span>();</span><br></pre></td></tr></table></figure>
+
 <p>This doesn’t work as well if you are passing an inline URL, in which case a
 video element will be created internally. To get a handle on the video element,
 we should define one in <code>&lt;a-assets&gt;</code>.</p>
 <h2 id="canvas-textures"><a href="#canvas-textures" class="headerlink" title="Canvas Textures"></a>Canvas Textures</h2><p>We can use a <code>&lt;canvas&gt;</code> as a texture source. The texture will automatically
 refresh itself as the canvas changes.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  AFRAME.registerComponent(<span class="string">'draw-canvas'</span>, &#123;</span></span><br><span class="line"><span class="javascript">    schema: &#123;<span class="attr">default</span>: <span class="string">''</span>&#125;,</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.canvas = <span class="built_in">document</span>.getElementById(<span class="keyword">this</span>.data);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.ctx = <span class="keyword">this</span>.canvas.getContext(<span class="string">'2d'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">      <span class="comment">// Draw on canvas...</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"my-canvas"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane"</span> <span class="attr">material</span>=<span class="string">"src: #my-canvas"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">draw-canvas</span>=<span class="string">"my-canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;draw-canvas&#x27;</span>, &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">schema</span>: &#123;<span class="attr">default</span>: <span class="string">&#x27;&#x27;</span>&#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">canvas</span> = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="variable language_">this</span>.<span class="property">data</span>);</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">ctx</span> = <span class="variable language_">this</span>.<span class="property">canvas</span>.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// Draw on canvas...</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;my-canvas&quot;</span> <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane&quot;</span> <span class="attr">material</span>=<span class="string">&quot;src: #my-canvas&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">draw-canvas</span>=<span class="string">&quot;my-canvas&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="repeating-textures"><a href="#repeating-textures" class="headerlink" title="Repeating Textures"></a>Repeating Textures</h3><p>We might want to tile textures rather than having them stretch. The <code>repeat</code>
 property can be used to repeat textures.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: plane; width: 100"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"src: carpet.png; repeat: 100 20"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane; width: 100&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;src: carpet.png; repeat: 100 20&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="transparency-issues"><a href="#transparency-issues" class="headerlink" title="Transparency Issues"></a>Transparency Issues</h2><p>Transparency and alpha channels are tricky in 3D graphics. If you are having
 issues where transparent materials in the foreground do not composite correctly
 over materials in the background, it is probably due to underlying design of
@@ -1182,8 +1192,7 @@ creates confusion and unwanted visual defects.</p>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>schema</td>
 <td>Defines properties, uniforms, attributes that the shader will use to extend the material component.</td>
 </tr>
@@ -1195,25 +1204,27 @@ creates confusion and unwanted visual defects.</p>
 <td>update</td>
 <td>Lifecycle handler called once during shader initialization and when data is updated. Used to update the material or shader.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="schema"><a href="#schema" class="headerlink" title="Schema"></a>Schema</h3><p>We can define material properties just as we would with component properties.
 The data will act as the data we use to create our material:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerShader(<span class="string">'custom'</span>, &#123;</span><br><span class="line">  schema: &#123;</span><br><span class="line">    emissive: &#123;<span class="attr">default</span>: <span class="string">'#000'</span>&#125;,</span><br><span class="line">    wireframe: &#123;<span class="attr">default</span>: <span class="literal">false</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerShader</span>(<span class="string">&#x27;custom&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">emissive</span>: &#123;<span class="attr">default</span>: <span class="string">&#x27;#000&#x27;</span>&#125;,</span><br><span class="line">    <span class="attr">wireframe</span>: &#123;<span class="attr">default</span>: <span class="literal">false</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h3 id="example-1"><a href="#example-1" class="headerlink" title="Example"></a>Example</h3><p>To create a custom material, we have the <code>init</code> and <code>update</code> handlers set and
 update <code>this.material</code> to the desired material. Here is an example of
-registering a <a href="http://threejs.org/docs/index.html#Reference/Materials/LineDashedMaterial" target="_blank" rel="external"><code>THREE.LinedDashedMaterial</code></a>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerShader(<span class="string">'line-dashed'</span>, &#123;</span><br><span class="line">  schema: &#123;</span><br><span class="line">    dashSize: &#123;<span class="attr">default</span>: <span class="number">3</span>&#125;,</span><br><span class="line">    lineWidth: &#123;<span class="attr">default</span>: <span class="number">1</span>&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * `init` used to initialize material. Called once.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.material = <span class="keyword">new</span> THREE.LineDashedMaterial(data);</span><br><span class="line">    <span class="keyword">this</span>.update(data);  <span class="comment">// `update()` currently not called after `init`. (#1834)</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * `update` used to update the material. Called on initialization and when data updates.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.material.dashsize = data.dashsize;</span><br><span class="line">    <span class="keyword">this</span>.material.linewidth = data.linewidth;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+registering a <a href="http://threejs.org/docs/index.html#Reference/Materials/LineDashedMaterial"><code>THREE.LinedDashedMaterial</code></a>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerShader</span>(<span class="string">&#x27;line-dashed&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">dashSize</span>: &#123;<span class="attr">default</span>: <span class="number">3</span>&#125;,</span><br><span class="line">    <span class="attr">lineWidth</span>: &#123;<span class="attr">default</span>: <span class="number">1</span>&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * `init` used to initialize material. Called once.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">material</span> = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">LineDashedMaterial</span>(data);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">update</span>(data);  <span class="comment">// `update()` currently not called after `init`. (#1834)</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * `update` used to update the material. Called on initialization and when data updates.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="attr">update</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">material</span>.<span class="property">dashsize</span> = data.<span class="property">dashsize</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">material</span>.<span class="property">linewidth</span> = data.<span class="property">linewidth</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h2 id="register-a-custom-glsl-shader"><a href="#register-a-custom-glsl-shader" class="headerlink" title="Register a Custom GLSL Shader"></a>Register a Custom GLSL Shader</h2><p>We also use <code>registerShader</code> for registering
-<a href="http://threejs.org/docs/#Reference/Materials/ShaderMaterial" target="_blank" rel="external">THREE.ShaderMaterial</a>s to create custom shaders.</p>
-<p>We can provide our own <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank" rel="external">GLSL</a> vertex and fragment shaders (small programs
+<a href="http://threejs.org/docs/#Reference/Materials/ShaderMaterial">THREE.ShaderMaterial</a>s to create custom shaders.</p>
+<p>We can provide our own <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">GLSL</a> vertex and fragment shaders (small programs
 that run on the GPU), and we can define a schema for their uniforms and
-attributes just as we would with <a href="../core/component.html#schema">component schemas</a>. The
+attributes just as we would with <a href="../core/component.md#schema">component schemas</a>. The
 shader’s schema will extend the base material component’s schema, and as a
 result we can pass values from HTML directly to the shader.</p>
 <h3 id="schema-1"><a href="#schema-1" class="headerlink" title="Schema"></a>Schema</h3><p><code>THREE.ShaderMaterial</code>-based schemas pass uniforms to shaders. To specify a
 uniform, set <code>is</code> to <code>uniform</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerShader(<span class="string">'sun'</span>, &#123;</span><br><span class="line">  schema: &#123;</span><br><span class="line">    sunPosition: &#123;<span class="attr">type</span>: <span class="string">'vec3'</span>, <span class="attr">is</span>: <span class="string">'uniform'</span>&#125;,</span><br><span class="line">    time: &#123;<span class="attr">type</span>: <span class="string">'time'</span>, <span class="attr">is</span>: <span class="string">'uniform'</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerShader</span>(<span class="string">&#x27;sun&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">sunPosition</span>: &#123;<span class="attr">type</span>: <span class="string">&#x27;vec3&#x27;</span>, <span class="attr">is</span>: <span class="string">&#x27;uniform&#x27;</span>&#125;,</span><br><span class="line">    <span class="attr">time</span>: &#123;<span class="attr">type</span>: <span class="string">&#x27;time&#x27;</span>, <span class="attr">is</span>: <span class="string">&#x27;uniform&#x27;</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h4 id="property-types"><a href="#property-types" class="headerlink" title="Property Types"></a>Property Types</h4><p>These property types will be converted to the appropriate GLSL types.</p>
 <table>
 <thead>
@@ -1222,8 +1233,7 @@ uniform, set <code>is</code> to <code>uniform</code>:</p>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>color</td>
 <td>Built-in convenience (vec3) uniform type. Will take colors in multiple formats and automatically convert them to vec3 format (e.g., ‘red’ -&gt; <code>THREE.Vector3(1, 0, 0)</code>)</td>
 </tr>
@@ -1247,25 +1257,26 @@ uniform, set <code>is</code> to <code>uniform</code>:</p>
 <td>vec4</td>
 <td>Maps to GLSL <code>vec4</code>.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="example-2"><a href="#example-2" class="headerlink" title="Example"></a>Example</h3><p>Here is a simple shader that sets the material to a flat color. The vertex
 shader shown is the default vertex shader. The shaders need to be a string:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">AFRAME.registerShader(<span class="string">'hello-world'</span>, &#123;</span><br><span class="line">  schema: &#123;</span><br><span class="line">    color: &#123;<span class="attr">type</span>: <span class="string">'vec3'</span>, <span class="attr">default</span>: <span class="string">'0.5 0.5 0.5'</span>, <span class="attr">is</span>: <span class="string">'uniform'</span>&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  vertexShader: [</span><br><span class="line">    <span class="string">'void main() &#123;'</span>,</span><br><span class="line">    <span class="string">'  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);'</span>,</span><br><span class="line">    <span class="string">'&#125;'</span></span><br><span class="line">  ].join(<span class="string">'\n'</span>),</span><br><span class="line"></span><br><span class="line">  fragmentShader: [</span><br><span class="line">    <span class="string">'uniform vec3 color;'</span></span><br><span class="line">    <span class="string">'void main() &#123;'</span></span><br><span class="line">    <span class="string">'  gl_FragColor = vec4(color, 1.0);'</span>,</span><br><span class="line">    <span class="string">'&#125;'</span></span><br><span class="line">  ].join(<span class="string">'\n'</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerShader</span>(<span class="string">&#x27;hello-world&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">color</span>: &#123;<span class="attr">type</span>: <span class="string">&#x27;vec3&#x27;</span>, <span class="attr">default</span>: <span class="string">&#x27;0.5 0.5 0.5&#x27;</span>, <span class="attr">is</span>: <span class="string">&#x27;uniform&#x27;</span>&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">vertexShader</span>: [</span><br><span class="line">    <span class="string">&#x27;void main() &#123;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;&#125;&#x27;</span></span><br><span class="line">  ].<span class="title function_">join</span>(<span class="string">&#x27;\n&#x27;</span>),</span><br><span class="line"></span><br><span class="line">  <span class="attr">fragmentShader</span>: [</span><br><span class="line">    <span class="string">&#x27;uniform vec3 color;&#x27;</span></span><br><span class="line">    <span class="string">&#x27;void main() &#123;&#x27;</span></span><br><span class="line">    <span class="string">&#x27;  gl_FragColor = vec4(color, 1.0);&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;&#125;&#x27;</span></span><br><span class="line">  ].<span class="title function_">join</span>(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>Then to use the custom shader, we set the material component’s <code>shader</code> property to
 the name of the registered shader. Then we pass the defined shader uniforms as
 properties like we would with components:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">"primitive: box"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">"shader: hello-world; color: 0.3 0.3 0.3"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;shader: hello-world; color: 0.3 0.3 0.3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="additional-resources"><a href="#additional-resources" class="headerlink" title="Additional Resources"></a>Additional Resources</h3><ul>
-<li><a href="https://github.com/aframevr/aframe/tree/50a07cac9cd2f764b9ff4cd0a5bb20e408f8f4d6/examples/test-shaders" target="_blank" rel="external">A-Frame Shader Example</a></li>
-<li><a href="https://www.shadertoy.com" target="_blank" rel="external">ShaderToy</a></li>
+<li><a href="https://github.com/aframevr/aframe/tree/50a07cac9cd2f764b9ff4cd0a5bb20e408f8f4d6/examples/test-shaders">A-Frame Shader Example</a></li>
+<li><a href="https://www.shadertoy.com/">ShaderToy</a></li>
 </ul>
 
 
       <!-- Previous / Next navigation. -->
       <footer class="footer guide-links c">
-
-
+        
+        
       </footer>
 
       <footer class="footer footnote">
@@ -1279,180 +1290,186 @@ properties like we would with components:</p>
     </div>
 
     <div class="secondary-sidebar">
-
+      
 
 <div id="table-of-contents" class="nav-list">
   <p class="section-title docs-section-title">Table of Contents</p>
 
   <ul class="subnav">
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#example">Example</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#properties">Properties</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#events">Events</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#built-in-materials">Built-in Materials</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#standard">standard</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#flat">flat</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#textures">Textures</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#video-textures">Video Textures</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#canvas-textures">Canvas Textures</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#repeating-textures">Repeating Textures</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#transparency-issues">Transparency Issues</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#register-a-custom-material">Register a Custom Material</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#registershader">registerShader</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#schema">Schema</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#example-1">Example</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
       <li class="subnav-item">
         <a class="subnav-link" href="#register-a-custom-glsl-shader">Register a Custom GLSL Shader</a>
 
         <!-- Nested. -->
-
+        
           <ul>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#schema-1">Schema</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#example-2">Example</a>
               </li>
-
+            
               <li class="subnav-item">
                 <a class="subnav-link" href="#additional-resources">Additional Resources</a>
               </li>
-
+            
           </ul>
-
+        
       </li>
-
+    
   </ul>
 </div>
 
-
+      
 
       <div class="doc-actions">
         <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/material.md" target="_blank" rel="external">Edit Page</a>
-
+        
       </div>
     </div>
   </div>
 </div>
 </main>
 
+    
+      
+<script src="/js/common.js"></script>
 
-      <script src="/js/common.js"></script>
+      
+      
+        
+<script src="/js/docs.js"></script>
 
+      
+    
 
-        <script src="/js/docs.js"></script>
-
-
-
-
+    
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:0.3.0'],
@@ -1465,6 +1482,6 @@ properties like we would with components:</p>
   docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
 </script>
 
-
+    
   </body>
 </html>

@@ -94,19 +94,25 @@
 
 
     
-      <script src="/js/compat.js"></script>
+      
+<script src="/js/compat.js"></script>
+
     
 
     
-      <link rel="stylesheet" href="/css/secondary.css">
+      
+<link rel="stylesheet" href="/css/secondary.css">
+
     
 
     
       <!-- Search. -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
-      <link rel="stylesheet" href="/css/search.css">
+      
+<link rel="stylesheet" href="/css/search.css">
+
     
-  </head>
+  <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body data-page-layout="blog" data-page-type="">
     <main id="main" class="main"><div class="wordmark">
@@ -746,20 +752,20 @@
       
         
           <li class="subnav-item ">
-            <a href="/blog/awoa-77/"
+            <a href="/blog/awoa-76/"
                class="subnav-link"
-               title="A Week of A-Frame 77">
-              A Week of A-Frame 77
+               title="A Week of A-Frame 76">
+              A Week of A-Frame 76
             </a>
           </li>
         
       
         
           <li class="subnav-item ">
-            <a href="/blog/awoa-76/"
+            <a href="/blog/awoa-77/"
                class="subnav-link"
-               title="A Week of A-Frame 76">
-              A Week of A-Frame 76
+               title="A Week of A-Frame 77">
+              A Week of A-Frame 77
             </a>
           </li>
         
@@ -1801,13 +1807,17 @@
           
 
           <p>I like the <a href="https://aframe.io/examples/showcase/spheres-and-fog/">Spheres and Fog example</a> because it explores the sense of scale within virtual reality more than our other early examples. A series of spheres in the scene vary from 0.15 to 30 meters in radius, and a fog on <code>&lt;a-scene&gt;</code> amplifies the sense of size and distance:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">fog</span>=<span class="string">"type: linear; color: #AAB; far: 30; near: 0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">fog</span>=<span class="string">&quot;type: linear; color: #AAB; far: 30; near: 0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <p>The soft shadows under each sphere are faked with images. In Photoshop I created a circular gradient that fades from opaque to transparent. I applied this image as a child object of each sphere:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"-3 0 0"</span> <span class="attr">translate</span>=<span class="string">"0 1.75 0"</span> <span class="attr">radius</span>=<span class="string">"1.75"</span> <span class="attr">color</span>=<span class="string">"#7BC8A4"</span> <span class="attr">roughness</span>=<span class="string">"0.2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-image</span> <span class="attr">src</span>=<span class="string">"../_images/radial-shadow-3.png"</span> <span class="attr">rotation</span>=<span class="string">"-90 0 0"</span> <span class="attr">scale</span>=<span class="string">"1.75 1.75 1.75"</span>&gt;</span><span class="tag">&lt;/<span class="name">a-image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">&quot;-3 0 0&quot;</span> <span class="attr">translate</span>=<span class="string">&quot;0 1.75 0&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;1.75&quot;</span> <span class="attr">color</span>=<span class="string">&quot;#7BC8A4&quot;</span> <span class="attr">roughness</span>=<span class="string">&quot;0.2&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-image</span> <span class="attr">src</span>=<span class="string">&quot;../_images/radial-shadow-3.png&quot;</span> <span class="attr">rotation</span>=<span class="string">&quot;-90 0 0&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;1.75 1.75 1.75&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-sphere</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>I rotated the images -90 degrees on the x-axis so that they lie flat, and then used scale to adjust their sizes to fit the proportions of their parent sphere.</p>
 <p>To make each sphere appear to sit on ground &mdash; neither too high nor too low &mdash; I used a translate value on each sphere, where the Y value was equal to the sphere radius:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">"-15 0 5"</span> <span class="attr">translate</span>=<span class="string">"0 3 0"</span> <span class="attr">radius</span>=<span class="string">"3"</span> <span class="attr">color</span>=<span class="string">"#ECECEC"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-sphere</span> <span class="attr">position</span>=<span class="string">&quot;-15 0 5&quot;</span> <span class="attr">translate</span>=<span class="string">&quot;0 3 0&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;3&quot;</span> <span class="attr">color</span>=<span class="string">&quot;#ECECEC&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>The translate component in A-Frame shifts the geometry of a primitive (or geometry component on an entity, if you’re using entities and components) relative to the object position. The position remains the same, but the visible geometry moves relative to it. This enabled me to use the keep each sphere’s position at 0 on the y-axis, matching my mental model of the spheres being balls sitting on the ground. It would arguably have been more concise to achieve the same visual effect by using y-axis positions instead of translate, but I found this approach felt better.</p>
 
 
@@ -1854,19 +1864,25 @@
 </main>
 
     
-      <script src="/js/common.js"></script>
+      
+<script src="/js/common.js"></script>
+
       
       
-        <script src="/js/docs.js"></script>
+        
+<script src="/js/docs.js"></script>
+
       
     
 
     
       <!-- Algolia search. -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
 <script type="text/javascript">
   var searchConfig = {
-    apiKey: '9e4a51a1da70daf959bd4750a3fa8f52',
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
     indexName: 'aframe',
     algoliaOptions: {
       facetFilters: ['version:1.6.0'],
