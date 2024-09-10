@@ -1152,7 +1152,7 @@ entity. In the local parent’s space, <code>#child1</code>‘s position would b
 position with the parent entity. In the parent’s local space, <code>#child2</code>‘s
 position would be <code>2 3 4</code>.</p>
 <h2 id="updating-position"><a href="#updating-position" class="headerlink" title="Updating Position"></a>Updating Position</h2><p>For performance and ergonomics, we recommend updating position directly via the
-three.js <a href="https://threejs.org/docs/#api/core/Object3D">Object3D</a> <code>.position</code> <a href="https://threejs.org/docs/index.html#api/math/Vector3">Vector3</a> versus <a href="../introduction/javascript-events-dom-apis.md#updating-a-component-with-setattribute">via
+three.js <a href="https://threejs.org/docs/#api/core/Object3D">Object3D</a> <code>.position</code> <a href="https://threejs.org/docs/index.html#api/math/Vector3">Vector3</a> versus <a href="../introduction/javascript-events-dom-apis.html#updating-a-component-with-setattribute">via
 <code>.setAttribute</code></a>.</p>
 <p>This method is easier because we have access to all the <a href="https://threejs.org/docs/index.html#api/math/Vector3">Vector3
 utilities</a>, and faster by skipping <code>.setAttribute</code> overhead and not
@@ -1166,7 +1166,7 @@ needing to create an object to set rotation:</p>
 <h3 id="getting-position"><a href="#getting-position" class="headerlink" title="Getting Position"></a>Getting Position</h3><p>To reflect updates done at the three.js level, A-Frame returns the actual
 <code>Object3D.position</code> vector object when doing <code>.getAttribute(&#39;position&#39;)</code>.  Note
 modifying the return value will modify the entity itself.</p>
-<p>See also <a href="./camera.md#reading-position-or-rotation-of-the-camera">reading position and rotation of the camera</a>.</p>
+<p>See also <a href="./camera.html#reading-position-or-rotation-of-the-camera">reading position and rotation of the camera</a>.</p>
 
 
       <!-- Previous / Next navigation. -->

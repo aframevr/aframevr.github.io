@@ -1115,7 +1115,7 @@ scene graph.</p>
 <p>And every A-Frame entity also has a reference to <code>&lt;a-scene&gt;</code> via <code>.sceneEl</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;a-entity&#x27;</span>).<span class="property">sceneEl</span>.<span class="property">object3D</span>;  <span class="comment">// THREE.Scene</span></span><br></pre></td></tr></table></figure>
 
-<p>From a <a href="../core/component.md">component</a>, we access the scene through its entity
+<p>From a <a href="../core/component.html">component</a>, we access the scene through its entity
 (i.e., <code>this.el</code>):</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;foo&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> scene = <span class="variable language_">this</span>.<span class="property">el</span>.<span class="property">sceneEl</span>.<span class="property">object3D</span>;  <span class="comment">// THREE.Scene</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 

@@ -1148,7 +1148,7 @@
 
       
 
-      <div id="toc"></div>
+      <!--toc-->
 
 <h2 id="how-is-a-frame’s-performance"><a href="#how-is-a-frame’s-performance" class="headerlink" title="How is A-Frame’s performance?"></a>How is A-Frame’s performance?</h2><p>A-Frame can achieve native-like latency and framerate with proper browsers
 (e.g., Firefox with WebVR). For example, <a href="https://blog.mozvr.com/a-painter">A-Painter</a> is <a href="https://www.tiltbrush.com/">Tilt
@@ -1181,10 +1181,10 @@ components hook into a single global render loop via the <code>tick</code> handl
 common use cases. However, performance is ultimately determined by the
 complexity and characteristics of each individual application. To get the best
 use of resources, we will need deeper understanding about 3D graphics.  See
-<a href="../introduction/best-practices.md">best performance practices and guidelines</a> to get started.</p>
+<a href="../introduction/best-practices.html">best performance practices and guidelines</a> to get started.</p>
 <h2 id="why-is-my-experiencing-not-entering-vr-or-ar-mode"><a href="#why-is-my-experiencing-not-entering-vr-or-ar-mode" class="headerlink" title="Why is my experiencing not entering VR or AR mode?"></a>Why is my experiencing not entering VR or AR mode?</h2><p>If you are using A-Frame 1.1.0 or older you probably need to update to the <a href="https://github.com/aframevr/aframe/releases">latest release</a>. Browsers are migrating to the <a href="https://immersive-web.github.io/webxr/">WebXR standard</a> and old versions might no longer work.</p>
 <p>You also have to serve your content over HTTPS. The WebXR API won’t be available over HTTP.</p>
-<h2 id="why-does-my-asset-e-g-image-video-model-not-load"><a href="#why-does-my-asset-e-g-image-video-model-not-load" class="headerlink" title="Why does my asset (e.g., image, video, model) not load?"></a>Why does my asset (e.g., image, video, model) not load?</h2><p>First, if you are doing local development, make sure you are <a href="./installation.md#local-development">using a local
+<h2 id="why-does-my-asset-e-g-image-video-model-not-load"><a href="#why-does-my-asset-e-g-image-video-model-not-load" class="headerlink" title="Why does my asset (e.g., image, video, model) not load?"></a>Why does my asset (e.g., image, video, model) not load?</h2><p>First, if you are doing local development, make sure you are <a href="./installation.html#local-development">using a local
 server</a> so that asset requests work properly.</p>
 <p>If you are loading the asset from a different domain, make sure that the asset
 is served with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">cross-origin resource sharing (CORS) headers</a>. You could
@@ -1192,14 +1192,14 @@ either find a host to serve the asset with CORS headers, or place the asset on
 the same domain (directory) as your application.</p>
 <p>If you are trying to load a video, make sure the browser supports the video
 (i.e., encoding, framerate, size).</p>
-<p>Read the <a href="./hosting-and-publishing.md"><em>Hosting and Publishing</em> guide</a> for more
+<p>Read the <a href="./hosting-and-publishing.html"><em>Hosting and Publishing</em> guide</a> for more
 information.</p>
 <h2 id="why-is-the-html-not-updating-when-i-check-the-browser-inspector"><a href="#why-is-the-html-not-updating-when-i-check-the-browser-inspector" class="headerlink" title="Why is the HTML not updating when I check the browser inspector?"></a>Why is the HTML not updating when I check the browser inspector?</h2><p>If you open up your browser’s developer tools, you’ll see that the HTML
 attribute values are empty.</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/25720562/2b243bda-30c2-11e7-98d5-479157d20046.jpg" alt="HTML"></p>
 <p>To improve performance, A-Frame does not update the HTML to save on
 stringification operations. This also means mutation observations will not
-fire. Use the <a href="../components/debug.md">debug component</a> or <a href="../core/entity.md#flushtodom-recursive"><code>.flushToDOM</code> methods</a>
+fire. Use the <a href="../components/debug.html">debug component</a> or <a href="../core/entity.html#flushtodom-recursive"><code>.flushToDOM</code> methods</a>
 if you need to sync to the DOM.</p>
 <h2 id="why-does-my-video-not-play-on-mobile"><a href="#why-does-my-video-not-play-on-mobile" class="headerlink" title="Why does my video not play on mobile?"></a>Why does my video not play on mobile?</h2><p>Mobile browsers have had limitations playing inline video.</p>
 <p>Because of an <a href="https://developer.apple.com/library/iad/documentation/UserExperience/Conceptual/iAdJSProgGuide/PlayingVideosinAds/PlayingVideosinAds.html">iOS platform restriction</a> in order to get inline video
@@ -1233,7 +1233,7 @@ are components in the ecosystem that enable this:</p>
 <h2 id="which-3d-model-formats-work"><a href="#which-3d-model-formats-work" class="headerlink" title="Which 3D model formats work?"></a>Which 3D model formats work?</h2><p>The ideal format is the GL Transmission Format <a href="https://en.wikipedia.org/wiki/GlTF">glTF (<code>.gltf</code>)</a> since
 glTF is feature-rich, compact, and efficient. glTF focuses on providing a
 <em>transmission format</em> rather than an editor format and is more interoperable
-with web technologies.  <a href="../components/gltf-model.md#why-use-gltf">Read more about glTF and A-Frame’s glTF
+with web technologies.  <a href="../components/gltf-model.html#why-use-gltf">Read more about glTF and A-Frame’s glTF
 component</a>.</p>
 <p><a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">Wavefront (<code>.obj</code>)</a> is also a well-known format but has some limitations
 like the lack of animation and vertex color support.</p>
@@ -1293,16 +1293,16 @@ also translate 1:1. 10 feet in Blender will equal 10 feet in real life.</p>
 <h2 id="how-is-a-frame-different-from-vrml"><a href="#how-is-a-frame-different-from-vrml" class="headerlink" title="How is A-Frame different from VRML?"></a>How is A-Frame different from VRML?</h2><p>A-Frame is a JavaScript framework. Unlike VRML, A-Frame is not a 3D file
 format, markup language, nor a standard. A-Frame embraces the <a href="https://extensiblewebmanifesto.org/">Extensible Web
 Manifesto</a>. Only look at standardization as winning ideas emerge.</p>
-<p>Technically, A-Frame is an <a href="./entity-component-system.md">entity-component-system</a> game engine on top of
+<p>Technically, A-Frame is an <a href="./entity-component-system.html">entity-component-system</a> game engine on top of
 three.js. As it is a JavaScript framework, coding is to be expected for more
 complex applications. Unlike 3D file formats, A-Frame provides power and
 interactivity via full access to JavaScript, three.js, and Web APIs.</p>
 <h2 id="does-a-frame-support-x-feature"><a href="#does-a-frame-support-x-feature" class="headerlink" title="Does A-Frame support X feature?"></a>Does A-Frame support <code>X</code> feature?</h2><p>A-Frame ships with a number of components and primitives. Being based on top of
-an <a href="./entity-component-system.md">entity-component-system architecture</a>, if a feature doesn’t exist, you
-can <a href="./writing-a-component.md">write or find a component</a> to enable it. Or if one of
+an <a href="./entity-component-system.html">entity-component-system architecture</a>, if a feature doesn’t exist, you
+can <a href="./writing-a-component.html">write or find a component</a> to enable it. Or if one of
 the standard components doesn’t fit your use cases, you can <a href="https://github.com/aframevr/aframe/tree/master/src/components">copy and modify
 it</a>.</p>
-<p>Read <a href="./entity-component-system.md#where-to-find-components"><em>Where to Find Components</em></a> for more information.</p>
+<p>Read <a href="./entity-component-system.html#where-to-find-components"><em>Where to Find Components</em></a> for more information.</p>
 <h2 id="does-a-frame-support-x-library-or-framework"><a href="#does-a-frame-support-x-library-or-framework" class="headerlink" title="Does A-Frame support X library or framework?"></a>Does A-Frame support <code>X</code> library or framework?</h2><p>A-Frame is built on top of the DOM so most libraries and frameworks work
 including:</p>
 <ul>
@@ -1315,9 +1315,9 @@ including:</p>
 <li>Ember.js</li>
 <li>Meteor</li>
 </ul>
-<h2 id="which-headsets-browsers-devices-and-platforms-does-a-frame-support"><a href="#which-headsets-browsers-devices-and-platforms-does-a-frame-support" class="headerlink" title="Which headsets, browsers, devices, and platforms does A-Frame support?"></a>Which headsets, browsers, devices, and platforms does A-Frame support?</h2><p>Most of them. Read <em><a href="./vr-headsets-and-webvr-browsers.md">VR Headsets and WebVR Browsers</a></em> for more
+<h2 id="which-headsets-browsers-devices-and-platforms-does-a-frame-support"><a href="#which-headsets-browsers-devices-and-platforms-does-a-frame-support" class="headerlink" title="Which headsets, browsers, devices, and platforms does A-Frame support?"></a>Which headsets, browsers, devices, and platforms does A-Frame support?</h2><p>Most of them. Read <em><a href="./vr-headsets-and-webvr-browsers.html">VR Headsets and WebVR Browsers</a></em> for more
 information.</p>
-<h2 id="how-can-i-improve-performance"><a href="#how-can-i-improve-performance" class="headerlink" title="How can I improve performance?"></a>How can I improve performance?</h2><p>Read <em><a href="./best-practices.md#performance">Best Practices &mdash; Performance</a></em> for more information.</p>
+<h2 id="how-can-i-improve-performance"><a href="#how-can-i-improve-performance" class="headerlink" title="How can I improve performance?"></a>How can I improve performance?</h2><p>Read <em><a href="./best-practices.html#performance">Best Practices &mdash; Performance</a></em> for more information.</p>
 <h2 id="how-can-i-get-in-touch-with-the-a-frame-team"><a href="#how-can-i-get-in-touch-with-the-a-frame-team" class="headerlink" title="How can I get in touch with the A-Frame team?"></a>How can I get in touch with the A-Frame team?</h2><p>We try to be responsive and helpful! We love questions, feedback, bug reports,
 and pull requests:</p>
 <ul>
@@ -1328,7 +1328,7 @@ and pull requests:</p>
 </ul>
 <h2 id="where-is-the-roadmap"><a href="#where-is-the-roadmap" class="headerlink" title="Where is the roadmap?"></a>Where is the roadmap?</h2><p>The <a href="https://github.com/aframevr/aframe/blob/master/ROADMAP.md">roadmap is on GitHub</a>!</p>
 <h2 id="do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”"><a href="#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”" class="headerlink" title="Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?"></a>Do I call it “A-Frame” or “aframe” or “aframevr” or “aFrame”?</h2><p>A-Frame!</p>
-<h2 id="why-do-my-textures-render-black"><a href="#why-do-my-textures-render-black" class="headerlink" title="Why do my textures render black?"></a>Why do my textures render black?</h2><p>Phones with Adreno 300 series GPUs are notoriously problematic. Set <a href="../components/renderer.md#precision">renderer precision</a> to <code>medium</code> as a workaround. Real fix has to happen at the driver &#x2F; device level.</p>
+<h2 id="why-do-my-textures-render-black"><a href="#why-do-my-textures-render-black" class="headerlink" title="Why do my textures render black?"></a>Why do my textures render black?</h2><p>Phones with Adreno 300 series GPUs are notoriously problematic. Set <a href="../components/renderer.html#precision">renderer precision</a> to <code>medium</code> as a workaround. Real fix has to happen at the driver &#x2F; device level.</p>
 <h2 id="why-is-the-gyroscope-magic-window-mode-not-working"><a href="#why-is-the-gyroscope-magic-window-mode-not-working" class="headerlink" title="Why is the gyroscope &#x2F; magic window mode not working?"></a>Why is the gyroscope &#x2F; magic window mode not working?</h2><p><a href="https://www.w3.org/TR/orientation-event/#dom-deviceorientationevent-requestpermission">New browser policies</a> require sites to prompt the user for permission before getting access to DeviceMotionEvents. <a href="https://webkit.org/blog/9674/new-webkit-features-in-safari-13/">Starting with iOS 13</a> DeviceMotionEvents are only available for pages served over <code>https</code>. Other browsers will also apply same policies and restrictions. A-Frame now <a href="https://aframe.io/docs/1.0.0/components/device-orientation-permission-ui.html#sidebar">incorporates customizable UI</a> to request the necessary permissions to the user. Make sure to update to <a href="https://github.com/aframevr/aframe/releases">A-Frame latest version</a>  </p>
 
 

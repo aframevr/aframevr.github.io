@@ -1190,16 +1190,16 @@
 
       
 
-      <p>A system, of the <a href="../introduction/entity-component-system.md">entity-component-system pattern</a>, provides global scope,
+      <p>A system, of the <a href="../introduction/entity-component-system.html">entity-component-system pattern</a>, provides global scope,
 services, and management to classes of components. It provides public APIs
 (methods and properties) for classes of components. A system can be accessed
 through the scene element, and can help components interface with the global
 scene.</p>
-<p>For example, the camera system manages all entities with the <a href="../components/camera.md">camera
+<p>For example, the camera system manages all entities with the <a href="../components/camera.html">camera
 component</a>, controlling which camera is the active camera.</p>
-<div id="toc"></div>
+<!--toc-->
 
-<h2 id="registering-a-system"><a href="#registering-a-system" class="headerlink" title="Registering a System"></a>Registering a System</h2><p>A system is registered similarly to a <a href="./component.md">component</a>.</p>
+<h2 id="registering-a-system"><a href="#registering-a-system" class="headerlink" title="Registering a System"></a>Registering a System</h2><p>A system is registered similarly to a <a href="./component.html">component</a>.</p>
 <p>If the system name matches a component name, then the component will have a
 reference to the system as <code>this.system</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerSystem</span>(<span class="string">&#x27;my-component&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;&#125;,  <span class="comment">// System schema. Parses into `this.data`.</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Called on scene initialization.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Other handlers and methods.</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;my-component&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">system</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -1221,7 +1221,7 @@ reference to the system as <code>this.system</code>:</p>
 </tr>
 <tr>
 <td>schema</td>
-<td>Behaves the same as <a href="./component.md#schema">component schemas</a>. Parses to <code>data</code>.</td>
+<td>Behaves the same as <a href="./component.html#schema">component schemas</a>. Parses to <code>data</code>.</td>
 </tr>
 </tbody></table>
 <h2 id="methods"><a href="#methods" class="headerlink" title="Methods"></a>Methods</h2><p>A system, like a component, defines lifecycle handlers. It can also define

@@ -1161,7 +1161,7 @@ understanding of HTML. We will learn how to:</p>
 <li>Add text</li>
 </ul>
 <p><a href="https://glitch.com/~aframe-basic-guide-with-environment">Remix the Basic Guide example on Glitch</a>.</p>
-<div id="toc"></div>
+<!--toc-->
 
 <h2 id="starting-with-html"><a href="#starting-with-html" class="headerlink" title="Starting with HTML"></a>Starting with HTML</h2><p>We start out with a minimal HTML structure:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/1.1.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1170,7 +1170,7 @@ understanding of HTML. We will learn how to:</p>
 build hosted on a CDN. This has to be included <em>before</em> <code>&lt;a-scene&gt;</code> because
 A-Frame registers custom HTML elements which must be defined before <code>&lt;a-scene&gt;</code>
 is attached or else <code>&lt;a-scene&gt;</code> will do nothing.</p>
-<p>Next, we include <a href="../core/scene.md"><code>&lt;a-scene&gt;</code></a> in the <code>&lt;body&gt;</code>. <code>&lt;a-scene&gt;</code> will contain every
+<p>Next, we include <a href="../core/scene.html"><code>&lt;a-scene&gt;</code></a> in the <code>&lt;body&gt;</code>. <code>&lt;a-scene&gt;</code> will contain every
 entity in our scene. <code>&lt;a-scene&gt;</code> handles all of the setup that is required for
 3D: setting up WebGL, the canvas, camera, lights, renderer, render loop as well
 as out of the box WebVR support on platforms such as HTC Vive, Oculus Rift,
@@ -1181,7 +1181,7 @@ lot of load off of us!</p>
 defining the tag and using HTML attributes to customize it. Some other examples
 of primitives that come with A-Frame include <code>&lt;a-cylinder&gt;</code>, <code>&lt;a-plane&gt;</code>, or
 <code>&lt;a-sphere&gt;</code>.</p>
-<p>Here we define the color <code>&lt;a-box&gt;</code>, see <a href="../primitives/a-box.md"><code>&lt;a-box&gt;</code>‘s documentation</a> for
+<p>Here we define the color <code>&lt;a-box&gt;</code>, see <a href="../primitives/a-box.html"><code>&lt;a-box&gt;</code>‘s documentation</a> for
 the more attributes (e.g., <code>width</code>, <code>height</code>, <code>depth</code>).</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/20326452/b7f94966-ab3d-11e6-95e1-47cabf425278.jpg" alt="boximage">
 <small class="image-caption"><i>Image by Ruben Mueller from vrjump.de</i></small></p>
@@ -1189,13 +1189,13 @@ the more attributes (e.g., <code>width</code>, <code>height</code>, <code>depth<
 
 <p>As a side note, primitives are A-Frame’s easy-to-use HTML elements that wrap
 the underlying entity-component assembly. They can be convenient, but
-underneath <code>&lt;a-box&gt;</code> is <a href="../core/entity.md"><code>&lt;a-entity&gt;</code></a> with the <a href="../components/geometry.md">geometry</a> and
-<a href="../components/material.md">material</a> components:</p>
+underneath <code>&lt;a-box&gt;</code> is <a href="../core/entity.html"><code>&lt;a-entity&gt;</code></a> with the <a href="../components/geometry.html">geometry</a> and
+<a href="../components/material.html">material</a> components:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>However, because the default <a href="../components/camera.md">camera</a> and the box are positioned at the default
+<p>However, because the default <a href="../components/camera.html">camera</a> and the box are positioned at the default
 position at the <code>0 0 0</code> origin, we won’t be able to see the box unless we move
-it. We can do this by using the <a href="../components/position.md">position</a> component to transform the
+it. We can do this by using the <a href="../components/position.html">position</a> component to transform the
 box in 3D space.</p>
 <h2 id="transforming-an-entity-in-3d"><a href="#transforming-an-entity-in-3d" class="headerlink" title="Transforming an Entity in 3D"></a>Transforming an Entity in 3D</h2><p>Let’s first go over 3D space. A-Frame uses a right-handed coordinate system.
 With the default camera direction: positive X-axis extends <em>right</em>, positive
@@ -1214,7 +1214,7 @@ positive direction of rotation, use the <a href="https://wikipedia.org/wiki/Righ
 down the direction of a positive axis, and the direction which our fingers curl
 around the positive direction of rotation.</p>
 <p>To translate, rotate, and scale the box, we can change the
-<a href="../components/position.md">position</a>, <a href="../components/rotation.md">rotation</a>, and <a href="../components/scale.md">scale</a> components.
+<a href="../components/position.html">position</a>, <a href="../components/rotation.html">rotation</a>, and <a href="../components/scale.html">scale</a> components.
 Let’s first apply the rotation and scale components:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">&quot;red&quot;</span> <span class="attr">rotation</span>=<span class="string">&quot;0 45 45&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;2 2 2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -1271,7 +1271,7 @@ We can specify a preset (e.g., <code>forest</code>) with along many other parame
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">color</span>=<span class="string">&quot;red&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 2 -5&quot;</span> <span class="attr">rotation</span>=<span class="string">&quot;0 45 45&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;2 2 2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Out of the box environment! --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">environment</span>=<span class="string">&quot;preset: forest; dressingAmount: 500&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="applying-an-image-texture"><a href="#applying-an-image-texture" class="headerlink" title="Applying an Image Texture"></a>Applying an Image Texture</h2><blockquote>
-<p>Make sure you’re <a href="../introduction/getting-started.md#using-a-local-server">serving your HTML using a local server</a>
+<p>Make sure you’re <a href="../introduction/getting-started.html#using-a-local-server">serving your HTML using a local server</a>
 for textures to load properly.</p>
 </blockquote>
 <p>We can apply an image texture to the box with an image, video, or <code>&lt;canvas&gt;</code>
@@ -1283,7 +1283,7 @@ removing the color attribute is good enough.</p>
 
 <p>Now we’ll see our box with an image texture pulled from online:</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/20329111/368aea3e-ab4b-11e6-89e1-d13c994290ce.png" alt="boxtextureimage"></p>
-<h3 id="using-the-asset-management-system"><a href="#using-the-asset-management-system" class="headerlink" title="Using the Asset Management System"></a>Using the Asset Management System</h3><p>However, we recommend using the <a href="../core/asset-management-system.md">asset management system</a> for performance. The
+<h3 id="using-the-asset-management-system"><a href="#using-the-asset-management-system" class="headerlink" title="Using the Asset Management System"></a>Using the Asset Management System</h3><p>However, we recommend using the <a href="../core/asset-management-system.html">asset management system</a> for performance. The
 asset management system makes it easier for the browser to cache assets (e.g.,
 images, videos, models) and A-Frame will make sure all of the assets are
 fetched before rendering.</p>
@@ -1303,7 +1303,7 @@ necessary.</p>
 
 <h2 id="creating-a-custom-environment-optional"><a href="#creating-a-custom-environment-optional" class="headerlink" title="Creating a Custom Environment (Optional)"></a>Creating a Custom Environment (Optional)</h2><p>Previously we had the environment component generate the environment. Though
 it’s good to know a bit on creating a basic environment for learning purposes.</p>
-<h3 id="adding-a-background-to-the-scene"><a href="#adding-a-background-to-the-scene" class="headerlink" title="Adding a Background to the Scene"></a>Adding a Background to the Scene</h3><p>We can add a background with <a href="../primitives/a-sky.md"><code>&lt;a-sky&gt;</code></a> that surrounds the scene.
+<h3 id="adding-a-background-to-the-scene"><a href="#adding-a-background-to-the-scene" class="headerlink" title="Adding a Background to the Scene"></a>Adding a Background to the Scene</h3><p>We can add a background with <a href="../primitives/a-sky.html"><code>&lt;a-sky&gt;</code></a> that surrounds the scene.
 <code>&lt;a-sky&gt;</code>, which is a material applied to the inside of a large sphere, can be
 a flat color, a 360&deg; image, or a 360&deg; video. For example, a dark gray
 background would be:</p>
@@ -1313,7 +1313,7 @@ background would be:</p>
 <code>src</code> instead of <code>color</code>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;boxTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://i.imgur.com/mYmmbrp.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;skyTexture&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">&quot;#boxTexture&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 2 -5&quot;</span> <span class="attr">rotation</span>=<span class="string">&quot;0 45 45&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;2 2 2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">src</span>=<span class="string">&quot;#skyTexture&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="adding-a-ground"><a href="#adding-a-ground" class="headerlink" title="Adding a Ground"></a>Adding a Ground</h3><p>To add a ground, we can use <a href="../primitives/a-plane.md"><code>&lt;a-plane&gt;</code></a>. By default, planes are
+<h3 id="adding-a-ground"><a href="#adding-a-ground" class="headerlink" title="Adding a Ground"></a>Adding a Ground</h3><p>To add a ground, we can use <a href="../primitives/a-plane.html"><code>&lt;a-plane&gt;</code></a>. By default, planes are
 oriented parallel to the XY axis. To make it parallel to the ground, we need to
 orient it along the XZ axis. We can do so by rotating the plane negative
 90&deg; on the X-axis.</p>
@@ -1331,7 +1331,7 @@ numbers, how many times to repeat in the X direction and how many times to
 repeat in the Y direction (commonly referred to as U and V for textures).</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-plane</span> <span class="attr">src</span>=<span class="string">&quot;#groundTexture&quot;</span> <span class="attr">rotation</span>=<span class="string">&quot;-90 0 0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;30&quot;</span> <span class="attr">height</span>=<span class="string">&quot;30&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">repeat</span>=<span class="string">&quot;10 10&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-plane</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="tweaking-lighting"><a href="#tweaking-lighting" class="headerlink" title="Tweaking Lighting"></a>Tweaking Lighting</h3><p>We can change how the scene is lit by using <a href="../primitives/a-light.md"><code>&lt;a-light&gt;s</code></a>. By default
+<h3 id="tweaking-lighting"><a href="#tweaking-lighting" class="headerlink" title="Tweaking Lighting"></a>Tweaking Lighting</h3><p>We can change how the scene is lit by using <a href="../primitives/a-light.html"><code>&lt;a-light&gt;s</code></a>. By default
 if we don’t specify any lights, A-Frame adds an ambient light and a directional
 light. If A-Frame didn’t add lights for us, the scene would be black. Once we
 add lights of our own, however, the default lighting setup is removed and
@@ -1344,7 +1344,7 @@ position them around the scene, and the effect of the point light on an entity
 depends on its distance to the entity:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;boxTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://i.imgur.com/mYmmbrp.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;skyTexture&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;groundTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/a-painter/images/floor.jpg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">&quot;#boxTexture&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 2 -5&quot;</span> <span class="attr">rotation</span>=<span class="string">&quot;0 45 45&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;2 2 2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">src</span>=<span class="string">&quot;#skyTexture&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-light</span> <span class="attr">type</span>=<span class="string">&quot;ambient&quot;</span> <span class="attr">color</span>=<span class="string">&quot;#445451&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-light</span> <span class="attr">type</span>=<span class="string">&quot;point&quot;</span> <span class="attr">intensity</span>=<span class="string">&quot;2&quot;</span> <span class="attr">position</span>=<span class="string">&quot;2 4 4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-light</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="adding-animation"><a href="#adding-animation" class="headerlink" title="Adding Animation"></a>Adding Animation</h2><p>We can add animations to the box using A-Frame’s <a href="../components/animation.md">built-in animation
+<h2 id="adding-animation"><a href="#adding-animation" class="headerlink" title="Adding Animation"></a>Adding Animation</h2><p>We can add animations to the box using A-Frame’s <a href="../components/animation.html">built-in animation
 system</a>. Animations interpolate or tween a value over time. We can
 set the animation component on the entity. Let’s have the box hover up and down
 to add some motion to the scene.</p>
@@ -1352,7 +1352,7 @@ to add some motion to the scene.</p>
 
 <p>We tell the animation component to:</p>
 <ul>
-<li>Animate the <a href="../core/entity.md">entity’s</a> <a href="../core/entity.md#object3d">object3D’s</a> position’s Y axis.</li>
+<li>Animate the <a href="../core/entity.html">entity’s</a> <a href="../core/entity.html#object3d">object3D’s</a> position’s Y axis.</li>
 <li>Animate <em>to</em> <code>2.2</code> which is 20 centimeters higher.</li>
 <li>Alternate the <em>dir</em> (direction) of the animation on each repeated cycle of the animation so it goes back and forth.</li>
 <li>Last for 2000 millisecond <em>dur</em> (duration) on each cycle.</li>
@@ -1363,19 +1363,19 @@ to add some motion to the scene.</p>
 size of the box, and when we “click” on the box, we’ll make it spin.</p>
 <p>Given that many developers currently do not have proper VR hardware with
 controllers, we’ll focus this section on using basic mobile and desktop inputs
-with the built-in <a href="../components/cursor.md">cursor component</a>. The cursor component by default provides
+with the built-in <a href="../components/cursor.html">cursor component</a>. The cursor component by default provides
 the ability to “click” on entities by staring or gazing at them on mobile, or
 on desktop, looking at an entity and click the mouse. But know that the cursor
 component is just one way to add interactions, things open up if we have access
 to actual controllers.</p>
-<p>To have a visible cursor fixed to the <a href="../components/camera.md">camera</a>, we place the cursor as a child
+<p>To have a visible cursor fixed to the <a href="../components/camera.html">camera</a>, we place the cursor as a child
 of the camera as explained above in <a href="#parent-and-child-transforms">Parent and Child Transforms</a>.</p>
 <p>Since we didn’t specifically define a camera, A-Frame included a default camera
 for us. But since we need to add a cursor as a child of the camera, we will
-need to now define <a href="../components/camera.md"><code>&lt;a-camera&gt;</code></a> containing <code>&lt;a-cursor&gt;</code>:</p>
+need to now define <a href="../components/camera.html"><code>&lt;a-camera&gt;</code></a> containing <code>&lt;a-cursor&gt;</code>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;boxTexture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://i.imgur.com/mYmmbrp.jpg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">&quot;#boxTexture&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 2 -5&quot;</span> <span class="attr">rotation</span>=<span class="string">&quot;0 45 45&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;2 2 2&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">animation</span>=<span class="string">&quot;property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-camera</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-cursor</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cursor</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>If we check the <a href="../components/cursor.md">documentation of the cursor component</a> that
+<p>If we check the <a href="../components/cursor.html">documentation of the cursor component</a> that
 <code>&lt;a-cursor&gt;</code> wraps, we see that it emits hover events such as <code>mouseenter</code>,
 <code>mouseleave</code> as well as <code>click</code>.</p>
 <h3 id="event-listener-component-intermediate"><a href="#event-listener-component-intermediate" class="headerlink" title="Event Listener Component (Intermediate)"></a>Event Listener Component (Intermediate)</h3><p>One way to manually handle the cursor events is to <a href="https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener">add an event listener with
@@ -1383,7 +1383,7 @@ JavaScript</a> just like we would with a normal DOM element. If
 you aren’t comfortable with JavaScript, you may skip to <a href="#animating-on-events">Animating on
 Events</a> below.</p>
 <p>In JavaScript, we grab the box with <a href="https://developer.mozilla.org/docs/Web/API/Document/querySelector"><code>querySelector</code></a>, use
-<a href="https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener"><code>addEventListener</code></a>, and then <a href="../core/entity.md#setattribute-componentname-value-propertyvalue-clobber"><code>setAttribute</code></a>
+<a href="https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener"><code>addEventListener</code></a>, and then <a href="../core/entity.html#setattribute-componentname-value-propertyvalue-clobber"><code>setAttribute</code></a>
 to make the box grow its scale when its hovered over. Note that A-Frame adds
 features to <code>setAttribute</code> to work with multi-property components. We can pass
 a full <code>&#123;x, y, z&#125;</code> object as the second argument.</p>
@@ -1420,7 +1420,7 @@ louder as we approach it and get softer as we distance from it. We could place
 the sound in our scene using <code>position</code>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sound</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav&quot;</span> <span class="attr">autoplay</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">position</span>=<span class="string">&quot;-3 1 -4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sound</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="adding-text"><a href="#adding-text" class="headerlink" title="Adding Text"></a>Adding Text</h2><p>A-Frame comes with a <a href="../components/text.md">text component</a>. There are several ways to render
+<h2 id="adding-text"><a href="#adding-text" class="headerlink" title="Adding Text"></a>Adding Text</h2><p>A-Frame comes with a <a href="../components/text.html">text component</a>. There are several ways to render
 text, each with their own advantages and disadvantages. A-Frame comes with an SDF
 text implementation using <a href="https://github.com/Jam3/three-bmfont-text"><code>three-bmfont-text</code></a> that is
 relatively sharp and performant:</p>

@@ -1170,11 +1170,11 @@
       
 
       <p>The cursor component provides hover and click states for interaction on top of
-the <a href="./raycaster.md">raycaster component</a>. The cursor component can be used for
+the <a href="./raycaster.html">raycaster component</a>. The cursor component can be used for
 both gaze-based and controller-based interactions, but the appearance needs
-to be configured depending on the use case. The <a href="../primitives/a-cursor.md"><code>&lt;a-cursor&gt;</code>
+to be configured depending on the use case. The <a href="../primitives/a-cursor.html"><code>&lt;a-cursor&gt;</code>
 primitive</a> provides a default reticle appearance for a gaze-based
-cursor, and the <a href="./laser-controls.md">laser-controls component</a> configures the
+cursor, and the <a href="./laser-controls.html">laser-controls component</a> configures the
 cursor for all controllers.</p>
 <p>The cursor component listens to events and keeps state on what’s being hovered
 and pressed in order to provide <code>mousedown</code>, <code>mouseup</code>, <code>mouseenter</code>,
@@ -1185,15 +1185,15 @@ capturing the closest visible intersected entity.</p>
 <p>By default, the cursor is configured to be used in a gaze-based mode and will
 register user input via mouse or touch. Specifying the <code>downEvents</code> and
 <code>upEvents</code> properties allows the cursor to work with controllers. For example,
-the <a href="./laser-controls.md">laser-controls component</a> automatically configures these
+the <a href="./laser-controls.html">laser-controls component</a> automatically configures these
 properties to work with most controllers.</p>
 <p>To provide a shape or appearance to the cursor, we should apply either the
-<a href="./geometry.md">geometry</a> and <a href="./material.md">material</a> components or use the raycaster
-component’s <code>showLine</code> property to draw a line using the <a href="./line.md">line
+<a href="./geometry.html">geometry</a> and <a href="./material.html">material</a> components or use the raycaster
+component’s <code>showLine</code> property to draw a line using the <a href="./line.html">line
 component</a>.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>For example, we can create a ring-shaped cursor fixed to the center of the
 screen. To fix the cursor to the screen so the cursor is always present no
-matter where we look, we place it as a child of the active <a href="./camera.md">camera</a>
+matter where we look, we place it as a child of the active <a href="./camera.html">camera</a>
 entity. We pull it in front of the camera by placing it on the negative Z axis.
 When the cursor clicks on the box, we can listen to the click event.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">camera</span> <span class="attr">look-controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span>=<span class="string">&quot;fuse: true; fuseTimeout: 500&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">position</span>=<span class="string">&quot;0 0 -1&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">geometry</span>=<span class="string">&quot;primitive: ring; radiusInner: 0.02; radiusOuter: 0.03&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">material</span>=<span class="string">&quot;color: black; shader: flat&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span> <span class="attr">cursor-listener</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;color: blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1240,7 +1240,7 @@ When the cursor clicks on the box, we can listen to the click event.</p>
 </tr>
 </tbody></table>
 <p>To further customize the cursor component, we configure the cursor’s dependency
-component, <a href="./raycaster.md">the raycaster component</a>.</p>
+component, <a href="./raycaster.html">the raycaster component</a>.</p>
 <h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
 <thead>
 <tr>
@@ -1324,7 +1324,7 @@ data about the intersection:</p>
 </tbody></table>
 <h2 id="configuring-the-cursor-through-the-raycaster-component"><a href="#configuring-the-cursor-through-the-raycaster-component" class="headerlink" title="Configuring the Cursor through the Raycaster Component"></a>Configuring the Cursor through the Raycaster Component</h2><p>The cursor builds on top of and depends on the raycaster component. If we
 want to customize the raycasting pieces of the cursor, we can do by changing
-the <a href="./raycaster.md#properties">raycaster component properties</a>. Say we want set a max
+the <a href="./raycaster.html#properties">raycaster component properties</a>. Say we want set a max
 distance, check for intersections less frequently, and set which objects are
 clickable:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">cursor</span> <span class="attr">raycaster</span>=<span class="string">&quot;far: 20; interval: 1000; objects: .clickable&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1339,7 +1339,7 @@ extra input devices other than the headset. The fuse-based cursor is primarily
 intended for Google Cardboard applications. The disadvantage of fuse-based
 interactions is that it requires the user to turn their head a lot.</p>
 <h2 id="adding-visual-feedback"><a href="#adding-visual-feedback" class="headerlink" title="Adding Visual Feedback"></a>Adding Visual Feedback</h2><p>To add visual feedback to the cursor to show when the cursor is clicking or
-fusing, we can use the <a href="./animation.md">animation component</a>.  When the cursor
+fusing, we can use the <a href="./animation.html">animation component</a>.  When the cursor
 intersects the entity, it will emit an event, and the animation system will
 pick up event with the <code>begin</code> attribute:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__click</span>=<span class="string">&quot;property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__fusing</span>=<span class="string">&quot;property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseleave</span>=<span class="string">&quot;property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">cursor</span>=<span class="string">&quot;fuse: true;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">&quot;color: black; shader: flat&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">&quot;0 0 -3&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">&quot;primitive: ring&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>

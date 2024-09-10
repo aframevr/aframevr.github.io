@@ -1186,11 +1186,11 @@
       
 
       <p>The material component gives appearance to an entity. We can define properties
-such as color, opacity, or texture. This is often paired with the <a href="./geometry.md">geometry
+such as color, opacity, or texture. This is often paired with the <a href="./geometry.html">geometry
 component</a> which provides shape.</p>
 <p>We can register custom materials to extend the material component to provide a
 wide range of visual effects.</p>
-<div id="toc"></div>
+<!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Defining a red material using the default standard material:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1283,7 +1283,7 @@ depending on the material type applied.</p>
 </tr>
 <tr>
 <td>anisotropy</td>
-<td>The anisotropic filtering sample rate to use for the textures. A value of 0 means the default value will be used, see <a href="./renderer.md">renderer</a></td>
+<td>The anisotropic filtering sample rate to use for the textures. A value of 0 means the default value will be used, see <a href="./renderer.html">renderer</a></td>
 <td>0</td>
 </tr>
 </tbody></table>
@@ -1386,12 +1386,12 @@ depending on the material type applied.</p>
 </tr>
 <tr>
 <td>envMap</td>
-<td>Environment cubemap texture for reflections. Can be a selector to <a href="../primitives/a-cubemap.md"><a-cubemap></a> or a comma-separated list of URLs.  See <a href="#environment-maps">below</a> for more detail.</td>
+<td>Environment cubemap texture for reflections. Can be a selector to <a href="../primitives/a-cubemap.html"><a-cubemap></a> or a comma-separated list of URLs.  See <a href="#environment-maps">below</a> for more detail.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>fog</td>
-<td>Whether or not material is affected by <a href="./fog.md">fog</a>.</td>
+<td>Whether or not material is affected by <a href="./fog.html">fog</a>.</td>
 <td>true</td>
 </tr>
 <tr>
@@ -1533,7 +1533,7 @@ the material reflects. The clarity of the environment reflection depends
 on the <code>metalness</code>, and <code>roughness</code> properties.</p>
 <p>The <code>sphericalEnvMap</code> property takes a single spherical mapped
 texture. Of the kind you would assign to a <code>&lt;a-sky&gt;</code>.</p>
-<p>Unlike textures, the <code>envMap</code> property takes a <a href="../primitives/a-cubemap.md">cubemap</a>, six images put together
+<p>Unlike textures, the <code>envMap</code> property takes a <a href="../primitives/a-cubemap.html">cubemap</a>, six images put together
 to form a cube. The cubemap wraps around the mesh and applied as a texture.</p>
 <p>For example:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-cubemap</span> <span class="attr">id</span>=<span class="string">&quot;sky&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;right.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;left.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;top.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;bottom.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;front.png&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;back.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-cubemap</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;envMap: #sky; roughness: 0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1563,7 +1563,7 @@ such as images or videos. Set <code>shader</code> to <code>flat</code>:</p>
 </tr>
 <tr>
 <td>fog</td>
-<td>Whether or not material is affected by <a href="./fog.md">fog</a>.</td>
+<td>Whether or not material is affected by <a href="./fog.html">fog</a>.</td>
 <td>true</td>
 </tr>
 <tr>
@@ -1604,7 +1604,7 @@ such as images or videos. Set <code>shader</code> to <code>flat</code>:</p>
 </tbody></table>
 <h2 id="textures"><a href="#textures" class="headerlink" title="Textures"></a>Textures</h2><p>To set a texture using one of the built-in materials, specify the <code>src</code>
 property. <code>src</code> can be a selector to either an <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> element in the
-<a href="../core/asset-management-system.md">asset management system</a>:</p>
+<a href="../core/asset-management-system.html">asset management system</a>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;my-texture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;texture.png&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;src: #my-texture&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><code>src</code> can also be an inline URL. Note that we do not get browser caching or

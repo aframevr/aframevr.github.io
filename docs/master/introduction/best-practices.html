@@ -1190,7 +1190,7 @@
 
       
 
-      <h2 id="a-frame"><a href="#a-frame" class="headerlink" title="A-Frame"></a>A-Frame</h2><p>The core structure of A-Frame is <a href="./entity-component-system.md">entity-component (ECS)</a>. Place and
+      <h2 id="a-frame"><a href="#a-frame" class="headerlink" title="A-Frame"></a>A-Frame</h2><p>The core structure of A-Frame is <a href="./entity-component-system.html">entity-component (ECS)</a>. Place and
 structure application code within purely A-Frame components for reusability,
 modularity, composability, decoupling, encapsulation, declarativeness, and
 testability.</p>
@@ -1207,8 +1207,8 @@ purpose of using A-Frame.</p>
 people to feel comfortable. Here are some ways to help improve performance of
 an A-Frame scene:</p>
 <ul>
-<li>Use <a href="./vr-headsets-and-webxr-browsers.md">recommended hardware specifications</a>.</li>
-<li>Use the <strong><a href="../components/stats.md">stats component</a></strong> to keep an eye on various metrics (FPS,
+<li>Use <a href="./vr-headsets-and-webxr-browsers.html">recommended hardware specifications</a>.</li>
+<li>Use the <strong><a href="../components/stats.html">stats component</a></strong> to keep an eye on various metrics (FPS,
 vertex and face count, geometry and material count, draw calls, number of
 entities). We want to maximize FPS and minimize everything else.</li>
 <li>Limit draw calls as much as possible. Each geometry, object, model without
@@ -1218,7 +1218,7 @@ can use <a href="https://www.npmjs.com/package/aframe-geometry-merger-component"
 material with vertex colors enabled. three.js geometries keep data such as
 color, uvs per vertex that can be used to maintain and manipulate geometries
 post-merge.</li>
-<li>Make use of the <strong><a href="../core/asset-management-system.md">asset management system</a></strong> to browser cache and
+<li>Make use of the <strong><a href="../core/asset-management-system.html">asset management system</a></strong> to browser cache and
 preload assets.</li>
 <li>If using models, look to bake your lights into textures rather than relying
 on real-time lighting and shadows.</li>
@@ -1235,16 +1235,16 @@ against rather than raycasting against every object in the scene.</li>
 handlers to hook into the global render loop. Use utilities such as
 <code>AFRAME.utils.throttleTick</code> to limit the number of times the <code>tick</code> handler
 is run if appropriate.</li>
-<li>Use the <strong><a href="../components/background.md">background component</a></strong> instead of <code>a-sky</code> to define a
+<li>Use the <strong><a href="../components/background.html">background component</a></strong> instead of <code>a-sky</code> to define a
 solid color as the scene background. This prevents the creation of
 unnecessary geometry.</li>
 <li>Update <code>position</code>, <code>rotation</code>, <code>scale</code>, and <code>visible</code> at the three.js
 level (<code>el.object3D.position</code>, <code>el.object3D.rotation</code>, <code>el.object3D.scale</code>,
 <code>el.object3D.visible</code>) to avoid overhead on <code>.setAttribute</code>.</li>
 <li>If you need to create, remove and re-create many entities of the same type,
-use the <strong><a href="../components/pool.md">pool component</a></strong> to pre-generate and reuse entities. This
+use the <strong><a href="../components/pool.html">pool component</a></strong> to pre-generate and reuse entities. This
 avoids the cost of creating entities on the fly and reduces garbage collection.</li>
-<li>When using the animation component, <a href="../components/animation.md#direct-values-through-object3d-and-components">animate values directly</a> 
+<li>When using the animation component, <a href="../components/animation.html#direct-values-through-object3d-and-components">animate values directly</a> 
 which will skip <code>.setAttribute</code> and animate JS values directly. 
 For example, instead of <code>material.opacity</code>, 
 animate <code>components.material.material.opacity</code>.</li>

@@ -1007,14 +1007,14 @@ units as meters, we achieve expected scale.</li>
 users to be comfortable. Here are some ways to help improve performance of an
 A-Frame scene:</p>
 <ul>
-<li>Use <a href="./device-and-platform-support.md#hardware-specifications">recommended hardware specifications</a>.</li>
-<li>Use the <strong><a href="../components/stats.md">stats component</a></strong> to keep an eye on various metrics (FPS,
+<li>Use <a href="./device-and-platform-support.html#hardware-specifications">recommended hardware specifications</a>.</li>
+<li>Use the <strong><a href="../components/stats.html">stats component</a></strong> to keep an eye on various metrics (FPS,
 vertex and face count, geometry and material count, draw calls, number of entities.  We
 want to maximize FPS and minimize everything else.</li>
-<li>Make use of the <strong><a href="../core/asset-management-system.md">asset management system</a></strong> to benefit from browser
+<li>Make use of the <strong><a href="../core/asset-management-system.html">asset management system</a></strong> to benefit from browser
 caching and preloading. Trying to fetch assets while rendering is slower than
 fetching all assets before rendering.</li>
-<li>Look to make use of <strong><a href="../components/geometry.md#mergeto">geometry merging</a></strong> to limit draw calls when
+<li>Look to make use of <strong><a href="../components/geometry.html#mergeto">geometry merging</a></strong> to limit draw calls when
 multiple geometries are sharing the same material.</li>
 <li>If using models, look to bake your lights into textures rather than relying
 on real-time lighting and shadows.</li>
@@ -1025,10 +1025,10 @@ texture during runtime.</li>
 </ul>
 <h2 id="a-frame"><a href="#a-frame" class="headerlink" title="A-Frame"></a>A-Frame</h2><p>Some best practices for the framework:</p>
 <ul>
-<li>Don’t repeat yourself (<strong>DRY</strong>). Make use of <a href="../core/mixins.md">mixins</a> and <a href="https://github.com/ngokevin/aframe-template-component">templating</a> to
+<li>Don’t repeat yourself (<strong>DRY</strong>). Make use of <a href="../core/mixins.html">mixins</a> and <a href="https://github.com/ngokevin/aframe-template-component">templating</a> to
 reduce the amount of copy-and-pasting and reduce the amount of HTML in your
 scene.</li>
-<li>Try to make use of the <a href="../core/index.md">entity-component-system framework</a>. Develop
+<li>Try to make use of the <a href="../core/">entity-component-system framework</a>. Develop
 within components to encourage declarativeness and reusability.</li>
 </ul>
 

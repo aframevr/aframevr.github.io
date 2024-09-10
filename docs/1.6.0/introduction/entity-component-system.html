@@ -1214,20 +1214,20 @@ for VR development, and A-Frame is based entirely around this paradigm:</p>
 <p>A well-known game engine implementing ECS is Unity. Although there are pain
 points in cross-entity communication, we’ll see how A-Frame, the DOM, and
 declarative HTML really make ECS shine.</p>
-<div id="toc"></div>
+<!--toc-->
 
 <h2 id="concept"><a href="#concept" class="headerlink" title="Concept"></a>Concept</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/20289898/71f7fea0-aa91-11e6-8307-d8dc68dff285.png" alt="ECS Minecraft"></p>
 <p>A basic definition of ECS involves:</p>
 <ul>
-<li><strong><a href="../core/entity.md">Entities</a></strong> are container objects into which components can be
+<li><strong><a href="../core/entity.html">Entities</a></strong> are container objects into which components can be
 attached. Entities are the base of all objects in the scene. Without
 components, entities neither do nor render anything, similar to empty <code>&lt;div&gt;</code>s.</li>
-<li><strong><a href="../core/component.md">Components</a></strong> are reusable modules or data containers that can
+<li><strong><a href="../core/component.html">Components</a></strong> are reusable modules or data containers that can
 be attached to entities to provide appearance, behavior, and&#x2F;or
 functionality. Components are like plug-and-play for objects. All logic is
 implemented through components, and we define different types of objects by
 mixing, matching, and configuring components. Like alchemy!</li>
-<li><strong><a href="../core/systems.md">Systems</a></strong> provide global scope, management, and services for
+<li><strong><a href="../core/systems.html">Systems</a></strong> provide global scope, management, and services for
 classes of components. Systems are often optional, but we can use them to
 separate logic and data; systems handle the logic, components act as data
 containers.</li>
@@ -1283,8 +1283,8 @@ components have multiple properties that are represented by a syntax similar to
 (<code>:</code>) separating property names from property values, and a semicolon (<code>;</code>)
 separating different property declarations:</p>
 <p><code>&lt;a-entity $&#123;componentName&#125;=&quot;$&#123;propertyName1&#125;: $&#123;propertyValue1&#125;; $&#123;propertyName2&#125;: $&#123;propertyValue2&#125;&quot;&gt;</code></p>
-<p>For example, we have <code>&lt;a-entity&gt;</code> and attach the <a href="../components/geometry.md">geometry</a>, <a href="../components/material.md">material</a>,
-<a href="../components/light.md">light</a>, and <a href="../components/position.md">position</a> components with various properties and property values:</p>
+<p>For example, we have <code>&lt;a-entity&gt;</code> and attach the <a href="../components/geometry.html">geometry</a>, <a href="../components/material.html">material</a>,
+<a href="../components/light.html">light</a>, and <a href="../components/position.html">position</a> components with various properties and property values:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: sphere; radius: 1.5&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">light</span>=<span class="string">&quot;type: point; color: white; intensity: 2&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;color: white; shader: flat; src: glow.jpg&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">position</span>=<span class="string">&quot;0 0 -5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="composition"><a href="#composition" class="headerlink" title="Composition"></a>Composition</h3><p>From there, we could attach more components to add additional appearance,
@@ -1335,7 +1335,7 @@ copy-and-pasteable.</li>
 innovation to create components to extend any feature. Components have full
 access to JavaScript, three.js, and Web APIs (e.g., WebRTC, Speech
 Recognition).</p>
-<p>We will later go over in detail how to <a href="./writing-a-component.md">write an A-Frame
+<p>We will later go over in detail how to <a href="./writing-a-component.html">write an A-Frame
 component</a>. As a preview, the structure of a basic component
 may look like:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;foo&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">bar</span>: &#123;<span class="attr">type</span>: <span class="string">&#x27;number&#x27;</span>&#125;,</span><br><span class="line">    <span class="attr">baz</span>: &#123;<span class="attr">type</span>: <span class="string">&#x27;string&#x27;</span>&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Do something when component first attached.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">update</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Do something when component&#x27;s data is updated.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">remove</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Do something when the component or its entity is detached.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">tick</span>: <span class="keyword">function</span> (<span class="params">time, timeDelta</span>) &#123;</span><br><span class="line">    <span class="comment">// Do something on every scene tick or frame.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -1360,12 +1360,12 @@ modified to adapt to other use cases.</p>
 
 <h3 id="higher-order-components"><a href="#higher-order-components" class="headerlink" title="Higher-Order Components"></a>Higher-Order Components</h3><p>Components can set other components on the entity, making them a higher-order
 or higher-level component in abstraction.</p>
-<p>For example, the <a href="../components/cursor.md">cursor component</a> sets and builds on top of the
-<a href="../components/raycaster.md">raycaster component</a>. Or the <a href="../components/hand-controls.md">hand-controls
-component</a> sets and builds on top of the <a href="../components/vive-controls.md">vive-controls
-component</a> and <a href="../components/oculus-touch-controls.md">oculus-touch-controls
+<p>For example, the <a href="../components/cursor.html">cursor component</a> sets and builds on top of the
+<a href="../components/raycaster.html">raycaster component</a>. Or the <a href="../components/hand-controls.html">hand-controls
+component</a> sets and builds on top of the <a href="../components/vive-controls.html">vive-controls
+component</a> and <a href="../components/oculus-touch-controls.html">oculus-touch-controls
 component</a> which in turn build on top of the
-<a href="../components/tracked-controls.md">tracked-controls component</a>.</p>
+<a href="../components/tracked-controls.html">tracked-controls component</a>.</p>
 <h2 id="community-component-ecosystem"><a href="#community-component-ecosystem" class="headerlink" title="Community Component Ecosystem"></a>Community Component Ecosystem</h2><p>Components can be shared into the A-Frame ecosystem for the community to use.
 The wonderful thing about A-Frame’s ECS is extensibility. An experienced
 developer can develop a physics system or graphics shader components, and an

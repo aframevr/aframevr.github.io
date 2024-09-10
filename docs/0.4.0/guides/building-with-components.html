@@ -992,27 +992,27 @@
 </blockquote>
 <p><img src="/images/docs/360-image-viewer.png" alt="360&deg; Image Viewer"></p>
 <p>Let’s create an example of building a scene using an
-<a href="../core/index.md">entity-component-system</a> workflow. This guide will introduce three
+<a href="../core/">entity-component-system</a> workflow. This guide will introduce three
 concepts:</p>
 <ol>
-<li>Using the standard <a href="../core/component.md">components</a> that ship with A-Frame.</li>
+<li>Using the standard <a href="../core/component.html">components</a> that ship with A-Frame.</li>
 <li>Using community components from the ecosystem.</li>
 <li>Writing custom components to accomplish whatever we want.</li>
 </ol>
 <p>The scene we will build is a <strong>360&deg; image gallery</strong>. There will be three
 panels which the user can click on. Once clicked, the background will fade and
 swap the 360&deg; images.</p>
-<div id="toc"></div>
+<!--toc-->
 
 <h2 id="skeleton"><a href="#skeleton" class="headerlink" title="Skeleton"></a>Skeleton</h2><p>This is the starting point for our scene:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">&quot;click-sound&quot;</span> <span class="attr">src</span>=<span class="string">&quot;audio/click.ogg&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Images. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;city&quot;</span> <span class="attr">src</span>=<span class="string">&quot;img/city.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;city-thumb&quot;</span> <span class="attr">src</span>=<span class="string">&quot;img/thumb-city.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;cubes&quot;</span> <span class="attr">src</span>=<span class="string">&quot;img/cubes.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;cubes-thumb&quot;</span> <span class="attr">src</span>=<span class="string">&quot;img/thumb-cubes.png&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;sechelt&quot;</span> <span class="attr">src</span>=<span class="string">&quot;img/sechelt.jpg&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;sechelt-thumb&quot;</span> <span class="attr">src</span>=<span class="string">&quot;img/thumb-sechelt.png&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 360-degree image. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">id</span>=<span class="string">&quot;image-360&quot;</span> <span class="attr">radius</span>=<span class="string">&quot;10&quot;</span> <span class="attr">src</span>=<span class="string">&quot;#city&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Link we will build. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Camera + Cursor. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-camera</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-cursor</span> <span class="attr">id</span>=<span class="string">&quot;cursor&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">begin</span>=<span class="string">&quot;click&quot;</span> <span class="attr">easing</span>=<span class="string">&quot;ease-in&quot;</span> <span class="attr">attribute</span>=<span class="string">&quot;scale&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">fill</span>=<span class="string">&quot;backwards&quot;</span> <span class="attr">from</span>=<span class="string">&quot;0.1 0.1 0.1&quot;</span> <span class="attr">to</span>=<span class="string">&quot;1 1 1&quot;</span> <span class="attr">dur</span>=<span class="string">&quot;150&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-animation</span> <span class="attr">begin</span>=<span class="string">&quot;cursor-fusing&quot;</span> <span class="attr">easing</span>=<span class="string">&quot;ease-in&quot;</span> <span class="attr">attribute</span>=<span class="string">&quot;scale&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">from</span>=<span class="string">&quot;1 1 1&quot;</span> <span class="attr">to</span>=<span class="string">&quot;0.1 0.1 0.1&quot;</span> <span class="attr">dur</span>=<span class="string">&quot;1500&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-animation</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-cursor</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>We have predefined:</p>
 <ul>
-<li>Several images to choose from in the <a href="../core/asset-management-system.md">Asset Management System</a> within <code>&lt;a-assets&gt;</code>.</li>
-<li>Our 360&deg; image placeholder with <a href="../primitives/a-sky.md"><code>&lt;a-sky&gt;</code></a>.</li>
-<li>A <a href="../components/cursor.md">cursor</a> with visual feedback using event-driven
-<a href="../core/animations.md#begin">animations</a>, fixed to the <a href="../primitives/a-camera.md">camera</a>.</li>
+<li>Several images to choose from in the <a href="../core/asset-management-system.html">Asset Management System</a> within <code>&lt;a-assets&gt;</code>.</li>
+<li>Our 360&deg; image placeholder with <a href="../primitives/a-sky.html"><code>&lt;a-sky&gt;</code></a>.</li>
+<li>A <a href="../components/cursor.html">cursor</a> with visual feedback using event-driven
+<a href="../core/animations.html#begin">animations</a>, fixed to the <a href="../primitives/a-camera.html">camera</a>.</li>
 </ul>
 <h2 id="using-standard-components"><a href="#using-standard-components" class="headerlink" title="Using Standard Components"></a>Using Standard Components</h2><p>Standard components are components that ship with A-Frame, like any standard
 library. We’ll go over how to attach these components to entities and configure
@@ -1022,19 +1022,19 @@ change the 360&deg; image. We start with an empty entity. Without any
 components, any empty entity does nothing and renders nothing:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>To give our entity shape, we can attach the <a href="../components/geometry.md">geometry component</a>,
+<p>To give our entity shape, we can attach the <a href="../components/geometry.html">geometry component</a>,
 configured to a plane shape. We specify the component data using a syntax that
 resembles that of inline CSS styles:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane; height: 1; width: 1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>Then to give our entity appearance, we can attach the <a href="../components/material.md">material
+<p>Then to give our entity appearance, we can attach the <a href="../components/material.html">material
 component</a>.  We set <code>shader</code> to <code>flat</code> so the image isn’t affected
 negatively by lighting. And we set <code>src</code> to <code>#cubes-thumb</code>, a selector to one
-of the images defined in the <a href="../core/asset-management-system.md">Asset Management System</a>.</p>
+of the images defined in the <a href="../core/asset-management-system.html">Asset Management System</a>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane; height: 1; width: 1&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">&quot;shader: flat; src: #cubes-thumb&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>We can continue adding features to our entity by plugging in more components.
-Let’s attach one more standard component, the <a href="../components/sound.md">sound component</a>. We want
+Let’s attach one more standard component, the <a href="../components/sound.html">sound component</a>. We want
 to make it such that when we click (via gazing) on the link, it plays a click
 sound. The syntax is the same as before, but instead we are now using the sound
 component’s properties. We set <code>on</code> to <code>click</code> so the sound is played on click.
@@ -1109,15 +1109,15 @@ fiddle with positions. The layout component supports other layouts including
 grid, circle, and dodecahedron.</p>
 <h3 id="event-set-component"><a href="#event-set-component" class="headerlink" title="Event-Set Component"></a>Event-Set Component</h3><p>Lastly, we’ll add some visual feedback to our links. We want them to scale up
 and scale back when they are hovered or clicked. This involves writing an event
-listener to do <code>setAttribute</code>s on the <a href="../components/scale.md">scale component</a> in response to
-<a href="../components/cursor.md#events">cursor events</a>. This is a fairly common pattern so there is an
+listener to do <code>setAttribute</code>s on the <a href="../components/scale.html">scale component</a> in response to
+<a href="../components/cursor.html#events">cursor events</a>. This is a fairly common pattern so there is an
 <a href="https://www.npmjs.com/package/aframe-event-set-component">event-set component</a> that does <code>setAttribute</code> in response to
 events.</p>
 <p>Let’s attach event listeners on our links to scale them up when they are gazed
 over, scale them down as they are being clicked, and scale them back when they
 are no longer gazed upon. We are mimicking CSS <code>:hover</code> states. We can specify
 event names with <code>_event</code> properties, and the rest of the properties define the
-<code>setAttribute</code> calls. Notice that the event-set component can have <a href="../core/component.md#multiple-instancing">multiple
+<code>setAttribute</code> calls. Notice that the event-set component can have <a href="../core/component.html#multiple-instancing">multiple
 instances</a>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">&quot;link&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/nunjucks&quot;</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span></span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml"><span class="language-handlebars">      <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane; height: 1; width: 1&quot;</span></span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml"><span class="language-handlebars">      <span class="attr">material</span>=<span class="string">&quot;shader: flat; src: $&#123;thumb&#125;&quot;</span></span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml"><span class="language-handlebars">      <span class="attr">sound</span>=<span class="string">&quot;on: click; src: #click-sound&quot;</span></span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml"><span class="language-handlebars">      <span class="attr">event-set__1</span>=<span class="string">&quot;_event: mousedown; scale: 1 1 1&quot;</span></span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml"><span class="language-handlebars">      <span class="attr">event-set__2</span>=<span class="string">&quot;_event: mouseup; scale: 1.2 1.2 1&quot;</span></span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml"><span class="language-handlebars">      <span class="attr">event-set__3</span>=<span class="string">&quot;_event: mouseenter; scale: 1.2 1.2 1&quot;</span></span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml"><span class="language-handlebars">      <span class="attr">event-set__4</span>=<span class="string">&quot;_event: mouseleave; scale: 1 1 1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  </span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -1128,7 +1128,7 @@ require us to write application-specific components.</p>
 <p>View the full <a href="https://github.com/aframevr/360-image-viewer-boilerplate/blob/master/components/set-image.js"><code>set-image</code> component on GitHub</a>.</p>
 </blockquote>
 <p>We want to write the component that fades the sky into a new 360&deg; image
-once one of the links are clicked. We’ll call it <code>set-image</code>. The <a href="../core/component.md">component
+once one of the links are clicked. We’ll call it <code>set-image</code>. The <a href="../core/component.html">component
 API documentation</a> provides a detailed reference for writing a
 component. A basic component skeleton might look like:</p>
 <p>Here is the skeleton for our set-image component.</p>

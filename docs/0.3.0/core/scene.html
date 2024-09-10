@@ -939,8 +939,8 @@
       
 
       <p>A scene is represented by the <code>&lt;a-scene&gt;</code> element. The scene is the global root
-object, and all <a href="./entity.md">entities</a> are contained within the scene.</p>
-<p>The scene inherits from the <a href="./entity.md"><code>Entity</code></a> class so it inherits all of its
+object, and all <a href="./entity.html">entities</a> are contained within the scene.</p>
+<p>The scene inherits from the <a href="./entity.html"><code>Entity</code></a> class so it inherits all of its
 properties, its methods, the ability to attach components, and the behavior to
 wait for all of its child nodes (e.g., <code>&lt;a-assets&gt;</code> and <code>&lt;a-entity&gt;</code>) to load
 before kicking off the render loop.</p>
@@ -951,7 +951,7 @@ before kicking off the render loop.</p>
 <li>Set up webvr-polyfill, VREffect</li>
 <li>Add UI to Enter VR that calls WebVR API</li>
 </ul>
-<div id="toc"></div>
+<!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-assets</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;texture&quot;</span> <span class="attr">src</span>=<span class="string">&quot;texture.png&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-assets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-box</span> <span class="attr">src</span>=<span class="string">&quot;#texture&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -996,7 +996,7 @@ before kicking off the render loop.</p>
 </tr>
 <tr>
 <td>systems</td>
-<td>Instantiated <a href="../core/systems.md">systems</a>.</td>
+<td>Instantiated <a href="../core/systems.html">systems</a>.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -1052,12 +1052,12 @@ before kicking off the render loop.</p>
 
 <p>A-Frame ships with a few components to configure the scene:</p>
 <ul>
-<li><a href="../components/embedded.md">embedded</a> - Remove fullscreen styles from the canvas.</li>
-<li><a href="../components/fog.md">fog</a> - Add fog.</li>
-<li><a href="../components/keyboard-shortcuts.md">keyboard-shortcuts</a> - Toggle keyboard shortcuts.</li>
-<li><a href="../guides/using-the-aframe-inspector.md">inspector</a> - Inject the A-Frame Inspector.</li>
-<li><a href="../components/stats.md">stats</a> - Toggle performance stats.</li>
-<li><a href="../components/vr-mode-ui.md">vr-mode-ui</a> - Toggle UI for entering and exiting VR.</li>
+<li><a href="../components/embedded.html">embedded</a> - Remove fullscreen styles from the canvas.</li>
+<li><a href="../components/fog.html">fog</a> - Add fog.</li>
+<li><a href="../components/keyboard-shortcuts.html">keyboard-shortcuts</a> - Toggle keyboard shortcuts.</li>
+<li><a href="../guides/using-the-aframe-inspector.html">inspector</a> - Inject the A-Frame Inspector.</li>
+<li><a href="../components/stats.html">stats</a> - Toggle performance stats.</li>
+<li><a href="../components/vr-mode-ui.html">vr-mode-ui</a> - Toggle UI for entering and exiting VR.</li>
 </ul>
 <h2 id="running-content-scripts-on-the-scene"><a href="#running-content-scripts-on-the-scene" class="headerlink" title="Running Content Scripts on the Scene"></a>Running Content Scripts on the Scene</h2><p>We usually need to wait for the scene to finish initializing and attaching:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> scene = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;a-scene&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (scene.<span class="property">hasLoaded</span>) &#123;</span><br><span class="line">  <span class="title function_">run</span>();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  scene.<span class="title function_">addEventListener</span>(<span class="string">&#x27;loaded&#x27;</span>, run);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">run</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> entity = scene.<span class="title function_">querySelector</span>(<span class="string">&#x27;a-entity&#x27;</span>);</span><br><span class="line">  entity.<span class="title function_">setAttribute</span>(<span class="string">&#x27;material&#x27;</span>, <span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;red&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

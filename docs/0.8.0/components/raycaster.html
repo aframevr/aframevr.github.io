@@ -1114,7 +1114,7 @@ other entites.</p>
 checks for intersections at a certain interval against a list of objects, and
 will emit events on the entity when it detects intersections or clearing of
 intersections (i.e., when the raycaster is no longer intersecting an entity).</p>
-<p>The <a href="./cursor.md">cursor component</a> and <a href="./laser-controls.md">laser-controls components</a>
+<p>The <a href="./cursor.html">cursor component</a> and <a href="./laser-controls.html">laser-controls components</a>
 both build on top of the raycaster component.</p>
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;player&quot;</span> <span class="attr">collider-check</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">raycaster</span>=<span class="string">&quot;objects: .collidable&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 -0.9 0&quot;</span> <span class="attr">rotation</span>=<span class="string">&quot;90 0 0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">class</span>=<span class="string">&quot;collidable&quot;</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">position</span>=<span class="string">&quot;1 0 0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -1175,7 +1175,7 @@ both build on top of the raycaster component.</p>
 </tr>
 <tr>
 <td>showLine</td>
-<td>Whether or not to display the raycaster visually with the <a href="./line.md">line component</a>.</td>
+<td>Whether or not to display the raycaster visually with the <a href="./line.html">line component</a>.</td>
 <td>false</td>
 </tr>
 <tr>
@@ -1307,7 +1307,7 @@ or detached from the scene, but it will not get called during normal DOM
 mutations (e.g., some entity changes its <code>class</code>).</p>
 <h2 id="customizing-the-line"><a href="#customizing-the-line" class="headerlink" title="Customizing the Line"></a>Customizing the Line</h2><p>If <code>showLine</code> is set to <code>true</code>, the raycaster will configure the line given the
 raycaster’s <code>origin</code>, <code>direction</code>, and <code>far</code> properties. To customize the line
-appearance provided by the <code>showLine: true</code> property, we configure the <a href="./line.md">line
+appearance provided by the <code>showLine: true</code> property, we configure the <a href="./line.html">line
 component</a>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">raycaster</span>=<span class="string">&quot;showLine: true; far: 100&quot;</span> <span class="attr">line</span>=<span class="string">&quot;color: orange; opacity: 0.5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 

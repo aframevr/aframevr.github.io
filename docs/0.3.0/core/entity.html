@@ -941,23 +941,23 @@
       <pre><code>           .
 </code></pre>
 <p>An entity is represented by the <code>&lt;a-entity&gt;</code> element. As defined in the
-<a href="./index.md">entity-component-system pattern</a>, entities are placeholder objects to
+<a href="./">entity-component-system pattern</a>, entities are placeholder objects to
 which we plug in components in order to provide them apperance, behavior,
 and functionality.</p>
-<p>In A-Frame, entities are inherently attached with the <a href="../components/position.md">position</a>,
-<a href="../components/rotation.md">rotation</a>, and <a href="../components/scale.md">scale</a> components.</p>
-<div id="toc"></div>
+<p>In A-Frame, entities are inherently attached with the <a href="../components/position.html">position</a>,
+<a href="../components/rotation.html">rotation</a>, and <a href="../components/scale.html">scale</a> components.</p>
+<!--toc-->
 
 <h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Consider the entity below. By itself, it has no appearance, behavior, or
 functionality. It does nothing:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>We can attach components to it to make it render something or do something. To
-give it shape and appearance, we can attach the <a href="../components/geometry.md">geometry</a> and
-<a href="../components/material.md">material</a> components:</p>
+give it shape and appearance, we can attach the <a href="../components/geometry.html">geometry</a> and
+<a href="../components/material.html">material</a> components:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;color: red&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>Or to make it emit light, we can further attach the <a href="../components/light.md">light</a> component:</p>
+<p>Or to make it emit light, we can further attach the <a href="../components/light.html">light</a> component:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span> <span class="attr">material</span>=<span class="string">&quot;color: red&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">light</span>=<span class="string">&quot;type: point; intensity: 2.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="retrieving-an-entity"><a href="#retrieving-an-entity" class="headerlink" title="Retrieving an Entity"></a>Retrieving an Entity</h2><p>We can simply retrieve an entity using DOM APIs.</p>
@@ -989,7 +989,7 @@ as cameras, meshes, lights, or sounds:</p>
 <h3 id="object3dmap"><a href="#object3dmap" class="headerlink" title="object3DMap"></a><code>object3DMap</code></h3><p>An entity’s <code>object3DMap</code> is a JavaScript object that gives access to the
 different types of <code>THREE.Object3D</code>s (e.g., camera, meshes, lights, sounds)
 that may have been registered by components.</p>
-<p>For an entity with a <a href="../components/geometry.md">geometry</a> and <a href="../components/light.md">light</a> components
+<p>For an entity with a <a href="../components/geometry.html">geometry</a> and <a href="../components/light.html">light</a> components
 attached, <code>object3DMap</code> might look like:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">light</span>: &lt;THREE.Light Object&gt;,</span><br><span class="line">  mesh: &lt;THREE.Mesh Object&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -1003,7 +1003,7 @@ event, and the state can then be checked for existence using <code>.is</code>:</
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.<span class="title function_">addEventListener</span>(<span class="string">&#x27;stateadded&#x27;</span>, <span class="keyword">function</span> (<span class="params">evt</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (evt.<span class="property">detail</span>.<span class="property">state</span> === <span class="string">&#x27;selected&#x27;</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Entity now selected!&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">entity.<span class="title function_">addState</span>(<span class="string">&#x27;selected&#x27;</span>);</span><br><span class="line">entity.<span class="title function_">is</span>(<span class="string">&#x27;selected&#x27;</span>);  <span class="comment">// &gt;&gt; true</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="emit-name-detail-bubbles"><a href="#emit-name-detail-bubbles" class="headerlink" title="emit (name, detail, bubbles)"></a><code>emit (name, detail, bubbles)</code></h3><p><code>emit</code> emits a custom DOM event on the entity. For example, we can emit an event to
-<a href="./animations.md#begin">trigger an animation</a>:</p>
+<a href="./animations.html#begin">trigger an animation</a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// &lt;a-entity&gt;</span></span><br><span class="line"><span class="comment">//   &lt;a-animation attribute=&quot;rotation&quot; begin=&quot;rotate&quot; to=&quot;0 360 0&quot;&gt;&lt;/a-animation&gt;</span></span><br><span class="line"><span class="comment">// &lt;/a-entity&gt;</span></span><br><span class="line">entity.<span class="title function_">emit</span>(<span class="string">&#x27;rotate&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
 <p>We can also pass event detail or data as the second argument:</p>
@@ -1014,7 +1014,7 @@ event, and the state can then be checked for existence using <code>.is</code>:</
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.<span class="title function_">emit</span>(<span class="string">&#x27;sink&#x27;</span>, <span class="literal">null</span>, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
 
 <h3 id="flushtodom-recursive"><a href="#flushtodom-recursive" class="headerlink" title="flushToDOM (recursive)"></a><code>flushToDOM (recursive)</code></h3><p><code>flushToDOM</code> will manually serialize all of the entity’s components’ data and update the DOM.
-Read more about <a href="../components/debug.md#component-to-dom-serialization">component-to-DOM serialization</a>.</p>
+Read more about <a href="../components/debug.html#component-to-dom-serialization">component-to-DOM serialization</a>.</p>
 <h3 id="getattribute-attr"><a href="#getattribute-attr" class="headerlink" title="getAttribute (attr)"></a><code>getAttribute (attr)</code></h3><p><code>getAttribute</code> can be used to retrieve parsed component data. If <code>attr</code> is the name of a registered component, <code>getAttribute</code> will return only the component data defined in the HTML as a parsed object. <code>getAttribute</code> for components is the partial form of <code>getComputedAttribute</code> since the returned component data does not include applied mixins or default values:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// &lt;a-entity geometry=&quot;primitive: box; width: 3&quot;&gt;</span></span><br><span class="line"></span><br><span class="line">entity.<span class="title function_">getAttribute</span>(<span class="string">&#x27;geometry&#x27;</span>);</span><br><span class="line"><span class="comment">// &gt;&gt; &#123; primitive: &quot;box&quot;, width: 3 &#125;</span></span><br><span class="line"></span><br><span class="line">entity.<span class="title function_">getAttribute</span>(<span class="string">&#x27;geometry&#x27;</span>).<span class="property">primitive</span>;</span><br><span class="line"><span class="comment">// &gt;&gt; &quot;box&quot;</span></span><br><span class="line"></span><br><span class="line">entity.<span class="title function_">getAttribute</span>(<span class="string">&#x27;geometry&#x27;</span>).<span class="property">height</span>;</span><br><span class="line"><span class="comment">// &gt;&gt; undefined</span></span><br></pre></td></tr></table></figure>
 
@@ -1044,19 +1044,19 @@ background behavior. An entity will call <code>pause</code> on all of its childr
 is paused itself.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// &lt;a-entity id=&quot;spinning-jumping-ball&quot;&gt;</span></span><br><span class="line">entity.<span class="title function_">pause</span>();</span><br></pre></td></tr></table></figure>
 
-<p>For example, the <a href="../components/look-controls.md">look-controls component</a> on pause will remove event handlers that listen for input.</p>
+<p>For example, the <a href="../components/look-controls.html">look-controls component</a> on pause will remove event handlers that listen for input.</p>
 <h3 id="play"><a href="#play" class="headerlink" title="play ()"></a><code>play ()</code></h3><p><code>play</code> will start any dynamic behavior as defined by animations and components.
 This is automatically called when the entity is attached. When an entity calls
 <code>play</code>, it will call <code>play</code> on all of its children.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.<span class="title function_">pause</span>();</span><br><span class="line">entity.<span class="title function_">play</span>();</span><br></pre></td></tr></table></figure>
 
-<p>For example, the <a href="../components/sound.md">sound component</a> on play will begin playing the sound.</p>
+<p>For example, the <a href="../components/sound.html">sound component</a> on play will begin playing the sound.</p>
 <h3 id="setattribute-attr-value-componentattrvalue"><a href="#setattribute-attr-value-componentattrvalue" class="headerlink" title="setAttribute (attr, value, componentAttrValue)"></a><code>setAttribute (attr, value, componentAttrValue)</code></h3><p>If <code>attr</code> is not the name of a registered component or the component is a
 single-property component, <code>setAttribute</code> behaves mostly as it normally would:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.<span class="title function_">setAttribute</span>(<span class="string">&#x27;visible&#x27;</span>, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
 
 <p>Though if <code>attr</code> is the name of a registered component, it may handle special
-parsing for the value. For example, the <a href="../components/position.md">position component</a> is a
+parsing for the value. For example, the <a href="../components/position.html">position component</a> is a
 single-property component, but its property type parser allows it to take an
 object:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entity.<span class="title function_">setAttribute</span>(<span class="string">&#x27;position&#x27;</span>, &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">3</span> &#125;);</span><br></pre></td></tr></table></figure>

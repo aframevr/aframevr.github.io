@@ -994,12 +994,12 @@ JavaScript and <a href="https://developer.mozilla.org/docs/Web/API/Document_Obje
 <p>Every element in the scene, even elements such as <code>&lt;a-box&gt;</code> or <code>&lt;a-sky&gt;</code>, are
 entities (represented as <code>&lt;a-entity&gt;</code>). A-Frame modifies the HTML element
 prototype to add some extra behavior for certain DOM APIs to tailor them to
-A-Frame. See the <a href="../core/entity.md">Entity API documentation</a> for reference on most of
+A-Frame. See the <a href="../core/entity.html">Entity API documentation</a> for reference on most of
 the APIs discussed below.</p>
-<div id="toc"></div>
+<!--toc-->
 
 <h2 id="where-to-place-javascript-code-for-a-frame"><a href="#where-to-place-javascript-code-for-a-frame" class="headerlink" title="Where to Place JavaScript Code for A-Frame"></a>Where to Place JavaScript Code for A-Frame</h2><p>Before we go over the different ways to use JavaScript and DOM APIs, we
-recommend encapsulating your JavaScript code within <a href="../core/component.md">A-Frame components</a>.
+recommend encapsulating your JavaScript code within <a href="../core/component.html">A-Frame components</a>.
 Components modularize code, make logic and behavior visible from HTML, and
 ensure that code at the correct time (e.g., after the scene and entities have
 attached and initialized). As the most basic example, to register a
@@ -1082,28 +1082,28 @@ a geometry component to the entity.</p>
 
 <p>Unlike a normal HTML <code>.setAttribute()</code>, an entity’s <code>.setAttribute()</code> is
 improved to take a variety of types of arguments such as objects, or to be able
-to update a single property of a component. <a href="../core/entity.md#setattribute-attr-value-componentattrvalue">Read more about
+to update a single property of a component. <a href="../core/entity.html#setattribute-attr-value-componentattrvalue">Read more about
 <code>Entity.setAttribute()</code></a>.</p>
 <h3 id="updating-a-component-with-setattribute"><a href="#updating-a-component-with-setattribute" class="headerlink" title="Updating a Component with .setAttribute()"></a>Updating a Component with <code>.setAttribute()</code></h3><p>To update a component, we also use <code>.setAttribute()</code>. Updating a component
 takes several forms.</p>
-<h4 id="updating-property-of-single-property-component"><a href="#updating-property-of-single-property-component" class="headerlink" title="Updating Property of Single-Property Component"></a>Updating Property of Single-Property Component</h4><p>Let’s update the property of the <a href="../components/position.md">position component</a>, a
+<h4 id="updating-property-of-single-property-component"><a href="#updating-property-of-single-property-component" class="headerlink" title="Updating Property of Single-Property Component"></a>Updating Property of Single-Property Component</h4><p>Let’s update the property of the <a href="../components/position.html">position component</a>, a
 single-property component. We can pass either an object or a string. It is
 slightly preferred to pass an object so A-Frame doesn’t have to parse the
 string.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.<span class="title function_">setAttribute</span>(<span class="string">&#x27;position&#x27;</span>, &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>: <span class="attr">z</span>: -<span class="number">3</span>&#125;);</span><br><span class="line"><span class="comment">// Or entityEl.setAttribute(&#x27;position&#x27;, &#x27;1 2 -3&#x27;);</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="updating-single-property-of-multi-property-component"><a href="#updating-single-property-of-multi-property-component" class="headerlink" title="Updating Single Property of Multi-Property Component"></a>Updating Single Property of Multi-Property Component</h4><p>Let’s update a single property of the <a href="../components/material.md">material component</a>, a
+<h4 id="updating-single-property-of-multi-property-component"><a href="#updating-single-property-of-multi-property-component" class="headerlink" title="Updating Single Property of Multi-Property Component"></a>Updating Single Property of Multi-Property Component</h4><p>Let’s update a single property of the <a href="../components/material.html">material component</a>, a
 multi-property component. We do this by providing the component name, property
 name, and then property value to <code>.setAttribute()</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">entityEl.<span class="title function_">setAttribute</span>(<span class="string">&#x27;material&#x27;</span>, <span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;red&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-<h4 id="updating-multiple-properties-of-a-multi-property-component"><a href="#updating-multiple-properties-of-a-multi-property-component" class="headerlink" title="Updating Multiple Properties of a Multi-Property Component"></a>Updating Multiple Properties of a Multi-Property Component</h4><p>Let’s update multiple properties at once of the <a href="../components/material.md">light component</a>, a
+<h4 id="updating-multiple-properties-of-a-multi-property-component"><a href="#updating-multiple-properties-of-a-multi-property-component" class="headerlink" title="Updating Multiple Properties of a Multi-Property Component"></a>Updating Multiple Properties of a Multi-Property Component</h4><p>Let’s update multiple properties at once of the <a href="../components/material.html">light component</a>, a
 multi-property component. We do this by providing the component name and an
 object of properties to <code>.setAttribute()</code>. We’ll change the light’s color and
 intensity but leave the type the same:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// &lt;a-entity light=&quot;type: directional; color: #CAC; intensity: 0.5&quot;&gt;&lt;/a-entity&gt;</span></span><br><span class="line">entityEl.<span class="title function_">setAttribute</span>(<span class="string">&#x27;light&#x27;</span>, &#123;<span class="attr">color</span>: <span class="string">&#x27;#ACC&#x27;</span>, <span class="attr">intensity</span>: <span class="number">0.75</span>&#125;);</span><br><span class="line"><span class="comment">// &lt;a-entity light=&quot;type: directional; color: #ACC; intensity: 0.75&quot;&gt;&lt;/a-entity&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="replacing-properties-of-a-multi-property-component"><a href="#replacing-properties-of-a-multi-property-component" class="headerlink" title="Replacing Properties of a Multi-Property Component"></a>Replacing Properties of a Multi-Property Component</h4><p>Let’s replace all the properties of the <a href="../components/geometry.md">geometry component</a>, a
+<h4 id="replacing-properties-of-a-multi-property-component"><a href="#replacing-properties-of-a-multi-property-component" class="headerlink" title="Replacing Properties of a Multi-Property Component"></a>Replacing Properties of a Multi-Property Component</h4><p>Let’s replace all the properties of the <a href="../components/geometry.html">geometry component</a>, a
 multi-property component. We do this by providing the component name, an object
 of properties to <code>.setAttribute()</code>, and a flag that specifies to clobber the
 existing properties. We’ll change the light’s color and intensity but leave the

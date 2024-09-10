@@ -1086,7 +1086,7 @@
       
 
       <p>A-Frame’s utility modules are public through <code>AFRAME.utils</code>.</p>
-<div id="toc"></div>
+<!--toc-->
 
 <h2 id="aframe-utils-coordinates"><a href="#aframe-utils-coordinates" class="headerlink" title="AFRAME.utils.coordinates"></a><code>AFRAME.utils.coordinates</code></h2><p>Module for handling vec3 and vec4 types.</p>
 <h3 id="iscoordinates-value"><a href="#iscoordinates-value" class="headerlink" title=".isCoordinates (value)"></a><code>.isCoordinates (value)</code></h3><p>Tests whether a string is a vec3.</p>
@@ -1098,7 +1098,7 @@
 <h3 id="stringify-data"><a href="#stringify-data" class="headerlink" title=".stringify (data)"></a><code>.stringify (data)</code></h3><p>Stringifies an <code>&#123;x, y, z&#125;</code> vec3 object to an “x y z” string.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="property">utils</span>.<span class="property">coordinates</span>.<span class="title function_">stringify</span>(&#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: -<span class="number">3</span>&#125;)</span><br><span class="line"><span class="comment">// &gt;&gt; &quot;1 2 -3&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="aframe-utils-entity"><a href="#aframe-utils-entity" class="headerlink" title="AFRAME.utils.entity"></a><code>AFRAME.utils.entity</code></h2><h3 id="getcomponentproperty-entity-componentname-delimiter"><a href="#getcomponentproperty-entity-componentname-delimiter" class="headerlink" title=".getComponentProperty(entity, componentName, delimiter=&#39;.&#39;)"></a><code>.getComponentProperty(entity, componentName, delimiter=&#39;.&#39;)</code></h3><p>Performs like <a href="./entity.md#getattribute-componentname"><code>Entity.getAttribute</code></a>, but with support for
+<h2 id="aframe-utils-entity"><a href="#aframe-utils-entity" class="headerlink" title="AFRAME.utils.entity"></a><code>AFRAME.utils.entity</code></h2><h3 id="getcomponentproperty-entity-componentname-delimiter"><a href="#getcomponentproperty-entity-componentname-delimiter" class="headerlink" title=".getComponentProperty(entity, componentName, delimiter=&#39;.&#39;)"></a><code>.getComponentProperty(entity, componentName, delimiter=&#39;.&#39;)</code></h3><p>Performs like <a href="./entity.html#getattribute-componentname"><code>Entity.getAttribute</code></a>, but with support for
 return an individual property for a multi-property component. <code>componentName</code>
 is a string that can either be a component name, or a component name delimited
 with a property name.</p>
@@ -1106,7 +1106,7 @@ with a property name.</p>
 
 <p>This is useful for components that need a way to reference a property of a
 multi-property component.</p>
-<h3 id="setcomponentproperty-entity-componentname-value-delimiter"><a href="#setcomponentproperty-entity-componentname-value-delimiter" class="headerlink" title=".setComponentProperty (entity, componentName, value, delimiter)"></a><code>.setComponentProperty (entity, componentName, value, delimiter)</code></h3><p>Performs like <a href="./entity.md#setattribute-componentname-value-propertyvalue-clobber"><code>Entity.setAttribute</code></a>, but with support for setting an
+<h3 id="setcomponentproperty-entity-componentname-value-delimiter"><a href="#setcomponentproperty-entity-componentname-value-delimiter" class="headerlink" title=".setComponentProperty (entity, componentName, value, delimiter)"></a><code>.setComponentProperty (entity, componentName, value, delimiter)</code></h3><p>Performs like <a href="./entity.html#setattribute-componentname-value-propertyvalue-clobber"><code>Entity.setAttribute</code></a>, but with support for setting an
 individual property for a multi-property component. <code>componentName</code> is a string
 that can either be a component name, or a component name delimited with a
 property name.</p>

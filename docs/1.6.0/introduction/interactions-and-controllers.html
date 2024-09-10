@@ -1196,9 +1196,9 @@ more creativity in interaction!</p>
 interactions. And we can show <em>how</em> these input-based and interaction-based
 components are built in order to give us the knowledge to build our own
 interactions. In a sense, learn how to fish rather than being given a fish.</p>
-<div id="toc"></div>
+<!--toc-->
 
-<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><p>In the 2D Web, input and interactions are handled through <a href="./javascript-events-dom-apis.md#events-and-event-listeners">browser
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><p>In the 2D Web, input and interactions are handled through <a href="./javascript-events-dom-apis.html#events-and-event-listeners">browser
 events</a> (e.g., <code>click</code>, <code>mouseenter</code>, <code>mouseleave</code>, <code>touchstart</code>,
 <code>touchend</code>). Whenever an input-based event happens, the browser will emit
 an event that we can listen to and handle with
@@ -1226,13 +1226,13 @@ controller (Oculus Go), the interaction is still similar. Since A-Frame
 provides mouse-drag controls by default, gaze-based can sort of be used on
 desktop to preview the interaction by dragging the camera rotation.</p>
 <p>To add gaze-based interaction, we need to add or implement a component. A-Frame
-comes with a <a href="../components/cursor.md">cursor component</a> that provides gaze-based interaction if
+comes with a <a href="../components/cursor.html">cursor component</a> that provides gaze-based interaction if
 attached to the camera:</p>
 <ol>
-<li>Explicitly define <a href="../components/camera.md"><code>&lt;a-camera&gt;</code></a> entity.
+<li>Explicitly define <a href="../components/camera.html"><code>&lt;a-camera&gt;</code></a> entity.
 Previously, A-Frame was providing the default camera.</li>
-<li>Add <a href="../components/cursor.md"><code>&lt;a-cursor&gt;</code></a> entity as a child element underneath the camera entity.</li>
-<li>Optionally, <a href="../components/cursor.md#configuring-the-cursor-through-the-raycaster-component">configure the raycaster used by the cursor</a>.</li>
+<li>Add <a href="../components/cursor.html"><code>&lt;a-cursor&gt;</code></a> entity as a child element underneath the camera entity.</li>
+<li>Optionally, <a href="../components/cursor.html#configuring-the-cursor-through-the-raycaster-component">configure the raycaster used by the cursor</a>.</li>
 </ol>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a-camera</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-cursor</span>&gt;</span><span class="tag">&lt;/<span class="name">a-cursor</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Or &lt;a-entity cursor&gt;&lt;/a-entity&gt; --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a-camera</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -1274,7 +1274,7 @@ properties using A-Frame component dot syntax (i.e.,
 important to know how to handle events in JavaScript. We might want to do more
 complex operations (e.g., make API calls, store data, affect the application
 state) in response to events. For those cases, we’ll need to use JavaScript,
-and for A-Frame, we prescribe that code be placed within <a href="./writing-a-component.md">A-Frame
+and for A-Frame, we prescribe that code be placed within <a href="./writing-a-component.html">A-Frame
 components</a>.</p>
 <p>To demonstrate what the event set component does under the hood, let’s have a
 box change color on hover and on leaving hover with JavaScript:</p>
@@ -1302,7 +1302,7 @@ robot hand that can shoot lasers or display information on the wrist.</p>
 <p>The controller components that A-Frame provide primarily act as defaults,
 starter components, or a base from which to derive more custom controller
 components.</p>
-<h3 id="tracked-controls-component"><a href="#tracked-controls-component" class="headerlink" title="tracked-controls Component"></a>tracked-controls Component</h3><p>The <a href="../components/tracked-controls.md">tracked-controls component</a> is A-Frame’s base controller
+<h3 id="tracked-controls-component"><a href="#tracked-controls-component" class="headerlink" title="tracked-controls Component"></a>tracked-controls Component</h3><p>The <a href="../components/tracked-controls.html">tracked-controls component</a> is A-Frame’s base controller
 component that provides the foundation for all of A-Frame’s controller
 components. The tracked-controls component:</p>
 <ul>
@@ -1317,7 +1317,7 @@ when buttons are pressed or touched and when axis and touchpads are changed
 component by:</p>
 <ul>
 <li>Setting the tracked-controls component on the entity with the appropriate
-Gamepad ID (e.g., <code>Oculus Touch (Right)</code>). For example, the <a href="../components/vive-controls.md">vive-controls
+Gamepad ID (e.g., <code>Oculus Touch (Right)</code>). For example, the <a href="../components/vive-controls.html">vive-controls
 component</a> does <code>el.setAttribute(&#39;tracked-controls&#39;, &#123;idPrefix: &#39;OpenVR&#39;&#125;)</code>. tracked-controls will then connect to the appropriate Gamepad
 object to provide pose and events for the entity.</li>
 <li>Abstracting the events provided by tracked-controls. tracked-controls events are
@@ -1340,7 +1340,7 @@ degrees of freedom for VR</a>.</p>
 matching the real-life hardware, and events to abstract the button mappings.
 The controllers for Oculus Go have 3DoF, and both
 support only one controller for one hand.</p>
-<p>To add a controller for Oculus Go, use the <a href="../components/oculus-go-controls.md">oculus-go-controls
+<p>To add a controller for Oculus Go, use the <a href="../components/oculus-go-controls.html">oculus-go-controls
 component</a>. Then try it out on Oculus Browser or Samsung
 Internet on an Oculus Go standalone headset:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-go-controls</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1357,12 +1357,12 @@ the real-life hardware, and events to abstract the button mappings.  HTC Vive
 and Oculus Rift with Touch provide 6DoF and controllers for both hands. HTC
 Vive also provides trackers for tracking additional objects in the real world
 into VR.</p>
-<p>To add controllers for HTC Vive, use the <a href="../components/vive-controls.md">vive-controls
+<p>To add controllers for HTC Vive, use the <a href="../components/vive-controls.html">vive-controls
 component</a> for both hands. Then try it out on a <a href="https://webvr.rocks/">WebVR-enabled
 desktop browser</a>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">vive-controls</span>=<span class="string">&quot;hand: left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">vive-controls</span>=<span class="string">&quot;hand: right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>To add controllers for Oculus Touch, use the <a href="../components/oculus-touch-controls.md">oculus-touch-controls
+<p>To add controllers for Oculus Touch, use the <a href="../components/oculus-touch-controls.html">oculus-touch-controls
 component</a> for both hands. Then try it out on a <a href="https://webvr.rocks/">WebVR-enabled
 desktop browser</a>:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-touch-controls</span>=<span class="string">&quot;hand: left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">oculus-touch-controls</span>=<span class="string">&quot;hand: right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1374,7 +1374,7 @@ different user experience treatment. It will be up to the application what
 “responsive” means for VR on the Web. What we can show are several different
 methods, but none that are truly one-size-fits-all.</p>
 <h3 id="hand-controls-component"><a href="#hand-controls-component" class="headerlink" title="hand-controls Component"></a>hand-controls Component</h3><p>A-Frame provides an implementation for supporting multiple types of 6DoF
-controllers (Vive, Oculus Touch) via the <a href="../components/hand-controls.md">hand-controls
+controllers (Vive, Oculus Touch) via the <a href="../components/hand-controls.html">hand-controls
 component</a>. The hand-controls component is primarily for 6DoF
 controllers since it’s geared towards room scale interactions such as grabbing
 objects.  The hand-controls component works on top of both Vive and Oculus
@@ -1394,7 +1394,7 @@ custom controller that works with both controllers. It would be fairly easy to
 cover since 3DoF controllers do not offer much potential for interaction (i.e.,
 only rotational tracking with a touchpad).</p>
 <p>However, there is a controller component that covers all 6DoF and 3DoF controllers
-currently supported by A-Frame: <a href="../components/laser-controls.md">laser-controls</a>.</p>
+currently supported by A-Frame: <a href="../components/laser-controls.html">laser-controls</a>.</p>
 <h3 id="creating-custom-controllers"><a href="#creating-custom-controllers" class="headerlink" title="Creating Custom Controllers"></a>Creating Custom Controllers</h3><p>As mentioned previously, applications are best when controllers are
 custom-tailored to the experience. Most VR applications have their own distinct
 controllers. This means different models, animations, gestures, visual
@@ -1424,10 +1424,10 @@ touched. To handle buttons, look for the event name in the respective
 controller component documentation pages at the event tables, then register
 event handlers how we want:</p>
 <ul>
-<li><a href="../components/hand-controls.md#events">hand-controls events</a></li>
-<li><a href="../components/oculus-touch-controls.md#events">oculus-touch-controls events</a></li>
-<li><a href="../components/vive-controls.md#events">vive-controls events</a></li>
-<li><a href="../components/windows-motion-controls.md#events">windows-motion-controls events</a></li>
+<li><a href="../components/hand-controls.html#events">hand-controls events</a></li>
+<li><a href="../components/oculus-touch-controls.html#events">oculus-touch-controls events</a></li>
+<li><a href="../components/vive-controls.html#events">vive-controls events</a></li>
+<li><a href="../components/windows-motion-controls.html#events">windows-motion-controls events</a></li>
 </ul>
 <p>For example, we can listen to the Oculus Touch X button press, and toggle
 visibility of an entity. In component form:</p>
@@ -1441,7 +1441,7 @@ the controller. Interactions occur when entities intersect the line, a
 controller button changes during intersection, and&#x2F;or when entities no longer
 intersect the line. This interaction is very similar to gaze-based interaction,
 except the raycaster is now affixed to the controller rather than the headset.</p>
-<p>The <a href="../components/laser-controls.md">laser-controls component</a> component provides laser
+<p>The <a href="../components/laser-controls.html">laser-controls component</a> component provides laser
 interactions for controllers.  The usage is almost exactly similar to the
 cursor component, but attach the component to the controller rather than under
 the camera:</p>
