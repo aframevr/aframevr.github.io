@@ -1,0 +1,594 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-111391431-24"
+      data-aframe-version="1.6.0"
+      data-docs-version="1.6.0">
+  <head>
+    <title>Showcase – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="all">
+    <meta name="description" content="A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Showcase – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Showcase – A-Frame">
+    <meta name="twitter:description" content="A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111391431-24', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+</script>
+
+
+    
+      
+<script src="/js/compat.js"></script>
+
+    
+
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
+
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      
+<link rel="stylesheet" href="/css/search.css">
+
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body data-page-layout="page" data-page-type="showcase">
+    <main id="main" class="main"><div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/1.6.0/introduction/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs current"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://discord.com/invite/tGYjkYr"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Discord Channel">
+          <span>Discord</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://aframe.io/subscribe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Newsletter</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+</aside>
+
+<div class="content content--structured content--showcase copy">
+  <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+  <div class="copy__wrap">
+    <h1 class="page__title">Showcase</h1>
+
+    <p>A-Frame has been used in production by companies such as Al Jazeera, Amnesty
+International, CERN, Chevrolet, Google, Samsung, Disney, Ford, Magic Leap,
+Mozilla, NASA, NPR, Sony, Supermedium, and the Washington Post!</p>
+<p>The showcase is currently a work in progress. More to come!</p>
+
+
+    
+      <ul id="communityShowcase">
+  
+    <li>
+      <a href="https://supermedium.com">
+        <img src="/images/showcase/supermedium.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Supermedium</span>
+          <span class="projectAuthor">by Supermedium</span>
+        </p>
+        <p class="projectDescription">The browser for the VR Internet, available on Oculus and Steam. Surf between VR apps on the Web in seconds. From the creators of A-Frame.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://moonrider.xyz">
+        <img src="/images/showcase/moonrider.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Moon Rider</span>
+          <span class="projectAuthor">by Supermedium</span>
+        </p>
+        <p class="projectDescription">Surf the musical road among the moon, stars, and lights.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://webvr.soundboxing.co">
+        <img src="/images/showcase/soundboxing.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Soundboxing WebVR</span>
+          <span class="projectAuthor">by Eric Florenzano (with Supermedium)</span>
+        </p>
+        <p class="projectDescription">A VR music kickboxing game!</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://supermedium.com/supercraft/">
+        <img src="/images/showcase/supercraft.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Supercraft</span>
+          <span class="projectAuthor">by Supermedium</span>
+        </p>
+        <p class="projectDescription">Build VR in VR with your hands.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://experiments.withgoogle.com/musical-forest">
+        <img src="/images/showcase/musicalforest.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Musical Forest</span>
+          <span class="projectAuthor">by Google</span>
+        </p>
+        <p class="projectDescription">Join users from around the world in a musical forest.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://towermax.fitness/">
+        <img src="/images/showcase/towermaxfitness.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Towermax Fitness</span>
+          <span class="projectAuthor">by Towermax Fitness</span>
+        </p>
+        <p class="projectDescription">Soundbased virtual reality workout for boxers, martial arts and fitness enthusiasts.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://experiments.withgoogle.com/webvr/inside-music/view/">
+        <img src="/images/showcase/insidemusic.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Inside Music</span>
+          <span class="projectAuthor">by Google (with Song Exploder, Supermedium)</span>
+        </p>
+        <p class="projectDescription">What if you could step inside a song? This is a simple experiment that explores that idea. See and hear the individual layers of music all around you to get a closer look at how music is made.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://supermedium.com/beatsaver-viewer/">
+        <img src="/images/showcase/beatsaverviewer.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">BeatSaver Viewer</span>
+          <span class="projectAuthor">by Supermedium</span>
+        </p>
+        <p class="projectDescription">Preview community-created beatmaps for Beat Saber on the Web.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="http://cms-aframe.web.cern.ch/">
+        <img src="/images/showcase/cern.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">CERN CMS / LHC Tour</span>
+          <span class="projectAuthor">by CERN</span>
+        </p>
+        <p class="projectDescription">A 360-degree tour of CERN's Large Hadron Collider (LHC) particle acclerator and its Compact Muon Solenoid (CMS).</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://d1vlj71acq3rf7.cloudfront.net/index.html">
+        <img src="/images/showcase/chevrolet.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">2019 Chevrolet Silverado</span>
+          <span class="projectAuthor">by Chevrolet</span>
+        </p>
+        <p class="projectDescription">A product page and configurator for Chevrolet's 2019 Silverado truck.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://disney.co.uk/mickey-mouse/hidden-mickey">
+        <img src="/images/showcase/disney.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Hidden Mickey</span>
+          <span class="projectAuthor">by Disney</span>
+        </p>
+        <p class="projectDescription">Hidden Mickeys have been slipped in all across Disney. They now find their way into this official A-Frame game, can you spot them?</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://www.ford.com/suvs/expedition/#component05">
+        <img src="/images/showcase/ford.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">2019 Ford Expedition</span>
+          <span class="projectAuthor">by Ford</span>
+        </p>
+        <p class="projectDescription">Explore the interior of a 2019 Ford Expedition SUV.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://hubs.mozilla.org">
+        <img src="/images/showcase/mozilla.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Hubs</span>
+          <span class="projectAuthor">by Mozilla</span>
+        </p>
+        <p class="projectDescription">A new way to get together.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://accessmars.withgoogle.com/">
+        <img src="/images/showcase/nasa.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Access Mars</span>
+          <span class="projectAuthor">by NASA (with Google, Supermedium)</span>
+        </p>
+        <p class="projectDescription">The real surface of Mars. Recorded by NASA's Curiosity rover. Now in your browser.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://apps.npr.org/rockymountain-vr/">
+        <img src="/images/showcase/npr.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Stand at the Edge of Geologic Time</span>
+          <span class="projectAuthor">by NPR</span>
+        </p>
+        <p class="projectDescription">Transport yourself to Rocky Mountain National Park, with all its sights and sounds, in this immersive geology lesson.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://samsungvr.com/">
+        <img src="/images/showcase/samsung.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Samsung VR</span>
+          <span class="projectAuthor">by Samsung</span>
+        </p>
+        <p class="projectDescription">Samsung's official immersive 360 content library.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://www.escaperoommoviechallenge.com/">
+        <img src="/images/showcase/sony.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">Escape Room Movie Challenge</span>
+          <span class="projectAuthor">by Sony</span>
+        </p>
+        <p class="projectDescription">$1m sweepstakes challenge from Sony to market the Hollywood film, "Escape Room". Find the clues, escape the rooms.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://customise.toyota.com.au/camry/">
+        <img src="/images/showcase/toyota.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">2019 Toyota Camry</span>
+          <span class="projectAuthor">by Toyota</span>
+        </p>
+        <p class="projectDescription">Product page and configurator for the 2019 Toyota Camry.</p>
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://aframe.io/a-painter/">
+        <img src="/images/showcase/apainter.jpg">
+      </a>
+      <div class="projectInfo">
+        <p class="projectTitle">
+          <span class="projectName">A-Painter</span>
+          <span class="projectAuthor">by A-Frame Team</span>
+        </p>
+        <p class="projectDescription">Paint in VR with your hands.</p>
+      </div>
+    </li>
+  
+</ul>
+
+    
+
+    <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe-site/edit/master/src/showcase/index.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
+</footer>
+
+  </div>
+
+    
+</div>
+</main>
+
+    
+      
+<script src="/js/common.js"></script>
+
+      
+      
+        
+<script src="/js/docs.js"></script>
+
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:1.6.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>
