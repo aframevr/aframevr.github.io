@@ -1,0 +1,1538 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-111391431-24"
+      data-aframe-version="1.6.0"
+      data-docs-version="0.7.0">
+  <head>
+    <title>Entity-Component-System – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="Entity-Component-System – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="Entity-Component-System – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111391431-24', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+</script>
+
+
+    
+      
+<script src="/js/compat.js"></script>
+
+    
+
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
+
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      
+<link rel="stylesheet" href="/css/search.css">
+
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body data-page-layout="docs" data-page-type="introduction">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/1.6.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://discord.com/invite/tGYjkYr"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Discord Channel">
+          <span>Discord</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://aframe.io/subscribe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Newsletter</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/1.6.0/introduction/">
+          1.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.5.0/introduction/">
+          1.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.4.0/introduction/">
+          1.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.3.0/introduction/">
+          1.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.2.0/introduction/">
+          1.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.1.0/introduction/">
+          1.1.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.0.0/introduction/">
+          1.0.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.9.0/introduction/">
+          0.9.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.8.0/introduction/">
+          0.8.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.7.0/introduction/">
+          0.7.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.6.0/introduction/">
+          0.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <p class="section-title-link">Introduction</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/vr-headsets-and-webvr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebVR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.7.0/introduction/entity-component-system.html"
+               class="subnav-link current">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/javascript-events-dom-apis.html"
+               class="subnav-link">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting & Publishing
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Guides</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/guides/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/guides/building-with-magicavoxel.html"
+               class="subnav-link">
+              Building with MagicaVoxel
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Core API</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/animations.html"
+               class="subnav-link">
+              Animations
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/globals.html"
+               class="subnav-link">
+              Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Components</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/collada-model.html"
+               class="subnav-link">
+              collada-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/line.html"
+               class="subnav-link">
+              line
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/link.html"
+               class="subnav-link">
+              link
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/text.html"
+               class="subnav-link">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Primitives</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-collada-model.html"
+               class="subnav-link">
+              &lt;a-collada-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-link.html"
+               class="subnav-link">
+              &lt;a-link&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.7.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+  <!-- Documentation. -->
+  <div class="content content--structured content--introduction copy">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.7.0/introduction/" class="borderless-link">
+            0.7.0 &rsaquo; Introduction
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        Entity-Component-System
+      </h1>
+
+      
+
+      
+      
+        <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 0.7.0 version of A-Frame. Check out the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
+</blockquote>
+
+      
+
+      <p>A-Frame is a three.js framework with an <a href="https://wikipedia.org/wiki/Entity_component_system">entity-component-system</a> (ECS)
+architecture. ECS architecture is a common and desirable pattern in 3D and game
+development that follows the <strong>composition over inheritance and hierarchy</strong>
+principle.</p>
+<p>The benefits of ECS include:</p>
+<ol>
+<li>Greater flexibility when defining objects by mixing and matching reusable parts.</li>
+<li>Eliminates the problems of long inheritance chains with complex interwoven functionality.</li>
+<li>Promotes clean design via decoupling, encapsulation, modularization, reusability.</li>
+<li>Most scalable way to build a VR application in terms of complexity.</li>
+<li>Proven architecture for 3D and VR development.</li>
+<li>Allows for extending new features (possibly sharing them as community components).</li>
+</ol>
+<p>On the 2D Web, we lay out elements that have fixed behavior in a hierarchy. 3D
+and VR is different; there are infinite types of possible objects that with
+unbounded behavior. ECS provides a manageable pattern to construct types of
+objects.</p>
+<p>Below are great introductory materials to ECS architecture. We recommend
+skimming through them to get a better grasp of the benefits. ECS is well-suited
+for VR development, and A-Frame is based entirely around this paradigm:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system"><em>Entity-component-system</em> on Wikipedia</a></li>
+<li><a href="http://t-machine.org/index.php/2007/11/11/entity-systems-are-the-future-of-mmog-development-part-2/"><em>What is an Entity System?</em> by Adam Martin</a></li>
+<li><a href="http://gameprogrammingpatterns.com/component.html"><em>Decoupling Patterns &mdash; Component</em> on Game Programming Patterns</a></li>
+<li><a href="http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/"><em>Evolve Your Hierarchy</em> by Mick West</a></li>
+</ul>
+<p>A well-known game engine implementing ECS is Unity. Although there are pain
+points in cross-entity communication. But we’ll see how A-Frame, the DOM, and
+declarative HTML really make ECS shine.</p>
+<!--toc-->
+
+<h2 id="concept"><a href="#concept" class="headerlink" title="Concept"></a>Concept</h2><p><img src="https://cloud.githubusercontent.com/assets/674727/20289898/71f7fea0-aa91-11e6-8307-d8dc68dff285.png" alt="ECS Minecraft"></p>
+<p>A basic definition of ECS involves:</p>
+<ul>
+<li><strong><a href="../core/entity.html">Entities</a></strong> are container objects into which components can be
+attached. Entities are the base of all objects in the scene. Without
+components, entities neither do nor render anything, similar to empty <code>&lt;div&gt;</code>s.</li>
+<li><strong><a href="../core/component.html">Components</a></strong> are reusable modules or data containers that can
+be attached to entities to provide appearance, behavior, and&#x2F;or
+functionality. Components are like plug-and-play for objects. All logic is
+implemented through components, and we define different types of objects by
+mixing, matching, and configuring components. Like alchemy!</li>
+<li><strong><a href="../core/systems.html">Systems</a></strong> provide global scope, management, and services for
+classes of components. Systems are often optional, but we can use them to
+separate logic and data; systems handle the logic, components act as data
+containers.</li>
+</ul>
+<h3 id="examples"><a href="#examples" class="headerlink" title="Examples"></a>Examples</h3><p>Some abstract examples of different types of entities built from composing
+together different components:</p>
+<ul>
+<li><code>Box = Position + Geometry + Material</code></li>
+<li><code>Light Bulb = Position + Light + Geometry + Material + Shadow</code></li>
+<li><code>Sign = Position + Geometry + Material + Text</code></li>
+<li><code>VR Controller = Position + Rotation + Input + Model + Grab + Gestures</code></li>
+<li><code>Ball = Position + Velocity + Physics + Geometry + Material</code></li>
+<li><code>Player = Position + Camera + Input + Avatar + Identity</code></li>
+</ul>
+<p>As another abstract example, imagine we want to build a car entity by
+assembling components:</p>
+<ul>
+<li>We can attach a <code>material</code> component that has properties such as “color” or
+“shininess” that affects the appearance of the car.</li>
+<li>We can attach an <code>engine</code> component that has properties such as “horsepower” or
+“weight” that affects the functionality of the car.</li>
+<li>We can attach a <code>tire</code> component that has properties such as “number of
+tires” or “steering angle” that affects the behavior of the car.</li>
+</ul>
+<p>So we can create different types of cars by varying the properties of the
+<code>material</code>, <code>engine</code>, and <code>tire</code> component. The <code>material</code>, <code>engine</code>, and
+<code>tire</code> components don’t have to know about each other and can even be used in
+isolation for other cases. We could mix and match them to create even
+different types of vehicles:</p>
+<ul>
+<li>To create a <em>boat</em> entity: remove the <code>tire</code> component.</li>
+<li>To create a <em>motorcycle</em> entity: change <code>tire</code> component’s number of tires to 2,
+configure the <code>engine</code> component to be smaller.</li>
+<li>To create an <em>airplane</em> entity: attach <code>wing</code> and <code>jet</code> components.</li>
+</ul>
+<p>Contrast this to traditional inheritance where if we want to extend an object,
+we would have to create a large class that tries to handle everything or an
+inheritance chain.</p>
+<h2 id="ecs-in-a-frame"><a href="#ecs-in-a-frame" class="headerlink" title="ECS in A-Frame"></a>ECS in A-Frame</h2><p>A-Frame has APIs that represents each piece of ECS:</p>
+<ul>
+<li><strong>Entities</strong> are represented by the <code>&lt;a-entity&gt;</code> element and prototype.</li>
+<li><strong>Components</strong> are represented by HTML attributes on <code>&lt;a-entity&gt;</code>‘s. Underneath,
+components are objects containing a schema, lifecycle handlers, and methods.
+Components are registered via the <code>AFRAME.registerComponent (name, definition)</code>
+API.</li>
+<li><strong>Systems</strong> are represented by <code>&lt;a-scene&gt;</code>‘s HTML attributes. System are
+similar to components in definition. Systems are registered via the
+<code>AFRAME.registerSystem (name, definition)</code> API.</li>
+</ul>
+<h3 id="syntax"><a href="#syntax" class="headerlink" title="Syntax"></a>Syntax</h3><p>We create <code>&lt;a-entity&gt;</code> and attach components as HTML attributes. Most
+components have multiple properties that are represented by a syntax similar to
+<a href="https://developer.mozilla.org/docs/Web/API/HTMLElement/style"><code>HTMLElement.style</code> CSS</a>. This syntax takes the form with a colon
+(<code>:</code>) separating property names from property values, and a semicolon (<code>;</code>)
+separating different property declarations:</p>
+<p><code>&lt;a-entity $&#123;componentName&#125;=&quot;$&#123;propertyName1&#125;: $&#123;propertyValue1&#125;; $&#123;propertyName2:&#125;: $&#123;propertyValue2&#125;&quot;&gt;</code></p>
+<p>For example, we have <code>&lt;a-entity&gt;</code> and attach the <a href="../components/geometry.html">geometry</a>, <a href="../components/material.html">material</a>,
+<a href="../components/light.html">light</a>, and <a href="../components/position.html">position</a> components with various properties and property values:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: sphere; radius: 1.5&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">light</span>=<span class="string">&quot;type: point; color: white; intensity: 2&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">material</span>=<span class="string">&quot;color: white; shader: flat; src: glow.jpg&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">position</span>=<span class="string">&quot;0 0 -5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="composition"><a href="#composition" class="headerlink" title="Composition"></a>Composition</h3><p>From there, we could attach more components to add additional appearance,
+behavior, or functionality (e.g., physics). Or we could update the component
+values to configure the entity (either declaratively or through
+<code>.setAttribute</code>).</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25463804/896c04c2-2aad-11e7-8015-2fc84118a01c.gif" alt="Composing an Entity"></p>
+<p>A common type of entity to compose from multiple components are the player’s
+hands in VR. The player’s hands can have many components: appearance, gestures,
+behaviors, interactivity with other objects.</p>
+<p>We plug in components into a hand entity to provide it behavior as if we were
+attaching superpowers or augmentations for VR! Each of the components below
+have no knowledge of each other, but can be combined to define a complex
+entity:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">tracked-controls</span>  &lt;!<span class="attr">--</span> <span class="attr">Hook</span> <span class="attr">into</span> <span class="attr">the</span> <span class="attr">Gamepad</span> <span class="attr">API</span> <span class="attr">for</span> <span class="attr">pose.</span> <span class="attr">--</span>&gt;</span></span><br><span class="line">  vive-controls  <span class="comment">&lt;!-- Vive button mappings. --&gt;</span></span><br><span class="line">  oculus-touch-controls  <span class="comment">&lt;!-- Oculus button mappings. --&gt;</span></span><br><span class="line">  hand-controls  <span class="comment">&lt;!-- Appearance (model), gestures, and events. --&gt;</span></span><br><span class="line">  controller-cursor  <span class="comment">&lt;!-- Laser to interact with menus and UI. --&gt;</span></span><br><span class="line">  sphere-collider  <span class="comment">&lt;!-- Listen when hand is in contact with an object. --&gt;</span></span><br><span class="line">  grab  <span class="comment">&lt;!-- Provide ability to grab objects. --&gt;</span></span><br><span class="line">  throw <span class="comment">&lt;!-- Provide ability to throw objects. --&gt;</span></span><br><span class="line">  event-set=&quot;_event: grabstart; visible: false&quot;  <span class="comment">&lt;!-- Hide hand when grabbing object. --&gt;</span></span><br><span class="line">  event-set=&quot;_event: grabend; visible: true&quot;  <span class="comment">&lt;!-- Show hand when no longer grabbing object. --&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="declarative-dom-based-ecs"><a href="#declarative-dom-based-ecs" class="headerlink" title="Declarative DOM-Based ECS"></a>Declarative DOM-Based ECS</h3><p>A-Frame takes ECS to another level by making it declarative and based on the
+DOM. Traditionally, ECS-based engines would create entities, attach components,
+update components, remove components all through code. But A-Frame has HTML and
+the DOM which makes ECS ergonomic and resolves many of its weaknesses. Below
+are abilities that the DOM provides for ECS:</p>
+<ol>
+<li><strong>Referencing Other Entities with Query Selectors</strong>: The DOM provides a powerful
+query selector system which lets us query the scene graph and select an entity
+or entities that match a condition. We can get references to entities by IDs,
+classes, or data attributes. Because A-Frame is based on HTML, we can use query
+selectors out of the box. <code>document.querySelector(&#39;#player&#39;)</code>.</li>
+<li><strong>Decoupled Cross-Entity Communication with Events</strong>: The DOM provides the
+ability to listen to and emit events. This provides a publish-subscribe
+communication system between entities. Components don’t have to know about each
+other, they can just emit an event (which could bubble up), and other
+components can listen to those events without calling each other.
+<code>ball.emit(&#39;collided&#39;)</code>.</li>
+<li><strong>APIs for Lifecycle Management with DOM APIs</strong>: The DOM provides APIs to
+update HTML elements and the tree including <code>.setAttribute</code>,
+<code>.removeAttribute</code>, <code>.createElement</code>, and <code>.removeChild</code>. These can be used as
+is just like in normal web development.</li>
+<li><strong>Entity-Filtering with Attribute Selectors</strong>: The DOM provides attribute
+selectors which allows us to query for an entity or entities that have or don’t
+have certain HTML attributes. This means we can ask for entities that have or
+don’t have a certain set of components.
+<code>document.querySelector(&#39;[enemy]:not([alive])&#39;)</code>.</li>
+<li><strong>Declarativeness</strong>: Lastly, the DOM provides HTML. A-Frame bridges between
+ECS and HTML making an already clean pattern declarative, readable, and
+copy-and-pasteable.</li>
+</ol>
+<h3 id="extensibility"><a href="#extensibility" class="headerlink" title="Extensibility"></a>Extensibility</h3><p>A-Frame components can do anything. Developers are given permissionless
+innovation to create components to extend any feature. Components have full
+access to JavaScript, three.js, and Web APIs (e.g., WebRTC, Speech
+Recognition).</p>
+<p>We will later go over in detail how to <a href="./writing-a-component.html">write an A-Frame
+component</a>. As a preview, the structure of a basic component
+may look like:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;foo&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">schema</span>: &#123;</span><br><span class="line">    <span class="attr">bar</span>: &#123;<span class="attr">type</span>: <span class="string">&#x27;number&#x27;</span>&#125;,</span><br><span class="line">    <span class="attr">baz</span>: &#123;<span class="attr">type</span>: <span class="string">&#x27;string&#x27;</span>&#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Do something when component first attached.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">update</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Do something when component&#x27;s data is updated.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">remove</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Do something the component or its entity is detached.</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">tick</span>: <span class="keyword">function</span> (<span class="params">time, timeDelta</span>) &#123;</span><br><span class="line">    <span class="comment">// Do something on every scene tick or frame.</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Declarative ECS grants us the ability to write a JavaScript module and abstract
+it through HTML. Once the component is registered, we can declaratively plug
+this module of code into an entity via an HTML attribute.  This code-to-HTML
+abstraction makes ECS powerful and easy to reason. <code>foo</code> is the name of the
+component we just registered, and the data contains <code>bar</code> and <code>baz</code> properties:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">foo</span>=<span class="string">&quot;bar: 5; baz: bazValue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="component-based-development"><a href="#component-based-development" class="headerlink" title="Component-Based Development"></a>Component-Based Development</h3><p><strong>For building VR applications, we recommend placing all application code
+within components (and systems).</strong> An ideal A-Frame codebase consists purely of
+modular, encapsulated, and decoupled components. These components can be unit
+tested in isolation or alongside other components.</p>
+<p>When an application is created solely with components, all parts of its
+codebase become reusable! Components can be shared for other developers to use
+or we can reuse them in our other projects. Or the components can be forked and
+modified to adapt to other use cases.</p>
+<p>A simple ECS codebase might be structured like:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">index.html</span><br><span class="line">components/</span><br><span class="line">  ball.js</span><br><span class="line">  collidable.js</span><br><span class="line">  grabbable.js</span><br><span class="line">  enemy.js</span><br><span class="line">  scoreboard.js</span><br><span class="line">  throwable.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="higher-order-components"><a href="#higher-order-components" class="headerlink" title="Higher-Order Components"></a>Higher-Order Components</h3><p>Components can set other components on the entity, making them a higher-order
+or higher-level component in abstraction.</p>
+<p>For example, the <a href="../components/cursor.html">cursor component</a> sets and builds on top of the
+<a href="../components/raycaster.html">raycaster component</a>. Or the <a href="../components/hand-controls.html">hand-controls
+component</a> sets and builds on top of the <a href="../components/vive-controls.html">vive-controls
+component</a> and <a href="../components/oculus-touch-controls.html">oculus-touch-controls
+component</a> which in turn build on top of the
+<a href="../components/tracked-controls.html">tracked-controls component</a>.</p>
+<h2 id="community-component-ecosystem"><a href="#community-component-ecosystem" class="headerlink" title="Community Component Ecosystem"></a>Community Component Ecosystem</h2><p>Components can be shared into the A-Frame ecosystem for the community to use.
+The wonderful thing about A-Frame’s ECS is extensibility. An experienced
+developer can develop a physics system or graphics shader components, and an
+novice developer can take those components and use them in their scene from
+HTML just by dropping in a <code>&lt;script&gt;</code> tag. We can use powerful published
+components without having to touch JavaScript.</p>
+<h3 id="where-to-find-components"><a href="#where-to-find-components" class="headerlink" title="Where to Find Components"></a>Where to Find Components</h3><p>There are hundreds of components out in the wild. We try our best to make them
+discoverable. If you develop a component, please submit it through these
+channels to share!</p>
+<h4 id="registry"><a href="#registry" class="headerlink" title="Registry"></a>Registry</h4><p><img src="https://cloud.githubusercontent.com/assets/674727/20289850/13a4b42e-aa91-11e6-84bc-c5aa8ea6fe6c.png" alt="A-Frame Registry"></p>
+<p>Components are curated and collected into the <a href="https://aframe.io/aframe-registry">A-Frame Registry</a> This
+is similar to the collection of components and modules on the Unity Asset
+Store, but free and open source. We try to make sure they work well. Once a
+component is in the Registry, the component can be easily searchable and
+installable from multiple channels (e.g., <a href="https://github.com/aframevr/angle/">angle</a>).</p>
+<h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><p>Most A-Frame components are published on npm as well as GitHub. We can use
+<a href="https://www.npmjs.com/search?q=aframe-component">npm’s search to search for <code>aframe-components</code></a>. npm lets us sort by
+quality, popularity, and maintenance. This is a great place to look for a more
+complete list of components.</p>
+<h4 id="awesome-aframe-repository"><a href="#awesome-aframe-repository" class="headerlink" title="awesome-aframe Repository"></a><code>awesome-aframe</code> Repository</h4><p>The <a href="https://github.com/aframevr/awesome-aframe#components"><code>awesome-aframe</code> repository</a> is a list of awesome things
+regarding the A-Frame ecosystem. Within that list is a section for components.
+Note the component list is not heavily curated and doesn’t contain any images.
+Each entry will contain a name, link, and short description.</p>
+<h4 id="a-week-of-a-frame"><a href="#a-week-of-a-frame" class="headerlink" title="A Week of A-Frame"></a><em>A Week of A-Frame</em></h4><p><a href="https://aframe.io/blog/">Every week on the blog</a>, we round up all the activity in the A-Frame
+community and ecosystem. This includes featuring components that have been
+freshly released or updated. <a href="https://aframe.io/">The homepage of A-Frame</a> will usually
+have a link to the most recent <em>A Week of A-Frame</em> entry.</p>
+<h4 id="github-projects"><a href="#github-projects" class="headerlink" title="GitHub Projects"></a>GitHub Projects</h4><p>Many A-Frame applications are developed purely from components, and many of
+those A-Frame applications are open source on <a href="https://github.com/">GitHub</a>. Their codebases will
+contain components that we can use directly, refer to, or copy from. Projects
+to look at include:</p>
+<ul>
+<li><a href="https://github.com/aframevr/a-painter/">A-Painter</a></li>
+<li><a href="https://github.com/aframevr/a-blast/">A-Blast</a></li>
+</ul>
+<h3 id="using-a-community-component"><a href="#using-a-community-component" class="headerlink" title="Using a Community Component"></a>Using a Community Component</h3><p>Once we find a component that we want to use, we can include the component as a
+<code>&lt;script&gt;</code> tag and use it from HTML.</p>
+<p>For example, let’s use IdeaSpaceVR’s <a href="https://www.npmjs.com/package/aframe-particle-system-component">particle system component</a>:</p>
+<h4 id="using-unpkg"><a href="#using-unpkg" class="headerlink" title="Using unpkg"></a>Using unpkg</h4><p>First, we have to grab a CDN link to the component JS file. The documentation
+of the component will usually have a CDN link or usage information. But a way
+to get the most up-to-date CDN link is to use <a href="http://unpkg.com/">unpkg.com</a>.</p>
+<p>unpkg is a CDN that automatically hosts everything that is published to npm.
+unpkg can resolve semantic versioning and provide us the version of the
+component we want. A URL takes the form of:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://unpkg.com/&lt;npm package name&gt;@&lt;version&gt;/&lt;path to file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>If we want the latest version, we can exclude the <code>version</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://unpkg.com/&lt;npm package name&gt;/&lt;path to file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Rather than typing in the path to the built component JS file, we can exclude
+<code>path to file</code> to be able to browse the directories of the component package.
+The JS file will usually be in a folder called <code>dist/</code> or <code>build/</code> and end with
+<code>.min.js</code>.</p>
+<p>For the particle system component, we head to:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://unpkg.com/aframe-particle-system-component/</span><br></pre></td></tr></table></figure>
+
+<p>Note the ending slash (<code>/</code>). Find the file we need, right click, and hit <em>Copy
+Link to Address</em> to copy the CDN link into our clipboard.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/25502028/cbfd7b3a-2b49-11e7-914d-a8280aa47ace.jpg" alt="unpkg"></p>
+<h4 id="including-the-component-js-file"><a href="#including-the-component-js-file" class="headerlink" title="Including the Component JS File"></a>Including the Component JS File</h4><p>Then head to our HTML. Under the <code>&lt;head&gt;</code>, <em>after</em> the A-Frame JS <code>&lt;script&gt;</code>
+tag, and <em>before</em> <code>&lt;a-scene&gt;</code>, we will include our JS file with a <code>&lt;script&gt;</code>
+tag.</p>
+<p>For the particle system component, the CDN link we found earlier (at time of
+writing) was:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js</span><br></pre></td></tr></table></figure>
+
+<p>Now we can include it into our HTML:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/0.7.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="using-the-component"><a href="#using-the-component" class="headerlink" title="Using the Component"></a>Using the Component</h4><p>Follow the documentation of the component on how to use it in implementation.
+But generally, the usage involves attaching the component to an entity and
+configuring it. For the particle system component:</p>
+<p>Now we can include it into our HTML:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/0.7.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">particle-system</span>=<span class="string">&quot;preset: snow&quot;</span> <span class="attr">position</span>=<span class="string">&quot;0 0 -10&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h3><p><img src="https://cloud.githubusercontent.com/assets/674727/25502318/0f76ceec-2b4b-11e7-9829-cb3784b20dc1.gif" alt="Registry Example"></p>
+<p>Below is a complete example of using various community components from the
+Registry and using the unpkg CDN. We can <a href="http://glitch.com/~aframe-registry">remix or check out this example on
+Glitch</a>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/0.7.0/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;rain&quot;</span> <span class="attr">particle-system</span>=<span class="string">&quot;preset: rain; color: #24CAFF; particleCount: 5000&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;sphere&quot;</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: sphere&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">material</span>=<span class="string">&quot;color: #EFEFEF; shader: flat&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">position</span>=<span class="string">&quot;0 0.15 -5&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">light</span>=<span class="string">&quot;type: point; intensity: 5&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">animation</span>=<span class="string">&quot;property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 -0.10 -5; loop: true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;ocean&quot;</span> <span class="attr">ocean</span>=<span class="string">&quot;density: 20; width: 50; depth: 50; speed: 4&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">material</span>=<span class="string">&quot;color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">rotation</span>=<span class="string">&quot;-90 0 0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;sky&quot;</span> <span class="attr">geometry</span>=<span class="string">&quot;primitive: sphere; radius: 5000&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">material</span>=<span class="string">&quot;shader: gradient; topColor: 235 235 245; bottomColor: 185 185 210&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">scale</span>=<span class="string">&quot;-1 1 1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;light&quot;</span> <span class="attr">light</span>=<span class="string">&quot;type: ambient; color: #888&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+          <span class="float-left">
+            <a href="/docs/0.7.0/introduction/html-and-primitives.html" class="guide-link guide-link-left">← HTML &amp; Primitives </a></span>
+        
+        
+          <span class="float-right">
+            <a href="/docs/0.7.0/introduction/javascript-events-dom-apis.html" class="guide-link guide-link-right">JavaScript, Events, DOM APIs →</a></span>
+        
+      </footer>
+
+      <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/introduction/entity-component-system.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
+</footer>
+
+    </div>
+
+    <div class="secondary-sidebar">
+      
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#concept">Concept</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#examples">Examples</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#ecs-in-a-frame">ECS in A-Frame</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#syntax">Syntax</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#composition">Composition</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#declarative-dom-based-ecs">Declarative DOM-Based ECS</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#extensibility">Extensibility</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#component-based-development">Component-Based Development</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#higher-order-components">Higher-Order Components</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#community-component-ecosystem">Community Component Ecosystem</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#where-to-find-components">Where to Find Components</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#using-a-community-component">Using a Community Component</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#example">Example</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-registry?path=index.html">
+              Community Components in Action
+            </a>
+          </li>
+        
+          <li class="subnav-item">
+            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-animated-lights?path=index.html">
+              Animated Lights
+            </a>
+          </li>
+        
+      </ul>
+    
+  </div>
+
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/introduction/entity-component-system.md" target="_blank" rel="external">Edit Page</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+    
+      
+<script src="/js/common.js"></script>
+
+      
+      
+        
+<script src="/js/docs.js"></script>
+
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.7.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>

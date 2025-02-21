@@ -1,0 +1,1606 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en"
+      data-is-home="false"
+      data-is-mobile="false"
+      data-supports-vr="false"
+      data-supports-touch="false"
+      data-site-base-url="https://aframe.io"
+      data-site-root-path="/"
+      data-site-home-url="https://aframe.io/"
+      data-lib-home-url="https://aframe.io/"
+      data-lib-examples-url="https://aframe.io/aframe/examples"
+      data-title="{title} | A-Frame"
+      data-is-spa="false"
+      data-ga-id="UA-111391431-24"
+      data-aframe-version="1.6.0"
+      data-docs-version="0.9.0">
+  <head>
+    <title>text – A-Frame</title>
+    
+
+<script>
+  var host = window.location.protocol + '//' + window.location.hostname;
+  if (window.location.protocol === 'http:' &&
+      window.location.hostname === 'https://aframe.io') {
+    window.location.href = 'https:' + window.location.href.substring(6);
+  }
+</script>
+
+
+    <meta charset="utf-8">
+    <!-- Don't index old documentation pages. -->
+    <meta name="robots"
+      content="NOINDEX">
+    <meta name="description" content="">
+    <meta name="keywords" content="webvr,webvr framework,webvr demos,webvr sites,vr javascript,vr framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Origin Trial Token, feature = WebXR Device API, origin = https://aframe.io, expires = 2018-03-05 -->
+    <meta http-equiv="origin-trial" data-feature=" WebXR Device API (For Chrome M69+)" data-expires="2019-03-05" content="Ako5ueZ8LIub4MywyaWBtX6FQOVZBYPxDUBC09XfJRjVfQH1GXOaRO8v4/TQWyPdmw2qm8nJ/f9QfFwE+t20NwsAAABkeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViWFJEZXZpY2VNNjkiLCJleHBpcnkiOjE1NTE4MzAzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://aframe.io, expires = 2018-08-09 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-08-09" content="AlKeBeX7MGtuPmoZUks7FEWi6ke/EeYDPS1zhkb9bsdGr+r9gv+vYXGN7pUIz8+4XPxpWi7guenedSC1jM8B6AcAAABOeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MzM4NDAyMzN9">
+    <link rel="canonical" href="https://aframe.io">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
+    <meta property="fb:app_id" content="1535794316743373">
+    <meta property="og:title" content="text – A-Frame">
+    <meta property="og:site_name" content="A-Frame">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aframe.io">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta property="og:image:secure_url" content="https://aframe.io/images/card.jpg?v2">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@aframevr">
+    <meta name="twitter:creator" content="@aframevr">
+    <meta name="twitter:title" content="text – A-Frame">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" sizes="192x192" href="https://aframe.io/images/aframe-logo-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://aframe.io/images/aframe-logo-152.png">
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="https://aframe.io/feed.xml">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111391431-24', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'event', 'pageload.querystring', window.location.search);
+  ga('send', 'event', 'pageload.hash', window.location.hash);
+</script>
+
+
+    
+      
+<script src="/js/compat.js"></script>
+
+    
+
+    
+      
+<link rel="stylesheet" href="/css/secondary.css">
+
+    
+
+    
+      <!-- Search. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"/>
+      
+<link rel="stylesheet" href="/css/search.css">
+
+    
+  <meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body data-page-layout="docs" data-page-type="components">
+    <main id="main" class="main">
+
+
+<!-- Navigation. -->
+<div class="wordmark">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+</div>
+
+<aside id="sidebar" class="sidebar borderless-links">
+  
+
+<div id="secondary-nav" class="secondary-nav">
+  <header id="header" class="header">
+    <a id="logo" class="logo" href="/" title="A-Frame">
+      <span class="logo__wordmark">A-Frame</span>
+    </a>
+  </header>
+
+  
+
+
+<div class="docs-search-wrapper docs-search-sidebar-mobile">
+  <input type="search" class="search-field" placeholder="Search..."></input>
+</div>
+
+
+  <ul id="nav" class="nav">
+    
+      <li  class="nav-item">
+        <a href="/docs/1.6.0/introduction/"
+           class="nav-link nav-link-docs current nav-link-disabled"
+           
+           >
+          <span>Docs</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/blog/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Blog</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/community/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Community</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="/showcase/"
+           class="nav-link nav-link-docs"
+           
+           >
+          <span>Showcase</span>
+        </a>
+      </li>
+    
+      <li  data-slug="github" class="nav-item">
+        <a href="https://github.com/aframevr/aframe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Project Repository">
+          <span>GitHub</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://aframe.io/slack-invite/"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="Sign up to the A-Frame Slack">
+          <span>Slack</span>
+        </a>
+      </li>
+    
+      <li  data-slug="slug" class="nav-item">
+        <a href="https://discord.com/invite/tGYjkYr"
+           class="nav-link nav-link-docs"
+            rel="external"
+            title="A-Frame Discord Channel">
+          <span>Discord</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://aframe.io/subscribe/"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Newsletter</span>
+        </a>
+      </li>
+    
+      <li  class="nav-item">
+        <a href="https://stackoverflow.com/questions/ask/?tags=aframe"
+           class="nav-link nav-link-docs"
+            rel="external"
+           >
+          <span>Ask a Question</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="list">
+    <!-- Version dropdown. -->
+    <label class="subnav-label" for="docs-version"><b>Version</b></label>
+    <select id="docs-version" onchange="location = this.options[this.selectedIndex].getAttribute('data-href')">
+      
+        <option false
+                data-href="/docs/master/introduction/">
+          master
+        </option>
+      
+        <option false
+                data-href="/docs/1.6.0/introduction/">
+          1.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.5.0/introduction/">
+          1.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.4.0/introduction/">
+          1.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.3.0/introduction/">
+          1.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.2.0/introduction/">
+          1.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.1.0/introduction/">
+          1.1.0
+        </option>
+      
+        <option false
+                data-href="/docs/1.0.0/introduction/">
+          1.0.0
+        </option>
+      
+        <option selected
+                data-href="/docs/0.9.0/introduction/">
+          0.9.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.8.0/introduction/">
+          0.8.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.7.0/introduction/">
+          0.7.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.6.0/introduction/">
+          0.6.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.5.0/introduction/">
+          0.5.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.4.0/introduction/">
+          0.4.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.3.0/introduction/">
+          0.3.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.2.0/guide/">
+          0.2.0
+        </option>
+      
+        <option false
+                data-href="/docs/0.1.0/guide/">
+          0.1.0
+        </option>
+      
+    </select>
+
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Introduction</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/"
+               class="subnav-link">
+              Introduction
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/installation.html"
+               class="subnav-link">
+              Installation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/vr-headsets-and-webvr-browsers.html"
+               class="subnav-link">
+              VR Headsets & WebVR Browsers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/html-and-primitives.html"
+               class="subnav-link">
+              HTML & Primitives
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/entity-component-system.html"
+               class="subnav-link">
+              Entity-Component-System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/javascript-events-dom-apis.html"
+               class="subnav-link">
+              JavaScript, Events, DOM APIs
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/developing-with-threejs.html"
+               class="subnav-link">
+              Developing with three.js
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/writing-a-component.html"
+               class="subnav-link">
+              Writing a Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/interactions-and-controllers.html"
+               class="subnav-link">
+              Interactions & Controllers
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/models.html"
+               class="subnav-link">
+              3D Models
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/visual-inspector-and-dev-tools.html"
+               class="subnav-link">
+              Visual Inspector & Dev Tools
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/hosting-and-publishing.html"
+               class="subnav-link">
+              Hosting & Publishing
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/best-practices.html"
+               class="subnav-link">
+              Best Practices
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/introduction/faq.html"
+               class="subnav-link">
+              FAQ
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Guides</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/guides/building-a-basic-scene.html"
+               class="subnav-link">
+              Building a Basic Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/guides/building-a-360-image-gallery.html"
+               class="subnav-link">
+              Building a 360&deg; Image Gallery
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/guides/building-a-minecraft-demo.html"
+               class="subnav-link">
+              Building a Minecraft Demo
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Core API</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/entity.html"
+               class="subnav-link">
+              Entity
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/component.html"
+               class="subnav-link">
+              Component
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/systems.html"
+               class="subnav-link">
+              System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/scene.html"
+               class="subnav-link">
+              Scene
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/mixins.html"
+               class="subnav-link">
+              Mixins
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/asset-management-system.html"
+               class="subnav-link">
+              Asset Management System
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/globals.html"
+               class="subnav-link">
+              Globals
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/core/utils.html"
+               class="subnav-link">
+              Utils
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-active">
+        <p class="section-title-link">Components</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/animation.html"
+               class="subnav-link">
+              Animation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/background.html"
+               class="subnav-link">
+              background
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/camera.html"
+               class="subnav-link">
+              camera
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/cursor.html"
+               class="subnav-link">
+              cursor
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/daydream-controls.html"
+               class="subnav-link">
+              daydream-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/debug.html"
+               class="subnav-link">
+              debug
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/embedded.html"
+               class="subnav-link">
+              embedded
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/fog.html"
+               class="subnav-link">
+              fog
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/gearvr-controls.html"
+               class="subnav-link">
+              gearvr-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/geometry.html"
+               class="subnav-link">
+              geometry
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/gltf-model.html"
+               class="subnav-link">
+              gltf-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/hand-controls.html"
+               class="subnav-link">
+              hand-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/keyboard-shortcuts.html"
+               class="subnav-link">
+              keyboard-shortcuts
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/laser-controls.html"
+               class="subnav-link">
+              laser-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/light.html"
+               class="subnav-link">
+              light
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/line.html"
+               class="subnav-link">
+              line
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/link.html"
+               class="subnav-link">
+              link
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/loading-screen.html"
+               class="subnav-link">
+              loading-screen
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/look-controls.html"
+               class="subnav-link">
+              look-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/material.html"
+               class="subnav-link">
+              material
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/obj-model.html"
+               class="subnav-link">
+              obj-model
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/oculus-go-controls.html"
+               class="subnav-link">
+              oculus-go-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/oculus-touch-controls.html"
+               class="subnav-link">
+              oculus-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/pool.html"
+               class="subnav-link">
+              pool
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/position.html"
+               class="subnav-link">
+              position
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/raycaster.html"
+               class="subnav-link">
+              raycaster
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/renderer.html"
+               class="subnav-link">
+              renderer
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/rotation.html"
+               class="subnav-link">
+              rotation
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/scale.html"
+               class="subnav-link">
+              scale
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/screenshot.html"
+               class="subnav-link">
+              screenshot
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/shadow.html"
+               class="subnav-link">
+              shadow
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/sound.html"
+               class="subnav-link">
+              sound
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/stats.html"
+               class="subnav-link">
+              stats
+            </a>
+          </li>
+        
+          <li class="subnav-item  subnav-item-current">
+            <a href="/docs/0.9.0/components/text.html"
+               class="subnav-link current">
+              text
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/tracked-controls.html"
+               class="subnav-link">
+              tracked-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/visible.html"
+               class="subnav-link">
+              visible
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/vive-controls.html"
+               class="subnav-link">
+              vive-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/vive-focus-controls.html"
+               class="subnav-link">
+              vive-focus-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/vr-mode-ui.html"
+               class="subnav-link">
+              vr-mode-ui
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/wasd-controls.html"
+               class="subnav-link">
+              wasd-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/components/windows-motion-controls.html"
+               class="subnav-link">
+              windows-motion-controls
+            </a>
+          </li>
+        
+      </ol>
+    
+      
+
+      <!-- Section title. -->
+      <h3 class="section-title docs-section-title section-title-inactive">
+        <p class="section-title-link">Primitives</p>
+      </h3>
+
+      <!-- Section links. -->
+      <ol class="subnav section-subnav">
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-box.html"
+               class="subnav-link">
+              &lt;a-box&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-camera.html"
+               class="subnav-link">
+              &lt;a-camera&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-circle.html"
+               class="subnav-link">
+              &lt;a-circle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-cone.html"
+               class="subnav-link">
+              &lt;a-cone&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-cursor.html"
+               class="subnav-link">
+              &lt;a-cursor&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-curvedimage.html"
+               class="subnav-link">
+              &lt;a-curvedimage&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-cylinder.html"
+               class="subnav-link">
+              &lt;a-cylinder&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-dodecahedron.html"
+               class="subnav-link">
+              &lt;a-dodecahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-gltf-model.html"
+               class="subnav-link">
+              &lt;a-gltf-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-icosahedron.html"
+               class="subnav-link">
+              &lt;a-icosahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-image.html"
+               class="subnav-link">
+              &lt;a-image&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-light.html"
+               class="subnav-link">
+              &lt;a-light&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-link.html"
+               class="subnav-link">
+              &lt;a-link&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-obj-model.html"
+               class="subnav-link">
+              &lt;a-obj-model&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-octahedron.html"
+               class="subnav-link">
+              &lt;a-octahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-plane.html"
+               class="subnav-link">
+              &lt;a-plane&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-ring.html"
+               class="subnav-link">
+              &lt;a-ring&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-sky.html"
+               class="subnav-link">
+              &lt;a-sky&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-sound.html"
+               class="subnav-link">
+              &lt;a-sound&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-sphere.html"
+               class="subnav-link">
+              &lt;a-sphere&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-tetrahedron.html"
+               class="subnav-link">
+              &lt;a-tetrahedron&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-text.html"
+               class="subnav-link">
+              &lt;a-text&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-torus-knot.html"
+               class="subnav-link">
+              &lt;a-torus-knot&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-torus.html"
+               class="subnav-link">
+              &lt;a-torus&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-triangle.html"
+               class="subnav-link">
+              &lt;a-triangle&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-video.html"
+               class="subnav-link">
+              &lt;a-video&gt;
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
+            <a href="/docs/0.9.0/primitives/a-videosphere.html"
+               class="subnav-link">
+              &lt;a-videosphere&gt;
+            </a>
+          </li>
+        
+      </ol>
+    
+  </div>
+</aside>
+
+  <!-- Documentation. -->
+  <div class="content content--structured content--components copy">
+    <div class="mobile-header">
+  <a id="sidebar-toggle" href="#" title="Toggle sidebar">&equiv;</a>
+  <h1><a href="/">A-Frame</a></h1>
+  <span></span>
+</div>
+
+<script>
+  (function() {
+    var sidebarEl = document.querySelector('#sidebar');
+    var toggleEl = document.querySelector('#sidebar-toggle');
+
+    // Open sidebar on toggle click.
+    toggleEl.addEventListener('click', function () {
+      sidebarEl.classList.add('sidebar-open');
+    });
+
+    // Close sidebar when clicking content.
+    document.body.addEventListener('click', function (evt) {
+      if (evt.target !== toggleEl && !evt.target.closest('#sidebar')) {
+        sidebarEl.classList.remove('sidebar-open');
+      }
+    });
+
+    function closest (el, selector) {
+      var matchesFn;
+      var parent;
+      // Vendor prefix.
+      ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector',
+       'oMatchesSelector'].some(function (fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+      });
+      // Traverse parents.
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) { return parent; }
+        el = parent;
+      }
+      return null;
+    }
+  })();
+</script>
+
+
+    <div class="copy__wrap">
+      <div class="page__section docs-header">
+        <p>
+          <a href="/docs/0.9.0/components/geometry.html" class="borderless-link">
+            0.9.0 &rsaquo; Components
+          </a>
+        </p>
+      </div>
+      <h1 class="page__title">
+        text
+      </h1>
+
+      
+
+      
+      
+        <blockquote>
+<p><strong>Note:</strong> This documentation is for the old 0.9.0 version of A-Frame. Check out the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
+</blockquote>
+
+      
+
+      <p>The text component renders signed distance field (SDF) font text.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/22357731/f704544a-e3ee-11e6-8e6e-96c3c4e84958.png" alt="Example Image"></p>
+<!--toc-->
+
+<h2 id="introduction"><a href="#introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Note that rendering text in 3D is hard. In 2D web development, text is the most
+basic thing because the browser’s renderer and layout engine handles
+everything. In a 3D context, we don’t have those luxuries. There are several
+other different ways to render text in A-Frame including:</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/aframe-text-geometry-component">3D Text Geometry</a></li>
+<li><a href="https://github.com/mayognaise/aframe-html-shader">HTML Materials (DOM-to-Canvas-to-Texture)</a></li>
+<li>Image Textures</li>
+</ul>
+<p>As a default, we’ve selected SDF-based text to be included as a core component
+due to its <strong>relatively good performance and clarity</strong>. This component uses
+<a href="https://github.com/Jam3/three-bmfont-text">mattdesl’s <code>three-bmfont-text</code> library</a>. The standard text
+component has a long lineage, starting out as a community component and was
+forked and improved several times before landing into A-Frame!</p>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><p>Here’s a basic example of text defining just the content with not much other
+configuration.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">text</span>=<span class="string">&quot;value: Hello World;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>See more examples to see configuration of alignments, anchors, baselines,
+scaling, and auto-sizing.</p>
+<ul>
+<li><a href="https://a-frobot.github.io/aframe/examples/test/text/index.html">Text Example</a> (<a href="https://github.com/aframevr/aframe/blob/master/examples/test/text/index.html">code</a>)</li>
+<li><a href="https://a-frobot.github.io/aframe/examples/test/text/anchors.html">Text Anchors</a> (<a href="https://github.com/aframevr/aframe/blob/master/examples/test/text/anchors.html">code</a>)</li>
+<li><a href="https://a-frobot.github.io/aframe/examples/test/text/scenarios.html">Text Scenarios</a> (<a href="https://github.com/aframevr/aframe/blob/master/examples/test/text/scenarios.html">code</a>)</li>
+<li><a href="https://a-frobot.github.io/aframe/examples/test/text/sizes.html">Text Sizes</a> (<a href="https://github.com/aframevr/aframe/blob/master/examples/test/text/sizes.html">code</a>)</li>
+</ul>
+<p>Open any of these example scenes, hit <strong><code>&lt;ctrl&gt; + &lt;alt&gt; + i</code></strong> to open the
+Inspector, and play with all the possible values to see the effects instantly!</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/22358436/ea430ef4-e3f3-11e6-9dd9-e5e72e6e803a.png" alt="Inspecting Text"></p>
+<h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>Multi-line text alignment (left, center, right).</td>
+<td>left</td>
+</tr>
+<tr>
+<td>alphaTest</td>
+<td>Discard text pixels if alpha is less than this value.</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>anchor</td>
+<td>Horizontal positioning (left, center, right, align).</td>
+<td>center</td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>Vertical positioning (top, center, bottom).</td>
+<td>center</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Text color.</td>
+<td>white</td>
+</tr>
+<tr>
+<td>font</td>
+<td>Font to render text, either the name of one of <a href="#stock-fonts">A-Frame’s stock fonts</a> or a URL to a font file</td>
+<td>default</td>
+</tr>
+<tr>
+<td>fontImage</td>
+<td>Font image texture path to render text. Defaults to the <code>font</code>‘s name with extension replaced to <code>.png</code>. Don’t need to specify if using a stock font.</td>
+<td><em>derived from font name</em></td>
+</tr>
+<tr>
+<td>height</td>
+<td>Height of text block.</td>
+<td><em>derived from text size</em></td>
+</tr>
+<tr>
+<td>letterSpacing</td>
+<td>Letter spacing in pixels.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>lineHeight</td>
+<td>Line height in pixels.</td>
+<td><em>derived from font file</em></td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>Opacity, on a scale from 0 to 1, where 0 means fully transparent and 1 means fully opaque.</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>shader</td>
+<td>Shader used to render text.</td>
+<td>sdf</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Side to render. (front, back, double)</td>
+<td>front</td>
+</tr>
+<tr>
+<td>tabSize</td>
+<td>Tab size in spaces.</td>
+<td>4</td>
+</tr>
+<tr>
+<td>transparent</td>
+<td>Whether text is transparent.</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>value</strong></td>
+<td>The actual content of the text. Line breaks and tabs are supported with <code>\n</code> and <code>\t</code>.</td>
+<td>‘’</td>
+</tr>
+<tr>
+<td>whiteSpace</td>
+<td>How whitespace should be handled (i.e., normal, pre, nowrap). <a href="https://github.com/mattdesl/word-wrapper">Read more about whitespace</a>.</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Width in meters.</td>
+<td><em>derived from geometry if exists</em></td>
+</tr>
+<tr>
+<td>wrapCount</td>
+<td>Number of characters before wrapping text (more or less).</td>
+<td>40</td>
+</tr>
+<tr>
+<td>wrapPixels</td>
+<td>Number of pixels before wrapping text.</td>
+<td><em>derived from wrapCount</em></td>
+</tr>
+<tr>
+<td>xOffset</td>
+<td>X-offset to apply to add padding.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>zOffset</td>
+<td>Z-offset to apply to avoid Z-fighting if using with a geometry as a background.</td>
+<td>0.001</td>
+</tr>
+</tbody></table>
+<p>The implementation is based on <a href="https://github.com/Jam3/three-bmfont-text">mattdesl’s three-bmfont-text</a>.
+<a href="https://github.com/Jam3/three-bmfont-text#usage">Read more about the text properties</a>.</p>
+<h2 id="events"><a href="#events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>textfontset</td>
+<td>Emitted when the font source has been loaded</td>
+</tr>
+</tbody></table>
+<h2 id="fonts"><a href="#fonts" class="headerlink" title="Fonts"></a>Fonts</h2><p>We can specify different fonts, although the process is not as simple as Web
+Fonts. The text component defaults to <code>roboto</code> which uses a multi-channel
+signed distance (MSDF) font. MSDF helps to preserve sharp corners and edges.</p>
+<h3 id="stock-fonts"><a href="#stock-fonts" class="headerlink" title="Stock Fonts"></a>Stock Fonts</h3><p>Select from one of A-Frame’s built-in fonts. These fonts will be loaded in from
+over a CDN. If you want your application to work better offline, download these
+fonts locally and point to them via a URL.</p>
+<table>
+<thead>
+<tr>
+<th>Stock MSDF Fonts</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>roboto</strong></td>
+<td><a href="https://cdn.aframe.io/fonts/Roboto-msdf.json">https://cdn.aframe.io/fonts/Roboto-msdf.json</a></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Stock SDF Fonts</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>aileronsemibold</td>
+<td><a href="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt">https://cdn.aframe.io/fonts/Aileron-Semibold.fnt</a></td>
+</tr>
+<tr>
+<td>dejavu</td>
+<td><a href="https://cdn.aframe.io/fonts/DejaVu-sdf.fnt">https://cdn.aframe.io/fonts/DejaVu-sdf.fnt</a></td>
+</tr>
+<tr>
+<td>exo2bold</td>
+<td><a href="https://cdn.aframe.io/fonts/Exo2Bold.fnt">https://cdn.aframe.io/fonts/Exo2Bold.fnt</a></td>
+</tr>
+<tr>
+<td>exo2semibold</td>
+<td><a href="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt">https://cdn.aframe.io/fonts/Exo2SemiBold.fnt</a></td>
+</tr>
+<tr>
+<td>kelsonsans</td>
+<td><a href="https://cdn.aframe.io/fonts/KelsonSans.fnt">https://cdn.aframe.io/fonts/KelsonSans.fnt</a></td>
+</tr>
+<tr>
+<td>monoid</td>
+<td><a href="https://cdn.aframe.io/fonts/Monoid.fnt">https://cdn.aframe.io/fonts/Monoid.fnt</a></td>
+</tr>
+<tr>
+<td>mozillavr</td>
+<td><a href="https://cdn.aframe.io/fonts/mozillavr.fnt">https://cdn.aframe.io/fonts/mozillavr.fnt</a></td>
+</tr>
+<tr>
+<td>sourcecodepro</td>
+<td><a href="https://cdn.aframe.io/fonts/SourceCodePro.fnt">https://cdn.aframe.io/fonts/SourceCodePro.fnt</a></td>
+</tr>
+</tbody></table>
+<h3 id="custom-fonts"><a href="#custom-fonts" class="headerlink" title="Custom Fonts"></a>Custom Fonts</h3><p>Different fonts can be specified using the <code>font</code> and <code>fontImage</code> properties.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">text</span>=<span class="string">&quot;font: mozillavr; value: Via stock font name.&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">text</span>=<span class="string">&quot;font: https://cdn.aframe.io/fonts/mozillavr.fnt; value: Via URL.&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">text</span>=<span class="string">&quot;text: Hello World; font: ../fonts/DejaVu-sdf.fnt; fontImage: ../fonts/DejaVu-sdf.png&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>If not specified, <code>fontImage</code> will be the <code>font</code>‘s name, but with the extension
+replaced to <code>.png</code>. For example, if the <code>font</code> path ends with <code>mozillavr.fnt</code>,
+then the <code>fontImage</code> texture will default to <code>mozillavr.png</code>.</p>
+<h3 id="generating-sdf-fonts"><a href="#generating-sdf-fonts" class="headerlink" title="Generating SDF Fonts"></a>Generating SDF Fonts</h3><p>On top of the stock fonts, we can generate SDF fonts using <a href="https://github.com/libgdx/libgdx/wiki/Hiero">Hiero</a>, a
+bitmap font packing tool. <a href="https://github.com/libgdx/libgdx/wiki/Distance-field-fonts">See this guide for generating SDF fonts</a>.</p>
+<p>We can also generate MSDF fonts using <a href="http://msdf-bmfont.donmccurdy.com/">a web-based MSDF tool</a>, or on the commandline with <a href="https://github.com/Chlumsky/msdfgen">msdfgen</a> or <a href="https://github.com/Jam3/msdf-bmfont">msdf-bmfont</a>. Tools for MSDF fonts may be less mature than the SDF alternatives.</p>
+<p>Below is an example comparing a font generated with Hiero, Arial Black, with
+the SDF font, DejaVu:</p>
+<p><img src="http://i.imgur.com/iWtXHm5.png" alt="Arial Black vs. Deja Vu"></p>
+<h3 id="non-ascii-characters"><a href="#non-ascii-characters" class="headerlink" title="Non-ASCII Characters"></a>Non-ASCII Characters</h3><p>To use non-ascii characters, you need to create your own custom font. The easiest way is to use <a href="http://msdf-bmfont.donmccurdy.com/">a web-based MSDF tool</a>. Select your required character set and generate your own custom msdf font zip file.</p>
+<p>Once you download your custom msdf font zip file, extract it and rename <code>*.png</code> to <code>*-msdf.png</code>, then put both png and json files to your A-Frame directory.</p>
+<p>Lastly, you should specify the character set used in your HTML by using <code>&lt;meta&gt;</code> tag to avoid text to be garbled. If your text is garbled, it is not rendered.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://aframe.io/releases/0.9.2/aframe.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-scene</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-sky</span> <span class="attr">color</span>=<span class="string">&quot;lightblue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-sky</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a-text</span> <span class="attr">value</span>=<span class="string">&quot;ABCあいうえお日本語&quot;</span> <span class="attr">font</span>=<span class="string">&quot;custom-msdf.json&quot;</span> <span class="attr">negate</span>=<span class="string">&quot;false&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;2 2 1&quot;</span> <span class="attr">position</span>=<span class="string">&quot;-2 2 -4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="sizing"><a href="#sizing" class="headerlink" title="Sizing"></a>Sizing</h2><p>To change the size of the text, we can:</p>
+<ul>
+<li>Change the <code>width</code>.</li>
+<li>Change the <code>wrapCount</code> (roughly how many characters to fit inside the given width).</li>
+<li>Change <code>wrapPixels</code>.</li>
+<li>Change the <a href="./scale.html">scale component</a>.</li>
+<li><a href="./position.html">Position</a> the text closer or farther away.</li>
+</ul>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/22358452/04528216-e3f4-11e6-8467-f03ac7f0e953.png" alt="Sizing"></p>
+<p>Text can be wrapped by specifying width in A-Frame units.</p>
+<p>In case we need to do custom layout or need to know the bounds of the text, the
+output length of the text can be pre-calculated dynamically with something
+like:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">totalWidth = data.value.length * (data.width / data.wrapCount)</span><br></pre></td></tr></table></figure>
+
+<h3 id="auto-scaling"><a href="#auto-scaling" class="headerlink" title="Auto-Scaling"></a>Auto-Scaling</h3><p>The text component introduces special behavior when using alongside the
+geometry component (e.g., a background plane) to fit. Note this only works with
+2D-friendly geometries that define a width and height (i.e., <code>box</code>, <code>plane</code>).
+The text can either be scaled, bounded, or aligned in relation to the geometry,
+or the text can auto-scale the geometry to fit the text.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/674727/22358470/218689d6-e3f4-11e6-9e00-62c9cb7867da.png" alt="Geometry Alignments"></p>
+<h4 id="scaling-text-to-fit-geometry"><a href="#scaling-text-to-fit-geometry" class="headerlink" title="Scaling Text to Fit Geometry"></a>Scaling Text to Fit Geometry</h4><p>To have the text component’s <code>width</code> property automatically scale to match the
+geometry component’s <code>width</code>, do not specify a <code>width</code> for the text component:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane; width: 4; height: auto&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">&quot;color: blue&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">text</span>=<span class="string">&quot;value: This text will be 4 units wide.&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="scaling-geometry-to-fit-text"><a href="#scaling-geometry-to-fit-text" class="headerlink" title="Scaling Geometry to Fit Text"></a>Scaling Geometry to Fit Text</h4><p>To have the geometry automatically scale with the text, set the geometry
+component’s <code>width</code> and <code>height</code> properties to <code>auto</code>, and set the text
+component’s <code>width</code> as desired. In this example, the plane’s <code>width</code> will be
+set to 4 units, and its <code>height</code> will be set to match the actual height of the
+text:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane; height: auto; width: auto&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">&quot;color: blue&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">text</span>=<span class="string">&quot;width: 4; value: This text will be 4 units wide.&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Note that if neither <code>geometry</code> nor <code>text</code> specify a width, the text <code>width</code>
+property will default to 1 unit (meter), and the geometry <code>width</code> property will
+then become 1 unit as well.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">&quot;primitive: plane&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">&quot;color: blue&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">text</span>=<span class="string">&quot;value: 1-wide\ndefault.&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="limitations"><a href="#limitations" class="headerlink" title="Limitations"></a>Limitations</h2><p>The text component does not make use of all of the features of the
+<a href="https://github.com/Jam3/three-bmfont-text"><code>three-bmfont-text</code> library</a> nor its sister modules.</p>
+<p>Bitmap font rendering limits you to the characters included in the font
+(<em>Unicode this is not</em>). SDF font rendering tends to produce smooth sharp edges
+<a href="https://lambdacube3d.wordpress.com/2014/11/12/playing-around-with-font-rendering/">though there are ways around this</a>.</p>
+<p>The generated text is not suitable for raycaster intersection testing. For raycaster or cursor detection it is necessary to use a geometry component along with the text component.</p>
+<h2 id="further-reading"><a href="#further-reading" class="headerlink" title="Further Reading"></a>Further Reading</h2><p>If you are curious about the details of text rendering in WebGL, three.js, and
+A-Frame, below are links to some background reading:</p>
+<ul>
+<li><a href="https://github.com/Jam3/three-bmfont-text"><code>three-bmfont-text</code> documentation</a></li>
+<li><a href="http://slides.com/mattdeslauriers/hacking-with-three-js#/7"><em>Hacking with three.js</em></a></li>
+<li><a href="https://www.eventbrite.com/engineering/its-2015-and-drawing-text-is-still-hard-webgl-threejs/"><em>It’s 2015 and drawing text is still hard (WebGL, ThreeJS)</em></a></li>
+<li><a href="http://www.valvesoftware.com/publications/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf"><em>Improved Alpha-Tested Magnification for Vector Textures and Special Effects</em></a></li>
+</ul>
+
+
+      <!-- Previous / Next navigation. -->
+      <footer class="footer guide-links c">
+        
+        
+      </footer>
+
+      <footer class="footer footnote">
+  <p>
+    The A-Frame project and content on this site are licensed under the <a href="https://github.com/aframevr/aframe/blob/master/LICENSE" rel="external">MIT License</a>.
+  </p>
+  <p>Found a typo or suggestion for the docs? <br><br> <a href="https://github.com/aframevr/aframe/edit/master/docs/components/text.md" class="github-file-link" target="_blank" rel="external">Suggest an edit on GitHub</a></p>
+  <p>Project maintained by <a href="https://supermedium.com">Supermedium</a>.</p>
+</footer>
+
+    </div>
+
+    <div class="secondary-sidebar">
+      
+
+<div id="table-of-contents" class="nav-list">
+  <p class="section-title docs-section-title">Table of Contents</p>
+
+  <ul class="subnav">
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#introduction">Introduction</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#example">Example</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#properties">Properties</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#events">Events</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#fonts">Fonts</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#stock-fonts">Stock Fonts</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#custom-fonts">Custom Fonts</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#generating-sdf-fonts">Generating SDF Fonts</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#non-ascii-characters">Non-ASCII Characters</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#sizing">Sizing</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#auto-scaling">Auto-Scaling</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#limitations">Limitations</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="subnav-item">
+        <a class="subnav-link" href="#further-reading">Further Reading</a>
+
+        <!-- Nested. -->
+        
+          <ul>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+
+      
+  <div id="doc-examples-list" class="nav-list">
+    <p class="section-title docs-section-title">Examples</p>
+
+    
+      <ul class="subnav">
+        <li class="subnav-item">
+          <a class="subnav-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/text.md" style="font-style: italic">
+            No examples for this page yet. Add one!
+          </a>
+        </li>
+      </ul>
+    
+  </div>
+
+
+      <div class="doc-actions">
+        <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/text.md" target="_blank" rel="external">Edit Page</a>
+        
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v0.9.0/src/components/text.js" title="View Source" target="_blank" rel="external">View Source</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+    
+      
+<script src="/js/common.js"></script>
+
+      
+      
+        
+<script src="/js/docs.js"></script>
+
+      
+    
+
+    
+      <!-- Algolia search. -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch.umd.min.js"></script>
+<script type="text/javascript" src="/js/docsearch.min.js"></script>
+<script type="text/javascript">
+  var searchConfig = {
+    appId: 'N5FBG9I0SH',
+    apiKey: '2166b9095d153b15b047283347535ff0',
+    indexName: 'aframe',
+    algoliaOptions: {
+      facetFilters: ['version:0.9.0'],
+      hitsPerPage: 10
+    },
+    debug: false
+  };
+
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar .search-field'}));
+  docsearch(Object.assign(searchConfig, {inputSelector: '.docs-search-sidebar-mobile .search-field'}));
+</script>
+
+    
+  </body>
+</html>
