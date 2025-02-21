@@ -26,7 +26,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-111391431-24"
-      data-aframe-version="1.6.0"
+      data-aframe-version="1.7.0"
       data-docs-version="master">
   <head>
     <title>laser-controls – A-Frame</title>
@@ -151,7 +151,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/1.6.0/introduction/"
+        <a href="/docs/1.7.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -243,6 +243,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/1.7.0/introduction/">
+          1.7.0
         </option>
       
         <option false
@@ -718,6 +723,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/logitech-mx-ink-controls.html"
+               class="subnav-link">
+              logiteck-mx-ink-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/look-controls.html"
                class="subnav-link">
               look-controls
@@ -739,6 +751,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/meta-touch-controls.html"
+               class="subnav-link">
+              meta-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/obb-collider.html"
                class="subnav-link">
               obb-collider
@@ -749,13 +768,6 @@
             <a href="/docs/master/components/obj-model.html"
                class="subnav-link">
               obj-model
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/components/oculus-touch-controls.html"
-               class="subnav-link">
-              oculus-touch-controls
             </a>
           </li>
         
@@ -1187,23 +1199,22 @@
       
       
         <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.7.0/introduction/">documentation for the current 1.7.0 version</a></p>
 </blockquote>
 
       
 
-      <p>The laser-controls component provides tracked controls with a laser or ray
-cursor shooting out to be used for input and interactions. <em>DoF</em> stands for
-<a href="http://www.roadtovr.com/introduction-positional-tracking-degrees-freedom-dof/">degrees of freedom</a>. Because they only require rotation and some form of
-input, laser-based interactions scale well across 0 DoF (gaze-based,
-Cardboard), and 6 DoF (Vive, Oculus Touch). If desired, we can get a consistent form of interaction that works
-across all VR platforms with a single line of HTML.</p>
+      <p>The laser-controls component provides a tracked controller with a laser or ray
+cursor shooting out to be used for input and interactions. All headsets ship with some form of 
+tracked input controller that has at least a button to trigger actions. Using laser-controls we can
+get a consistent form of interaction that works across all VR platforms with
+a single line of HTML.</p>
 <p>laser-controls is a <strong>higher-order component</strong>, meaning the component wraps and
 configures other components, rather than implementing any logic itself. Under
 the hood, laser-controls sets all of the tracked controller components:</p>
 <ul>
 <li><a href="./vive-controls.html">vive-controls</a></li>
-<li><a href="./oculus-touch-controls.html">oculus-touch-controls</a></li>
+<li><a href="./meta-touch-controls.html">meta-touch-controls</a></li>
 <li><a href="./windows-motion-controls.html">windows-motion-controls</a></li>
 </ul>
 <p>These controller components get activated if its respective controller is

@@ -26,7 +26,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-111391431-24"
-      data-aframe-version="1.6.0"
+      data-aframe-version="1.7.0"
       data-docs-version="master">
   <head>
     <title>Utils – A-Frame</title>
@@ -151,7 +151,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/1.6.0/introduction/"
+        <a href="/docs/1.7.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -243,6 +243,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/1.7.0/introduction/">
+          1.7.0
         </option>
       
         <option false
@@ -718,6 +723,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/logitech-mx-ink-controls.html"
+               class="subnav-link">
+              logiteck-mx-ink-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/look-controls.html"
                class="subnav-link">
               look-controls
@@ -739,6 +751,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/meta-touch-controls.html"
+               class="subnav-link">
+              meta-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/obb-collider.html"
                class="subnav-link">
               obb-collider
@@ -749,13 +768,6 @@
             <a href="/docs/master/components/obj-model.html"
                class="subnav-link">
               obj-model
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/components/oculus-touch-controls.html"
-               class="subnav-link">
-              oculus-touch-controls
             </a>
           </li>
         
@@ -1185,7 +1197,7 @@
       
       
         <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.7.0/introduction/">documentation for the current 1.7.0 version</a></p>
 </blockquote>
 
       
@@ -1231,9 +1243,11 @@ property name.</p>
 
 <h3 id="aframe-utils-extend-target-source-source"><a href="#aframe-utils-extend-target-source-source" class="headerlink" title="AFRAME.utils.extend(target, source, [source, ...])"></a><code>AFRAME.utils.extend(target, source, [source, ...])</code></h3><p><a href="https://www.npmjs.com/package/object-assign">Object Assign polyfill</a></p>
 <h3 id="aframe-utils-extenddeep-target-source-source"><a href="#aframe-utils-extenddeep-target-source-source" class="headerlink" title="AFRAME.utils.extendDeep (target, source, [source, ...])"></a><code>AFRAME.utils.extendDeep (target, source, [source, ...])</code></h3><p><a href="https://www.npmjs.com/package/deep-assign">Deep Assign</a></p>
-<h2 id="aframe-utils-device"><a href="#aframe-utils-device" class="headerlink" title="AFRAME.utils.device"></a><code>AFRAME.utils.device</code></h2><h3 id="aframe-utils-device-checkheadsetconnected"><a href="#aframe-utils-device-checkheadsetconnected" class="headerlink" title="AFRAME.utils.device.checkHeadsetConnected ()"></a><code>AFRAME.utils.device.checkHeadsetConnected ()</code></h3><p>Checks if a VR headset is connected by looking for orientation data. Returns a <code>boolean</code>.</p>
-<h3 id="aframe-utils-device-isoculusgo"><a href="#aframe-utils-device-isoculusgo" class="headerlink" title="AFRAME.utils.device.isOculusGo ()"></a><code>AFRAME.utils.device.isOculusGo ()</code></h3><p>Checks if device is Oculus Go. Returns a <code>boolean</code>.</p>
+<h2 id="aframe-utils-device"><a href="#aframe-utils-device" class="headerlink" title="AFRAME.utils.device"></a><code>AFRAME.utils.device</code></h2><h3 id="aframe-utils-device-checkheadsetconnected"><a href="#aframe-utils-device-checkheadsetconnected" class="headerlink" title="AFRAME.utils.device.checkHeadsetConnected ()"></a><code>AFRAME.utils.device.checkHeadsetConnected ()</code></h3><p>Checks if a VR headset is connected by looking for browser support of
+immersive-vr or immersive-ar WebXR session. Returns a <code>boolean</code>.</p>
 <h3 id="aframe-utils-device-ismobile"><a href="#aframe-utils-device-ismobile" class="headerlink" title="AFRAME.utils.device.isMobile ()"></a><code>AFRAME.utils.device.isMobile ()</code></h3><p>Checks if device is a smartphone. Returns a <code>boolean</code>.</p>
+<h3 id="aframe-utils-device-istablet"><a href="#aframe-utils-device-istablet" class="headerlink" title="AFRAME.utils.device.isTablet ()"></a><code>AFRAME.utils.device.isTablet ()</code></h3><p>Checks if device is a tablet. Returns a <code>boolean</code>.</p>
+<h3 id="aframe-utils-device-ismobilevr"><a href="#aframe-utils-device-ismobilevr" class="headerlink" title="AFRAME.utils.device.isMobileVR ()"></a><code>AFRAME.utils.device.isMobileVR ()</code></h3><p>Checks if device is a standalone headset. Returns a <code>boolean</code>.</p>
 <h2 id="function-utils"><a href="#function-utils" class="headerlink" title="Function Utils"></a>Function Utils</h2><h3 id="aframe-utils-throttle-function-minimuminterval-optionalcontext"><a href="#aframe-utils-throttle-function-minimuminterval-optionalcontext" class="headerlink" title="AFRAME.utils.throttle (function, minimumInterval [, optionalContext])"></a><code>AFRAME.utils.throttle (function, minimumInterval [, optionalContext])</code></h3><p>Returns a throttled function that is called at most once every
 <code>minimumInterval</code> milliseconds. A context such as <code>this</code> can be provided to
 handle function binding for convenience. The same as <a href="https://lodash.com/docs/#throttle">lodash’s
@@ -1389,11 +1403,15 @@ string.</p>
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#aframe-utils-device-isoculusgo">AFRAME.utils.device.isOculusGo ()</a>
+                <a class="subnav-link" href="#aframe-utils-device-ismobile">AFRAME.utils.device.isMobile ()</a>
               </li>
             
               <li class="subnav-item">
-                <a class="subnav-link" href="#aframe-utils-device-ismobile">AFRAME.utils.device.isMobile ()</a>
+                <a class="subnav-link" href="#aframe-utils-device-istablet">AFRAME.utils.device.isTablet ()</a>
+              </li>
+            
+              <li class="subnav-item">
+                <a class="subnav-link" href="#aframe-utils-device-ismobilevr">AFRAME.utils.device.isMobileVR ()</a>
               </li>
             
           </ul>

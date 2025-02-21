@@ -26,7 +26,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-111391431-24"
-      data-aframe-version="1.6.0"
+      data-aframe-version="1.7.0"
       data-docs-version="master">
   <head>
     <title>keyboard-shortcuts – A-Frame</title>
@@ -151,7 +151,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/1.6.0/introduction/"
+        <a href="/docs/1.7.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -243,6 +243,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/1.7.0/introduction/">
+          1.7.0
         </option>
       
         <option false
@@ -718,6 +723,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/logitech-mx-ink-controls.html"
+               class="subnav-link">
+              logiteck-mx-ink-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/look-controls.html"
                class="subnav-link">
               look-controls
@@ -739,6 +751,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/meta-touch-controls.html"
+               class="subnav-link">
+              meta-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/obb-collider.html"
                class="subnav-link">
               obb-collider
@@ -749,13 +768,6 @@
             <a href="/docs/master/components/obj-model.html"
                class="subnav-link">
               obj-model
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/components/oculus-touch-controls.html"
-               class="subnav-link">
-              oculus-touch-controls
             </a>
           </li>
         
@@ -1185,14 +1197,14 @@
       
       
         <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.7.0/introduction/">documentation for the current 1.7.0 version</a></p>
 </blockquote>
 
       
 
       <p>The keyboard-shortcuts component toggles global keyboard shortcuts. The
 keyboard-shortcuts component applies only to the <a href="../core/scene.html"><code>&lt;a-scene&gt;</code> element</a>.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">keyboard-shortcuts</span>=<span class="string">&quot;enterVR: false&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-scene</span> <span class="attr">keyboard-shortcuts</span>=<span class="string">&quot;enterVR: false; exitVR: false;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-scene</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="properties"><a href="#properties" class="headerlink" title="Properties"></a>Properties</h2><table>
 <thead>
@@ -1205,6 +1217,11 @@ keyboard-shortcuts component applies only to the <a href="../core/scene.html"><c
 <tbody><tr>
 <td>enterVR</td>
 <td>Enables the shortcut to press ‘F’ to enter VR.</td>
+<td>true</td>
+</tr>
+<tr>
+<td>exitVR</td>
+<td>Enables the shortcut to press ‘Escape’ to exit VR.</td>
 <td>true</td>
 </tr>
 </tbody></table>

@@ -26,7 +26,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-111391431-24"
-      data-aframe-version="1.6.0"
+      data-aframe-version="1.7.0"
       data-docs-version="master">
   <head>
     <title>3D Models – A-Frame</title>
@@ -151,7 +151,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/1.6.0/introduction/"
+        <a href="/docs/1.7.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -243,6 +243,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/1.7.0/introduction/">
+          1.7.0
         </option>
       
         <option false
@@ -718,6 +723,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/logitech-mx-ink-controls.html"
+               class="subnav-link">
+              logiteck-mx-ink-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/look-controls.html"
                class="subnav-link">
               look-controls
@@ -739,6 +751,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/meta-touch-controls.html"
+               class="subnav-link">
+              meta-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/obb-collider.html"
                class="subnav-link">
               obb-collider
@@ -749,13 +768,6 @@
             <a href="/docs/master/components/obj-model.html"
                class="subnav-link">
               obj-model
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/components/oculus-touch-controls.html"
-               class="subnav-link">
-              oculus-touch-controls
             </a>
           </li>
         
@@ -1185,7 +1197,7 @@
       
       
         <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.7.0/introduction/">documentation for the current 1.7.0 version</a></p>
 </blockquote>
 
       
@@ -1201,7 +1213,7 @@ textures, materials, and animations. They also come with images for textures,
 usually alongside the model file. three.js loaders parse these files to render
 them within a three.js scene as meshes. A-Frame model components wrap these
 three.js loaders.</p>
-<h2 id="animating-models"><a href="#animating-models" class="headerlink" title="Animating Models"></a>Animating Models</h2><p>We can use <a href="https://github.com/donmccurdy/aframe-extras/tree/master/src/loaders#animation">Don McCurdy’s animation-mixer component</a> to play a model’s
+<h2 id="animating-models"><a href="#animating-models" class="headerlink" title="Animating Models"></a>Animating Models</h2><p>We can use <a href="https://github.com/c-frame/aframe-extras/tree/master/src/loaders#animation">Don McCurdy’s animation-mixer component</a> to play a model’s
 built-in animations. Animations usually come in the model built via animation
 tools or programs rather than being provided at the A-Frame level. The
 animation-mixer component may be merged into A-Frame’s core in the future.</p>
@@ -1221,13 +1233,13 @@ Games</a></li>
 </ul>
 <h2 id="how-to-create-models"><a href="#how-to-create-models" class="headerlink" title="How to Create Models"></a>How to Create Models</h2><p>Programs to create models include:</p>
 <ul>
-<li><a href="https://supermedium.com/supercraft/">Supercraft</a> - Built <strong>with</strong> A-Frame to
-model directly within VR with no modeling skill required and load with
-<a href="https://www.npmjs.com/package/aframe-supercraft-loader"><code>aframe-supercraft-loader</code></a>.</li>
 <li><a href="https://www.blender.org/">Blender</a></li>
 <li><a href="https://ephtracy.github.io/">MagicaVoxel</a></li>
 <li><a href="https://www.autodesk.com/products/maya/overview">Autodesk Maya</a> or <a href="https://www.autodesk.com/products/maya-lt/overview">Maya LT</a></li>
 <li><a href="https://www.maxon.net/en-us/">Maxon Cinema4D</a></li>
+<li><a href="https://supermedium.com/supercraft/">Supercraft</a> (DEPRECATED) - Built <strong>with</strong> A-Frame to
+model directly within VR with no modeling skill required and load with
+<a href="https://www.npmjs.com/package/aframe-supercraft-loader"><code>aframe-supercraft-loader</code></a>.</li>
 </ul>
 <h2 id="hosting-models"><a href="#hosting-models" class="headerlink" title="Hosting Models"></a>Hosting Models</h2><p>Refer to <a href="./hosting-and-publishing.html#hosting-models">Hosting and Publishing &mdash; Hosting
 Models</a>.</p>
@@ -1262,7 +1274,7 @@ model or <code>.mtl</code> file.</p>
 <li>Fix the path to the texture by making it relative instead of absolute</li>
 </ol>
 <p>If this didn’t work, you should check your MTL file and you might notice it is trying to use TGA or some other sort of textures that aren’t plain images. In this case, you need to include additional three.js loaders. However it might be easier to try converting all the TGAs to just use images like PNGs using a converter, and replace all instances of ‘tga’ with ‘png’.</p>
-<h3 id="my-model-isn’t-animating"><a href="#my-model-isn’t-animating" class="headerlink" title="My Model Isn’t Animating"></a>My Model Isn’t Animating</h3><p>The <a href="https://github.com/donmccurdy/aframe-extras/tree/master/src/loaders#animation">animation-mixer component</a>, part of <a href="https://github.com/donmccurdy/aframe-extras">aframe-extras</a> by Don McCurdy,
+<h3 id="my-model-isn’t-animating"><a href="#my-model-isn’t-animating" class="headerlink" title="My Model Isn’t Animating"></a>My Model Isn’t Animating</h3><p>The <a href="https://github.com/c-frame/aframe-extras/tree/master/src/loaders#animation">animation-mixer component</a>, part of <a href="https://github.com/c-frame/aframe-extras">aframe-extras</a> by Don McCurdy,
 provides controls for playing animations in three.js (.json) and glTF (.gltf)
 models.</p>
 <h3 id="my-model-looks-distorted"><a href="#my-model-looks-distorted" class="headerlink" title="My Model Looks Distorted"></a>My Model Looks Distorted</h3><p>A common issue with models is incorrect orientation of normals. You’ll know you

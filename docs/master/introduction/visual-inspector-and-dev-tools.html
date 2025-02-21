@@ -26,7 +26,7 @@
       data-title="{title} | A-Frame"
       data-is-spa="false"
       data-ga-id="UA-111391431-24"
-      data-aframe-version="1.6.0"
+      data-aframe-version="1.7.0"
       data-docs-version="master">
   <head>
     <title>Visual Inspector & Dev Tools – A-Frame</title>
@@ -151,7 +151,7 @@
   <ul id="nav" class="nav">
     
       <li  class="nav-item">
-        <a href="/docs/1.6.0/introduction/"
+        <a href="/docs/1.7.0/introduction/"
            class="nav-link nav-link-docs current nav-link-disabled"
            
            >
@@ -243,6 +243,11 @@
         <option selected
                 data-href="/docs/master/introduction/">
           master
+        </option>
+      
+        <option false
+                data-href="/docs/1.7.0/introduction/">
+          1.7.0
         </option>
       
         <option false
@@ -718,6 +723,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/logitech-mx-ink-controls.html"
+               class="subnav-link">
+              logiteck-mx-ink-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/look-controls.html"
                class="subnav-link">
               look-controls
@@ -739,6 +751,13 @@
           </li>
         
           <li class="subnav-item ">
+            <a href="/docs/master/components/meta-touch-controls.html"
+               class="subnav-link">
+              meta-touch-controls
+            </a>
+          </li>
+        
+          <li class="subnav-item ">
             <a href="/docs/master/components/obb-collider.html"
                class="subnav-link">
               obb-collider
@@ -749,13 +768,6 @@
             <a href="/docs/master/components/obj-model.html"
                class="subnav-link">
               obj-model
-            </a>
-          </li>
-        
-          <li class="subnav-item ">
-            <a href="/docs/master/components/oculus-touch-controls.html"
-               class="subnav-link">
-              oculus-touch-controls
             </a>
           </li>
         
@@ -1185,7 +1197,7 @@
       
       
         <blockquote>
-<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.6.0/introduction/">documentation for the current 1.6.0 version</a></p>
+<p><strong>NOTE:</strong> This version of the documentation tracks <strong>unstable</strong> development happening on <a href="https://github.com/aframevr/aframe/tree/master/dist">A-Frame’s <code>master</code> branch</a>. If you wish to try it out, grab the <a href="https://github.com/aframevr/aframe/tree/master/dist#a-frame-builds">unstable build</a>. Otherwise, head to the <a href="/docs/1.7.0/introduction/">documentation for the current 1.7.0 version</a></p>
 </blockquote>
 
       
@@ -1203,8 +1215,7 @@ interact with objects with the controller. Then replay that recording back on
 any computer for rapid development and testing. Reduce the amount of time going
 in and out of the headset.</li>
 </ul>
-<p>We’ll go over GUI tools built on top of A-Frame that can be used without code.
-And touch on other tools that can ease development across multiple machines.</p>
+<p>We’ll touch on other tools that can ease development across multiple machines.</p>
 <!--toc-->
 
 <h2 id="a-frame-inspector"><a href="#a-frame-inspector" class="headerlink" title="A-Frame Inspector"></a>A-Frame Inspector</h2><p>The <a href="https://github.com/aframevr/aframe-inspector">A-Frame Inspector</a> is a visual tool for inspecting and tweaking
@@ -1370,21 +1381,6 @@ happening off-screen, and its hard to focus on one place if the camera is
 always moving away. The Spectator Mode lets us free move around the scene and
 view at whatever angle or focus on whatever area.</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/24733331/f2bc6094-1a2b-11e7-9442-bcf30d18af79.gif" alt="Spectator Mode"></p>
-<h2 id="gui-tools-based-on-a-frame"><a href="#gui-tools-based-on-a-frame" class="headerlink" title="GUI Tools Based on A-Frame"></a>GUI Tools Based on A-Frame</h2><p>People have built tools on top of A-Frame to abstract away code via an
-interface or application, making content creation even easier. These act as
-more complete editors rather than developer tools.</p>
-<h3 id="supercraft"><a href="#supercraft" class="headerlink" title="Supercraft"></a><a href="https://supermedium.com/supercraft">Supercraft</a></h3><p>Build VR Sites with Your Hands, all in VR, and publish to Web.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ONhhKHjSO-4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-<h3 id="ottifox"><a href="#ottifox" class="headerlink" title="Ottifox"></a><a href="http://ottifox.com/">Ottifox</a></h3><p><em>“Ottifox is a powerful design and prototyping solution that makes it easy to
-create interactive VR scenes that run in the browser.”</em></p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/25638463/5cc90a3e-2f3d-11e7-987e-d8d299773f67.jpg" alt="Ottifox"></p>
-<h3 id="hologram"><a href="#hologram" class="headerlink" title="Hologram"></a><a href="http://hologram.cool/">Hologram</a></h3><p><em>“All-in-one WebVR creation.”</em></p>
-<p><img src="https://user-images.githubusercontent.com/674727/36452389-24416be0-1649-11e8-8d7d-4a3a69097650.png" alt="Holgoram"></p>
-<h3 id="fader"><a href="#fader" class="headerlink" title="Fader"></a><a href="https://fader.vragments.com/">Fader</a></h3><p><em>“Create your own VR story now. Fader allows you to create and publish VR
-stories.  Add multiple layers of information to your 360 spheres, design scenes
-and tell your story.  Easy, fast and web based!”</em></p>
-<p><img src="https://cloud.githubusercontent.com/assets/674727/25638761/53535724-2f3e-11e7-90f2-5efb3a58c549.jpg" alt="Fader"></p>
 <h2 id="cross-machine-development"><a href="#cross-machine-development" class="headerlink" title="Cross-Machine Development"></a>Cross-Machine Development</h2><p>With VR development, it is common to develop across multiple machines. For
 example, developing on a laptop and testing on a VR desktop. The tools below
 help with that process:</p>
@@ -1520,33 +1516,6 @@ recordings can be transferred using <a href="https://file.io/">file.io</a>.</p>
             
               <li class="subnav-item">
                 <a class="subnav-link" href="#spectator-mode">Spectator Mode</a>
-              </li>
-            
-          </ul>
-        
-      </li>
-    
-      <li class="subnav-item">
-        <a class="subnav-link" href="#gui-tools-based-on-a-frame">GUI Tools Based on A-Frame</a>
-
-        <!-- Nested. -->
-        
-          <ul>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#supercraft">Supercraft</a>
-              </li>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#ottifox">Ottifox</a>
-              </li>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#hologram">Hologram</a>
-              </li>
-            
-              <li class="subnav-item">
-                <a class="subnav-link" href="#fader">Fader</a>
               </li>
             
           </ul>
