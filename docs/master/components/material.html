@@ -707,7 +707,7 @@
           <li class="subnav-item ">
             <a href="/docs/master/components/logitech-mx-ink-controls.html"
                class="subnav-link">
-              logiteck-mx-ink-controls
+              logitech-mx-ink-controls
             </a>
           </li>
         
@@ -1226,11 +1226,6 @@ depending on the material type applied.</p>
 <td>false</td>
 </tr>
 <tr>
-<td>npot</td>
-<td>Use settings for non-power-of-two (NPOT) texture.</td>
-<td>false</td>
-</tr>
-<tr>
 <td>offset</td>
 <td>Texture offset to be used.</td>
 <td>{x: 0, y: 0}</td>
@@ -1244,6 +1239,16 @@ depending on the material type applied.</p>
 <td>repeat</td>
 <td>Texture repeat to be used.</td>
 <td>{x: 1, y: 1}</td>
+</tr>
+<tr>
+<td>magFilter</td>
+<td>Which magnifying filter to use when sampling textures. Can be one of <code>linear</code> or <code>nearest</code>.</td>
+<td><code>linear</code></td>
+</tr>
+<tr>
+<td>minFilter</td>
+<td>Which minifying filter to use when sampling textures. Can be one of <code>linear</code>, <code>linear-mipmap-nearest</code>, <code>linear-mipmap-linear</code>, <code>nearest</code>, <code>nearest-mipmap-nearest</code> or <code>nearest-mipmap-linear</code>.</td>
+<td><code>linear-mipmap-linear</code></td>
 </tr>
 <tr>
 <td>shader</td>
@@ -2042,12 +2047,6 @@ custom material by creating three.js materials (e.g., <code>RawShaderMaterial</c
 
     
       <ul class="subnav">
-        
-          <li class="subnav-item">
-            <a class="subnav-link" href="https://glitch.com/edit/#!/aframe-displacement-shader?path=client/index.js:1:0">
-              Displacement Shader
-            </a>
-          </li>
         
           <li class="subnav-item">
             <a class="subnav-link" href="https://codepen.io/machenmusik/pen/WZyQNj">

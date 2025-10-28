@@ -707,7 +707,7 @@
           <li class="subnav-item ">
             <a href="/docs/1.7.0/components/logitech-mx-ink-controls.html"
                class="subnav-link">
-              logiteck-mx-ink-controls
+              logitech-mx-ink-controls
             </a>
           </li>
         
@@ -1419,7 +1419,7 @@ animation.</p>
 <td>Config passed to anime.js.</td>
 </tr>
 </tbody></table>
-<h3 id="controlling-animations-using-setattribute"><a href="#controlling-animations-using-setattribute" class="headerlink" title="Controlling Animations using setAttribute"></a>Controlling Animations using setAttribute</h3><p>Like any A-Frame component, the animation component can be configured from JavaScript by calling <a href="https://aframe.io/docs/1.7.0/introduction/javascript-events-dom-apis.html#updating-a-component-with-setattribute">setAttribute()</a> on an element.</p>
+<h3 id="controlling-animations-using-setattribute"><a href="#controlling-animations-using-setattribute" class="headerlink" title="Controlling Animations using setAttribute"></a>Controlling Animations using setAttribute</h3><p>Like any A-Frame component, the animation component can be configured from JavaScript by calling <a href="../introduction/javascript-events-dom-apis.html#updating-a-component-with-setattribute">setAttribute()</a> on an element.</p>
 <p>By default, the animation will begin playing immediately (autoplay is true by default).</p>
 <p>However, care should be taken when using the interface in this way.  If a finite (i.e. non-looping) animation is requested twice in a row, with identical parameters, the second animation will not play, and neither will it generate an animationcomplete event.</p>
 <p>This is because A-Frame sees the second request as a duplicate request for configuration already applied to the element, and so the second request never reaches the animation component.</p>
@@ -1433,10 +1433,10 @@ animation.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">id</span>=<span class="string">&quot;mouseCursor&quot;</span> <span class="attr">cursor</span>=<span class="string">&quot;rayOrigin: mouse&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span></span></span><br><span class="line"><span class="tag">  <span class="attr">geometry</span>=<span class="string">&quot;primitive: box&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">material</span>=<span class="string">&quot;color: red&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseenter</span>=<span class="string">&quot;property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500&quot;</span>;</span></span><br><span class="line"><span class="tag">  <span class="attr">animation__mouseleave</span>=<span class="string">&quot;property: components.material.material.color; type: color; to: red; startEvents: mouseleave; dur: 500&quot;</span>;</span></span><br><span class="line"><span class="tag">  <span class="attr">animation__customevent</span>=<span class="string">&quot;property: components.material.material.color; type: color; from: red; to: blue; startEvents: triggeranimation; dur: 500&quot;</span>;&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><a href="https://glitch.com/edit/#!/aframe-animation-events?path=index.html:1:0">Remix the Animating on Events Glitch</a>.</p>
-<p>To start an animation by explicitly <a href="https://aframe.io/docs/1.7.0/introduction/javascript-events-dom-apis.html#emitting-an-event-with-emit">emitting a custom event</a>, you can do the following:</p>
+<p>To start an animation by explicitly <a href="../introduction/javascript-events-dom-apis.html#emitting-an-event-with-emit">emitting a custom event</a>, you can do the following:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">el.emit(`triggeranimation`, null, false);</span><br></pre></td></tr></table></figure>
 
-<p>The <a href="https://aframe.io/docs/1.7.0/core/entity.html#emit-name-detail-bubbles">third parameter of emit</a> set to “false” parameter ensures the event won’t bubble up to parents, so that you can target the animation at just one particular element.</p>
+<p>The <a href="../core/entity.html#emit-name-detail-bubbles">third parameter of emit</a> set to “false” parameter ensures the event won’t bubble up to parents, so that you can target the animation at just one particular element.</p>
 <p>This assumes that an animation has already been configured to respond to that custom start event, for example like this:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">el.setAttribute(&#x27;animation__001&#x27;, &#123;&#x27;property&#x27;: &#x27;position&#x27;,</span><br><span class="line">                                 &#x27;to&#x27;: &#123;x: 1, y: 1, z: 1&#125;,                                 </span><br><span class="line">                                 &#x27;startEvents&#x27;: &#x27;startanim001&#x27;&#125;);</span><br></pre></td></tr></table></figure>
 

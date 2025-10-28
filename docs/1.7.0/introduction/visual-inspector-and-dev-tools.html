@@ -707,7 +707,7 @@
           <li class="subnav-item ">
             <a href="/docs/1.7.0/components/logitech-mx-ink-controls.html"
                class="subnav-link">
-              logiteck-mx-ink-controls
+              logitech-mx-ink-controls
             </a>
           </li>
         
@@ -1250,11 +1250,10 @@ visually tweaking and finding the desired value of a component and then syncing
 it back to source code.</p>
 <p><img src="https://cloud.githubusercontent.com/assets/674727/18565449/aa63a7b6-7b44-11e6-999c-450c88812293.gif" alt="Inspector Components"></p>
 <h4 id="shortcuts"><a href="#shortcuts" class="headerlink" title="Shortcuts"></a>Shortcuts</h4><p>We can press <strong><code>h</code></strong> key to see a list of all the shortcuts available.</p>
-<h2 id="mouse-and-keyboard-shortcuts"><a href="#mouse-and-keyboard-shortcuts" class="headerlink" title="Mouse and Keyboard Shortcuts"></a>Mouse and Keyboard Shortcuts</h2><p><a href="https://www.npmjs.com/package/aframe-debug-cursor-component">debugcursor</a></p>
-<p>Using <code>&lt;a-entity cursor=&quot;rayOrigin: mouse&quot;&gt;&lt;/a-entity&gt;</code>, we can hover and click
+<h2 id="mouse-and-keyboard-shortcuts"><a href="#mouse-and-keyboard-shortcuts" class="headerlink" title="Mouse and Keyboard Shortcuts"></a>Mouse and Keyboard Shortcuts</h2><p>Using <code>&lt;a-entity cursor=&quot;rayOrigin: mouse&quot;&gt;&lt;/a-entity&gt;</code>, we can hover and click
 entities using the mouse. These provide <code>mouseenter</code>, <code>mouseleave</code>, and <code>click</code>
 events that are compatible with using the cursor on a controller (such as via
-<code>&lt;a-laser-controls&gt;</code>). There is a <a href="debugcursor">debug-cursor component</a> to log
+<code>&lt;a-laser-controls&gt;</code>). There is a <a href="https://www.npmjs.com/package/aframe-debug-cursor-component">debug-cursor component</a> to log
 cursor events.</p>
 <p>It is useful to develop keyboard shortcut bindings to test actions within
 the application using <code>document.addEventListener(&#39;keydown&#39;, function (evt) &#123; // ... &#125;);</code>.</p>
@@ -1377,7 +1376,7 @@ are to:</p>
 <ol>
 <li>Download ngrok</li>
 <li>Open the command line and head to the same directory ngrok was downloaded to</li>
-<li>Have a local development server running (e.g., <code>python -m SimpleHTTPServer 8080</code>)</li>
+<li>Have a local development server running (e.g., <code>python3 -m http.server 8080</code>)</li>
 <li>Run <code>./ngrok http &lt;PORT&gt;</code> (e.g., <code>./ngrok http 8080</code>)</li>
 <li>An ngrok instance will spin up and provide a URL that the other computer can
 access from its browser (e.g., <code>https://abcdef123456.ngrok.io</code>)</li>

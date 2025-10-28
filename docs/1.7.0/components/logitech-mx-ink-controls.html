@@ -29,7 +29,7 @@
       data-aframe-version="1.7.0"
       data-docs-version="1.7.0">
   <head>
-    <title>logiteck-mx-ink-controls – A-Frame</title>
+    <title>logitech-mx-ink-controls – A-Frame</title>
     
 
 <script>
@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://aframe.io">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600" rel="stylesheet">
     <meta property="fb:app_id" content="1535794316743373">
-    <meta property="og:title" content="logiteck-mx-ink-controls – A-Frame">
+    <meta property="og:title" content="logitech-mx-ink-controls – A-Frame">
     <meta property="og:site_name" content="A-Frame">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aframe.io">
@@ -65,7 +65,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@aframevr">
     <meta name="twitter:creator" content="@aframevr">
-    <meta name="twitter:title" content="logiteck-mx-ink-controls – A-Frame">
+    <meta name="twitter:title" content="logitech-mx-ink-controls – A-Frame">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://aframe.io/images/card.jpg?v2">
     <meta name="mobile-web-app-capable" content="yes">
@@ -707,7 +707,7 @@
           <li class="subnav-item  subnav-item-current">
             <a href="/docs/1.7.0/components/logitech-mx-ink-controls.html"
                class="subnav-link current">
-              logiteck-mx-ink-controls
+              logitech-mx-ink-controls
             </a>
           </li>
         
@@ -1171,7 +1171,7 @@
         </p>
       </div>
       <h1 class="page__title">
-        logiteck-mx-ink-controls
+        logitech-mx-ink-controls
       </h1>
 
       
@@ -1179,10 +1179,10 @@
       
       
 
-      <p>The logiteck-mx-ink-controls component interfaces with the Logitech MX Ink tracked pen. It
+      <p>The <code>logitech-mx-ink-controls</code> component interfaces with the Logitech MX Ink tracked pen. It
 wraps the <a href="./tracked-controls.html">tracked-controls component</a> while adding button
 mappings, events, and a pencil model.</p>
-<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">logiteck-mx-ink-controls</span>=<span class="string">&quot;hand: left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">logiteck-mx-ink-controls</span>=<span class="string">&quot;hand: right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="example"><a href="#example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">logitech-mx-ink-controls</span>=<span class="string">&quot;hand: left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">logitech-mx-ink-controls</span>=<span class="string">&quot;hand: right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="value"><a href="#value" class="headerlink" title="Value"></a>Value</h2><table>
 <thead>
@@ -1248,12 +1248,12 @@ mappings, events, and a pencil model.</p>
 </tr>
 </tbody></table>
 <h2 id="read-tip-changes"><a href="#read-tip-changes" class="headerlink" title="Read tip changes"></a>Read tip changes</h2><p>Listen to the <code>tipchanged</code> event.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">logiteck-mx-ink-controls</span>=<span class="string">&quot;hand: left&quot;</span> <span class="attr">tip-logging</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">logiteck-mx-ink-controls</span>=<span class="string">&quot;hand: right&quot;</span> <span class="attr">tip-logging</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">logitech-mx-ink-controls</span>=<span class="string">&quot;hand: left&quot;</span> <span class="attr">tip-logging</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a-entity</span> <span class="attr">logitech-mx-ink-controls</span>=<span class="string">&quot;hand: right&quot;</span> <span class="attr">tip-logging</span>&gt;</span><span class="tag">&lt;/<span class="name">a-entity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">AFRAME</span>.<span class="title function_">registerComponent</span>(<span class="string">&#x27;tip-logging&#x27;</span>,&#123;</span><br><span class="line">  <span class="attr">init</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">el</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;tipchanged&#x27;</span>, <span class="variable language_">this</span>.<span class="property">tipChanged</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">tipChanged</span>: <span class="keyword">function</span> (<span class="params">evt</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Pen tip changed&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="assets"><a href="#assets" class="headerlink" title="Assets"></a>Assets</h2><ul>
-<li><a href="https://cdn.aframe.io/controllers/logitech/logitech-mx-ink.glb">Logiteck MX Ink glTF</a></li>
+<li><a href="https://cdn.aframe.io/controllers/logitech/logitech-mx-ink.glb">Logitech MX Ink glTF</a></li>
 </ul>
 
 
@@ -1358,7 +1358,7 @@ mappings, events, and a pencil model.</p>
       <div class="doc-actions">
         <a class="docs-suggest-edit github-file-link" href="https://github.com/aframevr/aframe/edit/master/docs/components/logitech-mx-ink-controls.md" target="_blank" rel="external">Edit Page</a>
         
-          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v1.7.0/src/components/logiteck-mx-ink-controls.js" title="View Source" target="_blank" rel="external">View Source</a>
+          <a class="docs-view-source github-file-link" href="https://github.com/aframevr/aframe/tree/v1.7.0/src/components/logitech-mx-ink-controls.js" title="View Source" target="_blank" rel="external">View Source</a>
         
       </div>
     </div>
