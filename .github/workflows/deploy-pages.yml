@@ -47,7 +47,8 @@ jobs:
         working-directory: aframe-site
 
       - name: Generate Pagefind index
-        run: npx pagefind@1.5.0 --site aframe-site/public
+        run: npx pagefind --site public
+        working-directory: aframe-site
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
