@@ -29,9 +29,11 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
+          cache: 'npm'
+          cache-dependency-path: 'aframe-site/package-lock.json'
 
       - name: Install dependencies
-        run: npm install --ignore-scripts --include=dev
+        run: npm ci --ignore-scripts --include=dev
         working-directory: aframe-site
 
       - name: Build docs
