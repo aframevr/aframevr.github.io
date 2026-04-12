@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [master]
+  repository_dispatch:
+    types: [deploy]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,18 +22,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          repository: aframevr/aframe-site
+          path: aframe-site
 
       - uses: actions/setup-node@v6
         with:
           node-version: 24
 
+      - name: Install dependencies
+        run: npm install --ignore-scripts --include=dev
+        working-directory: aframe-site
+
+      - name: Build docs
+        run: npm run bumpdocs
+        working-directory: aframe-site
+
+      - name: Generate site
+        run: npm run generate
+        working-directory: aframe-site
+
       - name: Generate Pagefind index
-        run: npx pagefind@1.5.0 --site .
+        run: npx pagefind@1.5.0 --site aframe-site/public
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: .
+          path: aframe-site/public
 
       - name: Deploy to GitHub Pages
         id: deployment
