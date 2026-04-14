@@ -38,6 +38,11 @@ jobs:
         run: npm ci --ignore-scripts --include=dev
         working-directory: aframe-site
 
+      - uses: actions/cache@v5
+        with:
+          path: aframe-site/src/docs
+          key: docs-${{ hashFiles('aframe-site/multidep.json') }}
+
       - name: Build docs
         run: npm run bumpdocs
         working-directory: aframe-site
